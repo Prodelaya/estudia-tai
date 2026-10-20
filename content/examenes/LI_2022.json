@@ -1,0 +1,2450 @@
+{
+ "id": "LI_2022",
+ "anio": 2022,
+ "convocatoria": "OEP 2020-2021-2022 · ejercicio único",
+ "fuente_clave": "oficial",
+ "partes": {
+  "ej1": {
+   "titulo": "Primera parte (test)",
+   "valor": 0.625,
+   "contexto": "",
+   "preguntas": [
+    {
+     "id": "LI2022-ej1-01",
+     "n": 1,
+     "reserva": false,
+     "q": "De acuerdo con el artículo 64 de la Constitución Española de 1978 (en adelante CE), los actos del Rey, excepto la propuesta y el nombramiento del Presidente del Gobierno, y la disolución de las Cámaras prevista en el artículo 99, serán refrendados por:",
+     "op": {
+      "a": "Los Presidentes del Congreso y el Senado.",
+      "b": "Los Ministros o los Secretarios de Estado en función de la materia.",
+      "c": "El Presidente del Gobierno y, en su caso, por los Presidentes del Congreso y el Senado.",
+      "d": "El Presidente del Gobierno y, en su caso, por los Ministros competentes."
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 1,
+     "obsoleta": false,
+     "csv": 1,
+     "sim": 0.4
+    },
+    {
+     "id": "LI2022-ej1-02",
+     "n": 2,
+     "reserva": false,
+     "q": "La suspensión de los derechos y libertades se encuentra regulada en la CE en:",
+     "op": {
+      "a": "En el Capítulo III del Título I.",
+      "b": "En sus artículos 52 y 53.",
+      "c": "En el artículo 58.",
+      "d": "En el Capítulo V del Título I."
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 1,
+     "obsoleta": false,
+     "csv": 2,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2022-ej1-03",
+     "n": 3,
+     "reserva": false,
+     "q": "Según el artículo 68 de la CE, ¿cuál es la circunscripción electoral en nuestro sistema electoral?",
+     "op": {
+      "a": "La provincia.",
+      "b": "El municipio.",
+      "c": "La Comunidad Autónoma.",
+      "d": "Distrito Municipal."
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 2,
+     "obsoleta": false,
+     "csv": 3,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2022-ej1-04",
+     "n": 4,
+     "reserva": false,
+     "q": "Según el artículo 18 de la ley 50/1997, de 27 de noviembre, del Gobierno que regula el funcionamiento del Consejo de Ministros, ¿quién actúa como Secretario de este órgano colegiado?",
+     "op": {
+      "a": "El Vicepresidente Primero.",
+      "b": "El Ministro portavoz del Gobierno.",
+      "c": "El Ministro de la Presidencia.",
+      "d": "El Ministro de Justicia."
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 3,
+     "obsoleta": false,
+     "csv": 4,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-ej1-05",
+     "n": 5,
+     "reserva": false,
+     "q": "De acuerdo con el artículo 78 de la CE, expirado el mandato de las Cortes Generales o en caso de disolución de las mismas, las Diputaciones Permanentes seguirán ejerciendo sus funciones hasta:",
+     "op": {
+      "a": "La celebración de las elecciones.",
+      "b": "La proclamación de los resultados electorales definitivos.",
+      "c": "La elección de los nuevos presidentes de cada una de las Cámaras de las Cortes Generales.",
+      "d": "La constitución de las nuevas Cortes Generales."
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 2,
+     "obsoleta": false,
+     "csv": 5,
+     "sim": 0.62
+    },
+    {
+     "id": "LI2022-ej1-06",
+     "n": 6,
+     "reserva": false,
+     "q": "Según establece el artículo 24 de la Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno, el plazo máximo para resolver y notificar la resolución de una reclamación ante el Consejo de Transparencia y Buen Gobierno será de:",
+     "op": {
+      "a": "Un mes, transcurrido el cual, la reclamación se entenderá estimada.",
+      "b": "Un mes, transcurrido el cual, la reclamación se entenderá desestimada.",
+      "c": "Tres meses, transcurrido el cual, la reclamación se entenderá estimada.",
+      "d": "Tres meses, transcurrido el cual, la reclamación se entenderá desestimada."
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 4,
+     "obsoleta": false,
+     "csv": 6,
+     "sim": 0.88
+    },
+    {
+     "id": "LI2022-ej1-07",
+     "n": 7,
+     "reserva": false,
+     "q": "Señale cuál de los siguientes NO es un compromiso del IV Plan de Gobierno Abierto de España:",
+     "op": {
+      "a": "Participación de los jóvenes en políticas públicas.",
+      "b": "Protección de denunciantes.",
+      "c": "Huella normativa.",
+      "d": "Reforma del marco regulatorio."
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 4,
+     "obsoleta": true,
+     "csv": 7,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-ej1-08",
+     "n": 8,
+     "reserva": false,
+     "q": "Conforme establece el artículo 18 de la Ley 53/1984, de 26 de diciembre, de Incompatibilidades del personal al servicio de las Administraciones Públicas, todas las resoluciones de compatibilidad para desempeñar un segundo puesto o actividad en el sector público o el ejercicio de actividades privadas se inscribirán:",
+     "op": {
+      "a": "En el Registro Central de Personal.",
+      "b": "En la Oficina de Conflicto de Intereses.",
+      "c": "En la Unidad de Personal del Ministerio u Organismo correspondiente.",
+      "d": "En los Registros de Personal correspondientes."
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 4,
+     "obsoleta": false,
+     "csv": 8,
+     "sim": 0.71
+    },
+    {
+     "id": "LI2022-ej1-09",
+     "n": 9,
+     "reserva": false,
+     "q": "De acuerdo con el artículo 30 de la Ley 39/2006, de 14 de diciembre, de Promoción de la Autonomía Personal y Atención a las personas en situación de dependencia, el grado de dependencia será revisable:",
+     "op": {
+      "a": "A instancia del interesado.",
+      "b": "A instancia de los representantes del interesado.",
+      "c": "De oficio por las Administraciones Públicas competentes.",
+      "d": "Todas las respuestas anteriores son correctas."
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 5,
+     "obsoleta": false,
+     "csv": 9,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2022-ej1-10",
+     "n": 10,
+     "reserva": false,
+     "q": "Conforme el artículo 49 de la Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres, para impulsar la adopción voluntaria de planes de igualdad, el Gobierno establecerá:",
+     "op": {
+      "a": "Medidas de acción positiva, especialmente dirigidas a las pequeñas y las medianas empresas.",
+      "b": "Medidas de fomento, especialmente dirigidas a las empresas de 50 o más trabajadores.",
+      "c": "Medidas de fomento, especialmente dirigidas a las pequeñas y las medianas empresas.",
+      "d": "Medidas de acción positiva, dirigidas a cualquier empresa, sea de capital público o privado."
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 5,
+     "obsoleta": false,
+     "csv": 10,
+     "sim": 0.86
+    },
+    {
+     "id": "LI2022-ej1-11",
+     "n": 11,
+     "reserva": false,
+     "q": "Con carácter general el documento nacional de identidad tendrá un período de validez, a contar desde la fecha de la expedición o de cada una de sus renovaciones, de:",
+     "op": {
+      "a": "Dos años cuando el solicitante no haya cumplido los cinco años de edad.",
+      "b": "Cuatro años, cuando el titular haya cumplido los cinco años de edad y no haya alcanzado los treinta al momento de la expedición o renovación.",
+      "c": "Nueve años, cuando el titular haya cumplido los treinta y no haya alcanzado los setenta.",
+      "d": "Permanente cuando el titular haya cumplido los sesenta años."
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 6,
+     "obsoleta": false,
+     "csv": 11,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2022-ej1-12",
+     "n": 12,
+     "reserva": false,
+     "q": "De acuerdo con el artículo 4 de la Ley 6/2020, de 11 de noviembre, reguladora de determinados aspectos de los servicios electrónicos de confianza, el periodo de vigencia de los certificados cualificados:",
+     "op": {
+      "a": "No será superior a 5 años.",
+      "b": "No será superior a 3 años.",
+      "c": "Es ilimitado.",
+      "d": "No será superior a 6 años."
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 6,
+     "obsoleta": false,
+     "csv": 12,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-ej1-13",
+     "n": 13,
+     "reserva": false,
+     "q": "Indique según el título X de la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales, ¿cuál de los siguientes NO es un derecho digital?",
+     "op": {
+      "a": "Derecho al testamento digital.",
+      "b": "Derecho al olvido en servicios de redes sociales y servicios equivalentes.",
+      "c": "Derecho a la desconexión digital en el ámbito laboral.",
+      "d": "Derecho a la igualdad y a la no discriminación en el entorno digital."
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 7,
+     "obsoleta": false,
+     "csv": 13,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2022-ej1-14",
+     "n": 14,
+     "reserva": false,
+     "q": "Según establece el artículo 34 de la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales, los responsables y encargados de tratamiento comunicarán a la Agencia Española de Protección de Datos, las designaciones, nombramientos y ceses de los delegados de protección de datos en el plazo de:",
+     "op": {
+      "a": "10 días.",
+      "b": "15 días.",
+      "c": "1 mes.",
+      "d": "3 meses."
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 7,
+     "obsoleta": false,
+     "csv": 14,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2022-ej1-15",
+     "n": 15,
+     "reserva": false,
+     "q": "Según el Real Decreto 311/2022, de 3 de mayo, por el que se regula el Esquema Nacional de Seguridad, ¿cuál de las siguientes medidas de seguridad afecta a la dimensión de Confidencialidad?",
+     "op": {
+      "a": "Bloqueo de puesto de trabajo.",
+      "b": "Firma electrónica.",
+      "c": "Registro de la actividad.",
+      "d": "Criptografía."
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 8,
+     "obsoleta": false,
+     "csv": 15,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2022-ej1-16",
+     "n": 16,
+     "reserva": false,
+     "q": "Señale la respuesta correcta sobre lo que establece la Norma Técnica de Interoperabilidad de Protocolos de Intermediación de Datos:",
+     "op": {
+      "a": "Las tecnologías utilizadas para los intercambios se implementarán en base a estándares según lo establecido en la Norma Técnica de Interoperabilidad de Catálogo de estándares.",
+      "b": "De forma general en servicios de intercambio se utilizará la versión 2.0 del protocolo SCSP (Sustitución de Certificados en Soporte Papel).",
+      "c": "Emisores y Requirentes no mantendrán trazabilidad de los intercambios de datos producidos.",
+      "d": "Los intercambios de información se podrán implementar a través de servicios web."
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 8,
+     "obsoleta": false,
+     "csv": 16,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2022-ej1-17",
+     "n": 17,
+     "reserva": false,
+     "q": "Señale qué afirmación es correcta con respecto a las soluciones de Ciberseguridad proporcionadas por el Centro Criptológico Nacional (CCN):",
+     "op": {
+      "a": "CLARA, protección y trazabilidad del dato.",
+      "b": "ELENA, Simulador de Técnicas de Cibervigilancia.",
+      "c": "GLORIA, Gestión de eventos e información de seguridad.",
+      "d": "MONICA, Gestor de logs para responder ante incidentes y amenazas."
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 28,
+     "obsoleta": false,
+     "csv": 17,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-ej1-18",
+     "n": 18,
+     "reserva": false,
+     "q": "Señale la respuesta correcta referente a los servicios comunes en materia de administración electrónica:",
+     "op": {
+      "a": "SERVINOMINA realiza la gestión completa de las fases de nómina: cálculo, contabilidad y pago.",
+      "b": "CIRCAB poderosa herramienta de trabajo en grupo para intercambio de información y trabajo colaborativo.",
+      "c": "eVISOR permite a un empleado público la consulta de sus nóminas correspondientes a los cinco últimos años.",
+      "d": "ENVIA es una aplicación que hace posible el envío de ficheros de gran volumen entre usuarios."
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 9,
+     "obsoleta": false,
+     "csv": 18,
+     "sim": 0.88
+    },
+    {
+     "id": "LI2022-ej1-19",
+     "n": 19,
+     "reserva": false,
+     "q": "La CE regula la institución del Defensor del Pueblo como:",
+     "op": {
+      "a": "Alto comisionado del Congreso de los Diputados.",
+      "b": "Alto comisionado de las Cortes Generales.",
+      "c": "Alto comisionado del Poder judicial.",
+      "d": "Alto comisionado del Gobierno de la nación."
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 2,
+     "obsoleta": false,
+     "csv": 19,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2022-ej1-20",
+     "n": 20,
+     "reserva": false,
+     "q": "¿Qué es WCAG?",
+     "op": {
+      "a": "Unas pautas de accesibilidad de contenidos web promovidas por el W3C.",
+      "b": "Una librería de Java EE para la creación de aplicaciones web creada por Oracle.",
+      "c": "Un componente del ecosistema Hadoop para el manejo de Big Data.",
+      "d": "Un framework javascript especialmente indicado para trabajar con bases de datos no relacionales."
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 22,
+     "obsoleta": false,
+     "csv": 20,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2022-ej1-21",
+     "n": 21,
+     "reserva": false,
+     "q": "¿Cuál de los siguientes es el nombre de un conector usado para carga y datos creado por el fabricante Apple?",
+     "op": {
+      "a": "USB-Tipo C",
+      "b": "iUSB",
+      "c": "iFirewire",
+      "d": "Lightning"
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 11,
+     "obsoleta": false,
+     "csv": 21,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-ej1-22",
+     "n": 22,
+     "reserva": false,
+     "q": "Con respecto a las sentencias del lenguaje SQL, indique la respuesta INCORRECTA:",
+     "op": {
+      "a": "Sentencia DELETE sirve para borrar en forma sencilla distintos objetos como por ejemplo base de datos, tablas o índices.",
+      "b": "La sentencia INSERT agrega uno o más registros a una tabla en una base de datos relacional.",
+      "c": "La sentencia UPDATE modifica los valores de un conjunto de registros existentes en una tabla.",
+      "d": "La sentencia GRANT se utiliza para dar permisos a un usuario."
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 22,
+     "sim": 0.86
+    },
+    {
+     "id": "LI2022-ej1-23",
+     "n": 23,
+     "reserva": false,
+     "q": "Cuál de los siguientes son los objetos básicos de Kubernetes:",
+     "op": {
+      "a": "Pod, State, Volume, Namespace.",
+      "b": "Pod, Service, Volume, Namespace.",
+      "c": "Job, Service, Volume, Namespace.",
+      "d": "Job, Pod, Volume, Deployment."
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 26,
+     "obsoleta": false,
+     "csv": 23,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-ej1-24",
+     "n": 24,
+     "reserva": false,
+     "q": "La ALU es una parte de:",
+     "op": {
+      "a": "La memoria.",
+      "b": "La CPU.",
+      "c": "El bus de operaciones.",
+      "d": "El multiplexor de entrada."
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": null,
+     "obsoleta": false,
+     "csv": null
+    },
+    {
+     "id": "LI2022-ej1-25",
+     "n": 25,
+     "reserva": false,
+     "q": "Señale la respuesta correcta sobre el modelo CISC:",
+     "op": {
+      "a": "La microprogramación es una característica esencial.",
+      "b": "Plantea un conjunto reducido de instrucciones para reducir el número de ciclos de reloj de ejecución de cada una de ellas.",
+      "c": "Implementa las instrucciones directamente en hardware.",
+      "d": "Está muy extendido en el mercado de procesadores para smartphone y tablets por su bajo consumo y buen rendimiento."
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 10,
+     "obsoleta": false,
+     "csv": 25,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2022-ej1-26",
+     "n": 26,
+     "reserva": false,
+     "q": "En relación con los sistemas RAID señale la respuesta INCORRECTA:",
+     "op": {
+      "a": "El RAID 1+0 exige un mínimo de 4 discos.",
+      "b": "RAID 6 amplía el RAID 5 agregando un bloque de paridad.",
+      "c": "RAID 5 necesitará un mínimo de 3 discos para ser implementado.",
+      "d": "Un RAID 4 distribuye la información a nivel de bloques con dos discos de paridad dedicados."
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 25,
+     "obsoleta": false,
+     "csv": 26,
+     "sim": 0.25
+    },
+    {
+     "id": "LI2022-ej1-27",
+     "n": 27,
+     "reserva": false,
+     "q": "¿Cuál de las siguientes es una tecnología de almacenamiento en disco mediante bus serie?",
+     "op": {
+      "a": "SATA",
+      "b": "ATA",
+      "c": "SCSI",
+      "d": "DLT"
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 11,
+     "obsoleta": false,
+     "csv": 27,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-ej1-28",
+     "n": 28,
+     "reserva": false,
+     "q": "Respecto a la norma USB indique la respuesta INCORRECTA:",
+     "op": {
+      "a": "USB Type-C es lo mismo que USB 3.1",
+      "b": "La diferencia entre USB 3.1 Gen 1 y USB 3.1 Gen 2 se reduce solamente a la velocidad.",
+      "c": "USB 3.2 permite velocidades de hasta 20 Gbps.",
+      "d": "Los dispositivos USB 2.0 pueden lograr una velocidad de transferencia máxima hasta de 480 Mbps."
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 11,
+     "obsoleta": false,
+     "csv": 28,
+     "sim": 0.4
+    },
+    {
+     "id": "LI2022-ej1-29",
+     "n": 29,
+     "reserva": false,
+     "q": "En teoría de grafos, el algoritmo para la determinación del camino más corto, dado un vértice origen, hacia el resto de los vértices en un grafo que tiene pesos en cada arista se denomina:",
+     "op": {
+      "a": "Algoritmo de Kruskal.",
+      "b": "Algoritmo de Prim.",
+      "c": "Algoritmo de Dijkstra.",
+      "d": "Algoritmo de Floyd-Warshall."
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 12,
+     "obsoleta": false,
+     "csv": 29,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2022-ej1-30",
+     "n": 30,
+     "reserva": false,
+     "q": "Con respecto a los estándares PDF, señale que afirmación NO es correcta:",
+     "op": {
+      "a": "PDF/UA Es el estándar global para la accesibilidad de PDF.",
+      "b": "PDF/A proporciona las especificaciones para crear, ver e imprimir documentos digitales para conservarlos a largo plazo.",
+      "c": "PDF/E proporciona especificaciones para crear, ver e imprimir documentos utilizados en flujos de trabajo de ingeniería.",
+      "d": "PDF/I proporciona especificaciones para crear, ver e imprimir páginas finales listas para imprimir o listas para la prensa."
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 12,
+     "obsoleta": false,
+     "csv": 30,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2022-ej1-31",
+     "n": 31,
+     "reserva": false,
+     "q": "¿Cuál de las versiones siguientes es la más reciente del sistema operativo macOS?",
+     "op": {
+      "a": "macOS Sierra",
+      "b": "macOS Monterey",
+      "c": "macOS Big Sur",
+      "d": "macOS Ventura"
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 13,
+     "obsoleta": false,
+     "csv": 31,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2022-ej1-32",
+     "n": 32,
+     "reserva": false,
+     "q": "Cuál de las siguientes afirmaciones NO es correcta:",
+     "op": {
+      "a": "En Windows de 64 bits, un proceso de 64 bits no puede cargar una biblioteca de vínculos dinámicos (DLL) de 32 bits.",
+      "b": "En Windows de 64 bits, un proceso de 32 bits no puede cargar un archivo DLL de 64 bits.",
+      "c": "En Windows de 64 bits se admiten llamadas a procedimientos remotos (RPC) entre procesos de 64 y 32 bits solo en el mismo equipo.",
+      "d": "En Windows de 64 bits se admiten llamadas a procedimientos remotos (RPC) entre procesos de 64 y 32 bits tanto en el mismo equipo como entre equipos distintos."
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 13,
+     "obsoleta": false,
+     "csv": 32,
+     "sim": 0.57
+    },
+    {
+     "id": "LI2022-ej1-33",
+     "n": 33,
+     "reserva": false,
+     "q": "Las bases de datos relacionales ofrecen propiedades ACID. Dicho acrónimo se refiere a:",
+     "op": {
+      "a": "Atomicidad, Consistencia, Aislamiento y Durabilidad.",
+      "b": "Atomicidad, Coherencia, Integridad y Distribución.",
+      "c": "Disponibilidad, Coherencia, Intensidad y Durabilidad.",
+      "d": "Atomicidad, Consistencia, Aislamiento y Disponibilidad."
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 14,
+     "obsoleta": false,
+     "csv": 33,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2022-ej1-34",
+     "n": 34,
+     "reserva": false,
+     "q": "Entre las características obligatorias de un sistema gestor de bases de datos orientadas a objetos, NO se encuentra:",
+     "op": {
+      "a": "Debe permitir construir objetos complejos.",
+      "b": "El conjunto de tipos de datos debe ser fijo, consiguiendo así mayor eficiencia en las búsquedas.",
+      "c": "Todos los objetos deben tener un identificador que sea independiente de los valores de sus atributos.",
+      "d": "El esquema de una BDOO incluye únicamente un conjunto de clases (o de tipos)."
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": null,
+     "obsoleta": false,
+     "csv": null
+    },
+    {
+     "id": "LI2022-ej1-35",
+     "n": 35,
+     "reserva": false,
+     "q": "Señale qué es el Machine Learning Services para SQL Server:",
+     "op": {
+      "a": "Es un conjunto de tecnologías destinadas a la copia y distribución de datos y objetos de base de datos desde una base de datos a otra, para luego sincronizar ambas bases de datos y mantener su coherencia.",
+      "b": "Es una característica de SQL Server que proporciona la capacidad de ejecutar scripts de Python y R con datos relacionales.",
+      "c": "Es un producto de calidad de datos basado en conocimiento.",
+      "d": "Es el servicio principal para almacenar, procesar y proteger los datos."
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 14,
+     "obsoleta": false,
+     "csv": 35,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-ej1-36",
+     "n": 36,
+     "reserva": false,
+     "q": "Señale la respuesta correcta relativa al Modelo Entidad/Relación Extendido según establece METRICA v3:",
+     "op": {
+      "a": "Un atributo se define sobre diversos dominios.",
+      "b": "El dominio no tiene existencia propia y depende de las entidades, las relaciones o los atributos.",
+      "c": "La entidad es aquel objeto, real o abstracto, acerca del cual se desea almacenar información en la base de datos.",
+      "d": "La clave candidata es el conjunto de atributos que garantizan la unicidad de las ocurrencias e identifican la ocurrencia unívocamente."
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 15,
+     "obsoleta": false,
+     "csv": 36,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-ej1-37",
+     "n": 37,
+     "reserva": false,
+     "q": "La arquitectura ANSI/SPARC define para un sistema de gestión de bases de datos tres niveles de abstracción. Indicar la afirmación INCORRECTA:",
+     "op": {
+      "a": "El nivel externo contiene las vistas externas de la base de datos y permite a cada tipo de usuario ver sólo aquella parte del esquema que le interesa.",
+      "b": "El nivel físico define cómo se almacenan los datos y los métodos de acceso.",
+      "c": "El nivel contextual define el formato de los campos.",
+      "d": "El nivel interno también recibe el nombre de nivel lógico."
+     },
+     "ok": null,
+     "anulada": true,
+     "tema": null,
+     "obsoleta": false,
+     "csv": null
+    },
+    {
+     "id": "LI2022-ej1-38",
+     "n": 38,
+     "reserva": false,
+     "q": "Cuál de las siguientes afirmaciones es FALSA:",
+     "op": {
+      "a": "Un intérprete es un programa que ejecuta directamente las instrucciones escritas en un lenguaje de programación dado.",
+      "b": "Un compilador es un programa que transforma el código fuente de un programa a su equivalente en otro lenguaje de programación de más bajo nivel.",
+      "c": "Un transpilador es un programa que hace de intérprete y de compilador al mismo tiempo.",
+      "d": "Un compilador cruzado o cross compiler es un compilador capaz de crear código ejecutable para otra plataforma distinta a aquélla en la que se ejecuta."
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": null,
+     "obsoleta": false,
+     "csv": null
+    },
+    {
+     "id": "LI2022-ej1-39",
+     "n": 39,
+     "reserva": false,
+     "q": "C++ permite especificar más de una función con el mismo nombre en el mismo ámbito. ¿Cómo se denominan estas funciones?",
+     "op": {
+      "a": "Funciones dobles.",
+      "b": "Funciones repetidas.",
+      "c": "Funciones sobrecargadas.",
+      "d": "En C++ no se puede nombrar más de una función con el mismo nombre."
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 38,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-ej1-40",
+     "n": 40,
+     "reserva": false,
+     "q": "Indica, de las siguientes afirmaciones, cuál es verdadera:",
+     "op": {
+      "a": "Un array o vector es un tipo de dato estructurado que permite almacenar un conjunto de datos homogéneo donde cada elemento se almacena de forma consecutiva en memoria.",
+      "b": "Bytecode es el código binario obtenido tras el proceso de compilación (Java).",
+      "c": "C++ es un lenguaje de segunda generación.",
+      "d": "En C++ la declaración del array: «int vector2[] = {1,2,3,4,10,9,80,70,19};», es incorrecta."
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 39,
+     "sim": 0.4
+    },
+    {
+     "id": "LI2022-ej1-41",
+     "n": 41,
+     "reserva": false,
+     "q": "Señale la respuesta correcta sobre los tipos de controladores (drivers) JDBC:",
+     "op": {
+      "a": "Los drivers tipo 1 utilizan Java puro para implementar un protocolo de red de proveedores del Sistema Gestor de Base de Datos.",
+      "b": "Los drivers tipo 3 utilizan un protocolo de red y middleware para comunicarse con un servidor.",
+      "c": "Según la tecnología utilizada para conectarse a la base de datos, los drivers JDBC se categorizan en 3 tipos diferentes.",
+      "d": "Los drivers tipo 2 son controladores \"puente\", que utilizan otra tecnología (por ejemplo ODBC) para comunicarse con la base de datos."
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 19,
+     "obsoleta": false,
+     "csv": 40,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2022-ej1-42",
+     "n": 42,
+     "reserva": false,
+     "q": "Señale la respuesta INCORRECTA. Los tipos más corrientes de anomalías de base de datos son:",
+     "op": {
+      "a": "Lecturas no repetibles.",
+      "b": "Lecturas hundidas.",
+      "c": "Lecturas sucias.",
+      "d": "Lecturas fantasma."
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 14,
+     "obsoleta": false,
+     "csv": 41,
+     "sim": 0.4
+    },
+    {
+     "id": "LI2022-ej1-43",
+     "n": 43,
+     "reserva": false,
+     "q": "En SQL, ¿cómo se pueden eliminar los datos en una tabla, pero no la propia definición de la tabla?",
+     "op": {
+      "a": "DROP TABLE",
+      "b": "DELETE",
+      "c": "REMOVE",
+      "d": "ERASE"
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 42,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2022-ej1-44",
+     "n": 44,
+     "reserva": false,
+     "q": "¿Cuál de los siguientes términos hace referencia a patrones generales de software para asignación de responsabilidades en el diseño orientado a objetos?",
+     "op": {
+      "a": "OOD",
+      "b": "GRASP",
+      "c": "Booch",
+      "d": "Fan-In & Fan-Out"
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 18,
+     "obsoleta": false,
+     "csv": 43,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-ej1-45",
+     "n": 45,
+     "reserva": false,
+     "q": "Según METRICA v3, la relación jerárquica entre un objeto que representa la totalidad de ese objeto y las partes que lo componen, es una relación entre clases de tipo:",
+     "op": {
+      "a": "Herencia.",
+      "b": "Composición.",
+      "c": "Asociación.",
+      "d": "Agregación."
+     },
+     "ok": null,
+     "anulada": true,
+     "tema": null,
+     "obsoleta": false,
+     "csv": null
+    },
+    {
+     "id": "LI2022-ej1-46",
+     "n": 46,
+     "reserva": false,
+     "q": "Según METRICA v3, ¿cuál es diagrama que describe en detalle un determinado escenario de un caso de uso?",
+     "op": {
+      "a": "Diagrama de Interacción.",
+      "b": "Diagrama de representación.",
+      "c": "Diagrama de flujo de datos.",
+      "d": "Diagrama de casos de uso."
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 18,
+     "obsoleta": false,
+     "csv": 44,
+     "sim": 0.83
+    },
+    {
+     "id": "LI2022-ej1-47",
+     "n": 47,
+     "reserva": false,
+     "q": "Indique cuál de las siguientes NO es una librería de Java proporcionada por la Apache Foundation:",
+     "op": {
+      "a": "Log4J",
+      "b": "httpclient",
+      "c": "commons-io",
+      "d": "Mockete"
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 19,
+     "obsoleta": false,
+     "csv": 45,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2022-ej1-48",
+     "n": 48,
+     "reserva": false,
+     "q": "Seleccione la respuesta correcta sobre .NET:",
+     "op": {
+      "a": ".NET es un marco multiplataforma gratuito de Google para compilar aplicaciones y servicios en la nube.",
+      "b": ".NET es un proyecto de código abierto.",
+      "c": ".NET sirve exclusivamente para desarrollar aplicaciones móviles.",
+      "d": ".NET admite un amplio rango de lenguajes de programación, a excepción de C#"
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 19,
+     "obsoleta": false,
+     "csv": 46,
+     "sim": 0.25
+    },
+    {
+     "id": "LI2022-ej1-49",
+     "n": 49,
+     "reserva": false,
+     "q": "Señale la respuesta INCORRECTA referente al objeto POCO en .NET:",
+     "op": {
+      "a": "Es una estructura de datos de .NET que solo contiene propiedades o campos públicos.",
+      "b": "Es el acrónimo de Plain Old CLR Object.",
+      "c": "No hereda de otra clase o implementa una interfaz.",
+      "d": "Podrá contener miembros como: métodos. eventos y delegados."
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 19,
+     "obsoleta": false,
+     "csv": 47,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2022-ej1-50",
+     "n": 50,
+     "reserva": false,
+     "q": "Cuál de las siguientes afirmaciones sobre REST es FALSA:",
+     "op": {
+      "a": "REST es el acrónimo de Representational State Transfer.",
+      "b": "Los objetos en REST siempre se manipulan a partir de la URI.",
+      "c": "URI son las siglas de Unique Resource Identifier.",
+      "d": "Utiliza un protocolo cliente/servidor sin estado."
+     },
+     "ok": null,
+     "anulada": true,
+     "tema": null,
+     "obsoleta": false,
+     "csv": null
+    },
+    {
+     "id": "LI2022-ej1-51",
+     "n": 51,
+     "reserva": false,
+     "q": "Señale cuál es un estándar OASIS que define los mecanismos para establecer y compartir contextos de seguridad, y para obtener claves de contextos de seguridad:",
+     "op": {
+      "a": "WS-Addressing",
+      "b": "WS-Federation",
+      "c": "WS-SecureConversation",
+      "d": "WS-Policy"
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 20,
+     "obsoleta": false,
+     "csv": 48,
+     "sim": 0.62
+    },
+    {
+     "id": "LI2022-ej1-52",
+     "n": 52,
+     "reserva": false,
+     "q": "Señale la afirmación correcta con respecto a WSIL:",
+     "op": {
+      "a": "Es un método alternativo al descubrimiento de servicios Web.",
+      "b": "Define el modelo de programación y la arquitectura de ejecución para desplegar y buscar servicios Web en el entorno Java EE.",
+      "c": "Define un modo de publicar y encontrar información sobre servicios Web.",
+      "d": "Es una organización diseñada para promover la interoperatividad de servicios Web entre plataformas, sistemas operativos y lenguajes de programación."
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 20,
+     "obsoleta": false,
+     "csv": 49,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2022-ej1-53",
+     "n": 53,
+     "reserva": false,
+     "q": "¿Cuál es el motor web desarrollado por The Mozilla Foundation?",
+     "op": {
+      "a": "WebKit",
+      "b": "Firefox",
+      "c": "Gecko",
+      "d": "Edge"
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 50,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-ej1-54",
+     "n": 54,
+     "reserva": false,
+     "q": "¿Qué término está relacionado con XML-binary Optimized Packaging (XOP)?",
+     "op": {
+      "a": "Reconstituted XML Infoset",
+      "b": "XOP Header",
+      "c": "XOP Package",
+      "d": "Optimized Document"
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 51,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-ej1-55",
+     "n": 55,
+     "reserva": false,
+     "q": "¿Cuál de los siguientes NO es un framework para javascript?",
+     "op": {
+      "a": "Angular",
+      "b": "Bootstrap",
+      "c": "React",
+      "d": "JDBC"
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 52,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2022-ej1-56",
+     "n": 56,
+     "reserva": false,
+     "q": "Para detectar, eliminar y/o mitigar las debilidades de una aplicación se pueden realizar diferentes análisis de seguridad durante el ciclo de vida del desarrollo de software, entre los que NO se encuentra:",
+     "op": {
+      "a": "SAST (Static Application Security Testing).",
+      "b": "S-SDLC (Secure Software Development Liability Control).",
+      "c": "DAST (Dynamic Application Security Testing).",
+      "d": "SCA (Software Composition Analysis)."
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 22,
+     "obsoleta": false,
+     "csv": 53,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2022-ej1-57",
+     "n": 57,
+     "reserva": false,
+     "q": "El principio de la accesibilidad web que exige que los componentes y la navegación de la interfaz de usuario se puedan utilizar por cualquier persona usuaria es:",
+     "op": {
+      "a": "La perceptibilidad.",
+      "b": "La comprensibilidad.",
+      "c": "La robustez.",
+      "d": "La operabilidad."
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 22,
+     "obsoleta": false,
+     "csv": 54,
+     "sim": 0.71
+    },
+    {
+     "id": "LI2022-ej1-58",
+     "n": 58,
+     "reserva": false,
+     "q": "Según METRICA v3, ¿qué tipo de pruebas son las que tienen como objetivo verificar el correcto ensamblaje entre los distintos componentes para comprobar que interactúan correctamente a través de sus interfaces, cubren la funcionalidad establecida y se ajustan a los requisitos no funcionales especificados?",
+     "op": {
+      "a": "Pruebas del sistema.",
+      "b": "Pruebas de implantación.",
+      "c": "Pruebas de regresión.",
+      "d": "Pruebas de integración."
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 23,
+     "obsoleta": false,
+     "csv": 55,
+     "sim": 0.83
+    },
+    {
+     "id": "LI2022-ej1-59",
+     "n": 59,
+     "reserva": false,
+     "q": "Según establece METRICA v3, ¿qué participantes están presentes en la tarea de “Elaboración de los Manuales de Usuario”?",
+     "op": {
+      "a": "Usuarios Expertos.",
+      "b": "Consultor de Sistemas de Información.",
+      "c": "Equipo de Formación.",
+      "d": "Equipo de Proyecto."
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 23,
+     "obsoleta": false,
+     "csv": 56,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-ej1-60",
+     "n": 60,
+     "reserva": false,
+     "q": "¿Cuál de las siguientes herramientas NO es un software para el control de versiones?",
+     "op": {
+      "a": "JMeter",
+      "b": "Subversion",
+      "c": "Mercurial",
+      "d": "GIT"
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 23,
+     "obsoleta": false,
+     "csv": 57,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2022-ej1-61",
+     "n": 61,
+     "reserva": false,
+     "q": "Señale la respuesta INCORRECTA sobre el kernel de un Sistema Operativo:",
+     "op": {
+      "a": "Controla todas las funciones importantes del hardware.",
+      "b": "Se encarga del procesamiento paralelo de tareas (multitasking).",
+      "c": "Es el núcleo del procesador.",
+      "d": "Recibe peticiones de servicio de los procesos y los comunica con el hardware."
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 13,
+     "obsoleta": false,
+     "csv": 58,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-ej1-62",
+     "n": 62,
+     "reserva": false,
+     "q": "En un sistema UNIX, cuál es la respuesta INCORRECTA:",
+     "op": {
+      "a": "El GID es el número de identificación de grupo.",
+      "b": "El UID es el número de identificación de usuario.",
+      "c": "El administrador del sistema se denomina root.",
+      "d": "El proceso init se refiere al proceso de arranque de un usuario."
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 13,
+     "obsoleta": false,
+     "csv": 59,
+     "sim": 0.83
+    },
+    {
+     "id": "LI2022-ej1-63",
+     "n": 63,
+     "reserva": false,
+     "q": "Respecto a la virtualización de máquinas, indique la opción FALSA:",
+     "op": {
+      "a": "Facilita el despliegue de entornos.",
+      "b": "Requiere aumentar la inversión en hardware específico para la virtualización.",
+      "c": "Posibilita la ejecución de varios sistemas operativos en una única máquina física.",
+      "d": "Permite un aprovechamiento mayor de la capacidad del hardware."
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 25,
+     "obsoleta": false,
+     "csv": 60,
+     "sim": 0.33
+    },
+    {
+     "id": "LI2022-ej1-64",
+     "n": 64,
+     "reserva": false,
+     "q": "Una copia de seguridad (backup) diferencial:",
+     "op": {
+      "a": "Realiza una copia fiel de los datos, lo que implica que un archivo eliminado en el origen, también se eliminará en la copia de seguridad.",
+      "b": "Partiendo de una copia de backup completa, realiza una copia de todos los datos modificados desde que se hizo ese backup completo.",
+      "c": "Realiza una copia sólo de los datos modificados desde el último backup (sea completo o incremental).",
+      "d": "Realiza una copia integral de los datos, copiando todos los contenidos de los sistemas a mantener."
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 25,
+     "obsoleta": false,
+     "csv": 61,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2022-ej1-65",
+     "n": 65,
+     "reserva": false,
+     "q": "¿En qué campo del objeto de Kubernetes hay que incluir los valores que permiten identificar unívocamente al objeto?",
+     "op": {
+      "a": "kind",
+      "b": "spec",
+      "c": "apiVersion",
+      "d": "metadata"
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 26,
+     "obsoleta": false,
+     "csv": 62,
+     "sim": 0.83
+    },
+    {
+     "id": "LI2022-ej1-66",
+     "n": 66,
+     "reserva": false,
+     "q": "¿Cuál de los siguientes NO es un protocolo de correo electrónico?",
+     "op": {
+      "a": "IMAP",
+      "b": "SMTP",
+      "c": "Outlook",
+      "d": "POP3"
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 26,
+     "obsoleta": false,
+     "csv": 63,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2022-ej1-67",
+     "n": 67,
+     "reserva": false,
+     "q": "De los siguientes protocolos, ¿cuál se utiliza para administrar dispositivos de una red?",
+     "op": {
+      "a": "SMTP",
+      "b": "DNS",
+      "c": "FTP",
+      "d": "CMIP"
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 27,
+     "obsoleta": false,
+     "csv": 64,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2022-ej1-68",
+     "n": 68,
+     "reserva": false,
+     "q": "¿Cuál es el comando usado por el administrador SNMP que se utiliza para recuperar datos voluminosos de una tabla MIB grande?",
+     "op": {
+      "a": "GET",
+      "b": "GET BULK",
+      "c": "GET NEXT",
+      "d": "GET RESPONSE"
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 27,
+     "obsoleta": false,
+     "csv": 65,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-ej1-69",
+     "n": 69,
+     "reserva": false,
+     "q": "¿Qué es ECDSA?",
+     "op": {
+      "a": "Un algoritmo de firma.",
+      "b": "Un estándar estadounidense de cableado.",
+      "c": "Un organismo regulador internacional.",
+      "d": "Un protocolo de nivel de enlace."
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 28,
+     "obsoleta": false,
+     "csv": 66,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2022-ej1-70",
+     "n": 70,
+     "reserva": false,
+     "q": "Seleccione la respuesta INCORRECTA sobre la firma electrónica:",
+     "op": {
+      "a": "Se llama Co-firma a la firma múltiple en la que todos los firmantes están al mismo nivel y en la que no importa el orden en el que se firma.",
+      "b": "Cuando se firma en formato XAdES (XML Avanzado), el resultado es un fichero de texto XML.",
+      "c": "En el formato XAdES se habla de firmas despegadas (detached), envolventes (enveloping) y envueltas (enveloped) según en qué sitio del propio fichero de firma se guarde el documento original.",
+      "d": "El formato PAdES (Propietario Avanzado) es el formato propio utilizado por Microsoft Office, si bien existe una implementación abierta que se aplica en Open Office."
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 6,
+     "obsoleta": false,
+     "csv": 67,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2022-ej1-71",
+     "n": 71,
+     "reserva": false,
+     "q": "¿Cuál de estos equipos de interconexión trabaja a nivel de red (nivel 3 del modelo OSI)?",
+     "op": {
+      "a": "Enrutadores (Routers).",
+      "b": "Puentes (Bridges).",
+      "c": "Conmutadores (Switches).",
+      "d": "Concentradores (Hubs)."
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 29,
+     "obsoleta": false,
+     "csv": 68,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2022-ej1-72",
+     "n": 72,
+     "reserva": false,
+     "q": "Cuál es la respuesta INCORRECTA acerca de la fibra óptica plástica (POF):",
+     "op": {
+      "a": "Está hecha esencialmente de plástico, construida de polimetilmetacrilato envuelto en polímeros fluoruros.",
+      "b": "Permite aprovechar todo el ancho de banda y hacerlo sin pérdidas.",
+      "c": "Ofrece un núcleo conductor menor que el de la fibra tradicional.",
+      "d": "Es muy flexible, lo que hace que se pueda usar sin problema en instalaciones donde los tubos son antiguos."
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 29,
+     "obsoleta": false,
+     "csv": 69,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2022-ej1-73",
+     "n": 73,
+     "reserva": false,
+     "q": "¿Cuál es el prefijo de dirección de Multicast en IPv6?",
+     "op": {
+      "a": "::1/128",
+      "b": "224.0.0.0/4",
+      "c": "FF00::/8",
+      "d": "FC00::/7"
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 30,
+     "obsoleta": false,
+     "csv": 70,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-ej1-74",
+     "n": 74,
+     "reserva": false,
+     "q": "Seleccione la respuesta correcta sobre los niveles y servicios del modelo OSI:",
+     "op": {
+      "a": "El modelo OSI se compone de 7 niveles, pero se pude asimilar a un modelo de referencia simplificado de solamente 2 niveles:\nTCP (Niveles 1 a 4) e IP (Niveles 5, 6 y 7).",
+      "b": "Las entidades en un nivel N+1 ofrecen servicios que son utilizados por las entidades del nivel N.",
+      "c": "Un servicio confirmado utiliza las 4 primitivas de comunicación entre capas: Request, Indication, Response, Confirm.",
+      "d": "Un servicio no confirmado utiliza 3 de las 4 primitivas: Request, Indication, Response."
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 30,
+     "obsoleta": false,
+     "csv": 71,
+     "sim": 0.83
+    },
+    {
+     "id": "LI2022-ej1-75",
+     "n": 75,
+     "reserva": false,
+     "q": "¿Cuál de los siguientes organismos está especializado en telecomunicaciones de la Organización de las Naciones Unidas (ONU), encargado de regular las telecomunicaciones a nivel internacional entre las distintas administraciones y empresas operadoras?",
+     "op": {
+      "a": "ICANN",
+      "b": "ITU",
+      "c": "IEEE",
+      "d": "TIA"
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 29,
+     "obsoleta": false,
+     "csv": 72,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2022-ej1-76",
+     "n": 76,
+     "reserva": false,
+     "q": "¿Qué parte de un certificado de sitio web necesita un navegador para establecer una conexión segura HTTPS?",
+     "op": {
+      "a": "La clave pública del certificado del sitio web, para que el navegador descifre los mensajes enviados por ese sitio web.",
+      "b": "La clave privada del certificado del sitio web, para que el navegador cifre los mensajes que envía al sitio web.",
+      "c": "Las claves pública y privada del certificado del sitio web, para poder cifrar y descifrar los mensajes que se intercambia con el sitio web.",
+      "d": "Ninguna. Es el sitio web el que debe recibir las claves pública y privada del certificado de la persona que navega."
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 31,
+     "obsoleta": false,
+     "csv": 73,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-ej1-77",
+     "n": 77,
+     "reserva": false,
+     "q": "¿Qué es un portal cautivo?",
+     "op": {
+      "a": "Un sitio web bloqueado por un ransomware, cuyo acceso no se recupera hasta que se paga un rescate.",
+      "b": "Una página o aplicación web con acceso limitado, generalmente en fase de pruebas como paso previo a ponerse en producción.",
+      "c": "Un sitio web que no cumple los criterios del nivel AA de WCAG.",
+      "d": "Una página web que gestiona el acceso de los usuarios a una red, generalmente inalámbrica."
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 32,
+     "obsoleta": false,
+     "csv": 74,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-ej1-78",
+     "n": 78,
+     "reserva": false,
+     "q": "Entre los protocolos que puede usar una VPN para proporcionar cifrado NO se encuentra:",
+     "op": {
+      "a": "PPTP/MPPE",
+      "b": "IPSec",
+      "c": "L2TP/IPSec",
+      "d": "KSEC 1.1"
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 32,
+     "obsoleta": false,
+     "csv": 75,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2022-ej1-79",
+     "n": 79,
+     "reserva": false,
+     "q": "¿Qué significa CSMA/CD?",
+     "op": {
+      "a": "Acceso múltiple por servicio de portadora y múltiples colisiones.",
+      "b": "Acceso múltiple con detección de portadora y detección de colisiones.",
+      "c": "Acceso único con múltiples colisiones y detección de portadora.",
+      "d": "Acceso único de múltiples portadoras y detección de colisiones."
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 33,
+     "obsoleta": false,
+     "csv": 76,
+     "sim": 0.33
+    },
+    {
+     "id": "LI2022-ej1-80",
+     "n": 80,
+     "reserva": false,
+     "q": "¿Qué dispositivo tiene como objetivo principal filtrar el tráfico de una LAN para que el trafico local continúe siendo local pero permitiendo conectividad a otros segmentos?",
+     "op": {
+      "a": "Switch",
+      "b": "Hub",
+      "c": "Router",
+      "d": "Gateway"
+     },
+     "ok": null,
+     "anulada": true,
+     "tema": null,
+     "obsoleta": false,
+     "csv": null
+    },
+    {
+     "id": "LI2022-ej1-R01",
+     "n": 1,
+     "reserva": true,
+     "q": "¿A qué se corresponden las siglas de Red SOHO?",
+     "op": {
+      "a": "Small Own, Home Own.",
+      "b": "Small Office, Home Own.",
+      "c": "Small Office, Home Office.",
+      "d": "Small Office, House Office."
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 33,
+     "obsoleta": false,
+     "csv": 77,
+     "sim": 0.4
+    },
+    {
+     "id": "LI2022-ej1-R02",
+     "n": 2,
+     "reserva": true,
+     "q": "Dentro de los dispositivos Android, es posible encontrar un gran número de capas de personalización. Señale cuál NO es una de ellas:",
+     "op": {
+      "a": "MIUI",
+      "b": "PenPoint OS",
+      "c": "One UI",
+      "d": "OriginOS"
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 13,
+     "obsoleta": false,
+     "csv": 78,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2022-ej1-R03",
+     "n": 3,
+     "reserva": true,
+     "q": "Señale qué paquete R en SQL Server Machine Learning Services permite realizar transformaciones y manipulaciones de datos, resúmenes estadísticos, visualizaciones y muchas formas de modelado:",
+     "op": {
+      "a": "Revoscalepy",
+      "b": "Microsoftml",
+      "c": "Revoscaler",
+      "d": "SqlRutils"
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 14,
+     "obsoleta": false,
+     "csv": 79,
+     "sim": 0.83
+    },
+    {
+     "id": "LI2022-ej1-R04",
+     "n": 4,
+     "reserva": true,
+     "q": "¿Cuál de los siguientes lenguajes está relacionado con el desarrollo en backend?",
+     "op": {
+      "a": "GO",
+      "b": "SASS",
+      "c": "XML",
+      "d": "ANGULAR"
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 80,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2022-ej1-R05",
+     "n": 5,
+     "reserva": true,
+     "q": "Indique cuáles son los diferentes tipos de configuración contemplados para WPS:",
+     "op": {
+      "a": "PIN, PBC, USB",
+      "b": "PIN, NFC, USB",
+      "c": "PIN, USB",
+      "d": "PIN, PBC, NFC, USB"
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 29,
+     "obsoleta": false,
+     "csv": 81,
+     "sim": 0.67
+    }
+   ]
+  },
+  "b3": {
+   "titulo": "Supuesto práctico Bloque III",
+   "valor": 2.5,
+   "contexto": "Se va a desarrollar un sistema que permitirá a una persona (interesado) otorgar permiso a otra (representante) para que actúe en su\nnombre ante la Administración en un determinado trámite. El sistema contará con los siguientes módulos:\n• Un frontal web (Punto de Acceso General) que recoge todos los trámites de la Administración y donde el interesado puede\notorgar la representación.\n• Un proceso que tramita las peticiones de representación, envía notificaciones PUSH a los representantes y recaba los\nconsentimientos producidos.\n• Un módulo de gestión para el personal funcionario de atención al público.\nCuando el interesado pulse el botón Otorgar representación en un trámite, el sistema generará un enlace único con caducidad, que\nserá enviado por notificación PUSH al representante.\nEn el momento en que el representante acceda al enlace tendrá disponible la acción Obtener PIN y deberá usar la aplicación móvil\nCl@ve PIN para obtener un PIN válido.\nEl funcionario, en el módulo de gestión, podrá comparar el PIN generado para la operación con el que le ofrece el representante,\npermitiendo el trámite si estos coinciden.\nUn interesado podrá solicitar representación para tantos trámites como considere y cada trámite podrá ser solicitado por un número\ncualquiera de interesados, pero una representación solo es válida para un trámite a la vez. Asimismo, cada representante podrá obtener\npermisos en cualquier número de trámites.",
+   "preguntas": [
+    {
+     "id": "LI2022-b3-01",
+     "n": 1,
+     "reserva": false,
+     "q": "En el diagrama de clases la relación existente entre “Solicitud Representación” y “Trámite”, ¿qué multiplicidades serían compatibles con los requisitos planteados en el enunciado?",
+     "op": {
+      "a": "‘1’ en el recuadro “SR>T” y ‘1’ en el recuadro “T>SR”.",
+      "b": "‘1’ en el recuadro “SR>T” y ‘0..N’ en el recuadro “T>SR”.",
+      "c": "‘0..N’ en el recuadro “SR>T” y ‘1’ en el recuadro “T>SR”.",
+      "d": "‘1..N’ en el recuadro “SR>T” y ‘0..N’ en el recuadro “T>SR”."
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 18,
+     "obsoleta": false,
+     "csv": 1,
+     "sim": 0.83
+    },
+    {
+     "id": "LI2022-b3-02",
+     "n": 2,
+     "reserva": false,
+     "q": "En Java SE 17, ¿con qué visibilidad se deben generar los atributos de la clase Data Access Object Solicitudes si se quiere tener acceso directamente desde cualquier otro objeto, sin mediación de métodos?",
+     "op": {
+      "a": "Se usará el modificador \"public\".",
+      "b": "Se usará el modificador \"protected\".",
+      "c": "No se usará ningún modificador.",
+      "d": "Se usará el modificador \"private\"."
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 18,
+     "obsoleta": false,
+     "csv": 2,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2022-b3-03",
+     "n": 3,
+     "reserva": false,
+     "q": "En Java SE 17, ¿cuál de los siguientes tipos de colección no admite duplicados?",
+     "op": {
+      "a": "List",
+      "b": "Stack",
+      "c": "Collection",
+      "d": "Set"
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 3,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-b3-04",
+     "n": 4,
+     "reserva": false,
+     "q": "Para crear una tabla llamada Usuario, ¿qué sentencia SQL debemos ejecutar?",
+     "op": {
+      "a": "ALTER TABLE Usuario (idUsuario bigint PRIMARY KEY, nombre varchar(255));",
+      "b": "INSERT TABLE Usuario (idUsuario bigint PRIMARY KEY, nombre varchar(255));",
+      "c": "CREATE TABLE Usuario (idUsuario bigint PRIMARY KEY, nombre varchar(255));",
+      "d": "DROP TABLE Usuario (idUsuario bigint PRIMARY KEY, nombre varchar(255));"
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 4,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-b3-05",
+     "n": 5,
+     "reserva": false,
+     "q": "Si fuese el motor de Base de Datos ORACLE, indique cuál de los siguientes es un lenguaje de procedimiento cuya sintaxis permite insertar sentencias SQL y se almacena compilado dentro de la base de datos:",
+     "op": {
+      "a": "TRANSACT SQL",
+      "b": "PL/SQL",
+      "c": "FORTRAN",
+      "d": "COBOL"
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 5,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2022-b3-06",
+     "n": 6,
+     "reserva": false,
+     "q": "Se ha heredado una librería compilada que realiza la conexión a un importante servicio de comprobación de Cl@ve PIN, ¿qué patrón de diseño permite reutilizar este objeto?",
+     "op": {
+      "a": "Adaptador (Adapter)",
+      "b": "Singleton",
+      "c": "Chain of responsibility (Cadena de responsabilidad)",
+      "d": "Iterador (Iterator)"
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 18,
+     "obsoleta": false,
+     "csv": 6,
+     "sim": 0.86
+    },
+    {
+     "id": "LI2022-b3-07",
+     "n": 7,
+     "reserva": false,
+     "q": "La última versión del estándar de UML es:",
+     "op": {
+      "a": "2.5",
+      "b": "2.4.1",
+      "c": "2.4",
+      "d": "3.0"
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 18,
+     "obsoleta": false,
+     "csv": 7,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2022-b3-08",
+     "n": 8,
+     "reserva": false,
+     "q": "En UML un diagrama de componentes:",
+     "op": {
+      "a": "Describe la estructura del sistema mostrando las clases del sistema, sus atributos y relaciones entre ellas.",
+      "b": "Describe cómo un sistema de software se divide en componentes y muestra las dependencias entre ellos.",
+      "c": "Sirve para modelar el hardware utilizado en las implementaciones del sistema, los componentes implementados en el hardware y las asociaciones entre componentes en un momento específico.",
+      "d": "Muestra una vista completa o parcial de la estructura de un sistema modelado en un momento específico."
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 18,
+     "obsoleta": false,
+     "csv": 8,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-b3-09",
+     "n": 9,
+     "reserva": false,
+     "q": "¿Qué framework se puede usar para aplicaciones de escritorio nativas .NET?",
+     "op": {
+      "a": ".NET MAUI",
+      "b": "Blazor Hybrid",
+      "c": "JavaFX",
+      "d": "WebView"
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 19,
+     "obsoleta": false,
+     "csv": 9,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-b3-10",
+     "n": 10,
+     "reserva": false,
+     "q": "¿Cuál es la normativa que define los requisitos de accesibilidad de los sitios web y aplicaciones móviles de los organismos del sector público?",
+     "op": {
+      "a": "Orden Ministerial 1112/2018, de 7 de septiembre.",
+      "b": "Ley Orgánica 1112/2018, de 7 de septiembre.",
+      "c": "Ley 1112/2018, de 7 de septiembre.",
+      "d": "Real Decreto 1112/2018, de 7 de septiembre."
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 22,
+     "obsoleta": false,
+     "csv": 10,
+     "sim": 0.71
+    },
+    {
+     "id": "LI2022-b3-11",
+     "n": 11,
+     "reserva": false,
+     "q": "En nuestra aplicación Java, ¿qué paquetes usaríamos para establecer la conexión a la base de datos de NOTIFICACION?",
+     "op": {
+      "a": "java.database",
+      "b": "javax.naming y javax.sql",
+      "c": "javax.io y javax.servlet",
+      "d": "javax.servlet"
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 19,
+     "obsoleta": false,
+     "csv": 11,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2022-b3-12",
+     "n": 12,
+     "reserva": false,
+     "q": "Se quiere desarrollar un microservicio para que el personal funcionario pueda consultar el estado de una notificación enviada. ¿Qué especificación de la comunidad, alineada con Jakarta EE Core Profile, es la indicada para desarrollarlo?",
+     "op": {
+      "a": "Jakarta Authentication",
+      "b": "Jakarta Batch",
+      "c": "Microprofile",
+      "d": "Jakarta Connectors"
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 19,
+     "obsoleta": false,
+     "csv": 12,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-b3-13",
+     "n": 13,
+     "reserva": false,
+     "q": "En el equipo de desarrollo se ha decidido usar Selenium WebDriver para:",
+     "op": {
+      "a": "Mejorar la accesibilidad de las páginas web facilitando audios a partir del texto.",
+      "b": "Automatizar la ejecución de pruebas en el navegador.",
+      "c": "Minimizar el tiempo de carga de la página web.",
+      "d": "Diseñar páginas web adaptables."
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 23,
+     "obsoleta": false,
+     "csv": 13,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2022-b3-14",
+     "n": 14,
+     "reserva": false,
+     "q": "¿Cuál es una herramienta de análisis de seguridad y calidad de código?",
+     "op": {
+      "a": "SonarQube",
+      "b": "SonarCode",
+      "c": "SonarCuality",
+      "d": "SonarSrc"
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 23,
+     "obsoleta": false,
+     "csv": 14,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-b3-15",
+     "n": 15,
+     "reserva": false,
+     "q": "¿Cuál de los siguientes es un protocolo de seguridad usado en las comunicaciones HTTP?",
+     "op": {
+      "a": "TLS",
+      "b": "SSL",
+      "c": "STARTTLS",
+      "d": "WPA2"
+     },
+     "ok": null,
+     "anulada": true,
+     "tema": null,
+     "obsoleta": false,
+     "csv": null
+    },
+    {
+     "id": "LI2022-b3-16",
+     "n": 16,
+     "reserva": false,
+     "q": "¿Qué tecnología de las siguientes es adecuada para implementar la recepción de notificaciones nativas en los teléfonos inteligentes del representante y del interesado?",
+     "op": {
+      "a": "WebView",
+      "b": "Mobile push",
+      "c": "CDMA",
+      "d": "Wi-Fi"
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 15,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2022-b3-17",
+     "n": 17,
+     "reserva": false,
+     "q": "¿Cuál de los siguientes lenguajes de estilos emplearía si le piden modificar el color de un botón en el frontal web?",
+     "op": {
+      "a": "XML",
+      "b": "SGML",
+      "c": "XSL",
+      "d": "CSS"
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 16,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2022-b3-18",
+     "n": 18,
+     "reserva": false,
+     "q": "¿Cómo se conoce el conjunto de pautas, componentes y herramientas que respaldan las mejores prácticas de diseño de la interfaz de usuario, perteneciente a Google?",
+     "op": {
+      "a": "WCAG 2.1",
+      "b": "WAI-ARIA",
+      "c": "Material Design",
+      "d": "Inclusive Design"
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 17,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-b3-19",
+     "n": 19,
+     "reserva": false,
+     "q": "¿A qué corresponde el ataque conocido por el acrónimo CSRF, que permite al atacante forzar al usuario a ejecutar acciones no deseadas en la aplicación web en la que está actualmente autenticado?",
+     "op": {
+      "a": "Cross Site Request Forgery",
+      "b": "Cross Site Repeat Forgery",
+      "c": "Cross Site Reduction Forgery",
+      "d": "Cross Send Request Forgery"
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 22,
+     "obsoleta": false,
+     "csv": 18,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2022-b3-20",
+     "n": 20,
+     "reserva": false,
+     "q": "Señale el software que permite automatizar la construcción y despliegue de un proyecto utilizando el concepto de pipelines:",
+     "op": {
+      "a": "Jenkins",
+      "b": "RabbitMQ",
+      "c": "Apache Kafka",
+      "d": "Subversion"
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 23,
+     "obsoleta": false,
+     "csv": 19,
+     "sim": 0.83
+    },
+    {
+     "id": "LI2022-b3-R01",
+     "n": 1,
+     "reserva": true,
+     "q": "En JSON, ¿qué valor mostraría la consola si ejecutamos este código: console.log(4 * 3 ** 2)?",
+     "op": {
+      "a": "36",
+      "b": "-1",
+      "c": "24",
+      "d": "Null"
+     },
+     "ok": null,
+     "anulada": true,
+     "tema": null,
+     "obsoleta": false,
+     "csv": null
+    },
+    {
+     "id": "LI2022-b3-R02",
+     "n": 2,
+     "reserva": true,
+     "q": "¿Qué característica o atributo de seguridad de las cookies, permite que el navegador solo envíe la cookie al servidor si ésta se originó en el mismo sitio web al que estamos intentando contactar?",
+     "op": {
+      "a": "Domain",
+      "b": "SameSite",
+      "c": "Secure",
+      "d": "HttpOnly"
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 22,
+     "obsoleta": false,
+     "csv": 20,
+     "sim": 0.71
+    },
+    {
+     "id": "LI2022-b3-R03",
+     "n": 3,
+     "reserva": true,
+     "q": "En PHP, señale qué variable de entorno se puede usar para almacenar datos del inicio de sesión de un usuario:",
+     "op": {
+      "a": "$_SESSION",
+      "b": "$SESSION",
+      "c": "$_GLOBAL",
+      "d": "$GLOBAL"
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 21,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-b3-R04",
+     "n": 4,
+     "reserva": true,
+     "q": "¿Qué conjunto de herramientas de presentación y comportamiento ofrece componentes para trabajar en la parte dinámica del frontal web HTML?",
+     "op": {
+      "a": "NumPy",
+      "b": "ActiveMQ",
+      "c": "Bootstrap",
+      "d": "TensorFlow"
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 22,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-b3-R05",
+     "n": 5,
+     "reserva": true,
+     "q": "¿Qué método estático usaría para convertir una cadena JSON en un valor u objeto javascript?:",
+     "op": {
+      "a": "JSON.parse()",
+      "b": "JSON.stringify()",
+      "c": "let obj = JSON",
+      "d": "let obj = New JSON"
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 23,
+     "sim": 1.0
+    }
+   ]
+  },
+  "b4": {
+   "titulo": "Supuesto práctico Bloque IV",
+   "valor": 2.5,
+   "contexto": "La Subdirección General de Informática del Organismo en el que recientemente Vd. ha tomado posesión y a través de su departamento\nde Sistemas, Comunicaciones y Seguridad, ha decidido acometer un cambio de diseño en la infraestructura de la red informática del\ndepartamento y Vd. debe colaborar en su implantación.\nSe parte de la situación inicial donde hay una única red con el siguiente direccionamiento IP 10.20.30.0/24 donde residen:\n• Los equipos informáticos de los usuarios\n• Las aplicaciones informáticas\n• Las Bases de Datos Oracle y MySql\n• La conexión a Internet del departamento\nTodo reside en la misma red según el modelo que llamaremos Modelo A:\nDespués de varios estudios se concluye que se debe realizar una segmentación de la red actual en cuatro subredes:\n● Primera Subred para los PCs de usuario\n● Segunda Subred para las Bases de Datos\n● Tercera Subred para las Aplicaciones\n● Cuarta Subred para utilizarla como DMZ\nSe instalará una pareja de Firewalls o Cortafuegos formando un clúster donde se implementarán las reglas necesarias para las\nconectividades y encaminamientos entre Subredes.\nEl modelo al que llamaremos Modelo B pasa a ser el siguiente:\nNota aclaratoria: los PCs de Usuario tienen sistema operativo Windows 10 y tanto los servidores para Aplicaciones, Base de Datos y\nDMZ tienen sistema operativo Linux RedHat RHEL7.4",
+   "preguntas": [
+    {
+     "id": "LI2022-b4-01",
+     "n": 1,
+     "reserva": false,
+     "q": "En los PCs de los usuarios hay que purgar la memoria caché de la resolución DNS. ¿Cuál de los siguientes comandos habría que lanzar desde la consola de PowerShell?",
+     "op": {
+      "a": "ipconfig /dnsflush",
+      "b": "ipconfig /flushdns",
+      "c": "ifconifg --erase dnscache",
+      "d": "ifconifg --clean dnscache"
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 24,
+     "obsoleta": false,
+     "csv": 1,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2022-b4-02",
+     "n": 2,
+     "reserva": false,
+     "q": "En todos los PCs de usuario existe un usuario local llamado Infocentro utilizado para labores de mantenimiento. ¿Qué comando utilizaríamos desde la línea de comandos de Windows PowerShell para ver más información sobre este usuario?",
+     "op": {
+      "a": "net user Infocentro",
+      "b": "netuser Infocentro",
+      "c": "info user Infocentro",
+      "d": "infouser Infocentro"
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 24,
+     "obsoleta": false,
+     "csv": 2,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-b4-03",
+     "n": 3,
+     "reserva": false,
+     "q": "En el contexto de la administración del almacenamiento, ¿qué es el “Thin Provisioning”?",
+     "op": {
+      "a": "Es un mecanismo de despliegue de discos en red para clientes ligeros.",
+      "b": "Es una tecnología que permite agregar discos físicos en caliente a las cabinas de la SAN.",
+      "c": "Es un método de virtualización de almacenamiento que permite asignar el espacio de almacenamiento de una manera flexible bajo demanda.",
+      "d": "Es un método por el que se asigna todo el espacio virtualizado disponible y se va a reduciendo (shrinking) a medida que el cliente lo descarta."
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 25,
+     "obsoleta": false,
+     "csv": 3,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2022-b4-04",
+     "n": 4,
+     "reserva": false,
+     "q": "En uno de los servidores de la Subred de Aplicaciones del Modelo B se va a instalar un software de monitorización para Linux. Indique de entre los siguientes, cuál cumpliría esa función:",
+     "op": {
+      "a": "Check_MK",
+      "b": "Reddis",
+      "c": "Jenkins",
+      "d": "Nagstamon"
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 27,
+     "obsoleta": false,
+     "csv": 4,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-b4-05",
+     "n": 5,
+     "reserva": false,
+     "q": "¿Qué máscara deberá tener la red 10.20.30.0 del modelo A para que haya cuatro subredes como en el Modelo B?",
+     "op": {
+      "a": "255.255.255.194",
+      "b": "255.255.255.192",
+      "c": "255.255.255.196",
+      "d": "255.255.255.190"
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 30,
+     "obsoleta": false,
+     "csv": 5,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2022-b4-06",
+     "n": 6,
+     "reserva": false,
+     "q": "Necesitamos borrar la caché de las direcciones físicas (Mac Address) en uno de los servidores que ofrece la aplicación de Intranet de la Subred de Aplicaciones del Modelo B. ¿Cuál de los siguientes comandos utilizaría?",
+     "op": {
+      "a": "ip delete cache",
+      "b": "arp -d",
+      "c": "iptables -d mac",
+      "d": "ip flush"
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 24,
+     "obsoleta": false,
+     "csv": 6,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2022-b4-07",
+     "n": 7,
+     "reserva": false,
+     "q": "Si tenemos en cuenta que la primera subred para PCs de Usuario del Modelo B es la 10.20.30.0/26, ¿cuáles son las direcciones de Red y Broadcast?",
+     "op": {
+      "a": "10.20.30.0 y 10.20.30.255",
+      "b": "10.20.30.1 y 10.20.30.62",
+      "c": "10.20.30.0 y 10.20.30.63",
+      "d": "10.20.30.64 y 10.20.30.127"
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 30,
+     "obsoleta": false,
+     "csv": 7,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-b4-08",
+     "n": 8,
+     "reserva": false,
+     "q": "Para optimizar el acceso a Internet, se opta por instalar un servidor proxy-caché que soporte los protocolos HTTP, HTTP/2, HTTPS. ¿Cuál de las siguientes soluciones puede realizar dicha función?",
+     "op": {
+      "a": "INFLUXDB",
+      "b": "GRAFANA",
+      "c": "CHECK_MK",
+      "d": "SQUID"
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 32,
+     "obsoleta": false,
+     "csv": 8,
+     "sim": 0.83
+    },
+    {
+     "id": "LI2022-b4-09",
+     "n": 9,
+     "reserva": false,
+     "q": "Una vez implementado \"teletrabajo\" mediante VPN, se quiere dotar de mayor seguridad mediante el envío de un código por SMS al teléfono móvil del trabajador. ¿Cómo se denomina a este tipo de validación?",
+     "op": {
+      "a": "Factor electrónico de autenticación.",
+      "b": "Autenticación electrónica de usuarios.",
+      "c": "Doble factor de autenticación.",
+      "d": "Factor único de autenticación."
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 32,
+     "obsoleta": false,
+     "csv": 9,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2022-b4-10",
+     "n": 10,
+     "reserva": false,
+     "q": "En la subred de DMZ del Modelo B se quiere implementar un servicio de correo seguro. Cuáles, de entre los siguientes, son los puertos seguros para los protocolos POP, SMTP e IMAP:",
+     "op": {
+      "a": "POP:993 / SMTP:465 / IMAP:995",
+      "b": "POP:995 / SMTP:495 / IMAP:963",
+      "c": "POP:995 / SMTP:465 / IMAP:993",
+      "d": "POP:965 / SMTP:495 / IMAP:993"
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 26,
+     "obsoleta": false,
+     "csv": 10,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-b4-11",
+     "n": 11,
+     "reserva": false,
+     "q": "Para la aplicacion AutoFirma 1.8.2 de las estaciones de trabajo de la organizacion, ¿qué algoritmo de huella para la firma se permite de los siguientes?",
+     "op": {
+      "a": "ECDSA",
+      "b": "MD5",
+      "c": "SHA384",
+      "d": "DSA"
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 9,
+     "obsoleta": false,
+     "csv": 11,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2022-b4-12",
+     "n": 12,
+     "reserva": false,
+     "q": "En la organización se están planteando instalar puntos de acceso WiFi. ¿Cuál de estos estándares puede funcionar a 2,4 GHz, 5 GHz y 6 GHz?",
+     "op": {
+      "a": "No existe la banda de los 6 GHz",
+      "b": "802.11ax",
+      "c": "802.11ac",
+      "d": "802.11be"
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 29,
+     "obsoleta": false,
+     "csv": 12,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2022-b4-13",
+     "n": 13,
+     "reserva": false,
+     "q": "Desde su equipo en la subred de PCs de Usuarios del Modelo B y como administrador de los equipos del resto de subredes, necesita conectarse mediante SSH y SCP. ¿Qué puerto o puertos estándares deberían tener abiertos en el firewall para realizar esta labor?",
+     "op": {
+      "a": "Puerto 21 para SSH y 22 para SCP.",
+      "b": "Puerto 22 para SSH y 21 para SCP.",
+      "c": "Puerto 21 tanto para SSH como SCP.",
+      "d": "Puerto 22 tanto para SSH como SCP."
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 32,
+     "obsoleta": false,
+     "csv": 13,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2022-b4-14",
+     "n": 14,
+     "reserva": false,
+     "q": "Si hubiese instalado un IIS, ¿qué comando utilizaría para reiniciarlo?",
+     "op": {
+      "a": "IIS RESET",
+      "b": "IISRESET",
+      "c": "RESET IIS",
+      "d": "RESETIIS"
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 24,
+     "obsoleta": false,
+     "csv": 14,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2022-b4-15",
+     "n": 15,
+     "reserva": false,
+     "q": "En uno de los servidores de la Subred de Aplicaciones del Modelo B se necesita realizar una captura del tráfico que pasa por la interfaz de red eth1 y guardarlo en fichero.out para su posterior análisis, ¿cuál de las siguientes sentencias es la correcta?",
+     "op": {
+      "a": "snoop -d eth1 -w fichero.out",
+      "b": "tcpdump -i any -o fichero.out",
+      "c": "tcpdump -i eth1 -w fichero.out",
+      "d": "snoop -d any -o fichero.out"
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 27,
+     "obsoleta": false,
+     "csv": 15,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2022-b4-16",
+     "n": 16,
+     "reserva": false,
+     "q": "En el servidor de la Subred de Aplicaciones que sirve las páginas de la intranet en el dominio intranet.sgi.es y que utiliza Apache 2.4, quieren servir páginas de otros dominios. ¿Cuál de las siguientes directivas debe utilizar?",
+     "op": {
+      "a": "VirtualMachine",
+      "b": "VirtualDomain",
+      "c": "VirtualHost",
+      "d": "VirtualIp"
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 24,
+     "obsoleta": false,
+     "csv": 16,
+     "sim": 0.57
+    },
+    {
+     "id": "LI2022-b4-17",
+     "n": 17,
+     "reserva": false,
+     "q": "Se quiere crear una nueva vLAN en el organismo. ¿Qué opción de las vLAN hace que las tramas Ethernet incorporen la etiqueta \"vLAN ID\"?",
+     "op": {
+      "a": "untagged",
+      "b": "tagged",
+      "c": "id",
+      "d": "trunk"
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 33,
+     "obsoleta": false,
+     "csv": 17,
+     "sim": 0.83
+    },
+    {
+     "id": "LI2022-b4-18",
+     "n": 18,
+     "reserva": false,
+     "q": "Indique qué herramienta desarrollada por el CCN-CERT, es una plataforma de análisis avanzado de malware:",
+     "op": {
+      "a": "NADA",
+      "b": "CADA",
+      "c": "ADA",
+      "d": "SADA"
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 28,
+     "obsoleta": false,
+     "csv": 18,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-b4-19",
+     "n": 19,
+     "reserva": false,
+     "q": "En el clúster de Firewalls del modelo B se quiere implementar un módulo de seguridad para filtrar y monitorear el tráfico HTTP desde Internet a nuestros servidores WEB. ¿Cuál de los siguientes módulos debe implementarse para cumplir esta función?",
+     "op": {
+      "a": "WAT - Web Administration Tool",
+      "b": "WAF - Web Application Firewall",
+      "c": "VFN - Virtual Firewall Network",
+      "d": "WFL7 - Web Firewall Layer 7"
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 32,
+     "obsoleta": false,
+     "csv": 19,
+     "sim": 0.89
+    },
+    {
+     "id": "LI2022-b4-20",
+     "n": 20,
+     "reserva": false,
+     "q": "En la Subred de PCs de Usuario del Modelo B, los PCs tienen el sistema operativo Windows 10. Necesitamos saber la tabla de enrutamiento de los equipos. ¿Cuál de los siguientes comandos permite ver esa información?",
+     "op": {
+      "a": "route show",
+      "b": "ip route ls",
+      "c": "route print",
+      "d": "ip route print"
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 24,
+     "obsoleta": false,
+     "csv": 20,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2022-b4-R01",
+     "n": 1,
+     "reserva": true,
+     "q": "¿Qué comando muestra información del conjunto resultante de directivas (RSoP) para un usuario y equipo de destino en los equipos Windows 10 de la Subred de PCs de Usuario del Modelo B?",
+     "op": {
+      "a": "gpshow",
+      "b": "gpprint",
+      "c": "gpresult",
+      "d": "gplist"
+     },
+     "ok": "c",
+     "anulada": false,
+     "tema": 27,
+     "obsoleta": false,
+     "csv": 21,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2022-b4-R02",
+     "n": 2,
+     "reserva": true,
+     "q": "Una vez implementado el acceso telemático a la oficina o \"teletrabajo\" mediante VPN, en relación con esta tecnología, indique en qué RFC está definido el protocolo PPTP:",
+     "op": {
+      "a": "RFC 2661",
+      "b": "RFC 2637",
+      "c": "RFC 1661",
+      "d": "RFC 2472"
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 32,
+     "obsoleta": false,
+     "csv": 22,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2022-b4-R03",
+     "n": 3,
+     "reserva": true,
+     "q": "Los dispositivos de interconexión de redes de nuestro sistema, son compatibles con POE++. Señale la afirmación correcta con respecto a este término:",
+     "op": {
+      "a": "Las siglas corresponden a Power-of-Ethernet.",
+      "b": "Como estándar, recibe la denominación IEEE 802.3at.",
+      "c": "La alimentación real recibida es de 25,50 Watts.",
+      "d": "Se subdivide en dos tipos: Tipo 3 y Tipo 4."
+     },
+     "ok": "d",
+     "anulada": false,
+     "tema": 29,
+     "obsoleta": false,
+     "csv": 23,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2022-b4-R04",
+     "n": 4,
+     "reserva": true,
+     "q": "Si fuese el motor de Base de Datos ORACLE, indique cuál de los siguientes comandos utilizaria para crear una copia de seguridad de la base de datos origen:",
+     "op": {
+      "a": "RMAN",
+      "b": "DUMPALL",
+      "c": "ORACLE_BCK",
+      "d": "COPYDB"
+     },
+     "ok": "a",
+     "anulada": false,
+     "tema": 25,
+     "obsoleta": false,
+     "csv": 24,
+     "sim": 0.86
+    },
+    {
+     "id": "LI2022-b4-R05",
+     "n": 5,
+     "reserva": true,
+     "q": "Se ha decidido que la última IP válida de host para la Subred de Aplicaciones del Modelo B sea considerada como Puerta de Enlace o Default Gateway. Según este criterio, señale la opción correcta teniendo en cuenta que esta subred tiene el direccionamiento",
+     "op": {
+      "a": "10.20.30.191",
+      "b": "10.20.30.190",
+      "c": "10.20.30.193",
+      "d": "10.20.30.192"
+     },
+     "ok": "b",
+     "anulada": false,
+     "tema": 30,
+     "obsoleta": false,
+     "csv": 25,
+     "sim": 1.0
+    }
+   ]
+  }
+ }
+}

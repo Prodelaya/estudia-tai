@@ -1,0 +1,182 @@
+[
+ {
+  "n": 1,
+  "titulo": "Constitución de 1978 y la Corona",
+  "bloque": "I",
+  "preg_test": 2.7,
+  "preg_sup3": 0.0,
+  "pts": 1.69,
+  "horas": 8,
+  "palabras": 6223
+ },
+ {
+  "n": 11,
+  "titulo": "Periféricos",
+  "bloque": "II",
+  "preg_test": 2.9,
+  "preg_sup3": 0.0,
+  "pts": 1.79,
+  "horas": 5,
+  "palabras": 5852
+ },
+ {
+  "n": 12,
+  "titulo": "Estructuras de datos, ficheros, algoritmos y formatos",
+  "bloque": "II",
+  "preg_test": 2.9,
+  "preg_sup3": 0.2,
+  "pts": 2.29,
+  "horas": 8,
+  "palabras": 7455
+ },
+ {
+  "n": 13,
+  "titulo": "Sistemas operativos",
+  "bloque": "II",
+  "preg_test": 3.2,
+  "preg_sup3": 0.0,
+  "pts": 2.03,
+  "horas": 10,
+  "palabras": 6253
+ },
+ {
+  "n": 14,
+  "titulo": "SGBD relacionales, orientados a objetos y NoSQL",
+  "bloque": "II",
+  "preg_test": 2.7,
+  "preg_sup3": 0.1,
+  "pts": 1.92,
+  "horas": 6,
+  "palabras": 6295
+ },
+ {
+  "n": 15,
+  "titulo": "Modelado de datos y normalización",
+  "bloque": "III",
+  "preg_test": 2.8,
+  "preg_sup3": 0.5,
+  "pts": 3.01,
+  "horas": 8,
+  "palabras": 5100
+ },
+ {
+  "n": 16,
+  "titulo": "Lenguajes de programación",
+  "bloque": "III",
+  "preg_test": 2.7,
+  "preg_sup3": 2.4,
+  "pts": 7.72,
+  "horas": 10,
+  "palabras": 10079
+ },
+ {
+  "n": 17,
+  "titulo": "SQL ANSI, procedimientos almacenados y disparadores",
+  "bloque": "III",
+  "preg_test": 2.9,
+  "preg_sup3": 2.6,
+  "pts": 8.27,
+  "horas": 12,
+  "palabras": 9834
+ },
+ {
+  "n": 18,
+  "titulo": "Orientación a objetos, patrones y UML",
+  "bloque": "III",
+  "preg_test": 3.0,
+  "preg_sup3": 1.7,
+  "pts": 6.08,
+  "horas": 12,
+  "palabras": 9066
+ },
+ {
+  "n": 19,
+  "titulo": "Java EE / Jakarta EE y .NET",
+  "bloque": "III",
+  "preg_test": 2.1,
+  "preg_sup3": 2.6,
+  "pts": 7.89,
+  "horas": 14,
+  "palabras": 10523
+ },
+ {
+  "n": 20,
+  "titulo": "Cliente/servidor, multicapa y servicios web",
+  "bloque": "III",
+  "preg_test": 2.1,
+  "preg_sup3": 0.6,
+  "pts": 2.83,
+  "horas": 8,
+  "palabras": 6172
+ },
+ {
+  "n": 21,
+  "titulo": "Aplicaciones web: HTML, CSS, XML, JavaScript y PHP",
+  "bloque": "III",
+  "preg_test": 3.4,
+  "preg_sup3": 6.1,
+  "pts": 17.3,
+  "horas": 18,
+  "palabras": 15720
+ },
+ {
+  "n": 22,
+  "titulo": "Accesibilidad, usabilidad y seguridad en el desarrollo",
+  "bloque": "III",
+  "preg_test": 2.4,
+  "preg_sup3": 1.3,
+  "pts": 4.75,
+  "horas": 8,
+  "palabras": 6416
+ },
+ {
+  "n": 23,
+  "titulo": "Metodologías, pruebas y control de versiones",
+  "bloque": "III",
+  "preg_test": 3.1,
+  "preg_sup3": 1.7,
+  "pts": 6.09,
+  "horas": 10,
+  "palabras": 8858
+ },
+ {
+  "n": 24,
+  "titulo": "Administración del sistema operativo y software de base",
+  "bloque": "IV",
+  "preg_test": 2.8,
+  "preg_sup3": 0.0,
+  "pts": 1.73,
+  "horas": 10,
+  "palabras": 9109
+ },
+ {
+  "n": 28,
+  "titulo": "Seguridad de los sistemas de información",
+  "bloque": "IV",
+  "preg_test": 3.4,
+  "preg_sup3": 0.1,
+  "pts": 2.37,
+  "horas": 12,
+  "palabras": 8681
+ },
+ {
+  "n": 29,
+  "titulo": "Comunicaciones e inalámbricas",
+  "bloque": "IV",
+  "preg_test": 3.1,
+  "preg_sup3": 0.0,
+  "pts": 1.94,
+  "horas": 10,
+  "palabras": 7626
+ },
+ {
+  "n": 30,
+  "titulo": "Modelos OSI y TCP/IP, protocolos y direccionamiento IP",
+  "bloque": "IV",
+  "preg_test": 4.1,
+  "preg_sup3": 0.0,
+  "pts": 2.59,
+  "horas": 12,
+  "palabras": 12926
+ }
+]

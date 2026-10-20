@@ -1,0 +1,97 @@
+[
+ {
+  "id": "LI_2007",
+  "anio": 2007,
+  "convocatoria": "OEP 2007 · ejercicio único en dos partes",
+  "fuente_clave": "oficial",
+  "partes": [
+   "ej1",
+   "b3"
+  ]
+ },
+ {
+  "id": "LI_2008",
+  "anio": 2008,
+  "convocatoria": "OEP 2008 · dos ejercicios",
+  "fuente_clave": "oficial",
+  "partes": [
+   "ej1",
+   "b3"
+  ]
+ },
+ {
+  "id": "LI_2015",
+  "anio": 2015,
+  "convocatoria": "OEP 2015 · dos ejercicios",
+  "fuente_clave": "oficial-provisional",
+  "partes": [
+   "ej1",
+   "b3"
+  ]
+ },
+ {
+  "id": "LI_2016",
+  "anio": 2016,
+  "convocatoria": "OEP 2016 · dos ejercicios",
+  "fuente_clave": "oficial",
+  "partes": [
+   "ej1",
+   "ej1_iv",
+   "b3"
+  ]
+ },
+ {
+  "id": "LI_2017",
+  "anio": 2017,
+  "convocatoria": "OEP 2017 · dos ejercicios",
+  "fuente_clave": "oficial",
+  "partes": [
+   "ej1",
+   "b3"
+  ]
+ },
+ {
+  "id": "LI_2022",
+  "anio": 2022,
+  "convocatoria": "OEP 2020-2021-2022 · ejercicio único",
+  "fuente_clave": "oficial",
+  "partes": [
+   "ej1",
+   "b3",
+   "b4"
+  ]
+ },
+ {
+  "id": "LI_2024",
+  "anio": 2024,
+  "convocatoria": "OEP 2024 · modelo A",
+  "fuente_clave": "oficial-provisional",
+  "partes": [
+   "ej1",
+   "b3",
+   "b4"
+  ]
+ },
+ {
+  "id": "LI_2025",
+  "anio": 2025,
+  "convocatoria": "OEP 2025 · examen del 23/05/2026 · modelo A (plantilla actualizada)",
+  "fuente_clave": "oficial-provisional",
+  "partes": [
+   "ej1",
+   "b3",
+   "b4"
+  ]
+ },
+ {
+  "id": "LI_2025ext",
+  "anio": 2025,
+  "convocatoria": "OEP 2025 · ejercicio extraordinario",
+  "fuente_clave": "oficial-provisional",
+  "partes": [
+   "ej1",
+   "b3",
+   "b4"
+  ]
+ }
+]

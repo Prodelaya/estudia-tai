@@ -1,0 +1,2782 @@
+{
+ "id": "LI_2017",
+ "anio": 2017,
+ "convocatoria": "OEP 2017 · dos ejercicios",
+ "fuente_clave": "oficial",
+ "formato": "antiguo",
+ "nota_formato": "Formato antiguo: primer ejercicio de 100 preguntas (+3 de reserva) en un test único que mezcla los bloques I a IV; segundo ejercicio práctico con supuestos de los bloques III o IV a elegir (aquí el III, 30+3 preguntas). La clave del segundo ejercicio NO es oficial: la ha resuelto Claude.",
+ "partes": {
+  "ej1": {
+   "titulo": "Primer ejercicio (test)",
+   "valor": 0.5,
+   "contexto": "",
+   "preguntas": [
+    {
+     "id": "LI2017-ej1-ej1-01",
+     "n": 1,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Según la Constitución Española, en relación con las leyes orgánicas:",
+     "op": {
+      "a": "La derogación de una ley orgánica requiere el voto favorable de la mayoría absoluta de los miembros del Senado.",
+      "b": "Será una ley orgánica la que regulará las condiciones y el procedimiento de las distintas modalidades de referéndum previstas en esta Constitución.",
+      "c": "En caso de extraordinaria y urgente necesidad, el Gobierno podrá dictar disposiciones legislativas provisionales que tomarán la forma de leyes orgánicas.",
+      "d": "Son las relativas al desarrollo de los derechos humanos y de las libertades privadas, las que aprueben los Estatutos de Autonomía y el régimen electoral general y las demás previstas en la Constitución."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 2,
+     "obsoleta": false,
+     "csv": 1,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2017-ej1-ej1-02",
+     "n": 2,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Cuál de las siguientes afirmaciones es correcta en referencia a las Cortes Generales:",
+     "op": {
+      "a": "Las Cortes Generales ejercen la potestad ejecutiva del Estado, aprueban sus Presupuestos, controlan la acción del Gobierno y tienen las demás competencias que les atribuya la Constitución.",
+      "b": "El Congreso se compone de un mínimo de 200 y un máximo de 400 Diputados.",
+      "c": "Los Presidentes de las Cámaras ejercen en nombre de las mismas todos los poderes administrativos y facultades de policía en el interior de sus respectivas sedes.",
+      "d": "Se podrá ser miembro de las dos Cámaras simultáneamente siempre que sean elegidos por sufragio universal, libre, igual, directo y secreto, en los términos que establezca la ley."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 2,
+     "obsoleta": false,
+     "csv": 2,
+     "sim": 0.4
+    },
+    {
+     "id": "LI2017-ej1-ej1-03",
+     "n": 3,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Según la Constitución Española, la función que le corresponde al Rey es:",
+     "op": {
+      "a": "Establecer el programa político del Gobierno y determinar las directrices de la política interior y exterior y velar por su cumplimiento.",
+      "b": "Convocar a referéndum en los casos previstos en la Constitución.",
+      "c": "Plantear ante el Congreso de los Diputados, previa deliberación del Consejo de Ministros, la cuestión de confianza.",
+      "d": "Representar al Gobierno."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 1,
+     "obsoleta": false,
+     "csv": 3,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2017-ej1-ej1-04",
+     "n": 4,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Según la Constitución Española, de los miembros que componen el Tribunal Constitucional, 4 de ellos son a propuesta del:",
+     "op": {
+      "a": "Congreso por mayoría de tres quintos de sus miembros.",
+      "b": "Senado por mayoría de dos quintos de sus miembros.",
+      "c": "Gobierno.",
+      "d": "Consejo General del Poder Judicial."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 2,
+     "obsoleta": false,
+     "csv": 4,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2017-ej1-ej1-05",
+     "n": 5,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Según la Constitución Española, el Gobierno responde solidariamente en su gestión política ante:",
+     "op": {
+      "a": "el Congreso de los Diputados.",
+      "b": "el Rey.",
+      "c": "el Senado.",
+      "d": "las Cámaras y sus Comisiones."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 3,
+     "obsoleta": false,
+     "csv": 5,
+     "sim": 0.86
+    },
+    {
+     "id": "LI2017-ej1-ej1-06",
+     "n": 6,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "El candidato a la Presidencia del Gobierno es:",
+     "op": {
+      "a": "Elegido por los ciudadanos.",
+      "b": "Propuesto por el Congreso de los Diputados.",
+      "c": "Propuesto por el Rey.",
+      "d": "Elegido por el Presidente del Congreso."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 3,
+     "obsoleta": false,
+     "csv": 6,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2017-ej1-ej1-07",
+     "n": 7,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Señale cuál de las siguientes competencias, NO pertenecen al Tribunal Constitucional:",
+     "op": {
+      "a": "Recurso previo de inconstitucionalidad.",
+      "b": "Recurso contra disposiciones reglamentarias.",
+      "c": "Recurso de amparo.",
+      "d": "Impugnaciones del artículo 161 de la Constitución."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 2,
+     "obsoleta": false,
+     "csv": 7,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2017-ej1-ej1-08",
+     "n": 8,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "El Tercer Plan de Acción de Gobierno Abierto de España (2017 - 2019) tiene 5 grandes ejes, que son:",
+     "op": {
+      "a": "Colaboración, Participación, Transparencia, Compartición y Comunicación.",
+      "b": "Colaboración, Inclusión, Transparencia, Rendición de cuentas y Formación.",
+      "c": "No discriminación, Participación, Transparencia, Planificación y Formación.",
+      "d": "Colaboración, Participación, Transparencia, Rendición de cuentas y Formación."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 4,
+     "obsoleta": false,
+     "csv": 8,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-09",
+     "n": 9,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Según se establece en su art. 15 el Real Decreto Legislativo 5/2015, por el que se aprueba el texto refundido de la Ley del Estatuto Básico del Empleado Público, señale cuál de los siguientes derechos individuales se ejercitan de manera colectiva:",
+     "op": {
+      "a": "La libertad sindical.",
+      "b": "Las vacaciones, descansos, permisos y licencias.",
+      "c": "La libre asociación profesional.",
+      "d": "La progresión en la carrera profesional y promoción interna según principios constitucionales de igualdad, mérito y capacidad mediante la implantación de sistemas objetivos y transparentes de evaluación."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 4,
+     "obsoleta": false,
+     "csv": 9,
+     "sim": 0.29
+    },
+    {
+     "id": "LI2017-ej1-ej1-10",
+     "n": 10,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Las disposiciones del texto refundido de la Ley del Estatuto Básico del Empleado Público aplicarán directamente, sólo cuando así lo disponga su legislación específica, al personal de:",
+     "op": {
+      "a": "Las Administraciones de las entidades locales.",
+      "b": "Las Universidades Públicas.",
+      "c": "Jueces, Magistrados, Fiscales y demás personal funcionario al servicio de la Administración de Justicia.",
+      "d": "Los organismos públicos, agencias y demás entidades de derecho público con personalidad jurídica propia, vinculadas o dependientes de cualquiera de las Administraciones Públicas."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 4,
+     "obsoleta": false,
+     "csv": 10,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2017-ej1-ej1-11",
+     "n": 11,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Según se establece por la Constitución Española de 1978, en caso de extraordinaria y urgente necesidad, el Gobierno podrá dictar disposiciones legislativas provisionales que tomarán la forma de:",
+     "op": {
+      "a": "Proyecto de ley.",
+      "b": "Proposición de ley.",
+      "c": "Decreto-ley.",
+      "d": "Decreto legislativo."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 3,
+     "obsoleta": false,
+     "csv": 11,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2017-ej1-ej1-12",
+     "n": 12,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Según el art. 63 de la Ley Orgánica 1/2004, de Medidas de Protección Integral contra la Violencia de Género, referido a la protección de datos y las limitaciones a la publicidad, en las actuaciones y procedimientos relacionados con la violencia de género se protegerá la intimidad de las víctimas:",
+     "op": {
+      "a": "En especial, sus datos de género y religiosos.",
+      "b": "Los datos asociados a su actividad social.",
+      "c": "En especial, sus datos personales, los de sus descendientes y los de cualquier otra persona que esté bajo su guarda o custodia.",
+      "d": "Todos los referidos a su actividad profesional."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 5,
+     "obsoleta": false,
+     "csv": 12,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2017-ej1-ej1-13",
+     "n": 13,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Según se establece en el art.3 del Reglamento (UE) 910/2014, ¿cuántos tipos de sello electrónico se consideran?",
+     "op": {
+      "a": "2 tipos de sello electrónico: sello electrónico y sello electrónico avanzado.",
+      "b": "3 tipos de sello electrónico: sello electrónico, sello electrónico avanzado y sello electrónico cualificado.",
+      "c": "2 tipos de sello electrónico: sello electrónico avanzado y el sello electrónico cualificado.",
+      "d": "3 tipos de sello electrónico: sello electrónico cualificado, sello electrónico reconocido y sello electrónico avanzado."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 6,
+     "obsoleta": false,
+     "csv": 13,
+     "sim": 0.86
+    },
+    {
+     "id": "LI2017-ej1-ej1-14",
+     "n": 14,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "En relación con la revocación del consentimiento en el Reglamento (UE) 2016/679, relativo a protección de datos y a la libre circulación de estos datos, RGPD:",
+     "op": {
+      "a": "El consentimiento será más difícil de revocar que de dar.",
+      "b": "Revocar el consentimiento será más difícil de darlo.",
+      "c": "El consentimiento solo se podrá revocar por norma de rango de Ley.",
+      "d": "Será tan fácil de revocar el consentimiento como de darlo."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 7,
+     "obsoleta": false,
+     "csv": 14,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2017-ej1-ej1-15",
+     "n": 15,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Cuál de los siguientes es el proveedor de los servicios de la Dirección Electrónica Habilitada (DEH):",
+     "op": {
+      "a": "Agencia Tributaria (AEAT).",
+      "b": "Fábrica Nacional de Moneda y Timbre (FNMT).",
+      "c": "Seguridad Social.",
+      "d": "Correos."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 9,
+     "obsoleta": false,
+     "csv": 15,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-16",
+     "n": 16,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "La Declaración de Conformidad con el ENS es de aplicación a sistemas de información de categoría:",
+     "op": {
+      "a": "Alta",
+      "b": "Media",
+      "c": "Básica",
+      "d": "Media o alta"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 8,
+     "obsoleta": false,
+     "csv": 16,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2017-ej1-ej1-17",
+     "n": 17,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "La solución integral de firma electrónica, proporcionada por el CTT, que permite simplificar todos los requisitos de creación de firmas basadas tanto en certificados locales como en certificados en la nube se llama:",
+     "op": {
+      "a": "VALIDE",
+      "b": "Stork",
+      "c": "FIRe",
+      "d": "Autofirma"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 9,
+     "obsoleta": false,
+     "csv": 17,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-18",
+     "n": 18,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Señale la respuesta correcta sobre el sistema de archivos ReFS:",
+     "op": {
+      "a": "Es el nuevo sistema de archivos de Mac OS.",
+      "b": "Longitud máxima del nombre del archivo es 512 caracteres.",
+      "c": "El tamaño máximo de archivo es 18 EB (exabytes).",
+      "d": "Su nombre significa Sistema de Archivos Repetible."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 13,
+     "obsoleta": false,
+     "csv": 18,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2017-ej1-ej1-19",
+     "n": 19,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "El \"contador de programa\" de una CPU contiene la:",
+     "op": {
+      "a": "instrucción a ejecutar en código ASCII.",
+      "b": "instrucción a ejecutar en código binario.",
+      "c": "dirección de la instrucción a ejecutar.",
+      "d": "dirección en el que dejar el resultado."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 10,
+     "obsoleta": false,
+     "csv": 19,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2017-ej1-ej1-20",
+     "n": 20,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Respecto a los distintos tipos de memoria ROM podemos decir:",
+     "op": {
+      "a": "PROM: se suministran vírgenes y el usuario puede programarla cuantas veces quiera, mediante un dispositivo especial.",
+      "b": "EPROM: puede ser borrada y grabada repetidas veces, para borrarla se aplican rayos infrarrojos.",
+      "c": "EEPROM: puede ser borrada y grabada repetidas veces eléctricamente.",
+      "d": "EPPROM: puede ser borrada y grabada repetidas veces, para borrar y grabar se utiliza un dispositivo especial de ancho espectro."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 10,
+     "obsoleta": false,
+     "csv": 20,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-21",
+     "n": 21,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "La unidad de medida de la potencia de un microprocesador es:",
+     "op": {
+      "a": "Gigabyte",
+      "b": "Flops",
+      "c": "FPS",
+      "d": "FBS"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 10,
+     "obsoleta": false,
+     "csv": 21,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-22",
+     "n": 22,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "El valor decimal del número hexadecimal 1C9 es:",
+     "op": {
+      "a": "477",
+      "b": "467",
+      "c": "457",
+      "d": "447"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 10,
+     "obsoleta": false,
+     "csv": 22,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2017-ej1-ej1-23",
+     "n": 23,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Hablando de zonas de un disco duro, señale la FALSA:",
+     "op": {
+      "a": "Cilindro es un conjunto de varias pistas.",
+      "b": "Clúster es un conjunto continuo de sectores.",
+      "c": "Sector es cada uno de los lados un plato.",
+      "d": "Pista es una circunferencia dentro de una cara."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 11,
+     "obsoleta": false,
+     "csv": 23,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2017-ej1-ej1-24",
+     "n": 24,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Según la nueva especificación de la interface USB, denominada USB-PD (Power Delivery), la potencia MÁXIMA que es capaz de alcanzar es:",
+     "op": {
+      "a": "18W",
+      "b": "36W",
+      "c": "60W",
+      "d": "100W"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 11,
+     "obsoleta": false,
+     "csv": 24,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-25",
+     "n": 25,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Es un algoritmo de la teoría de grafos para encontrar un árbol recubridor mínimo en un grafo conexo y ponderado:",
+     "op": {
+      "a": "Quicksort",
+      "b": "Kruskal",
+      "c": "QR",
+      "d": "Rijndael"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 12,
+     "obsoleta": false,
+     "csv": 25,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-26",
+     "n": 26,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "La estructura de datos que permite inserciones por un extremo y borrados por los dos es una:",
+     "op": {
+      "a": "Cola de salida restringida.",
+      "b": "Bicola de entrada restringida.",
+      "c": "Lista de entrada restringida.",
+      "d": "Ese tipo de estructura no existe."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 12,
+     "obsoleta": false,
+     "csv": 26,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2017-ej1-ej1-27",
+     "n": 27,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Entre los métodos para la compresión de imágenes con pérdidas se encuentra:",
+     "op": {
+      "a": "Codificación en planos de bits (como RLE).",
+      "b": "Codificación de longitud variable (como Huffman).",
+      "c": "Algoritmos de diccionario adaptables (como LZW).",
+      "d": "Codificación por transformación (como TDC)."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 12,
+     "obsoleta": false,
+     "csv": 27,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-28",
+     "n": 28,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "¿Qué formato de fichero es de gráficos vectoriales?",
+     "op": {
+      "a": "SVG",
+      "b": "EXIF",
+      "c": "HEIF",
+      "d": "JPEG"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 12,
+     "obsoleta": false,
+     "csv": 28,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-29",
+     "n": 29,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "El método del intercambio directo o algoritmo de la burbuja, es un algoritmo clásico de:",
+     "op": {
+      "a": "ordenación que recorre un vector de elementos e intercambia en cada recorrido un elemento con su sucesor si no están en orden.",
+      "b": "ordenación que recorre un vector de elementos hasta encontrar el menor de todos e intercambiarlo con el que está en la primera posición. Luego el segundo más pequeño, y así sucesivamente hasta ordenar todo.",
+      "c": "búsqueda que compara secuencialmente el elemento deseado con los valores contenidos en las posiciones 1..n del vector de elementos hasta que lo encuentre.",
+      "d": "búsqueda que compara secuencialmente el elemento deseado con los valores contenidos en las posiciones 1..n del vector de elementos hasta que lo encuentre, requisito indispensable es que el vector esté previamente ordenado."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 12,
+     "obsoleta": false,
+     "csv": 29,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-30",
+     "n": 30,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "En UNIX una llamada fork(), señale la FALSA:",
+     "op": {
+      "a": "Retorna al proceso padre el PID del proceso creado.",
+      "b": "Crea un nuevo proceso hijo.",
+      "c": "Crea un nuevo proceso copia de sí mismo.",
+      "d": "Devuelve al proceso hijo el ID del proceso padre."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 13,
+     "obsoleta": false,
+     "csv": 30,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2017-ej1-ej1-31",
+     "n": 31,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "El comando UNIX: ps -ef | grep $USER, muestra todos los procesos:",
+     "op": {
+      "a": "activos que está ejecutando el usuario \"grep\".",
+      "b": "que está ejecutando el usuario llamado \"$USER\".",
+      "c": "que está ejecutando el usuario actual.",
+      "d": "no activos que está ejecutando el usuario actual."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 24,
+     "obsoleta": false,
+     "csv": 31,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2017-ej1-ej1-32",
+     "n": 32,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "En Linux, la carpeta /bin:",
+     "op": {
+      "a": "Es la papelera de reciclaje.",
+      "b": "Contiene ficheros ejecutables y algunas utilidades del sistema operativo.",
+      "c": "Contiene los directorios de los usuarios.",
+      "d": "Contiene programas, ficheros y directorios del usuario."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 13,
+     "obsoleta": false,
+     "csv": 32,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2017-ej1-ej1-33",
+     "n": 33,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Haciendo uso del comando de Linux grep, indique cuál de las siguientes opciones devuelve el número total de líneas en que aparece la palabra \"Autor\" en el fichero \"libro.txt\":",
+     "op": {
+      "a": "grep -c libro.txt Autor",
+      "b": "grep -n libro.txt Autor",
+      "c": "grep -n Autor libro.txt",
+      "d": "grep -c Autor libro.txt"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 24,
+     "obsoleta": false,
+     "csv": 33,
+     "sim": 0.88
+    },
+    {
+     "id": "LI2017-ej1-ej1-34",
+     "n": 34,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Indique cuál de los siguientes es un sistema operativo para móviles:",
+     "op": {
+      "a": "Knoppix",
+      "b": "Ubuntu",
+      "c": "MeeGo",
+      "d": "Suse"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 13,
+     "obsoleta": false,
+     "csv": 34,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2017-ej1-ej1-35",
+     "n": 35,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "La versión 4.1 del sistema operativo Android es:",
+     "op": {
+      "a": "Ice Cream Sandwich",
+      "b": "Jelly Bean",
+      "c": "KitKat",
+      "d": "Lollipop"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 13,
+     "obsoleta": false,
+     "csv": 35,
+     "sim": 0.33
+    },
+    {
+     "id": "LI2017-ej1-ej1-36",
+     "n": 36,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Cypher es:",
+     "op": {
+      "a": "Un lenguaje de consulta sobre bases de datos Neo4j.",
+      "b": "Una base de datos de tipo clave-valor.",
+      "c": "Una base de datos orientada a documentos.",
+      "d": "Una base de datos orientada a grafos."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 14,
+     "obsoleta": false,
+     "csv": 36,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-37",
+     "n": 37,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "¿Cuál de los siguientes proyectos de Apache relacionados con Hadoop provee de servicios de serialización de datos?",
+     "op": {
+      "a": "Flume",
+      "b": "Chukwa",
+      "c": "Avro",
+      "d": "Jaql"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 14,
+     "obsoleta": false,
+     "csv": 37,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2017-ej1-ej1-38",
+     "n": 38,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Indique cuál de los siguientes NO es un gestor de bases de datos relacional:",
+     "op": {
+      "a": "MaxDB",
+      "b": "MySQL",
+      "c": "JSON",
+      "d": "PostgreSQL"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 14,
+     "obsoleta": false,
+     "csv": 38,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-39",
+     "n": 39,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "En un Diagrama de Flujo de Datos o DFD se denomina proceso primitivo a:",
+     "op": {
+      "a": "A cualquiera de los procesos que aparecen en el nivel 1 de descomposición.",
+      "b": "Al proceso principal del Diagrama de Contexto a descomponer.",
+      "c": "Aquel proceso que no necesita descomposición.",
+      "d": "Aquel proceso que coordina y sincroniza las actividades de otros procesos."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 23,
+     "obsoleta": false,
+     "csv": 39,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2017-ej1-ej1-40",
+     "n": 40,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Una tabla se encuentra en 5NF, Quinta Forma Normal, si:",
+     "op": {
+      "a": "Si y solo si esta en 4NF o en BCNF (cualquiera de ambas) y no posee dependencias multivaluadas no triviales.",
+      "b": "Si y solo si está en 4FN y cada dependencia funcional no trivial tiene una clave candidata como determinante.",
+      "c": "Si y solo si está en 4NF y cada dependencia de unión (join) en ella es implicada por las claves candidatas.",
+      "d": "Si y solo si ninguno de sus atributos no-principales son funcionalmente dependientes en una parte (subconjunto propio) de una clave candidata."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 15,
+     "obsoleta": false,
+     "csv": 40,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2017-ej1-ej1-41",
+     "n": 41,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Cuál de las siguientes afirmaciones NO es uno de los objetivos que se persigue al normalizar una base de datos:",
+     "op": {
+      "a": "Organizar los datos en grupos lógicos.",
+      "b": "Reducir las relaciones existentes entre tablas.",
+      "c": "Garantizar la integridad de la información.",
+      "d": "Minimizar la repetición de información."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 15,
+     "obsoleta": false,
+     "csv": 41,
+     "sim": 0.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-42",
+     "n": 42,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "En la teoría de la normalización se utiliza el concepto de dependencia funcional, ¿cuál de las siguientes NO es una de sus características?",
+     "op": {
+      "a": "Son propiedades inherentes al contenido semántico de los datos, que se han de cumplir para cualquier extensión del esquema de relación.",
+      "b": "Se tratan de restricciones de integridad que permiten conocer qué interrelaciones existen entre los atributos del mundo real.",
+      "c": "Todas las restricciones de integridad se pueden representar mediante estas dependencias.",
+      "d": "Son invariantes en el tiempo."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 15,
+     "obsoleta": false,
+     "csv": 42,
+     "sim": 0.25
+    },
+    {
+     "id": "LI2017-ej1-ej1-43",
+     "n": 43,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Indique cuál sería la salida que se obtendría ejecutando el siguiente trozo de código en C++:\nfor (int i=1; i++<10; i++) { ( (i == 5) ? cout<< \"Cinco\" : cout << i << \" \"); }",
+     "op": {
+      "a": "0 2 4 6 8",
+      "b": "1 3 Cinco 7 9",
+      "c": "2 4 6 8 10",
+      "d": "1 3 5 7 9"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 43,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2017-ej1-ej1-44",
+     "n": 44,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Indique cuál de los siguientes se considera un lenguaje de programación orientado a la educación:",
+     "op": {
+      "a": "Scratch",
+      "b": "C#",
+      "c": "Abap",
+      "d": "Python"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 44,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2017-ej1-ej1-45",
+     "n": 45,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Señale la afirmación correcta:",
+     "op": {
+      "a": "DML permiten definir el esquema de la base de datos.",
+      "b": "DCL permiten controlar el acceso a los datos.",
+      "c": "DDL permiten controlar el acceso a los datos.",
+      "d": "DCL permiten definir el esquema de la base de datos."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 45,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2017-ej1-ej1-46",
+     "n": 46,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "En una empresa hay una tabla de empleados: EMPLEADO(EMP_ID, NOMBRE, CATEGORIA, SUELDO). Elija qué sentencia nos dará como resultado la categoría y sueldo medio de aquellas categorías cuyo sueldo medio es inferior al sueldo medio de todos los empleados de la empresa.",
+     "op": {
+      "a": "SELECT CATEGORIA, AVG(SUELDO) FROM EMPLEADO GROUP BY CATEGORIA HAVING AVG(SUELDO) < (SELECT AVG(SUELDO) FROM EMPLEADO)",
+      "b": "SELECT CATEGORIA, AVG(SUELDO) FROM EMPLEADO HAVING CATEGORIA GROUP BY AVG(SUELDO)<(SELECT AVG(SUELDO) FROM EMPLEADO)",
+      "c": "SELECT CATEGORIA, AVG(SUELDO) FROM EMPLEADO WHERE SUELDO < AVG(SUELDO) GROUP BY CATEGORIA",
+      "d": "SELECT CATEGORIA, AVG(SUELDO) FROM EMPLEADO WHERE AVG(SUELDO)<(SELECT SUELDO FROM EMPLEADO)"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 46,
+     "sim": 0.57
+    },
+    {
+     "id": "LI2017-ej1-ej1-47",
+     "n": 47,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "En una base de datos en la que se almacena información de clientes a través de la tabla Clientes, existen, entre otras, las siguientes columnas: \"id\", \"Nombre\", \"Apellido1\", etc. ¿Cuál de las siguientes sentencias SQL devuelve el número de nombres (sólo Nombre, sin incluir apellidos) diferentes que hay en la tabla?",
+     "op": {
+      "a": "SELECT DISTINCT(Nombre) FROM Clientes",
+      "b": "SELECT SUM(UNIQUE(Nombre)) FROM Clientes",
+      "c": "SELECT COUNT(DISTINCT(Nombre)) FROM Clientes",
+      "d": "SELECT SUM(DISTINCT(Nombre)) FROM Clientes"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 47,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2017-ej1-ej1-48",
+     "n": 48,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "¿Cuál de las siguientes operaciones NO es una operación de agregación en SQL?",
+     "op": {
+      "a": "AVG",
+      "b": "COUNT",
+      "c": "DISTINCT",
+      "d": "SUM"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 48,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-49",
+     "n": 49,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Qué sentencia de las siguientes nunca altera el contenido de la base de datos:",
+     "op": {
+      "a": "SELECT PEDIDOS.PRECIO, PEDIDOS.ITEM, STOCK.VALIDO FROM PEDIDOS, STOCK WHERE PEDIDOS.NUM_ITEM = STOCK.NUM_ITEM AND PEDIDOS.PRECIO > 300",
+      "b": "UPDATE STOCK SET STOCK.NUM_ITEM = 0 WHERE STOCK.VALIDO = 'Sí'",
+      "c": "COMMIT",
+      "d": "DROP DATABASE DB_CONTENIDO_TIENDA"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 49,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2017-ej1-ej1-50",
+     "n": 50,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "En el contexto de la programación orientada a objetos, ¿qué entendemos por superclase?",
+     "op": {
+      "a": "Una clase padre de la que pueden derivar una serie de subclases.",
+      "b": "Una clase padre en la que se definen todas las variantes de métodos y atributos de sus clases heredadas, denominadas subclases.",
+      "c": "Una clase que deriva de otra completando los métodos que deja sin definir.",
+      "d": "Una clase resultado de fusión de dos o más clases padres."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 18,
+     "obsoleta": false,
+     "csv": 50,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2017-ej1-ej1-51",
+     "n": 51,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "La característica de los lenguajes orientados a objetos que permite declarar y definir dos métodos con el mismo nombre, pero distintos argumentos, se denomina:",
+     "op": {
+      "a": "Sobrescritura",
+      "b": "Polimorfismo",
+      "c": "Herencia",
+      "d": "Sobrecarga"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 18,
+     "obsoleta": false,
+     "csv": 51,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-52",
+     "n": 52,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "El patrón de diseño cuyo propósito es desacoplar una abstracción de su implementación de manera que las dos puedan evolucionar independientemente es:",
+     "op": {
+      "a": "Facade",
+      "b": "Bridge",
+      "c": "Adapter",
+      "d": "Wrapper"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 18,
+     "obsoleta": false,
+     "csv": 52,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2017-ej1-ej1-53",
+     "n": 53,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Java DB es:",
+     "op": {
+      "a": "La distribución de Oracle para la base de datos de código abierto Apache Derby.",
+      "b": "Una API de acceso a bases de datos no relacionales en Java.",
+      "c": "La distribución gratuita de la base de datos Oracle 11g.",
+      "d": "Una versión de PostgreSQL configurada para la plataforma Java SE."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 19,
+     "obsoleta": false,
+     "csv": 53,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-54",
+     "n": 54,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Señale cuál de las siguientes herramientas sirve para realizar pruebas de estrés en Java:",
+     "op": {
+      "a": "Jmeter",
+      "b": "SonarQube",
+      "c": "Junit",
+      "d": "Piwik"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 23,
+     "obsoleta": false,
+     "csv": 54,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2017-ej1-ej1-55",
+     "n": 55,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "En el contexto del lenguaje C de ANSI, ¿cuál de las siguientes opciones consigue que los valores de \"a\" y \"b\" sean respectivamente 10 y 11?",
+     "op": {
+      "a": "int a=11,b;b=a--;",
+      "b": "int a=11,b;b=--a;",
+      "c": "int a=10,b;b=++a;",
+      "d": "int a=10,b;b=a++;"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 55,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2017-ej1-ej1-56",
+     "n": 56,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Una diferencia entre las APIs de Java, SAX y JDOM, es:",
+     "op": {
+      "a": "SAX permite acceso directo a los elementos del XML, con JDOM el acceso es secuencial.",
+      "b": "SAX requiere más memoria para procesar el documento XML que JDOM.",
+      "c": "JDOM es recomendable para la edición o cambios en documentos XML, SAX para la lectura de documentos XML.",
+      "d": "JDOM lanza un evento cuando encuentra un elemento en el documento XML, SAX no lanza eventos."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 56,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-57",
+     "n": 57,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "En ASP.NET cuál de las siguientes alternativas NO representa un modo válido de almacenamiento de los datos de sesión:",
+     "op": {
+      "a": "inProc",
+      "b": "StateServer",
+      "c": "SqlServer",
+      "d": "AppServer"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 19,
+     "obsoleta": false,
+     "csv": 57,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-58",
+     "n": 58,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Señale la respuesta correcta respecto a las arquitecturas de microservicios:",
+     "op": {
+      "a": "Tienen nombres únicos (como direcciones URL) que se usan para resolver su ubicación.",
+      "b": "Deben ser escritos en lenguajes de programación específicos.",
+      "c": "Interactúan con otros microservicios por medio de protocolos cerrados.",
+      "d": "Service Fabric es la plataforma de microservicios de Apache."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 26,
+     "obsoleta": false,
+     "csv": 58,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2017-ej1-ej1-59",
+     "n": 59,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "De las siguientes opciones, representa un método válido dentro del protocolo HTTP:",
+     "op": {
+      "a": "OPTIONS",
+      "b": "UPDATE",
+      "c": "RETRIEVE",
+      "d": "TRACK"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 31,
+     "obsoleta": false,
+     "csv": 59,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-60",
+     "n": 60,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "En un documento WSDL 2.0, el elemento <binding> especifica:",
+     "op": {
+      "a": "el conjunto de puertos y dirección de los mismos.",
+      "b": "los protocolos de comunicación usados.",
+      "c": "los tipos de datos usados en los mensajes.",
+      "d": "las operaciones permitidas."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 20,
+     "obsoleta": false,
+     "csv": 60,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2017-ej1-ej1-61",
+     "n": 61,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Si quiero aplicar un estilo a todos los elementos con atributo class=\"titulo\" en varias páginas HTML, definiré en la hoja de estilos CSS3 asociada el selector:",
+     "op": {
+      "a": "#titulo",
+      "b": ":titulo",
+      "c": ".titulo",
+      "d": "titulo"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 61,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-62",
+     "n": 62,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "En una hoja de estilos CSS3, el estilo definido en el selector div + p se aplicaría a todos los elementos:",
+     "op": {
+      "a": "<p> situados dentro de elementos <div>.",
+      "b": "<p> situados justo después de un elemento <div>.",
+      "c": "<div> y todos los elementos <p>.",
+      "d": "<p> cuyo padre sea un elemento <div>."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 62,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2017-ej1-ej1-63",
+     "n": 63,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Indique la afirmación verdadera, ECMAScript 7 (también llamado ECMAScript 2016) añade:",
+     "op": {
+      "a": "Try/catch",
+      "b": "Soporte para JSON.",
+      "c": "Operador exponencial (**).",
+      "d": "Expresiones regulares."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 63,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2017-ej1-ej1-64",
+     "n": 64,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "En PHP 7, dado el siguiente array: $monedas = array(\"bitcoin\", \"ada\", \"ripple\"), ¿qué sentencia permite mostrar el número de elementos que tiene?",
+     "op": {
+      "a": "echo str_len($monedas);",
+      "b": "echo count($monedas);",
+      "c": "echo size($monedas);",
+      "d": "echo length($monedas);"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 64,
+     "sim": 0.83
+    },
+    {
+     "id": "LI2017-ej1-ej1-65",
+     "n": 65,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "De los siguientes, ¿cuál es un preprocesador de CSS?",
+     "op": {
+      "a": "kotlin",
+      "b": "Stylus",
+      "c": "Babel",
+      "d": "Flexbox"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 65,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-66",
+     "n": 66,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Es un framework que permite el desarrollo de aplicaciones para dispositivos móviles:",
+     "op": {
+      "a": "Ionic",
+      "b": "Atom",
+      "c": "Ark",
+      "d": "ZTE"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 66,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-67",
+     "n": 67,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "¿Cuál de las siguientes es una nueva etiqueta introducida en HTML5?",
+     "op": {
+      "a": "<dialog>",
+      "b": "<noscript>",
+      "c": "<abbr>",
+      "d": "<del>"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 67,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-68",
+     "n": 68,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "En las pautas de accesibilidad para el contenido web 2.0 se han identificado 4 niveles de orientación, señale la respuesta correcta que enumera estos niveles desde lo más general a lo más particular:",
+     "op": {
+      "a": "Principios, pautas, criterios de conformidad, técnicas suficientes y recomendables.",
+      "b": "Principios, criterios de conformidad, pautas, técnicas suficientes y recomendables.",
+      "c": "Principios, pautas, técnicas suficientes y recomendables, criterios de conformidad.",
+      "d": "Principios, criterios de conformidad, técnicas suficientes y recomendables, pautas."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 22,
+     "obsoleta": false,
+     "csv": 68,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2017-ej1-ej1-69",
+     "n": 69,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "¿Cuál de los siguientes NO es un concepto directamente relacionado con la Web Semántica?",
+     "op": {
+      "a": "RDF",
+      "b": "SPARQL",
+      "c": "OWL",
+      "d": "WebM"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 69,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-70",
+     "n": 70,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "La aplicación JAWS es:",
+     "op": {
+      "a": "Una herramienta para medir el tráfico de un página web.",
+      "b": "Un 'sniffer' de red.",
+      "c": "Un lector de pantalla para invidentes.",
+      "d": "Una herramienta de realización de pruebas automáticas."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 22,
+     "obsoleta": false,
+     "csv": 70,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2017-ej1-ej1-71",
+     "n": 71,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Siendo el nombre remoto \"origin\", y la rama \"master\", para subir los commits de una rama local a un repositorio remoto, ¿cuál sería el comando en Git?",
+     "op": {
+      "a": "git push origin master",
+      "b": "git pull origin master",
+      "c": "git init origin master",
+      "d": "git start origin master"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 23,
+     "obsoleta": false,
+     "csv": 71,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-72",
+     "n": 72,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "El término \"kubernetes\" está relacionado con:",
+     "op": {
+      "a": "Redes de Nueva Generación.",
+      "b": "Gestión de Contenedores.",
+      "c": "Multiple Input Multiple Output.",
+      "d": "Gestión de LUNs en cabinas."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 26,
+     "obsoleta": false,
+     "csv": 72,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2017-ej1-ej1-73",
+     "n": 73,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "De entre las siguientes, ¿cuál es una plataforma de contenedores?",
+     "op": {
+      "a": "OpenShift",
+      "b": "Bickbucket",
+      "c": "AMQ",
+      "d": "MDM"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 26,
+     "obsoleta": false,
+     "csv": 73,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2017-ej1-ej1-74",
+     "n": 74,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "En el ámbito de los sistemas operativos de Microsoft, la extensión que permite mantener actualizado el sistema operativo es:",
+     "op": {
+      "a": "Windows Online",
+      "b": "Windows Update",
+      "c": "Windows Defender",
+      "d": "Microsoft Edge"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 24,
+     "obsoleta": false,
+     "csv": 74,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2017-ej1-ej1-75",
+     "n": 75,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "¿Con qué comando de Linux se puede comprobar la integridad de un sistema de ficheros ext3?",
+     "op": {
+      "a": "fix.ext3",
+      "b": "e2fsck",
+      "c": "chkdsk",
+      "d": "melt"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 24,
+     "obsoleta": false,
+     "csv": 75,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-76",
+     "n": 76,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "El comando de Linux que permite conocer la ruta completa de un comando es:",
+     "op": {
+      "a": "which",
+      "b": "apropos",
+      "c": "catch",
+      "d": "tee"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 24,
+     "obsoleta": false,
+     "csv": 76,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2017-ej1-ej1-77",
+     "n": 77,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "De los siguientes comandos Linux, ¿cuál permite cambiar el sistema al nivel de ejecución 3?",
+     "op": {
+      "a": "rlevel 3",
+      "b": "inittab 3",
+      "c": "switch_root 3",
+      "d": "init 3"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 24,
+     "obsoleta": false,
+     "csv": 77,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2017-ej1-ej1-78",
+     "n": 78,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Advanced Package Tool (APT) es un sistema de gestión de paquetes creado por el proyecto:",
+     "op": {
+      "a": "Debian",
+      "b": "Fedora",
+      "c": "Red Hat",
+      "d": "Ubuntu"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 24,
+     "obsoleta": false,
+     "csv": 78,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2017-ej1-ej1-79",
+     "n": 79,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "El código devuelto por un servidor SMTP para indicar que la transmisión del mensaje ha finalizado es:",
+     "op": {
+      "a": "250",
+      "b": "220",
+      "c": "450",
+      "d": "200"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 26,
+     "obsoleta": false,
+     "csv": 79,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2017-ej1-ej1-80",
+     "n": 80,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Indique la afirmación correcta referente a un segmento Keep-Alive según RFC 1122:",
+     "op": {
+      "a": "Se envía aleatoriamente.",
+      "b": "Si el segmento se envía y no recibe respuesta, siempre se corta la conexión con el otro dispositivo.",
+      "c": "Se envía para comprobar si la conexión con otro dispositivo está activa.",
+      "d": "Ninguna de las anteriores."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 30,
+     "obsoleta": false,
+     "csv": 80,
+     "sim": 0.83
+    },
+    {
+     "id": "LI2017-ej1-ej1-81",
+     "n": 81,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "De entre los siguientes, ¿cuál es un protocolo de gestión de redes?",
+     "op": {
+      "a": "OCSP",
+      "b": "SNMP",
+      "c": "SMTP",
+      "d": "RFID"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 27,
+     "obsoleta": false,
+     "csv": 81,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-82",
+     "n": 82,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "En Linux, ¿qué información se muestra tras ejecutar en consola \"who -r\"?",
+     "op": {
+      "a": "Indica el nivel de ejecución.",
+      "b": "Muestra la hora en la que el sistema se ha iniciado.",
+      "c": "Lista los usuarios que han iniciado sesión remota.",
+      "d": "Muestra los usuarios que pertenecen al grupo de administradores (root)."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 24,
+     "obsoleta": false,
+     "csv": 82,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2017-ej1-ej1-83",
+     "n": 83,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Indique cuál de las siguientes herramientas es un Desktop Service o un Gestor de Atención al Usuario CAU:",
+     "op": {
+      "a": "BMC REMEDY",
+      "b": "MS OUTLOOK",
+      "c": "VISIO",
+      "d": "SUBVERSION"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 28,
+     "obsoleta": false,
+     "csv": 83,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2017-ej1-ej1-84",
+     "n": 84,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "¿Cómo se denomina la vulnerabilidad web consistente en la ejecución de un comando malicioso de acceso o modificación de una base de datos como parte de una petición?",
+     "op": {
+      "a": "CRLF injection",
+      "b": "RFI",
+      "c": "SQL injection",
+      "d": "Cross Site Scripting"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 22,
+     "obsoleta": false,
+     "csv": 84,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2017-ej1-ej1-85",
+     "n": 85,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Indique la afirmación INCORRECTA de las siguientes relacionadas con la seguridad informática:",
+     "op": {
+      "a": "Activo: componente o funcionalidad de un sistema de información susceptible de ser atacado deliberada o accidentalmente con consecuencias para la organización.",
+      "b": "Ataque: evento que puede originar un incidente produciendo daños materiales o pérdidas inmateriales.",
+      "c": "Vulnerabilidad: posibilidad de ocurrencia, es decir, de materialización de una amenaza sobre un activo.",
+      "d": "Impacto: consecuencia de la materialización de una amenaza."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 28,
+     "obsoleta": false,
+     "csv": 85,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-86",
+     "n": 86,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "La técnica que permite dar acceso a Internet a todos los equipos de una red interna a través de una única IP externa es:",
+     "op": {
+      "a": "IP Mask",
+      "b": "IP Masquerade",
+      "c": "IP Translate",
+      "d": "DHCP"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 30,
+     "obsoleta": false,
+     "csv": 86,
+     "sim": 0.71
+    },
+    {
+     "id": "LI2017-ej1-ej1-87",
+     "n": 87,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Para obtener la dirección física (MAC) de un dispositivo, el comando a utilizar es:",
+     "op": {
+      "a": "ipconfig /all (en Unix).",
+      "b": "getmac_addrss (en Unix).",
+      "c": "ifconfig (en Windows).",
+      "d": "getmac (en Windows)."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 30,
+     "obsoleta": false,
+     "csv": 87,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2017-ej1-ej1-88",
+     "n": 88,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "¿Cuál es la dirección de difusión o broadcasting de la red a la que pertenece un host cuya IP es 34.254.0.17?",
+     "op": {
+      "a": "34.254.255.255",
+      "b": "34.254.0.255",
+      "c": "34.254.0.0",
+      "d": "34.255.255.255"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 30,
+     "obsoleta": false,
+     "csv": 88,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2017-ej1-ej1-89",
+     "n": 89,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "El campo que desaparece en la cabecera estándar de la versión 6 del protocolo TCP/IP con respecto a la versión 4 es el campo:",
+     "op": {
+      "a": "fragmento, que pasa a ser un tipo de cabecera de extensión.",
+      "b": "etiqueta de flujo, que pasa a ser un tipo de cabecera de extensión.",
+      "c": "longitud de carga útil, que pasa a ser un tipo de cabecera de extensión.",
+      "d": "límite de saltos, que pasa a ser un tipo de cabecera de extensión."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 30,
+     "obsoleta": false,
+     "csv": 89,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2017-ej1-ej1-90",
+     "n": 90,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Dada la siguiente dirección de red 213.114.93.0, con máscara de red 255.255.255.192, indique cuál es su dirección de broadcast:",
+     "op": {
+      "a": "213.114.93.63",
+      "b": "213.114.93.127",
+      "c": "213.114.93.31",
+      "d": "213.114.93.255"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 30,
+     "obsoleta": false,
+     "csv": 90,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-91",
+     "n": 91,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Indique la afirmación INCORRECTA en relación a protocolos y su puerto conocido de escucha:",
+     "op": {
+      "a": "FTP, puerto 21.",
+      "b": "TELNET, puerto 23.",
+      "c": "SMTP, puerto 27.",
+      "d": "POP3, puerto 110."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 30,
+     "obsoleta": false,
+     "csv": 91,
+     "sim": 0.4
+    },
+    {
+     "id": "LI2017-ej1-ej1-92",
+     "n": 92,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "La política o mecanismo de seguridad estandarizado que sirve para indicar a los navegadores que una web (y todos sus enlaces) deben ser accedidos exclusivamente utilizando HTTPS se llama:",
+     "op": {
+      "a": "SHTS",
+      "b": "AHTS",
+      "c": "HSTS",
+      "d": "SHTP"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 31,
+     "obsoleta": false,
+     "csv": 92,
+     "sim": 0.57
+    },
+    {
+     "id": "LI2017-ej1-ej1-93",
+     "n": 93,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "El protocolo NTP (Network Time Protocol) tiene asignado el puerto:",
+     "op": {
+      "a": "123",
+      "b": "137",
+      "c": "139",
+      "d": "143"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 30,
+     "obsoleta": false,
+     "csv": 93,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-94",
+     "n": 94,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "De los siguientes códigos de respuesta de HTTP, identifique el correcto:",
+     "op": {
+      "a": "401 Forbidden.",
+      "b": "403 Unathorized.",
+      "c": "408 Request Timeout.",
+      "d": "500 Bad Gateway."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 31,
+     "obsoleta": false,
+     "csv": 94,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2017-ej1-ej1-95",
+     "n": 95,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Entre los riesgos de las redes inalámbricas, el \"eavesdropping\" sucede cuando un individuo no autorizado:",
+     "op": {
+      "a": "inyecta peticiones masivas de asociación a los AP (Access Point o puntos de acceso) dejándolos incapacitados para responder a las peticiones de los clientes legítimos.",
+      "b": "se coloca en medio de la comunicación inalámbrica entre emisor y receptor, suplantando a una de las partes y haciendo creer a la otra que está hablando con el comunicante legítimo.",
+      "c": "utiliza alguna herramienta (normalmente antenas de gran alcance) para capturar de forma pasiva el tráfico inalámbrico.",
+      "d": "suplanta una dirección MAC autorizada para lograr el acceso a un AP que tenga configurada una lista de direcciones MAC permitidas."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 32,
+     "obsoleta": false,
+     "csv": 95,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2017-ej1-ej1-96",
+     "n": 96,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "En relación a MAC spoofing indique la afirmación correcta:",
+     "op": {
+      "a": "Consiste en la suplantación de una dirección MAC.",
+      "b": "Puede hacerse con el comando ipconfig de Unix.",
+      "c": "Windows no permite hacer MAC spoofing.",
+      "d": "Sólo lo permite la distribución Kali Linux."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 32,
+     "obsoleta": false,
+     "csv": 96,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2017-ej1-ej1-97",
+     "n": 97,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "Cuál de las siguientes opciones se refiere a un método que se utiliza para redirigir el tráfico dirigido a ciertas IPs por razones de seguridad, para analizar, o detectar comportamientos anómalos y prevenir ataques de malware:",
+     "op": {
+      "a": "DNS spoofing",
+      "b": "DNS sinkholing",
+      "c": "DNS redirecting",
+      "d": "DNS poisoning"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 32,
+     "obsoleta": false,
+     "csv": 97,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2017-ej1-ej1-98",
+     "n": 98,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "La herramienta del CCN para Auditoría de Cumplimiento ENS/STIC en Sistemas Windows se denomina:",
+     "op": {
+      "a": "LUCIA",
+      "b": "VANESA",
+      "c": "LORETO",
+      "d": "CLARA"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 28,
+     "obsoleta": false,
+     "csv": 98,
+     "sim": 0.86
+    },
+    {
+     "id": "LI2017-ej1-ej1-99",
+     "n": 99,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "En relación a las dimensiones de seguridad y sus posibles amenazas, indique la afirmación correcta:",
+     "op": {
+      "a": "La confidencialidad se ve afectada por la modificación.",
+      "b": "La confidencialidad se ve afectada por la fabricación.",
+      "c": "La integridad se ve afectada por la intercepción.",
+      "d": "La disponibilidad se ve afectada por la interrupción."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 28,
+     "obsoleta": false,
+     "csv": 99,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2017-ej1-ej1-100",
+     "n": 100,
+     "reserva": false,
+     "bloque_orig": "ej1",
+     "q": "¿Cuál de las siguientes NO se considera una topología de red inalámbrica?",
+     "op": {
+      "a": "Topología ad-hoc.",
+      "b": "Topología infraestructura.",
+      "c": "Topología mesh o malla.",
+      "d": "Topología de anillo."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 29,
+     "obsoleta": false,
+     "csv": 100,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2017-ej1-ej1-R01",
+     "n": 1,
+     "reserva": true,
+     "bloque_orig": "ej1",
+     "q": "En las placas base, el factor de forma MicroATX:",
+     "op": {
+      "a": "No existe.",
+      "b": "Tiene una limitación de tamaño mínimo de 9,6 x 9,6 pulgadas.",
+      "c": "Tiene una limitación de tamaño máximo de 12 x 9,6 pulgadas.",
+      "d": "Deriva del factor de forma ATX."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 10,
+     "obsoleta": false,
+     "csv": 101,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2017-ej1-ej1-R02",
+     "n": 2,
+     "reserva": true,
+     "bloque_orig": "ej1",
+     "q": "Entre los productos existentes para la gestión de integración continua de software (entrega continua desde el código hasta el despliegue) se encuentra:",
+     "op": {
+      "a": "Magnolia",
+      "b": "Bamboo",
+      "c": "DevExpress",
+      "d": "InterSystems Ensemble"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 23,
+     "obsoleta": false,
+     "csv": 102,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2017-ej1-ej1-R03",
+     "n": 3,
+     "reserva": true,
+     "bloque_orig": "ej1",
+     "q": "¿Cuál de las siguientes afirmaciones acerca de OSPF es verdadera?",
+     "op": {
+      "a": "Es un protocolo vector distancia.",
+      "b": "OSPF versión 3 soporta IPv6.",
+      "c": "El RFC que define la versión 2 es RFC1202.",
+      "d": "Es un protocolo de pasarela exterior."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 30,
+     "obsoleta": false,
+     "csv": 103,
+     "sim": 0.6
+    }
+   ]
+  },
+  "b3": {
+   "titulo": "Segundo ejercicio: supuesto Bloque III",
+   "valor": 1.6667,
+   "contexto": "El nuevo Organismo al que pertenece, está revisando una aplicación desarrollada hace varios años para introducir nuevas funcionalidades. Como técnico de informática se le solicitará que ayude en la valoración de los esfuerzos para la inclusión de estas nuevas funcionalidades. Se mostrarán a continuación partes de esta aplicación antigua para que analice la funcionalidad de la misma.\n- El sistema antiguo usaba la versión 6 de Java, pero el nuevo sistema se desarrollará con la versión Java 8.\n- Hay partes de la aplicación desarrolladas en otros lenguajes diferentes a Java como puede ser: PHP, C++, C#, etc.\n- La aplicación antigua dispone de una parte web, el nuevo sistema dispondrá también de una aplicación para dispositivos móviles.\nSe recuperan unos diagramas de la base de datos relacional antigua, las claves primarias están en negrita:\n[[img:OEP2017_b3_modelo.png]]",
+   "preguntas": [
+    {
+     "id": "LI2017-b3-b3-01",
+     "n": 1,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Para la nueva aplicación se desea añadir una funcionalidad que le permita obtener un listado de cada uno de los trabajadores con el nombre del director de su centro de trabajo. Deberá tener en cuenta que el campo \"Director\" de la Tabla \"Ubicaciones\" contiene el código de trabajador del Director. Para obtener el listado se ejecutará la sentencia:",
+     "op": {
+      "a": "SELECT j.nombre as \"Director Centro\", t.nombre as \"Empleado\" FROM Trabajadores as t, Ubicaciones as u, Trabajadores as j where t.ubicacion = u.ubicacion and u.director = j.codTrabajador",
+      "b": "SELECT t.nombre as \"Director Centro\", t.nombre as \"Empleado\" FROM Trabajadores as t, Ubicaciones as u where t.ubicacion = u.ubicacion",
+      "c": "SELECT j.nombre as \"Director Centro\", t.nombre as \"Empleado\" FROM Trabajadores as t, Ubicaciones as u, Directores as j where t.ubicacion = u.ubicacion and u.director = j.codTrabajador",
+      "d": "SELECT j.nombre as \"Director Centro\", t.nombre as \"Empleado\" FROM Trabajadores as t, Ubicaciones as u, Trabajadores as j where t.ubicacion = u.ubicacion and t.codTrabajador = j.codTrabajador"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 1,
+     "sim": 0.6,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-02",
+     "n": 2,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "En el antiguo modelo de datos de la aplicación existe una vista para poder visualizar el número trabajadores por grupos de edad, la vista fue creada ejecutando una sentencia SQL, seleccione la correcta:",
+     "op": {
+      "a": "CREATE VIEW edades AS SELECT edad, count(*) FROM Trabajadores GROUP BY edad;",
+      "b": "CREATE VIEW edades AS SELECT edad, sum(*) FROM Trabajadores GROUP BY edad;",
+      "c": "CREATE VIEW edades AS SELECT edad, avg(*) FROM Trabajadores HAVING count(*) >18 ORDER BY edad;",
+      "d": "CREATE VIEW edades AS SELECT edad, count(*) FROM Trabajadores ORDER BY edad;"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 2,
+     "sim": 0.83,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-03",
+     "n": 3,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Para impedir que pueda haber dos usuarios con el mismo nombre deberá ejecutar la siguiente consulta:",
+     "op": {
+      "a": "ALTER TABLE usuarios ADD CONSTRAINT pk_nombre PRIMARY KEY (nombre)",
+      "b": "ALTER TABLE usuarios ADD CONSTRAINT u_nombre UNIQUE (nombre)",
+      "c": "CREATE UNIQUE CONSTRAINT index u_nombre ON usuarios (nombre)",
+      "d": "ALTER TABLE usuarios ADD UNIQUE CONSTRAINT u_nombre (nombre)"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 3,
+     "sim": 0.17,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-04",
+     "n": 4,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "En la nueva aplicación se utilizará HTML5 para la parte de presentación, se quiere mostrar una figura con dos imágenes, ¿qué expresiones de las siguientes habría que utilizar?",
+     "op": {
+      "a": "<figure src=\"imagen1.jpg\" alt=\"descripción imagen1\"/>\n<figure src=\"imagen2.jpg\" alt=\"descripción imagen2\"/>",
+      "b": "<figcaption caption=\"Mis dos imágenes\">\n    <fig src=\"imagen1.jpg\" alt=\"descripción imagen1\">\n    <fig src=\"imagen2.jpg\" alt=\"descripción imagen2\">\n</figcaption>",
+      "c": "figure {  src: \"imagen1.jpg\"; src: \"imagen2.jpg\"; }",
+      "d": "<figure>\n    <figcaption>Mis dos imágenes</figcaption>\n    <img src=\"imagen1.jpg\" alt=\"descripción imagen1\">\n    <img src=\"imagen2.jpg\" alt=\"descripción imagen2\">\n</figure>"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 4,
+     "sim": 1.0,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-05",
+     "n": 5,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Para el desarrollo de la nueva aplicación, en relación a los posibles ataques de Cross-Site Request Forgery (CSRF), el Organismo debe desarrollar una de las siguientes medidas con la que podrá incrementar la seguridad frente a estos ataques:",
+     "op": {
+      "a": "Redirigir las peticiones del puerto 80 al puerto 443 para que sean atendidas por HTTPs.",
+      "b": "Utilizar del campo \"Referer\" no mutable (de la cabecera HTTP) de las peticiones de los usuarios para verificar su validez.",
+      "c": "Utilizar tokens dinámicos, creados por sesión, usuario y formulario crítico, suficientemente aleatorios, que deben tener fecha de expiración.",
+      "d": "Ninguna de las anteriores."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 22,
+     "obsoleta": false,
+     "csv": 5,
+     "sim": 0.8,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-06",
+     "n": 6,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Se ha adaptado el código PHP de la aplicación antigua (versión 5.4) a una versión actual. Observe el código PHP siguiente que se corresponde ya con el nuevo sistema:\n<?php\ntrait Peticion {\n    public function mostrarPeticion() {\n        $descripcion = 'informal';\n        echo \"La petición es $descripcion.\";\n    }\n}\nclass Reivindicacion {\n    use Peticion;\n    public function mostrarPeticion() {\n        $descripcion = 'formal';\n        echo \"La petición es $descripcion.\";\n    }\n}\n$o = new Reivindicacion();\n$o->mostrarPeticion();\n?>\n¿Qué resultado se obtendrá de su ejecución?",
+     "op": {
+      "a": "La petición es formal.",
+      "b": "La petición es informal.",
+      "c": "La petición es $descripcion.",
+      "d": "Da un error de ejecución."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 6,
+     "sim": 0.57,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-07",
+     "n": 7,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Observe el siguiente diagrama:\n[[img:OEP2017_b3_p07.png]]\nEl diagrama recoge la estructura de clases de un patrón de diseño que se ha considerado adecuado implementar en el nuevo sistema, este patrón permite proporcionar un representante que se encargue de controlar el acceso a un objeto, y se denomina:",
+     "op": {
+      "a": "Patrón Memento.",
+      "b": "Patrón Bridge.",
+      "c": "Patrón Adapter.",
+      "d": "Patrón Proxy."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 18,
+     "obsoleta": false,
+     "csv": 7,
+     "sim": 1.0,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-08",
+     "n": 8,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Se va a utilizar el programa de control de versiones Git para el desarrollo del nuevo sistema, indique el comando necesario para crear un repositorio vacío en Git:",
+     "op": {
+      "a": "git start",
+      "b": "git init",
+      "c": "git add",
+      "d": "git config"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 23,
+     "obsoleta": false,
+     "csv": 8,
+     "sim": 1.0,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-09",
+     "n": 9,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Una parte de la nueva aplicación consistirá en una aplicación web para dispositivos móviles, se ha decidido afrontar con un diseño web responsive (RWD), señale de las que siguen cuál NO es una característica de este diseño web:",
+     "op": {
+      "a": "Es mejor por su fluidez, por su adaptación suave y flexible, por la simplificación de su código y más eficiente en cuanto a la gestión de recursos, ya que se adaptará a futuros tamaños de dispositivos y pantallas sin tener que modificar la hoja de estilos CSS.",
+      "b": "Hay una única plantilla que vale para todos los dispositivos.",
+      "c": "Es útil para proyectos en los que es mejor definir diseños diferentes y específicos, ofreciendo experiencias distintas según el tamaño del dispositivo desde el que veamos la web.",
+      "d": "Es una técnica para desarrollar interfaces que hace uso de media queries y hojas de estilos, estableciendo unas medidas de ancho en tamaños proporcionales para hacer una estructura flexible y que el contenido de la web se adapte a distintas resoluciones de pantalla."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 9,
+     "sim": 0.8,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-10",
+     "n": 10,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "En el diseño del antiguo sistema se ha encontrado pseudocódigo con la siguiente expresión:\n(NOT (c>d) and (a<c)) and NOT ((a>b) and (a<b))\n¿Qué valor debería tomar c, siendo a=4, b=5 y d=5 para que el valor de la expresión fuera VERDADERO?",
+     "op": {
+      "a": "c=3",
+      "b": "c=4",
+      "c": "c=5",
+      "d": "c=6"
+     },
+     "ctx2": "PREGUNTAS 10-11: En relación a los algoritmos y código del antiguo sistema, se proponen las siguientes preguntas para poder analizar en mayor profundidad el mismo y facilitar su conocimiento para favorecer el desarrollo del nuevo sistema:",
+     "ok": "c",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 10,
+     "sim": 0.4,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-11",
+     "n": 11,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Se ha obtenido la complejidad de unos algoritmos de ordenación utilizados en el antiguo sistema, el único factor del que dependen es del tamaño de la muestra de entrada, ordenar las complejidades de mayor a menor eficiencia:",
+     "op": {
+      "a": "Orden exponencial, lineal, cuadrático, logarítmico y factorial.",
+      "b": "Orden logarítmico, cuadrático, lineal, exponencial y constante.",
+      "c": "Orden logarítmico, cuadrático, lineal, cúbico y factorial.",
+      "d": "Orden logarítmico, lineal, cuadrático, exponencial y factorial."
+     },
+     "ctx2": "PREGUNTAS 10-11: En relación a los algoritmos y código del antiguo sistema, se proponen las siguientes preguntas para poder analizar en mayor profundidad el mismo y facilitar su conocimiento para favorecer el desarrollo del nuevo sistema:",
+     "ok": "d",
+     "anulada": false,
+     "tema": 12,
+     "obsoleta": false,
+     "csv": 11,
+     "sim": 1.0,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-12",
+     "n": 12,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Según el modelo E/R anterior, en el nuevo sistema un Trabajador:",
+     "op": {
+      "a": "Puede tener un puesto de trabajo en una ubicación central y otro en una ubicación en el exterior.",
+      "b": "Tendrá un puesto de trabajo en el exterior y al menos otro en la ubicación central.",
+      "c": "Trabajará en la ubicación central o en una ubicación exterior.",
+      "d": "Solo trabajara en un puesto de trabajo en una ubicación central o en una ubicación exterior."
+     },
+     "ctx2": "PREGUNTAS 12-12: Borrador del modelo entidad/relación extendido del nuevo sistema:\n[[img:OEP2017_b3_er.png]]",
+     "ok": "d",
+     "anulada": false,
+     "tema": 15,
+     "obsoleta": false,
+     "csv": 12,
+     "sim": 0.8,
+     "fiab": "claude",
+     "dudosa": true,
+     "nota_clave": "Arco de exclusividad en el E/R: entre c) y d) se elige d) por expresar la exclusividad (un único puesto, central o exterior)."
+    },
+    {
+     "id": "LI2017-b3-b3-13",
+     "n": 13,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "El desarrollo web del proyecto debe seguir las pautas de accesibilidad web WCAG 2.0, para el principio \"Operable\", indique cuál de las siguientes es una de sus pautas asociadas:",
+     "op": {
+      "a": "Facilitar a los usuarios ver y oír el contenido, incluyendo la separación entre el primer plano y el fondo.",
+      "b": "Proporcionar acceso a toda la funcionalidad mediante el teclado.",
+      "c": "Proporcionar alternativas para los medios tempodependientes.",
+      "d": "Hacer que las páginas web aparezcan y operen de manera predecible."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 22,
+     "obsoleta": false,
+     "csv": 13,
+     "sim": 0.75,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-14",
+     "n": 14,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "El nuevo sistema contará con una funcionalidad que accede a información sensible por lo que se desea utilizar un doble factor de autenticación (2FA) para el acceso, se considera usar \"algo que el usuario sabe\" más \"algo que el usuario tiene\". ¿Cuál de estas opciones NO se corresponde con la política establecida?",
+     "op": {
+      "a": "Password + USB",
+      "b": "Pin + generador de claves",
+      "c": "Password + huella dactilar",
+      "d": "Passphrase + tarjeta criptográfica"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 28,
+     "obsoleta": false,
+     "csv": 14,
+     "sim": 0.4,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-15",
+     "n": 15,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Para un párrafo <p> de la aplicación web dado, señale cuál es la respuesta correcta en base a las siguientes opciones de estilos CSS que aplican a dicha etiqueta:\nOpción 1:\nEn las hojas de estilo de autor se ha definido el estilo: P {color: black;}\nEn las hojas de estilo de usuario se ha definido el estilo: P {color : red;}\nOpción 2:\nEn las hojas de estilo de autor se ha definido el estilo: P {color: black;}\nEn las hojas de estilo de usuario se ha definido el estilo: P {color : red !important;}",
+     "op": {
+      "a": "Según la opción 1, el párrafo aparecería en rojo y según la opción 2 en rojo.",
+      "b": "Según la opción 1, el párrafo aparecería en negro y según la opción 2 en negro.",
+      "c": "Según la opción 1 , el párrafo aparecería en negro y según la opción 2 en rojo.",
+      "d": "Según la opción 1, el párrafo aparecería en rojo y según la opción 2 en negro."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 15,
+     "sim": 0.83,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-16",
+     "n": 16,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Si se deseara automatizar el despliegue de aplicaciones dentro de contenedores de software, usaríamos:",
+     "op": {
+      "a": "Visual Lombok",
+      "b": "Mockito",
+      "c": "Docker",
+      "d": "Git"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 26,
+     "obsoleta": false,
+     "csv": 16,
+     "sim": 0.75,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-17",
+     "n": 17,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Para la construcción de servicios web en Java podría usar la API Java denominada:",
+     "op": {
+      "a": "JPA",
+      "b": "Java DOM",
+      "c": "SOAP",
+      "d": "JAX-WS"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 19,
+     "obsoleta": false,
+     "csv": 17,
+     "sim": 0.8,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-18",
+     "n": 18,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Se desea probar una herramienta generadora de código para la implementación del nuevo proyecto. La herramienta que nos permite generar código Java, C# o Visual Basic.NET a partir de un diagrama UML es:",
+     "op": {
+      "a": "Hunting",
+      "b": "Altova Umodel",
+      "c": "Jira",
+      "d": "Swagger Codegen"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 18,
+     "obsoleta": false,
+     "csv": 18,
+     "sim": 0.71,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-19",
+     "n": 19,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Cuando se habla de bloques de creación de las aplicaciones .NET Framework, que constituyen la unidad fundamental de implementación, control de versiones, reutilización, ámbitos de activación y permisos de seguridad de una aplicación .Net Framework, se está hablando de un:",
+     "op": {
+      "a": "Espacio de nombres.",
+      "b": "Paquete.",
+      "c": "Interfaz.",
+      "d": "Ensamblado."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 19,
+     "obsoleta": false,
+     "csv": 19,
+     "sim": 0.83,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-20",
+     "n": 20,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "A la hora de modelar la nueva aplicación se ha utilizado UML 2.5, señale entre los siguientes, el que es un diagrama de interacción:",
+     "op": {
+      "a": "Diagrama de Estructura.",
+      "b": "Diagrama de Tiempos.",
+      "c": "Diagrama de Componentes.",
+      "d": "Diagrama de Actividades."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 18,
+     "obsoleta": false,
+     "csv": 20,
+     "sim": 0.8,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-21",
+     "n": 21,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Se tiene parte de la antigua aplicación en código C++, revisándolo ha observado que con la palabra reservada \"template\" se designa a una clase:",
+     "op": {
+      "a": "Abstracta",
+      "b": "Virtual",
+      "c": "Polimórfica",
+      "d": "Genérica"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 21,
+     "sim": 1.0,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-22",
+     "n": 22,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Para la generación de documentación de APIs de Java en el proyecto se podría usar:",
+     "op": {
+      "a": "Nagios",
+      "b": "Javadoc",
+      "c": "Alfresco",
+      "d": "Todas son correctas."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 23,
+     "obsoleta": false,
+     "csv": 22,
+     "sim": 0.6,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-23",
+     "n": 23,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Se le encomienda revisar DFDs de la aplicación anterior. Los flujos de datos en un DFD que comunican procesos con almacenes sólo pueden ser de los siguientes tipos:",
+     "op": {
+      "a": "Control y flujo.",
+      "b": "Consulta, actualización y borrado.",
+      "c": "Consulta, actualización y diálogo.",
+      "d": "Control y comunicación."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 23,
+     "obsoleta": false,
+     "csv": 23,
+     "sim": 1.0,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-24",
+     "n": 24,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "En la nueva aplicación, en la parte del desarrollo con HTML5, se desea usar la caché para especificar los recursos que el navegador debería guardar y tener disponibles para los usuarios cuando no estén conectados, para habilitar la caché de aplicaciones, debe incluir el siguiente atributo:",
+     "op": {
+      "a": "<?manifest appcahe = \"ejemplo.appcache\">",
+      "b": "<html5 appcache=\"manifest.appcache\">",
+      "c": "<html text/cache-manifest=\"ejemplo.appcache\"/>",
+      "d": "<html manifest=\"ejemplo.appcache\">"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 24,
+     "sim": 0.8,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-25",
+     "n": 25,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "De los siguientes productos, ¿cuál le permite realizar un seguimiento de los errores de software del proyecto?",
+     "op": {
+      "a": "Synology",
+      "b": "Cloudera",
+      "c": "Hadoop",
+      "d": "MantisBT"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 23,
+     "obsoleta": false,
+     "csv": 25,
+     "sim": 0.75,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-26",
+     "n": 26,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Respecto al siguiente código Java, ¿cuál es sería la afirmación correcta?\nPublic class Peticion {\n    public static void main(String[] args) {\n        String opcion=\"anulada\";\n        switch(opcion){\n                case \"anulada\":\n                        System.out.println(\"opción anulada\");\n                        break;\n                case \"cursada\":\n                        System.out.println(\"opción cursada\");\n                        break;\n        }\n}}",
+     "op": {
+      "a": "Este código funcionaría en el nuevo sistema y en el antiguo.",
+      "b": "Se produciría un error de compilación si tratáramos de ejecutar en el antiguo sistema.",
+      "c": "La salida sería: la cadena \"opción anulada\" para el antiguo sistema.",
+      "d": "Ninguna de las anteriores."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 26,
+     "sim": 0.67,
+     "fiab": "claude",
+     "dudosa": true,
+     "nota_clave": "El código empieza por 'Public class' (mayúscula), que no compilaría en ninguna versión; se toma la intención de la pregunta (switch con String no existe en Java 6) y se responde b)."
+    },
+    {
+     "id": "LI2017-b3-b3-27",
+     "n": 27,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "El diagrama anterior representa una parte del nuevo sistema que deberá desarrollarse en JAVA. En ella se muestra un diagrama UML de:",
+     "op": {
+      "a": "Despliegue",
+      "b": "Componentes",
+      "c": "Paquetes",
+      "d": "Clases"
+     },
+     "ctx2": "PREGUNTAS 27-27: Diagrama UML:\n[[img:OEP2017_b3_uml.png]]",
+     "ok": "b",
+     "anulada": false,
+     "tema": 18,
+     "obsoleta": false,
+     "csv": 27,
+     "sim": 0.71,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-28",
+     "n": 28,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "El proceso que consiste en mejorar el código una vez escrito cambiando su estructura interna sin modificar su comportamiento externo es:",
+     "op": {
+      "a": "Ofuscación.",
+      "b": "Encapsular.",
+      "c": "Refactorización.",
+      "d": "Comprimir."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 23,
+     "obsoleta": false,
+     "csv": 28,
+     "sim": 0.83,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-29",
+     "n": 29,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "El código Java anterior, con el título de \"Funcionalidad 1\", pertenece al sistema antiguo, en el nuevo sistema podría sustituir las líneas 5, 6 y 7 por el siguiente código con la misma funcionalidad:",
+     "op": {
+      "a": "Arrays.asList(3,0,1,8,7,2,5,4,9,6).forEach(numero-> System.out.print (numero + \" \"));",
+      "b": "Arrays.asList(3,0,1,8,7,2,5,4,9,6).forEach(System.out.print (numero + \" \"));",
+      "c": "Arrays.asList(3,0,1,8,7,2,5,4,9,6).for (numero-> System.out.print (numero + \" \"));",
+      "d": "Arrays.asList(3,0,1,8,7,2,5,4,9,6).forEach(n-> System.out.print (numero + \" \"));"
+     },
+     "ctx2": "PREGUNTAS 29-30: Código JAVA:\nFuncionalidad 1:\n1 import java.util.Arrays;\n2\n3 public class QuickSort {\n4     public static void main (String[] args){\n5             for (Integer numero : Arrays.asList(3,0,1,8,7,2,5,4,9,6)){\n6                     System.out.print(numero + \" \");\n7              }\n8             }\n9 }\nFuncionalidad 2:\n10 public static void main(String[] args) {\n11     for (int indice=0,selector=1,eleccion=2;indice<20;indice=(indice+selector)*eleccion){\n12                     System.out.println(indice);\n13                     selector++;\n14     }\n15 }",
+     "ok": "a",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 29,
+     "sim": 0.83,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-30",
+     "n": 30,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "De acuerdo al código Java mostrado anteriormente con el título \"Funcionalidad 2\", la ejecución del main de las líneas 10 a la 15, dará como resultado:",
+     "op": {
+      "a": "2 8 22 52",
+      "b": "0 4 14 32",
+      "c": "0 4 14",
+      "d": "Da un error de compilación."
+     },
+     "ctx2": "PREGUNTAS 29-30: Código JAVA:\nFuncionalidad 1:\n1 import java.util.Arrays;\n2\n3 public class QuickSort {\n4     public static void main (String[] args){\n5             for (Integer numero : Arrays.asList(3,0,1,8,7,2,5,4,9,6)){\n6                     System.out.print(numero + \" \");\n7              }\n8             }\n9 }\nFuncionalidad 2:\n10 public static void main(String[] args) {\n11     for (int indice=0,selector=1,eleccion=2;indice<20;indice=(indice+selector)*eleccion){\n12                     System.out.println(indice);\n13                     selector++;\n14     }\n15 }",
+     "ok": "c",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 30,
+     "sim": 0.8,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-R01",
+     "n": 1,
+     "reserva": true,
+     "bloque_orig": "b3",
+     "q": "Según el WCAG 2.0, ¿cuál entre los siguientes es un criterio de conformidad de nivel A?",
+     "op": {
+      "a": "Se proporciona una interpretación en lengua de señas para todo el contenido de audio grabado dentro de contenido multimedia sincronizado.",
+      "b": "Se usan encabezados de sección para organizar el contenido.",
+      "c": "Se proporciona una audiodescripción para todo el contenido de vídeo grabado dentro de contenido multimedia sincronizado.",
+      "d": "Todo contenido no textual que se presenta al usuario tiene una alternativa textual que cumple el mismo propósito, excepto en las situaciones enumeradas a continuación: CAPTCHAs, etc."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 22,
+     "obsoleta": false,
+     "csv": 31,
+     "sim": 1.0,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-R02",
+     "n": 2,
+     "reserva": true,
+     "bloque_orig": "b3",
+     "q": "Una de las funcionalidades del antiguo sistema utiliza el algoritmo Quicksort para organizar un array de elementos, el orden de complejidad dicho algoritmo es:",
+     "op": {
+      "a": "O(n * log n) en el caso promedio.",
+      "b": "O(n²) en el mejor caso.",
+      "c": "O(n²) en el caso promedio.",
+      "d": "O(n * log n) en el peor caso."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 12,
+     "obsoleta": false,
+     "csv": 32,
+     "sim": 1.0,
+     "fiab": "claude"
+    },
+    {
+     "id": "LI2017-b3-b3-R03",
+     "n": 3,
+     "reserva": true,
+     "bloque_orig": "b3",
+     "q": "Se va a utilizar el framework Laravel en la nueva codificación de las partes realizadas en PHP. Para informar a Laravel de que la clase ServerCreated implementa Broadcast se deberá indicar:",
+     "op": {
+      "a": "class ServerCreated implements SerializesModel {...",
+      "b": "class ServerCreated implements BroadcastOn {...",
+      "c": "class ServerCreated implements ShouldBroadcast {...",
+      "d": "class ServerCreated implements BroadcastServiceProvider {..."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 33,
+     "sim": 0.4,
+     "fiab": "claude"
+    }
+   ],
+   "fuente_clave": "claude"
+  }
+ }
+}

@@ -1,0 +1,4071 @@
+{
+ "id": "LI_2016",
+ "anio": 2016,
+ "convocatoria": "OEP 2016 · dos ejercicios",
+ "fuente_clave": "oficial",
+ "formato": "antiguo",
+ "nota_formato": "Formato antiguo: primer ejercicio con bloques I-II comunes más III o IV a elegir (aquí el III; el Bloque IV del test va aparte en ej1_iv); segundo ejercicio práctico de 40 preguntas.",
+ "partes": {
+  "ej1": {
+   "titulo": "Primer ejercicio (test)",
+   "valor": 0.5,
+   "contexto": "",
+   "preguntas": [
+    {
+     "id": "LI2016-ej1-I-II-01",
+     "n": 1,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "El estado de sitio, según la Constitución española de 1978, será declarado por:",
+     "op": {
+      "a": "la mayoría simple del Congreso de los Diputados, a propuesta exclusiva del Gobierno.",
+      "b": "la mayoría absoluta del Senado, a propuesta exclusiva del Rey.",
+      "c": "la mayoría simple del Senado, a propuesta exclusiva del Rey.",
+      "d": "la mayoría absoluta del Congreso de los Diputados, a propuesta exclusiva del Gobierno."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 1,
+     "obsoleta": false,
+     "csv": 1,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2016-ej1-I-II-02",
+     "n": 2,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Se indica en la Constitución española en el artículo 1, que España se constituye en un Estado:",
+     "op": {
+      "a": "parlamentario y democrático de Derecho.",
+      "b": "social y democrático de Derecho.",
+      "c": "social y soberano de Derecho.",
+      "d": "plural y democrático de Derecho."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 1,
+     "obsoleta": false,
+     "csv": 2,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2016-ej1-I-II-03",
+     "n": 3,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Según la Constitución española de 1978, NO es un derecho fundamental el derecho a la:",
+     "op": {
+      "a": "Vivienda.",
+      "b": "Libertad sindical.",
+      "c": "Libertad ideológica.",
+      "d": "Educación."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 1,
+     "obsoleta": false,
+     "csv": 3,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2016-ej1-I-II-04",
+     "n": 4,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Respecto al artículo 54 de la Constitución española de 1978 y la figura del Defensor del Pueblo, señale la sentencia INCORRECTA:",
+     "op": {
+      "a": "Tiene como misión la vigilancia y defensa de los derechos del Título I de la Constitución española.",
+      "b": "Una ley orgánica regulará la institución del Defensor del Pueblo.",
+      "c": "Es un órgano de la Administración pública española.",
+      "d": "Supervisa la actividad de la Administración."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 2,
+     "obsoleta": false,
+     "csv": 4,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1-I-II-05",
+     "n": 5,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Señale la respuesta FALSA, el Tribunal Constitucional se compone de 12 miembros nombrados por el Rey, de ellos:",
+     "op": {
+      "a": "4 a propuesta del Congreso por mayoría de tres quintos de sus miembros.",
+      "b": "4 a propuesta del Senado por mayoría de dos quintos de sus miembros.",
+      "c": "2 a propuesta del Gobierno.",
+      "d": "2 a propuesta del Consejo General del Poder Judicial."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 2,
+     "obsoleta": false,
+     "csv": 5,
+     "sim": 0.43
+    },
+    {
+     "id": "LI2016-ej1-I-II-06",
+     "n": 6,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Según el artículo 153 de la Constitución española, el control de la actividad de los órganos de las Comunidades Autónomas NO se ejercerá por:",
+     "op": {
+      "a": "el Tribunal Constitucional.",
+      "b": "el Gobierno.",
+      "c": "el Consejo General del Poder Judicial.",
+      "d": "el Tribunal de Cuentas."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 1,
+     "obsoleta": true,
+     "csv": 6,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2016-ej1-I-II-07",
+     "n": 7,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Para la consecución de sus objetivos, el Consejo de Transparencia y Buen Gobierno tiene encomendadas varias funciones, entre las que se encuentra:",
+     "op": {
+      "a": "Responder las consultas que, con carácter facultativo, le planteen los órganos encargados de tramitar y resolver las solicitudes de acceso a la información.",
+      "b": "Promover la elaboración de borradores de recomendaciones y de directrices y normas de desarrollo de buenas prácticas en materia de transparencia, acceso a la información pública y buen gobierno.",
+      "c": "Instar el inicio del procedimiento sancionador previsto en el título II de la Ley 19/2013, de transparencia, acceso a la información pública y buen gobierno. El órgano competente deberá motivar, en su caso, su decisión de no incoar el procedimiento.",
+      "d": "Adoptar criterios de interpretación uniforme de las obligaciones contenidas en la Ley 19/2013."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 4,
+     "obsoleta": false,
+     "csv": 7,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2016-ej1-I-II-08",
+     "n": 8,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Cuál de los siguientes miembros forma parte del Consejo de Transparencia y Buen Gobierno:",
+     "op": {
+      "a": "Un representante del Consejo General del Poder Judicial.",
+      "b": "Un representante de los usuarios y consumidores.",
+      "c": "Un representante de la Autoridad Independiente de Responsabilidad Fiscal.",
+      "d": "Un representante del Tribunal Constitucional."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 4,
+     "obsoleta": false,
+     "csv": 8,
+     "sim": 0.86
+    },
+    {
+     "id": "LI2016-ej1-I-II-09",
+     "n": 9,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Según la Constitución española de 1978 artículo 147, los Estatutos de autonomía deberán contener:",
+     "op": {
+      "a": "La denominación de la Comunidad que mejor corresponda a su identidad histórica.",
+      "b": "Los idiomas oficiales de su territorio.",
+      "c": "La organización de la comunicación con las instituciones centrales.",
+      "d": "Las competencias no asumidas dentro del marco establecido en la Constitución."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 1,
+     "obsoleta": true,
+     "csv": 9,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1-I-II-10",
+     "n": 10,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Según el Real Decreto Legislativo 5/2015, por el que se aprueba el texto refundido de la Ley del Estatuto Básico del Empleado Público, es correcto indicar que:",
+     "op": {
+      "a": "Es personal eventual el que, en virtud de nombramiento y con carácter fijo, por tiempo indefinido o temporal dependiendo del caso, sólo realiza funciones expresamente calificadas como de confianza o asesoramiento especial.",
+      "b": "El nombramiento y cese del personal eventual no serán libres.",
+      "c": "La condición de personal eventual no podrá constituir mérito para el acceso a la Función Pública o para la promoción interna.",
+      "d": "Al personal eventual le será aplicable, en lo que sea adecuado a la naturaleza de su condición, el mismo convenio del personal laboral."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 4,
+     "obsoleta": false,
+     "csv": 10,
+     "sim": 0.4
+    },
+    {
+     "id": "LI2016-ej1-I-II-11",
+     "n": 11,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Conforme a la jerarquía normativa establecida por la Constitución española, como ordenación vertical de las fuentes del derecho administrativo:",
+     "op": {
+      "a": "La Constitución es la norma suprema.",
+      "b": "Las leyes orgánicas son superiores a la Constitución.",
+      "c": "Los decretos-leyes son superiores a las leyes ordinarias.",
+      "d": "Los tratados internacionales son superiores a la Constitución."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 1,
+     "obsoleta": true,
+     "csv": 11,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2016-ej1-I-II-12",
+     "n": 12,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "En cuanto a la Ley Orgánica 3/2007 (para la igualdad efectiva de mujeres y hombres) y el apartado referente a la Sociedad de la Información, se indica que:",
+     "op": {
+      "a": "El Gobierno promoverá sólo los contenidos web creados por mujeres en el ámbito de la Sociedad de la Información.",
+      "b": "Todos los programas públicos de desarrollo de la Sociedad de la Información incorporarán la efectiva consideración del principio de igualdad de oportunidades entre mujeres y hombres en su diseño y ejecución.",
+      "c": "En los proyectos del ámbito de las tecnologías de la información y la comunicación sufragados total o parcialmente con dinero privado, se garantizará que su lenguaje y contenidos sean no sexistas.",
+      "d": "Dicha Ley Orgánica no hace mención a la Sociedad de la Información."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 5,
+     "obsoleta": false,
+     "csv": 12,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1-I-II-13",
+     "n": 13,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Según la Ley 1/2004, de Medidas de Protección Integral contra la Violencia de Género, la Comisión contra la Violencia de Género del Consejo Interterritorial del Sistema Nacional de Salud estará compuesta por representantes:",
+     "op": {
+      "a": "de todas las provincias.",
+      "b": "de todas las Comunidades Autónomas con competencia en la materia.",
+      "c": "de ámbitos educativos, culturales y/o políticos con competencia en la materia.",
+      "d": "de víctimas de Violencia de Género."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 5,
+     "obsoleta": false,
+     "csv": 13,
+     "sim": 0.86
+    },
+    {
+     "id": "LI2016-ej1-I-II-14",
+     "n": 14,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "La ley 59/2003, de firma electrónica, establece en el artículo 32 la cuantía para las sanciones a aplicar por la comisión de infracciones, siendo las cuantías a aplicar:",
+     "op": {
+      "a": "Infracciones leves: hasta 3.000 euros, graves: de 3.001 a 150.000 euros, muy graves: de 150.001 a 600.000 euros.",
+      "b": "Infracciones leves: hasta 30.000 euros, graves: de 30.001 a 150.000 euros, muy graves: de 150.001 a 600.000 euros.",
+      "c": "Infracciones leves: hasta 30.000 euros, graves: de 30.001 a 300.000 euros, muy graves: de 300.001 a 600.000 euros.",
+      "d": "Infracciones leves: hasta 60.000 euros, graves: de 60.001 a 300.000 euros, muy graves: de 300.001 a 600.000 euros."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 6,
+     "obsoleta": false,
+     "csv": null,
+     "sim": 0
+    },
+    {
+     "id": "LI2016-ej1-I-II-15",
+     "n": 15,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Con carácter general, el documento nacional de identidad, tendrá un periodo de validez de:",
+     "op": {
+      "a": "3 años cuando el solicitante no haya cumplido los 5 años de edad.",
+      "b": "5 años, cuando el titular haya cumplido los 5 años de edad y no haya alcanzado los 25 al momento de la expedición o renovación.",
+      "c": "10 años, cuando el titular haya cumplido los 25 y no haya alcanzado la edad de validez permanente del DNI.",
+      "d": "permanente cuando el titular haya cumplido los 70 años."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 6,
+     "obsoleta": false,
+     "csv": 14,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1-I-II-16",
+     "n": 16,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Según la Ley 34/2002, de 11 de julio, de servicios de sociedad de la Información y de comercio electrónico, señale la respuesta correcta:",
+     "op": {
+      "a": "En la celebración de un contrato por medios electrónicos, el oferente está obligado a confirmar la recepción de la aceptación del contrato por cualquier medio electrónico en un plazo máximo de 72 horas.",
+      "b": "Para que sea válida la celebración de contratos por vía electrónica es necesario el previo acuerdo de las partes sobre la utilización de medios electrónicos.",
+      "c": "Siempre que la Ley exija que el contrato o cualquier información relacionada con el mismo conste por escrito, este requisito se entenderá satisfecho si el contrato o la información se contiene en un soporte electrónico. No obstante lo anterior, será necesario almacenar una copia en papel de la que se pueda verificar su veracidad en formato impreso.",
+      "d": "Los contratos celebrados por vía electrónica en los que intervenga como parte un consumidor se presumirán celebrados en el lugar en que éste tenga su residencia habitual."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 6,
+     "obsoleta": false,
+     "csv": 15,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1-I-II-17",
+     "n": 17,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Según el Real Decreto 414/2015, por el que se modifica el RD 1553/2005, por el que se regula la expedición del DNI y sus certificados de firma electrónica, en relación con la vigencia de los certificados electrónicos reconocidos incorporados al DNI electrónico:",
+     "op": {
+      "a": "Es de 30 meses.",
+      "b": "No podrá ser superior a 4 años.",
+      "c": "No podrá ser superior a 5 años.",
+      "d": "Es de 2 años."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 6,
+     "obsoleta": false,
+     "csv": 16,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1-I-II-18",
+     "n": 18,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Según la Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público, en relación con las sedes electrónicas y los portales de Internet, señale la respuesta correcta:",
+     "op": {
+      "a": "Los portales dispondrán de sistemas que permitan el establecimiento de comunicaciones seguras siempre que sean necesarias.",
+      "b": "El establecimiento de un portal conlleva la responsabilidad del titular respecto de la integridad, veracidad y actualización de la información y los servicios a los que pueda accederse a través de la misma.",
+      "c": "Se entiende por portal de internet el punto de acceso electrónico cuya titularidad corresponda a una Administración Pública, organismo público o entidad de Derecho Público que permite el acceso a través de internet a la información publicada y, en su caso, a la sede electrónica correspondiente.",
+      "d": "Los portales de internet utilizarán, para identificarse y garantizar una comunicación seguro con los mismos, certificados reconocidos o cualificados de autenticación de sitio web o medio equivalente."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 9,
+     "obsoleta": false,
+     "csv": 17,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1-I-II-19",
+     "n": 19,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "¿Cuál de los siguientes es un principio básico del Esquema Nacional de Seguridad?",
+     "op": {
+      "a": "Enfoque de seguridad multilateral.",
+      "b": "Prevención, reacción y recuperación.",
+      "c": "Reevaluación integral.",
+      "d": "Seguridad multidimensional."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 8,
+     "obsoleta": false,
+     "csv": null,
+     "sim": 0
+    },
+    {
+     "id": "LI2016-ej1-I-II-20",
+     "n": 20,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "¿Cuál de las siguientes afirmaciones sobre el sistema CL@VE es FALSA?",
+     "op": {
+      "a": "Es un sistema de identificación, autenticación y firma electrónica común para todo el Sector Público Administrativo Estatal.",
+      "b": "Requiere un registro previo para ser usuario de la misma.",
+      "c": "Dispone de tres sistemas de identificación: de Cl@ve Ocasional, de Cl@ve Diaria y de Cl@ve Permanente.",
+      "d": "El órgano responsable del sistema Cl@ve será la Dirección de Tecnologías de la Información y las Comunicaciones."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 9,
+     "obsoleta": false,
+     "csv": 18,
+     "sim": 0.83
+    },
+    {
+     "id": "LI2016-ej1-I-II-21",
+     "n": 21,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Según la arquitectura de Von Neumann, la unidad del ordenador que se encarga de supervisar la transferencia de información e indica a la unidad aritmética lógica cual operación debe ejecutar es:",
+     "op": {
+      "a": "Unidad Aritmético-lógica.",
+      "b": "Unidad de Control.",
+      "c": "Unidad de Entrada / Salida.",
+      "d": "Unidad de arranque."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 10,
+     "obsoleta": false,
+     "csv": 19,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2016-ej1-I-II-22",
+     "n": 22,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Señale cuál de las siguientes es un tipo de memoria estática de acceso aleatorio (RAM):",
+     "op": {
+      "a": "XDR RAM",
+      "b": "FPM-RAM",
+      "c": "RDRAM",
+      "d": "NVRAM"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 10,
+     "obsoleta": false,
+     "csv": 20,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2016-ej1-I-II-23",
+     "n": 23,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Indique de entre los siguientes números cuál es el menor:",
+     "op": {
+      "a": "2A0 en sistema hexadecimal.",
+      "b": "1226 en sistema octal.",
+      "c": "690 en sistema decimal.",
+      "d": "1010110100 en sistema binario."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 10,
+     "obsoleta": false,
+     "csv": 21,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2016-ej1-I-II-24",
+     "n": 24,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Cuando se habla de un procesador de dos núcleos significa que:",
+     "op": {
+      "a": "Hay dos chips que están trabajando independientemente y al mismo tiempo.",
+      "b": "Cada uno accede a una partición distinta del disco duro.",
+      "c": "Cada uno accede a un bloque de memoria RAM distinto.",
+      "d": "Un núcleo ejecuta las instrucciones lógicas y el otro las instrucciones aritméticas."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 10,
+     "obsoleta": false,
+     "csv": 22,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2016-ej1-I-II-25",
+     "n": 25,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "¿Qué nombre recibe la memoria encargada de almacenar la configuración básica del equipo?",
+     "op": {
+      "a": "RAM",
+      "b": "ROM",
+      "c": "RAM-CMOS",
+      "d": "ROM-CMOS"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 10,
+     "obsoleta": false,
+     "csv": 23,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1-I-II-26",
+     "n": 26,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Señale el valor en hexadecimal del número binario 10100101:",
+     "op": {
+      "a": "A5",
+      "b": "FR",
+      "c": "A3",
+      "d": "C4"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 10,
+     "obsoleta": false,
+     "csv": 24,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1-I-II-27",
+     "n": 27,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "En cuanto a impresoras de impacto, hay varios tipos principales, señale cuál NO es correcto:",
+     "op": {
+      "a": "de margarita.",
+      "b": "matricial.",
+      "c": "de inyección.",
+      "d": "de bola."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 11,
+     "obsoleta": false,
+     "csv": 25,
+     "sim": 0.0
+    },
+    {
+     "id": "LI2016-ej1-I-II-28",
+     "n": 28,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "¿Cuál de los siguientes estándares se basa en una comunicación en serie?",
+     "op": {
+      "a": "PATA",
+      "b": "SCSI 1",
+      "c": "SATA",
+      "d": "SCSI 3.1"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 11,
+     "obsoleta": false,
+     "csv": 26,
+     "sim": 0.71
+    },
+    {
+     "id": "LI2016-ej1-I-II-29",
+     "n": 29,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "¿Cuál de las siguientes opciones describe la impresión con tecnología de sublimación de tinta?",
+     "op": {
+      "a": "Utilizan el calor para la transferencia de la tinta al soporte de la impresión.",
+      "b": "Un conjunto de agujas con temperatura alta, recorren el papel sensible a la temperatura, volviéndose en esos puntos de color negro.",
+      "c": "Se proyectan pequeñas cantidades de tinta hacia el soporte.",
+      "d": "Se golpea el soporte y con la fuerza del impacto se transfiere la tinta."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 11,
+     "obsoleta": false,
+     "csv": 27,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2016-ej1-I-II-30",
+     "n": 30,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Indique cuál de las siguientes afirmaciones acerca de los algoritmos es correcta:",
+     "op": {
+      "a": "Todo algoritmo tiene asociada una única implementación del mismo.",
+      "b": "La complejidad algorítmica representa la cantidad de recursos que necesita un algoritmo para resolver un problema.",
+      "c": "La complejidad de un algoritmo solamente se puede medir en el caso medio.",
+      "d": "La complejidad de un algoritmo solamente se puede medir en el mejor caso."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 12,
+     "obsoleta": false,
+     "csv": 28,
+     "sim": 0.4
+    },
+    {
+     "id": "LI2016-ej1-I-II-31",
+     "n": 31,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "¿Cuál de las siguientes afirmaciones sobre los discos SSD es INCORRECTA?",
+     "op": {
+      "a": "El origen de las siglas SSD es Solid State Drive.",
+      "b": "El acceso a la información almacenada en un disco SSD es más rápido que en un disco duro HDD.",
+      "c": "La copia y duplicación de archivos en un disco SSD es más lenta que en un disco HDD.",
+      "d": "El coste de un disco SSD, a igualdad de tamaño, es superior al de un disco HDD."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 11,
+     "obsoleta": false,
+     "csv": 29,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2016-ej1-I-II-32",
+     "n": 32,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "En relación con los sistemas RAID, ¿en qué configuración o nivel la información se fracciona por bloques y se almacena de forma alternativa en todos los discos del conjunto sin información de paridad?",
+     "op": {
+      "a": "RAID 0",
+      "b": "RAID 2",
+      "c": "RAID 3",
+      "d": "RAID 5"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 25,
+     "obsoleta": false,
+     "csv": 30,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1-I-II-33",
+     "n": 33,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "¿Cuál de las siguientes configuraciones RAID crea una copia espejo de datos en dos o más discos?",
+     "op": {
+      "a": "RAID 0",
+      "b": "RAID 1",
+      "c": "RAID 2",
+      "d": "RAID 3"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 25,
+     "obsoleta": false,
+     "csv": 31,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1-I-II-34",
+     "n": 34,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "¿Cuál de los siguientes periféricos NO es un periférico de entrada?",
+     "op": {
+      "a": "Ratón",
+      "b": "Teclado",
+      "c": "Escáner",
+      "d": "Altavoz"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 11,
+     "obsoleta": false,
+     "csv": 32,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1-I-II-35",
+     "n": 35,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "En el contexto de las estructuras de datos, seleccione la respuesta correcta, un árbol es una estructura:",
+     "op": {
+      "a": "dinámica cuyo recorrido sólo se puede realizar en profundidad.",
+      "b": "estática cuyo recorrido se puede realizar en amplitud y en profundidad.",
+      "c": "estática cuyo recorrido sólo se puede realizar en amplitud.",
+      "d": "dinámica cuyo recorrido se puede realizar en amplitud y en profundidad."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 12,
+     "obsoleta": false,
+     "csv": 33,
+     "sim": 0.43
+    },
+    {
+     "id": "LI2016-ej1-I-II-36",
+     "n": 36,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "¿Cuántas pasadas como máximo hay que realizar a un array para ordenarlo mediante el método de la burbuja (siendo N el número de elementos del array)?",
+     "op": {
+      "a": "N-1",
+      "b": "N",
+      "c": "N/2",
+      "d": "N+1"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 12,
+     "obsoleta": false,
+     "csv": 34,
+     "sim": 0.83
+    },
+    {
+     "id": "LI2016-ej1-I-II-37",
+     "n": 37,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Si el resultado al recorrer un árbol binario en preorden es el siguiente: {7, 8, 2, 1, 5, 6, 9, 0}, indique cuál es la raíz del árbol:",
+     "op": {
+      "a": "7",
+      "b": "1",
+      "c": "0",
+      "d": "5"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 12,
+     "obsoleta": false,
+     "csv": 35,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2016-ej1-I-II-38",
+     "n": 38,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Con respecto a la resolución de colisiones que se pueden producir cuando se utilizan tablas de dispersión (tablas hash):",
+     "op": {
+      "a": "Hay dos métodos principales para la resolución de colisiones: hashing lineal y hashing cuadrático.",
+      "b": "Un criterio para decidir qué método de resolución utilizar es el factor de carga, que se define como el cociente del número de índices y el tamaño de la tabla.",
+      "c": "Los métodos principales para la resolución de colisiones: hashing abierto y hashing cerrado.",
+      "d": "El método de hashing lineal permite resolver la colisión mediante la búsqueda en ubicaciones alternativas en la misma tabla."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 12,
+     "obsoleta": false,
+     "csv": 36,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1-I-II-39",
+     "n": 39,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Teniendo el fichero fich.txt, señale el comando Linux correcto para darle permisos de lectura a su propietario, permisos de lectura y escritura a otros usuarios, y permisos de ejecución a su grupo.",
+     "op": {
+      "a": "grant +r +rw +x fich.txt",
+      "b": "chmod 416 fich.txt",
+      "c": "chmod 461 fich.txt",
+      "d": "chmod u=rwx,g=rx fich.txt"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 24,
+     "obsoleta": false,
+     "csv": 37,
+     "sim": 0.71
+    },
+    {
+     "id": "LI2016-ej1-I-II-40",
+     "n": 40,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "¿Cuál de las siguientes extensiones de ficheros pertenece a un fichero de tipo hoja de cálculo?",
+     "op": {
+      "a": "odt",
+      "b": "doc",
+      "c": "ods",
+      "d": "rtf"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 12,
+     "obsoleta": false,
+     "csv": 38,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2016-ej1-I-II-41",
+     "n": 41,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "En Android las aplicaciones se distribuyen en paquetes con extensión:",
+     "op": {
+      "a": ".exe",
+      "b": ".apk",
+      "c": ".yum",
+      "d": ".ogg"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 13,
+     "obsoleta": false,
+     "csv": 39,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1-I-II-42",
+     "n": 42,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Señale cuál de las siguientes NO es una distribución de Linux:",
+     "op": {
+      "a": "Mint",
+      "b": "OpenSUSE",
+      "c": "Arch",
+      "d": "Kilimanjaro"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 13,
+     "obsoleta": false,
+     "csv": 40,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2016-ej1-I-II-43",
+     "n": 43,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "¿Cuál de las siguientes es una distribución de GNU/Linux basada en Ubuntu?",
+     "op": {
+      "a": "Ututo XS",
+      "b": "PCLinuxOS",
+      "c": "centOS 7.0",
+      "d": "Trisquel 7.0"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 13,
+     "obsoleta": false,
+     "csv": 41,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1-I-II-44",
+     "n": 44,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "¿Cómo se denomina la plataforma informática en la nube de Microsoft?",
+     "op": {
+      "a": "Gentoo",
+      "b": "Ubuntu",
+      "c": "Azure",
+      "d": "Blanc"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 25,
+     "obsoleta": false,
+     "csv": 42,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2016-ej1-I-II-45",
+     "n": 45,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "En relación al programa de edición de ficheros \"vi\" de UNIX, estando en el modo de comandos, para eliminar la línea sobre la que está el cursor, se usará la función:",
+     "op": {
+      "a": "x",
+      "b": "dd",
+      "c": "i",
+      "d": "a"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 24,
+     "obsoleta": false,
+     "csv": 43,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2016-ej1-I-II-46",
+     "n": 46,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "Al ejecutar el comando \"ps -ef\" en Linux podemos ver el estado de los procesos, la columna que indica el propietario es:",
+     "op": {
+      "a": "CMD",
+      "b": "PID",
+      "c": "PPID",
+      "d": "UID"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 24,
+     "obsoleta": false,
+     "csv": 44,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2016-ej1-I-II-47",
+     "n": 47,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "¿Qué versión de Android fue ideada en exclusiva para tablets?",
+     "op": {
+      "a": "Lollipop",
+      "b": "Jelly bean",
+      "c": "Honeycomb",
+      "d": "Nougat"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 13,
+     "obsoleta": false,
+     "csv": 45,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2016-ej1-I-II-48",
+     "n": 48,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "¿Cuál de los siguientes comandos se utiliza en el sistema operativo Linux para ver la cantidad de disco usado por el directorio y todos los subdirectorios que cuelgan del directorio especificado?",
+     "op": {
+      "a": "df",
+      "b": "du",
+      "c": "ps",
+      "d": "quota"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 24,
+     "obsoleta": false,
+     "csv": 46,
+     "sim": 0.57
+    },
+    {
+     "id": "LI2016-ej1-I-II-49",
+     "n": 49,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "¿Cuál de las siguientes NO es un objetivo perseguido por Codd en la presentación de su modelo relacional?",
+     "op": {
+      "a": "Independencia lógica.",
+      "b": "Independencia conceptual.",
+      "c": "Independencia física.",
+      "d": "Uniformidad."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 15,
+     "obsoleta": false,
+     "csv": 47,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1-I-II-50",
+     "n": 50,
+     "reserva": false,
+     "bloque_orig": "I-II",
+     "q": "En relación a los sistemas de gestión de bases de datos relacionales, la unidad de información que está asociada a un dominio del que toma sus valores es:",
+     "op": {
+      "a": "El atributo.",
+      "b": "La relación.",
+      "c": "El grado.",
+      "d": "La cardinalidad."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 15,
+     "obsoleta": false,
+     "csv": 48,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1-III-01",
+     "n": 51,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "Indique cuál de las siguientes afirmaciones sobre los distintos niveles de Diagramas de Flujos de Datos (DFD) es cierta, el DFD de más alto nivel (Nivel 0):",
+     "op": {
+      "a": "es conocido como diagrama 0.",
+      "b": "solo puede incluir una entidad externa.",
+      "c": "solo puede incluir un flujo de datos que representa procedencia y destino de la información.",
+      "d": "solo incluye un proceso que corresponde al sistema en estudio."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 23,
+     "obsoleta": false,
+     "csv": 52,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1-III-02",
+     "n": 52,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "¿Cuál de los siguientes NO es un tipo de flujo de datos en un DFD?",
+     "op": {
+      "a": "De consulta.",
+      "b": "De diálogo.",
+      "c": "De actualización.",
+      "d": "De relación."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 23,
+     "obsoleta": false,
+     "csv": 53,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1-III-03",
+     "n": 53,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "En los modelos entidad relación que se usan para modelar conceptualmente un esquema relacional:",
+     "op": {
+      "a": "Se produce dependencia por existencia cuando una entidad fuerte no puede existir sin otra entidad débil.",
+      "b": "Se produce dependencia por identificación cuando las ocurrencias de la entidad fuerte no se pueden identificar solo mediante sus propios atributos, si no que se tiene que añadir la clave de la ocurrencia de otra entidad débil.",
+      "c": "La cardinalidad es el número de entidades con la cual otra entidad se puede asociar mediante una relación binaria.",
+      "d": "El grado es el número de valores que puede tomar el atributo de una entidad."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 15,
+     "obsoleta": false,
+     "csv": 54,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2016-ej1-III-04",
+     "n": 54,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "Las consecuencias principales de que una base de datos NO esté normalizada adecuadamente son:",
+     "op": {
+      "a": "Errores de inconsistencias, incoherencias, actualización y redundancia de datos.",
+      "b": "Problemas de bloqueo en las transacciones de la base de datos.",
+      "c": "Problemas de disponibilidad de la base de datos.",
+      "d": "Dificultad para dimensionar adecuadamente las necesidades de almacenamiento de la base de datos."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 15,
+     "obsoleta": false,
+     "csv": 55,
+     "sim": 0.4
+    },
+    {
+     "id": "LI2016-ej1-III-05",
+     "n": 55,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "Según la integridad de los datos en el modelo relacional. ¿A qué regla de integridad le corresponde la siguiente definición: \"Los valores de claves foráneas deben existir en la clave primaria referenciada o bien deben ser valores nulos\"?",
+     "op": {
+      "a": "La regla de integridad referencial.",
+      "b": "La regla de integridad de dominio.",
+      "c": "La regla de integridad foránea inversa.",
+      "d": "La regla de integridad de unicidad."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 15,
+     "obsoleta": false,
+     "csv": 56,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1-III-06",
+     "n": 56,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "Seleccione la respuesta correcta en relación a las bases de datos relacionales:",
+     "op": {
+      "a": "El lenguaje que se usa para manipular datos (seleccionar, borrar, etc.) es diferente que el que se usa para definir datos (crear/modificar tablas, etc.).",
+      "b": "En el lenguaje SQL, el operador BETWEEN no puede estar en una sentencia WHERE.",
+      "c": "En el lenguaje SQL, la sintaxis para borrar una tabla es: DELETE TABLE (NOMBRE_TABLA);",
+      "d": "Las claves ajenas (foreign keys) pueden ser nulas."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 57,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2016-ej1-III-07",
+     "n": 57,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "Sobre la declaración de variables en el lenguaje de programación PHP:",
+     "op": {
+      "a": "Los nombres de las variables pueden comenzar por cualquier carácter, incluidos números y guion bajo.",
+      "b": "Las variables comienzan con el símbolo $.",
+      "c": "Es necesario declarar las variables y establecer el tipo de datos que lo almacenará antes de usarlas.",
+      "d": "Para declarar una variable de ámbito global, hay que anteponer la palabra #define."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 58,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1-III-08",
+     "n": 58,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "¿Cuál de entre los siguientes responde a las características de un tipo de datos estructurado, dinámico y no lineal?",
+     "op": {
+      "a": "Cola",
+      "b": "Pila",
+      "c": "Árbol",
+      "d": "Lista"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 12,
+     "obsoleta": false,
+     "csv": 59,
+     "sim": 0.78
+    },
+    {
+     "id": "LI2016-ej1-III-09",
+     "n": 59,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "Son lenguajes de programación orientados a objetos:",
+     "op": {
+      "a": "Basic, C, C#, C++, J#, Java, Pascal, Lisp, Simula.",
+      "b": "C#, C++, Eiffel, Vala, Lisp, Pascal, Smalltalk, Visual Basic 6.0.",
+      "c": "Ada 95, C#, C++, Pascal, Java, PHP 4.0, Python, Simula, Smalltalk.",
+      "d": "Ada 95, C#, C++, Eiffel, Vala, Python, Simula, Smalltalk, Visual Basic 6.0."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 18,
+     "obsoleta": false,
+     "csv": 60,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1-III-10",
+     "n": 60,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "¿Cuál de las siguientes sentencias forma parte del Lenguaje de Definición de Datos (DDL) de SQL?",
+     "op": {
+      "a": "INSERT",
+      "b": "UPDATE",
+      "c": "ALTER",
+      "d": "COMMIT"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 61,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1-III-11",
+     "n": 61,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "Para borrar una base de datos en mysql, cuál de las siguientes sentencias se usaría:",
+     "op": {
+      "a": "drop database [if exists] base_de_datos",
+      "b": "erase database [if exists] base_de_datos",
+      "c": "delete database [if exists] base_de_datos",
+      "d": "quit database [if exists] base_de_datos"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 62,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1-III-12",
+     "n": 62,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "La ejecución de una transacción en un SGDB debe cumplir, entre otras, las características de:",
+     "op": {
+      "a": "Consistencia y herencia.",
+      "b": "Atomicidad y herencia.",
+      "c": "Atomicidad y consistencia.",
+      "d": "Abstracción y polimorfismo."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 14,
+     "obsoleta": false,
+     "csv": 63,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2016-ej1-III-13",
+     "n": 63,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "En SQL, la cláusula having:",
+     "op": {
+      "a": "Se utiliza específicamente para realizar cálculos con campos tipo Datetime.",
+      "b": "Se usa habitualmente en combinación con la cláusula \"group by\".",
+      "c": "El uso de having impide usar la cláusula where en la misma sentencia.",
+      "d": "Es un comando que se incluye dentro del llamado Lenguaje de Definición de Datos."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 64,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1-III-14",
+     "n": 64,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "Con la cláusula ORDER BY de SQL, si nos encontramos con la siguiente consulta: SELECT * FROM Empleados ORDER BY Provincia DESC, Municipio; ¿Cuál es el resultado que se obtendría?",
+     "op": {
+      "a": "Un listado de empleados ordenado de manera ascendente por la columna Provincia y, dentro de cada provincia ordenado de manera ascendente por la columna Municipio.",
+      "b": "Un listado de empleados ordenado de manera descendente por la columna Provincia y, dentro de cada provincia ordenado de manera ascendente por la columna Municipio.",
+      "c": "Un listado de empleados ordenado de manera ascendente por la columna Provincia y, dentro de cada provincia ordenado de manera descendente por la columna Municipio.",
+      "d": "Da ERROR, la sintaxis correcta es SELECT * FROM Empleados ORDER BY Provincia, Municipio DESC; El criterio de ordenación (ASC o DESC) debe ser el mismo para todas las columnas del ORDER BY y encontrarse al final de la cláusula."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 65,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1-III-15",
+     "n": 65,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "¿Cuál de las siguientes sentencias utilizaríamos para permitir al USUARIO1 actualizar la columna SALARIO de la tabla EMPLEADOS sin permitirle dar de alta nuevos empleados?",
+     "op": {
+      "a": "GRANT EMPLEADOS ON SELECT, UPDATE(SALARIO) TO USUARIO1",
+      "b": "GRANT ALL ON SELECT, UPDATE TO USUARIO1",
+      "c": "GRANT ALL ON EMPLEADOS TO USUARIO1",
+      "d": "GRANT SELECT, UPDATE(SALARIO) ON EMPLEADOS TO USUARIO1"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 66,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2016-ej1-III-16",
+     "n": 66,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "De acuerdo al estándar ANSI SQL, ¿cuál de las siguientes opciones es equivalente a la operación JOIN?",
+     "op": {
+      "a": "LEFT JOIN",
+      "b": "FULL JOIN",
+      "c": "INNER JOIN",
+      "d": "OUTER JOIN"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 67,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1-III-17",
+     "n": 67,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "El patrón de diseño cuyo propósito es convertir la interfaz de una clase en otra que esperan los clientes es:",
+     "op": {
+      "a": "Proxy",
+      "b": "Composite",
+      "c": "Adapter",
+      "d": "Facade"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 18,
+     "obsoleta": false,
+     "csv": 68,
+     "sim": 0.86
+    },
+    {
+     "id": "LI2016-ej1-III-18",
+     "n": 68,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "Según la clasificación de la GoF (Gang of Four), ¿qué patrón de diseño se categoriza como estructural?",
+     "op": {
+      "a": "Mediator",
+      "b": "Memento",
+      "c": "Prototype",
+      "d": "Bridge"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 18,
+     "obsoleta": false,
+     "csv": 69,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2016-ej1-III-19",
+     "n": 69,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "Dentro de los mecanismos comunes en UML se encuentran los mecanismos de extensibilidad. Señale cuál de los siguientes NO es un mecanismo de extensión de UML:",
+     "op": {
+      "a": "Estereotipos.",
+      "b": "Adornos.",
+      "c": "Valores etiquetados.",
+      "d": "Restricciones."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 18,
+     "obsoleta": false,
+     "csv": 70,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2016-ej1-III-20",
+     "n": 70,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "En el marco del modelado de sistemas con UML, ¿cuál de los diagramas siguientes hace especial hincapié en la ordenación temporal de los mensajes?",
+     "op": {
+      "a": "Diagrama de despliegue.",
+      "b": "Diagrama de estados.",
+      "c": "Diagrama de secuencia.",
+      "d": "Diagrama de comunicación."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 18,
+     "obsoleta": false,
+     "csv": 71,
+     "sim": 0.83
+    },
+    {
+     "id": "LI2016-ej1-III-21",
+     "n": 71,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "Indique la afirmación verdadera sobre la programación orientada a objetos, el polimorfismo es:",
+     "op": {
+      "a": "el proceso de ocultar todos los detalles de un objeto que no contribuyen a sus características esenciales.",
+      "b": "la propiedad por la cual un mismo mensaje puede originar conductas completamente diferentes al ser recibido por diferentes objetos.",
+      "c": "la propiedad de un sistema que ha sido descompuesto en varios objetos coherentes e independientes.",
+      "d": "la capacidad de producir componentes reutilizables para otros diseños o aplicaciones."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 18,
+     "obsoleta": false,
+     "csv": 72,
+     "sim": 0.33
+    },
+    {
+     "id": "LI2016-ej1-III-22",
+     "n": 72,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "En lo que respecta a Java:",
+     "op": {
+      "a": "Soporta herencia simple y polimorfismo.",
+      "b": "Soporta herencia múltiple y polimorfismo.",
+      "c": "Soporta herencia múltiple y no soporta polimorfismo.",
+      "d": "Soporta herencia simple y no soporta polimorfismo."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 18,
+     "obsoleta": false,
+     "csv": 73,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2016-ej1-III-23",
+     "n": 73,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "La API de Java JAX-RS es:",
+     "op": {
+      "a": "Java API for RESTful Web Services, es una API que proporciona soporte a la creación de servicios web REST.",
+      "b": "Java API for XML Web Services, es una API para la creación de servicios web.",
+      "c": "Java API for XML Registries, es una API para acceder a diferentes tipos de registros de metadatos basados en XML.",
+      "d": "Java API for XML based RPC, es una API que permite invocar un servicio web basado en Java cuya descripción está basada en WSDL."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 20,
+     "obsoleta": false,
+     "csv": 74,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2016-ej1-III-24",
+     "n": 74,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "En el lenguaje de programación C, la sentencia de escape \"\\v\":",
+     "op": {
+      "a": "Retrocede de página.",
+      "b": "Avanza de página.",
+      "c": "Se usa para tabulación.",
+      "d": "Hace sonar la campana del sistema."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 75,
+     "sim": 0.33
+    },
+    {
+     "id": "LI2016-ej1-III-25",
+     "n": 75,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "Dado el siguiente código en C++:\nint a=2;\nint main () {\n    int a=10;\n    /* sentencia */\n    return 0;\n}\nIndicar cuál es la sentencia que falta que nos permitiría mostrar el valor 2 en pantalla:",
+     "op": {
+      "a": "cout << &a << endl;",
+      "b": "cout << ::a << endl;",
+      "c": "cout << ?:a << endl;",
+      "d": "cout << *a << endl;"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 76,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2016-ej1-III-26",
+     "n": 76,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "Indica el resultado tras ejecutar las siguientes sentencias en C: int x=5; int y=3; y=++x; printf(\"El valor de X es %i y el de Y es %i\\n\", x, y);",
+     "op": {
+      "a": "El valor de X es 5 y el de Y es 4.",
+      "b": "El valor de X es 6 y el de Y es 6.",
+      "c": "El valor de X es 5 y el de Y es 8.",
+      "d": "El valor de X es 5 y el de Y es 6."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 77,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1-III-27",
+     "n": 77,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "Indique cuál de las siguientes afirmaciones es FALSA en relación con la instrucción switch en JAVA:",
+     "op": {
+      "a": "switch nos permite repetir la ejecución de una serie de instrucciones mientras que se cumpla la expresión condicional o aparezca una sentencia break.",
+      "b": "switch es equivalente a programar usando sentencias if anidadas.",
+      "c": "La sentencia break asociada al último case (o default) no es necesaria.",
+      "d": "La expresión asociada a la instrucción switch debe generar valores tipo char, byte, short o int."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 78,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2016-ej1-III-28",
+     "n": 78,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "En el contexto del lenguaje Java, supongamos que tenemos una matriz SaldoMensual declarada de la siguiente forma: float[] SaldoMensual = new float[12] . Elija de entre las siguientes, la instrucción repetitiva que nos permite recorrer todos sus elementos:",
+     "op": {
+      "a": "for (int i=0;i<12;i++) System.out.println(SaldoMensual[i]);",
+      "b": "for (int i=1;i<12;i++) System.out.println(SaldoMensual[i]);",
+      "c": "for (int i=1;i<=12;i++) System.out.println(SaldoMensual[i]);",
+      "d": "for (int i=0;i=12;i++) System.out.println(SaldoMensual[i]);"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 79,
+     "sim": 0.0
+    },
+    {
+     "id": "LI2016-ej1-III-29",
+     "n": 79,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "Son palabras reservadas del lenguaje de programación Java:",
+     "op": {
+      "a": "assert, boolean, explicit, public, this.",
+      "b": "abstract, float, include, private, goto.",
+      "c": "assert, boolean, return, public, this.",
+      "d": "abstract, float, out, private, goto."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 80,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2016-ej1-III-30",
+     "n": 80,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "Indique qué se imprime por pantalla con el siguiente código Java: for(int i = 10, j = 1; i > 0; i=i-j) { System.out.print(i); j++; }",
+     "op": {
+      "a": "10873",
+      "b": "10963",
+      "c": "10851",
+      "d": "10751"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 81,
+     "sim": 0.33
+    },
+    {
+     "id": "LI2016-ej1-III-31",
+     "n": 81,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "En lo referente a la programación en Java, ¿cuál de las siguientes afirmaciones es cierta?",
+     "op": {
+      "a": "Swift es la nueva máquina virtual Java que se ejecuta en Android 7.0.",
+      "b": "JUnit nos permite crear test de clases Java.",
+      "c": "Swing es un framework de persistencia de bases de datos.",
+      "d": "Drupal requiere para su ejecución una máquina virtual Java 1.8"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 19,
+     "obsoleta": false,
+     "csv": 82,
+     "sim": 0.71
+    },
+    {
+     "id": "LI2016-ej1-III-32",
+     "n": 82,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "¿A cuál de los siguientes elementos de la arquitectura cliente/servidor se le conoce también con el término front-end?",
+     "op": {
+      "a": "Base de Datos.",
+      "b": "Servidor.",
+      "c": "Cliente.",
+      "d": "Al conjunto de la arquitectura."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 20,
+     "obsoleta": false,
+     "csv": 83,
+     "sim": 0.71
+    },
+    {
+     "id": "LI2016-ej1-III-33",
+     "n": 83,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "Señale la respuesta correcta en relación con los servicios web:",
+     "op": {
+      "a": "Las Arquitecturas Orientadas a Servicios (SOA) se implementan con HTML5, CSS3 y Javascript.",
+      "b": "Las arquitecturas SOA están formadas por servicios de aplicación fuertemente acoplados y altamente interoperables.",
+      "c": "Las arquitecturas SOA son un modelo orientado a la reutilización de los servicios en entornos de sistemas distribuidos.",
+      "d": "Los servicios de una arquitectura SOA se basan en una definición formal independiente de la plataforma subyacente. Esta definición formal se realiza en el lenguaje JAVA."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 20,
+     "obsoleta": false,
+     "csv": 84,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1-III-34",
+     "n": 84,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "Es una librería para la implementación de servicios web de la API Java JAX-WS:",
+     "op": {
+      "a": "Apache Axe.",
+      "b": "Jersey.",
+      "c": "Apache CXF.",
+      "d": "WS4All."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 20,
+     "obsoleta": false,
+     "csv": 85,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1-III-35",
+     "n": 85,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "¿A qué lenguaje pertenece la siguiente sentencia: \"/Usuarios/usuario[numIntentos>3]/apellidos\"?",
+     "op": {
+      "a": "Xlink",
+      "b": "Xpath",
+      "c": "Xpointer",
+      "d": "Xml"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 86,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2016-ej1-III-36",
+     "n": 86,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "¿Cuál de las siguientes afirmaciones relativas al lenguaje XHTML es INCORRECTA?",
+     "op": {
+      "a": "Los documentos deben estar bien formados.",
+      "b": "Todos los valores de los atributos deben ir entre comillas, excepto aquellos que sean numéricos.",
+      "c": "Los elementos que no estén vacíos necesitan etiquetas de cierre.",
+      "d": "Los nombres de atributos y elementos deben ir en minúscula."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 87,
+     "sim": 0.0
+    },
+    {
+     "id": "LI2016-ej1-III-37",
+     "n": 87,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "Señale la respuesta INCORRECTA con respecto al lenguaje XML:",
+     "op": {
+      "a": "Un documento XML puede ser creado en un editor de texto básico.",
+      "b": "XML es un lenguaje útil en la descripción del significado de los datos.",
+      "c": "En la definición de elementos, las mayúsculas se distinguen de las minúsculas.",
+      "d": "Un documento xml puede tener tantos elementos raíz como sea preciso."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 88,
+     "sim": 0.0
+    },
+    {
+     "id": "LI2016-ej1-III-38",
+     "n": 88,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "En un XML, ¿cuál de las siguientes es una llamada correcta a un DTD externo?",
+     "op": {
+      "a": "<!SYSTEM nombre DOCTYPE archivodtd.dtd !>",
+      "b": "<!DOCTYPE nombre SYSTEM \"archivodtd.dtd\" />",
+      "c": "<!SYSTEM nombre DOCTYPE archivodtd.dtd />",
+      "d": "<!DOCTYPE nombre SYSTEM \"archivodtd.dtd\">"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 89,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2016-ej1-III-39",
+     "n": 89,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "¿Cuál es la sintaxis para definir el inicio de un comentario en JSP?",
+     "op": {
+      "a": "<%--",
+      "b": "<!%--",
+      "c": "<jsp--",
+      "d": "<!jsp--"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 19,
+     "obsoleta": false,
+     "csv": 90,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1-III-40",
+     "n": 90,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "Uno de los valores posibles que puede tener el atributo keytype de la etiqueta keygen en HTML5 es:",
+     "op": {
+      "a": "handshake",
+      "b": "ltr",
+      "c": "ec",
+      "d": "down"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 91,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2016-ej1-III-41",
+     "n": 91,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "El método del objeto Window de Javascript que codifica un string en base-64:",
+     "op": {
+      "a": "atob",
+      "b": "btoa",
+      "c": "unescape",
+      "d": "code"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 92,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2016-ej1-III-42",
+     "n": 92,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "¿Cuál de las opciones representa el equivalente en JSON al siguiente código en XML? <empleados> <empleado> <nombre>Juan</nombre> <apellido>Español</apellido> </empleado> <empleado> <nombre>Juana</nombre> <apellido>Española</apellido> </empleado></empleados>",
+     "op": {
+      "a": "{\"empleados\":{\"empleado\":[{\"nombre\":\"Juan\",\"apellido\":\"Español\"},{\"nombre\":\"Juana\",\"apellido\":\"Española\"}]}}",
+      "b": "[\"empleados\":[\"empleado\":{[\"nombre\":\"Juan\",\"apellido\":\"Español\"],[\"nombre\":\"Juana\",\"apellido\":\"Española\"]}]]",
+      "c": "{\"empleados\":{\"empleado\":{\"nombre\":\"Juan\",\"apellido\":\"Español\"},{\"nombre\":\"Juana\",\"apellido\":\"Española\"}}}",
+      "d": "{empleados {\"empleado\":[{\"nombre\":\"Juan\",\"apellido\":\"Español\"},{\"nombre\":\"Juana\",\"apellido\":\"Española\"}]}}"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 93,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1-III-43",
+     "n": 93,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "API de JAVA proporciona un sistema de autenticación y control de acceso de usuarios y grupos para una aplicación:",
+     "op": {
+      "a": "JAF",
+      "b": "JAAS",
+      "c": "JACC",
+      "d": "JNDI"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 19,
+     "obsoleta": false,
+     "csv": 94,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1-III-44",
+     "n": 94,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "¿Cuál de las siguientes soluciones es un sistema de construcción (build system) que permite automatizar tareas comunes de desarrollo, tales como la minimización (técnica minify) de código JavaScript?",
+     "op": {
+      "a": "Gulp",
+      "b": "Bitbucket",
+      "c": "Babel",
+      "d": "Traceur"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 95,
+     "sim": 0.71
+    },
+    {
+     "id": "LI2016-ej1-III-45",
+     "n": 95,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "¿Cuál de los siguientes criterios de conformidad es de nivel AAA según WCAG 2.0?",
+     "op": {
+      "a": "Contenido no textual.",
+      "b": "Idioma de las partes.",
+      "c": "Etiquetas o instrucciones.",
+      "d": "Pronunciación."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 22,
+     "obsoleta": false,
+     "csv": 96,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1-III-46",
+     "n": 96,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "En relación a la accesibilidad universal, señale la afirmación VERDADERA:",
+     "op": {
+      "a": "La accesibilidad universal está estandarizada a través de la ISO 20000.",
+      "b": "La aplicación de la accesibilidad universal en el ámbito de las telecomunicaciones y sociedad de la información está regulada por ley.",
+      "c": "El Esquema Nacional de Interoperabilidad (ENI) desarrolla una Norma Técnica de Interoperabilidad de Accesibilidad Universal.",
+      "d": "El PMBOK, del Project Management Institute, es una guía metodológica para implantar la accesibilidad universal en proyectos de Tecnologías de la Información."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 22,
+     "obsoleta": false,
+     "csv": 97,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2016-ej1-III-47",
+     "n": 97,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "¿A cuál de los principios descritos en la WCAG 2.0 está vinculada la pauta 3.3. Entrada de datos asistida?",
+     "op": {
+      "a": "Robusto",
+      "b": "Operable",
+      "c": "Perceptible",
+      "d": "Comprensible"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 22,
+     "obsoleta": false,
+     "csv": 98,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1-III-48",
+     "n": 98,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "¿Cuál de las siguientes opciones representa una aplicación de código abierto para sistema operativo Microsoft Windows que proporciona un lector de pantalla para personas ciegas o con baja visión?",
+     "op": {
+      "a": "NVDA",
+      "b": "Orca",
+      "c": "Voice Over",
+      "d": "Cortana"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 22,
+     "obsoleta": false,
+     "csv": 99,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1-III-49",
+     "n": 99,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "Es un sistema de control de versiones multiplataforma, para desarrolladores de software:",
+     "op": {
+      "a": "Cassandra",
+      "b": "Nunit",
+      "c": "Mercurial",
+      "d": "Lucene"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 23,
+     "obsoleta": false,
+     "csv": 100,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1-III-50",
+     "n": 100,
+     "reserva": false,
+     "bloque_orig": "III",
+     "q": "Dado un repositorio que se encuentra bajo control de versiones con la herramienta Git, ¿qué nombre tiene el fichero en que se indican aquellos ficheros que NO deben ser tenidos en cuenta por el control de versiones?",
+     "op": {
+      "a": ".gitignore",
+      "b": ".gituntrack",
+      "c": ".gitexclude",
+      "d": ".gituncommit"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 23,
+     "obsoleta": false,
+     "csv": 101,
+     "sim": 0.4
+    },
+    {
+     "id": "LI2016-ej1-I-II-R01",
+     "n": 1,
+     "reserva": true,
+     "bloque_orig": "I-II",
+     "q": "Según la Ley 39/2015, cuando la notificación por medios electrónicos sea de carácter obligatorio, se entenderá rechazada cuando hayan transcurrido (desde la puesta a disposición de la notificación sin que se acceda a su contenido):",
+     "op": {
+      "a": "10 días naturales.",
+      "b": "15 días naturales.",
+      "c": "10 días hábiles.",
+      "d": "15 días hábiles."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 8,
+     "obsoleta": false,
+     "csv": 49,
+     "sim": 0.57
+    },
+    {
+     "id": "LI2016-ej1-I-II-R02",
+     "n": 2,
+     "reserva": true,
+     "bloque_orig": "I-II",
+     "q": "El Punto de Acceso General (PAG) está regulado por la Orden HAP/1949/2014, y su sede electrónica se encuentra en la dirección electrónica de referencia:",
+     "op": {
+      "a": "https://sede.administracion.gob.es",
+      "b": "https://sede.PAG.gob.es",
+      "c": "https://sede.gob.es",
+      "d": "https://sede.minhafp.gob.es"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 9,
+     "obsoleta": false,
+     "csv": 50,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1-I-II-R03",
+     "n": 3,
+     "reserva": true,
+     "bloque_orig": "I-II",
+     "q": "1 ExaByte (EB) se corresponde con:",
+     "op": {
+      "a": "1000 TB",
+      "b": "1000 PB",
+      "c": "1000 YB",
+      "d": "65536 GB"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 10,
+     "obsoleta": false,
+     "csv": 51,
+     "sim": 0.0
+    },
+    {
+     "id": "LI2016-ej1-III-R01",
+     "n": 4,
+     "reserva": true,
+     "bloque_orig": "III",
+     "q": "¿Cuál de las siguientes cláusulas LIKE de SQL permite obtener todos los nombres que empiezan por PAL?",
+     "op": {
+      "a": "LIKE 'PAL&'",
+      "b": "LIKE 'PAL$'",
+      "c": "LIKE 'PAL*'",
+      "d": "LIKE 'PAL%'"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 102,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1-III-R02",
+     "n": 5,
+     "reserva": true,
+     "bloque_orig": "III",
+     "q": "Sobre la etiqueta <aside> de HTML5 :",
+     "op": {
+      "a": "Necesita obligatoriamente llevar el atributo right o left.",
+      "b": "Obsoleta en HTML5, marcada como deprecated.",
+      "c": "También estaba soportada en HTML 4.01.",
+      "d": "Se usa para el contenido tangencial al contenido principal de la página."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 103,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2016-ej1-III-R03",
+     "n": 6,
+     "reserva": true,
+     "bloque_orig": "III",
+     "q": "¿Cuál de las siguientes opciones es un preprocesador CSS?",
+     "op": {
+      "a": "LESS",
+      "b": "Grunt",
+      "c": "Veeam",
+      "d": "Mercurial"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 104,
+     "sim": 0.75
+    }
+   ]
+  },
+  "ej1_iv": {
+   "titulo": "Primer ejercicio (test): Bloque IV",
+   "valor": 1.0,
+   "contexto": "",
+   "preguntas": [
+    {
+     "id": "LI2016-ej1_iv-IV-01",
+     "n": 1,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "VCS (Version Control System), SCM (Software Configuration Management) y CMS (Configuration Management System) son:",
+     "op": {
+      "a": "Formas de referirse al control de cambios de los programas de una instalación.",
+      "b": "Paquetes de la herramienta CVS (Concurrent Versions System).",
+      "c": "Capas del Control Version System en Windows 10.",
+      "d": "Herramientas disponibles en Office 2016."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 23,
+     "obsoleta": false,
+     "csv": 105,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-02",
+     "n": 2,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "Indique cuál es el resultado de la ejecución del comando \"cat fichero | wc -l\" en Unix:",
+     "op": {
+      "a": "Muestra el contenido de fichero.",
+      "b": "El número de líneas que tiene fichero.",
+      "c": "Muestra el directorio en que se encuentra fichero.",
+      "d": "El número de palabras que tiene fichero."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 24,
+     "obsoleta": false,
+     "csv": 106,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-03",
+     "n": 3,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "Los repositorios en un sistema operativo Linux, son bases de datos (BBDD) o servidores que:",
+     "op": {
+      "a": "alojan aplicaciones que el sistema necesita.",
+      "b": "que alojan aplicaciones que el sistema necesita, vienen instalados en el sistema y protegidos en un directorio encriptado que evita que pueda ser modificado y así corromper el sistema.",
+      "c": "que alojan aplicaciones que el sistema necesita, vienen pre-instalados en el sistema y protegidos en un directorio encriptado que evita que pueda ser modificado y así corromper el sistema, al estar pre-instalados se le permite al usuario elegir qué repositorios utilizar e instalar aplicaciones.",
+      "d": "que alojan aplicaciones que el sistema necesita, vienen pre-instalados en el sistema y protegidos en un directorio encriptado que evita que pueda ser modificado y así corromper el sistema, al estar pre-instalados se le permite al administrador del sistema elegir qué repositorios utilizar e instalar aplicaciones."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 24,
+     "obsoleta": false,
+     "csv": 107,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-04",
+     "n": 4,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "En el editor de texto de Unix denominado vi, ¿cuál es el comando que deshace la última acción realizada?",
+     "op": {
+      "a": "a",
+      "b": "i",
+      "c": "o",
+      "d": "u"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 24,
+     "obsoleta": false,
+     "csv": 108,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-05",
+     "n": 5,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "En Linux, ¿cuál es la finalidad del comando modprobe?",
+     "op": {
+      "a": "Realiza test unitarios sobre código C.",
+      "b": "Añade o elimina módulos del kernel de Linux.",
+      "c": "Añade módulos del kernel de Linux, pero no permite eliminarlos.",
+      "d": "Es equivalente en funcionalidad a la que ofrece pvcreate."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 24,
+     "obsoleta": false,
+     "csv": 109,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-06",
+     "n": 6,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "¿Cuál es el puerto publicado por la IANA para el servicio Quick Mail Transfer Protocol (qmtp)?",
+     "op": {
+      "a": "698",
+      "b": "214",
+      "c": "456",
+      "d": "209"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 26,
+     "obsoleta": false,
+     "csv": 110,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-07",
+     "n": 7,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "Los registros SPF (Sender Policy Framework) son los registros que:",
+     "op": {
+      "a": "Permiten almacenar los eventos registrados por los filtros anti-spam.",
+      "b": "Permiten configurar ciertas reglas en el IDS (Intrusion Detection System) para evitar ataques de DoS (Denial of Service).",
+      "c": "Almacenan los eventos detectados del acceso a ciertas aplicaciones de correo electrónico.",
+      "d": "Indican los servidores de correo autorizadas a enviar transporte a un dominio determinado."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 26,
+     "obsoleta": false,
+     "csv": 111,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-08",
+     "n": 8,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "Señale la afirmación correcta, el servidor de correo electrónico corporativo según recomendaciones del CCN-CERT debe estar:",
+     "op": {
+      "a": "ubicado en la red interna de la organización.",
+      "b": "ubicado en una zona desmilitarizada.",
+      "c": "ubicado en la red externa.",
+      "d": "aislado y sin conexión con ninguna red."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 26,
+     "obsoleta": false,
+     "csv": 112,
+     "sim": 0.71
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-09",
+     "n": 9,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "Protocolo de sincronización, basado en HTTP y XML, que permite que dispositivos móviles obtengan acceso a la información de una organización (emails, calendario, etc.) alojada en servidor/es Microsoft Exchange, y permite acceso a éstos cuando trabajan sin conexión:",
+     "op": {
+      "a": "Exchange Axis",
+      "b": "Exchange zMail",
+      "c": "iPOP",
+      "d": "Exchange ActiveSync"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 26,
+     "obsoleta": false,
+     "csv": 113,
+     "sim": 0.71
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-10",
+     "n": 10,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "Indique la afirmación verdadera sobre los protocolos de correo electrónico:",
+     "op": {
+      "a": "SMTP se emplea para gestionar el correo saliente.",
+      "b": "IMAP descarga los mensajes a tu ordenador.",
+      "c": "SMTP descarga los mensajes a tu ordenador.",
+      "d": "IMAP se emplea para gestionar el correo saliente."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 26,
+     "obsoleta": false,
+     "csv": 114,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-11",
+     "n": 11,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "Nagios se basa en el protocolo:",
+     "op": {
+      "a": "SMTP",
+      "b": "SNTP",
+      "c": "SNMP",
+      "d": "NTP"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 27,
+     "obsoleta": false,
+     "csv": 115,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-12",
+     "n": 12,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "La herramienta gratuita y de código libre que para controlar el tráfico de red y cuyo principal objetivo es rastrear o buscar los eventos de seguridad que pueden indicar un ataque o posible intrusión en un servidor o en algún equipo de la red es:",
+     "op": {
+      "a": "LAPs",
+      "b": "Yara",
+      "c": "Spring",
+      "d": "Suricata"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 32,
+     "obsoleta": false,
+     "csv": 116,
+     "sim": 0.71
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-13",
+     "n": 13,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "En Windows, ¿cuál es la afirmación verdadera al ejecutar en cmd el comando nslookup 81.89.32.200 10.31.15.6?",
+     "op": {
+      "a": "No resolvería nada porque la dirección 10.31.15.6 es una dirección IP privada.",
+      "b": "Nos daría el nombre del servidor que corresponde a 10.31.15.6 tras realizar la consulta oportuna en el servidor 81.89.32.200",
+      "c": "Nos daría el nombre del servidor que corresponde a 81.89.32.200 tras realizar la consulta oportuna en el servidor 10.31.15.6",
+      "d": "No resolvería nada porque la dirección 81.89.32.200 es una dirección IP pública."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 30,
+     "obsoleta": false,
+     "csv": 117,
+     "sim": 0.4
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-14",
+     "n": 14,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "En el sistema operativo Windows, ¿qué comando purga la caché de resolución de DNS?",
+     "op": {
+      "a": "ipconfig /release",
+      "b": "ipconfig /cleardns",
+      "c": "ipconfig /flushdns",
+      "d": "ipconfig /purgedns"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 30,
+     "obsoleta": false,
+     "csv": 118,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-15",
+     "n": 15,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "Indique cuál de las siguientes herramientas de monitorización de red se puede usar en sistemas Windows, Linux y OS X:",
+     "op": {
+      "a": "Invigilator Net Guard.",
+      "b": "Citrix Online Services.",
+      "c": "Mozilla.",
+      "d": "Wireshark."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 27,
+     "obsoleta": false,
+     "csv": 119,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-16",
+     "n": 16,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "En el ámbito de la seguridad de los sistemas de información, token físico de seguridad es:",
+     "op": {
+      "a": "Una clave compartida por dos entidades emisor y receptor.",
+      "b": "Un dispositivo electrónico que se le da a un usuario autorizado de un servicio computerizado para facilitar el proceso de autenticación.",
+      "c": "Un tipo de impresora específico que controla los accesos de usuarios mediante una white list cuando la impresora está conectada a la red.",
+      "d": "Un tipo de impresora específico que controla los accesos de usuarios mediante una black list cuando la impresora está conectada a la red."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 28,
+     "obsoleta": false,
+     "csv": 120,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-17",
+     "n": 17,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "Señale cuál de las siguientes afirmaciones es cierta, referente al algoritmo criptográfico IDEA:",
+     "op": {
+      "a": "Opera con bloques de 256 bits.",
+      "b": "Opera con bloques de 256 bytes.",
+      "c": "Opera con bloques de 64 bits.",
+      "d": "Opera con bloques de 64 bytes."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 28,
+     "obsoleta": false,
+     "csv": 121,
+     "sim": 0.4
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-18",
+     "n": 18,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "Indique cuál de las afirmaciones sobre la clasificación de los centros de datos (CPDs) del UPTIME INSTITUTE es VERDADERA:",
+     "op": {
+      "a": "Los CPD se clasifican de TIER I (menor tolerancia a fallos) a TIER V (mayor tolerancia a fallos).",
+      "b": "Un CPD TIER I requiere elementos de energía y refrigeración redundantes, pero no de cableado.",
+      "c": "Un CPD TIER IV es tolerante a fallos.",
+      "d": "Un CPD TIER V requiere un centro de respaldo."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 28,
+     "obsoleta": false,
+     "csv": 122,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-19",
+     "n": 19,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "La persona que busca la forma de usar o abusar del teléfono ajeno a su antojo es un:",
+     "op": {
+      "a": "Cracker",
+      "b": "Phonker",
+      "c": "Phreaker",
+      "d": "Lamer"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 28,
+     "obsoleta": false,
+     "csv": 123,
+     "sim": 0.43
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-20",
+     "n": 20,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "Indique, de las siguientes afirmaciones sobre algoritmos de cifrado, cuál es verdadera:",
+     "op": {
+      "a": "TDEA es simétrico.",
+      "b": "DSA es simétrico.",
+      "c": "ECIES es simétrico.",
+      "d": "AES es asimétrico."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 28,
+     "obsoleta": false,
+     "csv": 124,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-21",
+     "n": 21,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "¿Cuál de los siguientes es un código malicioso para secuestrar datos, en el que el atacante encripta los datos de la víctima y exige un pago por la clave de descifrado?",
+     "op": {
+      "a": "Purple",
+      "b": "Pharming",
+      "c": "Ransomware",
+      "d": "Spoofing"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 28,
+     "obsoleta": false,
+     "csv": 125,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-22",
+     "n": 22,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "En la arquitectura TCP/IP, los protocolos Telnet, HTTP y FTP funcionan en la capa de:",
+     "op": {
+      "a": "Aplicación.",
+      "b": "Internet.",
+      "c": "Transporte.",
+      "d": "Ninguna de las anteriores."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 30,
+     "obsoleta": false,
+     "csv": 126,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-23",
+     "n": 23,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "Según su tipo de propagación, las Fibras Ópticas pueden clasificarse como:",
+     "op": {
+      "a": "Monomodo y Multimodo.",
+      "b": "Monocanal y Multicanal.",
+      "c": "De índice escalonado o de índice gradual.",
+      "d": "En bus o en anillo."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 29,
+     "obsoleta": false,
+     "csv": 127,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-24",
+     "n": 24,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "Señale cuál de las siguientes es una técnica de compartición por reserva para el control de acceso al medio:",
+     "op": {
+      "a": "ALOHA",
+      "b": "CSMA",
+      "c": "GSMA",
+      "d": "Paso de testigo"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 33,
+     "obsoleta": false,
+     "csv": 128,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-25",
+     "n": 25,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "¿Cuál es el estándar para WiMAX?",
+     "op": {
+      "a": "IEEE 802.15",
+      "b": "IEEE 802.5",
+      "c": "IEEE 802.6",
+      "d": "IEEE 802.16"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 29,
+     "obsoleta": false,
+     "csv": 129,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-26",
+     "n": 26,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "¿Cuál de los siguientes estándares define un bus doble de colas distribuidas (DQDB)?",
+     "op": {
+      "a": "IEEE 802.3",
+      "b": "IEEE 802.6",
+      "c": "IEEE 802.10",
+      "d": "IEEE 802.11"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 29,
+     "obsoleta": true,
+     "csv": 130,
+     "sim": 0.86
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-27",
+     "n": 27,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "Según el consorcio Wi-Fi Alliance, los productos que incorporan la tecnología IEEE 802.11ah reciben la denominación de:",
+     "op": {
+      "a": "Wi-Fi HaLow.",
+      "b": "Wi-Fi Hello.",
+      "c": "Wi-Fi HighLow.",
+      "d": "Wi-Fi Certified."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 29,
+     "obsoleta": false,
+     "csv": 131,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-28",
+     "n": 28,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "El estándar IEEE relativo a las arquitecturas de red que controla que, equipos invitados, no autorizados o no administrados que no pueden autenticarse correctamente se conecten a una red, es:",
+     "op": {
+      "a": "802.1p",
+      "b": "802.1q",
+      "c": "802.1x",
+      "d": "802.1z"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 32,
+     "obsoleta": false,
+     "csv": 132,
+     "sim": 0.57
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-29",
+     "n": 29,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "En relación a las características de LTE Advanced del 3GPP, señale la sentencia FALSA:",
+     "op": {
+      "a": "Para incrementar el ancho de banda ofrecido, utiliza agregación de canales de hasta 20 MHZ.",
+      "b": "Utiliza tecnologías de antenas múltiples basadas en MIMO (Multiple Input Multiple Output).",
+      "c": "Utiliza la tecnología de acceso móvil W-CDMA.",
+      "d": "Cumple con el estándar IMT advanced (4G) definido por la ITU."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 29,
+     "obsoleta": false,
+     "csv": 133,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-30",
+     "n": 30,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "Indique el orden correcto de evolución en los sistemas de comunicación móviles:",
+     "op": {
+      "a": "GSM, LTE, GPRS, UMTS, HSDPA",
+      "b": "GPRS, GSM, LTE, HSDPA, UMTS",
+      "c": "GSM, GPRS, UMTS, HSDPA, LTE",
+      "d": "GSM, GPRS, UMTS, LTE, HSDPA"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 29,
+     "obsoleta": false,
+     "csv": 134,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-31",
+     "n": 31,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "El roaming es el servicio que permite:",
+     "op": {
+      "a": "la posibilidad de pasar de una zona de cobertura a otra, de un repetidor a otro, sin que el usuario lo note.",
+      "b": "cambiar de operador telefónico manteniendo el mismo número.",
+      "c": "la recepción de datos por microondas y retransmisión por ondas de radio, permitiendo la sincronización de datos a distancia.",
+      "d": "la posibilidad de utilizar los servicios contratados en su teléfono móvil en un país diferente al de su operador de origen sin tener que cambiar de operador."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 29,
+     "obsoleta": false,
+     "csv": 135,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-32",
+     "n": 32,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "¿Cuál de las siguientes afirmaciones con respecto al direccionamiento IPv6 es FALSA?",
+     "op": {
+      "a": "La compatibilidad con IPSec es un requisito.",
+      "b": "Las direcciones tienen una longitud de 32 bytes.",
+      "c": "Es innecesario la implementación de mecanismos de NAT.",
+      "d": "Los 64 bits de menor peso corresponden con el identificador de interfaz."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 30,
+     "obsoleta": false,
+     "csv": 136,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-33",
+     "n": 33,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "Para una subred con máscara 255.255.255.128, indique cuántas direcciones de host estarán disponibles para asignar:",
+     "op": {
+      "a": "126",
+      "b": "127",
+      "c": "128",
+      "d": "129"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 30,
+     "obsoleta": false,
+     "csv": 137,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-34",
+     "n": 34,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "En el modelo OSI, las subcapas MAC (Medium Access Control) y LLC (Logical Link Control) se sitúan en:",
+     "op": {
+      "a": "La capa de enlace de datos.",
+      "b": "La capa de red.",
+      "c": "La capa física.",
+      "d": "Las subcapas MAC (Medium Access Control) y LLC (Logical Link Control) no existen en el modelo OSI."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 30,
+     "obsoleta": false,
+     "csv": 138,
+     "sim": 0.83
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-35",
+     "n": 35,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "El protocolo IMAP4/SSL usa por defecto el puerto:",
+     "op": {
+      "a": "993 (UDP)",
+      "b": "995 (UDP)",
+      "c": "993 (TCP)",
+      "d": "995 (TCP)"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 26,
+     "obsoleta": false,
+     "csv": 139,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-36",
+     "n": 36,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "En una red MPLS, el LSR es:",
+     "op": {
+      "a": "El elemento que conmuta etiquetas.",
+      "b": "El elemento que inicia o termina el túnel.",
+      "c": "El nombre genérico de un circuito virtual MPLS.",
+      "d": "El conjunto de paquetes que se envían sobre MPLS."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 29,
+     "obsoleta": false,
+     "csv": 140,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-37",
+     "n": 37,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "De entre las siguientes, ¿cuál se corresponde con una cabecera de extensión en IP versión 6?",
+     "op": {
+      "a": "Etiqueta de flujo.",
+      "b": "Longitud de carga útil.",
+      "c": "Cabecera siguiente.",
+      "d": "Cabecera de fragmentación."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 30,
+     "obsoleta": false,
+     "csv": 141,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-38",
+     "n": 38,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "Dada la dirección 192.48.11.3 y la máscara de subred 255.255.255.128, la dirección de difusión (broadcast) de dicha subred es:",
+     "op": {
+      "a": "C0.30.0B.03 (en hexadecimal).",
+      "b": "192.48.11.128",
+      "c": "11000000.01011100.00001011.00000011 (en binario).",
+      "d": "11000000.00110000.00001011.01111111 (en binario)."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 30,
+     "obsoleta": false,
+     "csv": 142,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-39",
+     "n": 39,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "En IPv6, las direcciones FF00::/8 son:",
+     "op": {
+      "a": "Anycast",
+      "b": "Multicast",
+      "c": "Unicast",
+      "d": "Loopback"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 30,
+     "obsoleta": false,
+     "csv": 143,
+     "sim": 0.4
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-40",
+     "n": 40,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "Para los protocolos HTTP (Hypertext Transfer Protocol) y HTTPS (http sobre TLS/SSL), los puertos utilizados por defecto según la IANA son:",
+     "op": {
+      "a": "8000 y 4443, respectivamente.",
+      "b": "80 y 443, respectivamente.",
+      "c": "8080 y 4443, respectivamente.",
+      "d": "No hay un puerto por defecto, siempre hay que indicarlo en la URL."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 31,
+     "obsoleta": false,
+     "csv": 144,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-41",
+     "n": 41,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "En una máquina con sistema operativo Linux, los comandos get, put, mget y mput, pertenecen a:",
+     "op": {
+      "a": "FTP",
+      "b": "Telnet",
+      "c": "SSL",
+      "d": "HTML"
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 31,
+     "obsoleta": false,
+     "csv": 145,
+     "sim": 0.83
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-42",
+     "n": 42,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "HTTP va indicando el estado en el que se encuentra la solicitud de una página en función de una lista de códigos de respuesta y frases estándar. El código de estado múltiple (Multi-Status) es:",
+     "op": {
+      "a": "204",
+      "b": "205",
+      "c": "206",
+      "d": "207"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 31,
+     "obsoleta": false,
+     "csv": 146,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-43",
+     "n": 43,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "En relación al protocolo TLS versión 1.2, señale la afirmación verdadera:",
+     "op": {
+      "a": "Consta de 3 subprotocolos: IKE Internet Key Exchange, AH (Authentication Head) y ESP Encapsulating Security Payload).",
+      "b": "Puede implementarse tanto sobre protocolos fiables (TCP) como sobre protocolos no fiables (UDP).",
+      "c": "Proporciona confidencialidad en las comunicaciones, pero no proporciona integridad de datos.",
+      "d": "Para su funcionamiento, utiliza dos capas: TLS Record Protocol y TLS Handshake Protocol."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 31,
+     "obsoleta": false,
+     "csv": 147,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-44",
+     "n": 44,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "De los siguientes protocolos, ¿cuál es usado para el envío de correos electrónicos seguros?",
+     "op": {
+      "a": "LVM",
+      "b": "VRRP",
+      "c": "Gluster",
+      "d": "S/MIME"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 28,
+     "obsoleta": false,
+     "csv": 148,
+     "sim": 0.0
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-45",
+     "n": 45,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "La herramienta que permite un acceso de privilegio continuo a una computadora, pero que mantiene su presencia activamente oculta al control de los administradores, al corromper el funcionamiento normal del sistema operativo o de otras aplicaciones, se denomina:",
+     "op": {
+      "a": "Keylogger.",
+      "b": "Phising.",
+      "c": "HideProcess.",
+      "d": "Rootkit."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 28,
+     "obsoleta": false,
+     "csv": 149,
+     "sim": 0.62
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-46",
+     "n": 46,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "¿Cuál de las siguientes herramientas se utiliza para la realización de pruebas de seguridad?",
+     "op": {
+      "a": "HP LoadRunner",
+      "b": "IBM AppScan",
+      "c": "JAWS",
+      "d": "ACTF aDesigner"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 28,
+     "obsoleta": false,
+     "csv": 150,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-47",
+     "n": 47,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "En entornos de redes, el término que engloba el concepto de \"oficina pequeña / oficina doméstica\" se denomina:",
+     "op": {
+      "a": "DMZ",
+      "b": "MultiDMZ",
+      "c": "SOHO",
+      "d": "Dual-Homed-Host"
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 33,
+     "obsoleta": false,
+     "csv": 151,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-48",
+     "n": 48,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "A algunos proxy se les conoce como transparentes porque:",
+     "op": {
+      "a": "Permiten guardar las páginas web más visitadas y así acelerar las consultas.",
+      "b": "Es un proxy solo software, sin ningún componente hardware.",
+      "c": "Combina el proxy con NAT de manera que las conexiones son enrutadas dentro del proxy sin configuración por parte del cliente (navegador).",
+      "d": "No realizan la función de filtrado de sitios prohibidos."
+     },
+     "ctx2": null,
+     "ok": "c",
+     "anulada": false,
+     "tema": 32,
+     "obsoleta": false,
+     "csv": 152,
+     "sim": 0.4
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-49",
+     "n": 49,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "¿Cuál de las siguientes opciones recoge la especificación de VLANs?",
+     "op": {
+      "a": "802.1s",
+      "b": "802.1Q",
+      "c": "802.1w",
+      "d": "802.1ac"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 33,
+     "obsoleta": false,
+     "csv": 153,
+     "sim": 0.0
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-50",
+     "n": 50,
+     "reserva": false,
+     "bloque_orig": "IV",
+     "q": "En materia de protocolos de enrutamiento, ¿cuál de las siguientes afirmaciones es VERDADERA acerca de RIP?",
+     "op": {
+      "a": "Split Horizon ayuda a reducir los tiempos de convergencia.",
+      "b": "Por defecto, usa el puerto 135.",
+      "c": "El protocolo de enrutamiento RIPv2 está definido en el estándar RFC 2080.",
+      "d": "Utiliza el protocolo TCP por defecto."
+     },
+     "ctx2": null,
+     "ok": "a",
+     "anulada": false,
+     "tema": 30,
+     "obsoleta": false,
+     "csv": 154,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-R01",
+     "n": 1,
+     "reserva": true,
+     "bloque_orig": "IV",
+     "q": "Comando Unix que crea un archivo vacío o, si éste existe, actualiza la hora de modificación:",
+     "op": {
+      "a": "df",
+      "b": "dump",
+      "c": "iconv",
+      "d": "touch"
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 24,
+     "obsoleta": false,
+     "csv": 155,
+     "sim": 0.86
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-R02",
+     "n": 2,
+     "reserva": true,
+     "bloque_orig": "IV",
+     "q": "Indique la tecnología utilizada por Microsoft en sus sistemas operativos Windows, cuyo objetivo específico es la sincronización de datos entre equipos de escritorio y dispositivos móviles:",
+     "op": {
+      "a": "System Center Console Manager (SCCM).",
+      "b": "ActiveSync.",
+      "c": "Identity Manager.",
+      "d": "Yammer."
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 13,
+     "obsoleta": false,
+     "csv": 156,
+     "sim": 0.83
+    },
+    {
+     "id": "LI2016-ej1_iv-IV-R03",
+     "n": 3,
+     "reserva": true,
+     "bloque_orig": "IV",
+     "q": "El protocolo IEEE 802.11g utiliza la banda de:",
+     "op": {
+      "a": "11 Ghz.",
+      "b": "1,1 Ghz.",
+      "c": "5 Ghz.",
+      "d": "2,4 Ghz."
+     },
+     "ctx2": null,
+     "ok": "d",
+     "anulada": false,
+     "tema": 29,
+     "obsoleta": false,
+     "csv": 157,
+     "sim": 0.8
+    }
+   ]
+  },
+  "b3": {
+   "titulo": "Segundo ejercicio: supuesto Bloque III",
+   "valor": 1.25,
+   "contexto": "",
+   "preguntas": [
+    {
+     "id": "LI2016-b3-b3-01",
+     "n": 1,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "¿Cuál de entre las siguientes es una directiva válida para la línea 1 del código C# anterior para importar espacios de nombres?",
+     "op": {
+      "a": "using System;",
+      "b": "import System;",
+      "c": "declare System;",
+      "d": "imp System;"
+     },
+     "ctx2": "PREGUNTAS 1-7 (.NET): Teniendo en cuenta el siguiente fragmento de código numerado escrito en C# para ser ejecutado en .NET Framework, responda a las siguientes preguntas:\n1.  //**Directiva**//\n2.  class claseTai\n3.      { public int n; }\n4.  struct estructTai\n5.      { public int n; }\n6.  class taiLibreCSharp\n7.  {\n8.      public static void evaluaEstructura(estructTai st)\n9.      {st.n = 8; }\n10.     public static void evaluaClase(claseTai cl)\n11.     { cl.n = 8; }\n12.     public static void Main()\n13.     {\n14.         estructTai ns = new estructTai();\n15.         claseTai nc = new claseTai();\n16.         ns.n = 5;\n17.         nc.n = 5;\n18.         evaluaEstructura(ns);\n19.         evaluaClase(nc);\n20.         Console.WriteLine(\"ns.n = {0} \", ns.n);\n21.         Console.WriteLine(\"nc.n = {0}\", nc.n);\n22.     }}",
+     "ok": "a",
+     "anulada": false,
+     "tema": 19,
+     "obsoleta": false,
+     "csv": 1,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-b3-b3-02",
+     "n": 2,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "El resultado de la ejecución del programa C# anterior es:",
+     "op": {
+      "a": "ns.n = 5 nc.n = 8",
+      "b": "ns.n = 8 nc.n = 8",
+      "c": "ns.n = 5 nc.n = 5",
+      "d": "ns.n = 8 nc.n = 5"
+     },
+     "ctx2": "PREGUNTAS 1-7 (.NET): Teniendo en cuenta el siguiente fragmento de código numerado escrito en C# para ser ejecutado en .NET Framework, responda a las siguientes preguntas:\n1.  //**Directiva**//\n2.  class claseTai\n3.      { public int n; }\n4.  struct estructTai\n5.      { public int n; }\n6.  class taiLibreCSharp\n7.  {\n8.      public static void evaluaEstructura(estructTai st)\n9.      {st.n = 8; }\n10.     public static void evaluaClase(claseTai cl)\n11.     { cl.n = 8; }\n12.     public static void Main()\n13.     {\n14.         estructTai ns = new estructTai();\n15.         claseTai nc = new claseTai();\n16.         ns.n = 5;\n17.         nc.n = 5;\n18.         evaluaEstructura(ns);\n19.         evaluaClase(nc);\n20.         Console.WriteLine(\"ns.n = {0} \", ns.n);\n21.         Console.WriteLine(\"nc.n = {0}\", nc.n);\n22.     }}",
+     "ok": "a",
+     "anulada": false,
+     "tema": 19,
+     "obsoleta": false,
+     "csv": 2,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2016-b3-b3-03",
+     "n": 3,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "La clase System.Console representa los flujos de entrada, salida y error estándar para aplicaciones de consola, ¿qué método de entre los siguientes lee la siguiente línea del flujo de entrada estándar y lo almacena en una cadena?",
+     "op": {
+      "a": "string cadena = Console.ReadLine();",
+      "b": "string cadena = Console.Read();",
+      "c": "string [] cadena = Console.Read();",
+      "d": "string [] cadena = Console.ReadLine();"
+     },
+     "ctx2": "PREGUNTAS 1-7 (.NET): Teniendo en cuenta el siguiente fragmento de código numerado escrito en C# para ser ejecutado en .NET Framework, responda a las siguientes preguntas:\n1.  //**Directiva**//\n2.  class claseTai\n3.      { public int n; }\n4.  struct estructTai\n5.      { public int n; }\n6.  class taiLibreCSharp\n7.  {\n8.      public static void evaluaEstructura(estructTai st)\n9.      {st.n = 8; }\n10.     public static void evaluaClase(claseTai cl)\n11.     { cl.n = 8; }\n12.     public static void Main()\n13.     {\n14.         estructTai ns = new estructTai();\n15.         claseTai nc = new claseTai();\n16.         ns.n = 5;\n17.         nc.n = 5;\n18.         evaluaEstructura(ns);\n19.         evaluaClase(nc);\n20.         Console.WriteLine(\"ns.n = {0} \", ns.n);\n21.         Console.WriteLine(\"nc.n = {0}\", nc.n);\n22.     }}",
+     "ok": "a",
+     "anulada": false,
+     "tema": 19,
+     "obsoleta": false,
+     "csv": 3,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-b3-b3-04",
+     "n": 4,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Se introduce al final del método Main del programa el siguiente código:\nstring cadena = LeeCadenadeEntradaEstandar(); // este método lee cadena de la entrada estándar\nint lon=0;\nwhile(/**condición**/)\n    { Console.Write(\"{0} \", cadena[lon]); lon++; }\n¿Cuál de las siguientes opciones es correcta para que el programa recorra cada uno de los caracteres de la cadena y los muestre en pantalla sin elevar error?",
+     "op": {
+      "a": "lon < cadena.Length + 1",
+      "b": "lon <= cadena.Length()",
+      "c": "lon <= cadena.Length - 1",
+      "d": "lon < cadena.Length() + 1"
+     },
+     "ctx2": "PREGUNTAS 1-7 (.NET): Teniendo en cuenta el siguiente fragmento de código numerado escrito en C# para ser ejecutado en .NET Framework, responda a las siguientes preguntas:\n1.  //**Directiva**//\n2.  class claseTai\n3.      { public int n; }\n4.  struct estructTai\n5.      { public int n; }\n6.  class taiLibreCSharp\n7.  {\n8.      public static void evaluaEstructura(estructTai st)\n9.      {st.n = 8; }\n10.     public static void evaluaClase(claseTai cl)\n11.     { cl.n = 8; }\n12.     public static void Main()\n13.     {\n14.         estructTai ns = new estructTai();\n15.         claseTai nc = new claseTai();\n16.         ns.n = 5;\n17.         nc.n = 5;\n18.         evaluaEstructura(ns);\n19.         evaluaClase(nc);\n20.         Console.WriteLine(\"ns.n = {0} \", ns.n);\n21.         Console.WriteLine(\"nc.n = {0}\", nc.n);\n22.     }}",
+     "ok": "c",
+     "anulada": false,
+     "tema": 19,
+     "obsoleta": false,
+     "csv": 4,
+     "sim": 0.71
+    },
+    {
+     "id": "LI2016-b3-b3-05",
+     "n": 5,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Seleccione de entre las siguientes la clase que NO pertenece al espacio de nombres System.Collections de .NET Framework:",
+     "op": {
+      "a": "Queue",
+      "b": "SortedList",
+      "c": "Tree",
+      "d": "Stack"
+     },
+     "ctx2": "PREGUNTAS 1-7 (.NET): Teniendo en cuenta el siguiente fragmento de código numerado escrito en C# para ser ejecutado en .NET Framework, responda a las siguientes preguntas:\n1.  //**Directiva**//\n2.  class claseTai\n3.      { public int n; }\n4.  struct estructTai\n5.      { public int n; }\n6.  class taiLibreCSharp\n7.  {\n8.      public static void evaluaEstructura(estructTai st)\n9.      {st.n = 8; }\n10.     public static void evaluaClase(claseTai cl)\n11.     { cl.n = 8; }\n12.     public static void Main()\n13.     {\n14.         estructTai ns = new estructTai();\n15.         claseTai nc = new claseTai();\n16.         ns.n = 5;\n17.         nc.n = 5;\n18.         evaluaEstructura(ns);\n19.         evaluaClase(nc);\n20.         Console.WriteLine(\"ns.n = {0} \", ns.n);\n21.         Console.WriteLine(\"nc.n = {0}\", nc.n);\n22.     }}",
+     "ok": "c",
+     "anulada": false,
+     "tema": 19,
+     "obsoleta": false,
+     "csv": 5,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-b3-b3-06",
+     "n": 6,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Indique cuál de los siguientes eventos ocurre antes en el ciclo de vida de una página ASP.NET:",
+     "op": {
+      "a": "Page_Load()",
+      "b": "Page_Init()",
+      "c": "Page_Click()",
+      "d": "Page_PrePage()"
+     },
+     "ctx2": "PREGUNTAS 1-7 (.NET): Teniendo en cuenta el siguiente fragmento de código numerado escrito en C# para ser ejecutado en .NET Framework, responda a las siguientes preguntas:\n1.  //**Directiva**//\n2.  class claseTai\n3.      { public int n; }\n4.  struct estructTai\n5.      { public int n; }\n6.  class taiLibreCSharp\n7.  {\n8.      public static void evaluaEstructura(estructTai st)\n9.      {st.n = 8; }\n10.     public static void evaluaClase(claseTai cl)\n11.     { cl.n = 8; }\n12.     public static void Main()\n13.     {\n14.         estructTai ns = new estructTai();\n15.         claseTai nc = new claseTai();\n16.         ns.n = 5;\n17.         nc.n = 5;\n18.         evaluaEstructura(ns);\n19.         evaluaClase(nc);\n20.         Console.WriteLine(\"ns.n = {0} \", ns.n);\n21.         Console.WriteLine(\"nc.n = {0}\", nc.n);\n22.     }}",
+     "ok": "b",
+     "anulada": false,
+     "tema": 19,
+     "obsoleta": false,
+     "csv": 6,
+     "sim": 0.88
+    },
+    {
+     "id": "LI2016-b3-b3-07",
+     "n": 7,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "En .NET Framework, ¿cuál de las siguientes clases permite el acceso mediante programación al elemento HTML <input type=\"checkbox\"> del servidor?",
+     "op": {
+      "a": "HtmlInputCheckBox",
+      "b": "HtmlControl",
+      "c": "CheckBoxControl",
+      "d": "HtmlCheckBox"
+     },
+     "ctx2": "PREGUNTAS 1-7 (.NET): Teniendo en cuenta el siguiente fragmento de código numerado escrito en C# para ser ejecutado en .NET Framework, responda a las siguientes preguntas:\n1.  //**Directiva**//\n2.  class claseTai\n3.      { public int n; }\n4.  struct estructTai\n5.      { public int n; }\n6.  class taiLibreCSharp\n7.  {\n8.      public static void evaluaEstructura(estructTai st)\n9.      {st.n = 8; }\n10.     public static void evaluaClase(claseTai cl)\n11.     { cl.n = 8; }\n12.     public static void Main()\n13.     {\n14.         estructTai ns = new estructTai();\n15.         claseTai nc = new claseTai();\n16.         ns.n = 5;\n17.         nc.n = 5;\n18.         evaluaEstructura(ns);\n19.         evaluaClase(nc);\n20.         Console.WriteLine(\"ns.n = {0} \", ns.n);\n21.         Console.WriteLine(\"nc.n = {0}\", nc.n);\n22.     }}",
+     "ok": "a",
+     "anulada": false,
+     "tema": 19,
+     "obsoleta": false,
+     "csv": 7,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2016-b3-b3-08",
+     "n": 8,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "En la línea 4 del anterior código, se quiere declarar el atributo tipo entero \"PUERTO\" de forma que su valor sea constante 4444 y único para todas las instancias de la clase, la opción válida sería:",
+     "op": {
+      "a": "protected int PUERTO = 4444;",
+      "b": "final int PUERTO = 4444;",
+      "c": "int PUERTO = 4444;",
+      "d": "static final int PUERTO = 4444;"
+     },
+     "ctx2": "PREGUNTAS 8-15 (JAVA): A continuación se muestra el esqueleto de una clase JAVA para construir un servidor de ficheros con sockets. Cuando el servidor arranca necesita saber el nombre del directorio donde se encuentran los ficheros a transmitir, este nombre se pasa en la llamada de línea de comandos. Parte del código está omitido. Responda a las siguientes preguntas que se le plantean en relación con este fragmento de código y la tecnología JAVA:\n1.  import //**paquete1**\n2.  import //**paquete2**\n3.  public class FileServer {\n4.      //**declaración de la variable PUERTO**\n5.      public static void main(String[] args) {\n6.          ServerSocket listener;\n7.          Socket conn;\n8.          //**Se crea el objeto File**\n9.          //**Se comprueba que existe el directorio**\n10.         try {\n11.             listener = new ServerSocket(LISTENING_PORT);\n12.             //**aceptamos conexiones de clientes**     }\n13.         catch (Exception e) { //**Imprimir traza completa de la excepción**\n14.                 return; }}\n15.     static class Conecta //**Necesita Hilos de Ejecución** {\n16.         File directorio;\n17.         Socket connection;\n18.         String cadena1= \"TAILibre\";\n19.         String cadena2= \"TAILibre\";\n20.         Conecta(File dir, Socket conn)    {\n21.             directorio = dir;\n22.             connection = conn;\n23.             start(); }\n24.         //**Método con el código a ejecutar en cada Thread**    }}",
+     "ok": "d",
+     "anulada": false,
+     "tema": 18,
+     "obsoleta": false,
+     "csv": 8,
+     "sim": 0.62
+    },
+    {
+     "id": "LI2016-b3-b3-09",
+     "n": 9,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Para poner en marcha el nuevo Thread se llama al método start() en la línea 23, éste es el encargado de llamar al método que contiene el código a ser ejecutado asíncronamente en otro Thread y que se define en la línea 24, el cuál es:",
+     "op": {
+      "a": "public void run() { }",
+      "b": "public void init() { }",
+      "c": "public void execute() { }",
+      "d": "public void thread() { }"
+     },
+     "ctx2": "PREGUNTAS 8-15 (JAVA): A continuación se muestra el esqueleto de una clase JAVA para construir un servidor de ficheros con sockets. Cuando el servidor arranca necesita saber el nombre del directorio donde se encuentran los ficheros a transmitir, este nombre se pasa en la llamada de línea de comandos. Parte del código está omitido. Responda a las siguientes preguntas que se le plantean en relación con este fragmento de código y la tecnología JAVA:\n1.  import //**paquete1**\n2.  import //**paquete2**\n3.  public class FileServer {\n4.      //**declaración de la variable PUERTO**\n5.      public static void main(String[] args) {\n6.          ServerSocket listener;\n7.          Socket conn;\n8.          //**Se crea el objeto File**\n9.          //**Se comprueba que existe el directorio**\n10.         try {\n11.             listener = new ServerSocket(LISTENING_PORT);\n12.             //**aceptamos conexiones de clientes**     }\n13.         catch (Exception e) { //**Imprimir traza completa de la excepción**\n14.                 return; }}\n15.     static class Conecta //**Necesita Hilos de Ejecución** {\n16.         File directorio;\n17.         Socket connection;\n18.         String cadena1= \"TAILibre\";\n19.         String cadena2= \"TAILibre\";\n20.         Conecta(File dir, Socket conn)    {\n21.             directorio = dir;\n22.             connection = conn;\n23.             start(); }\n24.         //**Método con el código a ejecutar en cada Thread**    }}",
+     "ok": "a",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 9,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2016-b3-b3-10",
+     "n": 10,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "En las líneas 1 y 2 del código JAVA necesitamos realizar las importaciones para poder trabajar tanto con sockets como con ficheros (clase File), para ello debemos poner:",
+     "op": {
+      "a": "import java.File.*; import java.sockets.*;",
+      "b": "import java.net.*; import java.io.*;",
+      "c": "import java.socket.*; import java.io.*;",
+      "d": "import java.util.*; import java.io.*;"
+     },
+     "ctx2": "PREGUNTAS 8-15 (JAVA): A continuación se muestra el esqueleto de una clase JAVA para construir un servidor de ficheros con sockets. Cuando el servidor arranca necesita saber el nombre del directorio donde se encuentran los ficheros a transmitir, este nombre se pasa en la llamada de línea de comandos. Parte del código está omitido. Responda a las siguientes preguntas que se le plantean en relación con este fragmento de código y la tecnología JAVA:\n1.  import //**paquete1**\n2.  import //**paquete2**\n3.  public class FileServer {\n4.      //**declaración de la variable PUERTO**\n5.      public static void main(String[] args) {\n6.          ServerSocket listener;\n7.          Socket conn;\n8.          //**Se crea el objeto File**\n9.          //**Se comprueba que existe el directorio**\n10.         try {\n11.             listener = new ServerSocket(LISTENING_PORT);\n12.             //**aceptamos conexiones de clientes**     }\n13.         catch (Exception e) { //**Imprimir traza completa de la excepción**\n14.                 return; }}\n15.     static class Conecta //**Necesita Hilos de Ejecución** {\n16.         File directorio;\n17.         Socket connection;\n18.         String cadena1= \"TAILibre\";\n19.         String cadena2= \"TAILibre\";\n20.         Conecta(File dir, Socket conn)    {\n21.             directorio = dir;\n22.             connection = conn;\n23.             start(); }\n24.         //**Método con el código a ejecutar en cada Thread**    }}",
+     "ok": "b",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 10,
+     "sim": 0.83
+    },
+    {
+     "id": "LI2016-b3-b3-11",
+     "n": 11,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "En las líneas 8 y 9, tras crear el objeto File con el nombre del directorio pasado como parámetro, debemos comprobar que realmente existe este directorio en el sistema, la opción válida para ello es:",
+     "op": {
+      "a": "File dir= new File(args[0]); if (!dir.exists()) { }",
+      "b": "File dir= new File(args[0]); if (!File.canRead(dir)) { }",
+      "c": "File dir = new File(); dir.file_name=args[0]; if (!dir.isDirectory()) { }",
+      "d": "File dir = new File(); dir.name = args[0]; if (!dir.directory()) { }"
+     },
+     "ctx2": "PREGUNTAS 8-15 (JAVA): A continuación se muestra el esqueleto de una clase JAVA para construir un servidor de ficheros con sockets. Cuando el servidor arranca necesita saber el nombre del directorio donde se encuentran los ficheros a transmitir, este nombre se pasa en la llamada de línea de comandos. Parte del código está omitido. Responda a las siguientes preguntas que se le plantean en relación con este fragmento de código y la tecnología JAVA:\n1.  import //**paquete1**\n2.  import //**paquete2**\n3.  public class FileServer {\n4.      //**declaración de la variable PUERTO**\n5.      public static void main(String[] args) {\n6.          ServerSocket listener;\n7.          Socket conn;\n8.          //**Se crea el objeto File**\n9.          //**Se comprueba que existe el directorio**\n10.         try {\n11.             listener = new ServerSocket(LISTENING_PORT);\n12.             //**aceptamos conexiones de clientes**     }\n13.         catch (Exception e) { //**Imprimir traza completa de la excepción**\n14.                 return; }}\n15.     static class Conecta //**Necesita Hilos de Ejecución** {\n16.         File directorio;\n17.         Socket connection;\n18.         String cadena1= \"TAILibre\";\n19.         String cadena2= \"TAILibre\";\n20.         Conecta(File dir, Socket conn)    {\n21.             directorio = dir;\n22.             connection = conn;\n23.             start(); }\n24.         //**Método con el código a ejecutar en cada Thread**    }}",
+     "ok": "a",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 11,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2016-b3-b3-12",
+     "n": 12,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "En la línea 12, el servidor se mantiene esperando de forma continua la llegada de conexiones clientes, llamando al constructor de la clase Conecta cuando recibe una (pasando como parámetros directorio y socket de la conexión). ¿Qué código de entre los siguientes es válido?",
+     "op": {
+      "a": "while (1) {conn=ServerSocket.accept(); Conecta(dir,conn);}",
+      "b": "while (true) {conn=ServerSocket.accept(); new Conecta(dir,conn);}",
+      "c": "while (true) {conn=listener.accept(); new Conecta(dir,conn);}",
+      "d": "conn = listener.accept(); if (conn){new Conecta(dir,conn);}"
+     },
+     "ctx2": "PREGUNTAS 8-15 (JAVA): A continuación se muestra el esqueleto de una clase JAVA para construir un servidor de ficheros con sockets. Cuando el servidor arranca necesita saber el nombre del directorio donde se encuentran los ficheros a transmitir, este nombre se pasa en la llamada de línea de comandos. Parte del código está omitido. Responda a las siguientes preguntas que se le plantean en relación con este fragmento de código y la tecnología JAVA:\n1.  import //**paquete1**\n2.  import //**paquete2**\n3.  public class FileServer {\n4.      //**declaración de la variable PUERTO**\n5.      public static void main(String[] args) {\n6.          ServerSocket listener;\n7.          Socket conn;\n8.          //**Se crea el objeto File**\n9.          //**Se comprueba que existe el directorio**\n10.         try {\n11.             listener = new ServerSocket(LISTENING_PORT);\n12.             //**aceptamos conexiones de clientes**     }\n13.         catch (Exception e) { //**Imprimir traza completa de la excepción**\n14.                 return; }}\n15.     static class Conecta //**Necesita Hilos de Ejecución** {\n16.         File directorio;\n17.         Socket connection;\n18.         String cadena1= \"TAILibre\";\n19.         String cadena2= \"TAILibre\";\n20.         Conecta(File dir, Socket conn)    {\n21.             directorio = dir;\n22.             connection = conn;\n23.             start(); }\n24.         //**Método con el código a ejecutar en cada Thread**    }}",
+     "ok": "c",
+     "anulada": false,
+     "tema": 20,
+     "obsoleta": false,
+     "csv": 12,
+     "sim": 0.38
+    },
+    {
+     "id": "LI2016-b3-b3-13",
+     "n": 13,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "La clase estática \"Conecta\" debe crear un Thread cada vez que haya una conexión, para ello su declaración correcta en la línea 15 sería:",
+     "op": {
+      "a": "static class Conecta extends Thread",
+      "b": "static class Conecta extends Runnable",
+      "c": "static class Conecta implements Thread",
+      "d": "static class Conecta implements Threading"
+     },
+     "ctx2": "PREGUNTAS 8-15 (JAVA): A continuación se muestra el esqueleto de una clase JAVA para construir un servidor de ficheros con sockets. Cuando el servidor arranca necesita saber el nombre del directorio donde se encuentran los ficheros a transmitir, este nombre se pasa en la llamada de línea de comandos. Parte del código está omitido. Responda a las siguientes preguntas que se le plantean en relación con este fragmento de código y la tecnología JAVA:\n1.  import //**paquete1**\n2.  import //**paquete2**\n3.  public class FileServer {\n4.      //**declaración de la variable PUERTO**\n5.      public static void main(String[] args) {\n6.          ServerSocket listener;\n7.          Socket conn;\n8.          //**Se crea el objeto File**\n9.          //**Se comprueba que existe el directorio**\n10.         try {\n11.             listener = new ServerSocket(LISTENING_PORT);\n12.             //**aceptamos conexiones de clientes**     }\n13.         catch (Exception e) { //**Imprimir traza completa de la excepción**\n14.                 return; }}\n15.     static class Conecta //**Necesita Hilos de Ejecución** {\n16.         File directorio;\n17.         Socket connection;\n18.         String cadena1= \"TAILibre\";\n19.         String cadena2= \"TAILibre\";\n20.         Conecta(File dir, Socket conn)    {\n21.             directorio = dir;\n22.             connection = conn;\n23.             start(); }\n24.         //**Método con el código a ejecutar en cada Thread**    }}",
+     "ok": "a",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 13,
+     "sim": 0.83
+    },
+    {
+     "id": "LI2016-b3-b3-14",
+     "n": 14,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "En la línea 13 se maneja la excepción capturada, si el objeto Exception es \"e\", el método utilizado para imprimir el registro de la pila donde se ha iniciado la excepción es:",
+     "op": {
+      "a": "e.printStack();",
+      "b": "e.printStackTrace();",
+      "c": "e.getMessage();",
+      "d": "e.printExceptionLog();"
+     },
+     "ctx2": "PREGUNTAS 8-15 (JAVA): A continuación se muestra el esqueleto de una clase JAVA para construir un servidor de ficheros con sockets. Cuando el servidor arranca necesita saber el nombre del directorio donde se encuentran los ficheros a transmitir, este nombre se pasa en la llamada de línea de comandos. Parte del código está omitido. Responda a las siguientes preguntas que se le plantean en relación con este fragmento de código y la tecnología JAVA:\n1.  import //**paquete1**\n2.  import //**paquete2**\n3.  public class FileServer {\n4.      //**declaración de la variable PUERTO**\n5.      public static void main(String[] args) {\n6.          ServerSocket listener;\n7.          Socket conn;\n8.          //**Se crea el objeto File**\n9.          //**Se comprueba que existe el directorio**\n10.         try {\n11.             listener = new ServerSocket(LISTENING_PORT);\n12.             //**aceptamos conexiones de clientes**     }\n13.         catch (Exception e) { //**Imprimir traza completa de la excepción**\n14.                 return; }}\n15.     static class Conecta //**Necesita Hilos de Ejecución** {\n16.         File directorio;\n17.         Socket connection;\n18.         String cadena1= \"TAILibre\";\n19.         String cadena2= \"TAILibre\";\n20.         Conecta(File dir, Socket conn)    {\n21.             directorio = dir;\n22.             connection = conn;\n23.             start(); }\n24.         //**Método con el código a ejecutar en cada Thread**    }}",
+     "ok": "b",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 14,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-b3-b3-15",
+     "n": 15,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "En la clase Conecta se declaran las variables cadena1 y cadena2 (líneas 18 y 19). ¿En cuál de las siguientes opciones daría un error de compilación la instrucción \"if\"?",
+     "op": {
+      "a": "if (\"TAILibre\".compareTo(cadena1)==true)",
+      "b": "if (cadena1.equals(cadena2))",
+      "c": "if (cadena1.compareTo(cadena2)==0)",
+      "d": "if (\"TAILibre\".compareTo(cadena1)==0)"
+     },
+     "ctx2": "PREGUNTAS 8-15 (JAVA): A continuación se muestra el esqueleto de una clase JAVA para construir un servidor de ficheros con sockets. Cuando el servidor arranca necesita saber el nombre del directorio donde se encuentran los ficheros a transmitir, este nombre se pasa en la llamada de línea de comandos. Parte del código está omitido. Responda a las siguientes preguntas que se le plantean en relación con este fragmento de código y la tecnología JAVA:\n1.  import //**paquete1**\n2.  import //**paquete2**\n3.  public class FileServer {\n4.      //**declaración de la variable PUERTO**\n5.      public static void main(String[] args) {\n6.          ServerSocket listener;\n7.          Socket conn;\n8.          //**Se crea el objeto File**\n9.          //**Se comprueba que existe el directorio**\n10.         try {\n11.             listener = new ServerSocket(LISTENING_PORT);\n12.             //**aceptamos conexiones de clientes**     }\n13.         catch (Exception e) { //**Imprimir traza completa de la excepción**\n14.                 return; }}\n15.     static class Conecta //**Necesita Hilos de Ejecución** {\n16.         File directorio;\n17.         Socket connection;\n18.         String cadena1= \"TAILibre\";\n19.         String cadena2= \"TAILibre\";\n20.         Conecta(File dir, Socket conn)    {\n21.             directorio = dir;\n22.             connection = conn;\n23.             start(); }\n24.         //**Método con el código a ejecutar en cada Thread**    }}",
+     "ok": "a",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 15,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2016-b3-b3-16",
+     "n": 16,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Escriba una consulta para encontrar nombre y salario de los investigadores cuyo salario es mayor que el salario medio de todos los departamentos:",
+     "op": {
+      "a": "SELECT nombre, salario FROM investigadores WHERE salario > ALL (SELECT avg(salario) FROM investigadores GROUP BY dep_id);",
+      "b": "SELECT nombre, salario FROM investigadores WHERE salario > ALL (SELECT avg(salario) FROM investigadores);",
+      "c": "SELECT nombre, salario FROM investigadores WHERE salario > (SELECT avg(salario) FROM investigadores);",
+      "d": "SELECT nombre, salario FROM investigadores WHERE salario > (SELECT avg(salario) FROM investigadores GROUP BY dep_id);"
+     },
+     "ctx2": "PREGUNTAS 16-21 (MYSQL): A continuación se muestran 2 tablas relacionadas, sacadas del modelo relacional de una determinada base de datos implantada en el motor de base de datos MySql. Responda a las siguientes preguntas.\n[[img:OEP2016_b3_mysql.png]]\n(departamentos: dep_id INT, dep_nombre VARCHAR(255), dep_ubicacion VARCHAR(255). investigadores: inv_id INT (clave), nombre VARCHAR(50), apellidos VARCHAR(100), email VARCHAR(100), contratado DATE, salario DECIMAL, dep_id INT, telefono INT. Relación 1:N de departamentos a investigadores.)",
+     "ok": "a",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 16,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2016-b3-b3-17",
+     "n": 17,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "¿Cuál de las siguientes consultas selecciona el \"tercer salario mínimo\" de los investigadores del departamento de Inteligencia Artificial (dep_nombre='IN_AR')?",
+     "op": {
+      "a": "SELECT DISTINCT salario, dep_id FROM investigadores e1 WHERE dep_nombre='IN_AR' AND 3 = (SELECT COUNT(DISTINCT salario) FROM investigadores e2 WHERE e2.salario <= e1.salario);",
+      "b": "SELECT DISTINCT e1.salario, e1.dep_id FROM investigadores e1, departamentos d1 WHERE e1.dep_id=d1.dep_id AND d1.dep_nombre='IN_AR' AND 3 = (SELECT DISTINCT salario FROM investigadores e2 WHERE e2.salario <= e1.salario);",
+      "c": "SELECT DISTINCT e1.salario, e1.dep_id FROM investigadores WHERE dep_nombre='IN_AR' AND 3 = (SELECT COUNT(DISTINCT salario) FROM investigadores e2 WHERE e2.salario <= e1.salario);",
+      "d": "SELECT DISTINCT e1.salario, e1.dep_id FROM investigadores e1, departamentos d1 WHERE e1.dep_id=d1.dep_id AND d1.dep_nombre='IN_AR' AND 3 = (SELECT COUNT(DISTINCT salario) FROM investigadores e2, departamentos d2 WHERE e2.dep_id=d2.dep_id AND d2.dep_nombre='IN_AR' AND e2.salario <= e1.salario);"
+     },
+     "ctx2": "PREGUNTAS 16-21 (MYSQL): A continuación se muestran 2 tablas relacionadas, sacadas del modelo relacional de una determinada base de datos implantada en el motor de base de datos MySql. Responda a las siguientes preguntas.\n[[img:OEP2016_b3_mysql.png]]\n(departamentos: dep_id INT, dep_nombre VARCHAR(255), dep_ubicacion VARCHAR(255). investigadores: inv_id INT (clave), nombre VARCHAR(50), apellidos VARCHAR(100), email VARCHAR(100), contratado DATE, salario DECIMAL, dep_id INT, telefono INT. Relación 1:N de departamentos a investigadores.)",
+     "ok": "d",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 17,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2016-b3-b3-18",
+     "n": 18,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Marque la consulta para sacar la fecha actual del sistema en MySql en el siguiente formato: Marzo 5, 2017",
+     "op": {
+      "a": "SELECT DATE_FORMAT(CURDATE(),'%M %e, %Y')",
+      "b": "SELECT DATE_FORMAT(CURDATE(),'%m %D, %y')",
+      "c": "SELECT DATE_FORMAT(DATE(),'%m %d, %A')",
+      "d": "SELECT DATE_FORMAT(DATE(),'%M %d, %a')"
+     },
+     "ctx2": "PREGUNTAS 16-21 (MYSQL): A continuación se muestran 2 tablas relacionadas, sacadas del modelo relacional de una determinada base de datos implantada en el motor de base de datos MySql. Responda a las siguientes preguntas.\n[[img:OEP2016_b3_mysql.png]]\n(departamentos: dep_id INT, dep_nombre VARCHAR(255), dep_ubicacion VARCHAR(255). investigadores: inv_id INT (clave), nombre VARCHAR(50), apellidos VARCHAR(100), email VARCHAR(100), contratado DATE, salario DECIMAL, dep_id INT, telefono INT. Relación 1:N de departamentos a investigadores.)",
+     "ok": "a",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 18,
+     "sim": 0.56
+    },
+    {
+     "id": "LI2016-b3-b3-19",
+     "n": 19,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Seleccione la consulta que extrae los investigadores que se contrataron en el mes de octubre de cualquier año:",
+     "op": {
+      "a": "SELECT nombre, apellidos FROM investigadores WHERE DATE_TO_CHAR(contratado,'m') = '10';",
+      "b": "SELECT nombre, apellidos FROM investigadores WHERE DATE_MONTH(contratado) = 'OCTUBRE';",
+      "c": "SELECT nombre, apellidos FROM investigadores WHERE MONTH(contratado) = 10;",
+      "d": "SELECT nombre, apellidos FROM investigadores WHERE TO_MONTH(contratado) = 'octubre';"
+     },
+     "ctx2": "PREGUNTAS 16-21 (MYSQL): A continuación se muestran 2 tablas relacionadas, sacadas del modelo relacional de una determinada base de datos implantada en el motor de base de datos MySql. Responda a las siguientes preguntas.\n[[img:OEP2016_b3_mysql.png]]\n(departamentos: dep_id INT, dep_nombre VARCHAR(255), dep_ubicacion VARCHAR(255). investigadores: inv_id INT (clave), nombre VARCHAR(50), apellidos VARCHAR(100), email VARCHAR(100), contratado DATE, salario DECIMAL, dep_id INT, telefono INT. Relación 1:N de departamentos a investigadores.)",
+     "ok": "c",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 19,
+     "sim": 0.71
+    },
+    {
+     "id": "LI2016-b3-b3-20",
+     "n": 20,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Suponga que los últimos 4 dígitos del campo \"telefono\" corresponde a la extensión corta, para sacar un listado de estas extensiones podemos usar:",
+     "op": {
+      "a": "SELECT RIGHT(telefono, 4) as ext FROM investigadores;",
+      "b": "SELECT SUBSTR(telefono, 4) as ext FROM investigadores;",
+      "c": "SELECT RTRIM(telefono, 4) as ext FROM investigadores;",
+      "d": "SELECT SUBSTR(telefono, LENGTH(telefono) - 4) as ext FROM investigadores;"
+     },
+     "ctx2": "PREGUNTAS 16-21 (MYSQL): A continuación se muestran 2 tablas relacionadas, sacadas del modelo relacional de una determinada base de datos implantada en el motor de base de datos MySql. Responda a las siguientes preguntas.\n[[img:OEP2016_b3_mysql.png]]\n(departamentos: dep_id INT, dep_nombre VARCHAR(255), dep_ubicacion VARCHAR(255). investigadores: inv_id INT (clave), nombre VARCHAR(50), apellidos VARCHAR(100), email VARCHAR(100), contratado DATE, salario DECIMAL, dep_id INT, telefono INT. Relación 1:N de departamentos a investigadores.)",
+     "ok": null,
+     "anulada": true,
+     "tema": null,
+     "obsoleta": false,
+     "csv": null,
+     "sim": 0
+    },
+    {
+     "id": "LI2016-b3-b3-21",
+     "n": 21,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "La función de MySql para convertir una cadena en fecha es:",
+     "op": {
+      "a": "TODATE",
+      "b": "STR_TO_DATE",
+      "c": "TO_DATE",
+      "d": "CONVERT"
+     },
+     "ctx2": "PREGUNTAS 16-21 (MYSQL): A continuación se muestran 2 tablas relacionadas, sacadas del modelo relacional de una determinada base de datos implantada en el motor de base de datos MySql. Responda a las siguientes preguntas.\n[[img:OEP2016_b3_mysql.png]]\n(departamentos: dep_id INT, dep_nombre VARCHAR(255), dep_ubicacion VARCHAR(255). investigadores: inv_id INT (clave), nombre VARCHAR(50), apellidos VARCHAR(100), email VARCHAR(100), contratado DATE, salario DECIMAL, dep_id INT, telefono INT. Relación 1:N de departamentos a investigadores.)",
+     "ok": "b",
+     "anulada": false,
+     "tema": 17,
+     "obsoleta": false,
+     "csv": 20,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-b3-b3-22",
+     "n": 22,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Observando el código PHP del enunciado, la función \"getallheaders()\" devuelve una matriz asociativa con todas las cabeceras http con el formato: [\"cabecera1\"=>\"valor1\",\"cabecera2\"=>\"valor2\"...], seleccione la instrucción de entre las siguientes que utilizaría en el bucle foreach para recorrer el array con las cabeceras:",
+     "op": {
+      "a": "$cabecera in $nombre.$valor",
+      "b": "$nombre => $valor in $cabeceras",
+      "c": "$nombre.$valor in $cabeceras",
+      "d": "$cabeceras as $nombre => $valor"
+     },
+     "ctx2": "PREGUNTAS 22-30 (PHP): A continuación se muestra un fragmento de código PHP 7 que realiza una conexión de forma procedimental a una base de datos MySql, ejecuta una consulta para extraer determinada conexión y muestra resultados de los registros obtenidos en pantalla. Se omite parte del código que hace referencia a algunas de las preguntas que lo siguen.\n1.  <!DOCTYPE html>\n2.  <html><body>\n3.  <?php\n4.      $cabeceras=getallheaders();\n5.      foreach (***pregunta:bucle***)\n6.          {   echo (\"Nombre: $nombre    - Valor: $valor \");    }\n7.      ***se define la función eleva2(&$numero)***\n8.      {\n9.          $numero*=$numero;\n10.         echo (\"N=$numero \");    }\n11.     $numero=3; echo (\"N=$numero \"); eleva2($numero); echo (\"N=$numero\");\n12.     ***Se establece conexión con base de datos y se almacena en variable $conn***\n13.     if (!$conn) {die(\"Fallo en la conexión: \" . mysqli_connect_error());}\n14.     $sql = \"SELECT inv_id, nombre FROM investigadores\";\n15.     $result = **Ejecuta consulta almacenada en $sql en la BD $conn**;\n16.     if (mysqli_num_rows($result) > 0) {\n17.             while(**Condición del bucle**) {\n18.                 echo \"id: \" . $row[\"inv_id\"]. \" - Nombre: \" . $row[\"nombre\"]; }\n19.     } else { echo \"0 resultados\"; }\n20.     mysqli_close($conn);\n21. ?> </body></html>",
+     "ok": "d",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 21,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-b3-b3-23",
+     "n": 23,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Para definir la función \"eleva2\" en la línea 7 del script utilizará la sintaxis:",
+     "op": {
+      "a": "private def function eleva2(&$numero)",
+      "b": "define function eleva2(&$numero)",
+      "c": "function eleva2(&$numero)",
+      "d": "sub eleva2(&$numero)"
+     },
+     "ctx2": "PREGUNTAS 22-30 (PHP): A continuación se muestra un fragmento de código PHP 7 que realiza una conexión de forma procedimental a una base de datos MySql, ejecuta una consulta para extraer determinada conexión y muestra resultados de los registros obtenidos en pantalla. Se omite parte del código que hace referencia a algunas de las preguntas que lo siguen.\n1.  <!DOCTYPE html>\n2.  <html><body>\n3.  <?php\n4.      $cabeceras=getallheaders();\n5.      foreach (***pregunta:bucle***)\n6.          {   echo (\"Nombre: $nombre    - Valor: $valor \");    }\n7.      ***se define la función eleva2(&$numero)***\n8.      {\n9.          $numero*=$numero;\n10.         echo (\"N=$numero \");    }\n11.     $numero=3; echo (\"N=$numero \"); eleva2($numero); echo (\"N=$numero\");\n12.     ***Se establece conexión con base de datos y se almacena en variable $conn***\n13.     if (!$conn) {die(\"Fallo en la conexión: \" . mysqli_connect_error());}\n14.     $sql = \"SELECT inv_id, nombre FROM investigadores\";\n15.     $result = **Ejecuta consulta almacenada en $sql en la BD $conn**;\n16.     if (mysqli_num_rows($result) > 0) {\n17.             while(**Condición del bucle**) {\n18.                 echo \"id: \" . $row[\"inv_id\"]. \" - Nombre: \" . $row[\"nombre\"]; }\n19.     } else { echo \"0 resultados\"; }\n20.     mysqli_close($conn);\n21. ?> </body></html>",
+     "ok": "c",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 22,
+     "sim": 0.33
+    },
+    {
+     "id": "LI2016-b3-b3-24",
+     "n": 24,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "El resultado tras procesar la línea 11 es:",
+     "op": {
+      "a": "N=3 N=3 N=9",
+      "b": "N=3 N=3 N=3",
+      "c": "N=3 N=9 N=9",
+      "d": "N=3 N=9 N=3"
+     },
+     "ctx2": "PREGUNTAS 22-30 (PHP): A continuación se muestra un fragmento de código PHP 7 que realiza una conexión de forma procedimental a una base de datos MySql, ejecuta una consulta para extraer determinada conexión y muestra resultados de los registros obtenidos en pantalla. Se omite parte del código que hace referencia a algunas de las preguntas que lo siguen.\n1.  <!DOCTYPE html>\n2.  <html><body>\n3.  <?php\n4.      $cabeceras=getallheaders();\n5.      foreach (***pregunta:bucle***)\n6.          {   echo (\"Nombre: $nombre    - Valor: $valor \");    }\n7.      ***se define la función eleva2(&$numero)***\n8.      {\n9.          $numero*=$numero;\n10.         echo (\"N=$numero \");    }\n11.     $numero=3; echo (\"N=$numero \"); eleva2($numero); echo (\"N=$numero\");\n12.     ***Se establece conexión con base de datos y se almacena en variable $conn***\n13.     if (!$conn) {die(\"Fallo en la conexión: \" . mysqli_connect_error());}\n14.     $sql = \"SELECT inv_id, nombre FROM investigadores\";\n15.     $result = **Ejecuta consulta almacenada en $sql en la BD $conn**;\n16.     if (mysqli_num_rows($result) > 0) {\n17.             while(**Condición del bucle**) {\n18.                 echo \"id: \" . $row[\"inv_id\"]. \" - Nombre: \" . $row[\"nombre\"]; }\n19.     } else { echo \"0 resultados\"; }\n20.     mysqli_close($conn);\n21. ?> </body></html>",
+     "ok": "c",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 23,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2016-b3-b3-25",
+     "n": 25,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "En la línea 12 del código PHP, debe establecer una conexión con la base de datos MySql, ¿cuál de las siguientes opciones sería válida teniendo en cuenta el uso posterior que se hace de la variable $conn en el script (suponga que los parámetros pasados están definidos)?",
+     "op": {
+      "a": "$conn = mysqli_connect($servername, $username, $password, $dbname);",
+      "b": "$conn = mysqli ($servername, $username, $password, $dbname);",
+      "c": "$conn = new mysqli_connect($servername, $username, $password, $dbname);",
+      "d": "$conn = createMysqli($servername, $username, $password, $dbname);"
+     },
+     "ctx2": "PREGUNTAS 22-30 (PHP): A continuación se muestra un fragmento de código PHP 7 que realiza una conexión de forma procedimental a una base de datos MySql, ejecuta una consulta para extraer determinada conexión y muestra resultados de los registros obtenidos en pantalla. Se omite parte del código que hace referencia a algunas de las preguntas que lo siguen.\n1.  <!DOCTYPE html>\n2.  <html><body>\n3.  <?php\n4.      $cabeceras=getallheaders();\n5.      foreach (***pregunta:bucle***)\n6.          {   echo (\"Nombre: $nombre    - Valor: $valor \");    }\n7.      ***se define la función eleva2(&$numero)***\n8.      {\n9.          $numero*=$numero;\n10.         echo (\"N=$numero \");    }\n11.     $numero=3; echo (\"N=$numero \"); eleva2($numero); echo (\"N=$numero\");\n12.     ***Se establece conexión con base de datos y se almacena en variable $conn***\n13.     if (!$conn) {die(\"Fallo en la conexión: \" . mysqli_connect_error());}\n14.     $sql = \"SELECT inv_id, nombre FROM investigadores\";\n15.     $result = **Ejecuta consulta almacenada en $sql en la BD $conn**;\n16.     if (mysqli_num_rows($result) > 0) {\n17.             while(**Condición del bucle**) {\n18.                 echo \"id: \" . $row[\"inv_id\"]. \" - Nombre: \" . $row[\"nombre\"]; }\n19.     } else { echo \"0 resultados\"; }\n20.     mysqli_close($conn);\n21. ?> </body></html>",
+     "ok": "a",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 24,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2016-b3-b3-26",
+     "n": 26,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Para ejecutar la consulta almacenada en la variable $sql se podría utilizar en la línea 15:",
+     "op": {
+      "a": "$result = $conn.query($sql);",
+      "b": "$result = $conn.executeQuery($sql);",
+      "c": "$result = mysqli_query($conn, $sql);",
+      "d": "$result = execQuery($conn, $sql);"
+     },
+     "ctx2": "PREGUNTAS 22-30 (PHP): A continuación se muestra un fragmento de código PHP 7 que realiza una conexión de forma procedimental a una base de datos MySql, ejecuta una consulta para extraer determinada conexión y muestra resultados de los registros obtenidos en pantalla. Se omite parte del código que hace referencia a algunas de las preguntas que lo siguen.\n1.  <!DOCTYPE html>\n2.  <html><body>\n3.  <?php\n4.      $cabeceras=getallheaders();\n5.      foreach (***pregunta:bucle***)\n6.          {   echo (\"Nombre: $nombre    - Valor: $valor \");    }\n7.      ***se define la función eleva2(&$numero)***\n8.      {\n9.          $numero*=$numero;\n10.         echo (\"N=$numero \");    }\n11.     $numero=3; echo (\"N=$numero \"); eleva2($numero); echo (\"N=$numero\");\n12.     ***Se establece conexión con base de datos y se almacena en variable $conn***\n13.     if (!$conn) {die(\"Fallo en la conexión: \" . mysqli_connect_error());}\n14.     $sql = \"SELECT inv_id, nombre FROM investigadores\";\n15.     $result = **Ejecuta consulta almacenada en $sql en la BD $conn**;\n16.     if (mysqli_num_rows($result) > 0) {\n17.             while(**Condición del bucle**) {\n18.                 echo \"id: \" . $row[\"inv_id\"]. \" - Nombre: \" . $row[\"nombre\"]; }\n19.     } else { echo \"0 resultados\"; }\n20.     mysqli_close($conn);\n21. ?> </body></html>",
+     "ok": "c",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 25,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2016-b3-b3-27",
+     "n": 27,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "En la línea 17, para que el bucle realice un recorrido correcto por los registros devueltos, ¿cuál de entre las siguientes condiciones sería válida?",
+     "op": {
+      "a": "$row = mysqli_fetch_assoc($result)",
+      "b": "mysqli_execute($row,$result)",
+      "c": "mysqli_fetch_assoc($row,$result)=1",
+      "d": "mysqli_fetch($row,$result) is true"
+     },
+     "ctx2": "PREGUNTAS 22-30 (PHP): A continuación se muestra un fragmento de código PHP 7 que realiza una conexión de forma procedimental a una base de datos MySql, ejecuta una consulta para extraer determinada conexión y muestra resultados de los registros obtenidos en pantalla. Se omite parte del código que hace referencia a algunas de las preguntas que lo siguen.\n1.  <!DOCTYPE html>\n2.  <html><body>\n3.  <?php\n4.      $cabeceras=getallheaders();\n5.      foreach (***pregunta:bucle***)\n6.          {   echo (\"Nombre: $nombre    - Valor: $valor \");    }\n7.      ***se define la función eleva2(&$numero)***\n8.      {\n9.          $numero*=$numero;\n10.         echo (\"N=$numero \");    }\n11.     $numero=3; echo (\"N=$numero \"); eleva2($numero); echo (\"N=$numero\");\n12.     ***Se establece conexión con base de datos y se almacena en variable $conn***\n13.     if (!$conn) {die(\"Fallo en la conexión: \" . mysqli_connect_error());}\n14.     $sql = \"SELECT inv_id, nombre FROM investigadores\";\n15.     $result = **Ejecuta consulta almacenada en $sql en la BD $conn**;\n16.     if (mysqli_num_rows($result) > 0) {\n17.             while(**Condición del bucle**) {\n18.                 echo \"id: \" . $row[\"inv_id\"]. \" - Nombre: \" . $row[\"nombre\"]; }\n19.     } else { echo \"0 resultados\"; }\n20.     mysqli_close($conn);\n21. ?> </body></html>",
+     "ok": "a",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 26,
+     "sim": 0.4
+    },
+    {
+     "id": "LI2016-b3-b3-28",
+     "n": 28,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "En PHP, cuando un script debe leer una variable que está grabada en una cookie se recurre a una matriz asociativa de la forma:",
+     "op": {
+      "a": "getCookie(\"nombre de la cookie\")",
+      "b": "$_COOKIE[\"nombre de la cookie\"]",
+      "c": "$_HTTP_COOKIE_CHAR[\"nombre de la cookie\"]",
+      "d": "$_HTTP_COOKIE[\"nombre de la cookie\"]"
+     },
+     "ctx2": "PREGUNTAS 22-30 (PHP): A continuación se muestra un fragmento de código PHP 7 que realiza una conexión de forma procedimental a una base de datos MySql, ejecuta una consulta para extraer determinada conexión y muestra resultados de los registros obtenidos en pantalla. Se omite parte del código que hace referencia a algunas de las preguntas que lo siguen.\n1.  <!DOCTYPE html>\n2.  <html><body>\n3.  <?php\n4.      $cabeceras=getallheaders();\n5.      foreach (***pregunta:bucle***)\n6.          {   echo (\"Nombre: $nombre    - Valor: $valor \");    }\n7.      ***se define la función eleva2(&$numero)***\n8.      {\n9.          $numero*=$numero;\n10.         echo (\"N=$numero \");    }\n11.     $numero=3; echo (\"N=$numero \"); eleva2($numero); echo (\"N=$numero\");\n12.     ***Se establece conexión con base de datos y se almacena en variable $conn***\n13.     if (!$conn) {die(\"Fallo en la conexión: \" . mysqli_connect_error());}\n14.     $sql = \"SELECT inv_id, nombre FROM investigadores\";\n15.     $result = **Ejecuta consulta almacenada en $sql en la BD $conn**;\n16.     if (mysqli_num_rows($result) > 0) {\n17.             while(**Condición del bucle**) {\n18.                 echo \"id: \" . $row[\"inv_id\"]. \" - Nombre: \" . $row[\"nombre\"]; }\n19.     } else { echo \"0 resultados\"; }\n20.     mysqli_close($conn);\n21. ?> </body></html>",
+     "ok": "b",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 27,
+     "sim": 0.8
+    },
+    {
+     "id": "LI2016-b3-b3-29",
+     "n": 29,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Suponga que el script recibe datos de un formulario web utilizando el método POST, para capturar la variable \"nombre\" enviada por este formulario se podría utilizar:",
+     "op": {
+      "a": "$_POST[\"nombre\"];",
+      "b": "$POST[\"nombre\"];",
+      "c": "$_HTTP_POST[\"nombre\"];",
+      "d": "Request.Form(\"nombre\");"
+     },
+     "ctx2": "PREGUNTAS 22-30 (PHP): A continuación se muestra un fragmento de código PHP 7 que realiza una conexión de forma procedimental a una base de datos MySql, ejecuta una consulta para extraer determinada conexión y muestra resultados de los registros obtenidos en pantalla. Se omite parte del código que hace referencia a algunas de las preguntas que lo siguen.\n1.  <!DOCTYPE html>\n2.  <html><body>\n3.  <?php\n4.      $cabeceras=getallheaders();\n5.      foreach (***pregunta:bucle***)\n6.          {   echo (\"Nombre: $nombre    - Valor: $valor \");    }\n7.      ***se define la función eleva2(&$numero)***\n8.      {\n9.          $numero*=$numero;\n10.         echo (\"N=$numero \");    }\n11.     $numero=3; echo (\"N=$numero \"); eleva2($numero); echo (\"N=$numero\");\n12.     ***Se establece conexión con base de datos y se almacena en variable $conn***\n13.     if (!$conn) {die(\"Fallo en la conexión: \" . mysqli_connect_error());}\n14.     $sql = \"SELECT inv_id, nombre FROM investigadores\";\n15.     $result = **Ejecuta consulta almacenada en $sql en la BD $conn**;\n16.     if (mysqli_num_rows($result) > 0) {\n17.             while(**Condición del bucle**) {\n18.                 echo \"id: \" . $row[\"inv_id\"]. \" - Nombre: \" . $row[\"nombre\"]; }\n19.     } else { echo \"0 resultados\"; }\n20.     mysqli_close($conn);\n21. ?> </body></html>",
+     "ok": "a",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 28,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2016-b3-b3-30",
+     "n": 30,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Uno de los datos que recibe del formulario es el nombre de investigador, suponga que lo primero que hace al recibirlo es comprobar que el nombre sólo contiene letras y espacios en blanco, para ello utiliza una expresión regular. ¿Cuál de las siguientes opciones considera apropiada?",
+     "op": {
+      "a": "if (!exp_match(\"/^[a-zA-Z ]*/\",$name)) { }",
+      "b": "if (!preg_match(\"/^[a-zA-Z ]*$/\",$name)) { }",
+      "c": "if (!Regex.IsMatch($name, \" /^[a-zA-Z ]*$/\") { }",
+      "d": "if(!$name.isMatch(\"/^[a-zA-Z ]*$/\")) { }"
+     },
+     "ctx2": "PREGUNTAS 22-30 (PHP): A continuación se muestra un fragmento de código PHP 7 que realiza una conexión de forma procedimental a una base de datos MySql, ejecuta una consulta para extraer determinada conexión y muestra resultados de los registros obtenidos en pantalla. Se omite parte del código que hace referencia a algunas de las preguntas que lo siguen.\n1.  <!DOCTYPE html>\n2.  <html><body>\n3.  <?php\n4.      $cabeceras=getallheaders();\n5.      foreach (***pregunta:bucle***)\n6.          {   echo (\"Nombre: $nombre    - Valor: $valor \");    }\n7.      ***se define la función eleva2(&$numero)***\n8.      {\n9.          $numero*=$numero;\n10.         echo (\"N=$numero \");    }\n11.     $numero=3; echo (\"N=$numero \"); eleva2($numero); echo (\"N=$numero\");\n12.     ***Se establece conexión con base de datos y se almacena en variable $conn***\n13.     if (!$conn) {die(\"Fallo en la conexión: \" . mysqli_connect_error());}\n14.     $sql = \"SELECT inv_id, nombre FROM investigadores\";\n15.     $result = **Ejecuta consulta almacenada en $sql en la BD $conn**;\n16.     if (mysqli_num_rows($result) > 0) {\n17.             while(**Condición del bucle**) {\n18.                 echo \"id: \" . $row[\"inv_id\"]. \" - Nombre: \" . $row[\"nombre\"]; }\n19.     } else { echo \"0 resultados\"; }\n20.     mysqli_close($conn);\n21. ?> </body></html>",
+     "ok": "b",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 29,
+     "sim": 0.86
+    },
+    {
+     "id": "LI2016-b3-b3-31",
+     "n": 31,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "¿Qué método AJAX usaría para establecer y definir una conexión asíncrona con el servidor?",
+     "op": {
+      "a": "objeto_AJAX.send(\"GET\", URL, false);",
+      "b": "objeto_AJAX.open(\"POST\", URL, false);",
+      "c": "objeto_AJAX.open(\"GET\", URL, true);",
+      "d": "objeto_AJAX.send(\"POST\", URL, false);"
+     },
+     "ctx2": "PREGUNTAS 31-40 (JAVASCRIPT/AJAX/HTML5): Le han encomendado construir un código en JavaScript/AJAX/HTML5, que muestra un elemento <select> en el navegador con una lista de opciones que al cambiar provocará el inicio de una comunicación AJAX con el servidor, el cual devuelve una respuesta en formato texto que se asigna a un elemento <div>. Utilizará una variable denominada objeto_AJAX definida como un objeto XMLHttpRequest (var objeto_AJAX=new XMLHttpRequest();). Responda a las siguientes preguntas a este respecto:",
+     "ok": "c",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 30,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-b3-b3-32",
+     "n": 32,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Se hace uso del evento del objeto_AJAX que detecta un cambio en la fase solicitud-respuesta para llamar a la función llamada \"muestraresultado()\" en el momento del cambio, indique la instrucción que utilizaría:",
+     "op": {
+      "a": "objeto_AJAX.onreadystate=muestraResultado;",
+      "b": "objeto_AJAX.onreadystate=muestraResultado();",
+      "c": "objeto_AJAX.onreadystatechange=muestraResultado;",
+      "d": "objeto_AJAX.onstatechange=muestraResultado();"
+     },
+     "ctx2": "PREGUNTAS 31-40 (JAVASCRIPT/AJAX/HTML5): Le han encomendado construir un código en JavaScript/AJAX/HTML5, que muestra un elemento <select> en el navegador con una lista de opciones que al cambiar provocará el inicio de una comunicación AJAX con el servidor, el cual devuelve una respuesta en formato texto que se asigna a un elemento <div>. Utilizará una variable denominada objeto_AJAX definida como un objeto XMLHttpRequest (var objeto_AJAX=new XMLHttpRequest();). Responda a las siguientes preguntas a este respecto:",
+     "ok": "c",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 31,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2016-b3-b3-33",
+     "n": 33,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Cuando la propiedad readyState del objeto_AJAX tiene un valor de 4, nos indica que:",
+     "op": {
+      "a": "Se han recibido las cabeceras de la respuesta pero no el cuerpo y el objeto sigue a la espera del mismo.",
+      "b": "El método open() se ha ejecutado sin problemas.",
+      "c": "Se ha enviado la solicitud al servidor y el objeto está a la espera de una respuesta.",
+      "d": "Se han recibido todos los datos de la respuesta del servidor y está listo para operar con ellos."
+     },
+     "ctx2": "PREGUNTAS 31-40 (JAVASCRIPT/AJAX/HTML5): Le han encomendado construir un código en JavaScript/AJAX/HTML5, que muestra un elemento <select> en el navegador con una lista de opciones que al cambiar provocará el inicio de una comunicación AJAX con el servidor, el cual devuelve una respuesta en formato texto que se asigna a un elemento <div>. Utilizará una variable denominada objeto_AJAX definida como un objeto XMLHttpRequest (var objeto_AJAX=new XMLHttpRequest();). Responda a las siguientes preguntas a este respecto:",
+     "ok": "d",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 32,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2016-b3-b3-34",
+     "n": 34,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Teniendo en cuenta el tipo de respuesta que se quiere obtener del servidor, se necesita almacenar los datos obtenidos en la variable \"datos\", para ello se utilizaría:",
+     "op": {
+      "a": "var datos = objeto_AJAX.responseText;",
+      "b": "var datos = objeto_AJAX.getresponseXML;",
+      "c": "var datos = objeto_AJAX.getResponseXML();",
+      "d": "var datos = objeto_AJAX.responseXML();"
+     },
+     "ctx2": "PREGUNTAS 31-40 (JAVASCRIPT/AJAX/HTML5): Le han encomendado construir un código en JavaScript/AJAX/HTML5, que muestra un elemento <select> en el navegador con una lista de opciones que al cambiar provocará el inicio de una comunicación AJAX con el servidor, el cual devuelve una respuesta en formato texto que se asigna a un elemento <div>. Utilizará una variable denominada objeto_AJAX definida como un objeto XMLHttpRequest (var objeto_AJAX=new XMLHttpRequest();). Responda a las siguientes preguntas a este respecto:",
+     "ok": "a",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 33,
+     "sim": 0.6
+    },
+    {
+     "id": "LI2016-b3-b3-35",
+     "n": 35,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Necesita mostrar los datos recibidos en el cliente utilizando un elemento HTML5 <div> definido así en la parte del código en HTML5: <div name=\"celdas\" id=\"celda\"></div>. Señale la correcta:",
+     "op": {
+      "a": "document.getElementById(\"celda\").innerHTML=datos;",
+      "b": "document.getElementById(\"celda\").text=datos;",
+      "c": "document.elementById(\"celdas\").innerHTML=datos;",
+      "d": "document.elementById(\"celdas\")=datos;"
+     },
+     "ctx2": "PREGUNTAS 31-40 (JAVASCRIPT/AJAX/HTML5): Le han encomendado construir un código en JavaScript/AJAX/HTML5, que muestra un elemento <select> en el navegador con una lista de opciones que al cambiar provocará el inicio de una comunicación AJAX con el servidor, el cual devuelve una respuesta en formato texto que se asigna a un elemento <div>. Utilizará una variable denominada objeto_AJAX definida como un objeto XMLHttpRequest (var objeto_AJAX=new XMLHttpRequest();). Responda a las siguientes preguntas a este respecto:",
+     "ok": "a",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 34,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2016-b3-b3-36",
+     "n": 36,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "Para especificar que el elemento \"div\" del script que está codificando se pueda arrastrar y soltar en otro lugar de la página HTML, debe utilizar la propiedad:",
+     "op": {
+      "a": "draggably=\"true\"",
+      "b": "draggable=\"true\"",
+      "c": "ondragg=\"true\"",
+      "d": "ondraggable=\"true\""
+     },
+     "ctx2": "PREGUNTAS 31-40 (JAVASCRIPT/AJAX/HTML5): Le han encomendado construir un código en JavaScript/AJAX/HTML5, que muestra un elemento <select> en el navegador con una lista de opciones que al cambiar provocará el inicio de una comunicación AJAX con el servidor, el cual devuelve una respuesta en formato texto que se asigna a un elemento <div>. Utilizará una variable denominada objeto_AJAX definida como un objeto XMLHttpRequest (var objeto_AJAX=new XMLHttpRequest();). Responda a las siguientes preguntas a este respecto:",
+     "ok": "b",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 35,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2016-b3-b3-37",
+     "n": 37,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "En HTML5, el evento que tiene lugar cuando el elemento arrastrado ingresa a un receptor de soltado es:",
+     "op": {
+      "a": "ondragto",
+      "b": "ondraggover",
+      "c": "ondraginto",
+      "d": "ondragenter"
+     },
+     "ctx2": "PREGUNTAS 31-40 (JAVASCRIPT/AJAX/HTML5): Le han encomendado construir un código en JavaScript/AJAX/HTML5, que muestra un elemento <select> en el navegador con una lista de opciones que al cambiar provocará el inicio de una comunicación AJAX con el servidor, el cual devuelve una respuesta en formato texto que se asigna a un elemento <div>. Utilizará una variable denominada objeto_AJAX definida como un objeto XMLHttpRequest (var objeto_AJAX=new XMLHttpRequest();). Responda a las siguientes preguntas a este respecto:",
+     "ok": "d",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 36,
+     "sim": 0.86
+    },
+    {
+     "id": "LI2016-b3-b3-38",
+     "n": 38,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "¿Cuál de los siguientes es un objeto para almacenar datos en el cliente que se eliminan al cerrar la ventana del navegador?",
+     "op": {
+      "a": "Window.localStorage",
+      "b": "Window.localSession",
+      "c": "Window.sessionStorage",
+      "d": "Window.sessionCookies"
+     },
+     "ctx2": "PREGUNTAS 31-40 (JAVASCRIPT/AJAX/HTML5): Le han encomendado construir un código en JavaScript/AJAX/HTML5, que muestra un elemento <select> en el navegador con una lista de opciones que al cambiar provocará el inicio de una comunicación AJAX con el servidor, el cual devuelve una respuesta en formato texto que se asigna a un elemento <div>. Utilizará una variable denominada objeto_AJAX definida como un objeto XMLHttpRequest (var objeto_AJAX=new XMLHttpRequest();). Responda a las siguientes preguntas a este respecto:",
+     "ok": "c",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 37,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2016-b3-b3-39",
+     "n": 39,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "¿Cuál de los siguientes NO es un elemento soportado en HTML5?",
+     "op": {
+      "a": "<article>",
+      "b": "<body>",
+      "c": "<applet>",
+      "d": "<caption>"
+     },
+     "ctx2": "PREGUNTAS 31-40 (JAVASCRIPT/AJAX/HTML5): Le han encomendado construir un código en JavaScript/AJAX/HTML5, que muestra un elemento <select> en el navegador con una lista de opciones que al cambiar provocará el inicio de una comunicación AJAX con el servidor, el cual devuelve una respuesta en formato texto que se asigna a un elemento <div>. Utilizará una variable denominada objeto_AJAX definida como un objeto XMLHttpRequest (var objeto_AJAX=new XMLHttpRequest();). Responda a las siguientes preguntas a este respecto:",
+     "ok": "c",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 38,
+     "sim": 0.75
+    },
+    {
+     "id": "LI2016-b3-b3-40",
+     "n": 40,
+     "reserva": false,
+     "bloque_orig": "b3",
+     "q": "La función propia de JavaScript que nos permite convertir una cadena literal (que representa a una instrucción de JavaScript) en una instrucción real y permite ejecutarla es:",
+     "op": {
+      "a": "convert(instrucción)",
+      "b": "execute(instrucción)",
+      "c": "parse(instrucción)",
+      "d": "eval(instrucción)"
+     },
+     "ctx2": "PREGUNTAS 31-40 (JAVASCRIPT/AJAX/HTML5): Le han encomendado construir un código en JavaScript/AJAX/HTML5, que muestra un elemento <select> en el navegador con una lista de opciones que al cambiar provocará el inicio de una comunicación AJAX con el servidor, el cual devuelve una respuesta en formato texto que se asigna a un elemento <div>. Utilizará una variable denominada objeto_AJAX definida como un objeto XMLHttpRequest (var objeto_AJAX=new XMLHttpRequest();). Responda a las siguientes preguntas a este respecto:",
+     "ok": "d",
+     "anulada": false,
+     "tema": 21,
+     "obsoleta": false,
+     "csv": 39,
+     "sim": 0.67
+    },
+    {
+     "id": "LI2016-b3-b3-R01",
+     "n": 1,
+     "reserva": true,
+     "bloque_orig": "b3",
+     "q": "Dado el siguiente código Java:\nInteger [] numeros = {3, 5, 1, 2};\nArrays.sort(numeros);\nfor (int n : numeros)\n    { System.out.print(n); }",
+     "op": {
+      "a": "Da un error de compilación en la línea 3.",
+      "b": "La salida es: 1235",
+      "c": "Da un error de compilación en la línea 2.",
+      "d": "La salida es: 5321"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 16,
+     "obsoleta": false,
+     "csv": 40,
+     "sim": 0.5
+    },
+    {
+     "id": "LI2016-b3-b3-R02",
+     "n": 2,
+     "reserva": true,
+     "bloque_orig": "b3",
+     "q": "Suponiendo que está trabajando con el IDE Eclipse en el desarrollo de la aplicación Java y necesita instalar un plugin para el sistema control de versiones, ¿cuál de los siguientes sería opción válida?",
+     "op": {
+      "a": "Uglify",
+      "b": "EGIT",
+      "c": "NBGITE",
+      "d": "Nagios"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 23,
+     "obsoleta": false,
+     "csv": 41,
+     "sim": 1.0
+    },
+    {
+     "id": "LI2016-b3-b3-R03",
+     "n": 3,
+     "reserva": true,
+     "bloque_orig": "b3",
+     "q": "En relación con los accesos a bases de datos SQL con ASP.NET, el método del objeto SqlCommand que devuelve un SqlDataReader con los registros seleccionados es:",
+     "op": {
+      "a": "DataSet",
+      "b": "ExecuteReader",
+      "c": "ExecuteCommand",
+      "d": "SqlReader"
+     },
+     "ctx2": null,
+     "ok": "b",
+     "anulada": false,
+     "tema": 19,
+     "obsoleta": false,
+     "csv": 42,
+     "sim": 1.0
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,162 @@
+export type Letra = 'a' | 'b' | 'c' | 'd';
+export type Clave = 'oficial' | 'oficial-provisional' | 'claude' | 'claude-dudosa';
+
+export interface Tema {
+  n: number;
+  titulo: string;
+  bloque: string;
+  preg_test: number;
+  preg_sup3: number;
+  pts: number;
+  horas: number;
+  palabras: number;
+}
+
+/** Pregunta de un examen real (data/examenes/<id>.json). */
+export interface PreguntaExamen {
+  id: string;
+  n: number;
+  reserva: boolean;
+  q: string;
+  op: Record<Letra, string>;
+  ok: Letra | null;
+  anulada: boolean;
+  tema: number | null;
+  obsoleta?: boolean;
+  ctx?: string | null;
+  ctx2?: string | null;
+  clave?: Clave;
+  /** Fiabilidad de la clave por pregunta (exámenes antiguos con supuesto sin plantilla oficial). */
+  fiab?: Clave;
+  dudosa?: boolean;
+  nota_clave?: string;
+}
+
+export interface ParteExamen {
+  titulo?: string;
+  valor?: number;
+  fuente_clave?: Clave;
+  contexto: string;
+  preguntas: PreguntaExamen[];
+}
+
+export interface Examen {
+  id: string;
+  anio: number;
+  convocatoria: string;
+  fuente_clave: Clave;
+  formato?: 'antiguo';
+  nota_formato?: string;
+  partes: Record<string, ParteExamen>;
+}
+
+export interface ExamenIndice {
+  id: string;
+  anio: number;
+  convocatoria: string;
+  fuente_clave: Clave;
+  partes: string[];
+}
+
+/** Pregunta de práctica por tema (data/contenido/tema_XX.json). */
+export interface PreguntaTema {
+  id: string;
+  tipo: 'historica' | 'variante' | 'nueva';
+  ref: string | null;
+  origen?: { anio: number; parte: string; n: number } | null;
+  de?: string | null;
+  texto?: 'literal' | 'reformulado';
+  q: string;
+  ctx?: string | null;
+  op: Record<Letra, string>;
+  ok: Letra | null;
+  clave: Clave;
+  anulada?: boolean;
+  obsoleta?: boolean;
+  explicacion: string;
+  epigrafe?: string;
+  dificultad?: 1 | 2 | 3;
+}
+
+export interface Tarjeta {
+  id: string;
+  anverso: string;
+  reverso: string;
+  epigrafe?: string;
+}
+
+export interface ContenidoTema {
+  tema: number;
+  preguntas: PreguntaTema[];
+  tarjetas: Tarjeta[];
+}
+
+/** Pregunta tal como se pinta: une los dos orígenes. */
+export interface PreguntaVista {
+  id: string;
+  tema: number | null;
+  q: string;
+  /** Enunciado general del supuesto (plegable). */
+  ctx?: string | null;
+  /** Contexto propio de un grupo de preguntas («PREGUNTAS n-m»): se muestra siempre. */
+  subctx?: string | null;
+  op: Record<Letra, string>;
+  ok: Letra | null;
+  clave: Clave;
+  anulada?: boolean;
+  obsoleta?: boolean;
+  explicacion?: string;
+  etiqueta?: string;
+  tipo?: PreguntaTema['tipo'];
+  texto?: PreguntaTema['texto'];
+}
+
+export interface EstadoSrs {
+  tarjeta_id: string;
+  tema: number | null;
+  facilidad: number;
+  intervalo: number;
+  repeticiones: number;
+  vence: number;
+}
+
+export interface ResumenPregunta {
+  pregunta_id: string;
+  tema: number | null;
+  vistas: number;
+  aciertos: number;
+  ultima: 0 | 1;
+  ts: number;
+}
+
+export interface Marca {
+  pregunta_id: string;
+  tema: number | null;
+  nota: string;
+  resuelta: 0 | 1;
+  ts: number;
+}
+
+export interface NotaParte {
+  a: number;
+  e: number;
+  b: number;
+  n: number;
+  nota: number;
+}
+
+export interface Intento {
+  id: number;
+  examen_id: string;
+  partes: string[];
+  notas: Record<string, NotaParte>;
+  segundos: number | null;
+  ts: number;
+}
+
+export interface Progreso {
+  preguntas: ResumenPregunta[];
+  srs: EstadoSrs[];
+  marcas: Marca[];
+  intentos: Intento[];
+}

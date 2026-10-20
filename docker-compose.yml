@@ -1,0 +1,27 @@
+services:
+  api:
+    build: { context: ., dockerfile: deploy/api.Dockerfile }
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - api-data:/data
+
+  web:
+    build: { context: ., dockerfile: deploy/web.Dockerfile }
+    restart: unless-stopped
+    depends_on: [api]
+    environment:
+      DOMAIN: ${DOMAIN}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./content:/srv/data:ro
+      - caddy-data:/data
+      - caddy-config:/config
+
+volumes:
+  api-data:
+  caddy-data:
+  caddy-config:
