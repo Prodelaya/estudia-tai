@@ -29,7 +29,7 @@ export function Login() {
         <h1>Estudia TAI</h1>
         <label className="stack" style={{ gap: 6 }}>
           <span className="note">Usuario</span>
-          <input autoComplete="username" autoCapitalize="none" spellCheck={false} maxLength={64} value={usuario} onChange={e => setUsuario(e.target.value)} required />
+          <input type="text" autoComplete="username" autoCapitalize="none" spellCheck={false} maxLength={64} value={usuario} onChange={e => setUsuario(e.target.value)} required />
         </label>
         <label className="stack" style={{ gap: 6 }}>
           <span className="note">Contraseña</span>

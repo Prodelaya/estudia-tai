@@ -15,11 +15,16 @@ export function Usuarios() {
   async function invitar(nombre: string) {
     setEnviando(true);
     setError('');
+    setEnlaces(prev => {
+      const siguientes = { ...prev };
+      delete siguientes[nombre];
+      return siguientes;
+    });
     try {
       const { token, expira } = await api.invitacion(nombre);
       setEnlaces(prev => ({ ...prev, [nombre]: { url: `${window.location.origin}/activar#${token}`, expira } }));
     } catch {
-      setError('No se ha podido generar la invitación. Si la cuenta ya está activa, no se cambia su contraseña.');
+      setError('No se ha podido confirmar la invitación. Vuelve a generarla o recarga esta página si la cuenta ya está activa.');
     } finally {
       setEnviando(false);
     }
@@ -40,7 +45,7 @@ export function Usuarios() {
         </button>}
         {enlaces[cuenta.nombre] && <label className="stack">
           <span>Enlace privado para {cuenta.nombre}</span>
-          <input aria-label={`Invitación para ${cuenta.nombre}`} readOnly value={enlaces[cuenta.nombre].url} onFocus={e => e.currentTarget.select()} />
+          <input type="text" aria-label={`Invitación para ${cuenta.nombre}`} readOnly value={enlaces[cuenta.nombre].url} onFocus={e => e.currentTarget.select()} />
           <small>Caduca: {new Date(enlaces[cuenta.nombre].expira).toLocaleString()}</small>
         </label>}
       </article>)}
