@@ -1,4 +1,4 @@
-import { NavLink, Route, Routes } from 'react-router-dom';
+import { NavLink, Route, Routes, useLocation } from 'react-router-dom';
 import { useProgreso } from './lib/progreso';
 import { Login } from './views/Login';
 import { Inicio } from './views/Inicio';
@@ -7,9 +7,13 @@ import { Repaso } from './views/Repaso';
 import { Examenes } from './views/Examenes';
 import { ExamenEnCurso } from './views/ExamenEnCurso';
 import { Dudas } from './views/Dudas';
+import { Activar } from './views/Activar';
+import { Usuarios } from './views/Usuarios';
 
 export function App() {
-  const { estado, salir } = useProgreso();
+  const { estado, usuario, salir } = useProgreso();
+  const location = useLocation();
+  if (location.pathname === '/activar') return <Activar />;
   if (estado === 'cargando') return <main className="wrap"><p className="note">Cargando…</p></main>;
   if (estado === 'login') return <Login />;
   return (
@@ -23,7 +27,8 @@ export function App() {
             <NavLink to="/examenes">Exámenes</NavLink>
             <NavLink to="/dudas">Dudas</NavLink>
             <a href="/api/export" title="Descarga una copia de tu progreso">Exportar</a>
-            <button onClick={salir}>Salir</button>
+            {usuario?.admin && <NavLink to="/usuarios">Usuarios</NavLink>}
+            <button onClick={salir}>Salir ({usuario?.nombre})</button>
           </nav>
         </div>
       </header>
@@ -35,6 +40,7 @@ export function App() {
           <Route path="/examenes" element={<Examenes />} />
           <Route path="/examenes/:id" element={<ExamenEnCurso />} />
           <Route path="/dudas" element={<Dudas />} />
+          <Route path="/usuarios" element={<Usuarios />} />
           <Route path="*" element={<p className="empty">Esta página no existe.</p>} />
         </Routes>
       </main>

@@ -1,10 +1,11 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
-import { api, NoAutenticado } from './api';
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { api, alPerderSesion, NoAutenticado, type UsuarioActual } from './api';
 import { programar, type Nota } from './srs';
 import type { EstadoSrs, Letra, NotaParte, Progreso, PreguntaVista } from './tipos';
 
 interface Ctx {
   estado: 'cargando' | 'login' | 'listo';
+  usuario: UsuarioActual | null;
   progreso: Progreso;
   porPregunta: Map<string, Progreso['preguntas'][number]>;
   porTarjeta: Map<string, EstadoSrs>;
@@ -24,16 +25,33 @@ const Contexto = createContext<Ctx | null>(null);
 export function ProveedorProgreso({ children }: { children: ReactNode }) {
   const [estado, setEstado] = useState<Ctx['estado']>('cargando');
   const [progreso, setProgreso] = useState<Progreso>(VACIO);
+  const [usuario, setUsuario] = useState<UsuarioActual | null>(null);
+  const revision = useRef(0);
 
   const recargar = useCallback(async () => {
+    const actual = ++revision.current;
     try {
-      setProgreso(await api.progreso());
+      const [nuevo, cuenta] = await Promise.all([api.progreso(), api.yo()]);
+      if (actual !== revision.current) return;
+      setProgreso(nuevo);
+      setUsuario(cuenta);
       setEstado('listo');
     } catch (e) {
-      if (e instanceof NoAutenticado) setEstado('login');
+      if (actual !== revision.current) return;
+      if (e instanceof NoAutenticado) {
+        setProgreso(VACIO);
+        setUsuario(null);
+        setEstado('login');
+      }
       else throw e;
     }
   }, []);
+  useEffect(() => alPerderSesion(() => {
+    ++revision.current;
+    setProgreso(VACIO);
+    setUsuario(null);
+    setEstado('login');
+  }), []);
   useEffect(() => { recargar(); }, [recargar]);
 
   const porPregunta = useMemo(() => new Map(progreso.preguntas.map(p => [p.pregunta_id, p])), [progreso.preguntas]);
@@ -79,12 +97,15 @@ export function ProveedorProgreso({ children }: { children: ReactNode }) {
   }, [recargar]);
 
   const salir = useCallback(async () => {
+    ++revision.current;
     await api.logout();
+    ++revision.current;
     setProgreso(VACIO);
+    setUsuario(null);
     setEstado('login');
   }, []);
 
-  const valor = { estado, progreso, porPregunta, porTarjeta, recargar, responder, calificar, guardarIntento, marcar, resolverMarca, borrarMarca, salir };
+  const valor = { estado, usuario, progreso, porPregunta, porTarjeta, recargar, responder, calificar, guardarIntento, marcar, resolverMarca, borrarMarca, salir };
   return <Contexto.Provider value={valor}>{children}</Contexto.Provider>;
 }
 
