@@ -1,0 +1,4783 @@
+{
+ "tema": 19,
+ "generado": "2026-10-20",
+ "preguntas": [
+  {
+   "id": "t19-h-001",
+   "tipo": "historica",
+   "ref": "LI2025-b3-04",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 4
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se le solicita crear un controlador REST que permita obtener todos los alumnos registrados mediante HTTP GET en Spring Boot. ¿Cuál es la implementación correcta?",
+   "ctx": "Supuesto 2025 (EDUCA-DATA 2030): backend Spring Boot con un repositorio JPA de alumnos.",
+   "op": {
+    "a": "@RestController public class AlumnoController {\n@GetMapping(\"/alumnos\") public List<Alumno> obtenerAlumnos() { return repository.findAll(); } }",
+    "b": "@Controller public class AlumnoController {\n@Get(\"/alumnos\") public List<Alumno> obtenerAlumnos() { return repository.get(); } }",
+    "c": "@WebController public class AlumnoController { return repository.getAll(); }",
+    "d": "@Rest public class AlumnoController {}"
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En Spring Boot un controlador REST se anota con **@RestController** (= @Controller + @ResponseBody) y cada método con el atajo del verbo: **@GetMapping(\"/alumnos\")**. El objeto devuelto se serializa a JSON.\n\n- `@Controller` sin @ResponseBody devolvería un nombre de vista, y `@Get` no existe en Spring.\n- `@WebController` y `@Rest` no existen, y esas clases ni siquiera tienen métodos válidos.",
+   "epigrafe": "9. Spring y Spring Boot",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-002",
+   "tipo": "historica",
+   "ref": "LI2025-b3-07",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 7
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se necesita ejecutar la aplicación Spring Boot. ¿Cuál es el comando de Maven correcto?",
+   "ctx": null,
+   "op": {
+    "a": "mvn spring-boot:launch",
+    "b": "mvn run spring-boot",
+    "c": "mvn spring-boot:run",
+    "d": "mvn launch spring-boot"
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El plugin de Maven de Spring Boot se invoca como `plugin:objetivo`: **mvn spring-boot:run** compila y arranca la aplicación. Con Gradle sería `gradle bootRun`.\n\n`spring-boot:launch`, `mvn run spring-boot` y `mvn launch spring-boot` no existen.",
+   "epigrafe": "9. Spring y Spring Boot",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-003",
+   "tipo": "historica",
+   "ref": "LI2025-b3-08",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 8
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En una primera fase de pruebas se detecta un comportamiento erróneo en la aplicación de .NET y se toma la decisión de incluir trazas en ella. ¿Cuál de las siguientes opciones sería la forma correcta de hacerlo?",
+   "ctx": null,
+   "op": {
+    "a": "logger.Log(“Ejecución del método finalizada”);",
+    "b": "logger.LogWarn(“Ejecución del método finalizada con errores”);",
+    "c": "logger.LogInformation(“Ejecución del método finalizada correctamente.”);",
+    "d": "logger.Error(“Ejecución del método incorrecta”);"
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Con `ILogger` (Microsoft.Extensions.Logging) se usan los métodos por nivel: `LogTrace`, `LogDebug`, **`LogInformation`**, `LogWarning`, `LogError`, `LogCritical`. Para dejar traza de que un método terminó bien, el nivel adecuado es Information.\n\n- `logger.Log(...)` exige además el nivel como primer argumento.\n- `LogWarn` y `Error` no existen en ILogger (son nombres de otras librerías: log4net/NLog).",
+   "epigrafe": "15. Utilidades transversales en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-004",
+   "tipo": "historica",
+   "ref": "LI2025-b3-09",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 9
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El equipo técnico ha decidido modificar la aplicación desarrollada en C# y .NET con métodos que empleen programación asíncrona. ¿Cuál sería la forma correcta de definir un método \"DevolverDato\"?",
+   "ctx": null,
+   "op": {
+    "a": "Thread int DevolverDato()",
+    "b": "async Task DevolverDato()",
+    "c": "async Thread<int> DevolverDato()",
+    "d": "await int DevolverDato()"
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Un método asíncrono en C# se declara con **async** y devuelve **Task** (sin valor) o `Task<T>` (con valor): `async Task DevolverDato()`. Dentro se usa `await`.\n\n- `Thread int ...` y `async Thread<int>` no son firmas válidas: Thread es una clase de hilos, no un tipo de retorno asíncrono.\n- `await` se usa dentro del cuerpo, no en la declaración.\n\nOjo: la plantilla provisional inicial daba «a» por error; la **plantilla actualizada** corrigió la clave a «b». Si el método debiera devolver el dato, lo ideal sería `async Task<int>`.",
+   "epigrafe": "11. C# práctico para el supuesto",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-005",
+   "tipo": "historica",
+   "ref": "LI2025-b3-R02",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 2,
+    "reserva": true
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Para el mantenimiento de la aplicación, se requiere ejecutar un código de limpieza cuando el motor Catalina de Tomcat se detenga por completo, pero antes de que la máquina virtual de Java finalice. ¿Cuál es la opción correcta para ello?",
+   "ctx": null,
+   "op": {
+    "a": "Registrar un shutdown hook.",
+    "b": "Usar una anotación @PreDestroy en la clase del código de limpieza.",
+    "c": "Implementar un LifecycleListener y registrarlo en el elemento <server> del fichero \"server.xml\".",
+    "d": "Definir en Tomcat una Valve personalizada en el elemento <Server> con el método de limpieza."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Un **LifecycleListener** (`org.apache.catalina.LifecycleListener`) recibe los eventos del ciclo de vida de los componentes de Tomcat (before_stop, stop, after_stop...). Registrado con `<Listener>` dentro de `<Server>` en **server.xml**, se ejecuta cuando Catalina se ha detenido, antes de que acabe la JVM.\n\n- Un *shutdown hook* de la JVM no está ligado a la parada de Catalina.\n- `@PreDestroy` actúa al destruir un bean, no al parar el motor.\n- Una *Valve* procesa peticiones y no se declara en `<Server>`.",
+   "epigrafe": "3. Java EE / Jakarta EE",
+   "dificultad": 3
+  },
+  {
+   "id": "t19-h-006",
+   "tipo": "historica",
+   "ref": "LI2025-ej1-47",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 47
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál es el componente encargado de compilar el código intermedio a código máquina en tiempo de ejecución en la arquitectura Java EE/Jakarta EE?",
+   "ctx": null,
+   "op": {
+    "a": "El Garbage Collector.",
+    "b": "El bytecode.",
+    "c": "El JIT (Just-In-Time Compiler).",
+    "d": "El SDK (Software Development Kit)."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **JIT (Just-In-Time)** compila a código máquina, durante la ejecución, el bytecode de los métodos más usados.\n\n- El *Garbage Collector* libera memoria.\n- El *bytecode* es el código intermedio, no quien lo compila.\n- El *SDK/JDK* es el kit de desarrollo.",
+   "epigrafe": "2. Java: plataforma y lenguaje base",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-007",
+   "tipo": "historica",
+   "ref": "LI2025-ej1-48",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 48
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Dentro de la plataforma .NET, ¿cómo se denomina el componente encargado de ejecutar el manejo de excepciones y la recolección de basura?",
+   "ctx": null,
+   "op": {
+    "a": "MSBuild.",
+    "b": "Kestrel.",
+    "c": "CLR (Common Language Runtime).",
+    "d": "NuGet."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **CLR** es el motor de ejecución de .NET: JIT, recolección de basura, excepciones, hilos, seguridad de tipos.\n\n- *MSBuild*: motor de compilación de proyectos.\n- *Kestrel*: servidor web de ASP.NET Core.\n- *NuGet*: gestor de paquetes.",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-008",
+   "tipo": "historica",
+   "ref": "LI2025-ej1-49",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 49
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Los ensamblados son, entre otras cosas, las unidades fundamentales de implementación para aplicaciones basadas en la plataforma .NET. Señale cuál es una de sus características:",
+   "ctx": null,
+   "op": {
+    "a": "Se implementan como archivos que tienen \".jpx\" o \".dtl\" como extensión.",
+    "b": "En el caso de las bibliotecas que tienen como destino .NET Framework, pueden compartir ensamblados entre aplicaciones si los coloca en la caché global de aplicaciones (GAP).",
+    "c": "Proporcionan a Internet Information Services la información necesaria para conocer las versiones de los archivos.",
+    "d": "Solo se cargan en memoria si son necesarios. Si no se usan, no se cargan."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El CLR carga los ensamblados **bajo demanda**: solo cuando se usa por primera vez un tipo suyo.\n\n- Las extensiones son **.dll** y **.exe**, no .jpx ni .dtl.\n- La caché global es la **GAC** (Global Assembly Cache), no «GAP».\n- Los ensamblados informan al **CLR** (manifiesto), no a IIS.",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-009",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-45",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 45
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Las aplicaciones de .NET 10 se pueden escribir en los siguientes lenguajes de programación:",
+   "ctx": null,
+   "op": {
+    "a": "C#, F# y Visual Basic.",
+    "b": "C#, Java y Visual Basic.",
+    "c": "C#, F#, Java, R y Visual Basic.",
+    "d": "Java, PHP y Visual Basic."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los lenguajes oficiales de .NET son **C#, F# y Visual Basic**.\n\nJava, R y PHP no son lenguajes de .NET (Java corre en la JVM).",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-010",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-46",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 46
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Qué especificación de la Arquitectura Jakarta EE es la homóloga funcional a 'Entity Framework Core' en la plataforma .NET para la gestión de la persistencia?",
+   "ctx": null,
+   "op": {
+    "a": "Jakarta JDBC.",
+    "b": "Jakarta Transactions.",
+    "c": "Jakarta Persistence.",
+    "d": "Jakarta Validation."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El homólogo de Entity Framework Core (ORM de .NET) es **Jakarta Persistence (JPA)**.\n\n- JDBC es la API de bajo nivel de Java SE y no es una especificación «Jakarta».\n- *Transactions* gestiona transacciones (JTA).\n- *Validation* valida beans con anotaciones.",
+   "epigrafe": "6. Persistencia en Java",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-011",
+   "tipo": "historica",
+   "ref": "LI2025ext-b3-05",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 5
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Necesita instalar Entity Framework en la API de .NET. ¿Con qué comando se puede hacer?",
+   "ctx": "Supuesto 2025 extraordinario: frontend Angular 21, API de persistencia en ASP.NET 10 con C# 14 y SQL Server 2025, y API de integración en Java (JDK 8) que expone servicios SOAP.",
+   "op": {
+    "a": "dotnet package add Microsoft.EntityFrameworkCore",
+    "b": "dotnet add package Microsoft.EntityFrameworkCore",
+    "c": "dotnet add Microsoft.EntityFrameworkCore",
+    "d": "dotnet package Microsoft.EntityFrameworkCore"
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La clave provisional es **`dotnet package add Microsoft.EntityFrameworkCore`**: desde el **SDK de .NET 10** la CLI admite la sintaxis «sustantivo primero» (`dotnet package add`, `dotnet package list`, `dotnet reference add`).\n\nPero la forma clásica **`dotnet add package Microsoft.EntityFrameworkCore`** sigue funcionando en .NET 10, así que hay **dos opciones correctas**: la pregunta es impugnable.\n\n`dotnet add Microsoft...` y `dotnet package Microsoft...` no son comandos válidos.",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-012",
+   "tipo": "historica",
+   "ref": "LI2025ext-b3-06",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 6
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se va a desarrollar una nueva consulta en la API de .NET para obtener todos los usuarios cuyo primer apellido contenga una cadena de texto almacenada en una variable llamada “texto”. ¿Cuál sería la forma correcta de hacerlo?",
+   "ctx": "Supuesto 2025 extraordinario: frontend Angular 21, API de persistencia en ASP.NET 10 con C# 14 y SQL Server 2025, y API de integración en Java (JDK 8) que expone servicios SOAP.",
+   "op": {
+    "a": "await context.Usuarios.Where(u => u.Apellido1.Contains(texto)).ToListAsync();",
+    "b": "await context.Usuarios.Where(u => u.Apellido1.Like(texto)).ToListAsync();",
+    "c": "await context.Usuarios(u => u.Apellido1.Where(texto)).ToListAsync();",
+    "d": "await context.Usuarios(u => u.Apellido1.Contains(texto)).ToListAsync();"
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Con EF Core se filtra con LINQ sobre el `DbSet`: `context.Usuarios.Where(u => u.Apellido1.Contains(texto)).ToListAsync()`. EF traduce `Contains` a `LIKE '%texto%'`.\n\n- `string` no tiene método `Like` (existe `EF.Functions.Like`, pero no así).\n- `context.Usuarios(...)` no es invocable: Usuarios es una propiedad DbSet, no un método.",
+   "epigrafe": "12. Acceso a datos en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-013",
+   "tipo": "historica",
+   "ref": "LI2025ext-b3-08",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 8
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se desea añadir a la API de Java la integración con los servicios de Notifica. ¿Cómo podría, a partir del fichero notifica.wsdl, generar las clases Java para esos servicios web en un paquete llamado “notificaciones”?",
+   "ctx": "Supuesto 2025 extraordinario: frontend Angular 21, API de persistencia en ASP.NET 10 con C# 14 y SQL Server 2025, y API de integración en Java (JDK 8) que expone servicios SOAP.",
+   "op": {
+    "a": "wsgen -d notificaciones notifica.wsdl",
+    "b": "schemagen -p notificaciones notifica.wsdl",
+    "c": "xjc -d notificaciones notifica.wsdl",
+    "d": "wsimport -p notificaciones notifica.wsdl"
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**wsimport** (JAX-WS) genera las clases cliente a partir de un **WSDL**; `-p` indica el paquete destino.\n\n- `wsgen` hace lo contrario: genera artefactos desde la clase del servicio.\n- `schemagen` genera un XSD desde clases (JAXB).\n- `xjc` genera clases desde un **XSD** (JAXB), no desde un WSDL; además `-d` es el directorio, no el paquete.",
+   "epigrafe": "7. Servicios web y XML en Java",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-014",
+   "tipo": "historica",
+   "ref": "LI2024-b3-02",
+   "origen": {
+    "anio": 2024,
+    "parte": "b3",
+    "n": 2
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Qué ORM podría utilizar, en función de la solución de backend escogida?",
+   "ctx": "Supuesto 2024: sistema de concesión de becas; el backend puede desarrollarse en Java o en .NET.",
+   "op": {
+    "a": "JPA en .NET e Hibernate en Java.",
+    "b": "Hibernate en .NET y Entity Framework en Java.",
+    "c": "Entity Framework en .NET e Hibernate en Java.",
+    "d": "Spring Data en .NET e Hibernate en Java."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "ORM de .NET: **Entity Framework (Core)**. ORM de Java: **Hibernate** (implementa JPA).\n\n- JPA es una especificación Java, no existe «en .NET».\n- Hibernate es Java (en .NET está su port NHibernate) y EF no existe en Java.\n- Spring Data es Java y no es un ORM, sino una capa de repositorios.",
+   "epigrafe": "1. Panorama: plataformas empresariales Java y .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-015",
+   "tipo": "historica",
+   "ref": "LI2024-b3-09",
+   "origen": {
+    "anio": 2024,
+    "parte": "b3",
+    "n": 9
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En un entorno de desarrollo Java, ¿qué utilizaría para mapear elementos XML a clases?",
+   "ctx": "Supuesto 2024: sistema de concesión de becas; el backend puede desarrollarse en Java o en .NET.",
+   "op": {
+    "a": "JAXB.",
+    "b": "JPA.",
+    "c": "JAXR.",
+    "d": "JAX-RS."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**JAXB** (Jakarta XML Binding) mapea XML a clases y viceversa (unmarshalling y marshalling).\n\n- *JPA*: persistencia objeto-relacional.\n- *JAXR*: acceso a registros XML (UDDI), eliminada.\n- *JAX-RS*: servicios REST.",
+   "epigrafe": "7. Servicios web y XML en Java",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-016",
+   "tipo": "historica",
+   "ref": "LI2024-b3-16",
+   "origen": {
+    "anio": 2024,
+    "parte": "b3",
+    "n": 16
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se quiere utilizar la librería iText de .NET para generar un documento PDF que sirva como justificante de presentación al interesado. ¿Con qué comando instalaría el paquete NuGet?",
+   "ctx": "Supuesto 2024: sistema de concesión de becas; el backend puede desarrollarse en Java o en .NET.",
+   "op": {
+    "a": "dotnet add package iText.",
+    "b": "dotnet install package iText.",
+    "c": "dotnet add iText.",
+    "d": "dotnet install iText."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La CLI de .NET añade un paquete NuGet con **`dotnet add package iText`** (queda como PackageReference en el .csproj). En Visual Studio sería `Install-Package iText`.\n\n`dotnet install package`, `dotnet add iText` y `dotnet install` no existen.",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-017",
+   "tipo": "historica",
+   "ref": "LI2024-ej1-43",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 43
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Qué es .NET MAUI?",
+   "ctx": null,
+   "op": {
+    "a": ".NET MAUI es un marco multiplataforma para crear aplicaciones móviles y de escritorio nativas con C# y XAML.",
+    "b": "Es una plataforma para desarrollar aplicaciones en Java.",
+    "c": "Es una herramienta de pruebas automatizadas.",
+    "d": "Es una plataforma para desarrollar aplicaciones móviles que se puede ejecutar en sistema Android solamente."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**.NET MAUI** (Multi-platform App UI): marco multiplataforma para apps **móviles y de escritorio nativas** con C# y XAML (Android, iOS, macOS y Windows). Sucede a Xamarin.Forms.\n\nNo es Java, no es una herramienta de pruebas y no se limita a Android.",
+   "epigrafe": "13. Interfaces de usuario en .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-018",
+   "tipo": "historica",
+   "ref": "LI2024-ej1-44",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 44
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En el ámbito de ASP.NET Core, señale la respuesta correcta respecto a Razor:",
+   "ctx": null,
+   "op": {
+    "a": "Razor es la sintaxis de plantillas utilizada en ASP.NET Core para crear vistas dinámicas en aplicaciones web.",
+    "b": "Es uno de los lenguajes de programación que se utilizan con ASP.NET Core.",
+    "c": "Razor se ejecuta directamente en el navegador del cliente.",
+    "d": "Razor utiliza el @símbolo para realizar la transición de C# a HTML."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Razor** es la **sintaxis de plantillas** de ASP.NET Core para vistas dinámicas (HTML + C#).\n\n- No es un lenguaje (el lenguaje es C#).\n- Se procesa en el **servidor** (salvo Blazor WebAssembly).\n- La @ hace la transición **de HTML a C#**, no al revés.",
+   "epigrafe": "13. Interfaces de usuario en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-019",
+   "tipo": "historica",
+   "ref": "LI2024-ej1-45",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 45
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "La persistencia en Jakarta EE se gestiona principalmente a través de la especificación Jakarta Persistence API (JPA). Indique la respuesta correcta:",
+   "ctx": null,
+   "op": {
+    "a": "Una de sus ventajas es que no necesita utilizar un proveedor de JPA.",
+    "b": "El lenguaje de consulta similar a SQL pero orientado a objetos de JPA es JPSQL.",
+    "c": "Normalmente, una entidad representa una tabla en una base de datos relacional y cada instancia de la entidad corresponde a una fila de esa tabla.",
+    "d": "JPA no permite definir relaciones entre entidades del tipo uno a muchos."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En JPA una **entidad** suele mapear una **tabla** y cada instancia, una **fila**.\n\n- JPA es una especificación: **necesita un proveedor** (Hibernate, EclipseLink).\n- Su lenguaje de consultas es **JPQL**, no «JPSQL».\n- Sí admite relaciones uno a muchos (`@OneToMany`).",
+   "epigrafe": "6. Persistencia en Java",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-020",
+   "tipo": "historica",
+   "ref": "LI2022-b3-09",
+   "origen": {
+    "anio": 2022,
+    "parte": "b3",
+    "n": 9
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Qué framework se puede usar para aplicaciones de escritorio nativas .NET?",
+   "ctx": null,
+   "op": {
+    "a": ".NET MAUI",
+    "b": "Blazor Hybrid",
+    "c": "JavaFX",
+    "d": "WebView"
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El framework para aplicaciones nativas multiplataforma (también de escritorio) en .NET es **.NET MAUI**.\n\n- *Blazor Hybrid* incrusta componentes web Razor dentro de una app nativa (MAUI, WPF), no es el framework nativo en sí.\n- *JavaFX* es de Java.\n- *WebView* es un control para mostrar contenido web.",
+   "epigrafe": "13. Interfaces de usuario en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-021",
+   "tipo": "historica",
+   "ref": "LI2022-b3-11",
+   "origen": {
+    "anio": 2022,
+    "parte": "b3",
+    "n": 11
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En nuestra aplicación Java, ¿qué paquetes usaríamos para establecer la conexión a la base de datos de NOTIFICACION?",
+   "ctx": "Supuesto 2022: aplicación Java de servidor que debe conectarse a la base de datos de NOTIFICACION.",
+   "op": {
+    "a": "java.database",
+    "b": "javax.naming y javax.sql",
+    "c": "javax.io y javax.servlet",
+    "d": "javax.servlet"
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En un servidor de aplicaciones se obtiene un `DataSource` (paquete **javax.sql**) buscándolo por nombre con JNDI (**javax.naming**). Estos paquetes son de Java SE y no cambiaron a jakarta.\n\n- `java.database` no existe.\n- `javax.servlet` es de componentes web y `javax.io` no existe (es java.io).",
+   "epigrafe": "6. Persistencia en Java",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-022",
+   "tipo": "historica",
+   "ref": "LI2022-b3-12",
+   "origen": {
+    "anio": 2022,
+    "parte": "b3",
+    "n": 12
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se quiere desarrollar un microservicio para que el personal funcionario pueda consultar el estado de una notificación enviada. ¿Qué especificación de la comunidad, alineada con Jakarta EE Core Profile, es la indicada para desarrollarlo?",
+   "ctx": null,
+   "op": {
+    "a": "Jakarta Authentication",
+    "b": "Jakarta Batch",
+    "c": "Microprofile",
+    "d": "Jakarta Connectors"
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**MicroProfile** (Eclipse Foundation) es la especificación de la comunidad para microservicios, construida sobre el **Core Profile** de Jakarta EE (Config, Health, Fault Tolerance, JWT, OpenAPI, Rest Client...).\n\n- *Jakarta Authentication*: módulos de autenticación (JASPIC).\n- *Jakarta Batch*: procesos por lotes.\n- *Jakarta Connectors*: integración con sistemas EIS.",
+   "epigrafe": "3. Java EE / Jakarta EE",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-023",
+   "tipo": "historica",
+   "ref": "LI2022-ej1-41",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 41
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale la respuesta correcta sobre los tipos de controladores (drivers) JDBC:",
+   "ctx": null,
+   "op": {
+    "a": "Los drivers tipo 1 utilizan Java puro para implementar un protocolo de red de proveedores del Sistema Gestor de Base de Datos.",
+    "b": "Los drivers tipo 3 utilizan un protocolo de red y middleware para comunicarse con un servidor.",
+    "c": "Según la tecnología utilizada para conectarse a la base de datos, los drivers JDBC se categorizan en 3 tipos diferentes.",
+    "d": "Los drivers tipo 2 son controladores \"puente\", que utilizan otra tecnología (por ejemplo ODBC) para comunicarse con la base de datos."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Hay **4 tipos** de driver JDBC. El **tipo 3** usa un protocolo de red independiente y un **middleware** (servidor intermedio) que traduce al protocolo del SGBD.\n\n- Java puro con el protocolo del SGBD es el **tipo 4** (thin).\n- No son 3 tipos, sino 4.\n- El puente (JDBC-ODBC) es el **tipo 1**; el tipo 2 usa la API nativa del cliente del SGBD.",
+   "epigrafe": "6. Persistencia en Java",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-024",
+   "tipo": "historica",
+   "ref": "LI2022-ej1-47",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 47
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Indique cuál de las siguientes NO es una librería de Java proporcionada por la Apache Foundation:",
+   "ctx": null,
+   "op": {
+    "a": "Log4J",
+    "b": "httpclient",
+    "c": "commons-io",
+    "d": "Mockete"
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Mockete** no existe (el framework de mocks conocido es Mockito, que tampoco es de Apache).\n\nLog4j, HttpClient (HttpComponents) y Commons IO sí son proyectos de la Apache Software Foundation.",
+   "epigrafe": "2. Java: plataforma y lenguaje base",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-025",
+   "tipo": "historica",
+   "ref": "LI2022-ej1-48",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 48
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Seleccione la respuesta correcta sobre .NET:",
+   "ctx": null,
+   "op": {
+    "a": ".NET es un marco multiplataforma gratuito de Google para compilar aplicaciones y servicios en la nube.",
+    "b": ".NET es un proyecto de código abierto.",
+    "c": ".NET sirve exclusivamente para desarrollar aplicaciones móviles.",
+    "d": ".NET admite un amplio rango de lenguajes de programación, a excepción de C#"
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**.NET es de código abierto** (licencia MIT, .NET Foundation), gratuito y multiplataforma.\n\n- Es de **Microsoft**, no de Google.\n- No es exclusivo de móviles: web, escritorio, nube, IoT, juegos...\n- Su lenguaje principal es precisamente **C#**.",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-026",
+   "tipo": "historica",
+   "ref": "LI2022-ej1-49",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 49
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale la respuesta INCORRECTA referente al objeto POCO en .NET:",
+   "ctx": null,
+   "op": {
+    "a": "Es una estructura de datos de .NET que solo contiene propiedades o campos públicos.",
+    "b": "Es el acrónimo de Plain Old CLR Object.",
+    "c": "No hereda de otra clase o implementa una interfaz.",
+    "d": "Podrá contener miembros como: métodos. eventos y delegados."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Un **POCO** (Plain Old CLR Object) solo contiene **propiedades o campos públicos** y no hereda de clases ni implementa interfaces de un framework. Según Microsoft, **no** debe contener otros miembros como métodos, eventos o delegados: por eso esa afirmación es la incorrecta.\n\nEs el equivalente .NET del POJO de Java.",
+   "epigrafe": "11. C# práctico para el supuesto",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-027",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "b3",
+    "n": 13
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En C#, ¿qué instrucción crea un objeto SqlConnection y garantiza que se llame a Dispose al final del bloque entre llaves para liberar sus recursos?",
+   "ctx": null,
+   "op": {
+    "a": "using (SqlConnection conn = new SqlConnection(connString)) {conn.Open();}",
+    "b": "scope (SqlConnection conn = new SqlConnection(connString)) {conn.Open();}",
+    "c": "dispose (SqlConnection conn = new SqlConnection(connString)) {conn.Open();}",
+    "d": "internal (SqlConnection conn = new SqlConnection(connString)) {conn.Open();}"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **instrucción using** llama a `Dispose()` al salir del bloque, aunque haya excepción (equivale a try-finally). Es como el try-with-resources de Java.\n\n`scope` y `dispose` no son palabras reservadas de C#, e `internal` es un modificador de acceso.",
+   "epigrafe": "11. C# práctico para el supuesto",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-028",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "ej1",
+    "n": 33
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes NO es un ORM (Mapeador Objeto-Relacional)?",
+   "ctx": null,
+   "op": {
+    "a": "ADO.NET Entity Framework",
+    "b": "Ruby Hibernation",
+    "c": "NHibernate",
+    "d": "Hibernate"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "«**Ruby Hibernation**» no existe (en Ruby el ORM habitual es ActiveRecord).\n\nEntity Framework (.NET), NHibernate (.NET, port de Hibernate) e Hibernate (Java) sí son ORM.",
+   "epigrafe": "6. Persistencia en Java",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-029",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "ej1",
+    "n": 47
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En el entorno de programación .Net, indique qué es NuGet:",
+   "ctx": null,
+   "op": {
+    "a": "Una biblioteca de clases base.",
+    "b": "Un administrador de paquetes.",
+    "c": "Una implementación de .Net.",
+    "d": "Un entorno de ejecución."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**NuGet** es el **gestor de paquetes** de .NET (repositorio nuget.org, ficheros .nupkg).\n\n- La biblioteca de clases base es la **BCL**.\n- Implementaciones de .NET: .NET Framework, .NET (Core), Mono.\n- El entorno de ejecución es el **CLR**.",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-030",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "ej1",
+    "n": 83,
+    "reserva": true
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En JAVA podemos utilizar el interface PreparedStatement para:",
+   "ctx": null,
+   "op": {
+    "a": "Inicializar las variables locales del programa con valores preestablecidos.",
+    "b": "Preparar los valores que introduciremos en un archivo de texto externo al programa.",
+    "c": "Permitir ejecutar muchas veces una sentencia SQL.",
+    "d": "Administrar el consumo de memoria que utilizan los objetos creados."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**PreparedStatement** es una sentencia SQL **precompilada** con parámetros `?`, que puede ejecutarse muchas veces con valores distintos y además **evita la inyección SQL**.\n\nNo tiene que ver con variables locales, ficheros de texto ni memoria.",
+   "epigrafe": "6. Persistencia en Java",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-031",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "b3",
+    "n": 18
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Se necesita registrar trazas de la aplicación Java en un fichero de logs. ¿Qué librería Java utilizaría?",
+   "ctx": "Supuesto 2018: sistema de gestión de acciones formativas en PHP/Laravel y MySQL que reaprovecha módulos existentes en .NET y Java.",
+   "op": {
+    "a": "log4j",
+    "b": "logTrack",
+    "c": "track4j",
+    "d": "Nlog"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Log4j** (Apache) es la librería clásica de logging en Java (hoy Log4j 2; también Logback y SLF4J).\n\n`logTrack` y `track4j` no existen; **NLog** es de **.NET**.",
+   "epigrafe": "2. Java: plataforma y lenguaje base",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-032",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "b3",
+    "n": 19
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿De qué clase heredan todas las excepciones en Java?",
+   "ctx": "Supuesto 2018: sistema de gestión de acciones formativas en PHP/Laravel y MySQL que reaprovecha módulos existentes en .NET y Java.",
+   "op": {
+    "a": "Error",
+    "b": "Exception",
+    "c": "Throwable",
+    "d": "RuntimeException"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**java.lang.Throwable** es la raíz: de ella heredan **Error** (graves) y **Exception** (de la que cuelga RuntimeException, las no comprobadas).\n\nError, Exception y RuntimeException son ramas, no la raíz.",
+   "epigrafe": "2. Java: plataforma y lenguaje base",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-033",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "b3",
+    "n": 22
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Con la conexión ya abierta (MySqlConnection conn = new MySqlConnection(cadena); string query = \"Select * from Inscripcion\"; conn.Open();), ¿qué instrucción C# se usa a continuación para ejecutar la consulta?",
+   "ctx": "Supuesto 2018: sistema de gestión de acciones formativas en PHP/Laravel y MySQL que reaprovecha módulos existentes en .NET y Java.",
+   "op": {
+    "a": "$resultado = mysqli_query($conn, $query);",
+    "b": "MySqlCommand resultado = new MySqlCommand (query, conn);",
+    "c": "resultado = stm.executeQuery(query);",
+    "d": "resultado = conn.query(query);"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En ADO.NET la sentencia se encapsula en un **Command** del proveedor (`MySqlCommand`), creado con la consulta y la conexión; luego se ejecuta con `ExecuteReader()`.\n\n- `mysqli_query` es de **PHP**.\n- `executeQuery` es de **JDBC** (Java).\n- `conn.query()` no existe en MySqlConnection.",
+   "epigrafe": "12. Acceso a datos en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-034",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "b3",
+    "n": 23
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué utilidad tienen los namespaces en .NET?",
+   "ctx": "Supuesto 2018: sistema de gestión de acciones formativas en PHP/Laravel y MySQL que reaprovecha módulos existentes en .NET y Java.",
+   "op": {
+    "a": "Es un mecanismo para proteger las clases, garantizando el encapsulamiento de las mismas",
+    "b": "Es un mecanismo para reflejar las propiedades de acceso de cada clase.",
+    "c": "No existe tal concepto.",
+    "d": "Es un mecanismo para organizar clases."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los **espacios de nombres** organizan los tipos lógicamente y evitan conflictos de nombres (System.Collections, System.IO...).\n\nNo protegen ni encapsulan ni definen el acceso: de eso se ocupan los modificadores (public, internal...).",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-035",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "b3",
+    "n": 24
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué método de C# permite convertir un string en una fecha?",
+   "ctx": "Supuesto 2018: sistema de gestión de acciones formativas en PHP/Laravel y MySQL que reaprovecha módulos existentes en .NET y Java.",
+   "op": {
+    "a": "Parse",
+    "b": "To_date",
+    "c": "String2Date",
+    "d": "ToDate"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**DateTime.Parse** (también ParseExact, TryParse o Convert.ToDateTime).\n\n`To_date` es una función de **Oracle SQL**; `String2Date` y `ToDate` no existen en C#.",
+   "epigrafe": "11. C# práctico para el supuesto",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-036",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "b3",
+    "n": 26
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué framework permite programación orientada a aspectos en .NET?",
+   "ctx": "Supuesto 2018: sistema de gestión de acciones formativas en PHP/Laravel y MySQL que reaprovecha módulos existentes en .NET y Java.",
+   "op": {
+    "a": "Spring Framework",
+    "b": "Aspyct",
+    "c": "PostSharp",
+    "d": "AspectJ"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**PostSharp** (hoy Metalama) es el framework AOP de .NET.\n\n- Spring Framework (Spring AOP) y AspectJ son de **Java**.\n- Aspyct es de **Python**.",
+   "epigrafe": "15. Utilidades transversales en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-037",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "b3",
+    "n": 30
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál es la clase raíz de toda la jerarquía de clases en Java?",
+   "ctx": "Supuesto 2018: sistema de gestión de acciones formativas en PHP/Laravel y MySQL que reaprovecha módulos existentes en .NET y Java.",
+   "op": {
+    "a": "Main",
+    "b": "Bundle",
+    "c": "Object",
+    "d": "Super"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**java.lang.Object**: todas las clases heredan de ella directa o indirectamente.\n\n`Main` es solo un nombre habitual de clase, `Bundle` es de Android/OSGi y `Super` no existe (super es una palabra reservada).",
+   "epigrafe": "2. Java: plataforma y lenguaje base",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-038",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "b3",
+    "n": 31
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál es el IDE de Microsoft para desarrollar con su tecnología?",
+   "ctx": "Supuesto 2018: sistema de gestión de acciones formativas en PHP/Laravel y MySQL que reaprovecha módulos existentes en .NET y Java.",
+   "op": {
+    "a": "Microsoft Sublime Text.",
+    "b": "Microsoft Visual Studio.",
+    "c": "Microsoft NetBeans.",
+    "d": "Microsoft CodeLite."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Visual Studio** (Community, Professional, Enterprise); Visual Studio Code es su editor ligero.\n\nSublime Text, NetBeans (Apache) y CodeLite no son de Microsoft.",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-039",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "b3",
+    "n": 32
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes es un lenguaje multiparadigma de la plataforma .NET?",
+   "ctx": "Supuesto 2018: sistema de gestión de acciones formativas en PHP/Laravel y MySQL que reaprovecha módulos existentes en .NET y Java.",
+   "op": {
+    "a": "C#",
+    "b": "G#",
+    "c": "Cloos",
+    "d": "F#"
+   },
+   "ok": "d",
+   "clave": "claude-dudosa",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**F#** es el lenguaje funcional-primero y **multiparadigma** (funcional, imperativo y orientado a objetos) de .NET. **G#** y **Cloos** no existen.\n\nOjo: **C# también es multiparadigma** (OO con rasgos funcionales), así que la pregunta es ambigua; se esperaba F#, el lenguaje cuya seña de identidad es ser multiparadigma.",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 3
+  },
+  {
+   "id": "t19-h-040",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 55
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En el contexto de Java EE (ahora Jakarta EE), ¿en qué paquete se encuentran las clases e interfaces de Enterprise JavaBeans?",
+   "ctx": null,
+   "op": {
+    "a": "java.ejb2",
+    "b": "javax.ejb",
+    "c": "javax.persistence.ejb",
+    "d": "java.transaction.ejb"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En Java EE las clases de EJB están en **javax.ejb** (`@Stateless`, `@Stateful`...). Desde **Jakarta EE 9** el paquete es **jakarta.ejb**.\n\nLos demás paquetes no existen (persistence es JPA y transaction es JTA, sin subpaquete ejb).",
+   "epigrafe": "5. Componentes de negocio: CDI y EJB",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-041",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 56
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes opciones sobre ADO.NET y los proveedores de datos del framework .NET es FALSA?",
+   "ctx": null,
+   "op": {
+    "a": "ADO.NET permite acceder a datos alojados en XML.",
+    "b": "El objeto Connection es el que proporciona conectividad con las distintas fuentes de datos.",
+    "c": "El objeto Operation permite invocar peticiones para recuperación y/o modificación de información sobre la fuente",
+    "d": "Los objetos de tipo DataSet están formados por una colección de objetos de tipo DataTable."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En ADO.NET no existe un objeto **Operation**: las sentencias se ejecutan con **Command**.\n\nLo demás es cierto: ADO.NET trabaja con XML (DataSet.ReadXml), Connection da la conectividad y un DataSet es una colección de DataTable.",
+   "epigrafe": "12. Acceso a datos en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-042",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 58
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Spring Boot es:",
+   "ctx": null,
+   "op": {
+    "a": "Una plataforma de desarrollo móvil basada en Javascript que permite desarrollo de apps multiplataforma.",
+    "b": "Una plataforma que permite el desarrollo de aplicaciones web \"autocontenidas\" que llevan embebido el contenedor de servlets.",
+    "c": "Una plataforma que permite, entre otras cosas, la conexión lógica entre bases de datos relacionales clásicas y bases de datos NOSQL.",
+    "d": "Una plataforma que permite automatizar las pruebas de software para aplicaciones con lenguaje de programación JAVA."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Spring Boot** crea aplicaciones **autocontenidas** con el **contenedor de servlets embebido** (Tomcat por defecto) que se ejecutan con `java -jar`, con autoconfiguración y starters.\n\nNo es móvil ni JavaScript, no es un puente SQL-NoSQL y no es una herramienta de pruebas.",
+   "epigrafe": "9. Spring y Spring Boot",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-043",
+   "tipo": "historica",
+   "ref": "LI2017-b3-b3-17",
+   "origen": {
+    "anio": 2017,
+    "parte": "b3",
+    "n": 17
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Para la construcción de servicios web en Java podría usar la API Java denominada:",
+   "ctx": null,
+   "op": {
+    "a": "JPA",
+    "b": "Java DOM",
+    "c": "SOAP",
+    "d": "JAX-WS"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**JAX-WS** (hoy Jakarta XML Web Services) es la API Java para construir servicios web SOAP (`@WebService`, `@WebMethod`).\n\n- *JPA* es persistencia.\n- *Java DOM* (JAXP) parsea XML.\n- *SOAP* es el protocolo, no una API Java.",
+   "epigrafe": "7. Servicios web y XML en Java",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-044",
+   "tipo": "historica",
+   "ref": "LI2017-b3-b3-19",
+   "origen": {
+    "anio": 2017,
+    "parte": "b3",
+    "n": 19
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Cuando se habla de bloques de creación de las aplicaciones .NET Framework, que constituyen la unidad fundamental de implementación, control de versiones, reutilización, ámbitos de activación y permisos de seguridad de una aplicación .Net Framework, se está hablando de un:",
+   "ctx": null,
+   "op": {
+    "a": "Espacio de nombres.",
+    "b": "Paquete.",
+    "c": "Interfaz.",
+    "d": "Ensamblado."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **ensamblado** (.dll o .exe) es la unidad fundamental de implementación, control de versiones, reutilización, ámbito de activación y permisos de seguridad en .NET.\n\n- El *espacio de nombres* es una agrupación lógica de tipos.\n- «Paquete» es el concepto de Java (o de NuGet).\n- Una *interfaz* es un contrato de tipos.",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-045",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-53",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 53
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Java DB es:",
+   "ctx": null,
+   "op": {
+    "a": "La distribución de Oracle para la base de datos de código abierto Apache Derby.",
+    "b": "Una API de acceso a bases de datos no relacionales en Java.",
+    "c": "La distribución gratuita de la base de datos Oracle 11g.",
+    "d": "Una versión de PostgreSQL configurada para la plataforma Java SE."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Java DB** era la distribución de Oracle de **Apache Derby**, base de datos relacional de código abierto escrita en Java, incluida en los JDK 6 a 8 (se retiró en el JDK 9).\n\nNo es una API NoSQL, ni Oracle 11g gratuito (eso sería Oracle XE), ni PostgreSQL.",
+   "epigrafe": "2. Java: plataforma y lenguaje base",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-046",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-57",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 57
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En ASP.NET cuál de las siguientes alternativas NO representa un modo válido de almacenamiento de los datos de sesión:",
+   "ctx": null,
+   "op": {
+    "a": "inProc",
+    "b": "StateServer",
+    "c": "SqlServer",
+    "d": "AppServer"
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Modos de sesión de ASP.NET (`<sessionState mode>`): **InProc** (por defecto), **StateServer**, **SQLServer**, Custom y Off. **AppServer** no existe.",
+   "epigrafe": "13. Interfaces de usuario en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-047",
+   "tipo": "historica",
+   "ref": "LI2016-b3-b3-01",
+   "origen": {
+    "anio": 2016,
+    "parte": "b3",
+    "n": 1
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de entre las siguientes es una directiva válida para la línea 1 del código C# anterior para importar espacios de nombres?",
+   "ctx": "Código C# (2016):\n1. //**Directiva**//\n2. class claseTai { public int n; }\n4. struct estructTai { public int n; }\n6. class taiLibreCSharp {\n  public static void evaluaEstructura(estructTai st) { st.n = 8; }\n  public static void evaluaClase(claseTai cl) { cl.n = 8; }\n  public static void Main() {\n    estructTai ns = new estructTai(); claseTai nc = new claseTai();\n    ns.n = 5; nc.n = 5;\n    evaluaEstructura(ns); evaluaClase(nc);\n    Console.WriteLine(\"ns.n = {0} \", ns.n);\n    Console.WriteLine(\"nc.n = {0}\", nc.n);\n  }\n}",
+   "op": {
+    "a": "using System;",
+    "b": "import System;",
+    "c": "declare System;",
+    "d": "imp System;"
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En C# los espacios de nombres se importan con la **directiva using**: `using System;`.\n\n`import` es de Java y Python; `declare` e `imp` no existen.",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-048",
+   "tipo": "historica",
+   "ref": "LI2016-b3-b3-02",
+   "origen": {
+    "anio": 2016,
+    "parte": "b3",
+    "n": 2
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El resultado de la ejecución del programa C# anterior es:",
+   "ctx": "Código C# (2016):\n1. //**Directiva**//\n2. class claseTai { public int n; }\n4. struct estructTai { public int n; }\n6. class taiLibreCSharp {\n  public static void evaluaEstructura(estructTai st) { st.n = 8; }\n  public static void evaluaClase(claseTai cl) { cl.n = 8; }\n  public static void Main() {\n    estructTai ns = new estructTai(); claseTai nc = new claseTai();\n    ns.n = 5; nc.n = 5;\n    evaluaEstructura(ns); evaluaClase(nc);\n    Console.WriteLine(\"ns.n = {0} \", ns.n);\n    Console.WriteLine(\"nc.n = {0}\", nc.n);\n  }\n}",
+   "op": {
+    "a": "ns.n = 5 nc.n = 8",
+    "b": "ns.n = 8 nc.n = 8",
+    "c": "ns.n = 5 nc.n = 5",
+    "d": "ns.n = 8 nc.n = 5"
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**struct** es un **tipo de valor**: el método recibe una **copia** y el original `ns.n` sigue valiendo 5. **class** es un **tipo de referencia**: el método recibe una copia de la referencia y modifica el mismo objeto, así que `nc.n` pasa a 8.\n\nResultado: `ns.n = 5 nc.n = 8`. Con `ref` el struct también cambiaría.",
+   "epigrafe": "11. C# práctico para el supuesto",
+   "dificultad": 3
+  },
+  {
+   "id": "t19-h-049",
+   "tipo": "historica",
+   "ref": "LI2016-b3-b3-03",
+   "origen": {
+    "anio": 2016,
+    "parte": "b3",
+    "n": 3
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "La clase System.Console representa los flujos de entrada, salida y error estándar para aplicaciones de consola, ¿qué método de entre los siguientes lee la siguiente línea del flujo de entrada estándar y lo almacena en una cadena?",
+   "ctx": "Código C# (2016):\n1. //**Directiva**//\n2. class claseTai { public int n; }\n4. struct estructTai { public int n; }\n6. class taiLibreCSharp {\n  public static void evaluaEstructura(estructTai st) { st.n = 8; }\n  public static void evaluaClase(claseTai cl) { cl.n = 8; }\n  public static void Main() {\n    estructTai ns = new estructTai(); claseTai nc = new claseTai();\n    ns.n = 5; nc.n = 5;\n    evaluaEstructura(ns); evaluaClase(nc);\n    Console.WriteLine(\"ns.n = {0} \", ns.n);\n    Console.WriteLine(\"nc.n = {0}\", nc.n);\n  }\n}",
+   "op": {
+    "a": "string cadena = Console.ReadLine();",
+    "b": "string cadena = Console.Read();",
+    "c": "string [] cadena = Console.Read();",
+    "d": "string [] cadena = Console.ReadLine();"
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Console.ReadLine()** lee una línea completa y devuelve un `string`.\n\n- `Console.Read()` lee **un carácter** y devuelve un `int` (no compila asignado a string).\n- Ninguno devuelve un array de string.",
+   "epigrafe": "11. C# práctico para el supuesto",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-050",
+   "tipo": "historica",
+   "ref": "LI2016-b3-b3-04",
+   "origen": {
+    "anio": 2016,
+    "parte": "b3",
+    "n": 4
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se introduce al final del método Main del programa el siguiente código:\nstring cadena = LeeCadenadeEntradaEstandar(); // este método lee cadena de la entrada estándar\nint lon=0;\nwhile(/**condición**/)\n    { Console.Write(\"{0} \", cadena[lon]); lon++; }\n¿Cuál de las siguientes opciones es correcta para que el programa recorra cada uno de los caracteres de la cadena y los muestre en pantalla sin elevar error?",
+   "ctx": "Código C# (2016):\n1. //**Directiva**//\n2. class claseTai { public int n; }\n4. struct estructTai { public int n; }\n6. class taiLibreCSharp {\n  public static void evaluaEstructura(estructTai st) { st.n = 8; }\n  public static void evaluaClase(claseTai cl) { cl.n = 8; }\n  public static void Main() {\n    estructTai ns = new estructTai(); claseTai nc = new claseTai();\n    ns.n = 5; nc.n = 5;\n    evaluaEstructura(ns); evaluaClase(nc);\n    Console.WriteLine(\"ns.n = {0} \", ns.n);\n    Console.WriteLine(\"nc.n = {0}\", nc.n);\n  }\n}",
+   "op": {
+    "a": "lon < cadena.Length + 1",
+    "b": "lon <= cadena.Length()",
+    "c": "lon <= cadena.Length - 1",
+    "d": "lon < cadena.Length() + 1"
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los índices van de 0 a `Length - 1`, así que `lon <= cadena.Length - 1` (equivale a `lon < cadena.Length`).\n\n- `lon < cadena.Length + 1` llega a `Length` y lanza IndexOutOfRangeException.\n- `Length()` con paréntesis no compila: en C# `Length` es una **propiedad**.",
+   "epigrafe": "11. C# práctico para el supuesto",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-051",
+   "tipo": "historica",
+   "ref": "LI2016-b3-b3-05",
+   "origen": {
+    "anio": 2016,
+    "parte": "b3",
+    "n": 5
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Seleccione de entre las siguientes la clase que NO pertenece al espacio de nombres System.Collections de .NET Framework:",
+   "ctx": "Código C# (2016):\n1. //**Directiva**//\n2. class claseTai { public int n; }\n4. struct estructTai { public int n; }\n6. class taiLibreCSharp {\n  public static void evaluaEstructura(estructTai st) { st.n = 8; }\n  public static void evaluaClase(claseTai cl) { cl.n = 8; }\n  public static void Main() {\n    estructTai ns = new estructTai(); claseTai nc = new claseTai();\n    ns.n = 5; nc.n = 5;\n    evaluaEstructura(ns); evaluaClase(nc);\n    Console.WriteLine(\"ns.n = {0} \", ns.n);\n    Console.WriteLine(\"nc.n = {0}\", nc.n);\n  }\n}",
+   "op": {
+    "a": "Queue",
+    "b": "SortedList",
+    "c": "Tree",
+    "d": "Stack"
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "System.Collections contiene ArrayList, Hashtable, **Queue**, **Stack**, **SortedList** y BitArray. **Tree** no existe en .NET.",
+   "epigrafe": "11. C# práctico para el supuesto",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-052",
+   "tipo": "historica",
+   "ref": "LI2016-b3-b3-06",
+   "origen": {
+    "anio": 2016,
+    "parte": "b3",
+    "n": 6
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Indique cuál de los siguientes eventos ocurre antes en el ciclo de vida de una página ASP.NET:",
+   "ctx": "Código C# (2016):\n1. //**Directiva**//\n2. class claseTai { public int n; }\n4. struct estructTai { public int n; }\n6. class taiLibreCSharp {\n  public static void evaluaEstructura(estructTai st) { st.n = 8; }\n  public static void evaluaClase(claseTai cl) { cl.n = 8; }\n  public static void Main() {\n    estructTai ns = new estructTai(); claseTai nc = new claseTai();\n    ns.n = 5; nc.n = 5;\n    evaluaEstructura(ns); evaluaClase(nc);\n    Console.WriteLine(\"ns.n = {0} \", ns.n);\n    Console.WriteLine(\"nc.n = {0}\", nc.n);\n  }\n}",
+   "op": {
+    "a": "Page_Load()",
+    "b": "Page_Init()",
+    "c": "Page_Click()",
+    "d": "Page_PrePage()"
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Ciclo de vida de una página Web Forms: PreInit → **Init** → InitComplete → PreLoad → **Load** → eventos de control (Click) → PreRender → Render → Unload. De las opciones, ocurre antes **Page_Init**.\n\n«Page_PrePage» no existe (el evento previo es PreInit).",
+   "epigrafe": "13. Interfaces de usuario en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-053",
+   "tipo": "historica",
+   "ref": "LI2016-b3-b3-07",
+   "origen": {
+    "anio": 2016,
+    "parte": "b3",
+    "n": 7
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En .NET Framework, ¿cuál de las siguientes clases permite el acceso mediante programación al elemento HTML <input type=\"checkbox\"> del servidor?",
+   "ctx": "Código C# (2016):\n1. //**Directiva**//\n2. class claseTai { public int n; }\n4. struct estructTai { public int n; }\n6. class taiLibreCSharp {\n  public static void evaluaEstructura(estructTai st) { st.n = 8; }\n  public static void evaluaClase(claseTai cl) { cl.n = 8; }\n  public static void Main() {\n    estructTai ns = new estructTai(); claseTai nc = new claseTai();\n    ns.n = 5; nc.n = 5;\n    evaluaEstructura(ns); evaluaClase(nc);\n    Console.WriteLine(\"ns.n = {0} \", ns.n);\n    Console.WriteLine(\"nc.n = {0}\", nc.n);\n  }\n}",
+   "op": {
+    "a": "HtmlInputCheckBox",
+    "b": "HtmlControl",
+    "c": "CheckBoxControl",
+    "d": "HtmlCheckBox"
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los controles HTML de servidor (`runat=\"server\"`) están en System.Web.UI.HtmlControls; `<input type=\"checkbox\">` se maneja con **HtmlInputCheckBox**.\n\n- `HtmlControl` es la clase base abstracta, no la específica.\n- `CheckBoxControl` y `HtmlCheckBox` no existen (el control web es `asp:CheckBox`).",
+   "epigrafe": "13. Interfaces de usuario en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-054",
+   "tipo": "historica",
+   "ref": "LI2016-b3-b3-R03",
+   "origen": {
+    "anio": 2016,
+    "parte": "b3",
+    "n": 3,
+    "reserva": true
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En relación con los accesos a bases de datos SQL con ASP.NET, el método del objeto SqlCommand que devuelve un SqlDataReader con los registros seleccionados es:",
+   "ctx": null,
+   "op": {
+    "a": "DataSet",
+    "b": "ExecuteReader",
+    "c": "ExecuteCommand",
+    "d": "SqlReader"
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**ExecuteReader()** de SqlCommand devuelve un **SqlDataReader** (lectura hacia delante y solo lectura).\n\n- DataSet es un contenedor desconectado, no un método.\n- `ExecuteCommand` y `SqlReader` no existen (sí ExecuteNonQuery y ExecuteScalar).",
+   "epigrafe": "12. Acceso a datos en .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-055",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-III-31",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 81
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En lo referente a la programación en Java, ¿cuál de las siguientes afirmaciones es cierta?",
+   "ctx": null,
+   "op": {
+    "a": "Swift es la nueva máquina virtual Java que se ejecuta en Android 7.0.",
+    "b": "JUnit nos permite crear test de clases Java.",
+    "c": "Swing es un framework de persistencia de bases de datos.",
+    "d": "Drupal requiere para su ejecución una máquina virtual Java 1.8"
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**JUnit** es el framework de pruebas unitarias de Java.\n\n- Swift es el lenguaje de Apple, no una JVM de Android.\n- Swing es la biblioteca de interfaz gráfica, no de persistencia.\n- Drupal es un CMS en **PHP**, no necesita JVM.",
+   "epigrafe": "2. Java: plataforma y lenguaje base",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-056",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-III-39",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 89
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál es la sintaxis para definir el inicio de un comentario en JSP?",
+   "ctx": null,
+   "op": {
+    "a": "<%--",
+    "b": "<!%--",
+    "c": "<jsp--",
+    "d": "<!jsp--"
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El comentario JSP se abre con **<%--** y se cierra con **--%>**; no llega al cliente. El comentario HTML (`<!-- -->`) sí se envía al navegador.\n\nLas otras formas no existen.",
+   "epigrafe": "4. Componentes web Java: servlets, JSP y Faces",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-057",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-III-43",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 93
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "API de JAVA proporciona un sistema de autenticación y control de acceso de usuarios y grupos para una aplicación:",
+   "ctx": null,
+   "op": {
+    "a": "JAF",
+    "b": "JAAS",
+    "c": "JACC",
+    "d": "JNDI"
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**JAAS** (Java Authentication and Authorization Service) da autenticación y control de acceso de usuarios y grupos (LoginContext, LoginModule, Subject).\n\n- *JAF*: JavaBeans Activation Framework (tipos MIME).\n- *JACC*: contrato servidor-proveedor de autorización, no un sistema completo para la aplicación.\n- *JNDI*: servicio de nombres y directorios.",
+   "epigrafe": "8. Seguridad en Java y Jakarta EE",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-058",
+   "tipo": "historica",
+   "ref": "LI2015-b3-b3-09",
+   "origen": {
+    "anio": 2015,
+    "parte": "b3",
+    "n": 9
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "La estructura del código del proyecto se divide en paquetes, entre los principales paquetes se encuentran lo siguientes: package entity (Modelo), package controller (Controlador) y package facade (Vista). En las clases del paquete entity se hace el mapeo entre los objetos Java y las tablas de la base de datos utilizándose para ello JPA, para usar JPA usted tendrá que importar las librerías del paquete:",
+   "ctx": "Supuesto 2015: aplicación de reservas de un museo en tres capas (MVC) con Java EE 7, NetBeans 8.1, GlassFish 4.1 y PostgreSQL 9.5; algunas partes se desarrollan en C# y ASP.NET.",
+   "op": {
+    "a": "java.util.persistence",
+    "b": "java.persistence",
+    "c": "java.db.persistence",
+    "d": "javax.persistence"
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Con Java EE 7 las anotaciones JPA están en **javax.persistence** (`@Entity`, `@Table`, `@Id`). Desde Jakarta EE 9 el paquete es **jakarta.persistence**.\n\nLos demás paquetes no existen.",
+   "epigrafe": "6. Persistencia en Java",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-059",
+   "tipo": "historica",
+   "ref": "LI2015-b3-b3-10",
+   "origen": {
+    "anio": 2015,
+    "parte": "b3",
+    "n": 10
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En el paquete \"package.entity\" del proyecto se crea la clase Actividades.java para persistir la tabla Actividades de la base de datos, para indicarle a esta clase la tabla que está representando debe utilizar la sentencia:",
+   "ctx": "Supuesto 2015: aplicación de reservas de un museo en tres capas (MVC) con Java EE 7, NetBeans 8.1, GlassFish 4.1 y PostgreSQL 9.5; algunas partes se desarrollan en C# y ASP.NET.",
+   "op": {
+    "a": "@Entity (table=\"actividades\")",
+    "b": "@Table (table=\"actividades\")",
+    "c": "@Entity (name=\"actividades\")",
+    "d": "@Table (name=\"actividades\")"
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La tabla se indica con **@Table(name=\"actividades\")**.\n\n- `@Entity` marca la clase como entidad; su atributo `name` es el nombre de la **entidad** en JPQL, no de la tabla.\n- Ni @Entity ni @Table tienen un atributo llamado `table`.",
+   "epigrafe": "6. Persistencia en Java",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-060",
+   "tipo": "historica",
+   "ref": "LI2015-b3-b3-28",
+   "origen": {
+    "anio": 2015,
+    "parte": "b3",
+    "n": 28
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En una página aspx del proyecto se le quiere especificar que el control de los eventos se va a realizar en un archivo separado 'codigo.cs', para ello debe utilizar el siguiente atributo de la directiva @ Page:",
+   "ctx": "Supuesto 2015: aplicación de reservas de un museo en tres capas (MVC) con Java EE 7, NetBeans 8.1, GlassFish 4.1 y PostgreSQL 9.5; algunas partes se desarrollan en C# y ASP.NET.",
+   "op": {
+    "a": "File",
+    "b": "CodeFile",
+    "c": "Code",
+    "d": "EventFile"
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En la directiva `@ Page` de Web Forms, **CodeFile** indica el fichero de código separado (proyectos de tipo Web Site, compilado en ejecución); en proyectos Web Application se usa **CodeBehind**, que no estaba entre las opciones. Ambos van con `Inherits`.\n\n`File`, `Code` y `EventFile` no son atributos de @Page.",
+   "epigrafe": "13. Interfaces de usuario en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-061",
+   "tipo": "historica",
+   "ref": "LI2015-b3-b3-30",
+   "origen": {
+    "anio": 2015,
+    "parte": "b3",
+    "n": 30
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En C# existen varias formas de crear un array, seleccione cuál de las siguientes dará un error de compilación:",
+   "ctx": "Supuesto 2015: aplicación de reservas de un museo en tres capas (MVC) con Java EE 7, NetBeans 8.1, GlassFish 4.1 y PostgreSQL 9.5; algunas partes se desarrollan en C# y ASP.NET.",
+   "op": {
+    "a": "string[] miArray = new string[100];",
+    "b": "string[] miArray={\"Coria\",\"del\",\"Rio\"};",
+    "c": "string[] miArray= new string[]{\"Coria\",\"del\",\"Rio\"};",
+    "d": "int unEntero=3; string [] unArray= new string[unEntero]{\"Coria\",\"del\",\"Rio\"};"
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`new string[unEntero]{...}` da **error de compilación**: cuando se combina tamaño e inicializador, el tamaño debe ser una **constante** (y coincidir con el número de elementos). `unEntero` es una variable.\n\nLas otras tres formas son válidas: tamaño sin inicializador, inicializador directo y `new string[]{...}`.",
+   "epigrafe": "11. C# práctico para el supuesto",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-062",
+   "tipo": "historica",
+   "ref": "LI2015-b3-b3-31",
+   "origen": {
+    "anio": 2015,
+    "parte": "b3",
+    "n": 31
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Seleccione la salida correcta para el siguiente fragmento de código C# del proyecto:\nstring[] nombres={\"Matilde\",\"Cristina\",\"Teresa\",\"Valle\"};\nArray.Sort(nombres);\nArray.Reverse(nombres);\nfor(int i=0;i<nombres.Length;i++)\n    Console.WriteLine(nombres[i]);",
+   "ctx": "Supuesto 2015: aplicación de reservas de un museo en tres capas (MVC) con Java EE 7, NetBeans 8.1, GlassFish 4.1 y PostgreSQL 9.5; algunas partes se desarrollan en C# y ASP.NET.",
+   "op": {
+    "a": "Valle\nTeresa\nCristina\nMatilde",
+    "b": "Cristina\nMatilde\nValle\nTeresa",
+    "c": "Valle\nTeresa\nMatilde\nCristina",
+    "d": "Teresa\nMatilde\nValle\nCristina"
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`Array.Sort` ordena alfabéticamente: Cristina, Matilde, Teresa, Valle. `Array.Reverse` invierte: **Valle, Teresa, Matilde, Cristina**.",
+   "epigrafe": "11. C# práctico para el supuesto",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-063",
+   "tipo": "historica",
+   "ref": "LI2015-b3-b3-32",
+   "origen": {
+    "anio": 2015,
+    "parte": "b3",
+    "n": 32
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se quiere crear una clase en C# que haga uso de una colección de tipo ArrayList, para ello deberá hacer uso de la directiva:",
+   "ctx": "Supuesto 2015: aplicación de reservas de un museo en tres capas (MVC) con Java EE 7, NetBeans 8.1, GlassFish 4.1 y PostgreSQL 9.5; algunas partes se desarrollan en C# y ASP.NET.",
+   "op": {
+    "a": "using ArrayList.Collections;",
+    "b": "import System.ArrayList;",
+    "c": "use Collections.*;",
+    "d": "using System.Collections;"
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "ArrayList está en **System.Collections**: `using System.Collections;`.\n\n`import` y `use` no son directivas de C#, y ni `ArrayList.Collections` ni `System.ArrayList` son espacios de nombres.",
+   "epigrafe": "11. C# práctico para el supuesto",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-064",
+   "tipo": "historica",
+   "ref": "LI2015-b3-b3-33",
+   "origen": {
+    "anio": 2015,
+    "parte": "b3",
+    "n": 33
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En un programa C# del proyecto, \"vector\" es un objeto ArrayList cuyos elementos son del tipo \"Cliente\", ¿cuál de los siguientes fragmentos de código NO será válido para hacer un recorrido del mismo?",
+   "ctx": "Supuesto 2015: aplicación de reservas de un museo en tres capas (MVC) con Java EE 7, NetBeans 8.1, GlassFish 4.1 y PostgreSQL 9.5; algunas partes se desarrollan en C# y ASP.NET.",
+   "op": {
+    "a": "for(int i=0;i<vector.Length();i++)",
+    "b": "for(int i=0;i<vector.Count;i++)",
+    "c": "foreach(Cliente an in vector)",
+    "d": "foreach(Cliente en in vector)"
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "ArrayList tiene la propiedad **Count**; no tiene `Length()` (y Length de los arrays es propiedad, sin paréntesis). Ese bucle no compila.\n\n`for` con `Count` y los dos `foreach` (cambia solo el nombre de la variable) son válidos.",
+   "epigrafe": "11. C# práctico para el supuesto",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-065",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-III-35",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 85
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las siguientes opciones representa una librería para gestión de logs en aplicaciones desarrolladas en la plataforma .NET?",
+   "ctx": null,
+   "op": {
+    "a": "Apache Log4C#.",
+    "b": "Apache Logging4NET.",
+    "c": "Apache Log4NET.",
+    "d": "Apache LoggedForNET."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Apache log4net** es el port a .NET de log4j. Las demás denominaciones no existen (otras librerías reales: NLog y Serilog).",
+   "epigrafe": "15. Utilidades transversales en .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-066",
+   "tipo": "historica",
+   "ref": "LI2008-b3-b3-20",
+   "origen": {
+    "anio": 2008,
+    "parte": "b3",
+    "n": 20
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El código del Programa1 está escrito en el lenguaje de programación:",
+   "ctx": "Programa1 (2008):\npublic class Programa1 extends javax.servlet.http.HttpServlet implements javax.servlet.Servlet {\n  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {\n    PrintWriter pw = response.getWriter();\n    response.setContentType(\"text/html\"); /* 1 */\n    pw.println(\"<html>\"); ... pw.println(\"<body>\");\n    pw.println(\"<h1 align=center>Programa1</h1>\");\n    Servicio.getServicio().servir(pw, request.getSession());\n    pw.println(\"</body>\"); pw.println(\"</html>\");\n  }\n}\nclass Servicio {   // Singleton: private static Servicio servicio; private int c1 = 1; constructor privado; getServicio() synchronized\n  public void servir(PrintWriter pw, HttpSession s) {\n    int c2;\n    if (s.getAttribute(\"C2\") != null) { c2 = (Integer) s.getAttribute(\"C2\"); } else { c2 = 1; }\n    pw.println((c1++) + \"<br>\");\n    pw.println((c2++) + \"<br>\");\n    pw.println(new java.util.Date().toString() + \"<br>\");\n    s.setAttribute(\"C2\", c2);\n  }\n}",
+   "op": {
+    "a": "C.",
+    "b": "Java.",
+    "c": "C++.",
+    "d": "Visual Basic."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Paquetes (`package`, `import java.io...`), `extends HttpServlet`, `PrintWriter`: es **Java**.",
+   "epigrafe": "4. Componentes web Java: servlets, JSP y Faces",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-067",
+   "tipo": "historica",
+   "ref": "LI2008-b3-b3-21",
+   "origen": {
+    "anio": 2008,
+    "parte": "b3",
+    "n": 21
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El código del Programa1 se ejecuta en un entorno basado en un:",
+   "ctx": "Programa1 (2008):\npublic class Programa1 extends javax.servlet.http.HttpServlet implements javax.servlet.Servlet {\n  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {\n    PrintWriter pw = response.getWriter();\n    response.setContentType(\"text/html\"); /* 1 */\n    pw.println(\"<html>\"); ... pw.println(\"<body>\");\n    pw.println(\"<h1 align=center>Programa1</h1>\");\n    Servicio.getServicio().servir(pw, request.getSession());\n    pw.println(\"</body>\"); pw.println(\"</html>\");\n  }\n}\nclass Servicio {   // Singleton: private static Servicio servicio; private int c1 = 1; constructor privado; getServicio() synchronized\n  public void servir(PrintWriter pw, HttpSession s) {\n    int c2;\n    if (s.getAttribute(\"C2\") != null) { c2 = (Integer) s.getAttribute(\"C2\"); } else { c2 = 1; }\n    pw.println((c1++) + \"<br>\");\n    pw.println((c2++) + \"<br>\");\n    pw.println(new java.util.Date().toString() + \"<br>\");\n    s.setAttribute(\"C2\", c2);\n  }\n}",
+   "op": {
+    "a": "Terminal en modo texto.",
+    "b": "Modo gráfico de ventanas.",
+    "c": "Servlet que se ejecuta en un navegador web.",
+    "d": "Servlet que se ejecuta en un servidor web."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Programa1 extiende **HttpServlet**: es un **servlet**, que se ejecuta **en el servidor** (contenedor web) y devuelve HTML al navegador.\n\nNo se ejecuta en el navegador (eso eran los applets), ni en modo texto o ventanas.",
+   "epigrafe": "4. Componentes web Java: servlets, JSP y Faces",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-068",
+   "tipo": "historica",
+   "ref": "LI2008-b3-b3-22",
+   "origen": {
+    "anio": 2008,
+    "parte": "b3",
+    "n": 22
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Al acceder al código del Programa1 mediante el método post:",
+   "ctx": "Programa1 (2008):\npublic class Programa1 extends javax.servlet.http.HttpServlet implements javax.servlet.Servlet {\n  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {\n    PrintWriter pw = response.getWriter();\n    response.setContentType(\"text/html\"); /* 1 */\n    pw.println(\"<html>\"); ... pw.println(\"<body>\");\n    pw.println(\"<h1 align=center>Programa1</h1>\");\n    Servicio.getServicio().servir(pw, request.getSession());\n    pw.println(\"</body>\"); pw.println(\"</html>\");\n  }\n}\nclass Servicio {   // Singleton: private static Servicio servicio; private int c1 = 1; constructor privado; getServicio() synchronized\n  public void servir(PrintWriter pw, HttpSession s) {\n    int c2;\n    if (s.getAttribute(\"C2\") != null) { c2 = (Integer) s.getAttribute(\"C2\"); } else { c2 = 1; }\n    pw.println((c1++) + \"<br>\");\n    pw.println((c2++) + \"<br>\");\n    pw.println(new java.util.Date().toString() + \"<br>\");\n    s.setAttribute(\"C2\", c2);\n  }\n}",
+   "op": {
+    "a": "Se genera un error.",
+    "b": "Se obtiene la misma información que si se accediese al programa mediante el método get.",
+    "c": "Se obtiene una respuesta vacía",
+    "d": "No se recibe ninguna respuesta."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El servlet solo sobrescribe **doGet**. La implementación por defecto de `doPost` en HttpServlet responde con un **error 405 (Method Not Allowed)**.\n\nSi doPost llamara a doGet, se obtendría la misma información que por GET.",
+   "epigrafe": "4. Componentes web Java: servlets, JSP y Faces",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-069",
+   "tipo": "historica",
+   "ref": "LI2008-b3-b3-23",
+   "origen": {
+    "anio": 2008,
+    "parte": "b3",
+    "n": 23
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Qué hace la línea de código marcada con el número 1?:",
+   "ctx": "Programa1 (2008):\npublic class Programa1 extends javax.servlet.http.HttpServlet implements javax.servlet.Servlet {\n  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {\n    PrintWriter pw = response.getWriter();\n    response.setContentType(\"text/html\"); /* 1 */\n    pw.println(\"<html>\"); ... pw.println(\"<body>\");\n    pw.println(\"<h1 align=center>Programa1</h1>\");\n    Servicio.getServicio().servir(pw, request.getSession());\n    pw.println(\"</body>\"); pw.println(\"</html>\");\n  }\n}\nclass Servicio {   // Singleton: private static Servicio servicio; private int c1 = 1; constructor privado; getServicio() synchronized\n  public void servir(PrintWriter pw, HttpSession s) {\n    int c2;\n    if (s.getAttribute(\"C2\") != null) { c2 = (Integer) s.getAttribute(\"C2\"); } else { c2 = 1; }\n    pw.println((c1++) + \"<br>\");\n    pw.println((c2++) + \"<br>\");\n    pw.println(new java.util.Date().toString() + \"<br>\");\n    s.setAttribute(\"C2\", c2);\n  }\n}",
+   "op": {
+    "a": "Define en el objeto respuesta MIME de la misma.",
+    "b": "Configura el entorno de ejecución de Programa1 para poder escribir una página HTML.",
+    "c": "Indica al servidor de aplicaciones que se va a enviar una respuesta formada pro texto y código HTML.",
+    "d": "Genera un trozo de código HTML que tiene que existir en toda página web."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`setContentType(\"text/html\")` fija el **tipo MIME** de la respuesta (cabecera Content-Type): indica que lo que se va a enviar es texto con código HTML.\n\nNo configura el entorno ni genera código HTML por sí misma. La primera opción («define en el objeto respuesta MIME de la misma») apunta a lo mismo pero está mal redactada; la clave oficial es la tercera.",
+   "epigrafe": "4. Componentes web Java: servlets, JSP y Faces",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-070",
+   "tipo": "historica",
+   "ref": "LI2008-b3-b3-24",
+   "origen": {
+    "anio": 2008,
+    "parte": "b3",
+    "n": 24
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Cuando un usuario provoca la ejecución del Programa1, leyendo la respuesta en MS Internet Explorer 7, obtiene un resultado cuya segunda línea de respuesta es:",
+   "ctx": "Programa1 (2008):\npublic class Programa1 extends javax.servlet.http.HttpServlet implements javax.servlet.Servlet {\n  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {\n    PrintWriter pw = response.getWriter();\n    response.setContentType(\"text/html\"); /* 1 */\n    pw.println(\"<html>\"); ... pw.println(\"<body>\");\n    pw.println(\"<h1 align=center>Programa1</h1>\");\n    Servicio.getServicio().servir(pw, request.getSession());\n    pw.println(\"</body>\"); pw.println(\"</html>\");\n  }\n}\nclass Servicio {   // Singleton: private static Servicio servicio; private int c1 = 1; constructor privado; getServicio() synchronized\n  public void servir(PrintWriter pw, HttpSession s) {\n    int c2;\n    if (s.getAttribute(\"C2\") != null) { c2 = (Integer) s.getAttribute(\"C2\"); } else { c2 = 1; }\n    pw.println((c1++) + \"<br>\");\n    pw.println((c2++) + \"<br>\");\n    pw.println(new java.util.Date().toString() + \"<br>\");\n    s.setAttribute(\"C2\", c2);\n  }\n}",
+   "op": {
+    "a": "El valor numérico de un contador que proporciona el número total de ejecuciones de Programa1 desde su puesta en marcha inicial.",
+    "b": "El valor numérico de un contador que proporciona el número total de peticiones en una única sesión.",
+    "c": "El valor numérico de un contador que proporciona el número total de peticiones de un determinado usuario",
+    "d": "Un contador que siempre contiene el valor 1."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Línea 1 visible: el título «Programa1». Línea 2: `c1`, atributo de **instancia** del Singleton `Servicio` (un único objeto en toda la aplicación), que se incrementa en cada petición: **número total de ejecuciones desde el arranque**.\n\nEl contador por sesión es `c2` (tercera línea) y ninguno vale siempre 1.",
+   "epigrafe": "4. Componentes web Java: servlets, JSP y Faces",
+   "dificultad": 3
+  },
+  {
+   "id": "t19-h-071",
+   "tipo": "historica",
+   "ref": "LI2008-b3-b3-25",
+   "origen": {
+    "anio": 2008,
+    "parte": "b3",
+    "n": 25
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Cuando un usuario provoca la ejecución del Programa1, leyendo la respuesta en MS Internet Explorer 7, obtiene un resultado cuya tercera línea de respuesta es:",
+   "ctx": "Programa1 (2008):\npublic class Programa1 extends javax.servlet.http.HttpServlet implements javax.servlet.Servlet {\n  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {\n    PrintWriter pw = response.getWriter();\n    response.setContentType(\"text/html\"); /* 1 */\n    pw.println(\"<html>\"); ... pw.println(\"<body>\");\n    pw.println(\"<h1 align=center>Programa1</h1>\");\n    Servicio.getServicio().servir(pw, request.getSession());\n    pw.println(\"</body>\"); pw.println(\"</html>\");\n  }\n}\nclass Servicio {   // Singleton: private static Servicio servicio; private int c1 = 1; constructor privado; getServicio() synchronized\n  public void servir(PrintWriter pw, HttpSession s) {\n    int c2;\n    if (s.getAttribute(\"C2\") != null) { c2 = (Integer) s.getAttribute(\"C2\"); } else { c2 = 1; }\n    pw.println((c1++) + \"<br>\");\n    pw.println((c2++) + \"<br>\");\n    pw.println(new java.util.Date().toString() + \"<br>\");\n    s.setAttribute(\"C2\", c2);\n  }\n}",
+   "op": {
+    "a": "El valor numérico de un contador que proporciona el número total de ejecuciones de Programa1 desde su puesta en marcha inicial.",
+    "b": "El valor numérico de un contador que proporciona el número total de peticiones en una sesión.",
+    "c": "El valor numérico de un contador que proporciona el número total de peticiones de un determinado usuario.",
+    "d": "Un contador que siempre contiene el valor 1."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Línea 3: `c2`, que se guarda en la **HttpSession** (`s.setAttribute(\"C2\", ...)`): cuenta las **peticiones de esa sesión**.\n\nNo cuenta por usuario (un usuario puede abrir varias sesiones) ni el total global (eso es c1).",
+   "epigrafe": "4. Componentes web Java: servlets, JSP y Faces",
+   "dificultad": 3
+  },
+  {
+   "id": "t19-h-072",
+   "tipo": "historica",
+   "ref": "LI2008-b3-b3-26",
+   "origen": {
+    "anio": 2008,
+    "parte": "b3",
+    "n": 26
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Cuando un usuario provoca la ejecución del Programa1, leyendo la respuesta en MS Internet Explorer 7, obtiene un resultado cuya cuarta línea de respuesta es:",
+   "ctx": "Programa1 (2008):\npublic class Programa1 extends javax.servlet.http.HttpServlet implements javax.servlet.Servlet {\n  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {\n    PrintWriter pw = response.getWriter();\n    response.setContentType(\"text/html\"); /* 1 */\n    pw.println(\"<html>\"); ... pw.println(\"<body>\");\n    pw.println(\"<h1 align=center>Programa1</h1>\");\n    Servicio.getServicio().servir(pw, request.getSession());\n    pw.println(\"</body>\"); pw.println(\"</html>\");\n  }\n}\nclass Servicio {   // Singleton: private static Servicio servicio; private int c1 = 1; constructor privado; getServicio() synchronized\n  public void servir(PrintWriter pw, HttpSession s) {\n    int c2;\n    if (s.getAttribute(\"C2\") != null) { c2 = (Integer) s.getAttribute(\"C2\"); } else { c2 = 1; }\n    pw.println((c1++) + \"<br>\");\n    pw.println((c2++) + \"<br>\");\n    pw.println(new java.util.Date().toString() + \"<br>\");\n    s.setAttribute(\"C2\", c2);\n  }\n}",
+   "op": {
+    "a": "El tiempo de ejecución del programa de Programa1.",
+    "b": "La fecha en la que se arrancó por primera vez de Programa1.",
+    "c": "Sólo la fecha actual.",
+    "d": "Todos los datos relacionados con la fecha y hora actual."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`new java.util.Date().toString()` imprime la **fecha y hora actuales** completas (día de la semana, fecha, hora, zona y año).\n\nNo es el tiempo de ejecución ni la fecha de arranque, y no es solo la fecha.",
+   "epigrafe": "4. Componentes web Java: servlets, JSP y Faces",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-073",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-I-II-47",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 47
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de entre las siguientes opciones no es un componente de ADO (Active X Data Object)?",
+   "ctx": null,
+   "op": {
+    "a": "Connection.",
+    "b": "Errors.",
+    "c": "DSN.",
+    "d": "Recordset."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Objetos de ADO (ActiveX Data Objects, tecnología COM anterior a .NET): Connection, Command, **Recordset**, Record, Stream, Field, Parameter, Property y la colección **Errors**. **DSN** no es un objeto de ADO: es el nombre de un origen de datos ODBC.",
+   "epigrafe": "12. Acceso a datos en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-074",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-12",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 62
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En relación con las plataformas .Net framework, el CLR (Common Lenguaje Runtine) es el motor de ejecución de las aplicaciones .NET. ¿Cuál de las siguientes no es una función del CLR?",
+   "ctx": null,
+   "op": {
+    "a": "Es el encargado de generar el lenguaje máquina.",
+    "b": "Elimina de la memoria objetos no utilizados.",
+    "c": "Se encarga de la seguridad del código que se ejecuta.",
+    "d": "Todas las anteriores son funciones del CLR."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El CLR compila a **código máquina** (JIT), **libera memoria** (recolector de basura) y se encarga de la **seguridad** del código. Las tres son funciones del CLR, así que la respuesta es «todas las anteriores son funciones del CLR».",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-075",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-28",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 78
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de entre las siguientes no es una característica de Java?",
+   "ctx": null,
+   "op": {
+    "a": "Independencia de la plataforma.",
+    "b": "Orientación a objetos.",
+    "c": "Existencia del Recolector de basura.",
+    "d": "Destinado a ejecutarse únicamente en servidores."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Java es independiente de la plataforma, orientado a objetos y con recolector de basura, y se ejecuta en escritorio, móvil, servidor y embebidos. **No** está destinado únicamente a servidores.",
+   "epigrafe": "2. Java: plataforma y lenguaje base",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-076",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-40",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 90
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de entre los siguientes aplicativos se puede ejecutar en un servidor y no en el cliente?",
+   "ctx": null,
+   "op": {
+    "a": "Applets de Java.",
+    "b": "Controles Active X.",
+    "c": "Servlet de Java.",
+    "d": "Javascript."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **servlet** se ejecuta en el **servidor**.\n\nLos **applets** de Java, los **controles ActiveX** y **JavaScript** se ejecutaban en el cliente (navegador).",
+   "epigrafe": "4. Componentes web Java: servlets, JSP y Faces",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-h-077",
+   "tipo": "historica",
+   "ref": "LI2007-b3-S2-14",
+   "origen": {
+    "anio": 2007,
+    "parte": "b3",
+    "n": 32
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Para construir la tienda Web se ha optado por una arquitectura en 3 capas donde la lógica de negocio está soportada por componentes que se ejecutan en un servidor de aplicaciones. ¿Cuál de los siguientes productos NO es un servidor de aplicaciones?",
+   "ctx": "Supuesto 2007: tienda web en arquitectura de 3 capas cuya lógica de negocio corre en un servidor de aplicaciones.",
+   "op": {
+    "a": "Bea WebLogic.",
+    "b": "IBM WebSphere.",
+    "c": "JOnAS.",
+    "d": "Struts."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Struts** (Apache) es un **framework web MVC** para Java, no un servidor de aplicaciones.\n\nBEA (hoy Oracle) **WebLogic**, IBM **WebSphere** y **JOnAS** (OW2) sí son servidores de aplicaciones Java EE.",
+   "epigrafe": "3. Java EE / Jakarta EE",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-h-078",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-72",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 72
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Java, como algunos otros lenguajes de programación, permite dinámicamente limpiar o eliminar los objetos no usados o referenciados. El mecanismo que realiza esta función en Java se denomina:",
+   "ctx": null,
+   "op": {
+    "a": "Trash busher.",
+    "b": "Dust binner.",
+    "c": "Debbuger aitor.",
+    "d": "Garbage collector."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **recolector de basura (garbage collector)** libera automáticamente la memoria de los objetos no referenciados. Las otras opciones son nombres inventados.",
+   "epigrafe": "2. Java: plataforma y lenguaje base",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-v-001",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-001",
+   "texto": "reformulado",
+   "q": "En un controlador REST de Spring Boot, ¿qué anotación vincula un parámetro del método con un fragmento de la ruta, como el {id} de /alumnos/{id}?",
+   "ctx": null,
+   "op": {
+    "a": "@RequestParam",
+    "b": "@PathVariable",
+    "c": "@RequestBody",
+    "d": "@PathParam"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**@PathVariable** toma valores de la ruta. **@RequestParam** toma parámetros de consulta (`?pagina=2`), **@RequestBody** el cuerpo JSON y **@PathParam** es la anotación equivalente de **Jakarta REST (JAX-RS)**, no de Spring.",
+   "epigrafe": "9. Spring y Spring Boot",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-002",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-002",
+   "texto": "reformulado",
+   "q": "Con Gradle, ¿qué tarea arranca una aplicación Spring Boot desde el código fuente?",
+   "ctx": null,
+   "op": {
+    "a": "gradle spring-boot:run",
+    "b": "gradle run-boot",
+    "c": "gradle bootRun",
+    "d": "gradle start"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El plugin de Spring Boot para Gradle añade la tarea **bootRun** (`./gradlew bootRun`). `spring-boot:run` es la sintaxis de **Maven**; las otras no existen.",
+   "epigrafe": "9. Spring y Spring Boot",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-003",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-003",
+   "texto": "reformulado",
+   "q": "Con ILogger de .NET, ¿cuál es el orden correcto de niveles de log de menor a mayor gravedad?",
+   "ctx": null,
+   "op": {
+    "a": "Debug, Trace, Information, Error, Warning, Critical",
+    "b": "Information, Debug, Trace, Warning, Critical, Error",
+    "c": "Trace, Information, Debug, Warning, Critical, Error",
+    "d": "Trace, Debug, Information, Warning, Error, Critical"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Niveles de Microsoft.Extensions.Logging: **Trace < Debug < Information < Warning < Error < Critical** (y None para desactivar).",
+   "epigrafe": "15. Utilidades transversales en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-004",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-004",
+   "texto": "reformulado",
+   "q": "En C#, ¿cuál es la firma correcta de un método asíncrono que devuelve un entero?",
+   "ctx": null,
+   "op": {
+    "a": "async Task<int> ObtenerTotalAsync()",
+    "b": "async int ObtenerTotalAsync()",
+    "c": "await Task<int> ObtenerTotalAsync()",
+    "d": "Task async<int> ObtenerTotalAsync()"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Asíncrono con resultado: **async Task<int>**; sin resultado, `async Task`. Un método async no puede devolver `int` directamente, `await` se usa dentro del cuerpo y el orden es modificador `async` + tipo de retorno.",
+   "epigrafe": "11. C# práctico para el supuesto",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-005",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-005",
+   "texto": "reformulado",
+   "q": "En Tomcat, ¿qué componente compila las páginas JSP a servlets?",
+   "ctx": null,
+   "op": {
+    "a": "Catalina",
+    "b": "Jasper",
+    "c": "Coyote",
+    "d": "Kestrel"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Jasper** es el motor JSP de Tomcat. **Catalina** es el contenedor de servlets y **Coyote** el conector HTTP. **Kestrel** es el servidor web de ASP.NET Core.",
+   "epigrafe": "3. Java EE / Jakarta EE",
+   "dificultad": 3
+  },
+  {
+   "id": "t19-v-006",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-006",
+   "texto": "reformulado",
+   "q": "¿Qué tecnología compila una aplicación Java a un ejecutable nativo antes de la ejecución (AOT), en lugar de usar el JIT?",
+   "ctx": null,
+   "op": {
+    "a": "HotSpot C2",
+    "b": "javac",
+    "c": "GraalVM Native Image",
+    "d": "Jasper"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**GraalVM Native Image** compila AOT (Ahead-Of-Time). **C2** es el compilador JIT optimizador de HotSpot, **javac** genera bytecode (no código nativo) y **Jasper** compila JSP.",
+   "epigrafe": "2. Java: plataforma y lenguaje base",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-007",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-007",
+   "texto": "reformulado",
+   "q": "¿Cómo se denomina el código intermedio que generan los compiladores de .NET y que el CLR traduce a código máquina?",
+   "ctx": null,
+   "op": {
+    "a": "Bytecode",
+    "b": "CTS (Common Type System)",
+    "c": "BCL (Base Class Library)",
+    "d": "CIL (Common Intermediate Language), también llamado MSIL"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los compiladores de .NET (Roslyn) generan **CIL/MSIL**, que el JIT traduce a código nativo. **Bytecode** es el nombre del código intermedio de Java. El **CTS** es el sistema de tipos común y la **BCL**, la biblioteca de clases.",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-008",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-008",
+   "texto": "reformulado",
+   "q": "¿Qué contiene el manifiesto de un ensamblado .NET?",
+   "ctx": null,
+   "op": {
+    "a": "Nombre, versión, referencia cultural, lista de ficheros y referencias a otros ensamblados",
+    "b": "Solo el código CIL de los métodos",
+    "c": "La configuración del servidor web IIS",
+    "d": "El historial de cambios del control de versiones"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **manifiesto** describe el ensamblado: identidad (nombre, versión, cultura, clave pública), ficheros que lo forman y ensamblados de los que depende. El código CIL y los metadatos de tipos van aparte dentro del ensamblado.",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-009",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-009",
+   "texto": "reformulado",
+   "q": "¿Qué lenguaje de .NET es funcional primero, aunque también admite programación imperativa y orientada a objetos?",
+   "ctx": null,
+   "op": {
+    "a": "C#",
+    "b": "F#",
+    "c": "Visual Basic",
+    "d": "C++/CLI"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**F#** es el lenguaje funcional-primero de .NET. **C#** es principalmente OO, **Visual Basic** también, y **C++/CLI** es C++ con extensiones para el CLR.",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-v-010",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-010",
+   "texto": "reformulado",
+   "q": "¿Qué especificación de Jakarta EE es la homóloga de la API Web de ASP.NET Core para crear servicios RESTful?",
+   "ctx": null,
+   "op": {
+    "a": "Jakarta XML Web Services (JAX-WS)",
+    "b": "Jakarta Faces",
+    "c": "Jakarta RESTful Web Services (JAX-RS)",
+    "d": "Jakarta Messaging"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los servicios REST en Jakarta EE se crean con **Jakarta REST (JAX-RS)** (`@Path`, `@GET`). **JAX-WS** es para SOAP, **Faces** es un framework de componentes para interfaces web y **Messaging** (JMS) es mensajería asíncrona.",
+   "epigrafe": "7. Servicios web y XML en Java",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-011",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-011",
+   "texto": "reformulado",
+   "q": "En un proyecto ASP.NET Core con EF Core, ¿qué comando aplica a la base de datos las migraciones pendientes?",
+   "ctx": null,
+   "op": {
+    "a": "dotnet ef migrations add",
+    "b": "dotnet database migrate",
+    "c": "dotnet restore",
+    "d": "dotnet ef database update"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**dotnet ef database update** aplica las migraciones. `dotnet ef migrations add Nombre` **crea** una migración nueva; `dotnet database migrate` no existe y `dotnet restore` restaura paquetes NuGet.",
+   "epigrafe": "12. Acceso a datos en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-012",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-012",
+   "texto": "reformulado",
+   "q": "En EF Core, ¿qué método obtiene de forma asíncrona la primera entidad que cumple una condición, o null si no hay ninguna?",
+   "ctx": null,
+   "op": {
+    "a": "FirstOrDefaultAsync(predicado)",
+    "b": "ToListAsync(predicado)",
+    "c": "SingleAsync(predicado)",
+    "d": "Where(predicado)"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**FirstOrDefaultAsync** devuelve la primera o null. **SingleAsync** lanza excepción si no hay exactamente una, **ToListAsync** devuelve una lista (y no recibe predicado) y **Where** solo filtra, sin ejecutar la consulta.",
+   "epigrafe": "12. Acceso a datos en .NET",
+   "dificultad": 3
+  },
+  {
+   "id": "t19-v-013",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-013",
+   "texto": "reformulado",
+   "q": "En JAXB, ¿qué herramienta genera clases Java a partir de un esquema XSD?",
+   "ctx": null,
+   "op": {
+    "a": "wsimport",
+    "b": "xjc",
+    "c": "schemagen",
+    "d": "wsgen"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**xjc** genera clases desde un XSD; **schemagen** hace lo contrario (XSD desde clases). **wsimport** y **wsgen** son de JAX-WS (cliente desde WSDL y artefactos desde la clase del servicio).",
+   "epigrafe": "7. Servicios web y XML en Java",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-014",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-014",
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes es un micro-ORM para .NET, en el que el SQL se escribe a mano y se mapea a objetos?",
+   "ctx": null,
+   "op": {
+    "a": "Hibernate",
+    "b": "EclipseLink",
+    "c": "Dapper",
+    "d": "MyBatis"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Dapper** es el micro-ORM de .NET (creado por Stack Overflow). **Hibernate** y **EclipseLink** son ORM de Java; **MyBatis** es un mapeador SQL, también de Java.",
+   "epigrafe": "12. Acceso a datos en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-015",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-015",
+   "texto": "reformulado",
+   "q": "En JAXB, ¿cómo se llama la operación que convierte un objeto Java en un documento XML?",
+   "ctx": null,
+   "op": {
+    "a": "Unmarshalling",
+    "b": "Parsing",
+    "c": "Binding inverso",
+    "d": "Marshalling"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Marshalling**: objeto → XML (`Marshaller`). **Unmarshalling**: XML → objeto (`Unmarshaller`). Parsing es analizar el XML, y «binding inverso» no es un término de JAXB.",
+   "epigrafe": "7. Servicios web y XML en Java",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-016",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-016",
+   "texto": "reformulado",
+   "q": "En la consola del Administrador de paquetes de Visual Studio, ¿qué comando instala el paquete NuGet de iText?",
+   "ctx": null,
+   "op": {
+    "a": "Install-Package iText",
+    "b": "dotnet install iText",
+    "c": "nuget add-package iText",
+    "d": "Add-Reference iText"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La consola de Visual Studio usa cmdlets de PowerShell: **Install-Package iText**. Desde la CLI sería `dotnet add package iText`; los otros comandos no existen.",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-017",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-017",
+   "texto": "reformulado",
+   "q": "¿Qué tecnología de Microsoft fue la predecesora de .NET MAUI y perdió el soporte en mayo de 2024?",
+   "ctx": null,
+   "op": {
+    "a": "Windows Forms",
+    "b": "Xamarin.Forms",
+    "c": "Silverlight",
+    "d": "Blazor"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": ".NET MAUI es la evolución de **Xamarin.Forms**. Windows Forms sigue vigente (solo Windows), Silverlight (plugin web) terminó en 2021 y Blazor es el framework web con componentes C#.",
+   "epigrafe": "13. Interfaces de usuario en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-018",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-018",
+   "texto": "reformulado",
+   "q": "En ASP.NET Core, ¿qué modo de Blazor ejecuta los componentes en el navegador sobre WebAssembly?",
+   "ctx": null,
+   "op": {
+    "a": "Blazor Server",
+    "b": "Blazor Hybrid",
+    "c": "Blazor WebAssembly",
+    "d": "Razor Pages"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Blazor WebAssembly** se ejecuta en el navegador. **Blazor Server** se ejecuta en el servidor y actualiza la interfaz por SignalR; **Blazor Hybrid** va dentro de una app nativa; **Razor Pages** es un modelo de páginas renderizadas en servidor.",
+   "epigrafe": "13. Interfaces de usuario en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-019",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-019",
+   "texto": "reformulado",
+   "q": "En JPA, ¿cuál es la estrategia de carga por defecto de una relación @OneToMany?",
+   "ctx": null,
+   "op": {
+    "a": "EAGER (inmediata)",
+    "b": "BATCH",
+    "c": "Depende siempre del proveedor, no hay valor por defecto",
+    "d": "LAZY (perezosa)"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Por defecto **@OneToMany y @ManyToMany son LAZY**; **@ManyToOne y @OneToOne son EAGER**. BATCH no es un FetchType de JPA.",
+   "epigrafe": "6. Persistencia en Java",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-020",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-020",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes tecnologías de interfaz de escritorio de .NET funciona solo en Windows y se basa en XAML y en el patrón MVVM?",
+   "ctx": null,
+   "op": {
+    "a": "WPF",
+    "b": ".NET MAUI",
+    "c": "Avalonia",
+    "d": "Blazor Hybrid"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**WPF** (Windows Presentation Foundation): XAML, enlace de datos y MVVM, **solo Windows**. MAUI es multiplataforma, Avalonia (de terceros) incluye Linux y Blazor Hybrid incrusta componentes web.",
+   "epigrafe": "13. Interfaces de usuario en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-021",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-021",
+   "texto": "reformulado",
+   "q": "En JDBC, ¿qué método de Statement se usa para ejecutar un UPDATE y qué devuelve?",
+   "ctx": null,
+   "op": {
+    "a": "executeQuery(), que devuelve un ResultSet",
+    "b": "executeUpdate(), que devuelve un int con las filas afectadas",
+    "c": "execute(), que devuelve siempre un int",
+    "d": "executeBatch(), que devuelve un ResultSet"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**executeUpdate** se usa para INSERT, UPDATE, DELETE y DDL y devuelve el **número de filas afectadas**. executeQuery es para SELECT (ResultSet), execute devuelve un **boolean** y executeBatch un **int[]**.",
+   "epigrafe": "6. Persistencia en Java",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-022",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-022",
+   "texto": "reformulado",
+   "q": "¿Qué perfil de Jakarta EE, introducido en Jakarta EE 10, está pensado para microservicios y ejecutables nativos ligeros?",
+   "ctx": null,
+   "op": {
+    "a": "Web Profile",
+    "b": "Platform (Full Profile)",
+    "c": "Core Profile",
+    "d": "Micro Edition"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **Core Profile** (Jakarta EE 10, 2022) incluye CDI Lite, REST, JSON-P/B y poco más. El **Web Profile** es para aplicaciones web típicas y la **Platform** es la completa. «Micro Edition» recuerda a Java ME, que no es un perfil de Jakarta EE.",
+   "epigrafe": "3. Java EE / Jakarta EE",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-023",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-023",
+   "texto": "reformulado",
+   "q": "¿Qué tipo de driver JDBC habla directamente el protocolo de red del SGBD y está escrito totalmente en Java (driver «thin»)?",
+   "ctx": null,
+   "op": {
+    "a": "Tipo 1",
+    "b": "Tipo 2",
+    "c": "Tipo 3",
+    "d": "Tipo 4"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Tipo 4**: Java puro con el protocolo nativo del SGBD (el más usado). Tipo 1: puente JDBC-ODBC (eliminado en Java 8). Tipo 2: API nativa del cliente. Tipo 3: middleware de red.",
+   "epigrafe": "6. Persistencia en Java",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-024",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-024",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes librerías SÍ es un proyecto de la Apache Software Foundation?",
+   "ctx": null,
+   "op": {
+    "a": "POI, para leer y escribir ficheros de Microsoft Office",
+    "b": "Hibernate",
+    "c": "JUnit",
+    "d": "Jackson"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Apache POI** es de Apache. Hibernate es de Red Hat/Commonhaus, JUnit es de su propio equipo y Jackson es de FasterXML.",
+   "epigrafe": "2. Java: plataforma y lenguaje base",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-025",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-025",
+   "texto": "reformulado",
+   "q": "¿Cuál es la versión LTS de .NET publicada en noviembre de 2025, junto con C# 14?",
+   "ctx": null,
+   "op": {
+    "a": ".NET 9",
+    "b": ".NET 10",
+    "c": ".NET 11",
+    "d": ".NET Framework 5.0"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**.NET 10** es LTS (versión par, tres años de soporte). .NET 9 fue STS (2024), .NET 11 está previsto para noviembre de 2026 como STS, y .NET Framework se quedó en 4.8.1.",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-v-026",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-026",
+   "texto": "reformulado",
+   "q": "¿Cuál es el equivalente en Java de un POCO de .NET?",
+   "ctx": null,
+   "op": {
+    "a": "EJB (Enterprise JavaBean)",
+    "b": "DTO remoto de RMI",
+    "c": "POJO (Plain Old Java Object)",
+    "d": "Servlet"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **POJO** es la clase Java simple sin dependencias de framework, equivalente al POCO. Un EJB depende del contenedor, un DTO es un patrón y un servlet extiende HttpServlet.",
+   "epigrafe": "11. C# práctico para el supuesto",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-v-027",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-027",
+   "texto": "reformulado",
+   "q": "En Java, ¿qué construcción equivale a la instrucción using de C# para cerrar automáticamente una conexión JDBC?",
+   "ctx": null,
+   "op": {
+    "a": "finally sin try",
+    "b": "synchronized (con) { ... }",
+    "c": "using (Connection con = ds.getConnection()) { ... }",
+    "d": "try-with-resources: try (Connection con = ds.getConnection()) { ... }"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**try-with-resources** cierra automáticamente los objetos AutoCloseable al salir del bloque. `using` no existe en Java, synchronized sirve para la exclusión mutua y finally necesita un try.",
+   "epigrafe": "2. Java: plataforma y lenguaje base",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-028",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-028",
+   "texto": "reformulado",
+   "q": "¿Qué es Hibernate?",
+   "ctx": null,
+   "op": {
+    "a": "Un ORM para Java que implementa la especificación JPA",
+    "b": "Un servidor de aplicaciones Jakarta EE",
+    "c": "Un framework de pruebas unitarias",
+    "d": "Un gestor de paquetes para Java"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Hibernate** es el ORM más usado en Java e implementa Jakarta Persistence. Servidores son WildFly o GlassFish; pruebas, JUnit; gestores de dependencias, Maven y Gradle.",
+   "epigrafe": "6. Persistencia en Java",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-v-029",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-029",
+   "texto": "reformulado",
+   "q": "¿Con qué extensión se distribuyen los paquetes NuGet?",
+   "ctx": null,
+   "op": {
+    "a": ".jar",
+    "b": ".nupkg",
+    "c": ".msi",
+    "d": ".dll"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Un paquete NuGet es un fichero **.nupkg** (un zip con ensamblados y metadatos). .jar es Java, .msi es un instalador de Windows y .dll es un ensamblado, no un paquete.",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-030",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-030",
+   "texto": "reformulado",
+   "q": "En JDBC, ¿qué interfaz se usa para invocar procedimientos almacenados?",
+   "ctx": null,
+   "op": {
+    "a": "PreparedStatement",
+    "b": "ResultSet",
+    "c": "CallableStatement",
+    "d": "DriverManager"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**CallableStatement**: `con.prepareCall(\"{call alta(?, ?)}\")`. PreparedStatement ejecuta SQL parametrizado, ResultSet contiene resultados y DriverManager obtiene conexiones.",
+   "epigrafe": "6. Persistencia en Java",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-031",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-031",
+   "texto": "reformulado",
+   "q": "¿Qué es SLF4J en el ecosistema Java?",
+   "ctx": null,
+   "op": {
+    "a": "Un servidor de aplicaciones ligero",
+    "b": "Una implementación de JPA",
+    "c": "Un framework de seguridad",
+    "d": "Una fachada de logging que delega en implementaciones como Logback o Log4j 2"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**SLF4J** (Simple Logging Facade for Java) es una API de logging que delega en Logback, Log4j 2 o JUL. Spring Boot usa por defecto SLF4J con Logback.",
+   "epigrafe": "2. Java: plataforma y lenguaje base",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-032",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-032",
+   "texto": "reformulado",
+   "q": "En Java, ¿qué tipo de excepción NO obliga el compilador a capturar ni declarar con throws?",
+   "ctx": null,
+   "op": {
+    "a": "Las que heredan de RuntimeException",
+    "b": "Las que heredan directamente de Exception",
+    "c": "IOException",
+    "d": "SQLException"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las **no comprobadas** (RuntimeException y sus hijas, además de Error) no exigen try/catch ni throws. IOException y SQLException son **comprobadas** (heredan de Exception, pero no de RuntimeException).",
+   "epigrafe": "2. Java: plataforma y lenguaje base",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-033",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-033",
+   "texto": "reformulado",
+   "q": "En ADO.NET, ¿qué método de Command devuelve un único valor, como el resultado de un SELECT COUNT(*)?",
+   "ctx": null,
+   "op": {
+    "a": "ExecuteReader()",
+    "b": "ExecuteScalar()",
+    "c": "ExecuteNonQuery()",
+    "d": "Fill()"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**ExecuteScalar** devuelve la primera columna de la primera fila como `object`. ExecuteReader devuelve un DataReader, ExecuteNonQuery el número de filas afectadas y **Fill** es de DataAdapter.",
+   "epigrafe": "12. Acceso a datos en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-034",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-034",
+   "texto": "reformulado",
+   "q": "En C#, ¿qué relación hay entre los espacios de nombres y los ensamblados?",
+   "ctx": null,
+   "op": {
+    "a": "Cada espacio de nombres corresponde exactamente a un ensamblado",
+    "b": "Un ensamblado solo puede contener un espacio de nombres",
+    "c": "Un ensamblado puede contener varios espacios de nombres y un espacio de nombres puede repartirse entre varios ensamblados",
+    "d": "Los espacios de nombres sustituyen a los ensamblados en .NET moderno"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **espacio de nombres** es una agrupación **lógica** de tipos y el **ensamblado** una unidad **física** de despliegue. No hay correspondencia uno a uno, y ninguno sustituye al otro.",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 3
+  },
+  {
+   "id": "t19-v-035",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-035",
+   "texto": "reformulado",
+   "q": "En C#, ¿qué método convierte una cadena en fecha sin lanzar excepción si el formato no es válido?",
+   "ctx": null,
+   "op": {
+    "a": "DateTime.Parse",
+    "b": "DateTime.ParseExact",
+    "c": "Convert.ToDateTime",
+    "d": "DateTime.TryParse"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**TryParse** devuelve un bool y la fecha en un parámetro out: no lanza excepción. Parse, ParseExact y Convert.ToDateTime lanzan FormatException si el texto no es válido.",
+   "epigrafe": "11. C# práctico para el supuesto",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-036",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-036",
+   "texto": "reformulado",
+   "q": "¿Qué framework de programación orientada a aspectos se usa en Java?",
+   "ctx": null,
+   "op": {
+    "a": "AspectJ",
+    "b": "PostSharp",
+    "c": "Aspyct",
+    "d": "Metalama"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**AspectJ** (y Spring AOP) son de Java. **PostSharp** y su sucesor **Metalama** son de .NET y **Aspyct** es de Python.",
+   "epigrafe": "15. Utilidades transversales en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-037",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-037",
+   "texto": "reformulado",
+   "q": "¿Cuál es la clase raíz de todos los tipos en .NET?",
+   "ctx": null,
+   "op": {
+    "a": "System.Base",
+    "b": "System.Object",
+    "c": "System.Root",
+    "d": "System.Type"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En .NET todo tipo hereda de **System.Object** (alias `object` en C#), como java.lang.Object en Java. System.Type representa metadatos de tipos y las otras dos no existen.",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-v-038",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-038",
+   "texto": "reformulado",
+   "q": "¿Qué IDE para .NET desarrolla JetBrains como alternativa a Visual Studio?",
+   "ctx": null,
+   "op": {
+    "a": "IntelliJ IDEA",
+    "b": "Eclipse",
+    "c": "Rider",
+    "d": "NetBeans"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Rider** es el IDE de JetBrains para .NET. **IntelliJ IDEA** es su IDE para Java; Eclipse y NetBeans son IDE abiertos, sobre todo para Java.",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-039",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-039",
+   "texto": "reformulado",
+   "q": "¿Qué compilador de C# y Visual Basic, de código abierto, usa la plataforma .NET actual?",
+   "ctx": null,
+   "op": {
+    "a": "RyuJIT",
+    "b": "Kestrel",
+    "c": "MSBuild",
+    "d": "Roslyn"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Roslyn** compila C# y VB a CIL. **RyuJIT** es el compilador JIT del CLR, **Kestrel** el servidor web de ASP.NET Core y **MSBuild** el motor de compilación de proyectos (invoca a Roslyn).",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 3
+  },
+  {
+   "id": "t19-v-040",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-040",
+   "texto": "reformulado",
+   "q": "Según Jakarta EE 9 y posteriores, ¿en qué paquete se encuentra la anotación @Stateless?",
+   "ctx": null,
+   "op": {
+    "a": "jakarta.ejb",
+    "b": "javax.ejb",
+    "c": "jakarta.persistence",
+    "d": "javax.enterprise"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Desde Jakarta EE 9 los paquetes pasaron de `javax.*` a **jakarta.***: `jakarta.ejb.Stateless`. `javax.ejb` era el de Java EE; `jakarta.persistence` es de JPA y `javax.enterprise` era el antiguo de CDI.",
+   "epigrafe": "5. Componentes de negocio: CDI y EJB",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-041",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-041",
+   "texto": "reformulado",
+   "q": "En ADO.NET, ¿qué objeto actúa de puente entre un DataSet y la fuente de datos mediante los métodos Fill y Update?",
+   "ctx": null,
+   "op": {
+    "a": "DataReader",
+    "b": "DataAdapter",
+    "c": "Connection",
+    "d": "DataRelation"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **DataAdapter** rellena el DataSet (`Fill`) y vuelca los cambios (`Update`). El DataReader es de lectura conectada, Connection da la conectividad y DataRelation relaciona tablas dentro de un DataSet.",
+   "epigrafe": "12. Acceso a datos en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-042",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-042",
+   "texto": "reformulado",
+   "q": "¿Qué anotación de Spring Boot combina @Configuration, @EnableAutoConfiguration y @ComponentScan?",
+   "ctx": null,
+   "op": {
+    "a": "@RestController",
+    "b": "@EnableSpring",
+    "c": "@SpringBootApplication",
+    "d": "@Bean"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**@SpringBootApplication** se pone en la clase principal. @RestController define controladores REST, @Bean declara un bean en una clase de configuración y @EnableSpring no existe.",
+   "epigrafe": "9. Spring y Spring Boot",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-v-043",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-043",
+   "texto": "reformulado",
+   "q": "En JAX-WS, ¿qué anotación marca una clase Java como implementación de un servicio web SOAP?",
+   "ctx": null,
+   "op": {
+    "a": "@Path",
+    "b": "@RestController",
+    "c": "@WebServlet",
+    "d": "@WebService"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**@WebService** (y @WebMethod en las operaciones). **@Path** es de JAX-RS (REST), **@RestController** de Spring y **@WebServlet** declara un servlet.",
+   "epigrafe": "7. Servicios web y XML en Java",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-044",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-044",
+   "texto": "reformulado",
+   "q": "¿Qué era la GAC (Global Assembly Cache) en .NET Framework?",
+   "ctx": null,
+   "op": {
+    "a": "Un almacén de ensamblados compartidos entre aplicaciones",
+    "b": "Un recolector de basura global",
+    "c": "Una caché de páginas ASP.NET",
+    "d": "Un repositorio público de paquetes NuGet"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **GAC** guardaba ensamblados con nombre seguro compartidos por varias aplicaciones de .NET Framework. En .NET moderno no existe: las dependencias llegan por NuGet.",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-045",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-045",
+   "texto": "reformulado",
+   "q": "¿Qué JDK fue el primero que dejó de incluir Java DB (Apache Derby)?",
+   "ctx": null,
+   "op": {
+    "a": "JDK 6",
+    "b": "JDK 9",
+    "c": "JDK 8",
+    "d": "JDK 17"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Java DB se incluyó en los **JDK 6, 7 y 8** y se retiró en el **JDK 9**.",
+   "epigrafe": "2. Java: plataforma y lenguaje base",
+   "dificultad": 3
+  },
+  {
+   "id": "t19-v-046",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-046",
+   "texto": "reformulado",
+   "q": "En ASP.NET, ¿qué modo de estado de sesión guarda los datos en la memoria del propio proceso del servidor web y es el modo por defecto?",
+   "ctx": null,
+   "op": {
+    "a": "StateServer",
+    "b": "SQLServer",
+    "c": "InProc",
+    "d": "Custom"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**InProc** (por defecto) guarda la sesión en memoria del proceso. **StateServer** la guarda en el servicio de estado de ASP.NET, **SQLServer** en una base de datos y **Custom** en un proveedor propio.",
+   "epigrafe": "13. Interfaces de usuario en .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-v-047",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-047",
+   "texto": "reformulado",
+   "q": "En C#, ¿qué hace la directiva «using Sql = Microsoft.Data.SqlClient;»?",
+   "ctx": null,
+   "op": {
+    "a": "Libera los recursos de una conexión SQL",
+    "b": "Importa todos los subespacios de nombres de Microsoft",
+    "c": "Declara una variable llamada Sql",
+    "d": "Define un alias para el espacio de nombres"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La directiva **using** con `=` define un **alias** de espacio de nombres (o de tipo). La instrucción using (con paréntesis y bloque) es la que libera recursos.",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-048",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-048",
+   "texto": "reformulado",
+   "q": "En C#, ¿qué palabra clave permite que un método modifique un struct recibido como parámetro de forma que el cambio se vea en quien lo llama?",
+   "ctx": null,
+   "op": {
+    "a": "ref",
+    "b": "static",
+    "c": "readonly",
+    "d": "sealed"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Con **ref** (u **out**) el parámetro se pasa por referencia y el método modifica la variable original, también si es un struct. static, readonly y sealed no cambian el modo de paso.",
+   "epigrafe": "11. C# práctico para el supuesto",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-049",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-049",
+   "texto": "reformulado",
+   "q": "En C#, ¿qué devuelve Console.Read()?",
+   "ctx": null,
+   "op": {
+    "a": "Un string con la línea completa",
+    "b": "Un int con el código del siguiente carácter leído (o -1 si no hay más)",
+    "c": "Un char",
+    "d": "Un array de string con los argumentos"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Console.Read()** devuelve un **int** con el siguiente carácter (-1 al final). La línea completa la da `Console.ReadLine()` como string.",
+   "epigrafe": "11. C# práctico para el supuesto",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-050",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-050",
+   "texto": "reformulado",
+   "q": "En C#, ¿qué ocurre al acceder a cadena[cadena.Length]?",
+   "ctx": null,
+   "op": {
+    "a": "Devuelve el carácter nulo '\\0'",
+    "b": "Devuelve el último carácter",
+    "c": "Se lanza una IndexOutOfRangeException",
+    "d": "No compila"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los índices válidos van de 0 a Length-1: acceder a `Length` lanza **IndexOutOfRangeException** en ejecución (sí compila).",
+   "epigrafe": "11. C# práctico para el supuesto",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-051",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-051",
+   "texto": "reformulado",
+   "q": "¿Qué colección genérica de .NET almacena pares clave-valor con acceso rápido por clave?",
+   "ctx": null,
+   "op": {
+    "a": "List<T>",
+    "b": "Queue<T>",
+    "c": "HashSet<T>",
+    "d": "Dictionary<TKey, TValue>"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Dictionary<TKey,TValue>** (System.Collections.Generic) es la tabla hash genérica. List es una lista indexada, Queue es FIFO y HashSet guarda elementos únicos sin valor asociado.",
+   "epigrafe": "11. C# práctico para el supuesto",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-v-052",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-052",
+   "texto": "reformulado",
+   "q": "En el ciclo de vida de una página ASP.NET Web Forms, ¿qué evento ocurre después de Load y de los eventos de control, justo antes de generar el HTML?",
+   "ctx": null,
+   "op": {
+    "a": "PreRender",
+    "b": "Init",
+    "c": "PreInit",
+    "d": "Unload"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Orden: PreInit → Init → Load → eventos de control → **PreRender** → Render → Unload. Unload ocurre al final, cuando la respuesta ya se ha generado.",
+   "epigrafe": "13. Interfaces de usuario en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-053",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-053",
+   "texto": "reformulado",
+   "q": "En ASP.NET Web Forms, ¿qué control web de servidor muestra datos en forma de tabla con paginación y ordenación?",
+   "ctx": null,
+   "op": {
+    "a": "HtmlTable",
+    "b": "GridView",
+    "c": "HtmlInputText",
+    "d": "Literal"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**asp:GridView** es un control web (System.Web.UI.WebControls) con paginación y ordenación. HtmlTable y HtmlInputText son controles HTML de servidor y Literal solo muestra texto.",
+   "epigrafe": "13. Interfaces de usuario en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-054",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-054",
+   "texto": "reformulado",
+   "q": "En ADO.NET, ¿qué método de SqlCommand se usa para ejecutar un INSERT y qué devuelve?",
+   "ctx": null,
+   "op": {
+    "a": "ExecuteReader(), que devuelve un SqlDataReader",
+    "b": "ExecuteScalar(), que devuelve un DataSet",
+    "c": "ExecuteNonQuery(), que devuelve el número de filas afectadas",
+    "d": "Fill(), que devuelve un DataTable"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**ExecuteNonQuery** para INSERT, UPDATE, DELETE y DDL; devuelve un int. ExecuteScalar devuelve un object (no un DataSet) y Fill es de DataAdapter.",
+   "epigrafe": "12. Acceso a datos en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-055",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-055",
+   "texto": "reformulado",
+   "q": "¿Qué librería Java se usa habitualmente para crear objetos simulados (mocks) en las pruebas unitarias?",
+   "ctx": null,
+   "op": {
+    "a": "Swing",
+    "b": "Log4j",
+    "c": "JAXB",
+    "d": "Mockito"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Mockito** crea dobles de prueba en Java (en .NET, Moq). Swing es interfaz gráfica, Log4j logging y JAXB mapeo XML.",
+   "epigrafe": "2. Java: plataforma y lenguaje base",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-v-056",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-056",
+   "texto": "reformulado",
+   "q": "En una página JSP, ¿qué elemento evalúa una expresión Java y escribe su resultado en la respuesta?",
+   "ctx": null,
+   "op": {
+    "a": "<%= expresión %>",
+    "b": "<%! declaración %>",
+    "c": "<%@ directiva %>",
+    "d": "<%-- comentario --%>"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**<%= %>** es una expresión. **<%! %>** es una declaración, **<%@ %>** una directiva (page, include, taglib) y **<%-- --%>** un comentario JSP.",
+   "epigrafe": "4. Componentes web Java: servlets, JSP y Faces",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-v-057",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-057",
+   "texto": "reformulado",
+   "q": "En Jakarta EE, ¿qué anotación restringe la ejecución de un método a los usuarios con un rol determinado?",
+   "ctx": null,
+   "op": {
+    "a": "@PermitAll",
+    "b": "@RolesAllowed",
+    "c": "@DeclareRoles",
+    "d": "@RunAs"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**@RolesAllowed(\"ROL\")** restringe por rol. **@PermitAll** lo abre a todos, **@DeclareRoles** declara los roles que usa la clase y **@RunAs** fija la identidad con la que se ejecuta.",
+   "epigrafe": "8. Seguridad en Java y Jakarta EE",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-058",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-058",
+   "texto": "reformulado",
+   "q": "¿En qué fichero se define la unidad de persistencia de JPA?",
+   "ctx": null,
+   "op": {
+    "a": "WEB-INF/web.xml",
+    "b": "META-INF/application.xml",
+    "c": "META-INF/persistence.xml",
+    "d": "beans.xml"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La unidad de persistencia (proveedor, datasource, entidades) se define en **META-INF/persistence.xml**. web.xml es el descriptor web, application.xml el del EAR y beans.xml el de CDI.",
+   "epigrafe": "6. Persistencia en Java",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-059",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-059",
+   "texto": "reformulado",
+   "q": "En JPA, ¿qué anotación indica que un atributo de la entidad NO debe guardarse en la base de datos?",
+   "ctx": null,
+   "op": {
+    "a": "@Column(nullable = true)",
+    "b": "@Lob",
+    "c": "@Embedded",
+    "d": "@Transient"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**@Transient** excluye el atributo de la persistencia. @Column configura la columna, @Lob la marca como objeto grande y @Embedded incrusta un objeto valor.",
+   "epigrafe": "6. Persistencia en Java",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-060",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-060",
+   "texto": "reformulado",
+   "q": "En ASP.NET Web Forms, ¿qué atributo de la directiva @Page indica la clase de la que hereda la página?",
+   "ctx": null,
+   "op": {
+    "a": "Inherits",
+    "b": "CodeFile",
+    "c": "Language",
+    "d": "AutoEventWireup"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Inherits** indica la clase del code-behind. **CodeFile/CodeBehind** indica el fichero, **Language** el lenguaje y **AutoEventWireup** si los eventos Page_* se enlazan solos.",
+   "epigrafe": "13. Interfaces de usuario en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-061",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-061",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes declaraciones de array en C# es correcta?",
+   "ctx": null,
+   "op": {
+    "a": "int numeros[] = { 1, 2, 3 };",
+    "b": "int[] numeros = new int[3] { 1, 2, 3 };",
+    "c": "int[3] numeros;",
+    "d": "int[] numeros = new int[2] { 1, 2, 3 };"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Con tamaño **constante** e inicializador coincidentes, `new int[3] { 1, 2, 3 }` compila. `int numeros[]` es sintaxis de C/Java, el tamaño no va en el tipo y 2 elementos declarados frente a 3 dados es error.",
+   "epigrafe": "11. C# práctico para el supuesto",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-062",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-062",
+   "texto": "reformulado",
+   "q": "En C#, tras int[] v = { 5, 2, 9, 1 }; Array.Sort(v);, ¿qué contiene v?",
+   "ctx": null,
+   "op": {
+    "a": "9, 5, 2, 1",
+    "b": "5, 2, 9, 1",
+    "c": "1, 2, 5, 9",
+    "d": "1, 5, 2, 9"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Array.Sort** ordena el array **en el sitio** en orden ascendente: 1, 2, 5, 9. Para obtener 9, 5, 2, 1 habría que llamar después a Array.Reverse.",
+   "epigrafe": "11. C# práctico para el supuesto",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-v-063",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-063",
+   "texto": "reformulado",
+   "q": "¿Qué directiva using necesita una clase C# para usar List<T> y Dictionary<TKey,TValue>?",
+   "ctx": null,
+   "op": {
+    "a": "using System.Collections;",
+    "b": "using System.Linq;",
+    "c": "using System.Data;",
+    "d": "using System.Collections.Generic;"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las colecciones **genéricas** están en **System.Collections.Generic**. System.Collections tiene las no genéricas (ArrayList, Hashtable), System.Linq las consultas LINQ y System.Data ADO.NET.",
+   "epigrafe": "11. C# práctico para el supuesto",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-v-064",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-064",
+   "texto": "reformulado",
+   "q": "En C#, con List<Cliente> clientes, ¿qué expresión LINQ obtiene los clientes activos ordenados por nombre?",
+   "ctx": null,
+   "op": {
+    "a": "clientes.Where(c => c.Activo).OrderBy(c => c.Nombre).ToList()",
+    "b": "clientes.Filter(c => c.Activo).Sort(c => c.Nombre)",
+    "c": "clientes.Select(c.Activo).OrderBy(Nombre)",
+    "d": "clientes.Where(Activo == true).Order()"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "LINQ usa **Where** para filtrar y **OrderBy** para ordenar, con lambdas; ToList materializa el resultado. `Filter` no es de LINQ y las otras sintaxis no compilan.",
+   "epigrafe": "11. C# práctico para el supuesto",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-065",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-065",
+   "texto": "reformulado",
+   "q": "¿Qué biblioteca de logging para .NET está orientada al registro estructurado y envía los eventos a «sinks» (destinos)?",
+   "ctx": null,
+   "op": {
+    "a": "log4j",
+    "b": "Serilog",
+    "c": "Logback",
+    "d": "SLF4J"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Serilog** (.NET) hace logging estructurado con sinks. log4j, Logback y SLF4J son de Java.",
+   "epigrafe": "15. Utilidades transversales en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-066",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-066",
+   "texto": "reformulado",
+   "q": "En un servlet que extiende HttpServlet, ¿qué método se ejecuta una sola vez cuando el contenedor carga el servlet?",
+   "ctx": null,
+   "op": {
+    "a": "service()",
+    "b": "doGet()",
+    "c": "init()",
+    "d": "destroy() al recibir cada petición"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Ciclo de vida: **init()** una vez al cargar; **service()** (que despacha a doGet/doPost) una vez por petición; **destroy()** una vez al descargarlo, no en cada petición.",
+   "epigrafe": "4. Componentes web Java: servlets, JSP y Faces",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-v-067",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-067",
+   "texto": "reformulado",
+   "q": "¿Qué es Apache Tomcat?",
+   "ctx": null,
+   "op": {
+    "a": "Un servidor de aplicaciones Jakarta EE completo con EJB",
+    "b": "Un servidor web solo para contenido estático",
+    "c": "Un framework MVC",
+    "d": "Un contenedor de servlets que no implementa la plataforma Jakarta EE completa"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Tomcat** es un **contenedor web** (Servlet, Pages, EL, WebSocket), sin EJB ni la plataforma completa. Para eso están WildFly, GlassFish, Open Liberty o WebLogic; TomEE le añade el Web Profile.",
+   "epigrafe": "3. Java EE / Jakarta EE",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-068",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-068",
+   "texto": "reformulado",
+   "q": "En un servlet, ¿cómo se consigue que una petición POST produzca la misma respuesta que una GET?",
+   "ctx": null,
+   "op": {
+    "a": "Sobrescribiendo doPost para que llame a doGet",
+    "b": "No hace falta: HttpServlet redirige POST a doGet automáticamente",
+    "c": "Declarando doGet como static",
+    "d": "Usando sendRedirect en init()"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Por defecto, `doPost` de HttpServlet responde **405**. Lo habitual es sobrescribir doPost y llamar desde él a doGet(req, res).",
+   "epigrafe": "4. Componentes web Java: servlets, JSP y Faces",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-069",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-069",
+   "texto": "reformulado",
+   "q": "En un servlet, ¿qué método reenvía la petición a otro recurso del servidor sin que el navegador haga una nueva petición?",
+   "ctx": null,
+   "op": {
+    "a": "response.sendRedirect()",
+    "b": "RequestDispatcher.forward()",
+    "c": "response.setContentType()",
+    "d": "session.invalidate()"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**forward()** reenvía en el servidor. **sendRedirect()** envía un 302 y el navegador hace una nueva petición. setContentType fija el tipo MIME e invalidate cierra la sesión.",
+   "epigrafe": "4. Componentes web Java: servlets, JSP y Faces",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-070",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-070",
+   "texto": "reformulado",
+   "q": "En un servlet, un contador guardado en un atributo de instancia del propio servlet, ¿qué cuenta?",
+   "ctx": null,
+   "op": {
+    "a": "Solo las peticiones de la sesión actual",
+    "b": "Solo las peticiones del usuario autenticado",
+    "c": "Todas las peticiones atendidas desde que se cargó el servlet, de todos los usuarios",
+    "d": "Siempre vale 1, porque se crea un servlet por petición"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El contenedor crea **una sola instancia** de cada servlet compartida por todas las peticiones, así que un atributo de instancia acumula **todas** las ejecuciones. Por sesión haría falta HttpSession.",
+   "epigrafe": "4. Componentes web Java: servlets, JSP y Faces",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-071",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-071",
+   "texto": "reformulado",
+   "q": "En la API Servlet, ¿qué objeto representa el ámbito de aplicación, compartido por todos los usuarios?",
+   "ctx": null,
+   "op": {
+    "a": "HttpSession",
+    "b": "HttpServletRequest",
+    "c": "PageContext",
+    "d": "ServletContext"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**ServletContext** = ámbito de aplicación. HttpSession = ámbito de sesión (un usuario y navegador), HttpServletRequest = una petición y PageContext = una página JSP.",
+   "epigrafe": "4. Componentes web Java: servlets, JSP y Faces",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-072",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-072",
+   "texto": "reformulado",
+   "q": "En Java moderno (java.time), ¿qué clase representa una fecha y hora local sin zona horaria?",
+   "ctx": null,
+   "op": {
+    "a": "LocalDateTime",
+    "b": "ZonedDateTime",
+    "c": "Instant",
+    "d": "Period"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**LocalDateTime** = fecha y hora sin zona. **ZonedDateTime** incluye zona, **Instant** es un punto en la línea temporal UTC y **Period** es una cantidad de días, meses y años.",
+   "epigrafe": "4. Componentes web Java: servlets, JSP y Faces",
+   "dificultad": 3
+  },
+  {
+   "id": "t19-v-073",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-073",
+   "texto": "reformulado",
+   "q": "En ADO clásico (ActiveX Data Objects), ¿qué objeto contiene el conjunto de registros devuelto por una consulta?",
+   "ctx": null,
+   "op": {
+    "a": "DataSet",
+    "b": "Recordset",
+    "c": "DataReader",
+    "d": "ResultSet"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En ADO clásico el resultado es un **Recordset**. **DataSet** y **DataReader** son de ADO.NET y **ResultSet** es de JDBC.",
+   "epigrafe": "12. Acceso a datos en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-v-074",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-074",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes NO es una función del CLR de .NET?",
+   "ctx": null,
+   "op": {
+    "a": "Compilar el CIL a código máquina con el JIT",
+    "b": "Gestionar la memoria con el recolector de basura",
+    "c": "Compilar el código fuente C# a CIL",
+    "d": "Gestionar las excepciones y los hilos"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Pasar de C# a **CIL** lo hace el **compilador** (Roslyn) antes de ejecutar. El CLR se encarga después del JIT, la recolección de basura, las excepciones y los hilos.",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 3
+  },
+  {
+   "id": "t19-v-075",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-075",
+   "texto": "reformulado",
+   "q": "¿Qué significa el lema de Java «write once, run anywhere»?",
+   "ctx": null,
+   "op": {
+    "a": "El código fuente se compila directamente a código máquina de todas las plataformas",
+    "b": "Java solo se ejecuta en navegadores web",
+    "c": "Los programas no necesitan compilarse",
+    "d": "El bytecode compilado puede ejecutarse en cualquier plataforma con una JVM"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "javac genera **bytecode** independiente de la plataforma; cualquier JVM lo ejecuta. No se compila a código máquina de antemano, no es exclusivo de navegadores y sí hay compilación.",
+   "epigrafe": "2. Java: plataforma y lenguaje base",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-v-076",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-076",
+   "texto": "reformulado",
+   "q": "¿Qué tecnología Java se ejecutaba en el navegador del cliente y está hoy obsoleta?",
+   "ctx": null,
+   "op": {
+    "a": "Applets",
+    "b": "Servlets",
+    "c": "JSP",
+    "d": "EJB"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los **applets** se ejecutaban en el cliente con un plugin; están obsoletos y su API se eliminó del JDK. Servlets, JSP y EJB se ejecutan en el servidor.",
+   "epigrafe": "4. Componentes web Java: servlets, JSP y Faces",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-v-077",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-077",
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes productos es un servidor de aplicaciones Jakarta EE completo?",
+   "ctx": null,
+   "op": {
+    "a": "Apache HTTP Server",
+    "b": "WildFly",
+    "c": "Nginx",
+    "d": "Apache Struts"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**WildFly** (Red Hat) implementa la plataforma completa. Apache HTTP Server y Nginx son **servidores web** y Struts es un **framework web**.",
+   "epigrafe": "3. Java EE / Jakarta EE",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-v-078",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t19-h-078",
+   "texto": "reformulado",
+   "q": "¿Cuál es el recolector de basura que usa por defecto la JVM HotSpot en las versiones actuales de Java?",
+   "ctx": null,
+   "op": {
+    "a": "Serial",
+    "b": "CMS (Concurrent Mark Sweep)",
+    "c": "G1 (Garbage-First)",
+    "d": "Epsilon"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Desde Java 9 el recolector por defecto es **G1**. Serial y Parallel siguen existiendo, **CMS** se eliminó en Java 14 y **Epsilon** no recolecta (sirve para pruebas).",
+   "epigrafe": "2. Java: plataforma y lenguaje base",
+   "dificultad": 3
+  },
+  {
+   "id": "t19-n-001",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué cambio principal introdujo Jakarta EE 9 respecto a Jakarta EE 8?",
+   "ctx": null,
+   "op": {
+    "a": "Se eliminó el soporte de servlets",
+    "b": "Se sustituyó JPA por Hibernate",
+    "c": "El espacio de nombres de las APIs pasó de javax.* a jakarta.*",
+    "d": "Pasó a requerir Java 21"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Jakarta EE 9 (2020) cambió **javax.* por jakarta.*** sin cambios funcionales relevantes. Los servlets siguen, JPA es la especificación (Hibernate una implementación) y Java 21 es la base de Jakarta EE 12.",
+   "epigrafe": "3. Java EE / Jakarta EE",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-n-002",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué nueva especificación incorporó Jakarta EE 11 para definir repositorios de datos de forma declarativa?",
+   "ctx": null,
+   "op": {
+    "a": "Jakarta NoSQL Persistence",
+    "b": "Jakarta Repository API",
+    "c": "Jakarta JDBC",
+    "d": "Jakarta Data"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Jakarta Data 1.0** (Jakarta EE 11) define repositorios con interfaces (`@Repository`, `@Find`, `@Query`, CrudRepository). Las otras denominaciones no son especificaciones de Jakarta EE 11.",
+   "epigrafe": "6. Persistencia en Java",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-n-003",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En JPA, ¿qué método de EntityManager incorpora al contexto de persistencia el estado de una entidad separada (detached)?",
+   "ctx": null,
+   "op": {
+    "a": "merge()",
+    "b": "persist()",
+    "c": "find()",
+    "d": "detach()"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**merge()** copia el estado de la entidad separada a una gestionada. **persist()** hace persistente una entidad **nueva**, find() busca por clave y detach() separa.",
+   "epigrafe": "6. Persistencia en Java",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-n-004",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál es el atributo de transacción por defecto de los métodos de un EJB?",
+   "ctx": null,
+   "op": {
+    "a": "REQUIRES_NEW",
+    "b": "REQUIRED",
+    "c": "MANDATORY",
+    "d": "SUPPORTS"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Por defecto **REQUIRED**: se une a la transacción existente o crea una nueva. REQUIRES_NEW crea siempre una nueva, MANDATORY exige una existente y SUPPORTS se une si la hay.",
+   "epigrafe": "5. Componentes de negocio: CDI y EJB",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-n-005",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué tipo de EJB consume mensajes JMS de forma asíncrona?",
+   "ctx": null,
+   "op": {
+    "a": "@Stateful",
+    "b": "@Stateless",
+    "c": "Message-Driven Bean (@MessageDriven)",
+    "d": "@Singleton"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **@MessageDriven** escucha colas o temas de Jakarta Messaging. Stateless, Stateful y Singleton responden a invocaciones de métodos.",
+   "epigrafe": "5. Componentes de negocio: CDI y EJB",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-n-006",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En Jakarta Messaging (JMS), ¿qué modelo entrega cada mensaje a todos los suscriptores?",
+   "ctx": null,
+   "op": {
+    "a": "Punto a punto (Queue)",
+    "b": "Petición/respuesta síncrona (Servlet)",
+    "c": "Unidifusión (Socket)",
+    "d": "Publicación/suscripción (Topic)"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En **Topic** (publicación/suscripción) todos los suscriptores reciben el mensaje. En **Queue** (punto a punto) cada mensaje lo consume un solo receptor.",
+   "epigrafe": "5. Componentes de negocio: CDI y EJB",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-n-007",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En CDI, ¿qué anotación inyecta una dependencia en un bean?",
+   "ctx": null,
+   "op": {
+    "a": "@Inject",
+    "b": "@Autowired",
+    "c": "@Resource",
+    "d": "@Named"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**@Inject** es la anotación estándar de CDI. **@Autowired** es de Spring, **@Resource** inyecta recursos por nombre JNDI y **@Named** da nombre al bean para usarlo en EL.",
+   "epigrafe": "5. Componentes de negocio: CDI y EJB",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-n-008",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué servidor web integrado utiliza ASP.NET Core por defecto?",
+   "ctx": null,
+   "op": {
+    "a": "IIS",
+    "b": "Kestrel",
+    "c": "Tomcat",
+    "d": "Jetty"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Kestrel** es el servidor multiplataforma integrado; puede ir detrás de IIS, Nginx o Apache como proxy inverso. Tomcat y Jetty son de Java.",
+   "epigrafe": "13. Interfaces de usuario en .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-n-009",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En la inyección de dependencias de ASP.NET Core, ¿qué tiempo de vida tiene un servicio registrado con AddScoped?",
+   "ctx": null,
+   "op": {
+    "a": "Una única instancia para toda la aplicación",
+    "b": "Una instancia nueva cada vez que se solicita",
+    "c": "Una instancia por petición HTTP",
+    "d": "Una instancia por usuario autenticado"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**AddScoped**: una por petición. **AddSingleton**: una para toda la aplicación. **AddTransient**: una nueva cada vez que se pide.",
+   "epigrafe": "13. Interfaces de usuario en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-n-010",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En el pipeline de ASP.NET Core, ¿en qué orden deben registrarse los middlewares de autenticación y autorización?",
+   "ctx": null,
+   "op": {
+    "a": "Primero UseAuthorization() y después UseAuthentication()",
+    "b": "El orden es indiferente",
+    "c": "Solo se necesita UseAuthorization()",
+    "d": "Primero UseAuthentication() y después UseAuthorization()"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Hay que saber **quién es** el usuario (autenticación) antes de decidir **qué puede hacer** (autorización). El orden de los middlewares importa.",
+   "epigrafe": "14. Seguridad en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-n-011",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué tecnología de .NET compila una aplicación directamente a código nativo, sin JIT en tiempo de ejecución?",
+   "ctx": null,
+   "op": {
+    "a": "Native AOT",
+    "b": "RyuJIT",
+    "c": "Roslyn",
+    "d": "NuGet"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Native AOT** genera un ejecutable nativo autónomo (arranque rápido, sin JIT). RyuJIT es el JIT, Roslyn el compilador de C# a CIL y NuGet el gestor de paquetes.",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-n-012",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En EF Core, ¿qué clase representa la sesión con la base de datos y actúa como unidad de trabajo?",
+   "ctx": null,
+   "op": {
+    "a": "DbSet<T>",
+    "b": "DbContext",
+    "c": "DataAdapter",
+    "d": "EntityManager"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**DbContext** es la unidad de trabajo (SaveChanges); **DbSet<T>** representa la colección de entidades de una tabla. DataAdapter es de ADO.NET y EntityManager es su homólogo en JPA.",
+   "epigrafe": "12. Acceso a datos en .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-n-013",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué atributo de ASP.NET Core exige que el usuario esté autenticado para acceder a un controlador o acción?",
+   "ctx": null,
+   "op": {
+    "a": "[AllowAnonymous]",
+    "b": "[ApiController]",
+    "c": "[Authorize]",
+    "d": "[ValidateAntiForgeryToken]"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**[Authorize]** (opcionalmente con Roles o Policy). [AllowAnonymous] permite acceso sin autenticar, [ApiController] habilita el comportamiento de API y [ValidateAntiForgeryToken] protege contra CSRF.",
+   "epigrafe": "14. Seguridad en .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-n-014",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué es el «Secret Manager» de .NET (dotnet user-secrets)?",
+   "ctx": null,
+   "op": {
+    "a": "Un almacén de certificados de producción en Azure",
+    "b": "Un cifrador de ensamblados",
+    "c": "Un gestor de contraseñas de usuarios finales",
+    "d": "Una herramienta para guardar secretos de configuración fuera del código durante el desarrollo"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**dotnet user-secrets** guarda secretos de **desarrollo** fuera del proyecto. En producción se usa, por ejemplo, Azure Key Vault.",
+   "epigrafe": "14. Seguridad en .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-n-015",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué componente de MicroProfile proporciona anotaciones como @Retry, @Timeout y @CircuitBreaker?",
+   "ctx": null,
+   "op": {
+    "a": "Fault Tolerance",
+    "b": "Health",
+    "c": "Config",
+    "d": "Rest Client"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**MicroProfile Fault Tolerance**. Health expone comprobaciones de vida y disponibilidad, Config lee configuración externa y Rest Client crea clientes REST declarativos.",
+   "epigrafe": "3. Java EE / Jakarta EE",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-n-016",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál es la última versión LTS de Java SE a octubre de 2026?",
+   "ctx": null,
+   "op": {
+    "a": "Java 21",
+    "b": "Java 25",
+    "c": "Java 17",
+    "d": "Java 26"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Java 25** (septiembre de 2025) es la última LTS. 21 y 17 son LTS anteriores y Java 26 (marzo de 2026) no es LTS.",
+   "epigrafe": "1. Panorama: plataformas empresariales Java y .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-n-017",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué vulnerabilidad crítica de diciembre de 2021 afectó a la librería Log4j 2?",
+   "ctx": null,
+   "op": {
+    "a": "Heartbleed, en la extensión heartbeat de TLS",
+    "b": "Spectre, por ejecución especulativa",
+    "c": "Log4Shell (CVE-2021-44228), por la búsqueda JNDI en los mensajes de log",
+    "d": "Shellshock, en el intérprete Bash"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Log4Shell** permitía ejecutar código remoto mediante búsquedas JNDI en los mensajes; se corrigió en la 2.17.x. Heartbleed afectó a OpenSSL, Spectre a los procesadores y Shellshock a Bash.",
+   "epigrafe": "2. Java: plataforma y lenguaje base",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-n-018",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En JPA, ¿qué valor de @Inheritance guarda toda una jerarquía de clases en una sola tabla y es la estrategia por defecto?",
+   "ctx": null,
+   "op": {
+    "a": "JOINED",
+    "b": "TABLE_PER_CLASS",
+    "c": "MAPPED_SUPERCLASS",
+    "d": "SINGLE_TABLE"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Por defecto **SINGLE_TABLE** (una tabla con una columna discriminadora). JOINED usa una tabla por clase unida por clave, TABLE_PER_CLASS una tabla por clase concreta y @MappedSuperclass es una anotación, no una estrategia.",
+   "epigrafe": "6. Persistencia en Java",
+   "dificultad": 3
+  },
+  {
+   "id": "t19-n-019",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué lenguaje de consulta orientado a objetos define JPA?",
+   "ctx": null,
+   "op": {
+    "a": "JPQL",
+    "b": "HQL",
+    "c": "LINQ",
+    "d": "OQL"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**JPQL** consulta entidades y atributos. **HQL** es el lenguaje propio de Hibernate (del que deriva JPQL), **LINQ** es de .NET y **OQL** es de las bases de datos orientadas a objetos (ODMG).",
+   "epigrafe": "6. Persistencia en Java",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-n-020",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En Jakarta Faces, ¿cuál es la última fase del ciclo de vida de una petición?",
+   "ctx": null,
+   "op": {
+    "a": "Restore View",
+    "b": "Render Response",
+    "c": "Invoke Application",
+    "d": "Process Validations"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Fases: Restore View → Apply Request Values → Process Validations → Update Model Values → Invoke Application → **Render Response**.",
+   "epigrafe": "4. Componentes web Java: servlets, JSP y Faces",
+   "dificultad": 3
+  },
+  {
+   "id": "t19-n-021",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En .NET, ¿qué diferencia hay entre las versiones LTS y STS?",
+   "ctx": null,
+   "op": {
+    "a": "Las STS solo funcionan en Windows",
+    "b": "Las LTS no reciben parches de seguridad",
+    "c": "Las LTS (versiones pares) tienen 3 años de soporte; las STS (impares) tienen menos, 24 meses desde .NET 9",
+    "d": "No hay diferencia de soporte"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Versiones **pares = LTS** (3 años). **Impares = STS**: 18 meses, ampliados a **24** desde .NET 9. Las dos son multiplataforma y reciben parches.",
+   "epigrafe": "10. Plataforma .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-n-022",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En una página JSP, ¿cuál de los siguientes NO es un objeto implícito?",
+   "ctx": null,
+   "op": {
+    "a": "request",
+    "b": "session",
+    "c": "out",
+    "d": "database"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Objetos implícitos JSP: request, response, out, session, application, config, pageContext, page y exception. **database** no existe.",
+   "epigrafe": "4. Componentes web Java: servlets, JSP y Faces",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-n-023",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué starter de Spring Boot añade los endpoints de salud y métricas como /actuator/health?",
+   "ctx": null,
+   "op": {
+    "a": "spring-boot-starter-actuator",
+    "b": "spring-boot-starter-web",
+    "c": "spring-boot-starter-test",
+    "d": "spring-boot-starter-security"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Actuator** expone la salud, las métricas y otra información operativa. El starter web añade Spring MVC y Tomcat, test las pruebas y security la seguridad.",
+   "epigrafe": "9. Spring y Spring Boot",
+   "dificultad": 2
+  },
+  {
+   "id": "t19-n-024",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿En qué fichero se describe un proyecto Maven con sus coordenadas groupId, artifactId y version?",
+   "ctx": null,
+   "op": {
+    "a": "build.gradle",
+    "b": "pom.xml",
+    "c": "settings.gradle",
+    "d": "manifest.mf"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Maven usa **pom.xml**. build.gradle y settings.gradle son de Gradle y MANIFEST.MF es el manifiesto de un JAR.",
+   "epigrafe": "2. Java: plataforma y lenguaje base",
+   "dificultad": 1
+  },
+  {
+   "id": "t19-n-025",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué es Blazor Hybrid?",
+   "ctx": null,
+   "op": {
+    "a": "Una versión de Blazor que se ejecuta solo en servidores Linux",
+    "b": "Una mezcla de Blazor y Angular",
+    "c": "Ejecutar componentes Razor dentro de una aplicación nativa (MAUI, WPF o WinForms) mediante un WebView",
+    "d": "El modo de Blazor que compila a Java"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Blazor Hybrid** aloja componentes Razor en una app nativa a través de un control WebView, con acceso a las APIs del dispositivo.",
+   "epigrafe": "13. Interfaces de usuario en .NET",
+   "dificultad": 2
+  }
+ ],
+ "tarjetas": [
+  {
+   "id": "t19-c-001",
+   "anverso": "Equivalentes Java / .NET: máquina virtual y código intermedio",
+   "reverso": "JVM y bytecode (.class) frente a CLR y CIL/MSIL (dentro del ensamblado).",
+   "epigrafe": "1. Panorama: plataformas empresariales Java y .NET"
+  },
+  {
+   "id": "t19-c-002",
+   "anverso": "ORM en Java y en .NET",
+   "reverso": "Java: JPA (Hibernate, EclipseLink). .NET: Entity Framework Core (también NHibernate y Dapper).",
+   "epigrafe": "1. Panorama: plataformas empresariales Java y .NET"
+  },
+  {
+   "id": "t19-c-003",
+   "anverso": "Gestor de paquetes en Java y en .NET",
+   "reverso": "Java: Maven/Gradle (Maven Central). .NET: NuGet (nuget.org, ficheros .nupkg).",
+   "epigrafe": "1. Panorama: plataformas empresariales Java y .NET"
+  },
+  {
+   "id": "t19-c-004",
+   "anverso": "JIT",
+   "reverso": "Compila a código máquina en ejecución los métodos más usados. En HotSpot: C1 y C2. En .NET: RyuJIT.",
+   "epigrafe": "2. Java: plataforma y lenguaje base"
+  },
+  {
+   "id": "t19-c-005",
+   "anverso": "Raíz de clases y raíz de excepciones en Java",
+   "reverso": "java.lang.Object y java.lang.Throwable (de ella cuelgan Error y Exception).",
+   "epigrafe": "2. Java: plataforma y lenguaje base"
+  },
+  {
+   "id": "t19-c-006",
+   "anverso": "Excepciones comprobadas y no comprobadas en Java",
+   "reverso": "Comprobadas: Exception salvo RuntimeException (IOException, SQLException). No comprobadas: RuntimeException y Error.",
+   "epigrafe": "2. Java: plataforma y lenguaje base"
+  },
+  {
+   "id": "t19-c-007",
+   "anverso": "Java DB",
+   "reverso": "Distribución de Oracle de Apache Derby; incluida en los JDK 6-8 y retirada en el JDK 9.",
+   "epigrafe": "2. Java: plataforma y lenguaje base"
+  },
+  {
+   "id": "t19-c-008",
+   "anverso": "Librerías de logging en Java",
+   "reverso": "Log4j 2 (Apache), Logback, SLF4J (fachada) y java.util.logging. NLog y log4net son de .NET.",
+   "epigrafe": "2. Java: plataforma y lenguaje base"
+  },
+  {
+   "id": "t19-c-009",
+   "anverso": "javax frente a jakarta",
+   "reverso": "Desde Jakarta EE 9 (2020): javax.* → jakarta.* (ejb, persistence, servlet). javax.sql y javax.naming no cambian (son de Java SE).",
+   "epigrafe": "3. Java EE / Jakarta EE"
+  },
+  {
+   "id": "t19-c-010",
+   "anverso": "Perfiles de Jakarta EE",
+   "reverso": "Core Profile (microservicios, desde EE 10), Web Profile y Platform (completa).",
+   "epigrafe": "3. Java EE / Jakarta EE"
+  },
+  {
+   "id": "t19-c-011",
+   "anverso": "MicroProfile",
+   "reverso": "Especificación de la Eclipse Foundation para microservicios sobre el Core Profile: Config, Health, Fault Tolerance, JWT, OpenAPI, Rest Client, Telemetry.",
+   "epigrafe": "3. Java EE / Jakarta EE"
+  },
+  {
+   "id": "t19-c-012",
+   "anverso": "¿Tomcat es un servidor de aplicaciones completo?",
+   "reverso": "No: es un contenedor de servlets (Catalina), con Coyote (HTTP) y Jasper (JSP). Completos: WildFly, GlassFish, Open Liberty, WebLogic.",
+   "epigrafe": "3. Java EE / Jakarta EE"
+  },
+  {
+   "id": "t19-c-013",
+   "anverso": "LifecycleListener de Tomcat",
+   "reverso": "Recibe los eventos de ciclo de vida de Tomcat; se registra con <Listener> dentro de <Server> en server.xml.",
+   "epigrafe": "3. Java EE / Jakarta EE"
+  },
+  {
+   "id": "t19-c-014",
+   "anverso": "Ciclo de vida de un servlet",
+   "reverso": "init() una vez, service() por petición (despacha a doGet/doPost) y destroy() al descargarlo. Una instancia compartida por todos los hilos.",
+   "epigrafe": "4. Componentes web Java: servlets, JSP y Faces"
+  },
+  {
+   "id": "t19-c-015",
+   "anverso": "Servlet con solo doGet al que se accede por POST",
+   "reverso": "HttpServlet responde 405 (Method Not Allowed).",
+   "epigrafe": "4. Componentes web Java: servlets, JSP y Faces"
+  },
+  {
+   "id": "t19-c-016",
+   "anverso": "Comentario JSP",
+   "reverso": "<%-- comentario --%>: no llega al cliente. El comentario HTML <!-- --> sí llega.",
+   "epigrafe": "4. Componentes web Java: servlets, JSP y Faces"
+  },
+  {
+   "id": "t19-c-017",
+   "anverso": "Tipos de EJB",
+   "reverso": "@Stateless, @Stateful, @Singleton y @MessageDriven (consume JMS). Paquete javax.ejb → jakarta.ejb.",
+   "epigrafe": "5. Componentes de negocio: CDI y EJB"
+  },
+  {
+   "id": "t19-c-018",
+   "anverso": "Tipos de driver JDBC",
+   "reverso": "1: puente JDBC-ODBC. 2: API nativa. 3: protocolo de red con middleware. 4: protocolo nativo en Java puro (thin).",
+   "epigrafe": "6. Persistencia en Java"
+  },
+  {
+   "id": "t19-c-019",
+   "anverso": "Paquetes para conectar a BD en un servidor Java",
+   "reverso": "javax.naming (JNDI) para buscar el DataSource y javax.sql (DataSource).",
+   "epigrafe": "6. Persistencia en Java"
+  },
+  {
+   "id": "t19-c-020",
+   "anverso": "PreparedStatement",
+   "reverso": "Sentencia SQL precompilada con parámetros ?: se ejecuta muchas veces y evita la inyección SQL. Índices desde 1.",
+   "epigrafe": "6. Persistencia en Java"
+  },
+  {
+   "id": "t19-c-021",
+   "anverso": "JPA: @Entity, @Table, @Id",
+   "reverso": "@Entity marca la entidad, @Table(name=\"X\") indica la tabla e @Id la clave primaria. Lenguaje: JPQL (no «JPSQL»).",
+   "epigrafe": "6. Persistencia en Java"
+  },
+  {
+   "id": "t19-c-022",
+   "anverso": "JAX-WS, JAX-RS y JAXB",
+   "reverso": "JAX-WS: servicios SOAP (wsimport genera cliente desde WSDL). JAX-RS: REST. JAXB: XML ↔ clases (xjc desde XSD).",
+   "epigrafe": "7. Servicios web y XML en Java"
+  },
+  {
+   "id": "t19-c-023",
+   "anverso": "JAAS",
+   "reverso": "Java Authentication and Authorization Service: autenticación y control de acceso de usuarios y grupos (LoginContext, LoginModule, Subject).",
+   "epigrafe": "8. Seguridad en Java y Jakarta EE"
+  },
+  {
+   "id": "t19-c-024",
+   "anverso": "Spring Boot",
+   "reverso": "Aplicaciones autocontenidas con servlet container embebido (Tomcat), autoconfiguración y starters. Se arranca con mvn spring-boot:run o java -jar.",
+   "epigrafe": "9. Spring y Spring Boot"
+  },
+  {
+   "id": "t19-c-025",
+   "anverso": "@RestController",
+   "reverso": "= @Controller + @ResponseBody. Métodos con @GetMapping, @PostMapping...; parámetros con @PathVariable, @RequestParam y @RequestBody.",
+   "epigrafe": "9. Spring y Spring Boot"
+  },
+  {
+   "id": "t19-c-026",
+   "anverso": ".NET: qué es",
+   "reverso": "Plataforma gratuita, de código abierto (MIT) y multiplataforma de Microsoft. Lenguajes: C#, F# y Visual Basic. Vigente: .NET 10 LTS (nov. 2025).",
+   "epigrafe": "10. Plataforma .NET"
+  },
+  {
+   "id": "t19-c-027",
+   "anverso": "CLR",
+   "reverso": "Motor de ejecución de .NET: JIT, recolector de basura, excepciones, hilos, seguridad de tipos y carga de ensamblados.",
+   "epigrafe": "10. Plataforma .NET"
+  },
+  {
+   "id": "t19-c-028",
+   "anverso": "Ensamblado .NET",
+   "reverso": "Unidad de implementación, versionado, reutilización, activación y seguridad (.dll/.exe). Contiene manifiesto, metadatos, CIL y recursos. Se carga bajo demanda.",
+   "epigrafe": "10. Plataforma .NET"
+  },
+  {
+   "id": "t19-c-029",
+   "anverso": "Instalar un paquete NuGet",
+   "reverso": "CLI: dotnet add package iText (en .NET 10 también dotnet package add). Visual Studio: Install-Package iText.",
+   "epigrafe": "10. Plataforma .NET"
+  },
+  {
+   "id": "t19-c-030",
+   "anverso": "Directiva using frente a instrucción using en C#",
+   "reverso": "Directiva: importa un espacio de nombres (using System;). Instrucción: llama a Dispose al salir del bloque.",
+   "epigrafe": "11. C# práctico para el supuesto"
+  },
+  {
+   "id": "t19-c-031",
+   "anverso": "struct frente a class en C#",
+   "reverso": "struct = tipo de valor (se copia). class = tipo de referencia (se copia la referencia). Pasar un struct a un método no cambia el original salvo con ref/out.",
+   "epigrafe": "11. C# práctico para el supuesto"
+  },
+  {
+   "id": "t19-c-032",
+   "anverso": "async/await en C#",
+   "reverso": "async Task (sin valor), async Task<T> (con valor); await solo dentro de métodos async. async void solo para eventos.",
+   "epigrafe": "11. C# práctico para el supuesto"
+  },
+  {
+   "id": "t19-c-033",
+   "anverso": "POCO",
+   "reverso": "Plain Old CLR Object: solo propiedades o campos públicos, sin heredar de framework; según Microsoft sin métodos, eventos ni delegados.",
+   "epigrafe": "11. C# práctico para el supuesto"
+  },
+  {
+   "id": "t19-c-034",
+   "anverso": "ArrayList en C#",
+   "reverso": "Está en System.Collections; se recorre con Count (no Length) y hace falta cast. Mejor List<T> (System.Collections.Generic).",
+   "epigrafe": "11. C# práctico para el supuesto"
+  },
+  {
+   "id": "t19-c-035",
+   "anverso": "Métodos de SqlCommand",
+   "reverso": "ExecuteReader (DataReader), ExecuteNonQuery (filas afectadas), ExecuteScalar (un valor).",
+   "epigrafe": "12. Acceso a datos en .NET"
+  },
+  {
+   "id": "t19-c-036",
+   "anverso": "ADO.NET conectado y desconectado",
+   "reverso": "Conectado: Connection, Command, DataReader. Desconectado: DataSet (colección de DataTable) y DataAdapter (Fill/Update).",
+   "epigrafe": "12. Acceso a datos en .NET"
+  },
+  {
+   "id": "t19-c-037",
+   "anverso": "Razor",
+   "reverso": "Sintaxis de plantillas de ASP.NET Core (HTML + C#), procesada en servidor; la @ pasa de HTML a C#.",
+   "epigrafe": "13. Interfaces de usuario en .NET"
+  },
+  {
+   "id": "t19-c-038",
+   "anverso": ".NET MAUI",
+   "reverso": "Marco multiplataforma para apps nativas móviles y de escritorio con C# y XAML (Android, iOS, macOS, Windows). Sucede a Xamarin.Forms.",
+   "epigrafe": "13. Interfaces de usuario en .NET"
+  },
+  {
+   "id": "t19-c-039",
+   "anverso": "Modos de sesión de ASP.NET",
+   "reverso": "InProc (por defecto), StateServer, SQLServer, Custom y Off. «AppServer» no existe.",
+   "epigrafe": "13. Interfaces de usuario en .NET"
+  },
+  {
+   "id": "t19-c-040",
+   "anverso": "Logging en .NET",
+   "reverso": "ILogger<T> con LogTrace, LogDebug, LogInformation, LogWarning, LogError y LogCritical. Librerías: log4net, NLog, Serilog. AOP: PostSharp.",
+   "epigrafe": "15. Utilidades transversales en .NET"
+  }
+ ],
+ "discrepancias": [
+  {
+   "ref": "LI2025-b3-09",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 9
+   },
+   "clave_oficial": "b",
+   "temario_dice": "«a) Thread int DevolverDato()» (plantilla provisional inicial); la lección lo recoge como posible errata e impugnación",
+   "veredicto": "La plantilla provisional actualizada (Plantilla_respuestas_TAI-L-A_act.pdf) corrige la clave a b) async Task DevolverDato(), que es la única firma válida. Tiene razón la clave actualizada; hay que actualizar el temario y la lección."
+  },
+  {
+   "ref": "LI2008-b3-b3-23",
+   "origen": {
+    "anio": 2008,
+    "parte": "b3",
+    "n": 23
+   },
+   "clave_oficial": "c",
+   "temario_dice": "«Define el tipo MIME del objeto respuesta (setContentType)», que coincide con el sentido de la opción a",
+   "veredicto": "Manda la clave oficial c (indica que se enviará una respuesta de texto con HTML). La opción a apunta a lo mismo, pero su redacción («define en el objeto respuesta MIME de la misma») es defectuosa. Conviene que el temario cite la redacción oficial."
+  },
+  {
+   "ref": "LI2015-b3-b3-28",
+   "origen": {
+    "anio": 2015,
+    "parte": "b3",
+    "n": 28
+   },
+   "clave_oficial": "b",
+   "temario_dice": "«CodeBehind (o CodeFile en proyectos Web Site)»",
+   "veredicto": "La clave oficial CodeFile es correcta: CodeBehind no estaba entre las opciones (File, CodeFile, Code, EventFile). El temario debería dar CodeFile como respuesta."
+  },
+  {
+   "ref": "LI2015-b3-b3-30",
+   "origen": {
+    "anio": 2015,
+    "parte": "b3",
+    "n": 30
+   },
+   "clave_oficial": "d",
+   "temario_dice": "«La que use sintaxis Java/C (int a[]) o tamaño distinto del número de elementos» (sin verificar)",
+   "veredicto": "La clave oficial d es correcta, pero por otro motivo: new string[unEntero]{...} falla porque con inicializador el tamaño debe ser una constante. Ninguna opción usaba sintaxis Java/C, así que el temario debe concretar el motivo."
+  },
+  {
+   "ref": "LI2025ext-b3-05",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 5
+   },
+   "clave_oficial": "a",
+   "temario_dice": "No figura en el temario (examen extraordinario de 2025)",
+   "veredicto": "La clave provisional a (dotnet package add) es válida en el SDK de .NET 10, pero b (dotnet add package) también funciona. Hay dos opciones correctas: candidata a anulación."
+  }
+ ]
+}

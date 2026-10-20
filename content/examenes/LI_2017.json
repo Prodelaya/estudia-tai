@@ -2322,7 +2322,7 @@
       "d": "Solo trabajara en un puesto de trabajo en una ubicación central o en una ubicación exterior."
      },
      "ctx2": "PREGUNTAS 12-12: Borrador del modelo entidad/relación extendido del nuevo sistema:\n[[img:OEP2017_b3_er.png]]",
-     "ok": "d",
+     "ok": "c",
      "anulada": false,
      "tema": 15,
      "obsoleta": false,
@@ -2330,7 +2330,7 @@
      "sim": 0.8,
      "fiab": "claude",
      "dudosa": true,
-     "nota_clave": "Arco de exclusividad en el E/R: entre c) y d) se elige d) por expresar la exclusividad (un único puesto, central o exterior)."
+     "nota_clave": "Clave sin plantilla oficial. El arco de exclusividad obliga a elegir entre Relación 1 (UbicacionCentral, 1:N) y Relación 2 (UbicacionExterior, 1:1): el trabajador está en la central o en una exterior, nunca en ambas. La d («solo un puesto») choca con el 1:N de la central, así que se elige c."
     },
     {
      "id": "LI2017-b3-b3-13",

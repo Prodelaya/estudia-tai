@@ -1,0 +1,3200 @@
+{
+ "tema": 1,
+ "generado": "2026-10-20",
+ "preguntas": [
+  {
+   "tipo": "historica",
+   "ref": "LI2025-ej1-01",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 1
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En la Constitución Española de 1978, en relación con la sucesión al trono se prefiere siempre:",
+   "ctx": null,
+   "op": {
+    "a": "En la misma línea, el grado más lejano al más próximo.",
+    "b": "En el mismo grado, la línea anterior a las posteriores.",
+    "c": "En la misma línea, el grado más próximo al más remoto.",
+    "d": "En el mismo grado, la línea posterior a las anteriores."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Art. 57.1 CE: se prefiere siempre la línea anterior a las posteriores; **en la misma línea, el grado más próximo al más remoto**; en el mismo grado, el varón a la mujer; y en el mismo sexo, la persona de más edad. Los distractores invierten el criterio (grado más lejano, línea posterior) o mezclan línea y grado.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 1,
+   "id": "t1-h-001"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2025-ej1-02",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 2
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Indique cuál de los siguientes principios se garantiza en el artículo 9 de la Constitución Española de 1978:",
+   "ctx": null,
+   "op": {
+    "a": "La retroactividad de disposiciones sancionadoras no favorables o restrictivas de derechos individuales.",
+    "b": "La retroactividad de disposiciones sancionadoras favorables.",
+    "c": "La interdicción de la arbitrariedad de los poderes públicos.",
+    "d": "La irretroactividad de disposiciones sancionadoras favorables o restrictivas de derechos colectivos."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** El art. 9.3 garantiza la legalidad, la jerarquía normativa, la publicidad de las normas, la **irretroactividad** de las disposiciones sancionadoras no favorables o restrictivas de derechos individuales, la seguridad jurídica, la responsabilidad y la **interdicción de la arbitrariedad de los poderes públicos**. Las demás cambian «irretroactividad» por «retroactividad» o «individuales» por «colectivos».",
+   "epigrafe": "Título Preliminar: principios",
+   "dificultad": 1,
+   "id": "t1-h-002"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2024-ej1-01",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 1
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de los siguientes derechos recogidos en el Capítulo Segundo del Título I de la Constitución Española NO forma parte de los Derechos Fundamentales y Libertades Públicas (Artículos 15 a 29)?",
+   "ctx": null,
+   "op": {
+    "a": "Derecho a sindicarse libremente.",
+    "b": "Derecho a la propiedad privada.",
+    "c": "Derecho a la producción y creación literaria, artística, científica y técnica.",
+    "d": "Derecho a elegir libremente su residencia."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** La propiedad privada y la herencia están en el art. 33, en la **Sección 2.ª** del Capítulo II (arts. 30 a 38). Sindicarse (art. 28.1), la producción y creación literaria, artística, científica y técnica (art. 20.1.b) y elegir residencia (art. 19) están en la Sección 1.ª (arts. 15 a 29).",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)",
+   "dificultad": 1,
+   "id": "t1-h-003"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2024-ej1-02",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 2
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Según el Título I, Capítulo Cuarto, “De las garantías de las libertades y derechos fundamentales” de la Constitución Española de 1978, señale la opción correcta:",
+   "ctx": null,
+   "op": {
+    "a": "Los derechos y libertades reconocidos no vinculan a todas las Administraciones Públicas.",
+    "b": "Sólo por ley orgánica podrá regularse el ejercicio de tales derechos y libertades.",
+    "c": "Una ley orgánica regulará la institución del Defensor del Pueblo.",
+    "d": "El reconocimiento, el respeto y la protección de los principios reconocidos en el Capítulo tercero, informará la judicialización positiva, la práctica legislativa y la actuación de los poderes públicos."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Literal del art. 54: «Una **ley orgánica** regulará la institución del Defensor del Pueblo». **a)** el art. 53.1 dice que los derechos «**vinculan** a todos los poderes públicos»; **b)** dice «sólo por **ley**» (no orgánica); **d)** dice que los principios rectores informarán «la **legislación** positiva, la **práctica judicial** y la actuación de los poderes públicos».",
+   "epigrafe": "Garantías de los derechos (Capítulo IV y otras)",
+   "dificultad": 2,
+   "id": "t1-h-004"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2024-ej1-03",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 3
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale la respuesta INCORRECTA de acuerdo con el Título II, artículo 62 de la Constitución Española de 1978. Corresponde al Rey:",
+   "ctx": null,
+   "op": {
+    "a": "Convocar a referéndum en los casos previstos en la Constitución, previa autorización de las Cortes Generales.",
+    "b": "Convocar y disolver las Cortes Generales y convocar elecciones en los términos previstos en la Constitución.",
+    "c": "Proponer el candidato a Presidente de Gobierno y, en su caso, nombrarlo, así como poner fin a sus funciones en los términos previstos en la Constitución.",
+    "d": "Nombrar y separar a los miembros del Gobierno, a propuesta de su Presidente."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** es la incorrecta: el art. 62.c dice solo «Convocar a referéndum en los casos previstos en la Constitución», sin «previa autorización de las Cortes Generales» (en el referéndum consultivo del art. 92 la autorización previa es del **Congreso** y la propuesta del Presidente del Gobierno). Las demás son literales del art. 62.b, d y e.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 2,
+   "id": "t1-h-005"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2022-ej1-01",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 1
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "De acuerdo con el artículo 64 de la Constitución Española de 1978 (en adelante CE), los actos del Rey, excepto la propuesta y el nombramiento del Presidente del Gobierno, y la disolución de las Cámaras prevista en el artículo 99, serán refrendados por:",
+   "ctx": null,
+   "op": {
+    "a": "Los Presidentes del Congreso y el Senado.",
+    "b": "Los Ministros o los Secretarios de Estado en función de la materia.",
+    "c": "El Presidente del Gobierno y, en su caso, por los Presidentes del Congreso y el Senado.",
+    "d": "El Presidente del Gobierno y, en su caso, por los Ministros competentes."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** Art. 64.1: los actos del Rey los refrendan **el Presidente del Gobierno y, en su caso, los Ministros competentes**. La propuesta y el nombramiento del Presidente del Gobierno y la disolución del art. 99 los refrenda el Presidente del **Congreso**. Nunca refrendan el Presidente del Senado ni los Secretarios de Estado.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 1,
+   "id": "t1-h-006"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2022-ej1-02",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 2
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "La suspensión de los derechos y libertades se encuentra regulada en la CE en:",
+   "ctx": null,
+   "op": {
+    "a": "En el Capítulo III del Título I.",
+    "b": "En sus artículos 52 y 53.",
+    "c": "En el artículo 58.",
+    "d": "En el Capítulo V del Título I."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** La suspensión de derechos está en el **Capítulo V del Título I** (art. 55). El Capítulo III son los principios rectores (arts. 39-52), los arts. 52-53 están entre el Capítulo III y el IV (garantías) y el art. 58 trata del consorte del Rey.",
+   "epigrafe": "Estructura de la Constitución",
+   "dificultad": 1,
+   "id": "t1-h-007"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-03",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 3
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Según la Constitución Española, la función que le corresponde al Rey es:",
+   "ctx": null,
+   "op": {
+    "a": "Establecer el programa político del Gobierno y determinar las directrices de la política interior y exterior y velar por su cumplimiento.",
+    "b": "Convocar a referéndum en los casos previstos en la Constitución.",
+    "c": "Plantear ante el Congreso de los Diputados, previa deliberación del Consejo de Ministros, la cuestión de confianza.",
+    "d": "Representar al Gobierno."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Art. 62.c: corresponde al Rey convocar a referéndum en los casos previstos en la Constitución. Establecer el programa político del Gobierno es del Presidente del Gobierno; plantear la cuestión de confianza es del Presidente, previa deliberación del Consejo de Ministros (art. 112); y el Rey no representa al Gobierno.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 1,
+   "id": "t1-h-008"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2016-ej1-I-II-01",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 1
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El estado de sitio, según la Constitución española de 1978, será declarado por:",
+   "ctx": null,
+   "op": {
+    "a": "la mayoría simple del Congreso de los Diputados, a propuesta exclusiva del Gobierno.",
+    "b": "la mayoría absoluta del Senado, a propuesta exclusiva del Rey.",
+    "c": "la mayoría simple del Senado, a propuesta exclusiva del Rey.",
+    "d": "la mayoría absoluta del Congreso de los Diputados, a propuesta exclusiva del Gobierno."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** Art. 116.4: el estado de sitio lo declara **el Congreso por mayoría absoluta, a propuesta exclusiva del Gobierno**. El Senado no interviene en los estados excepcionales y el Rey no propone.",
+   "epigrafe": "Suspensión de derechos y estados excepcionales",
+   "dificultad": 1,
+   "id": "t1-h-009"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2016-ej1-I-II-02",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 2
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se indica en la Constitución española en el artículo 1, que España se constituye en un Estado:",
+   "ctx": null,
+   "op": {
+    "a": "parlamentario y democrático de Derecho.",
+    "b": "social y democrático de Derecho.",
+    "c": "social y soberano de Derecho.",
+    "d": "plural y democrático de Derecho."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Art. 1.1: «España se constituye en un **Estado social y democrático de Derecho**». «Parlamentaria» es la forma política (Monarquía parlamentaria, art. 1.3); «soberano» y «plural» son distractores.",
+   "epigrafe": "Título Preliminar: principios",
+   "dificultad": 1,
+   "id": "t1-h-010"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2016-ej1-I-II-03",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 3
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Según la Constitución española de 1978, NO es un derecho fundamental el derecho a la:",
+   "ctx": null,
+   "op": {
+    "a": "Vivienda.",
+    "b": "Libertad sindical.",
+    "c": "Libertad ideológica.",
+    "d": "Educación."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** La vivienda digna (art. 47) es un **principio rector** (Capítulo III), no un derecho fundamental. La libertad sindical (28.1), la libertad ideológica (16) y la educación (27) están en la Sección 1.ª del Capítulo II.",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)",
+   "dificultad": 1,
+   "id": "t1-h-011"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2016-ej1-I-II-06",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 6
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Según el artículo 153 de la Constitución española, el control de la actividad de los órganos de las Comunidades Autónomas NO se ejercerá por:",
+   "ctx": null,
+   "op": {
+    "a": "el Tribunal Constitucional.",
+    "b": "el Gobierno.",
+    "c": "el Consejo General del Poder Judicial.",
+    "d": "el Tribunal de Cuentas."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**c)** Según el art. 153, controlan a las CCAA el Tribunal Constitucional, el Gobierno (previo dictamen del Consejo de Estado, en funciones delegadas), la jurisdicción contencioso-administrativa y el Tribunal de Cuentas. **No** el Consejo General del Poder Judicial. **Marcada como obsoleta** porque esta materia ya no forma parte del epígrafe vigente del tema 1 (el contenido sigue siendo correcto).",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 2,
+   "id": "t1-h-012"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2016-ej1-I-II-09",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 9
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Según la Constitución española de 1978 artículo 147, los Estatutos de autonomía deberán contener:",
+   "ctx": null,
+   "op": {
+    "a": "La denominación de la Comunidad que mejor corresponda a su identidad histórica.",
+    "b": "Los idiomas oficiales de su territorio.",
+    "c": "La organización de la comunicación con las instituciones centrales.",
+    "d": "Las competencias no asumidas dentro del marco establecido en la Constitución."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**a)** Art. 147.2: los Estatutos deben contener la denominación de la Comunidad que mejor corresponda a su identidad histórica, la delimitación de su territorio, la denominación, organización y sede de sus instituciones y las competencias **asumidas** (no las «no asumidas»). **Marcada como obsoleta** porque esta materia ya no forma parte del epígrafe vigente del tema 1 (el contenido sigue siendo correcto).",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 2,
+   "id": "t1-h-013"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2016-ej1-I-II-11",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 11
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Conforme a la jerarquía normativa establecida por la Constitución española, como ordenación vertical de las fuentes del derecho administrativo:",
+   "ctx": null,
+   "op": {
+    "a": "La Constitución es la norma suprema.",
+    "b": "Las leyes orgánicas son superiores a la Constitución.",
+    "c": "Los decretos-leyes son superiores a las leyes ordinarias.",
+    "d": "Los tratados internacionales son superiores a la Constitución."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**a)** La Constitución es la norma suprema del ordenamiento. Las leyes orgánicas y los tratados están por debajo de ella, y la relación entre decreto-ley y ley ordinaria no es de superioridad (ambos tienen rango de ley). **Marcada como obsoleta** porque esta materia ya no forma parte del epígrafe vigente del tema 1 (el contenido sigue siendo correcto).",
+   "epigrafe": "Título Preliminar: principios",
+   "dificultad": 1,
+   "id": "t1-h-014"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2015-ej1-I-II-01",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 1
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "La Constitución Española reconoce el derecho de reunión:",
+   "ctx": null,
+   "op": {
+    "a": "Pacífica y sin armas pero con necesidad de autorización previa.",
+    "b": "En lugares de tránsito público previa autorización de la autoridad.",
+    "c": "En los casos de reuniones en lugares de tránsito público y manifestaciones se dará comunicación previa a la autoridad.",
+    "d": "No es preciso realizar ninguna actuación."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Art. 21: el derecho de reunión pacífica y sin armas **no necesita autorización previa**; en lugares de tránsito público y manifestaciones se da **comunicación previa** a la autoridad, que solo puede prohibirlas por razones fundadas de alteración del orden público con peligro para personas o bienes. **d)** es falsa porque sí hay que comunicar en esos casos.",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)",
+   "dificultad": 1,
+   "id": "t1-h-015"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2015-ej1-I-II-03",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 3
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "De conformidad con la Constitución Española de 1978 ¿cuál de los siguientes derechos y libertades es susceptible de tutela a través del recurso de amparo ante el Tribunal Constitucional?",
+   "ctx": null,
+   "op": {
+    "a": "El derecho a la propiedad privada.",
+    "b": "El derecho de asociación.",
+    "c": "El derecho de fundación.",
+    "d": "El derecho de negociación colectiva."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** El recurso de amparo protege el art. 14, la Sección 1.ª (arts. 15-29) y la objeción de conciencia del art. 30 (art. 53.2). La asociación es el art. 22 (Sección 1.ª). La propiedad privada (33), la fundación (34) y la negociación colectiva (37.1) están en la Sección 2.ª y no tienen amparo.",
+   "epigrafe": "Garantías de los derechos (Capítulo IV y otras)",
+   "dificultad": 2,
+   "id": "t1-h-016"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2015-ej1-I-II-06",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 6
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El artículo 152 de la Constitución española se refiere a la organización institucional básica de cada Comunidad Autónoma, la cual se basará en:",
+   "ctx": null,
+   "op": {
+    "a": "una Consellería legislativa, una Delegación de Gobierno, un Presidente y un Tribunal Superior de Justicia.",
+    "b": "una Asamblea legislativa, un Presidente, un Delegado de Gobierno y un Comité Superior del Poder Judicial.",
+    "c": "una Asamblea legislativa, un Consejo de Gobierno, un Presidente y un Tribunal Superior de Justicia.",
+    "d": "un Consejo legislativo, una Delegación de Gobierno, un Presidente y un Tribunal Supremo."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**c)** Art. 152.1: Asamblea Legislativa, Consejo de Gobierno, Presidente (elegido por la Asamblea y nombrado por el Rey) y Tribunal Superior de Justicia. Las demás inventan «Consellería legislativa», «Delegación de Gobierno» o «Comité Superior del Poder Judicial». **Marcada como obsoleta** porque esta materia ya no forma parte del epígrafe vigente del tema 1 (el contenido sigue siendo correcto).",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 1,
+   "id": "t1-h-017"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2015-ej1-I-II-08",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 8
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Qué tipo de ley aprueba los estatutos de autonomía?",
+   "ctx": null,
+   "op": {
+    "a": "una ley ordinaria.",
+    "b": "una ley orgánica.",
+    "c": "una ley de bases.",
+    "d": "una ley de transferencia."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**b)** Los Estatutos de Autonomía se aprueban por **ley orgánica** (arts. 81.1 y 147.3). **Marcada como obsoleta** porque esta materia ya no forma parte del epígrafe vigente del tema 1 (el contenido sigue siendo correcto).",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 1,
+   "id": "t1-h-018"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2008-ej1-I-II-01",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 1
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "De acuerdo con la Constitución española, señale cuáles son los valores superiores del ordenamiento jurídico:",
+   "ctx": null,
+   "op": {
+    "a": "La libertad, la justicia y la solidaridad.",
+    "b": "La autonomía, la monarquía parlamentaria y el pluralismo político.",
+    "c": "La libertad, la justicia, la igualdad y el pluralismo político.",
+    "d": "La soberanía popular y el estado social y democrático de derecho."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Art. 1.1: los valores superiores son cuatro: **libertad, justicia, igualdad y pluralismo político**. La solidaridad, la autonomía o la soberanía popular no están en esa lista.",
+   "epigrafe": "Título Preliminar: principios",
+   "dificultad": 1,
+   "id": "t1-h-019"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2008-ej1-I-II-04",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 4
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale a quién estarán encomendados el gobierno y la administración autónoma de las provincias:",
+   "ctx": null,
+   "op": {
+    "a": "Diputaciones u otras Corporaciones de carácter representativo.",
+    "b": "Diputaciones, Cabildos o Consejos.",
+    "c": "Diputaciones o Cabildos.",
+    "d": "Diputaciones o agrupaciones de municipios."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**a)** Art. 141.2: el gobierno y la administración autónoma de las provincias corresponden a **Diputaciones u otras Corporaciones de carácter representativo**. (Los Cabildos y Consejos son de las islas, art. 141.4.) **Marcada como obsoleta** porque esta materia ya no forma parte del epígrafe vigente del tema 1 (el contenido sigue siendo correcto).",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 2,
+   "id": "t1-h-020"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2008-ej1-I-II-06",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 5
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "De acuerdo con el Código Civil, señale cuáles son las fuentes del ordenamiento jurídico español:",
+   "ctx": null,
+   "op": {
+    "a": "La Constitución, la ley y los reglamentos.",
+    "b": "La Ley, la costumbre y los principios generales del derecho.",
+    "c": "La Ley, la costumbre, los principios generales del derecho y la jurisprudencia.",
+    "d": "La Ley, los reglamentos y la jurisprudencia."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**b)** Art. 1.1 del Código Civil: las fuentes son **la ley, la costumbre y los principios generales del derecho**. La jurisprudencia **complementa** el ordenamiento (art. 1.6 CC), pero no es fuente. **Marcada como obsoleta** porque esta materia ya no forma parte del epígrafe vigente del tema 1 (el contenido sigue siendo correcto).",
+   "epigrafe": "Título Preliminar: principios",
+   "dificultad": 1,
+   "id": "t1-h-021"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-01",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 1
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El artículo 29 de la Constitución española reconoce el derecho de petición a:",
+   "ctx": null,
+   "op": {
+    "a": "Todos los ciudadanos.",
+    "b": "Todos los españoles.",
+    "c": "Todas las personas que residan en territorio español.",
+    "d": "Todas las personas censadas en España."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Art. 29.1: «**Todos los españoles** tendrán el derecho de petición individual y colectiva, por escrito». No dice «ciudadanos», ni «residentes», ni «censados». Lo desarrolla la LO 4/2001.",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)",
+   "dificultad": 1,
+   "id": "t1-h-022"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-02",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 2
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "La declaración del estado de excepción corresponde a:",
+   "ctx": null,
+   "op": {
+    "a": "El Congreso de los Diputados.",
+    "b": "El Rey, a propuesta del Presidente del Gobierno.",
+    "c": "El Consejo de Ministros.",
+    "d": "Las Cortes Generales."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Art. 116.3: el estado de excepción lo declara **el Gobierno mediante decreto acordado en Consejo de Ministros**, previa autorización del Congreso. El Congreso autoriza, pero no declara; el Rey no interviene; el estado de sitio sí lo declara el Congreso.",
+   "epigrafe": "Suspensión de derechos y estados excepcionales",
+   "dificultad": 1,
+   "id": "t1-h-023"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-03",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 3
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las siguientes funciones no corresponde al Rey, de conformidad con la Constitución española?",
+   "ctx": null,
+   "op": {
+    "a": "Promulgar las leyes.",
+    "b": "Dirigir la Administración militar.",
+    "c": "Convocar a referéndum en los casos previstos en la Constitución española.",
+    "d": "Nombrar y separar a los miembros del Gobierno."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Dirigir la Administración militar corresponde al **Gobierno** (art. 97). Al Rey le corresponden el mando supremo de las Fuerzas Armadas (62.h), promulgar las leyes (62.a), convocar referéndum (62.c) y nombrar y separar a los miembros del Gobierno a propuesta de su Presidente (62.e).",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 1,
+   "id": "t1-h-024"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-04",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 4
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "De acuerdo con la Constitución española, ¿cuál de los siguientes derechos debe ser desarrollado mediante ley orgánica?:",
+   "ctx": null,
+   "op": {
+    "a": "El derecho a la propiedad privada.",
+    "b": "El derecho de huelga de los trabajadores para la defensa de sus intereses.",
+    "c": "El derecho a la protección de la salud.",
+    "d": "El derecho a disfrutar de un medio ambiente adecuado para el desarrollo de la persona."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** El art. 81.1 reserva a ley orgánica el desarrollo de los derechos fundamentales y libertades públicas, que el TC identifica con la Sección 1.ª (arts. 15-29). La huelga es el art. 28.2. La propiedad (33) está en la Sección 2.ª; la salud (43) y el medio ambiente (45) son principios rectores.",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)",
+   "dificultad": 2,
+   "id": "t1-h-025"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-07",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 7
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Según la Constitución española, la función de promulgar las leyes corresponde a:",
+   "ctx": null,
+   "op": {
+    "a": "Las Cortes Generales.",
+    "b": "El Congreso de los Diputados.",
+    "c": "El Rey.",
+    "d": "El Presidente del Gobierno."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Art. 62.a y 91: el **Rey** sanciona y promulga las leyes (en el plazo de 15 días) y ordena su publicación. Las Cortes las aprueban; no las promulgan.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 1,
+   "id": "t1-h-026"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-16",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 13
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El Estado podrá transferir o delegar en las Comunidades Autónomas facultades correspondientes a materia de titularidad estatal que por su propia naturaleza sean susceptibles de transferencia o delegación, mediante:",
+   "ctx": null,
+   "op": {
+    "a": "Ley orgánica.",
+    "b": "Ley de bases.",
+    "c": "Ley Marco.",
+    "d": "Ley de Armonización."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**a)** Art. 150.2: el Estado puede transferir o delegar en las CCAA facultades de su titularidad mediante **ley orgánica**. Las leyes marco son del 150.1 y las de armonización del 150.3. **Marcada como obsoleta** porque esta materia ya no forma parte del epígrafe vigente del tema 1 (el contenido sigue siendo correcto).",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 2,
+   "id": "t1-h-027"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-17",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 14
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "De conformidad con la Constitución española, las agrupaciones de municipios diferentes a la provincia:",
+   "ctx": null,
+   "op": {
+    "a": "Están prohibidas.",
+    "b": "Se reservan a las Comunidades Autónomas uniprovinciales que decidan regularlas.",
+    "c": "Se permiten sin limitación alguna.",
+    "d": "Su existencia o no en cada caso se remite a los Estatutos de autonomía. 07/TAIL-1 3-3"
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**c)** (clave oficial). El art. 141.3 dice solo «Se podrán crear agrupaciones de municipios diferentes de la provincia», sin poner límites en la propia Constitución. **Discutible:** «sin limitación alguna» es exagerado, porque su régimen lo fijan la ley y los Estatutos (y el art. 152.3 permite a los Estatutos crear circunscripciones territoriales con municipios limítrofes); por eso **d)** también resultaba tentadora. No están prohibidas ni reservadas a CCAA uniprovinciales. **Marcada como obsoleta** porque esta materia ya no forma parte del epígrafe vigente del tema 1 (el contenido sigue siendo correcto).",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 3,
+   "id": "t1-h-028"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-18",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 15
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Sobre cuál de las siguientes materias, de acuerdo con el artículo 148 de la Constitución española, pueden asumir competencias las Comunidades Autónomas?:",
+   "ctx": null,
+   "op": {
+    "a": "Asistencia social.",
+    "b": "Régimen de tenencia y uso de armas y explosivos.",
+    "c": "Radiocomunicación.",
+    "d": "Administración de justicia."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**a)** La asistencia social es materia que las CCAA pueden asumir (art. 148.1.20.ª). Armas y explosivos (149.1.26.ª), radiocomunicación (149.1.21.ª) y Administración de Justicia (149.1.5.ª) son competencia exclusiva del Estado. **Marcada como obsoleta** porque esta materia ya no forma parte del epígrafe vigente del tema 1 (el contenido sigue siendo correcto).",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 2,
+   "id": "t1-h-029"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "ej1",
+    "n": 1
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En relación con los derechos y deberes de los ciudadanos, el artículo 30 de la Constitución Española indica que:",
+   "ctx": null,
+   "op": {
+    "a": "Mediante ley podrán ser de obligado cumplimiento los deberes de los ciudadanos en los casos de grave riesgo, catástrofe o calamidad pública.",
+    "b": "Mediante Real Decreto podrán ser de obligado cumplimiento los deberes de los ciudadanos en los casos de grave riesgo, catástrofe o calamidad pública.",
+    "c": "Mediante ley podrán eliminarse los deberes de los ciudadanos en los casos de grave riesgo, catástrofe o calamidad pública.",
+    "d": "Mediante ley podrán regularse los deberes de los ciudadanos en los casos de grave riesgo, catástrofe o calamidad pública."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** Literal del art. 30.4: «Mediante **ley** podrán **regularse** los deberes de los ciudadanos en los casos de grave riesgo, catástrofe o calamidad pública». La trampa está en el verbo («ser de obligado cumplimiento», «eliminarse») y en la norma (Real Decreto).",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)",
+   "dificultad": 2,
+   "id": "t1-h-030"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "ej1",
+    "n": 2
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según el artículo 62 de la Constitución Española, ¿a quién corresponde expedir los decretos acordados en el Consejo de Ministros?",
+   "ctx": null,
+   "op": {
+    "a": "Al Rey.",
+    "b": "Al Presidente del Gobierno.",
+    "c": "Al titular del Ministerio de la Presidencia.",
+    "d": "Al Presidente de la Mesa del Congreso."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** Art. 62.f: corresponde al Rey expedir los decretos acordados en el Consejo de Ministros, conferir los empleos civiles y militares y conceder honores y distinciones con arreglo a las leyes.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 1,
+   "id": "t1-h-031"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "ej1",
+    "n": 8
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Indique cuál es el Título de la Constitución Española relativo a la Organización Territorial del Estado:",
+   "ctx": null,
+   "op": {
+    "a": "Título IV.",
+    "b": "Título VI.",
+    "c": "Título VIII.",
+    "d": "Título X."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**c)** El Título VIII (arts. 137-158) regula la Organización Territorial del Estado. El IV es el Gobierno y la Administración, el VI el Poder Judicial y el X la reforma constitucional. La estructura de la CE sigue en el epígrafe; la organización territorial como materia, no. **Marcada como obsoleta** porque esta materia ya no forma parte del epígrafe vigente del tema 1 (el contenido sigue siendo correcto).",
+   "epigrafe": "Estructura de la Constitución",
+   "dificultad": 1,
+   "id": "t1-h-032"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 1
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes es un derecho fundamental o libertad pública de la Sección 1.ª del Capítulo II del Título I de la Constitución?",
+   "ctx": null,
+   "op": {
+    "a": "El derecho de reunión pacífica y sin armas.",
+    "b": "El derecho a defender España.",
+    "c": "El derecho a la propiedad privada y a la herencia.",
+    "d": "El derecho al trabajo."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** El derecho de reunión es el art. 21 (Sección 1.ª, arts. 15-29). Defender España (30), propiedad y herencia (33) y trabajo (35) están en la Sección 2.ª.",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)",
+   "dificultad": 1,
+   "id": "t1-h-033"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 2
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Sobre el refrendo de los actos del Rey (art. 64 CE), señale la afirmación correcta:",
+   "ctx": null,
+   "op": {
+    "a": "Con carácter general, los actos del Rey son refrendados por el Presidente del Congreso y, en su caso, por los Ministros competentes.",
+    "b": "El Presidente del Gobierno no puede refrendar los actos del Rey.",
+    "c": "La propuesta y el nombramiento del Presidente del Gobierno, y la disolución prevista en el artículo 99, son refrendados por el Presidente del Congreso.",
+    "d": "El Rey es directamente responsable de los actos refrendados."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Literal del art. 64.1, segundo inciso. La regla general es el refrendo del **Presidente del Gobierno** y, en su caso, de los Ministros competentes. De los actos del Rey son responsables **las personas que los refrenden** (art. 64.2); el Rey es inviolable (art. 56.3).",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 2,
+   "id": "t1-h-034"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 1
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "De conformidad con la Constitución, ¿cuál de las siguientes funciones corresponde al Rey?",
+   "ctx": null,
+   "op": {
+    "a": "La iniciativa de reforma constitucional.",
+    "b": "Dirigir la acción del Gobierno.",
+    "c": "Proponer la disolución del Congreso, del Senado o de las Cortes Generales.",
+    "d": "Convocar elecciones en los términos previstos en la Constitución."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** Art. 62.b: convocar y disolver las Cortes Generales y convocar elecciones. La iniciativa de reforma es del Gobierno, el Congreso, el Senado y las Asambleas de las CCAA (arts. 87 y 166); dirigir la acción del Gobierno es del Presidente (art. 98.2); proponer la disolución, del Presidente del Gobierno previa deliberación del Consejo de Ministros (art. 115).",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 1,
+   "id": "t1-h-035"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 2
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Señale la respuesta correcta:",
+   "ctx": null,
+   "op": {
+    "a": "La sucesión en el trono seguirá el orden regular de premoriencia y representación.",
+    "b": "La persona del Rey es inviolable y no está sujeta a responsabilidad.",
+    "c": "Las abdicaciones y renuncias y cualquier duda de hecho o de derecho que ocurra en el orden de sucesión a la Corona se resolverán por una ley marco.",
+    "d": "El Rey nombra y releva a los miembros civiles y militares de su Casa previa autorización de las Cortes Generales."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Literal del art. 56.3. Las demás alteran el texto: el orden es de «**primogenitura** y representación» (57.1); las abdicaciones se resuelven por **ley orgánica** (57.5); y el Rey nombra y releva **libremente** a los miembros de su Casa (65.2), sin autorización ni refrendo.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 2,
+   "id": "t1-h-036"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 3
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Es susceptible de recurso de amparo ante el Tribunal Constitucional la vulneración del derecho:",
+   "ctx": null,
+   "op": {
+    "a": "A la libertad de cátedra.",
+    "b": "A la herencia.",
+    "c": "A contraer matrimonio con plena igualdad jurídica.",
+    "d": "A disfrutar de una vivienda digna y adecuada."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** La libertad de cátedra es el art. 20.1.c (Sección 1.ª), protegida por amparo (art. 53.2). La herencia (33) y el matrimonio (32) están en la Sección 2.ª, y la vivienda (47) es un principio rector.",
+   "epigrafe": "Garantías de los derechos (Capítulo IV y otras)",
+   "dificultad": 1,
+   "id": "t1-h-037"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 11
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En el ámbito municipal, la aprobación del reglamento orgánico y de las ordenanzas corresponde:",
+   "ctx": null,
+   "op": {
+    "a": "Al Alcalde.",
+    "b": "Al Pleno.",
+    "c": "A la Junta de Gobierno Local.",
+    "d": "Al Teniente de Alcalde."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**b)** Art. 22.2.d de la Ley 7/1985, de Bases de Régimen Local: corresponde al **Pleno** la aprobación del reglamento orgánico y de las ordenanzas. Es materia de régimen local, no de la Constitución. **Marcada como obsoleta** porque esta materia ya no forma parte del epígrafe vigente del tema 1 (el contenido sigue siendo correcto).",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 1,
+   "id": "t1-h-038"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 12
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Señale cuál de las siguientes es una materia sobre la que el Estado tiene competencia exclusiva de acuerdo con el artículo 149.1 de la Constitución:",
+   "ctx": null,
+   "op": {
+    "a": "Comercio exterior.",
+    "b": "Asistencia social.",
+    "c": "Gestión en materia de protección del medio ambiente.",
+    "d": "La artesanía."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**a)** Comercio exterior: art. 149.1.10.ª. Asistencia social (148.1.20.ª), gestión de la protección del medio ambiente (148.1.9.ª) y artesanía (148.1.14.ª) son materias que pueden asumir las CCAA. **Marcada como obsoleta** porque esta materia ya no forma parte del epígrafe vigente del tema 1 (el contenido sigue siendo correcto).",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 1,
+   "id": "t1-h-039"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 1
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "El derecho al honor, a la intimidad personal y familiar y a la propia imagen queda garantizado por el artículo 18.1 de la Constitución Española. Este derecho podrá ser suspendido:",
+   "ctx": null,
+   "op": {
+    "a": "En ningún caso podrá ser suspendido.",
+    "b": "Una ley orgánica podrá determinar la forma y los casos en los que, de forma individual y con el adecuado control parlamentario, puedan ser suspendidos.",
+    "c": "Cuando se acuerde la declaración del estado de excepción o de sitio en los términos previstos en la Constitución.",
+    "d": "Únicamente cuando se acuerde el estado de sitio en los términos previstos por la Constitución en el artículo 116."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** El art. 55.1 solo permite suspender del art. 18 los apartados **2 y 3** (domicilio y comunicaciones), y el 55.2 (suspensión individual por terrorismo) los arts. 17.2, 18.2 y 18.3. El 18.1 no aparece en ninguno: no se puede suspender nunca.",
+   "epigrafe": "Suspensión de derechos y estados excepcionales",
+   "dificultad": 2,
+   "id": "t1-h-040"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 2
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Conforme a la Constitución española, la forma política del Estado español es:",
+   "ctx": null,
+   "op": {
+    "a": "Monarquía democrática.",
+    "b": "Monarquía limitada.",
+    "c": "Monarquía constitucional.",
+    "d": "Monarquía parlamentaria."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** Art. 1.3: «La forma política del Estado español es la **Monarquía parlamentaria**». «Constitucional» es el distractor más habitual.",
+   "epigrafe": "Título Preliminar: principios",
+   "dificultad": 1,
+   "id": "t1-h-041"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 3
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "La convocatoria a referéndum consultivo del cuerpo electoral corresponde a:",
+   "ctx": null,
+   "op": {
+    "a": "El Rey, mediante propuesta del Presidente del Gobierno, previamente autorizada por el Congreso de los Diputados.",
+    "b": "El Presidente del Gobierno, previamente autorizado por el Congreso de los Diputados.",
+    "c": "El Presidente del Gobierno, mediante propuesta del Congreso de los Diputados.",
+    "d": "El Rey, mediante propuesta del Congreso de los Diputados, previamente autorizada por el Presidente del Gobierno."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** Literal del art. 92.2: lo convoca el **Rey**, mediante **propuesta del Presidente del Gobierno**, **previamente autorizada por el Congreso**. Las demás cambian quién convoca, quién propone o quién autoriza.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 2,
+   "id": "t1-h-042"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 9
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Señale cuál de las siguientes NO es una materia sobre la que el Estado tiene competencia exclusiva de acuerdo con el artículo 149.1 de la Constitución:",
+   "ctx": null,
+   "op": {
+    "a": "Gestión en materia de protección del medio ambiente.",
+    "b": "Inmigración.",
+    "c": "Régimen aduanero.",
+    "d": "Sanidad exterior."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**a)** La gestión de la protección del medio ambiente la pueden asumir las CCAA (art. 148.1.9.ª); al Estado le corresponde la legislación básica (149.1.23.ª). Inmigración (149.1.2.ª), régimen aduanero (149.1.10.ª) y sanidad exterior (149.1.16.ª) son exclusivas del Estado. **Marcada como obsoleta** porque esta materia ya no forma parte del epígrafe vigente del tema 1 (el contenido sigue siendo correcto).",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 2,
+   "id": "t1-h-043"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 10
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "La Constitución, en el artículo 140, garantiza la autonomía de los municipios, y estos:",
+   "ctx": null,
+   "op": {
+    "a": "Ejercerán la potestad legislativa de manera limitada.",
+    "b": "Ejercerán la potestad legislativa de manera plena.",
+    "c": "Gozarán de personalidad jurídica limitada.",
+    "d": "Gozarán de personalidad jurídica plena."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**d)** Art. 140: los municipios gozan de **personalidad jurídica plena**. Los municipios no tienen potestad legislativa (solo reglamentaria: ordenanzas). **Marcada como obsoleta** porque esta materia ya no forma parte del epígrafe vigente del tema 1 (el contenido sigue siendo correcto).",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 1,
+   "id": "t1-h-044"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 11
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según el artículo 147 de la Constitución Española, la reforma de los Estatutos de Autonomía requerirá en todo caso:",
+   "ctx": null,
+   "op": {
+    "a": "Aprobación por las Cortes Generales y posterior referéndum.",
+    "b": "Aprobación por las Asambleas de las Comunidades Autónomas y por el Consejo de Gobierno.",
+    "c": "Aprobación por las Asambleas de las Comunidades Autónomas y por el Congreso de los Diputados.",
+    "d": "Aprobación por las Cortes Generales mediante ley orgánica."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**d)** Art. 147.3: la reforma de los Estatutos se ajusta al procedimiento que establezcan y requiere en todo caso la **aprobación por las Cortes Generales, mediante ley orgánica**. El referéndum solo es obligatorio en algunos casos (art. 152.2). **Marcada como obsoleta** porque esta materia ya no forma parte del epígrafe vigente del tema 1 (el contenido sigue siendo correcto).",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 2,
+   "id": "t1-h-045"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-01",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 1,
+    "conv": "extraordinaria"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuántas veces se ha reformado la Constitución Española de 1978 desde su aprobación?",
+   "ctx": null,
+   "op": {
+    "a": "Una vez.",
+    "b": "Dos veces.",
+    "c": "Tres veces.",
+    "d": "Cuatro veces."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d) Cuatro veces** (clave oficial provisional). Reformas por el procedimiento del art. 167: **art. 13.2** (1992, sufragio pasivo de extranjeros en municipales), **art. 135** (2011, estabilidad presupuestaria), **art. 49** (2024, «personas con discapacidad») y **art. 69.3** (BOE de 20 de mayo de 2026: cada isla con Cabildo o Consejo Insular es circunscripción y **Formentera elige un senador propio**, separado de Ibiza). **Ojo: la lección y el temario todavía dicen «tres»; están desactualizados desde mayo de 2026.**",
+   "epigrafe": "Estructura de la Constitución",
+   "dificultad": 2,
+   "id": "t1-h-046"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-02",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 2,
+    "conv": "extraordinaria"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Según el artículo 55 de la Constitución Española de 1978, cuando se acuerde declarado el estado de excepción, ¿qué derecho reconocido podrá ser suspendido?",
+   "ctx": null,
+   "op": {
+    "a": "A comunicar o recibir libremente información veraz por cualquier medio de difusión.",
+    "b": "A la libertad de cátedra.",
+    "c": "A sindicarse libremente.",
+    "d": "A participar en los asuntos públicos."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** El art. 55.1 permite suspender en los estados de excepción y sitio los arts. 17, 18.2 y 18.3, 19, **20.1.a y d** (expresión e **información veraz**) y 20.5, 21, 28.2 (huelga) y 37.2. La libertad de cátedra (20.1.c), la sindicación (28.1) y la participación en asuntos públicos (23) no son suspendibles.",
+   "epigrafe": "Suspensión de derechos y estados excepcionales",
+   "dificultad": 2,
+   "id": "t1-h-047"
+  },
+  {
+   "id": "t1-v-001",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-001",
+   "texto": "reformulado",
+   "q": "Según el art. 57.1 CE, en el mismo grado de sucesión a la Corona se prefiere:",
+   "ctx": null,
+   "op": {
+    "a": "El varón a la mujer.",
+    "b": "La persona de más edad a la de menos, sin distinguir sexo.",
+    "c": "La línea posterior a la anterior.",
+    "d": "La mujer al varón."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Orden del 57.1: línea anterior a las posteriores; en la misma línea, grado más próximo; **en el mismo grado, el varón a la mujer**; en el mismo sexo, la persona de más edad. Cambiar la preferencia del varón exige la reforma agravada del art. 168.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 1
+  },
+  {
+   "id": "t1-v-002",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-002",
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes NO figura entre los principios que garantiza el art. 9.3 CE?",
+   "ctx": null,
+   "op": {
+    "a": "La publicidad de las normas.",
+    "b": "La irretroactividad de todas las disposiciones normativas.",
+    "c": "La seguridad jurídica.",
+    "d": "La responsabilidad de los poderes públicos."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El 9.3 solo garantiza la irretroactividad de las disposiciones **sancionadoras no favorables o restrictivas de derechos individuales**, no de todas. Los otros tres sí figuran (legalidad, jerarquía, publicidad, seguridad jurídica, responsabilidad, interdicción de la arbitrariedad).",
+   "epigrafe": "Título Preliminar: principios",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-003",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-003",
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes derechos SÍ está en la Sección 1.ª del Capítulo II del Título I (arts. 15 a 29)?",
+   "ctx": null,
+   "op": {
+    "a": "El derecho a contraer matrimonio.",
+    "b": "La libertad de empresa.",
+    "c": "El derecho a la educación.",
+    "d": "El derecho al trabajo."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La educación es el art. 27 (Sección 1.ª). El matrimonio (32), el trabajo (35) y la libertad de empresa (38) están en la Sección 2.ª.",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)",
+   "dificultad": 1
+  },
+  {
+   "id": "t1-v-004",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-004",
+   "texto": "reformulado",
+   "q": "Según el art. 53.1 CE, el ejercicio de los derechos y libertades del Capítulo II del Título I:",
+   "ctx": null,
+   "op": {
+    "a": "Solo podrá regularse por ley orgánica aprobada por mayoría de tres quintos.",
+    "b": "Podrá regularse por real decreto si existe urgencia.",
+    "c": "No vincula a los poderes públicos hasta que se desarrolle por ley.",
+    "d": "Solo podrá regularse por ley, que deberá respetar su contenido esencial."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 53.1: los derechos del Capítulo II **vinculan a todos los poderes públicos** y «sólo por **ley**, que en todo caso deberá respetar su **contenido esencial**, podrá regularse su ejercicio». La ley orgánica (art. 81) se exige para el **desarrollo** de la Sección 1.ª, por mayoría absoluta del Congreso.",
+   "epigrafe": "Garantías de los derechos (Capítulo IV y otras)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-005",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-005",
+   "texto": "reformulado",
+   "q": "Según el art. 62 CE, corresponde al Rey ejercer el derecho de gracia con arreglo a la ley, que:",
+   "ctx": null,
+   "op": {
+    "a": "No podrá autorizar indultos generales.",
+    "b": "Podrá autorizar indultos generales con autorización de las Cortes.",
+    "c": "Solo podrá conceder indultos a propuesta del Congreso.",
+    "d": "Requiere en todo caso el refrendo del Presidente del Congreso."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 62.i: ejercer el derecho de gracia con arreglo a la ley, «que no podrá autorizar indultos generales». Los indultos los refrenda el Gobierno (Ministro de Justicia), no el Presidente del Congreso.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-006",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-006",
+   "texto": "reformulado",
+   "q": "¿Cuál es el único acto del Rey que NO necesita refrendo?",
+   "ctx": null,
+   "op": {
+    "a": "Sancionar y promulgar las leyes.",
+    "b": "Nombrar y relevar libremente a los miembros civiles y militares de su Casa.",
+    "c": "Nombrar al Presidente del Gobierno.",
+    "d": "Disolver las Cortes por el art. 99."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 56.3 y 65.2: el nombramiento y relevo de los miembros de su Casa no se refrenda. Las leyes las refrenda el Presidente del Gobierno; el nombramiento del Presidente y la disolución del art. 99, el Presidente del Congreso.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 1
+  },
+  {
+   "id": "t1-v-007",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-007",
+   "texto": "reformulado",
+   "q": "¿Dónde regula la Constitución las garantías de las libertades y derechos fundamentales?",
+   "ctx": null,
+   "op": {
+    "a": "En el Capítulo V del Título I (art. 55).",
+    "b": "En el Título Preliminar.",
+    "c": "En el Capítulo IV del Título I (arts. 53 y 54).",
+    "d": "En el Título IX."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Capítulo IV del Título I: garantías (arts. 53 y 54). El Capítulo V es la suspensión (art. 55) y el Título IX el Tribunal Constitucional.",
+   "epigrafe": "Estructura de la Constitución",
+   "dificultad": 1
+  },
+  {
+   "id": "t1-v-008",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-008",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes funciones corresponde al Rey según el art. 62 CE?",
+   "ctx": null,
+   "op": {
+    "a": "Dirigir la política exterior.",
+    "b": "Plantear la cuestión de confianza.",
+    "c": "Aprobar los Presupuestos Generales del Estado.",
+    "d": "El Alto Patronazgo de las Reales Academias."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 62.j: el Alto Patronazgo de las Reales Academias. La política exterior la dirige el Gobierno (art. 97), la cuestión de confianza la plantea el Presidente del Gobierno (art. 112) y los Presupuestos los aprueban las Cortes (art. 134).",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 1
+  },
+  {
+   "id": "t1-v-009",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-009",
+   "texto": "reformulado",
+   "q": "Según el art. 116 CE, ¿cuál es la duración máxima del estado de excepción?",
+   "ctx": null,
+   "op": {
+    "a": "30 días, prorrogable por otro plazo igual.",
+    "b": "15 días, prorrogable con autorización del Congreso.",
+    "c": "60 días, sin prórroga.",
+    "d": "La que fije el Congreso, sin límite."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Excepción: máximo 30 días prorrogables por otros 30, con autorización previa del Congreso. Alarma: máximo 15 días (la prórroga necesita autorización del Congreso). Sitio: la duración que fije el Congreso.",
+   "epigrafe": "Suspensión de derechos y estados excepcionales",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-010",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-010",
+   "texto": "reformulado",
+   "q": "Según el art. 1.2 CE, ¿dónde reside la soberanía nacional?",
+   "ctx": null,
+   "op": {
+    "a": "En las Cortes Generales.",
+    "b": "En el pueblo español, del que emanan los poderes del Estado.",
+    "c": "En el Rey, como Jefe del Estado.",
+    "d": "En la Nación española y las nacionalidades."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 1.2: «La soberanía nacional reside en el pueblo español, del que emanan los poderes del Estado». Las Cortes representan al pueblo español (art. 66.1).",
+   "epigrafe": "Título Preliminar: principios",
+   "dificultad": 1
+  },
+  {
+   "id": "t1-v-011",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-011",
+   "texto": "reformulado",
+   "q": "Según la Constitución, ¿cuál de los siguientes SÍ es un derecho fundamental (Sección 1.ª)?",
+   "ctx": null,
+   "op": {
+    "a": "La protección de la salud.",
+    "b": "Un medio ambiente adecuado.",
+    "c": "La libertad de residencia y circulación.",
+    "d": "Una vivienda digna."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Residencia y circulación es el art. 19 (Sección 1.ª). Salud (43), medio ambiente (45) y vivienda (47) son principios rectores del Capítulo III.",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)",
+   "dificultad": 1
+  },
+  {
+   "id": "t1-v-012",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-012",
+   "texto": "reformulado",
+   "q": "Según el art. 153 CE, ¿qué órgano ejerce el control económico y presupuestario de las Comunidades Autónomas?",
+   "ctx": null,
+   "op": {
+    "a": "El Consejo General del Poder Judicial.",
+    "b": "El Tribunal Supremo.",
+    "c": "El Defensor del Pueblo.",
+    "d": "El Tribunal de Cuentas."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 153.d: el control económico y presupuestario corresponde al Tribunal de Cuentas. El TC controla la constitucionalidad, el Gobierno las funciones delegadas y la jurisdicción contencioso-administrativa la administración autonómica. Materia fuera del epígrafe vigente.",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-013",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-013",
+   "texto": "reformulado",
+   "q": "Según el art. 147.2 CE, ¿cuál de los siguientes contenidos DEBEN incluir los Estatutos de Autonomía?",
+   "ctx": null,
+   "op": {
+    "a": "Las competencias asumidas dentro del marco de la Constitución.",
+    "b": "Las competencias no asumidas.",
+    "c": "Los tratados internacionales aplicables.",
+    "d": "El régimen electoral general."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los Estatutos deben contener la denominación, la delimitación del territorio, sus instituciones y las competencias **asumidas**. El régimen electoral general es materia de ley orgánica estatal. Materia fuera del epígrafe vigente.",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-014",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-014",
+   "texto": "reformulado",
+   "q": "Según el art. 9.3 CE, ¿cuál de los siguientes principios garantiza la Constitución?",
+   "ctx": null,
+   "op": {
+    "a": "La superioridad de los tratados sobre la Constitución.",
+    "b": "La jerarquía normativa.",
+    "c": "La irretroactividad de las disposiciones favorables.",
+    "d": "La reserva de ley orgánica para todas las materias."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La jerarquía normativa es uno de los principios del 9.3. Los tratados no están por encima de la Constitución (art. 95) y la irretroactividad que garantiza es la de las disposiciones sancionadoras **no favorables**.",
+   "epigrafe": "Título Preliminar: principios",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-015",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-015",
+   "texto": "reformulado",
+   "q": "Según el art. 22 CE, ¿qué asociaciones están prohibidas?",
+   "ctx": null,
+   "op": {
+    "a": "Las que no se inscriban en un registro.",
+    "b": "Las de carácter político.",
+    "c": "Las secretas y las de carácter paramilitar.",
+    "d": "Las formadas por extranjeros."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 22.5: se prohíben las asociaciones secretas y las de carácter paramilitar. La inscripción en el registro es «a los solos efectos de publicidad» (22.3) y las asociaciones solo pueden disolverse o suspenderse por resolución judicial motivada (22.4).",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-016",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-016",
+   "texto": "reformulado",
+   "q": "¿Qué derecho de la Sección 2.ª del Capítulo II es, por excepción, protegible mediante recurso de amparo?",
+   "ctx": null,
+   "op": {
+    "a": "El derecho a la propiedad privada.",
+    "b": "La libertad de empresa.",
+    "c": "El derecho al trabajo.",
+    "d": "La objeción de conciencia del art. 30."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 53.2: el amparo protege el art. 14, la Sección 1.ª y, por mención expresa, la objeción de conciencia del art. 30. El resto de la Sección 2.ª no tiene amparo.",
+   "epigrafe": "Garantías de los derechos (Capítulo IV y otras)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-017",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-017",
+   "texto": "reformulado",
+   "q": "Según el art. 152.1 CE, el Presidente de una Comunidad Autónoma es elegido por:",
+   "ctx": null,
+   "op": {
+    "a": "La Asamblea Legislativa, de entre sus miembros, y nombrado por el Rey.",
+    "b": "Sufragio universal directo de los ciudadanos de la Comunidad.",
+    "c": "El Consejo de Gobierno.",
+    "d": "El Gobierno de la Nación."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La Asamblea elige al Presidente de entre sus miembros y el Rey lo nombra. Materia fuera del epígrafe vigente.",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-018",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-018",
+   "texto": "reformulado",
+   "q": "¿Qué mayoría exige el art. 81.2 CE para aprobar, modificar o derogar una ley orgánica?",
+   "ctx": null,
+   "op": {
+    "a": "Mayoría simple de ambas Cámaras.",
+    "b": "Mayoría absoluta del Congreso en una votación final sobre el conjunto del proyecto.",
+    "c": "Tres quintos de cada Cámara.",
+    "d": "Dos tercios del Congreso."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las leyes orgánicas (entre ellas las que aprueban los Estatutos) exigen mayoría absoluta del Congreso en una votación final sobre el conjunto. Tres quintos es la reforma constitucional ordinaria (art. 167).",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-019",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-019",
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes NO es un valor superior del ordenamiento jurídico según el art. 1.1 CE?",
+   "ctx": null,
+   "op": {
+    "a": "La libertad.",
+    "b": "La igualdad.",
+    "c": "La solidaridad.",
+    "d": "El pluralismo político."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los valores superiores son cuatro: libertad, justicia, igualdad y pluralismo político. La solidaridad aparece en el art. 2 (entre nacionalidades y regiones), pero no es valor superior.",
+   "epigrafe": "Título Preliminar: principios",
+   "dificultad": 1
+  },
+  {
+   "id": "t1-v-020",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-020",
+   "texto": "reformulado",
+   "q": "Según el art. 141.4 CE, en los archipiélagos, las islas tendrán además su administración propia en forma de:",
+   "ctx": null,
+   "op": {
+    "a": "Diputaciones forales.",
+    "b": "Comarcas.",
+    "c": "Mancomunidades.",
+    "d": "Cabildos o Consejos."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 141.4: «En los archipiélagos, las islas tendrán además su administración propia en forma de Cabildos o Consejos». Materia fuera del epígrafe vigente.",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-021",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-021",
+   "texto": "reformulado",
+   "q": "Según el Código Civil, ¿qué papel tiene la jurisprudencia?",
+   "ctx": null,
+   "op": {
+    "a": "Complementa el ordenamiento jurídico, pero no es fuente del Derecho.",
+    "b": "Es la primera fuente del ordenamiento.",
+    "c": "Es fuente del Derecho con el mismo rango que la ley.",
+    "d": "Solo se aplica en defecto de costumbre."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 1.6 CC: la jurisprudencia del Tribunal Supremo complementa el ordenamiento. Las fuentes son la ley, la costumbre y los principios generales del derecho (art. 1.1). Materia fuera del epígrafe vigente.",
+   "epigrafe": "Título Preliminar: principios",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-022",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-022",
+   "texto": "reformulado",
+   "q": "Según el art. 29.2 CE, los miembros de las Fuerzas Armadas o Institutos armados sometidos a disciplina militar:",
+   "ctx": null,
+   "op": {
+    "a": "No tienen derecho de petición.",
+    "b": "Solo pueden ejercer el derecho de petición individualmente y con arreglo a su legislación específica.",
+    "c": "Solo pueden ejercerlo colectivamente.",
+    "d": "Lo ejercen sin ninguna limitación."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El art. 29 reconoce a todos los españoles el derecho de petición individual y colectiva por escrito; los miembros de las FF.AA. e Institutos armados solo pueden ejercerlo individualmente.",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-023",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-023",
+   "texto": "reformulado",
+   "q": "Según el art. 116.2 CE, el estado de alarma:",
+   "ctx": null,
+   "op": {
+    "a": "Lo declara el Congreso por mayoría absoluta.",
+    "b": "Lo declara el Gobierno previa autorización del Congreso por 30 días.",
+    "c": "Lo declara el Gobierno por decreto en Consejo de Ministros por un máximo de 15 días, dando cuenta al Congreso.",
+    "d": "Lo declara el Rey a propuesta del Presidente del Gobierno."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Alarma: Gobierno, máximo 15 días, dando cuenta al Congreso (la prórroga sí exige su autorización). Excepción: Gobierno con autorización previa del Congreso, 30 días. Sitio: Congreso por mayoría absoluta.",
+   "epigrafe": "Suspensión de derechos y estados excepcionales",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-024",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-024",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes funciones corresponde al Rey?",
+   "ctx": null,
+   "op": {
+    "a": "Dirigir la defensa del Estado.",
+    "b": "Dirigir la Administración militar.",
+    "c": "Dirigir la acción del Gobierno.",
+    "d": "El mando supremo de las Fuerzas Armadas."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 62.h: el mando supremo de las Fuerzas Armadas. Dirigir la Administración militar y la defensa es del Gobierno (art. 97); dirigir la acción del Gobierno, de su Presidente (art. 98.2).",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 1
+  },
+  {
+   "id": "t1-v-025",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-025",
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes derechos NO exige ley orgánica para su desarrollo, aunque sí tiene recurso de amparo?",
+   "ctx": null,
+   "op": {
+    "a": "El principio de igualdad del art. 14.",
+    "b": "El derecho de huelga.",
+    "c": "La libertad de expresión.",
+    "d": "El derecho de asociación."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El art. 14 está fuera de la Sección 1.ª: tiene amparo y procedimiento preferente y sumario (53.2), pero no reserva de ley orgánica (81). Huelga (28.2), expresión (20) y asociación (22) son de la Sección 1.ª.",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-026",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-026",
+   "texto": "reformulado",
+   "q": "Según el art. 91 CE, ¿en qué plazo sanciona el Rey las leyes aprobadas por las Cortes Generales?",
+   "ctx": null,
+   "op": {
+    "a": "En el plazo de un mes.",
+    "b": "En el plazo de quince días.",
+    "c": "En el plazo de diez días.",
+    "d": "Sin plazo determinado."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 91: el Rey sancionará en el plazo de quince días las leyes aprobadas por las Cortes Generales, las promulgará y ordenará su inmediata publicación.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-027",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-027",
+   "texto": "reformulado",
+   "q": "Según el art. 150.1 CE, ¿qué instrumento permite a las Cortes atribuir a las CCAA la facultad de dictar normas legislativas en el marco de principios, bases y directrices fijados por una ley estatal?",
+   "ctx": null,
+   "op": {
+    "a": "Las leyes de armonización.",
+    "b": "Los decretos legislativos.",
+    "c": "Las leyes marco.",
+    "d": "Los Estatutos de Autonomía."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 150.1: leyes marco. Art. 150.2: transferencia o delegación por ley orgánica. Art. 150.3: leyes de armonización. Materia fuera del epígrafe vigente.",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-028",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-028",
+   "texto": "reformulado",
+   "q": "Según el art. 141.1 CE, cualquier alteración de los límites provinciales debe ser aprobada por:",
+   "ctx": null,
+   "op": {
+    "a": "Las Asambleas de las CCAA afectadas.",
+    "b": "El Gobierno mediante real decreto.",
+    "c": "Los municipios afectados en referéndum.",
+    "d": "Las Cortes Generales mediante ley orgánica."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 141.1: la provincia es entidad local con personalidad jurídica propia y cualquier alteración de sus límites ha de ser aprobada por las Cortes Generales mediante ley orgánica. Materia fuera del epígrafe vigente.",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-029",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-029",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes materias es competencia exclusiva del Estado según el art. 149.1 CE?",
+   "ctx": null,
+   "op": {
+    "a": "Relaciones internacionales.",
+    "b": "Agricultura y ganadería.",
+    "c": "Fomento del deporte.",
+    "d": "Ferias interiores."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Relaciones internacionales: art. 149.1.3.ª. Agricultura y ganadería (148.1.7.ª), deporte (148.1.19.ª) y ferias interiores (148.1.12.ª) pueden asumirlas las CCAA. Materia fuera del epígrafe vigente.",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-030",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-030",
+   "texto": "reformulado",
+   "q": "Según el art. 30.2 CE, la ley fijará las obligaciones militares de los españoles y regulará:",
+   "ctx": null,
+   "op": {
+    "a": "La prohibición del servicio civil.",
+    "b": "La objeción de conciencia, con las debidas garantías, y las demás causas de exención del servicio militar obligatorio.",
+    "c": "El deber de trabajar para el Estado en caso de guerra.",
+    "d": "La pérdida de la nacionalidad de quien no cumpla el servicio militar."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 30.2: la ley regulará la objeción de conciencia y las causas de exención, pudiendo imponer en su caso una prestación social sustitutoria. El 30.3 permite establecer un servicio civil.",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-031",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-031",
+   "texto": "reformulado",
+   "q": "Según el art. 62.g CE, el Rey preside las sesiones del Consejo de Ministros:",
+   "ctx": null,
+   "op": {
+    "a": "Siempre que se aprueben decretos-leyes.",
+    "b": "Por derecho propio, en todas las sesiones.",
+    "c": "Cuando lo estime oportuno, a petición del Presidente del Gobierno, a efectos de ser informado de los asuntos de Estado.",
+    "d": "Solo si lo autoriza el Congreso."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 62.g: corresponde al Rey ser informado de los asuntos de Estado y presidir a estos efectos las sesiones del Consejo de Ministros, cuando lo estime oportuno, a petición del Presidente del Gobierno.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 1
+  },
+  {
+   "id": "t1-v-032",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-032",
+   "texto": "reformulado",
+   "q": "¿Qué Título de la Constitución regula la Corona?",
+   "ctx": null,
+   "op": {
+    "a": "El Título I.",
+    "b": "El Título III.",
+    "c": "El Título IV.",
+    "d": "El Título II."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Título II, De la Corona (arts. 56 a 65). El I son los derechos y deberes fundamentales, el III las Cortes Generales y el IV el Gobierno y la Administración.",
+   "epigrafe": "Estructura de la Constitución",
+   "dificultad": 1
+  },
+  {
+   "id": "t1-v-033",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-033",
+   "texto": "reformulado",
+   "q": "Según el art. 17.2 CE, la detención preventiva no podrá durar más del tiempo estrictamente necesario y, en todo caso, un plazo máximo de:",
+   "ctx": null,
+   "op": {
+    "a": "Setenta y dos horas.",
+    "b": "Veinticuatro horas.",
+    "c": "Cuarenta y ocho horas.",
+    "d": "Cinco días."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 17.2: máximo 72 horas, tras las cuales el detenido debe ser puesto en libertad o a disposición de la autoridad judicial. El art. 17.4 prevé el habeas corpus.",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-034",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-034",
+   "texto": "reformulado",
+   "q": "Según el art. 64.2 CE, ¿quién responde de los actos del Rey?",
+   "ctx": null,
+   "op": {
+    "a": "El propio Rey.",
+    "b": "Las personas que los refrenden.",
+    "c": "Las Cortes Generales.",
+    "d": "El Consejo de Estado."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 64.2: «De los actos del Rey serán responsables las personas que los refrenden». La persona del Rey es inviolable y no está sujeta a responsabilidad (56.3).",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-035",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-035",
+   "texto": "reformulado",
+   "q": "Según el art. 63.3 CE, al Rey corresponde declarar la guerra y hacer la paz:",
+   "ctx": null,
+   "op": {
+    "a": "Previa autorización del Congreso de los Diputados.",
+    "b": "A propuesta del Consejo de Seguridad Nacional.",
+    "c": "Previa autorización de las Cortes Generales.",
+    "d": "Sin necesidad de autorización."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 63.3: «Al Rey corresponde, previa autorización de las Cortes Generales, declarar la guerra y hacer la paz». Este es un caso en el que sí aparece «previa autorización de las Cortes» (en el referéndum no).",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-036",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-036",
+   "texto": "reformulado",
+   "q": "Según el art. 57.4 CE, quedan excluidos de la sucesión a la Corona, por sí y sus descendientes, quienes:",
+   "ctx": null,
+   "op": {
+    "a": "Contraigan matrimonio con extranjeros.",
+    "b": "No hayan jurado la Constitución antes de los 18 años.",
+    "c": "Renuncien a la nacionalidad española de origen.",
+    "d": "Contraigan matrimonio contra la expresa prohibición del Rey y de las Cortes Generales."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 57.4: quienes, teniendo derecho a la sucesión, contrajeren matrimonio contra la expresa prohibición del Rey y de las Cortes Generales quedan excluidos, ellos y sus descendientes.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-037",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-037",
+   "texto": "reformulado",
+   "q": "Según el art. 162.1.b CE, ¿quién NO está legitimado para interponer recurso de amparo?",
+   "ctx": null,
+   "op": {
+    "a": "El Presidente del Gobierno, por razón de su cargo.",
+    "b": "Toda persona natural o jurídica que invoque un interés legítimo.",
+    "c": "El Defensor del Pueblo.",
+    "d": "El Ministerio Fiscal."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Están legitimados para el amparo toda persona natural o jurídica con interés legítimo, el Defensor del Pueblo y el Ministerio Fiscal. El Presidente del Gobierno sí lo está para el recurso de inconstitucionalidad, no para el de amparo.",
+   "epigrafe": "Garantías de los derechos (Capítulo IV y otras)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-038",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-038",
+   "texto": "reformulado",
+   "q": "Según la Ley 7/1985 de Bases de Régimen Local, ¿qué órgano municipal existe en TODOS los municipios?",
+   "ctx": null,
+   "op": {
+    "a": "La Junta de Gobierno Local.",
+    "b": "El Alcalde, los Tenientes de Alcalde y el Pleno.",
+    "c": "La Comisión Especial de Cuentas como único órgano.",
+    "d": "El Consejo Insular."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 20.1.a LBRL: el Alcalde, los Tenientes de Alcalde y el Pleno existen en todos los ayuntamientos. La Junta de Gobierno Local solo en municipios de más de 5.000 habitantes (o si lo acuerda el Pleno). Materia fuera del epígrafe.",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-039",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-039",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes materias pueden asumir las CCAA según el art. 148.1 CE?",
+   "ctx": null,
+   "op": {
+    "a": "La defensa y las Fuerzas Armadas.",
+    "b": "El sistema monetario.",
+    "c": "La promoción y ordenación del turismo en su ámbito territorial.",
+    "d": "La nacionalidad e inmigración."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Turismo: art. 148.1.18.ª. Defensa (149.1.4.ª), sistema monetario (149.1.11.ª) e inmigración y nacionalidad (149.1.2.ª) son exclusivas del Estado. Materia fuera del epígrafe.",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-040",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-040",
+   "texto": "reformulado",
+   "q": "¿Qué derechos pueden suspenderse de forma INDIVIDUAL, por una ley orgánica, para personas determinadas en investigaciones sobre bandas armadas o terrorismo (art. 55.2)?",
+   "ctx": null,
+   "op": {
+    "a": "Los de los arts. 18.1 y 20.",
+    "b": "Los de los arts. 21 y 22.",
+    "c": "Todos los de la Sección 1.ª.",
+    "d": "Los de los arts. 17.2, 18.2 y 18.3."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 55.2: plazo de detención (17.2), inviolabilidad del domicilio (18.2) y secreto de las comunicaciones (18.3), con intervención judicial y control parlamentario.",
+   "epigrafe": "Suspensión de derechos y estados excepcionales",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-041",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-041",
+   "texto": "reformulado",
+   "q": "Según el art. 5 CE, ¿cuál es la capital del Estado?",
+   "ctx": null,
+   "op": {
+    "a": "La villa de Madrid.",
+    "b": "La ciudad de Madrid.",
+    "c": "La Comunidad de Madrid.",
+    "d": "No la fija la Constitución, sino una ley orgánica."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 5: «La capital del Estado es la villa de Madrid».",
+   "epigrafe": "Título Preliminar: principios",
+   "dificultad": 1
+  },
+  {
+   "id": "t1-v-042",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-042",
+   "texto": "reformulado",
+   "q": "Según el art. 62.d CE, al Rey le corresponde, respecto al Presidente del Gobierno:",
+   "ctx": null,
+   "op": {
+    "a": "Elegirlo libremente entre los diputados.",
+    "b": "Proponer el candidato y, en su caso, nombrarlo, así como poner fin a sus funciones en los términos previstos en la Constitución.",
+    "c": "Nombrarlo a propuesta del Senado.",
+    "d": "Destituirlo libremente."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 62.d. La propuesta se hace tras consultar a los representantes de los grupos políticos y a través del Presidente del Congreso (art. 99), que refrenda la propuesta y el nombramiento.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-043",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-043",
+   "texto": "reformulado",
+   "q": "Según el art. 149.1.1.ª CE, el Estado tiene competencia exclusiva sobre:",
+   "ctx": null,
+   "op": {
+    "a": "La organización de sus instituciones de autogobierno.",
+    "b": "Las obras públicas de interés de la Comunidad Autónoma.",
+    "c": "La regulación de las condiciones básicas que garanticen la igualdad de todos los españoles en el ejercicio de los derechos y deberes constitucionales.",
+    "d": "Los museos y bibliotecas de interés autonómico."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Es la primera materia del 149.1. Las otras tres son materias asumibles por las CCAA del art. 148.1. Materia fuera del epígrafe.",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-044",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-044",
+   "texto": "reformulado",
+   "q": "Según el art. 140 CE, los Concejales serán elegidos por:",
+   "ctx": null,
+   "op": {
+    "a": "El Pleno de la Diputación Provincial.",
+    "b": "Los Alcaldes de la comarca.",
+    "c": "La Asamblea de la Comunidad Autónoma.",
+    "d": "Los vecinos del municipio mediante sufragio universal, igual, libre, directo y secreto."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 140: los Concejales los eligen los vecinos por sufragio universal, igual, libre, directo y secreto; los Alcaldes, los Concejales o los vecinos. Materia fuera del epígrafe.",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-045",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-045",
+   "texto": "reformulado",
+   "q": "Según el art. 147.1 CE, los Estatutos de Autonomía son:",
+   "ctx": null,
+   "op": {
+    "a": "La norma institucional básica de cada Comunidad Autónoma.",
+    "b": "Reglamentos aprobados por el Gobierno.",
+    "c": "Leyes ordinarias de las Asambleas autonómicas.",
+    "d": "Tratados entre el Estado y las CCAA."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 147.1: los Estatutos son la norma institucional básica de cada Comunidad Autónoma y el Estado los reconoce y ampara como parte integrante de su ordenamiento. Se aprueban por ley orgánica. Materia fuera del epígrafe.",
+   "epigrafe": "Organización territorial y fuentes (fuera del epígrafe actual)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-046",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-046",
+   "texto": "reformulado",
+   "q": "¿Qué artículo de la Constitución se reformó en 2026 para que la isla de Formentera elija un senador propio?",
+   "ctx": null,
+   "op": {
+    "a": "El artículo 49.",
+    "b": "El artículo 69.3.",
+    "c": "El artículo 135.",
+    "d": "El artículo 13.2."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La reforma del art. 69.3 (BOE de 20 de mayo de 2026) hace de cada isla con Cabildo o Consejo Insular una circunscripción y separa Formentera de Ibiza. El 13.2 se reformó en 1992, el 135 en 2011 y el 49 en 2024.",
+   "epigrafe": "Estructura de la Constitución",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-v-047",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t1-h-047",
+   "texto": "reformulado",
+   "q": "En el estado de EXCEPCIÓN, ¿qué derecho del art. 17 NO puede suspenderse?",
+   "ctx": null,
+   "op": {
+    "a": "El del art. 17.2: plazo máximo de detención.",
+    "b": "El del art. 17.1: derecho a la libertad.",
+    "c": "El del art. 17.3: información de derechos y asistencia de abogado al detenido.",
+    "d": "Ninguno: el art. 17 se suspende entero."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El art. 55.1 exceptúa el 17.3 en el estado de excepción; solo puede suspenderse en el estado de sitio.",
+   "epigrafe": "Suspensión de derechos y estados excepcionales",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-n-001",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuántos artículos tiene la Constitución Española de 1978?",
+   "ctx": null,
+   "op": {
+    "a": "159",
+    "b": "179",
+    "c": "196",
+    "d": "169"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Tiene un Preámbulo, 169 artículos, 4 disposiciones adicionales, 9 transitorias, 1 derogatoria y 1 final.",
+   "epigrafe": "Estructura de la Constitución",
+   "dificultad": 1
+  },
+  {
+   "id": "t1-n-002",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿En qué fecha fue ratificada la Constitución en referéndum?",
+   "ctx": null,
+   "op": {
+    "a": "El 6 de diciembre de 1978.",
+    "b": "El 31 de octubre de 1978.",
+    "c": "El 27 de diciembre de 1978.",
+    "d": "El 29 de diciembre de 1978."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "31 de octubre: aprobación por las Cortes; 6 de diciembre: referéndum; 27 de diciembre: sanción real; 29 de diciembre: publicación en el BOE y entrada en vigor.",
+   "epigrafe": "Estructura de la Constitución",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-n-003",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué sustituyó la reforma del art. 49 CE de 2024?",
+   "ctx": null,
+   "op": {
+    "a": "El sufragio pasivo de los extranjeros en elecciones municipales.",
+    "b": "La expresión «disminuidos físicos, sensoriales y psíquicos» por «personas con discapacidad».",
+    "c": "La estabilidad presupuestaria.",
+    "d": "La preferencia del varón en la sucesión a la Corona."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La reforma del art. 49 (BOE de 17 de febrero de 2024) habla de «personas con discapacidad» y refuerza su autonomía e inclusión. El sufragio pasivo de extranjeros fue la de 1992 (art. 13.2) y la estabilidad presupuestaria la de 2011 (art. 135).",
+   "epigrafe": "Estructura de la Constitución",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-n-004",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué partes de la Constitución exigen el procedimiento agravado del art. 168 para su reforma?",
+   "ctx": null,
+   "op": {
+    "a": "Todo el Título I y el Título VIII.",
+    "b": "Solo el Título II, De la Corona.",
+    "c": "El Título Preliminar, la Sección 1.ª del Capítulo II del Título I y el Título II, o una revisión total.",
+    "d": "El Título X, De la reforma constitucional, únicamente."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El art. 168 exige dos tercios de cada Cámara, disolución inmediata, ratificación por las nuevas Cámaras por dos tercios y referéndum obligatorio.",
+   "epigrafe": "Estructura de la Constitución",
+   "dificultad": 3
+  },
+  {
+   "id": "t1-n-005",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En la reforma constitucional ordinaria (art. 167), ¿quién puede solicitar que se someta a referéndum?",
+   "ctx": null,
+   "op": {
+    "a": "Quinientas mil firmas de ciudadanos.",
+    "b": "El Rey, en todo caso.",
+    "c": "Una quinta parte de los diputados, en el plazo de un mes.",
+    "d": "Una décima parte de los miembros de cualquiera de las Cámaras, en los 15 días siguientes a su aprobación."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 167.3: referéndum si lo pide una décima parte de los miembros de cualquier Cámara en 15 días. En la reforma de 2026 del art. 69.3 nadie lo pidió.",
+   "epigrafe": "Estructura de la Constitución",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-n-006",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Puede la iniciativa popular promover una reforma constitucional?",
+   "ctx": null,
+   "op": {
+    "a": "No: el art. 166 remite solo a los apartados 1 y 2 del art. 87 y excluye la iniciativa popular.",
+    "b": "Sí, con 500.000 firmas.",
+    "c": "Sí, con 1.000.000 de firmas.",
+    "d": "Solo si la apoya una Asamblea autonómica."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La iniciativa de reforma corresponde al Gobierno, al Congreso, al Senado y a las Asambleas de las CCAA. El art. 87.3 excluye la iniciativa popular en materias de ley orgánica, tributarias, internacionales, prerrogativa de gracia y, por el art. 166, la reforma.",
+   "epigrafe": "Estructura de la Constitución",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-n-007",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según el art. 169 CE, ¿cuándo NO puede iniciarse la reforma constitucional?",
+   "ctx": null,
+   "op": {
+    "a": "Durante el último año de la legislatura.",
+    "b": "En tiempo de guerra o de vigencia de alguno de los estados del art. 116.",
+    "c": "Mientras el Rey sea menor de edad.",
+    "d": "Durante los periodos de vacaciones parlamentarias."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 169: no puede iniciarse la reforma en tiempo de guerra ni de vigencia de los estados de alarma, excepción o sitio.",
+   "epigrafe": "Estructura de la Constitución",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-n-008",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según el art. 59.3 CE, si no hubiera persona a quien corresponda la Regencia, las Cortes Generales nombran una Regencia compuesta por:",
+   "ctx": null,
+   "op": {
+    "a": "Dos o cuatro personas.",
+    "b": "Tres personas necesariamente.",
+    "c": "Una, tres o cinco personas.",
+    "d": "Siete personas."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 59.3: la Regencia nombrada por las Cortes se compone de una, tres o cinco personas. Para ser Regente hay que ser español y mayor de edad (59.4).",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-n-009",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según el art. 60.1 CE, el tutor del Rey menor nombrado en el testamento del Rey difunto debe ser:",
+   "ctx": null,
+   "op": {
+    "a": "Miembro de la Familia Real.",
+    "b": "Elegido por las Cortes Generales en todo caso.",
+    "c": "El Presidente del Gobierno.",
+    "d": "Mayor de edad y español de nacimiento."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 60.1: será tutor quien haya nombrado en su testamento el Rey difunto, siempre que sea mayor de edad y español de nacimiento. La tutela es incompatible con todo cargo o representación política (60.2).",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-n-010",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según el art. 61.2 CE, el Príncipe heredero, al alcanzar la mayoría de edad, jura ante las Cortes Generales además:",
+   "ctx": null,
+   "op": {
+    "a": "Fidelidad al Rey.",
+    "b": "Fidelidad al Gobierno.",
+    "c": "Los Estatutos de Autonomía.",
+    "d": "Obediencia al Presidente del Congreso."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El Príncipe heredero y los Regentes prestan el mismo juramento que el Rey (desempeñar fielmente sus funciones, guardar la Constitución y las leyes y respetar los derechos de los ciudadanos y de las CCAA) y además el de fidelidad al Rey. La princesa Leonor juró el 31 de octubre de 2023.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-n-011",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué norma hizo efectiva la abdicación de Juan Carlos I, en aplicación del art. 57.5 CE?",
+   "ctx": null,
+   "op": {
+    "a": "Un real decreto del Consejo de Ministros de 2014.",
+    "b": "La Ley Orgánica 3/2014, de 18 de junio.",
+    "c": "Una ley ordinaria de 2014.",
+    "d": "Una reforma constitucional de 2014."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El art. 57.5 exige ley orgánica para las abdicaciones y renuncias: fue la LO 3/2014. Felipe VI fue proclamado ante las Cortes el 19 de junio de 2014.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-n-012",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según el art. 58 CE, la Reina consorte o el consorte de la Reina:",
+   "ctx": null,
+   "op": {
+    "a": "Ejercen las funciones del Rey en su ausencia.",
+    "b": "Refrendan los actos del Rey.",
+    "c": "No pueden asumir funciones constitucionales, salvo lo dispuesto para la Regencia.",
+    "d": "Presiden las Cortes en la proclamación."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 58: el consorte no puede asumir funciones constitucionales, salvo lo dispuesto para la Regencia.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 1
+  },
+  {
+   "id": "t1-n-013",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según el art. 65.1 CE, ¿cómo se financia la Casa del Rey?",
+   "ctx": null,
+   "op": {
+    "a": "Mediante partidas detalladas aprobadas por el Congreso.",
+    "b": "Con un porcentaje fijo de los ingresos del Estado.",
+    "c": "Con cargo al presupuesto del Ministerio de la Presidencia, que la distribuye.",
+    "d": "El Rey recibe de los Presupuestos del Estado una cantidad global y la distribuye libremente."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 65.1: cantidad global de los Presupuestos para el sostenimiento de su Familia y Casa, que distribuye libremente.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-n-014",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según el art. 56.1 CE, el Rey asume la más alta representación del Estado en las relaciones internacionales, especialmente con:",
+   "ctx": null,
+   "op": {
+    "a": "Las naciones de su comunidad histórica.",
+    "b": "Los Estados miembros de la Unión Europea.",
+    "c": "Los países de la OTAN.",
+    "d": "Las monarquías europeas."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 56.1: «especialmente con las naciones de su comunidad histórica».",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-n-015",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿A quién nombra el Rey a propuesta del Gobierno, oído el Consejo General del Poder Judicial (art. 124.4 CE)?",
+   "ctx": null,
+   "op": {
+    "a": "Al Presidente del Tribunal Supremo.",
+    "b": "Al Fiscal General del Estado.",
+    "c": "A los magistrados del Tribunal Constitucional.",
+    "d": "Al Defensor del Pueblo."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 124.4: Fiscal General del Estado. El Presidente del Supremo lo propone el CGPJ (123.2); el Rey nombra a los 12 magistrados del TC (159.1); el Defensor del Pueblo lo designan las Cortes.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-n-016",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según el art. 12 CE, los españoles son mayores de edad a los:",
+   "ctx": null,
+   "op": {
+    "a": "Dieciséis años.",
+    "b": "Veintiún años.",
+    "c": "Dieciocho años.",
+    "d": "Catorce años."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 12: «Los españoles son mayores de edad a los dieciocho años».",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)",
+   "dificultad": 1
+  },
+  {
+   "id": "t1-n-017",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué apartado del art. 18 CE ordena a la ley limitar el uso de la informática para garantizar el honor y la intimidad?",
+   "ctx": null,
+   "op": {
+    "a": "El 18.1.",
+    "b": "El 18.2.",
+    "c": "El 18.3.",
+    "d": "El 18.4."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "18.1 honor, intimidad e imagen; 18.2 inviolabilidad del domicilio; 18.3 secreto de las comunicaciones; 18.4 límites al uso de la informática (base del derecho a la protección de datos, hoy LO 3/2018).",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-n-018",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según el art. 13.3 CE, ¿qué actos NO se consideran delitos políticos a efectos de la extradición?",
+   "ctx": null,
+   "op": {
+    "a": "Los actos de terrorismo.",
+    "b": "Los delitos contra la Corona.",
+    "c": "Los delitos de rebelión.",
+    "d": "Los delitos electorales."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La extradición excluye los delitos políticos, «no considerándose como tales los actos de terrorismo».",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-n-019",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según el art. 13.2 CE, tras la reforma de 1992, los extranjeros pueden ser titulares en las elecciones municipales del derecho de sufragio:",
+   "ctx": null,
+   "op": {
+    "a": "Solo activo.",
+    "b": "Activo y pasivo, atendiendo a criterios de reciprocidad por tratado o ley.",
+    "c": "Solo pasivo.",
+    "d": "Activo y pasivo sin necesidad de reciprocidad."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La reforma de 1992 (Tratado de Maastricht) añadió «y pasivo».",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-n-020",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según el art. 116.5 CE, mientras esté declarado alguno de los estados de alarma, excepción o sitio:",
+   "ctx": null,
+   "op": {
+    "a": "Quedan suspendidos todos los derechos fundamentales.",
+    "b": "El Gobierno no responde de sus actos.",
+    "c": "No podrá procederse a la disolución del Congreso.",
+    "d": "Las Cortes quedan disueltas automáticamente."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "No se puede disolver el Congreso; si las Cámaras no están en sesiones se convocan automáticamente; y la declaración no modifica la responsabilidad del Gobierno (116.6).",
+   "epigrafe": "Suspensión de derechos y estados excepcionales",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-n-021",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué ley orgánica regula los estados de alarma, excepción y sitio?",
+   "ctx": null,
+   "op": {
+    "a": "La LO 6/1984.",
+    "b": "La LO 2/1979.",
+    "c": "La LO 3/1981.",
+    "d": "La LO 4/1981, de 1 de junio."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La LO 4/1981. La 6/1984 es el habeas corpus, la 2/1979 la del Tribunal Constitucional y la 3/1981 la del Defensor del Pueblo.",
+   "epigrafe": "Suspensión de derechos y estados excepcionales",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-n-022",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Permite el estado de alarma suspender derechos fundamentales?",
+   "ctx": null,
+   "op": {
+    "a": "No: solo permite limitarlos; la suspensión del art. 55.1 exige estado de excepción o de sitio.",
+    "b": "Sí, todos los del art. 55.1.",
+    "c": "Sí, pero solo el derecho de reunión.",
+    "d": "Sí, si lo autoriza el Senado."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Por eso la STC 148/2021 declaró inconstitucional el confinamiento domiciliario de marzo de 2020: suponía una suspensión, no una limitación.",
+   "epigrafe": "Suspensión de derechos y estados excepcionales",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-n-023",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según el art. 53.2 CE, la tutela ante los Tribunales ordinarios de los derechos del art. 14 y de la Sección 1.ª se basa en los principios de:",
+   "ctx": null,
+   "op": {
+    "a": "Oralidad y gratuidad.",
+    "b": "Preferencia y sumariedad.",
+    "c": "Publicidad y contradicción.",
+    "d": "Celeridad y economía procesal."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 53.2: procedimiento basado en los principios de preferencia y sumariedad y, en su caso, recurso de amparo ante el TC.",
+   "epigrafe": "Garantías de los derechos (Capítulo IV y otras)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-n-024",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según el art. 54 CE, el Defensor del Pueblo es:",
+   "ctx": null,
+   "op": {
+    "a": "Un órgano del Poder Judicial.",
+    "b": "Un órgano dependiente del Gobierno.",
+    "c": "Alto comisionado de las Cortes Generales para la defensa de los derechos del Título I.",
+    "d": "Un magistrado del Tribunal Constitucional."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Lo regula una ley orgánica (LO 3/1981), lo designan las Cortes y puede supervisar la actividad de la Administración dando cuenta a las Cortes.",
+   "epigrafe": "Garantías de los derechos (Capítulo IV y otras)",
+   "dificultad": 2
+  },
+  {
+   "id": "t1-n-025",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según el art. 4.1 CE, en la bandera de España la franja amarilla es:",
+   "ctx": null,
+   "op": {
+    "a": "De la misma anchura que las rojas.",
+    "b": "De triple anchura que cada una de las rojas.",
+    "c": "La mitad de ancha que cada una de las rojas.",
+    "d": "De doble anchura que cada una de las rojas."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Art. 4.1: tres franjas horizontales, roja, amarilla y roja, siendo la amarilla de doble anchura que cada una de las rojas.",
+   "epigrafe": "Título Preliminar: principios",
+   "dificultad": 2
+  }
+ ],
+ "tarjetas": [
+  {
+   "id": "t1-c-001",
+   "anverso": "Títulos de la CE",
+   "reverso": "Preliminar; I derechos; II Corona; III Cortes; IV Gobierno; V Gobierno-Cortes; VI Poder Judicial; VII Economía; VIII Territorial; IX TC; X Reforma.",
+   "epigrafe": "Estructura de la Constitución"
+  },
+  {
+   "id": "t1-c-002",
+   "anverso": "Estructura del Título I",
+   "reverso": "Art. 10; Cap. I (11-13); Cap. II (14-38: art. 14, Secc. 1.ª 15-29, Secc. 2.ª 30-38); Cap. III (39-52); Cap. IV garantías (53-54); Cap. V suspensión (55).",
+   "epigrafe": "Estructura de la Constitución"
+  },
+  {
+   "id": "t1-c-003",
+   "anverso": "Reformas de la CE",
+   "reverso": "Cuatro: art. 13.2 (1992), 135 (2011), 49 (2024) y 69.3 (2026, senador de Formentera). Todas por el art. 167.",
+   "epigrafe": "Estructura de la Constitución"
+  },
+  {
+   "id": "t1-c-004",
+   "anverso": "Reforma ordinaria (art. 167)",
+   "reverso": "3/5 de cada Cámara; si no, comisión paritaria; si no, mayoría absoluta del Senado y 2/3 del Congreso. Referéndum si lo pide 1/10 de una Cámara en 15 días.",
+   "epigrafe": "Estructura de la Constitución"
+  },
+  {
+   "id": "t1-c-005",
+   "anverso": "Reforma agravada (art. 168)",
+   "reverso": "Revisión total, Preliminar, Secc. 1.ª Cap. II Tít. I o Título II: 2/3, disolución, ratificación por 2/3 de las nuevas Cámaras y referéndum obligatorio.",
+   "epigrafe": "Estructura de la Constitución"
+  },
+  {
+   "id": "t1-c-006",
+   "anverso": "Fechas de la CE",
+   "reverso": "Cortes 31-10-1978; referéndum 6-12-1978; sanción 27-12-1978; BOE y vigor 29-12-1978.",
+   "epigrafe": "Estructura de la Constitución"
+  },
+  {
+   "id": "t1-c-007",
+   "anverso": "Art. 1.1",
+   "reverso": "Estado social y democrático de Derecho; valores superiores: libertad, justicia, igualdad y pluralismo político (cuatro).",
+   "epigrafe": "Título Preliminar: principios"
+  },
+  {
+   "id": "t1-c-008",
+   "anverso": "Art. 1.3",
+   "reverso": "La forma política del Estado español es la Monarquía parlamentaria.",
+   "epigrafe": "Título Preliminar: principios"
+  },
+  {
+   "id": "t1-c-009",
+   "anverso": "Principios del art. 9.3",
+   "reverso": "Legalidad, jerarquía normativa, publicidad, irretroactividad de las sancionadoras no favorables, seguridad jurídica, responsabilidad e interdicción de la arbitrariedad.",
+   "epigrafe": "Título Preliminar: principios"
+  },
+  {
+   "id": "t1-c-010",
+   "anverso": "Capital y bandera",
+   "reverso": "La villa de Madrid (art. 5). Franja amarilla de doble anchura que cada roja (art. 4).",
+   "epigrafe": "Título Preliminar: principios"
+  },
+  {
+   "id": "t1-c-011",
+   "anverso": "Mayoría de edad",
+   "reverso": "18 años (art. 12).",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)"
+  },
+  {
+   "id": "t1-c-012",
+   "anverso": "Sección 1.ª (arts. 15-29)",
+   "reverso": "Vida, ideología, libertad, honor, residencia, expresión, reunión, asociación, participación, tutela judicial, legalidad penal, tribunales de honor, educación, sindicación y huelga, petición.",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)"
+  },
+  {
+   "id": "t1-c-013",
+   "anverso": "Sección 2.ª (arts. 30-38)",
+   "reverso": "Defensa de España, tributos, matrimonio, propiedad y herencia, fundación, trabajo, colegios profesionales, negociación colectiva, libertad de empresa.",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)"
+  },
+  {
+   "id": "t1-c-014",
+   "anverso": "Principios rectores que suelen salir como «no fundamentales»",
+   "reverso": "Vivienda (47), salud (43), medio ambiente (45), Seguridad Social (41).",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)"
+  },
+  {
+   "id": "t1-c-015",
+   "anverso": "Reunión (art. 21)",
+   "reverso": "Sin autorización previa; en lugares de tránsito público y manifestaciones, comunicación previa a la autoridad.",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)"
+  },
+  {
+   "id": "t1-c-016",
+   "anverso": "Petición (art. 29)",
+   "reverso": "«Todos los españoles», individual y colectiva, por escrito. FF.AA. solo individualmente.",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)"
+  },
+  {
+   "id": "t1-c-017",
+   "anverso": "Art. 30.4",
+   "reverso": "Mediante ley podrán regularse los deberes de los ciudadanos en casos de grave riesgo, catástrofe o calamidad pública.",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)"
+  },
+  {
+   "id": "t1-c-018",
+   "anverso": "Detención preventiva",
+   "reverso": "Máximo 72 horas (art. 17.2); habeas corpus (17.4, LO 6/1984).",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)"
+  },
+  {
+   "id": "t1-c-019",
+   "anverso": "Ley orgánica (art. 81)",
+   "reverso": "Desarrollo de la Secc. 1.ª, Estatutos, régimen electoral... Mayoría absoluta del Congreso en votación final sobre el conjunto.",
+   "epigrafe": "Derechos y deberes fundamentales (Título I)"
+  },
+  {
+   "id": "t1-c-020",
+   "anverso": "Art. 53.1",
+   "reverso": "Derechos del Cap. II vinculan a todos los poderes públicos; «sólo por ley» (no orgánica), respetando el contenido esencial.",
+   "epigrafe": "Garantías de los derechos (Capítulo IV y otras)"
+  },
+  {
+   "id": "t1-c-021",
+   "anverso": "Recurso de amparo: qué protege",
+   "reverso": "Art. 14, arts. 15-29 y objeción de conciencia del art. 30 (art. 53.2).",
+   "epigrafe": "Garantías de los derechos (Capítulo IV y otras)"
+  },
+  {
+   "id": "t1-c-022",
+   "anverso": "Recurso de amparo: legitimados",
+   "reverso": "Persona natural o jurídica con interés legítimo, Defensor del Pueblo y Ministerio Fiscal (art. 162.1.b).",
+   "epigrafe": "Garantías de los derechos (Capítulo IV y otras)"
+  },
+  {
+   "id": "t1-c-023",
+   "anverso": "Art. 53.3 (principios rectores)",
+   "reverso": "Informan la legislación positiva, la práctica judicial y la actuación de los poderes públicos; solo alegables según las leyes que los desarrollen.",
+   "epigrafe": "Garantías de los derechos (Capítulo IV y otras)"
+  },
+  {
+   "id": "t1-c-024",
+   "anverso": "Defensor del Pueblo (art. 54)",
+   "reverso": "Ley orgánica; alto comisionado de las Cortes Generales.",
+   "epigrafe": "Garantías de los derechos (Capítulo IV y otras)"
+  },
+  {
+   "id": "t1-c-025",
+   "anverso": "Derechos suspendibles (art. 55.1)",
+   "reverso": "17, 18.2, 18.3, 19, 20.1.a y d, 20.5, 21, 28.2 y 37.2. El 17.3 no en excepción. El 18.1 nunca.",
+   "epigrafe": "Suspensión de derechos y estados excepcionales"
+  },
+  {
+   "id": "t1-c-026",
+   "anverso": "Suspensión individual (art. 55.2)",
+   "reverso": "Arts. 17.2, 18.2 y 18.3; ley orgánica; bandas armadas o terrorismo; intervención judicial y control parlamentario.",
+   "epigrafe": "Suspensión de derechos y estados excepcionales"
+  },
+  {
+   "id": "t1-c-027",
+   "anverso": "Estado de alarma",
+   "reverso": "Gobierno, decreto en Consejo de Ministros, máximo 15 días, dando cuenta al Congreso. No suspende derechos.",
+   "epigrafe": "Suspensión de derechos y estados excepcionales"
+  },
+  {
+   "id": "t1-c-028",
+   "anverso": "Estado de excepción",
+   "reverso": "Gobierno, previa autorización del Congreso; máximo 30 días prorrogables otros 30.",
+   "epigrafe": "Suspensión de derechos y estados excepcionales"
+  },
+  {
+   "id": "t1-c-029",
+   "anverso": "Estado de sitio",
+   "reverso": "Congreso por mayoría absoluta, a propuesta exclusiva del Gobierno.",
+   "epigrafe": "Suspensión de derechos y estados excepcionales"
+  },
+  {
+   "id": "t1-c-030",
+   "anverso": "Art. 56.1: el Rey es...",
+   "reverso": "Jefe del Estado, símbolo de su unidad y permanencia; arbitra y modera el funcionamiento regular de las instituciones.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)"
+  },
+  {
+   "id": "t1-c-031",
+   "anverso": "Art. 56.3",
+   "reverso": "La persona del Rey es inviolable y no está sujeta a responsabilidad; sus actos se refrendan (art. 64).",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)"
+  },
+  {
+   "id": "t1-c-032",
+   "anverso": "Sucesión (art. 57.1)",
+   "reverso": "Primogenitura y representación: línea anterior; en la línea, grado más próximo; en el grado, varón; en el sexo, más edad.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)"
+  },
+  {
+   "id": "t1-c-033",
+   "anverso": "Abdicaciones y dudas sucesorias",
+   "reverso": "Ley orgánica (art. 57.5). Ejemplo: LO 3/2014.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)"
+  },
+  {
+   "id": "t1-c-034",
+   "anverso": "Regencia nombrada por las Cortes",
+   "reverso": "Una, tres o cinco personas; españolas y mayores de edad (art. 59).",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)"
+  },
+  {
+   "id": "t1-c-035",
+   "anverso": "Funciones del Rey: leyes, Cortes, referéndum",
+   "reverso": "Sanciona y promulga las leyes (15 días, art. 91); convoca y disuelve las Cortes y convoca elecciones; convoca referéndum.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)"
+  },
+  {
+   "id": "t1-c-036",
+   "anverso": "Funciones del Rey: Gobierno",
+   "reverso": "Propone candidato a Presidente y lo nombra; nombra y separa ministros a propuesta del Presidente; expide los decretos del Consejo de Ministros.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)"
+  },
+  {
+   "id": "t1-c-037",
+   "anverso": "Funciones del Rey: otras del art. 62",
+   "reverso": "Mando supremo de las FF.AA.; derecho de gracia (sin indultos generales); Alto Patronazgo de las Reales Academias; ser informado y presidir el Consejo de Ministros a petición del Presidente.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)"
+  },
+  {
+   "id": "t1-c-038",
+   "anverso": "Referéndum consultivo (art. 92.2)",
+   "reverso": "Lo convoca el Rey, a propuesta del Presidente del Gobierno, previamente autorizada por el Congreso.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)"
+  },
+  {
+   "id": "t1-c-039",
+   "anverso": "Refrendo (art. 64)",
+   "reverso": "Regla: Presidente del Gobierno y Ministros competentes. Propuesta y nombramiento del Presidente y disolución del art. 99: Presidente del Congreso. Responden quienes refrendan.",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)"
+  },
+  {
+   "id": "t1-c-040",
+   "anverso": "Acto del Rey sin refrendo",
+   "reverso": "Nombrar y relevar libremente a los miembros civiles y militares de su Casa (art. 65.2).",
+   "epigrafe": "La Corona (Título II, arts. 56 a 65)"
+  }
+ ],
+ "discrepancias": [
+  {
+   "ref": "LI2025ext-ej1-01",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 1,
+    "conv": "extraordinaria"
+   },
+   "clave_oficial": "d",
+   "temario_dice": "La CE se ha reformado tres veces: art. 13.2 (1992), art. 135 (2011) y art. 49 (2024).",
+   "veredicto": "Gana la oficial (d, cuatro veces) y es correcta: la cuarta reforma es la del art. 69.3 (Formentera elige un senador propio), publicada en el BOE el 20-05-2026 (BOE-A-2026-10881). El temario y la lección están desactualizados."
+  },
+  {
+   "ref": "LI2007-ej1-ej1-17",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 14
+   },
+   "clave_oficial": "c",
+   "temario_dice": "El art. 141.3 permite crear agrupaciones de municipios distintas de la provincia; el art. 152.3 deja que los Estatutos creen circunscripciones (sin verificar la clave).",
+   "veredicto": "Se mantiene la oficial (c, «sin limitación alguna»), porque el art. 141.3 no pone límites; pero es discutible, ya que su régimen depende de la ley y de los Estatutos, y la d) era tentadora."
+  }
+ ]
+}

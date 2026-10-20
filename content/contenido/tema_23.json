@@ -1,0 +1,4753 @@
+{
+ "tema": 23,
+ "generado": "2026-10-20",
+ "preguntas": [
+  {
+   "id": "t23-h-001",
+   "tipo": "historica",
+   "ref": "LI2025-b3-05",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 5
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El sistema incluye un método que lanza una excepción cuando se recibe un valor inválido desde el backend:\npublic class AlumnoService {\npublic int obtenerMatriculas(int matriculas) {\nif (matriculas < 0) {\nthrow new IllegalArgumentException();\n}\nreturn matriculas;\n}\n}\nSe le pide verificar mediante JUnit 6 que la excepción se lanza correctamente. ¿Cuál es la prueba correcta?",
+   "ctx": null,
+   "op": {
+    "a": "@Test void testException() {\nAlumnoService service = new AlumnoService();\nassertEquals(IllegalArgumentException.class, service.obtenerMatriculas(-1));\n}",
+    "b": "@Test void testException() {\nAlumnoService service = new AlumnoService();\nassertThrows(IllegalArgumentException.class, () -> service.obtenerMatriculas(-1));\n}",
+    "c": "@Test void testException() {\nAlumnoService service = new AlumnoService();\nservice.obtenerMatriculas(-1);\n}",
+    "d": "@Test void testException() {\nassertThrows(Exception.class);\n}"
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** `assertThrows(Clase.class, ejecutable)` recibe el tipo de excepción esperado y un lambda con el código que debe lanzarla; la prueba pasa si el lambda lanza esa excepción (o una subclase).\n\n- a) `assertEquals` compara un valor esperado con uno real: el método lanza la excepción antes de devolver nada, así que la prueba falla con error.\n- c) Llama al método sin aserción: la excepción no capturada hace que la prueba **falle**, justo lo contrario de lo que se quiere verificar.\n- d) `assertThrows` sin ejecutable no compila: falta el código que debe lanzar la excepción.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-h-002",
+   "tipo": "historica",
+   "ref": "LI2025-b3-19",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 19
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se ha incorporado un nuevo miembro al equipo y en la preparación de su entorno de desarrollo local, después de clonar el repositorio, ha ejecutado el comando git fetch. ¿Qué hace este comando?",
+   "ctx": null,
+   "op": {
+    "a": "Descarga objetos y referencias del remoto y fusiona automáticamente esos cambios en la rama actual.",
+    "b": "Envía (sube) los commits locales al remoto y actualiza la rama remota correspondiente.",
+    "c": "Sustituye el historial local por el del remoto, reescribiendo commits locales para que coincidan con el remoto.",
+    "d": "Descarga objetos y referencias del remoto y actualiza las ramas de seguimiento remoto, registrando lo obtenido en .git/FETCH_HEAD, sin integrar cambios en la rama actual."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** `git fetch` **descarga** objetos y referencias del remoto, actualiza las ramas de seguimiento remoto (`origin/*`) y anota lo obtenido en `.git/FETCH_HEAD`, pero **no integra** nada en la rama actual ni toca el directorio de trabajo.\n\n- a) Descargar y fusionar automáticamente es `git pull` (= fetch + merge).\n- b) Subir commits al remoto es `git push`.\n- c) Reescribir el historial local para igualarlo al remoto sería algo como `git reset --hard origin/main`, no fetch.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-h-003",
+   "tipo": "historica",
+   "ref": "LI2025-b3-R01",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 21
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se ha optado por utilizar GitHub como repositorio de código, con vistas a usar workflows de GitHub Actions. ¿Dónde deben almacenarse los ficheros de workflows y qué extensión deben tener?",
+   "ctx": null,
+   "op": {
+    "a": "En .github/actions y con extensión .yml",
+    "b": "En .github/workflows y con extensión .yml o .yaml",
+    "c": "En workflows/ (raíz del repositorio) y con extensión .json",
+    "d": "En .git/workflows y con extensión .yaml"
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Los workflows de GitHub Actions son ficheros **YAML** (`.yml` o `.yaml`) guardados en **`.github/workflows/`** del repositorio.\n\n- a) `.github/actions` no es el directorio de workflows (ahí se suelen guardar acciones propias, no los flujos que GitHub ejecuta).\n- c) No se usan JSON ni un directorio `workflows/` en la raíz.\n- d) `.git/` es el directorio interno de Git y no se sube como contenido del repositorio.",
+   "epigrafe": "7. Integración y entrega continuas (CI/CD)",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-004",
+   "tipo": "historica",
+   "ref": "LI2025-b3-R03",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 23
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se va a impartir un taller de formación de Git a los miembros que desconocen su estructura y funcionamiento. ¿Cuál de las siguientes opciones enumera correctamente los 4 tipos de datos que componen el modelo de datos de Git?",
+   "ctx": null,
+   "op": {
+    "a": "Objects, References, Index y Reflogs.",
+    "b": "Commits, Trees, Blobs, y Tags.",
+    "c": "Objects, References, Trees y Tags.",
+    "d": "File, Directory, Commit y Branch."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** Según la documentación de Git, su modelo de datos tiene cuatro piezas: **objetos** (objects), **referencias** (references), el **índice** (index, área de preparación) y los **reflogs**.\n\n- b) Commit, tree, blob y tag son los **cuatro tipos de objeto**: solo la primera de las cuatro piezas. Es el distractor más tentador.\n- c) Mezcla piezas (objects, references) con tipos de objeto (trees, tags).\n- d) File, Directory, Commit y Branch no es terminología del modelo de datos de Git.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 3
+  },
+  {
+   "id": "t23-h-005",
+   "tipo": "historica",
+   "ref": "LI2025-ej1-56",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 56
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de los siguientes NO es un producto orientado a las pruebas de software?",
+   "ctx": null,
+   "op": {
+    "a": "Avocado.",
+    "b": "Cucumber.",
+    "c": "TestLink.",
+    "d": "OneTrust."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** **OneTrust** es una plataforma de gestión de privacidad, consentimiento (cookies) y cumplimiento normativo: no es un producto de pruebas.\n\n- a) **Avocado** es un framework libre de pruebas automatizadas (origen Red Hat, en Python).\n- b) **Cucumber** es la herramienta de BDD con escenarios Gherkin (Given/When/Then).\n- c) **TestLink** es un gestor de casos y planes de prueba.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-h-006",
+   "tipo": "historica",
+   "ref": "LI2025-ej1-57",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 57
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En el contexto de una plataforma de desarrollo colaborativo, ¿qué describe mejor una “pull request”?",
+   "ctx": null,
+   "op": {
+    "a": "Un comando de Git que obtiene cambios remotos y los integra en la rama local actual.",
+    "b": "Una propuesta para fusionar un conjunto de cambios de una rama en otra.",
+    "c": "Un mecanismo de Git para crear una etiqueta que marque un punto concreto del historial.",
+    "d": "Un mecanismo para que un desarrollador solicite retirar (“pull”) la versión de código actualmente en producción y volver a la versión anterior estable."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Una pull request (merge request en GitLab) es una **propuesta para integrar los cambios de una rama en otra**, con revisión de código, comentarios y comprobaciones automáticas antes de fusionar.\n\n- a) Obtener e integrar cambios remotos en la rama local es `git pull`, un comando de Git; la PR es una función de la plataforma.\n- c) Marcar un punto del historial es una **etiqueta** (`git tag`).\n- d) Volver a la versión estable anterior sería un *rollback* o un `git revert`, no una pull request.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-007",
+   "tipo": "historica",
+   "ref": "LI2025-ej1-58",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 58
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señala la respuesta correcta acerca de las pruebas de software:",
+   "ctx": null,
+   "op": {
+    "a": "Las pruebas de regresión comprueban que los cambios sobre un componente de un sistema de información no introducen un comportamiento no deseado o errores adicionales en otros componentes no modificados.",
+    "b": "Las pruebas de tipo “caja blanca” consideran exclusivamente las entradas y salidas del sistema sin preocuparse por la estructura interna del mismo.",
+    "c": "Las pruebas unitarias sirven para que el usuario del sistema determine su aceptación final, desde el punto de vista de su funcionalidad y rendimiento.",
+    "d": "Las pruebas circunstanciales examinan las interfaces entre grupos de componentes o subsistemas para asegurar que son llamados en las circunstancias adecuadas y que los datos o mensajes que se transmiten son los requeridos."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** Es la definición de **pruebas de regresión** de Métrica v3: eliminan el *efecto onda*, comprobando que un cambio en un componente no introduce errores en otros no modificados.\n\n- b) Considerar solo entradas y salidas sin mirar la estructura interna es **caja negra**; la caja blanca mira el código.\n- c) La aceptación final por el usuario corresponde a las **pruebas de aceptación**, no a las unitarias (que verifican cada componente aislado).\n- d) \"Pruebas circunstanciales\" no existen; examinar interfaces entre componentes es propio de las pruebas de **integración**.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-h-008",
+   "tipo": "historica",
+   "ref": "LI2025ext-b3-16",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 16,
+    "conv": "ext"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se va a proceder a realizar pruebas unitarias en la API de persistencia con la herramienta Nunit 3.0. ¿Cuál de las siguientes opciones es una definición correcta de una clase de pruebas?",
+   "ctx": "La API de persistencia está en ASP.NET 10 / C# 14 y usa NUnit 3.0 para pruebas.",
+   "op": {
+    "a": "[TestFixture] public sealed class Tests {\n[Test] public void Test() {} }",
+    "b": "[TestFixture] public sealed class Tests {\n[TestSample] public void Test() {} }",
+    "c": "[TestGroup] public sealed class Tests {\n[TestCase] public void Test() {} }",
+    "d": "[TestCaseSource] public sealed class Tests {\n[TestCase] public void Test() {} }"
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** En NUnit la clase de pruebas se marca con **`[TestFixture]`** y cada método de prueba con **`[Test]`**.\n\n- b) `[TestSample]` no existe.\n- c) `[TestGroup]` no existe; `[TestCase]` sirve para pruebas parametrizadas con argumentos, no marca la clase.\n- d) `[TestCaseSource]` indica una fuente de datos para casos parametrizados; no es el atributo de la clase.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-h-009",
+   "tipo": "historica",
+   "ref": "LI2025ext-b3-17",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 17,
+    "conv": "ext"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Uno de sus compañeros ha desarrollado un servicio REST que recibe un JSON y le ha pedido ayuda para probar su funcionamiento, para lo cual va a utilizar la herramienta Postman versión 12. ¿Con qué tipo de dato debería enviar el cuerpo de la petición?",
+   "ctx": null,
+   "op": {
+    "a": "none",
+    "b": "GraphQL",
+    "c": "raw",
+    "d": "x-www-form-urlencoded"
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** En Postman, para enviar un cuerpo **JSON** se elige el tipo **raw** y el formato JSON (añade `Content-Type: application/json`).\n\n- a) *none* envía la petición sin cuerpo.\n- b) *GraphQL* es para consultas GraphQL, no para un servicio REST que espera JSON libre.\n- d) *x-www-form-urlencoded* envía pares clave=valor como un formulario HTML, no JSON.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-h-010",
+   "tipo": "historica",
+   "ref": "LI2025ext-b3-18",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 18,
+    "conv": "ext"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se ha detectado un error en una de las últimas subidas de código a la rama develop del repositorio. Tras una fase de investigación, sospecha que el error está en un commit concreto. ¿Con qué operación de Git puede incorporar ese commit a una rama aparte para continuar su investigación?",
+   "ctx": null,
+   "op": {
+    "a": "git banana-pick",
+    "b": "git cherry-pick",
+    "c": "git berry-pick",
+    "d": "git grape-pick"
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** `git cherry-pick <hash>` **aplica un commit concreto** sobre la rama actual. Si se crea antes una rama aparte, permite llevar allí solo ese commit para investigarlo.\n\nLas demás opciones (*banana-pick*, *berry-pick*, *grape-pick*) son comandos inventados.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-011",
+   "tipo": "historica",
+   "ref": "LI2025ext-b3-R01",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 21,
+    "conv": "ext"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Con qué tipo de fichero debe trabajar si desea implementar pruebas unitarias en un componente del frontend?",
+   "ctx": "El frontend está desarrollado en Angular.",
+   "op": {
+    "a": "component.ts",
+    "b": "test.ts",
+    "c": "module.ts",
+    "d": "spec.ts"
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** En Angular, las pruebas unitarias de un componente van en el fichero **`.spec.ts`** (por ejemplo, `usuario.component.spec.ts`), que ejecutan Jasmine/Karma (o Jest/Vitest).\n\n- a) `component.ts` es el propio código del componente.\n- b) `test.ts` era el punto de entrada que cargaba todas las pruebas en proyectos antiguos, no donde se escriben.\n- c) `module.ts` declara un módulo de Angular.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-h-012",
+   "tipo": "historica",
+   "ref": "LI2025ext-b3-R03",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 23,
+    "conv": "ext"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Le consultan si conoce alguna herramienta para formatear el código de la aplicación. ¿Cuál de las siguientes es una opción válida para ello?",
+   "ctx": null,
+   "op": {
+    "a": "SonarQube.",
+    "b": "Prettier.",
+    "c": "Quokka.",
+    "d": "PMD."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** **Prettier** es un formateador de código (JavaScript, TypeScript, CSS, HTML...) que reescribe el código con un estilo uniforme.\n\n- a) SonarQube hace análisis estático de calidad y seguridad; no reformatea el código.\n- c) Quokka es un *scratchpad* para ejecutar JavaScript en vivo dentro del editor.\n- d) PMD es un analizador estático (detecta malas prácticas), no un formateador.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-h-013",
+   "tipo": "historica",
+   "ref": "LI2025ext-b3-R04",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 24,
+    "conv": "ext"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En la Subdirección se han sustituido los ordenadores utilizados para desarrollar aplicaciones, y por tanto, debe clonarse el repositorio de código de la aplicación para continuar su trabajo. ¿Con qué comando de Git puede hacerlo?",
+   "ctx": null,
+   "op": {
+    "a": "git clone",
+    "b": "git init",
+    "c": "git add",
+    "d": "git create"
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** `git clone URL` crea una **copia completa** de un repositorio remoto (todo el historial) y configura el remoto `origin`.\n\n- b) `git init` crea un repositorio **vacío** nuevo.\n- c) `git add` prepara cambios para el próximo commit.\n- d) `git create` no existe.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-014",
+   "tipo": "historica",
+   "ref": "LI2025ext-b3-R05",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 25,
+    "conv": "ext"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Tras realizar una modificación en la API de Java se necesita aumentar el número de versión de la API. ¿Qué fichero deberá modificar para ello, suponiendo que se usa Maven 3.9?",
+   "ctx": null,
+   "op": {
+    "a": "package.json",
+    "b": "pom.xml",
+    "c": ".csproj",
+    "d": "package-lock.json"
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** En Maven la versión del proyecto está en el elemento `<version>` del **`pom.xml`**.\n\n- a) y d) `package.json` y `package-lock.json` son de npm (JavaScript).\n- c) `.csproj` es el fichero de proyecto de .NET.",
+   "epigrafe": "7. Integración y entrega continuas (CI/CD)",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-015",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-55",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 55,
+    "conv": "ext"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En Git, ¿qué significa el estado 'Staged'?",
+   "ctx": null,
+   "op": {
+    "a": "Que el archivo tiene conflictos de fusión y no se puede compilar.",
+    "b": "Que los cambios han sido marcados para ser incluidos en el próximo 'commit'.",
+    "c": "Que los cambios han sido subidos al servidor remoto con éxito.",
+    "d": "Que se ha modificado el archivo pero todavía no se ha hecho 'commit' en la base de datos."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** *Staged* (preparado) significa que los cambios están en el **área de preparación** (índice) y entrarán en el próximo `git commit`. Se llega ahí con `git add`.\n\n- a) Un conflicto de fusión es otro estado (*unmerged*); Git no compila nada.\n- c) Subir al remoto es `git push`; *staged* es un estado puramente local.\n- d) Modificado pero sin preparar es el estado *modified*, no *staged*.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-016",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-56",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 56,
+    "conv": "ext"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En Git, ¿qué comando se utiliza para guardar en el repositorio local una instantánea de los cambios previamente preparados?",
+   "ctx": null,
+   "op": {
+    "a": "git push",
+    "b": "git clone",
+    "c": "git commit",
+    "d": "git status"
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** `git commit` guarda en el **repositorio local** una instantánea de lo que está en el área de preparación.\n\n- a) `git push` sube commits al remoto.\n- b) `git clone` copia un repositorio remoto completo.\n- d) `git status` solo muestra el estado de las tres zonas.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-017",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-57",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 57,
+    "conv": "ext"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "De acuerdo con la Guía de Scrum, ¿cuál de los siguientes es uno de los roles que compone el Equipo de Scrum?",
+   "ctx": null,
+   "op": {
+    "a": "Sprint Owner.",
+    "b": "Scrum Planner.",
+    "c": "Scrum Master.",
+    "d": "Stakeholder."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** El Equipo Scrum lo forman **Product Owner, Scrum Master y Developers** (la Guía 2020 habla de *responsabilidades*, pero el examen usa \"roles\").\n\n- a) y b) *Sprint Owner* y *Scrum Planner* no existen.\n- d) Los *stakeholders* (interesados) participan, por ejemplo, en la Sprint Review, pero no forman parte del Equipo Scrum.",
+   "epigrafe": "4. Otras metodologías de desarrollo",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-018",
+   "tipo": "historica",
+   "ref": "LI2024-b3-10",
+   "origen": {
+    "anio": 2024,
+    "parte": "b3",
+    "n": 10
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Está escogiendo herramientas que le permitan analizar y mejorar la calidad del código. ¿Cuál de las siguientes NO le será de ayuda?",
+   "ctx": null,
+   "op": {
+    "a": "SonarQube.",
+    "b": "Un linter de JavaScript.",
+    "c": "PMD.",
+    "d": "Mercurial."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** **Mercurial** es un sistema de control de versiones distribuido; no analiza la calidad del código.\n\n- a) SonarQube: análisis estático de calidad y seguridad.\n- b) Un linter de JavaScript (ESLint): análisis estático y estilo.\n- c) PMD: análisis estático de código Java.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-019",
+   "tipo": "historica",
+   "ref": "LI2024-b3-18",
+   "origen": {
+    "anio": 2024,
+    "parte": "b3",
+    "n": 18
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Suponiendo que se utilizara la metodología ágil SCRUM, si durante un sprint, se da cuenta de que se está aplicando una mala práctica que puede enlentecer el proyecto, ¿en qué reunión comentará esa mala práctica, para buscar la mejora continua y evitar aplicarla en los siguientes sprints?",
+   "ctx": null,
+   "op": {
+    "a": "En la Daily Scrum.",
+    "b": "En la Sprint Retrospective.",
+    "c": "En la Sprint Planning.",
+    "d": "En la Sprint Review."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** En la **Sprint Retrospective** el equipo inspecciona cómo fue el Sprint (personas, interacciones, procesos, herramientas) y planifica cómo **mejorar la calidad y la eficacia**. Es la reunión para tratar una mala práctica.\n\n- a) El Daily Scrum (15 min) inspecciona el progreso hacia el Objetivo del Sprint.\n- c) La Sprint Planning decide qué se hará en el Sprint y cómo.\n- d) La Sprint Review inspecciona el **Incremento** (el producto) con los interesados, no el proceso.",
+   "epigrafe": "4. Otras metodologías de desarrollo",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-020",
+   "tipo": "historica",
+   "ref": "LI2024-b3-R05",
+   "origen": {
+    "anio": 2024,
+    "parte": "b3",
+    "n": 25
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Quiere facilitar la incorporación de otros desarrolladores al proyecto y para ello, en el repositorio de código, va a crear un fichero en el que incluirá, entre otra información, el propósito del proyecto y cómo arrancarlo localmente. Esa información se incluirá en el fichero:",
+   "ctx": null,
+   "op": {
+    "a": "CODEOWNERS.",
+    "b": "README.MD.",
+    "c": "LICENSE.",
+    "d": "CITATION."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** El **README.md** describe el propósito del proyecto, cómo instalarlo, arrancarlo en local y usarlo: es la puerta de entrada para nuevos desarrolladores.\n\n- a) CODEOWNERS indica los responsables de revisar cada ruta.\n- c) LICENSE contiene el texto de la licencia.\n- d) CITATION (CITATION.cff) indica cómo citar el software en trabajos académicos.",
+   "epigrafe": "1. Repositorios y plataformas colaborativas",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-021",
+   "tipo": "historica",
+   "ref": "LI2024-ej1-53",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 51
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las siguientes opciones se utilizan para el control de versiones?",
+   "ctx": null,
+   "op": {
+    "a": "Mercurial, CVS y Selenium.",
+    "b": "GitLab, GitHub y Apache Subversion.",
+    "c": "SVN, Git y Cucumber.",
+    "d": "Selenium, Cucumber y GitLab."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** GitLab y GitHub (plataformas que alojan repositorios Git) y Apache Subversion se usan para el control de versiones. El tribunal acepta las plataformas como herramientas de control de versiones.\n\n- a) y d) incluyen **Selenium**, que automatiza pruebas en el navegador.\n- c) incluye **Cucumber**, herramienta de BDD.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-022",
+   "tipo": "historica",
+   "ref": "LI2024-ej1-54",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 52
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Según establece Métrica V3, en la construcción de un sistema de información, las pruebas que permiten verificar que los componentes o subsistemas interactúan correctamente a través de sus interfaces, tanto internas como externas, cubren la funcionalidad establecida y se ajustan a los requisitos especificados en las verificaciones correspondientes son:",
+   "ctx": null,
+   "op": {
+    "a": "Pruebas unitarias.",
+    "b": "Pruebas de integración.",
+    "c": "Pruebas del sistema.",
+    "d": "Pruebas de migración."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Es la definición de Métrica v3 de **pruebas de integración**: componentes o subsistemas que interactúan correctamente **a través de sus interfaces, internas y externas**.\n\n- a) Las unitarias verifican cada componente **individualmente**.\n- c) Las del sistema prueban el **sistema completo** y su relación con otros sistemas.\n- d) Las pruebas de migración (carga inicial de datos) no responden a esa definición.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-023",
+   "tipo": "historica",
+   "ref": "LI2022-b3-13",
+   "origen": {
+    "anio": 2022,
+    "parte": "b3",
+    "n": 13
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En el equipo de desarrollo se ha decidido usar Selenium WebDriver para:",
+   "ctx": null,
+   "op": {
+    "a": "Mejorar la accesibilidad de las páginas web facilitando audios a partir del texto.",
+    "b": "Automatizar la ejecución de pruebas en el navegador.",
+    "c": "Minimizar el tiempo de carga de la página web.",
+    "d": "Diseñar páginas web adaptables."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** **Selenium WebDriver** controla un navegador real como lo haría un usuario para **automatizar pruebas** de aplicaciones web.\n\n- a) Generar audio a partir de texto es tarea de un sintetizador de voz o lector de pantalla.\n- c) Minimizar el tiempo de carga es optimización web (compresión, caché...).\n- d) El diseño adaptable (*responsive*) se hace con CSS (media queries).",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-024",
+   "tipo": "historica",
+   "ref": "LI2022-b3-14",
+   "origen": {
+    "anio": 2022,
+    "parte": "b3",
+    "n": 14
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál es una herramienta de análisis de seguridad y calidad de código?",
+   "ctx": null,
+   "op": {
+    "a": "SonarQube",
+    "b": "SonarCode",
+    "c": "SonarCuality",
+    "d": "SonarSrc"
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** **SonarQube** (SonarSource) hace análisis estático continuo de calidad y seguridad del código: bugs, vulnerabilidades, *code smells*, duplicados y deuda técnica.\n\nSonarCode, SonarCuality y SonarSrc son nombres inventados.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-025",
+   "tipo": "historica",
+   "ref": "LI2022-b3-20",
+   "origen": {
+    "anio": 2022,
+    "parte": "b3",
+    "n": 19
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale el software que permite automatizar la construcción y despliegue de un proyecto utilizando el concepto de pipelines:",
+   "ctx": null,
+   "op": {
+    "a": "Jenkins",
+    "b": "RabbitMQ",
+    "c": "Apache Kafka",
+    "d": "Subversion"
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** **Jenkins** es un servidor libre de integración continua que automatiza construcción, pruebas y despliegue mediante **pipelines** (definidos en un Jenkinsfile).\n\n- b) RabbitMQ y c) Apache Kafka son sistemas de **mensajería**.\n- d) Subversion es control de versiones.",
+   "epigrafe": "7. Integración y entrega continuas (CI/CD)",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-026",
+   "tipo": "historica",
+   "ref": "LI2022-ej1-58",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 55
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Según METRICA v3, ¿qué tipo de pruebas son las que tienen como objetivo verificar el correcto ensamblaje entre los distintos componentes para comprobar que interactúan correctamente a través de sus interfaces, cubren la funcionalidad establecida y se ajustan a los requisitos no funcionales especificados?",
+   "ctx": null,
+   "op": {
+    "a": "Pruebas del sistema.",
+    "b": "Pruebas de implantación.",
+    "c": "Pruebas de regresión.",
+    "d": "Pruebas de integración."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** \"Correcto ensamblaje entre los distintos componentes\" e \"interactúan correctamente a través de sus interfaces\" es la definición literal de **pruebas de integración** en Métrica v3.\n\n- a) Del sistema: integración del sistema **completo** y con otros sistemas.\n- b) De implantación: hardware y software en el **entorno de operación**.\n- c) De regresión: eliminar el **efecto onda** tras un cambio.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-027",
+   "tipo": "historica",
+   "ref": "LI2022-ej1-59",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 56
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Según establece METRICA v3, ¿qué participantes están presentes en la tarea de “Elaboración de los Manuales de Usuario”?",
+   "ctx": null,
+   "op": {
+    "a": "Usuarios Expertos.",
+    "b": "Consultor de Sistemas de Información.",
+    "c": "Equipo de Formación.",
+    "d": "Equipo de Proyecto."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** En Métrica v3, la tarea de elaboración de los manuales de usuario (actividad CSI 6) la realiza el **Equipo del Proyecto**.\n\n- a) Los Usuarios Expertos participan en otras tareas (requisitos, pruebas de aceptación).\n- b) El Consultor de Sistemas de Información participa en planificación (PSI).\n- c) El Equipo de Formación imparte la formación (CSI 7, IAS), pero no elabora los manuales.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-h-028",
+   "tipo": "historica",
+   "ref": "LI2022-ej1-60",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 57
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las siguientes herramientas NO es un software para el control de versiones?",
+   "ctx": null,
+   "op": {
+    "a": "JMeter",
+    "b": "Subversion",
+    "c": "Mercurial",
+    "d": "GIT"
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** **Apache JMeter** es una herramienta de **pruebas de carga y estrés**, no de control de versiones.\n\nSubversion (centralizado), Mercurial y Git (distribuidos) sí son sistemas de control de versiones.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-029",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "b3",
+    "n": 20
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué comando de Git muestra la lista de commits anteriores?",
+   "ctx": null,
+   "op": {
+    "a": "git commit",
+    "b": "git fetch",
+    "c": "git status",
+    "d": "git log"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** `git log` muestra el historial de commits (con `--oneline --graph --all` en forma compacta y con ramas).\n\n- a) `git commit` crea un commit nuevo.\n- b) `git fetch` descarga del remoto.\n- c) `git status` muestra el estado del directorio de trabajo y del área de preparación.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-030",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "b3",
+    "n": 22
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál es el propósito principal del framework de JavaScript Jest?",
+   "ctx": null,
+   "op": {
+    "a": "El testeo de código.",
+    "b": "El aprendizaje automático.",
+    "c": "Animaciones y efectos gráficos.",
+    "d": "Funciones matemáticas y manejo de cadenas."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** **Jest** (Meta) es un framework de **pruebas** de JavaScript y TypeScript con aserciones, mocks y cobertura integrados.\n\nLas demás opciones describen otros tipos de bibliotecas (TensorFlow.js para aprendizaje automático, GSAP para animaciones, Lodash para utilidades).",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-031",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "ej1",
+    "n": 35
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Indique la definición correcta en referencia a los diagramas de flujo de datos de Métrica v3:",
+   "ctx": null,
+   "op": {
+    "a": "Almacén de datos: representa la información en movimiento utilizada por el sistema.",
+    "b": "Proceso de control: representa procesos que coordinan y sincronizan las actividades de otros procesos del diagrama de flujo de datos.",
+    "c": "Flujo de control: representa el flujo entre dos procesos de control.",
+    "d": "Flujo de datos: representa el movimiento de los datos, y establece la comunicación entre dos almacenes."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** En Métrica v3 el **proceso de control** coordina y sincroniza las actividades de otros procesos del DFD (sistemas en tiempo real).\n\n- a) El almacén es información **en reposo**, no en movimiento.\n- c) El flujo de control va entre un proceso de control y **otro proceso** (no necesariamente de control).\n- d) Un flujo de datos nunca comunica dos almacenes directamente: siempre hay un proceso en un extremo.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-h-032",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "ej1",
+    "n": 55
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según Métrica v3, ¿qué tipo de pruebas consiste en determinar que los tiempos de respuesta están dentro de los intervalos establecidos en las especificaciones del sistema?",
+   "ctx": null,
+   "op": {
+    "a": "Pruebas de respuesta.",
+    "b": "Pruebas de sobrecarga.",
+    "c": "Pruebas de rendimiento.",
+    "d": "Pruebas de tiempo."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Las **pruebas de rendimiento** (subtipo de las pruebas del sistema) verifican que los tiempos de respuesta están dentro de los intervalos especificados.\n\n- b) Las de **sobrecarga** comprueban el comportamiento en el umbral límite de recursos.\n- a) y d) \"Pruebas de respuesta\" y \"pruebas de tiempo\" no son tipos de Métrica v3.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-033",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "ej1",
+    "n": 56
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En el software para control de versiones GIT, hacer un 'commit' es:",
+   "ctx": null,
+   "op": {
+    "a": "La acción de introducir comentarios iterativos entre versiones.",
+    "b": "La acción de establecer un compromiso de uso (commitment) entre ambas partes.",
+    "c": "La acción de descargar la rama de trabajo del repositorio central.",
+    "d": "La acción de almacenar una nueva instantánea (snapshot) del estado del proyecto en el historial de GIT."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** Un commit registra en el historial **una instantánea** del estado del proyecto (Git guarda estados completos, reutilizando los objetos que no cambian).\n\n- a) El mensaje del commit es un comentario, pero el commit no es \"introducir comentarios\".\n- b) Juego de palabras con *commitment*: no tiene sentido técnico.\n- c) Descargar del remoto es `git fetch`/`git pull`/`git clone`.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-034",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "ej1",
+    "n": 57
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Señale cuál de las siguientes herramientas de software libre se utiliza para realizar pruebas de carga y de estrés, permitiendo simular escenarios de concurrencia de usuarios:",
+   "ctx": null,
+   "op": {
+    "a": "Cactus",
+    "b": "Mockito",
+    "c": "JMeter",
+    "d": "Foglight"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** **Apache JMeter** es libre, está escrita en Java y simula usuarios concurrentes para pruebas de **carga y estrés**.\n\n- a) Cactus (Apache, retirado) probaba componentes Java EE en el servidor.\n- b) Mockito crea objetos simulados (mocks) para pruebas unitarias.\n- d) Foglight (Quest) monitoriza el rendimiento de aplicaciones y es comercial.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-035",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "b3",
+    "n": 28
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según Métrica v3, ¿qué tipo de pruebas verifica el funcionamiento correcto del sistema integrado de hardware y software en el entorno de operación, y permite al usuario, desde el punto de vista de operación, aceptar el sistema una vez instalado en su entorno real?",
+   "ctx": null,
+   "op": {
+    "a": "Pruebas de integración.",
+    "b": "Pruebas de implantación.",
+    "c": "Pruebas de aceptación.",
+    "d": "Pruebas de regresión."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Las **pruebas de implantación** (IAS 5) comprueban el sistema integrado de **hardware y software en el entorno de operación** y permiten aceptarlo desde el punto de vista de **operación**.\n\n- a) Integración: ensamblaje de componentes a través de sus interfaces.\n- c) Aceptación (IAS 6): validan los **requisitos de usuario** para la aceptación final, no la operación en el entorno real.\n- d) Regresión: eliminar el efecto onda tras un cambio.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-h-036",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 41
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En un Diagrama de Flujo de Datos (DFD), indique cuál de las siguientes afirmaciones es FALSA:",
+   "ctx": null,
+   "op": {
+    "a": "El proceso nunca es el origen ni el final de los datos.",
+    "b": "El almacén no puede crear, transformar o destruir datos.",
+    "c": "Un almacén no puede aparecer varias veces en el diagrama.",
+    "d": "Un proceso siempre es necesario como intermediario entre una entidad externa y un almacén de datos."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Es FALSA: un almacén (igual que una entidad externa) **sí puede aparecer duplicado** en un mismo diagrama para mejorar la legibilidad; se marca con una línea.\n\nLas demás son reglas de Métrica v3: el proceso transforma pero nunca origina ni consume datos (a); el almacén solo guarda información en reposo (b); entre entidad externa y almacén siempre hace falta un proceso (d).",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-h-037",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 42
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Señale la INCORRECTA con respecto a la comprobación de la consistencia de un DFD resultado de una explosión:",
+   "ctx": null,
+   "op": {
+    "a": "No deben faltar flujos de datos de entrada o salida que acompañaban al proceso del nivel superior.",
+    "b": "No debe aparecer algún flujo de datos que no estuviese ya asociado al proceso de nivel superior.",
+    "c": "Todos los elementos del DFD resultante deben estar conectados directa o indirectamente con los flujos del proceso origen.",
+    "d": "Las entidades externas deben descomponerse en cada explosión del DFD al igual que el resto de los elementos."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** Es INCORRECTA: las **entidades externas no se descomponen**. Lo que se explota son los procesos.\n\na), b) y c) son las reglas de consistencia (balanceo) de Métrica v3: el DFD hijo conserva los flujos del padre, no añade flujos nuevos y todos sus elementos están conectados con esos flujos.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-h-038",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 66
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Las pruebas cuya finalidad es verificar que los distintos componentes del sistema interactúan correctamente a través de sus interfaces se denominan:",
+   "ctx": null,
+   "op": {
+    "a": "Pruebas de artefactos.",
+    "b": "Pruebas de integración.",
+    "c": "Pruebas de interacción.",
+    "d": "Pruebas de implantación."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Verificar que los componentes **interactúan a través de sus interfaces** es el objetivo de las **pruebas de integración**.\n\n- a) y c) \"De artefactos\" y \"de interacción\" no son tipos de prueba (la c juega con la palabra del enunciado).\n- d) Las de implantación comprueban el sistema en el entorno real de operación.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-039",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 67
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Dado un proyecto git, ¿con qué comando puedo listar las etiquetas?",
+   "ctx": null,
+   "op": {
+    "a": "git tag",
+    "b": "gil list-tag",
+    "c": "git rebase",
+    "d": "git -t"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** `git tag` sin argumentos **lista las etiquetas** (`git tag -l \"v1.*\"` filtra por patrón). Con un nombre, la crea.\n\n- b) y d) No existen.\n- c) `git rebase` reaplica commits sobre otra base.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-040",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 68
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "La plataforma de control de versiones de Microsoft es:",
+   "ctx": null,
+   "op": {
+    "a": "CVS.",
+    "b": "Trello.",
+    "c": "Team Foundation Server.",
+    "d": "ClearCase."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** **Team Foundation Server** era la plataforma de Microsoft (control de versiones TFVC o Git, más gestión del trabajo y CI). Desde 2019 se llama **Azure DevOps Server**.\n\n- a) CVS es un sistema libre y centralizado, histórico.\n- b) Trello es un tablero de tareas (Atlassian).\n- d) ClearCase es de IBM (hoy HCL VersionVault).",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-041",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 69
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Con respecto a SonarQube, señale la INCORRECTA:",
+   "ctx": null,
+   "op": {
+    "a": "Solución diseñada para realizar análisis dinámico del código fuente de manera automática.",
+    "b": "Entre las verificaciones que puede realizar está la detección de código duplicado.",
+    "c": "Obtiene diversas métricas sobre el código.",
+    "d": "Permite definir \"Quality Gates\" con las condiciones mínimas que el proyecto debe cumplir para subir a producción."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** Es INCORRECTA: SonarQube hace **análisis estático** (sin ejecutar el código), no dinámico.\n\nDetecta código duplicado (b), calcula métricas como complejidad, cobertura o deuda técnica (c) y permite definir Quality Gates (d).",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-042",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 70
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Con respecto a las pruebas de regresión, señale la INCORRECTA:",
+   "ctx": null,
+   "op": {
+    "a": "Ante cambios sobre un componente software, ayudan a garantizar que el resto de componentes no se ve afectado.",
+    "b": "Son compatibles con las metodologías ágiles de desarrollo.",
+    "c": "Normalmente, implican la repetición de las pruebas que ya se han realizado previamente.",
+    "d": "No es posible automatizar las pruebas de regresión."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** Es INCORRECTA: las pruebas de regresión **se pueden y suelen automatizar** (son la base de las suites que se ejecutan en integración continua).\n\na), b) y c) son ciertas: eliminan el efecto onda, encajan con el desarrollo ágil y consisten en repetir pruebas ya superadas.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-043",
+   "tipo": "historica",
+   "ref": "LI2017-b3-b3-08",
+   "origen": {
+    "anio": 2017,
+    "parte": "b3",
+    "n": 8
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se va a utilizar el programa de control de versiones Git para el desarrollo del nuevo sistema, indique el comando necesario para crear un repositorio vacío en Git:",
+   "ctx": null,
+   "op": {
+    "a": "git start",
+    "b": "git init",
+    "c": "git add",
+    "d": "git config"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** `git init` crea un **repositorio vacío** (el directorio `.git`) en el directorio actual.\n\n- a) `git start` no existe.\n- c) `git add` prepara cambios para el próximo commit.\n- d) `git config` establece la configuración (nombre, correo...).",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-044",
+   "tipo": "historica",
+   "ref": "LI2017-b3-b3-22",
+   "origen": {
+    "anio": 2017,
+    "parte": "b3",
+    "n": 22
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Para la generación de documentación de APIs de Java en el proyecto se podría usar:",
+   "ctx": null,
+   "op": {
+    "a": "Nagios",
+    "b": "Javadoc",
+    "c": "Alfresco",
+    "d": "Todas son correctas."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** **Javadoc** genera documentación HTML de APIs Java a partir de los comentarios `/** ... */` del código.\n\n- a) Nagios es una herramienta de monitorización de sistemas y redes.\n- c) Alfresco es un gestor documental (ECM).\n- d) Como a) y c) no sirven, \"todas\" es falsa.",
+   "epigrafe": "2. Generación de código y documentación",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-045",
+   "tipo": "historica",
+   "ref": "LI2017-b3-b3-23",
+   "origen": {
+    "anio": 2017,
+    "parte": "b3",
+    "n": 23
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se le encomienda revisar DFDs de la aplicación anterior. Los flujos de datos en un DFD que comunican procesos con almacenes sólo pueden ser de los siguientes tipos:",
+   "ctx": null,
+   "op": {
+    "a": "Control y flujo.",
+    "b": "Consulta, actualización y borrado.",
+    "c": "Consulta, actualización y diálogo.",
+    "d": "Control y comunicación."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Los flujos entre procesos y almacenes son de **consulta, actualización y diálogo**.\n\n- a) y d) Los flujos de control unen procesos de control con otros procesos, no con almacenes; \"de flujo\" y \"de comunicación\" no son tipos.\n- b) El borrado es una forma de **actualización**, no un tipo propio.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-046",
+   "tipo": "historica",
+   "ref": "LI2017-b3-b3-25",
+   "origen": {
+    "anio": 2017,
+    "parte": "b3",
+    "n": 25
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "De los siguientes productos, ¿cuál le permite realizar un seguimiento de los errores de software del proyecto?",
+   "ctx": null,
+   "op": {
+    "a": "Synology",
+    "b": "Cloudera",
+    "c": "Hadoop",
+    "d": "MantisBT"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** **MantisBT** (Mantis Bug Tracker) es un sistema libre de seguimiento de errores.\n\n- a) Synology fabrica servidores NAS.\n- b) Cloudera es una distribución empresarial de Hadoop.\n- c) Hadoop es un framework de procesamiento distribuido de grandes volúmenes de datos.",
+   "epigrafe": "1. Repositorios y plataformas colaborativas",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-047",
+   "tipo": "historica",
+   "ref": "LI2017-b3-b3-28",
+   "origen": {
+    "anio": 2017,
+    "parte": "b3",
+    "n": 28
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El proceso que consiste en mejorar el código una vez escrito cambiando su estructura interna sin modificar su comportamiento externo es:",
+   "ctx": null,
+   "op": {
+    "a": "Ofuscación.",
+    "b": "Encapsular.",
+    "c": "Refactorización.",
+    "d": "Comprimir."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** La **refactorización** cambia la estructura interna del código **sin alterar su comportamiento externo** (extraer método, renombrar, eliminar duplicados...).\n\n- a) La ofuscación hace el código ilegible a propósito.\n- b) Encapsular es ocultar el estado interno de un objeto (un principio de la orientación a objetos).\n- d) Comprimir reduce el tamaño, no mejora la estructura.",
+   "epigrafe": "2. Generación de código y documentación",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-048",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-39",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 39
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En un Diagrama de Flujo de Datos o DFD se denomina proceso primitivo a:",
+   "ctx": null,
+   "op": {
+    "a": "A cualquiera de los procesos que aparecen en el nivel 1 de descomposición.",
+    "b": "Al proceso principal del Diagrama de Contexto a descomponer.",
+    "c": "Aquel proceso que no necesita descomposición.",
+    "d": "Aquel proceso que coordina y sincroniza las actividades de otros procesos."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Un **proceso primitivo** es el que **no necesita más descomposición**; se describe con una especificación de proceso.\n\n- a) Los procesos del nivel 1 son subsistemas, normalmente todavía descomponibles.\n- b) El proceso único del diagrama de contexto representa todo el sistema.\n- d) Coordinar y sincronizar otros procesos es la definición de **proceso de control**.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-049",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-54",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 54
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale cuál de las siguientes herramientas sirve para realizar pruebas de estrés en Java:",
+   "ctx": null,
+   "op": {
+    "a": "Jmeter",
+    "b": "SonarQube",
+    "c": "Junit",
+    "d": "Piwik"
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** **JMeter** (Apache, en Java) hace pruebas de **carga y estrés**.\n\n- b) SonarQube hace análisis estático de calidad.\n- c) JUnit es el framework de pruebas **unitarias**.\n- d) Piwik (hoy Matomo) es analítica web.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-050",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-71",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 71
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Siendo el nombre remoto \"origin\", y la rama \"master\", para subir los commits de una rama local a un repositorio remoto, ¿cuál sería el comando en Git?",
+   "ctx": null,
+   "op": {
+    "a": "git push origin master",
+    "b": "git pull origin master",
+    "c": "git init origin master",
+    "d": "git start origin master"
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** `git push origin master` sube los commits de la rama local `master` al remoto `origin`.\n\n- b) `git pull` hace lo contrario: trae e integra cambios del remoto.\n- c) `git init` crea un repositorio; no acepta remoto y rama así.\n- d) `git start` no existe.\n\nHoy GitHub y GitLab crean la rama inicial como `main`, pero la sintaxis es la misma.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-051",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-R02",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 102
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Entre los productos existentes para la gestión de integración continua de software (entrega continua desde el código hasta el despliegue) se encuentra:",
+   "ctx": null,
+   "op": {
+    "a": "Magnolia",
+    "b": "Bamboo",
+    "c": "DevExpress",
+    "d": "InterSystems Ensemble"
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** **Bamboo** es el servidor de integración y entrega continua de Atlassian.\n\n- a) Magnolia es un gestor de contenidos (CMS).\n- c) DevExpress vende componentes de interfaz de usuario para .NET y JavaScript.\n- d) InterSystems Ensemble es una plataforma de integración de aplicaciones (sustituida por IRIS).",
+   "epigrafe": "7. Integración y entrega continuas (CI/CD)",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-052",
+   "tipo": "historica",
+   "ref": "LI2016-b3-b3-R02",
+   "origen": {
+    "anio": 2016,
+    "parte": "b3",
+    "n": 41
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Suponiendo que está trabajando con el IDE Eclipse en el desarrollo de la aplicación Java y necesita instalar un plugin para el sistema control de versiones, ¿cuál de los siguientes sería opción válida?",
+   "ctx": null,
+   "op": {
+    "a": "Uglify",
+    "b": "EGIT",
+    "c": "NBGITE",
+    "d": "Nagios"
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** **EGit** es el plug-in de Git para Eclipse (basado en JGit).\n\n- a) Uglify (UglifyJS) minimiza código JavaScript.\n- c) NBGITE no existe.\n- d) Nagios monitoriza sistemas y redes.",
+   "epigrafe": "2. Generación de código y documentación",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-053",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-III-01",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 52
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Indique cuál de las siguientes afirmaciones sobre los distintos niveles de Diagramas de Flujos de Datos (DFD) es cierta, el DFD de más alto nivel (Nivel 0):",
+   "ctx": null,
+   "op": {
+    "a": "es conocido como diagrama 0.",
+    "b": "solo puede incluir una entidad externa.",
+    "c": "solo puede incluir un flujo de datos que representa procedencia y destino de la información.",
+    "d": "solo incluye un proceso que corresponde al sistema en estudio."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** El DFD de nivel 0 o **diagrama de contexto** tiene **un único proceso**, que representa todo el sistema en estudio, con las entidades externas y sus flujos.\n\n- a) En muchas obras el \"diagrama 0\" es el primer nivel de descomposición (nivel 1), no el de contexto: es el distractor.\n- b) Puede haber varias entidades externas.\n- c) Puede haber varios flujos de datos.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-h-054",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-III-02",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 53
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de los siguientes NO es un tipo de flujo de datos en un DFD?",
+   "ctx": null,
+   "op": {
+    "a": "De consulta.",
+    "b": "De diálogo.",
+    "c": "De actualización.",
+    "d": "De relación."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** No existen flujos \"de relación\". Los tipos entre proceso y almacén son **consulta** (a), **diálogo** (b) y **actualización** (c).",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-055",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-III-49",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 100
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Es un sistema de control de versiones multiplataforma, para desarrolladores de software:",
+   "ctx": null,
+   "op": {
+    "a": "Cassandra",
+    "b": "Nunit",
+    "c": "Mercurial",
+    "d": "Lucene"
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** **Mercurial (hg)** es un sistema de control de versiones distribuido, libre y multiplataforma, escrito en Python.\n\n- a) Cassandra es una base de datos NoSQL.\n- b) NUnit es un framework de pruebas unitarias para .NET.\n- d) Lucene es una biblioteca de búsqueda de texto.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-056",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-III-50",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 101
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Dado un repositorio que se encuentra bajo control de versiones con la herramienta Git, ¿qué nombre tiene el fichero en que se indican aquellos ficheros que NO deben ser tenidos en cuenta por el control de versiones?",
+   "ctx": null,
+   "op": {
+    "a": ".gitignore",
+    "b": ".gituntrack",
+    "c": ".gitexclude",
+    "d": ".gituncommit"
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** El fichero **`.gitignore`** lista los patrones de ficheros que Git **no debe seguir** (`target/`, `*.class`, `.env`...).\n\n`.gituntrack`, `.gitexclude` y `.gituncommit` no existen. (Existe `.git/info/exclude`, que hace lo mismo pero solo en local y no se comparte.)",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-057",
+   "tipo": "historica",
+   "ref": "LI2016-ej1_iv-IV-01",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 105
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "VCS (Version Control System), SCM (Software Configuration Management) y CMS (Configuration Management System) son:",
+   "ctx": null,
+   "op": {
+    "a": "Formas de referirse al control de cambios de los programas de una instalación.",
+    "b": "Paquetes de la herramienta CVS (Concurrent Versions System).",
+    "c": "Capas del Control Version System en Windows 10.",
+    "d": "Herramientas disponibles en Office 2016."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** VCS (*Version Control System*), SCM (*Software Configuration Management*) y CMS (*Configuration Management System*) son **formas de referirse al control de cambios** de los programas de una instalación.\n\n- b) No son paquetes de CVS.\n- c) Windows 10 no tiene un \"Control Version System\" con capas.\n- d) No son herramientas de Office.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-h-058",
+   "tipo": "historica",
+   "ref": "LI2015-b3-b3-22",
+   "origen": {
+    "anio": 2015,
+    "parte": "b3",
+    "n": 21
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Para el control de versiones del proyecto su responsable le propone utilizar GIT o Subversion, señale la opción correcta:",
+   "ctx": null,
+   "op": {
+    "a": "Para el IDE NetBeans no existe plugin para utilizar Subversion.",
+    "b": "Subversion es más rápido que GIT.",
+    "c": "GIT requiere menor espacio para almacenamiento.",
+    "d": "Navegar a través de las versiones es más simple en GIT ya que utiliza números de secuencia de revisión en lugar de códigos hash."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Git suele **ocupar menos espacio**: comprime y empaqueta los objetos, de modo que un clon con todo el historial puede ocupar menos que una copia de trabajo de Subversion con sus metadatos.\n\n- a) NetBeans sí tiene soporte para Subversion.\n- b) Git es más rápido, porque casi todas las operaciones son locales.\n- d) Los números de revisión secuenciales son de **Subversion**; Git identifica los commits con hashes.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-h-059",
+   "tipo": "historica",
+   "ref": "LI2015-b3-b3-23",
+   "origen": {
+    "anio": 2015,
+    "parte": "b3",
+    "n": 22
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Tras instalar Subversion como repositorio para el control de versiones del proyecto, usted utiliza NetBeans para conectarse al mismo y descargar por primera vez en su máquina una copia local con la que trabajar, para ello usted ejecuta:",
+   "ctx": null,
+   "op": {
+    "a": "svn download",
+    "b": "svn checkout",
+    "c": "svn project",
+    "d": "svn import"
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** `svn checkout URL` (`svn co`) descarga por primera vez una **copia de trabajo** local del repositorio.\n\n- a) y c) `svn download` y `svn project` no existen.\n- d) `svn import` hace lo contrario: sube un árbol de ficheros no versionado al repositorio, sin crear copia de trabajo.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-060",
+   "tipo": "historica",
+   "ref": "LI2015-b3-b3-24",
+   "origen": {
+    "anio": 2015,
+    "parte": "b3",
+    "n": 23
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Una vez que se han realizado cambios en el proyecto quiere enviarlos al repositorio Subversion, pero antes necesita echar un vistazo a lo que ha cambiado exactamente para evitar modificaciones accidentales de ficheros. Para descubrir esto utilizará el comando:",
+   "ctx": null,
+   "op": {
+    "a": "svn status",
+    "b": "svn svnlist",
+    "c": "svn listupdate",
+    "d": "svn svnupdate"
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** `svn status` (`svn st`) **lista los ficheros modificados**, añadidos o borrados en la copia local: es lo que se revisa antes del commit.\n\nLas demás opciones (`svn svnlist`, `svn listupdate`, `svn svnupdate`) no existen. Para ver los cambios línea a línea se usaría `svn diff`.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-061",
+   "tipo": "historica",
+   "ref": "LI2015-b3-b3-25",
+   "origen": {
+    "anio": 2015,
+    "parte": "b3",
+    "n": 24
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se está documentando con etiquetas Javadoc el método \"tieneReservas\" que acepta como parámetro el CIF del cliente y devuelve un booleano que indica si ha tenido o no reservas en algún momento. En la documentación del código a generar con Javadoc se quiere que aparezca información de lo que hace el método, del parámetro de entrada y de lo que devuelve, así mismo se desea hacer referencia al método \"verReservas(String cif)\" de la clase Reservas.java del paquete utilidades. Seleccione la opción correcta que utilizaría para ello:",
+   "ctx": null,
+   "op": {
+    "a": "/**\n * Indica si el cliente ha tenido o no reservas en algún momento\n * @param cif\n * @see utilidades.Reservas#verReserva(String)\n * @return <ul>\n * <li>true: el cliente ha tenido alguna reserva </li>\n * <li>false: el cliente no ha tenido reservas</li>\n * </ul>\n */",
+    "b": "/**\n * Indica si el cliente ha tenido o no reservas en algún momento\n * @parameter cif\n * @see utilidades#Reservas#verReserva(String)\n * @return <ul>\n * <li>true: el cliente ha tenido alguna reserva </li>\n * <li>false: el cliente no ha tenido reservas</li>\n * </ul>\n */",
+    "c": "/**\n * Indica si el cliente ha tenido o no reservas en algún momento\n * @parameter cif\n * @ref utilidades#Reservas#verReserva(String)\n * @value <ul>\n * <li>true: el cliente ha tenido alguna reserva </li>\n * <li>false: el cliente no ha tenido reservas</li>\n * </ul>\n */",
+    "d": "/*\n * Indica si el cliente ha tenido o no reservas en algún momento\n * @param cif\n * @ref utilidades#Reservas#verReserva(String)\n * @return <ul>\n * <li>true: el cliente ha tenido alguna reserva </li>\n * <li>false: el cliente no ha tenido reservas</li>\n * </ul>\n */"
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** Es el único bloque correcto: empieza por `/**` y usa `@param cif`, `@see utilidades.Reservas#verReserva(String)` (paquete.Clase#método) y `@return`.\n\n- b) `@parameter` no existe y la referencia usa `#` en lugar de `.` entre paquete y clase.\n- c) Además, `@ref` no existe y `@value` no describe el valor devuelto.\n- d) Empieza por `/*`: Javadoc lo ignora, y `@ref` no existe.",
+   "epigrafe": "2. Generación de código y documentación",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-h-062",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-III-02",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 44
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las siguientes afirmaciones sobre los Diagramas de Flujos de Datos (DFD) es cierta?",
+   "ctx": null,
+   "op": {
+    "a": "Todo proceso, independientemente del nivel del diagrama, debe tener al menos una entrada y una salida.",
+    "b": "Los procesos incluidos en el diagrama de nivel 0 pueden no tener entrada o salida.",
+    "c": "Los flujos de datos presentes en el DFD de nivel 0 pueden dividirse en varios flujos de datos en DFDs de niveles posteriores.",
+    "d": "Todos los flujos de datos deben terminar en un almacén de datos, o en un proceso."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** (clave oficial provisional) Métrica v3 exige que **todo proceso** tenga al menos un flujo de entrada y uno de salida: un proceso sin entradas es un \"milagro\" y uno sin salidas un \"agujero negro\".\n\n- b) Falsa: ningún proceso puede carecer de entradas o salidas, tampoco en el nivel 0.\n- d) Falsa: un flujo también puede terminar en una **entidad externa**.\n- c) **Discutible**: en la explosión de un proceso, un flujo del nivel superior *sí* puede descomponerse en varios en el nivel inferior. El temario la daba como correcta. La plantilla eligió a); si sale de nuevo, la a) es la regla más literal de Métrica.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 3
+  },
+  {
+   "id": "t23-h-063",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-III-03",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 45
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En los DFD NO existen los flujos de datos de:",
+   "ctx": null,
+   "op": {
+    "a": "Consulta.",
+    "b": "Actualización.",
+    "c": "Optimización.",
+    "d": "Diálogo."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** No existen flujos \"de optimización\". Entre procesos y almacenes, Métrica v3 distingue flujos de **consulta** (a), **actualización** (b) y **diálogo** (d).",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-064",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-III-04",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 46
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Un Diagrama de Flujo de Datos (DFD) se compone de los siguientes elementos:",
+   "ctx": null,
+   "op": {
+    "a": "Entrada, Proceso, Decisión, Conector, Almacenamiento temporal, Almacenamiento permanente y Salida.",
+    "b": "Entidad Externa, Proceso, Almacén de Datos y Flujo de Datos.",
+    "c": "Entidad, Relación, Dominio y Atributo.",
+    "d": "Actores, Casos de Uso y Relaciones."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Los elementos de un DFD son **entidad externa, proceso, almacén de datos y flujo de datos**.\n\n- a) Son elementos de un **diagrama de flujo** (ordinograma) de programación.\n- c) Son conceptos del modelo **entidad/relación**.\n- d) Son los de un diagrama de **casos de uso** UML.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-065",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-III-50",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 91
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Son herramientas específicas de control de versiones de software:",
+   "ctx": null,
+   "op": {
+    "a": "Mercurial, Git y Apache Subversion.",
+    "b": "Gimp, Mercurial y Git.",
+    "c": "RedMine, Planner y OpenProj.",
+    "d": "Cassandra, Git y REDIS."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** **Mercurial, Git y Apache Subversion** son herramientas de control de versiones.\n\n- b) Gimp es un editor de imágenes.\n- c) Redmine, Planner y OpenProj son herramientas de gestión de proyectos.\n- d) Cassandra y Redis son bases de datos NoSQL.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-066",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-III-R03",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 94
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Visual SourceSafe es:",
+   "ctx": null,
+   "op": {
+    "a": "Una herramienta CASE.",
+    "b": "Un antivirus.",
+    "c": "Una herramienta de control de versiones de Microsoft.",
+    "d": "Una herramienta para modelado UML."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** **Visual SourceSafe** fue la herramienta de control de versiones (centralizada) de Microsoft. Está descatalogada: la sustituyó Team Foundation Server, hoy Azure DevOps Server.\n\nNo es una herramienta CASE (a), un antivirus (b) ni de modelado UML (d).",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-067",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-24",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 61
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El Proceso Unificado de Desarrollo del software:",
+   "ctx": null,
+   "op": {
+    "a": "Es iterativo e incremental.",
+    "b": "No necesita casos de uso si los requisitos son volátiles.",
+    "c": "Es incompatible con UML.",
+    "d": "No tiene en cuenta los riesgos."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** El Proceso Unificado de Desarrollo es **iterativo e incremental**, **dirigido por casos de uso** y **centrado en la arquitectura**.\n\n- b) Falso: los casos de uso guían todo el proceso.\n- c) Falso: usa UML (sus autores, Jacobson, Booch y Rumbaugh, son los de UML).\n- d) Falso: está guiado por los riesgos, que se atacan en las primeras iteraciones.",
+   "epigrafe": "4. Otras metodologías de desarrollo",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-068",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-R01",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 88
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Las herramientas Middle CASE se usan para:",
+   "ctx": null,
+   "op": {
+    "a": "Automatizar tareas en el análisis y diseño de aplicaciones.",
+    "b": "Ayudar en las fases de planificación y análisis de requisitos.",
+    "c": "Automatizar la generación de código y crear programas de detección de errores.",
+    "d": "Depurar programas y realizar planes de pruebas."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** Las **Middle CASE** (M-CASE) automatizan tareas de **análisis y diseño** (DFD, E/R, UML).\n\n- b) Planificación y análisis de requisitos: **Upper CASE**.\n- c) y d) Generación de código, depuración y pruebas: **Lower CASE**.",
+   "epigrafe": "2. Generación de código y documentación",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-069",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-R02",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 89
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En una clasificación de herramientas CASE basada en las fases del ciclo de desarrollo que cubren, las denominadas Lower Case se emplean en:",
+   "ctx": null,
+   "op": {
+    "a": "La generación de código.",
+    "b": "El análisis de requisitos.",
+    "c": "La fase de planificación.",
+    "d": "La fase de diseño."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** Las **Lower CASE** (back-end) se emplean en la **generación de código**, pruebas e implantación.\n\nAnálisis de requisitos (b) y planificación (c) son de Upper CASE; el diseño (d), de Middle CASE.",
+   "epigrafe": "2. Generación de código y documentación",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-070",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-R03",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 90
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Qué tiene que declarar un módulo o plug-in de Eclipse para que otros módulos le puedan agregar funcionalidades?",
+   "ctx": null,
+   "op": {
+    "a": "La localización de cada módulo que contribuye con sus nuevas funcionalidades.",
+    "b": "Una o varias extensiones.",
+    "c": "Uno o varios puntos de extensión.",
+    "d": "Un servicio web."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** En Eclipse, el plug-in que quiere ser ampliado declara **puntos de extensión**; los plug-ins que le aportan funcionalidad declaran **extensiones** sobre esos puntos.\n\n- b) Es el distractor: las extensiones las declara quien **aporta**, no quien es extendido.\n- a) y d) No forman parte del modelo de plug-ins de Eclipse.",
+   "epigrafe": "2. Generación de código y documentación",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-h-071",
+   "tipo": "historica",
+   "ref": "LI2007-b3-S1-18",
+   "origen": {
+    "anio": 2007,
+    "parte": "b3",
+    "n": 3
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "SALUTIS elabora a partir de las noticias que publica en su página Web una revista electrónica mensual que selecciona las noticias más destacadas unidas a artículos específicamente elaborados para la revista. Acérrimos seguidores de la filosofía del software libre, pretenden difundir dicha publicación mediante una licencia que la mantenga bajo ciertas reglas del “copyleft”. ¿Con cuál de estas licencias no podría permitir la libre copia y distribución de la publicación?:",
+   "ctx": null,
+   "op": {
+    "a": "Creative Commons.",
+    "b": "GNU FDL (Free Documentation Licence).",
+    "c": "OPL (Open Publication Licence).",
+    "d": "SKL (Sharing Knowledge Licence)."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**d)** La \"SKL (Sharing Knowledge Licence)\" no es una licencia libre reconocida, así que no serviría para permitir la libre copia y distribución.\n\nCreative Commons (a), GNU FDL (b) y Open Publication License (c) sí son licencias de contenidos que permiten copiar y distribuir.\n\n**Obsoleta**: la OPL está en desuso y la GFDL apenas se usa para contenidos nuevos; hoy lo habitual es Creative Commons (por ejemplo, CC BY-SA).",
+   "epigrafe": "2. Generación de código y documentación",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-h-072",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-51",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 44
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las siguientes afirmaciones es incorrecta respecto de los Diagramas de Flujo de Datos?:",
+   "ctx": null,
+   "op": {
+    "a": "El DFD de nivel 0 o Diagrama de Contexto es el de menor detalle.",
+    "b": "En el DFD de nivel 0 aparece un solo proceso que representa el sistema.",
+    "c": "En el DFD de nivel 1 aparece un proceso por cada subsistema.",
+    "d": "En el DFD de nivel 1 aparecen las entidades externas y los flujos de datos entre éstas y los subsistemas."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** (clave oficial) La afirmación incorrecta es la d). Las entidades externas y sus flujos con el sistema se representan en el **diagrama de contexto (nivel 0)**. El nivel 1 se centra en los subsistemas y en los flujos **entre ellos**.\n\na), b) y c) son correctas: el nivel 0 es el de menor detalle, tiene un único proceso que representa todo el sistema, y en el nivel 1 hay un proceso por subsistema.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-h-073",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-52",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 45
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En el desarrollo de sistemas de información, los prototipos rápidos sirven para:",
+   "ctx": null,
+   "op": {
+    "a": "Acelerar la fase de codificación del sistema.",
+    "b": "Adquirir experiencia en el análisis de un sistema.",
+    "c": "No sirven para nada puesto que se desprecian.",
+    "d": "Experimentar con distintas codificaciones alternativas. 07/TAIL-1 7-7"
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Los prototipos rápidos (desechables) sirven para **validar requisitos y adquirir experiencia en el análisis** del sistema: el usuario ve pronto algo concreto y se aclaran los requisitos difusos.\n\n- a) y d) No buscan acelerar la codificación ni probar codificaciones alternativas: el código del prototipo se suele tirar.\n- c) Que se desechen no significa que no sirvan.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-h-074",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-74",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 66
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Los diagramas de Jackson:",
+   "ctx": null,
+   "op": {
+    "a": "Permiten crear nuevos tipos de datos.",
+    "b": "Parten de las estructuras de datos de entrada-salida.",
+    "c": "Es una notación exclusivamente estática.",
+    "d": "Representan a los datos y sus atributos."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**b)** La metodología de Jackson (JSP) **parte de las estructuras de datos de entrada y salida** para obtener la estructura del programa.\n\nNo crea tipos de datos (a), no es una notación exclusivamente estática (c: también modela secuencias y la vida de las entidades) y no representa datos y atributos (d), que es propio del modelo E/R.\n\n**Obsoleta**: técnica casi abandonada. En Métrica v3 sobrevive en la notación de las **Historias de la Vida de las Entidades**.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-h-075",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 30
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Indique cuál de los siguientes es un tipo de flujo de datos:",
+   "ctx": null,
+   "op": {
+    "a": "De extracción.",
+    "b": "De comentario.",
+    "c": "De diálogo.",
+    "d": "De interacción."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Los flujos entre proceso y almacén son de **consulta**, **actualización** y **diálogo** (consulta y actualización a la vez).\n\n\"De extracción\", \"de comentario\" y \"de interacción\" no son tipos de flujo de Métrica v3.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-076",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 32
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Elija la respuesta correcta en relación al Diagrama de Flujo de Datos:",
+   "ctx": null,
+   "op": {
+    "a": "Su objetivo es la obtención del modelo lógico de procesos de sistema, teniendo en cuenta las restricciones físicas del mismo.",
+    "b": "Una de sus principales desventajas es que el mantenimiento del sistema se complica, ya que es necesario actualizar gran cantidad de documentación.",
+    "c": "Permite identificar gráficamente los límites del sistema y la lógica de los procesos.",
+    "d": "Exige descomponer el sistema hasta el nivel 5, como mínimo, para reflejar fidedignamente la semántica del problema."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** El DFD permite identificar gráficamente los **límites del sistema** (con las entidades externas) y la lógica de los procesos.\n\n- a) El DFD es un modelo **lógico** y precisamente **no** tiene en cuenta las restricciones físicas.\n- b) Al contrario: facilita el mantenimiento, porque documenta el sistema de forma gráfica y jerárquica.\n- d) No hay un número mínimo de niveles: se descompone hasta llegar a los procesos primitivos.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-077",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 67
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Señale la Unidad dentro de una Organización de Tecnologías de Información donde se apliquen herramientas CASE:",
+   "ctx": null,
+   "op": {
+    "a": "Comunicaciones.",
+    "b": "Explotación y Operaciones.",
+    "c": "Desarrollo y mantenimiento.",
+    "d": "Sistemas y seguridad."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Las herramientas CASE (ingeniería del software asistida por ordenador) se usan para analizar, diseñar, generar y mantener software: su sitio es la unidad de **Desarrollo y mantenimiento**.\n\nComunicaciones (a), Explotación (b) y Sistemas y seguridad (d) gestionan redes, operación e infraestructura, no el desarrollo.",
+   "epigrafe": "2. Generación de código y documentación",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-078",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 68
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Los siguientes términos identifican modalidades de mantenimiento en sistemas de información. Indique la opción incorrecta:",
+   "ctx": null,
+   "op": {
+    "a": "Correctivo.",
+    "b": "Perfectivo.",
+    "c": "Adaptativo.",
+    "d": "Acumulativo."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** \"Acumulativo\" no es un tipo de mantenimiento.\n\nLos tipos clásicos son **correctivo** (corrige errores), **evolutivo** (nuevas necesidades), **adaptativo** (cambios del entorno), **perfectivo** (mejora calidad o rendimiento) y, según ISO/IEC 14764, **preventivo**.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-079",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 33
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En un diagrama de flujo de datos:",
+   "ctx": null,
+   "op": {
+    "a": "Dos almacenes de datos se pueden conectar directamente entre sí.",
+    "b": "Dos procesos se pueden conectar directamente entre sí.",
+    "c": "Dos objetos se pueden conectar directamente entre sí.",
+    "d": "Dos entidades externas se pueden conectar directamente entre sí."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Dos **procesos** sí pueden conectarse directamente con un flujo de datos.\n\n- a) y d) Dos almacenes o dos entidades externas no pueden conectarse: todo flujo necesita un proceso en al menos un extremo.\n- c) \"Objeto\" no es un elemento del DFD.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-h-080",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 62
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué norma señala los requisitos para un sistema de gestión de la calidad, que pueden ser utilizados por una organización para aumentar la satisfacción de sus clientes al satisfacer los requisitos establecidos por él y por las disposiciones legales obligatorias que sean aplicables?",
+   "ctx": null,
+   "op": {
+    "a": "La norma ISO 9000:2000",
+    "b": "La norma ISO 19011:2002",
+    "c": "La norma ISO 9001:2000",
+    "d": "La norma ISO 14010"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**c)** La **ISO 9001** fija los **requisitos** del sistema de gestión de la calidad. En 2005 la vigente era la ISO 9001:2000.\n\n- a) La ISO 9000 da los fundamentos y el vocabulario.\n- b) La ISO 19011 trata de las auditorías de sistemas de gestión.\n- d) La ISO 14010 era de auditorías ambientales (derogada).\n\n**Obsoleta**: la versión vigente es la **ISO 9001:2015**.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-001",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-001",
+   "texto": "reformulado",
+   "q": "En JUnit 5/6, ¿qué hace `assertThrows(IllegalArgumentException.class, () -> servicio.alta(null))` si el método lanza una `NumberFormatException` (subclase de `IllegalArgumentException`)?",
+   "ctx": null,
+   "op": {
+    "a": "La prueba pasa, porque assertThrows admite subclases del tipo esperado",
+    "b": "La prueba falla, porque el tipo lanzado no coincide exactamente con el esperado",
+    "c": "La prueba se marca como omitida (skipped)",
+    "d": "La prueba pasa solo si además se anota con @Test(expected = ...)"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`assertThrows` acepta la excepción indicada **o cualquier subclase**. Para exigir el tipo exacto existe `assertThrowsExactly`. Una prueba omitida es la que no cumple una suposición (`assumeTrue`) o lleva `@Disabled`. `@Test(expected=...)` es de JUnit 4 y no existe en JUnit 5.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 3
+  },
+  {
+   "id": "t23-v-002",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-002",
+   "texto": "reformulado",
+   "q": "Un desarrollador quiere traer los cambios del remoto **e integrarlos** en su rama actual con un solo comando. ¿Cuál usa?",
+   "ctx": null,
+   "op": {
+    "a": "git fetch",
+    "b": "git pull",
+    "c": "git push",
+    "d": "git clone"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`git pull` = `git fetch` + `git merge` (o `rebase` con `--rebase`): descarga e integra en la rama actual. `git fetch` solo descarga y actualiza `origin/*`; `git push` sube commits; `git clone` crea una copia nueva de un repositorio, no actualiza una existente.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-003",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-003",
+   "texto": "reformulado",
+   "q": "En un workflow de GitHub Actions, ¿qué clave indica los eventos que lo disparan (por ejemplo, `push` o `pull_request`)?",
+   "ctx": null,
+   "op": {
+    "a": "runs-on",
+    "b": "steps",
+    "c": "on",
+    "d": "needs"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`on` declara los eventos disparadores (`push`, `pull_request`, `schedule`, `workflow_dispatch`...). `runs-on` elige el runner (máquina); `steps` son los pasos de un job; `needs` encadena jobs (por defecto se ejecutan en paralelo).",
+   "epigrafe": "7. Integración y entrega continuas (CI/CD)",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-004",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-004",
+   "texto": "reformulado",
+   "q": "En el almacén de objetos de Git, ¿qué tipo de objeto guarda el **contenido** de un fichero, sin su nombre ni sus permisos?",
+   "ctx": null,
+   "op": {
+    "a": "tree",
+    "b": "commit",
+    "c": "tag",
+    "d": "blob"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **blob** guarda solo el contenido. El nombre y los permisos están en el **tree** (que representa un directorio). El **commit** apunta a un tree raíz y a sus padres; el **tag** anotado apunta a otro objeto con nombre, autor y mensaje.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-005",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-005",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes herramientas se utiliza para la **gestión de casos y planes de prueba**?",
+   "ctx": null,
+   "op": {
+    "a": "TestLink",
+    "b": "Foglight",
+    "c": "OneTrust",
+    "d": "Mercurial"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**TestLink** (como Zephyr, Xray o Azure Test Plans) gestiona casos y planes de prueba. Foglight monitoriza el rendimiento de aplicaciones; OneTrust gestiona privacidad y consentimiento; Mercurial es control de versiones.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-006",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-006",
+   "texto": "reformulado",
+   "q": "¿Cómo se denomina en GitLab el equivalente a la *pull request* de GitHub?",
+   "ctx": null,
+   "op": {
+    "a": "Push request",
+    "b": "Merge request",
+    "c": "Fork request",
+    "d": "Commit request"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "GitLab llama **merge request** a la solicitud de integrar una rama en otra. GitHub, Bitbucket y Azure DevOps la llaman pull request. Un *fork* es la copia del repositorio en tu cuenta desde la que se suele abrir la PR; *push request* y *commit request* no existen.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-007",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-007",
+   "texto": "reformulado",
+   "q": "Según Métrica v3, ¿qué pruebas tienen como objetivo la **aceptación final del sistema por parte del usuario**, validando que cumple los requisitos de funcionamiento esperado?",
+   "ctx": null,
+   "op": {
+    "a": "Pruebas de implantación",
+    "b": "Pruebas del sistema",
+    "c": "Pruebas de aceptación",
+    "d": "Pruebas de regresión"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las **pruebas de aceptación** (IAS 6) validan el sistema frente al catálogo de requisitos y buscan la aceptación final del usuario. Implantación = funcionamiento de hardware y software integrados en el **entorno de operación**; sistema = integración del sistema completo y con otros sistemas; regresión = eliminar el efecto onda tras un cambio.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-008",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-008",
+   "texto": "reformulado",
+   "q": "¿Qué atributo de NUnit se ejecuta **antes de cada** método de prueba de la clase?",
+   "ctx": null,
+   "op": {
+    "a": "[OneTimeSetUp]",
+    "b": "[TestFixture]",
+    "c": "[SetUp]",
+    "d": "[TearDown]"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En NUnit, `[SetUp]` se ejecuta antes de cada prueba (equivale a `@BeforeEach` de JUnit 5). `[OneTimeSetUp]` se ejecuta una vez por clase (`@BeforeAll`); `[TearDown]` después de cada prueba; `[TestFixture]` marca la clase de pruebas.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 3
+  },
+  {
+   "id": "t23-v-009",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-009",
+   "texto": "reformulado",
+   "q": "¿Para qué se utilizan herramientas como **Postman, SoapUI o REST Assured**?",
+   "ctx": null,
+   "op": {
+    "a": "Para medir la cobertura de código",
+    "b": "Para automatizar pruebas en el navegador",
+    "c": "Para el análisis estático del código",
+    "d": "Para probar APIs REST y SOAP"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Postman, SoapUI y REST Assured envían peticiones a APIs y comprueban sus respuestas. La cobertura la miden JaCoCo o Istanbul; el navegador se automatiza con Selenium, Cypress o Playwright; el análisis estático lo hacen SonarQube, PMD o ESLint.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-010",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-010",
+   "texto": "reformulado",
+   "q": "Se quiere localizar, mediante **búsqueda binaria** en el historial, el commit que introdujo un error. ¿Qué comando de Git se usa?",
+   "ctx": null,
+   "op": {
+    "a": "git bisect",
+    "b": "git cherry-pick",
+    "c": "git blame",
+    "d": "git reflog"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`git bisect` va partiendo el historial entre un commit bueno y uno malo hasta dar con el culpable. `git cherry-pick` aplica un commit concreto; `git blame` dice quién cambió cada línea de un fichero; `git reflog` muestra los movimientos de HEAD (sirve para recuperar commits perdidos).",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-011",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-011",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes es una herramienta de pruebas de JavaScript y TypeScript, creada por Meta, que incluye aserciones, mocks y cobertura?",
+   "ctx": null,
+   "op": {
+    "a": "JMeter",
+    "b": "Jest",
+    "c": "Javadoc",
+    "d": "Jenkins"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Jest** es el framework de pruebas de JavaScript de Meta. JMeter hace pruebas de carga; Javadoc genera documentación de Java; Jenkins es un servidor de integración continua.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-012",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-012",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes herramientas realiza **análisis estático** de código Java para detectar malas prácticas y posibles errores?",
+   "ctx": null,
+   "op": {
+    "a": "Prettier",
+    "b": "JMeter",
+    "c": "PMD",
+    "d": "Selenium"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**PMD** (como Checkstyle o SpotBugs) analiza el código Java sin ejecutarlo. Prettier solo formatea; JMeter hace pruebas de carga; Selenium automatiza el navegador.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-013",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-013",
+   "texto": "reformulado",
+   "q": "En Subversion, ¿qué comando descarga por primera vez una **copia de trabajo** desde el repositorio central (el equivalente funcional a clonar)?",
+   "ctx": null,
+   "op": {
+    "a": "svn import",
+    "b": "svn export",
+    "c": "svn update",
+    "d": "svn checkout"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`svn checkout` (`svn co`) crea la copia de trabajo. `svn import` sube un árbol **no versionado** al repositorio; `svn export` saca una copia limpia sin metadatos `.svn` (no es copia de trabajo); `svn update` actualiza una copia de trabajo que ya existe.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-014",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-014",
+   "texto": "reformulado",
+   "q": "¿En qué fichero se define un pipeline declarativo de **Jenkins** guardado junto al código del repositorio?",
+   "ctx": null,
+   "op": {
+    "a": "Jenkinsfile",
+    "b": ".gitlab-ci.yml",
+    "c": "pom.xml",
+    "d": ".github/workflows/ci.yml"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El pipeline como código de Jenkins va en el **Jenkinsfile**. `.gitlab-ci.yml` es el de GitLab CI; `.github/workflows/*.yml` los de GitHub Actions; `pom.xml` es la configuración de construcción de Maven.",
+   "epigrafe": "7. Integración y entrega continuas (CI/CD)",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-015",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-015",
+   "texto": "reformulado",
+   "q": "En Git, ¿qué comando saca un fichero del área de preparación sin perder los cambios del directorio de trabajo?",
+   "ctx": null,
+   "op": {
+    "a": "git restore fichero",
+    "b": "git reset --hard HEAD",
+    "c": "git rm fichero",
+    "d": "git restore --staged fichero"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`git restore --staged` devuelve el fichero de *staged* a *modified* conservando los cambios. `git restore fichero` (sin `--staged`) **descarta** los cambios no preparados; `git reset --hard` borra todos los cambios; `git rm` elimina el fichero del repositorio y del disco.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-016",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-016",
+   "texto": "reformulado",
+   "q": "En Git, ¿qué hace `git commit -am \"mensaje\"`?",
+   "ctx": null,
+   "op": {
+    "a": "Prepara los cambios de los ficheros ya seguidos y los confirma en un solo paso",
+    "b": "Prepara y confirma también los ficheros nuevos sin seguimiento",
+    "c": "Rehace el último commit cambiando su mensaje",
+    "d": "Confirma los cambios y los sube al remoto"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`-a` añade automáticamente los ficheros **ya seguidos** que se han modificado o borrado; los ficheros nuevos (*untracked*) necesitan `git add`. Rehacer el último commit es `git commit --amend`; subir al remoto es `git push`.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-017",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-017",
+   "texto": "reformulado",
+   "q": "Según la Guía Scrum 2020, ¿quién es responsable de **ordenar el Product Backlog** y maximizar el valor del producto?",
+   "ctx": null,
+   "op": {
+    "a": "El Scrum Master",
+    "b": "El Product Owner",
+    "c": "Los Developers",
+    "d": "El Comité de Dirección"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **Product Owner** (una sola persona) gestiona y ordena el Product Backlog y define el Objetivo del Producto. El Scrum Master es responsable de la eficacia del equipo (líder que sirve); los Developers crean el Incremento y elaboran el Sprint Backlog. El Comité de Dirección no es una figura de Scrum (sí de Métrica v3).",
+   "epigrafe": "4. Otras metodologías de desarrollo",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-018",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-018",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes herramientas **sí** sirve para analizar la calidad del código fuente?",
+   "ctx": null,
+   "op": {
+    "a": "Bazaar",
+    "b": "Checkstyle",
+    "c": "Trello",
+    "d": "RabbitMQ"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Checkstyle** comprueba estilo y reglas en Java (análisis estático), igual que PMD o SpotBugs. Bazaar es control de versiones; Trello, un tablero de tareas; RabbitMQ, un sistema de mensajería.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-019",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-019",
+   "texto": "reformulado",
+   "q": "Según la Guía Scrum 2020, ¿cuál es la duración máxima de la **Sprint Retrospective** para un Sprint de un mes?",
+   "ctx": null,
+   "op": {
+    "a": "15 minutos",
+    "b": "4 horas",
+    "c": "3 horas",
+    "d": "8 horas"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Para un Sprint de un mes: Sprint Planning 8 h, Sprint Review 4 h, Sprint Retrospective **3 h** y Daily Scrum 15 min. En Sprints más cortos los eventos suelen ser más cortos.",
+   "epigrafe": "4. Otras metodologías de desarrollo",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-020",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-020",
+   "texto": "reformulado",
+   "q": "En un repositorio de GitHub o GitLab, ¿qué fichero indica los **responsables de revisar** los cambios en cada ruta, de modo que se les asigna la revisión automáticamente?",
+   "ctx": null,
+   "op": {
+    "a": "CONTRIBUTING.md",
+    "b": "README.md",
+    "c": "CHANGELOG.md",
+    "d": "CODEOWNERS"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**CODEOWNERS** asigna revisores por ruta. CONTRIBUTING.md recoge las normas para contribuir; README.md, propósito y arranque; CHANGELOG.md, los cambios por versión.",
+   "epigrafe": "1. Repositorios y plataformas colaborativas",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-021",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-021",
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes es un sistema de control de versiones **centralizado**?",
+   "ctx": null,
+   "op": {
+    "a": "Apache Subversion",
+    "b": "Git",
+    "c": "Mercurial",
+    "d": "Bazaar"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Subversion** (como CVS, TFVC o Perforce) es centralizado: el historial está en el servidor. Git, Mercurial y Bazaar son **distribuidos**: cada clon tiene el historial completo.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-022",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-022",
+   "texto": "reformulado",
+   "q": "Según Métrica v3, ¿qué pruebas verifican la funcionalidad y la estructura de **cada componente individualmente**, una vez codificado?",
+   "ctx": null,
+   "op": {
+    "a": "Pruebas de integración",
+    "b": "Pruebas unitarias",
+    "c": "Pruebas del sistema",
+    "d": "Pruebas de implantación"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las **unitarias** (CSI 3) prueban cada componente aislado. Integración = ensamblaje e interfaces entre componentes (CSI 4); sistema = sistema completo y con otros sistemas (CSI 5); implantación = entorno real de operación (IAS 5).",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-023",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-023",
+   "texto": "reformulado",
+   "q": "¿Qué componente de Selenium permite ejecutar las pruebas **de forma distribuida en varios navegadores y máquinas**?",
+   "ctx": null,
+   "op": {
+    "a": "Selenium IDE",
+    "b": "Selenium WebDriver",
+    "c": "Selenium Grid",
+    "d": "Selenium RC Recorder"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Selenium Grid** reparte la ejecución entre nodos con distintos navegadores. Selenium IDE graba y reproduce pruebas; WebDriver es el API que controla el navegador. \"Selenium RC Recorder\" no existe.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-024",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-024",
+   "texto": "reformulado",
+   "q": "En SonarQube, ¿cómo se llama el conjunto de **condiciones mínimas** (por ejemplo, cobertura del código nuevo) que debe cumplir un proyecto para darse por bueno?",
+   "ctx": null,
+   "op": {
+    "a": "Quality Profile",
+    "b": "Security Hotspot",
+    "c": "Code Smell",
+    "d": "Quality Gate"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **Quality Gate** fija umbrales que el proyecto debe superar y puede bloquear el pipeline. El **Quality Profile** es el conjunto de reglas por lenguaje; un *security hotspot* es código sensible que hay que revisar; un *code smell* es un problema de mantenibilidad.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-025",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-025",
+   "texto": "reformulado",
+   "q": "¿Qué afirmación sobre la **entrega continua** (*Continuous Delivery*) es correcta?",
+   "ctx": null,
+   "op": {
+    "a": "El software está siempre listo para desplegarse, pero el paso a producción requiere una acción manual",
+    "b": "Cada cambio que supera el pipeline se despliega en producción automáticamente",
+    "c": "Consiste solo en compilar el código al hacer commit, sin ejecutar pruebas",
+    "d": "Exige que el código se integre en la rama principal una vez por Sprint"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En la **entrega continua** el paso a producción es manual (un clic). Si cada cambio llega a producción de forma automática, es **despliegue continuo**. La integración continua sí ejecuta pruebas y se integra a menudo (varias veces al día), no una vez por Sprint.",
+   "epigrafe": "7. Integración y entrega continuas (CI/CD)",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-026",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-026",
+   "texto": "reformulado",
+   "q": "Según Métrica v3, ¿qué pruebas son **pruebas de integración del sistema de información completo**, que lo prueban en su conjunto y con otros sistemas con los que se relaciona?",
+   "ctx": null,
+   "op": {
+    "a": "Pruebas de integración",
+    "b": "Pruebas del sistema",
+    "c": "Pruebas de aceptación",
+    "d": "Pruebas unitarias"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las **pruebas del sistema** (CSI 5) prueban el sistema completo y su relación con otros sistemas, para verificar las especificaciones funcionales y técnicas. Las de integración se centran en el ensamblaje de componentes; las de aceptación, en la validación por el usuario; las unitarias, en cada componente.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-027",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-027",
+   "texto": "reformulado",
+   "q": "En Métrica v3, ¿en qué proceso se encuadra la actividad de **elaboración de los manuales de usuario**?",
+   "ctx": null,
+   "op": {
+    "a": "Diseño del Sistema de Información (DSI)",
+    "b": "Implantación y Aceptación del Sistema (IAS)",
+    "c": "Construcción del Sistema de Información (CSI)",
+    "d": "Mantenimiento de Sistemas de Información (MSI)"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los manuales de usuario se elaboran en **CSI 6**. En CSI también se generan el código y se ejecutan las pruebas unitarias, de integración y del sistema. DSI define la arquitectura y el diseño; IAS incluye implantación, aceptación y paso a producción; MSI, el mantenimiento.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-028",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-028",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes herramientas **sí** es un sistema de control de versiones?",
+   "ctx": null,
+   "op": {
+    "a": "Gatling",
+    "b": "Cucumber",
+    "c": "Lucene",
+    "d": "Perforce (Helix Core)"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Perforce (Helix Core)** es un sistema centralizado de control de versiones muy usado en videojuegos. Gatling hace pruebas de carga; Cucumber, BDD; Lucene es una biblioteca de búsqueda.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-029",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-029",
+   "texto": "reformulado",
+   "q": "¿Qué comando de Git muestra **quién modificó por última vez cada línea** de un fichero?",
+   "ctx": null,
+   "op": {
+    "a": "git blame",
+    "b": "git log",
+    "c": "git show",
+    "d": "git diff"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`git blame fichero` anota cada línea con el commit y el autor que la cambió. `git log` lista commits; `git show` muestra el detalle de un commit; `git diff`, las diferencias entre versiones o zonas.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-030",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-030",
+   "texto": "reformulado",
+   "q": "En Jest, ¿cuál es el orden correcto en una aserción de igualdad?",
+   "ctx": null,
+   "op": {
+    "a": "expect(valorEsperado).toBe(valorReal)",
+    "b": "expect(valorReal).toBe(valorEsperado)",
+    "c": "assertEquals(valorReal, valorEsperado)",
+    "d": "assert.toBe(valorEsperado, valorReal)"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En Jest se escribe `expect(real).toBe(esperado)`. Es al revés que en JUnit, donde `assertEquals(esperado, real)` pone primero el esperado. `assert.toBe` no existe.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 3
+  },
+  {
+   "id": "t23-v-031",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-031",
+   "texto": "reformulado",
+   "q": "En un DFD de Métrica v3, ¿qué representa un **almacén de datos**?",
+   "ctx": null,
+   "op": {
+    "a": "Datos en movimiento entre procesos",
+    "b": "Una fuente o destino de información externa al sistema",
+    "c": "Información en reposo, que no crea, transforma ni destruye datos",
+    "d": "Una transformación de flujos de entrada en flujos de salida"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **almacén** es información en reposo. Los datos en movimiento son los **flujos**; la fuente o destino externo es la **entidad externa**; transformar entradas en salidas es lo que hace el **proceso**.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-032",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-032",
+   "texto": "reformulado",
+   "q": "Según Métrica v3, ¿qué pruebas del sistema comprueban el funcionamiento con **grandes volúmenes de datos**?",
+   "ctx": null,
+   "op": {
+    "a": "Pruebas de sobrecarga",
+    "b": "Pruebas de rendimiento",
+    "c": "Pruebas de disponibilidad de datos",
+    "d": "Pruebas de volumen"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las **de volumen** usan grandes cantidades de datos. Sobrecarga = umbral límite de recursos; rendimiento = tiempos de respuesta; disponibilidad de datos = recuperación tras un fallo sin perder integridad.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-033",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-033",
+   "texto": "reformulado",
+   "q": "¿Qué diferencia hay entre `git commit` y `svn commit`?",
+   "ctx": null,
+   "op": {
+    "a": "git commit es local y necesita git push para llegar al remoto; svn commit envía directamente al servidor central",
+    "b": "Ambos envían los cambios al servidor central",
+    "c": "git commit envía al servidor y svn commit solo guarda en local",
+    "d": "Ninguna: son sinónimos en los dos sistemas"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Git es distribuido: el commit queda en el repositorio **local** y se publica con `git push`. Subversion es centralizado: `svn commit` va directamente al repositorio del servidor.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-034",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-034",
+   "texto": "reformulado",
+   "q": "¿Qué tipo de prueba lleva el sistema **más allá de su capacidad máxima** para observar cómo falla y cómo se recupera?",
+   "ctx": null,
+   "op": {
+    "a": "Prueba de carga",
+    "b": "Prueba de estrés",
+    "c": "Prueba de humo",
+    "d": "Prueba de regresión"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **prueba de estrés** supera el límite del sistema. La **de carga** usa la carga esperada de usuarios concurrentes; la **de humo** es una comprobación rápida de lo básico tras un despliegue; la **de regresión** repite pruebas para ver que un cambio no rompe nada.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-035",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-035",
+   "texto": "reformulado",
+   "q": "En Métrica v3, ¿en qué proceso se realizan las **pruebas de implantación** y **de aceptación** del sistema?",
+   "ctx": null,
+   "op": {
+    "a": "Construcción del Sistema de Información (CSI)",
+    "b": "Análisis del Sistema de Información (ASI)",
+    "c": "Implantación y Aceptación del Sistema (IAS)",
+    "d": "Estudio de Viabilidad del Sistema (EVS)"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Implantación (IAS 5) y aceptación (IAS 6) están en **IAS**. En **CSI** se ejecutan las unitarias, de integración y del sistema. En **ASI** se especifica el plan de pruebas; **EVS** estudia alternativas de solución.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-036",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-036",
+   "texto": "reformulado",
+   "q": "En un DFD, ¿cuál de las siguientes conexiones directas mediante un flujo de datos **está permitida**?",
+   "ctx": null,
+   "op": {
+    "a": "De un almacén de datos a otro almacén",
+    "b": "De una entidad externa a un almacén de datos",
+    "c": "De una entidad externa a otra entidad externa",
+    "d": "De un almacén de datos a un proceso"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Todo flujo tiene un **proceso** en al menos uno de sus extremos. Almacén→proceso está permitido (flujo de consulta). Almacén→almacén, entidad→almacén y entidad→entidad no lo están.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-037",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-037",
+   "texto": "reformulado",
+   "q": "Al explotar un proceso de un DFD en el nivel inferior, ¿qué está **permitido**?",
+   "ctx": null,
+   "op": {
+    "a": "Que un flujo de datos del nivel superior se divida en varios flujos en el nivel inferior",
+    "b": "Que aparezca un flujo de entrada nuevo que no tenía el proceso padre",
+    "c": "Que desaparezca uno de los flujos de salida del proceso padre",
+    "d": "Que se descomponga una entidad externa en varias"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Un flujo puede **descomponerse** en varios en el nivel inferior. En cambio, no pueden faltar flujos del padre, no pueden aparecer flujos nuevos y las entidades externas no se descomponen.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-038",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-038",
+   "texto": "reformulado",
+   "q": "En una integración **descendente** (*top-down*), ¿qué se usa para simular los módulos de nivel inferior que aún no existen?",
+   "ctx": null,
+   "op": {
+    "a": "Drivers (conductores)",
+    "b": "Stubs (resguardos)",
+    "c": "Mutantes",
+    "d": "Fixtures de datos"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En la integración descendente se prueban primero los módulos superiores y los inferiores se sustituyen por **stubs**. En la ascendente (*bottom-up*) se usan **drivers** para simular los de arriba. Los mutantes son de las pruebas de mutación.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 3
+  },
+  {
+   "id": "t23-v-039",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-039",
+   "texto": "reformulado",
+   "q": "En Git, ¿qué comando crea una **etiqueta anotada** (un objeto tag con autor, fecha y mensaje)?",
+   "ctx": null,
+   "op": {
+    "a": "git tag v1.0",
+    "b": "git branch v1.0",
+    "c": "git tag -a v1.0 -m \"Versión 1.0\"",
+    "d": "git push --tags v1.0"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`git tag -a` crea una etiqueta **anotada**. `git tag v1.0` crea una etiqueta **ligera** (solo una referencia). `git branch` crea ramas. `git push --tags` sube etiquetas ya creadas.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-040",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-040",
+   "texto": "reformulado",
+   "q": "¿Cuál es hoy el nombre de la versión local (on-premises) de **Team Foundation Server** de Microsoft?",
+   "ctx": null,
+   "op": {
+    "a": "Visual SourceSafe",
+    "b": "GitHub Enterprise Cloud",
+    "c": "Azure Boards",
+    "d": "Azure DevOps Server"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "TFS pasó a llamarse **Azure DevOps Server** en 2019. Visual SourceSafe es su antecesor, ya descatalogado. GitHub Enterprise Cloud es otra plataforma de Microsoft, pero no es TFS. Azure Boards es solo el módulo de tableros de Azure DevOps.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-041",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-041",
+   "texto": "reformulado",
+   "q": "¿Qué tipo de análisis de seguridad examina una aplicación **en ejecución**, atacándola desde fuera como lo haría un usuario malicioso?",
+   "ctx": null,
+   "op": {
+    "a": "DAST",
+    "b": "SAST",
+    "c": "SCA",
+    "d": "Linting"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**DAST** (*Dynamic Application Security Testing*, por ejemplo OWASP ZAP) prueba la aplicación en ejecución. **SAST** (como SonarQube) analiza el código fuente sin ejecutarlo; **SCA** analiza las dependencias de terceros; el *linting* es análisis estático de estilo.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-042",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-042",
+   "texto": "reformulado",
+   "q": "¿Cómo se llama la prueba que **repite una prueba que había fallado** para confirmar que el defecto se ha corregido?",
+   "ctx": null,
+   "op": {
+    "a": "Prueba de regresión",
+    "b": "Re-test o prueba de confirmación",
+    "c": "Prueba de humo",
+    "d": "Prueba exploratoria"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **re-test** (confirmación) repite la prueba que falló. La **regresión** repite pruebas que ya **pasaban** para ver que el cambio no ha roto otra cosa. La de humo comprueba rápido lo básico; la exploratoria diseña y ejecuta a la vez, sin guion.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-043",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-043",
+   "texto": "reformulado",
+   "q": "¿Qué crea el comando `git init --bare`?",
+   "ctx": null,
+   "op": {
+    "a": "Un repositorio con un primer commit vacío",
+    "b": "Un repositorio sin directorio de trabajo, pensado para usarse como remoto en un servidor",
+    "c": "Una copia de un repositorio remoto sin historial",
+    "d": "Un repositorio que ignora el fichero .gitignore"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Un repositorio *bare* solo contiene la base de datos de Git (lo que habría en `.git`), sin ficheros de trabajo: es el formato habitual de un repositorio central al que se hace `push`. Una copia sin historial completo sería `git clone --depth 1`.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 3
+  },
+  {
+   "id": "t23-v-044",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-044",
+   "texto": "reformulado",
+   "q": "¿Qué herramienta genera documentación a partir de comentarios del código en **C y C++** (además de otros lenguajes)?",
+   "ctx": null,
+   "op": {
+    "a": "JSDoc",
+    "b": "Javadoc",
+    "c": "Doxygen",
+    "d": "Sphinx"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Doxygen** cubre C, C++, Java, Python y otros. JSDoc es para JavaScript; Javadoc, para Java; Sphinx, para Python (docstrings).",
+   "epigrafe": "2. Generación de código y documentación",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-045",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-045",
+   "texto": "reformulado",
+   "q": "En un DFD, ¿cuál de los siguientes **NO** es un tipo de flujo entre un proceso y un almacén?",
+   "ctx": null,
+   "op": {
+    "a": "De consulta",
+    "b": "De actualización",
+    "c": "De diálogo",
+    "d": "De borrado"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los tipos son consulta, actualización y diálogo. Borrar datos de un almacén se representa con un flujo **de actualización**, que incluye crear, modificar y borrar.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-046",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-046",
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes productos es de **Atlassian** y se usa para gestionar incidencias y tareas de proyectos de software?",
+   "ctx": null,
+   "op": {
+    "a": "Jira",
+    "b": "Redmine",
+    "c": "MantisBT",
+    "d": "Bugzilla"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Jira** es de Atlassian (como Confluence, Bitbucket y Bamboo). Redmine, MantisBT y Bugzilla también gestionan incidencias, pero son proyectos libres que no pertenecen a Atlassian.",
+   "epigrafe": "1. Repositorios y plataformas colaborativas",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-047",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-047",
+   "texto": "reformulado",
+   "q": "¿Qué metodología ágil incluye como prácticas la **programación en parejas**, el TDD, la refactorización y la integración continua?",
+   "ctx": null,
+   "op": {
+    "a": "Kanban",
+    "b": "Extreme Programming (XP)",
+    "c": "DSDM",
+    "d": "Lean Software Development"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**XP** (Kent Beck) reúne esas prácticas técnicas. Kanban se centra en visualizar el flujo y limitar el WIP; DSDM usa la priorización MoSCoW; Lean busca eliminar el desperdicio.",
+   "epigrafe": "2. Generación de código y documentación",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-048",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-048",
+   "texto": "reformulado",
+   "q": "En un DFD, el proceso 3 se explota en un diagrama de nivel inferior. ¿Cómo se numeran los procesos resultantes?",
+   "ctx": null,
+   "op": {
+    "a": "31, 32, 33...",
+    "b": "1, 2, 3... (numeración nueva)",
+    "c": "3.1, 3.2, 3.3...",
+    "d": "3a, 3b, 3c..."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La numeración es **jerárquica**: al explotar el proceso 3, los hijos son 3.1, 3.2, 3.3, y así sucesivamente en niveles inferiores (3.1.1...).",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-049",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-049",
+   "texto": "reformulado",
+   "q": "¿Qué herramienta de pruebas de carga define los escenarios como **scripts en JavaScript** y la desarrolla Grafana Labs?",
+   "ctx": null,
+   "op": {
+    "a": "JMeter",
+    "b": "Gatling",
+    "c": "LoadRunner",
+    "d": "k6"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**k6** usa scripts JavaScript. JMeter se configura con planes de prueba (GUI o XML); Gatling usa un DSL en Scala, Java o Kotlin; LoadRunner es comercial (hoy de OpenText).",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 3
+  },
+  {
+   "id": "t23-v-050",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-050",
+   "texto": "reformulado",
+   "q": "En Git, ¿qué hace `git push -u origin main`?",
+   "ctx": null,
+   "op": {
+    "a": "Sube la rama main al remoto origin y la fija como rama de seguimiento (upstream)",
+    "b": "Sube solo las etiquetas de la rama main",
+    "c": "Actualiza la rama local main con los cambios de origin",
+    "d": "Borra la rama main del remoto origin"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`-u` (`--set-upstream`) enlaza la rama local con la remota, para que después baste con `git push` o `git pull`. Las etiquetas se suben con `git push --tags`; borrar la rama remota sería `git push origin --delete main`.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-051",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-051",
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes productos **NO** es una herramienta de integración continua?",
+   "ctx": null,
+   "op": {
+    "a": "TeamCity",
+    "b": "RabbitMQ",
+    "c": "Travis CI",
+    "d": "CircleCI"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**RabbitMQ** es un sistema de mensajería. TeamCity (JetBrains), Travis CI y CircleCI son servicios de integración continua, como Jenkins, Bamboo o GitHub Actions.",
+   "epigrafe": "7. Integración y entrega continuas (CI/CD)",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-052",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-052",
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes plug-ins de Eclipse servía para trabajar con **Subversion**?",
+   "ctx": null,
+   "op": {
+    "a": "EGit",
+    "b": "JGit",
+    "c": "Subclipse",
+    "d": "Maven Integration (m2e)"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Subclipse** (y Subversive) eran los plug-ins de Eclipse para Subversion. EGit es el de Git y JGit la biblioteca Java en que se basa; m2e integra Maven.",
+   "epigrafe": "2. Generación de código y documentación",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-053",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-053",
+   "texto": "reformulado",
+   "q": "¿Qué representa el **DFD de nivel 1** en Métrica v3?",
+   "ctx": null,
+   "op": {
+    "a": "Un único proceso que representa todo el sistema",
+    "b": "Solo los procesos primitivos",
+    "c": "Las entidades externas sin ningún proceso",
+    "d": "Un proceso por cada subsistema y los flujos de datos entre ellos"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El nivel 1 (diagrama de subsistemas) descompone el sistema en subsistemas. El proceso único es el del nivel 0 (contexto); los primitivos aparecen en los últimos niveles; un DFD siempre tiene algún proceso.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-054",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-054",
+   "texto": "reformulado",
+   "q": "En un DFD, ¿qué representa un **flujo de consulta**?",
+   "ctx": null,
+   "op": {
+    "a": "Que un proceso lee datos de un almacén, sin modificarlo",
+    "b": "Que un proceso modifica datos de un almacén",
+    "c": "Que un proceso lee y modifica un almacén a la vez",
+    "d": "Una señal entre un proceso de control y otro proceso"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Consulta = el proceso **lee** el almacén. Modificar es actualización; leer y modificar a la vez es diálogo; la señal sin datos es un flujo de control.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-055",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-055",
+   "texto": "reformulado",
+   "q": "¿En qué lenguaje está escrito principalmente el sistema de control de versiones **Mercurial**?",
+   "ctx": null,
+   "op": {
+    "a": "C#",
+    "b": "Python",
+    "c": "Java",
+    "d": "Go"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Mercurial (comando `hg`) está escrito principalmente en **Python** (con partes en C y Rust). Git está escrito en C.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-056",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-056",
+   "texto": "reformulado",
+   "q": "Un fichero ya confirmado en Git se añade después a `.gitignore`. ¿Qué ocurre?",
+   "ctx": null,
+   "op": {
+    "a": "Git lo borra del disco automáticamente",
+    "b": "Git deja de seguirlo de inmediato",
+    "c": "Git lo sigue versionando; para dejar de seguirlo hay que ejecutar git rm --cached",
+    "d": "Git rechaza el siguiente commit"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`.gitignore` solo afecta a ficheros **no seguidos**. Para un fichero ya confirmado hay que sacarlo del índice con `git rm --cached fichero` (se conserva en el disco) y hacer commit.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 3
+  },
+  {
+   "id": "t23-v-057",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-057",
+   "texto": "reformulado",
+   "q": "En Métrica v3, ¿qué interfaz se ocupa de controlar las versiones y los cambios de los productos del sistema?",
+   "ctx": null,
+   "op": {
+    "a": "Aseguramiento de la Calidad",
+    "b": "Gestión de Proyectos",
+    "c": "Seguridad",
+    "d": "Gestión de la Configuración"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La interfaz de **Gestión de la Configuración** (GC) identifica, versiona y controla los cambios de los productos. Aseguramiento de la Calidad revisa que se cumplan los estándares; Gestión de Proyectos planifica y sigue el proyecto; Seguridad incorpora los mecanismos de seguridad.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-058",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-058",
+   "texto": "reformulado",
+   "q": "¿Qué identifica cada versión del historial en **Git**?",
+   "ctx": null,
+   "op": {
+    "a": "Un número de revisión secuencial (r1, r2, r3...)",
+    "b": "La fecha y la hora del commit",
+    "c": "Un hash (SHA-1, o SHA-256 en repositorios que lo activan)",
+    "d": "El nombre de la rama más un contador"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Git identifica cada objeto, también los commits, por el **hash** de su contenido. Los números de revisión secuenciales son propios de Subversion.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-059",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-059",
+   "texto": "reformulado",
+   "q": "En Subversion, ¿qué comando trae a la copia de trabajo los cambios que otros han enviado al repositorio?",
+   "ctx": null,
+   "op": {
+    "a": "svn checkout",
+    "b": "svn commit",
+    "c": "svn revert",
+    "d": "svn update"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`svn update` (`svn up`) actualiza una copia de trabajo existente. `svn checkout` la crea por primera vez; `svn commit` envía tus cambios; `svn revert` deshace los cambios locales no enviados.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-060",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-060",
+   "texto": "reformulado",
+   "q": "En Git, ¿qué comando muestra los cambios **ya preparados** (en el área de preparación) frente al último commit?",
+   "ctx": null,
+   "op": {
+    "a": "git diff --staged",
+    "b": "git diff",
+    "c": "git status --short",
+    "d": "git log -p"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`git diff --staged` (o `--cached`) compara el índice con el último commit. `git diff` sin opciones muestra los cambios **no preparados**; `git status` lista ficheros, no líneas; `git log -p` muestra los parches de commits ya hechos.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-061",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-061",
+   "texto": "reformulado",
+   "q": "¿Qué etiqueta de Javadoc se usa para documentar una **excepción** que puede lanzar un método?",
+   "ctx": null,
+   "op": {
+    "a": "@exceptionType",
+    "b": "@throws",
+    "c": "@raises",
+    "d": "@error"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Se usa `@throws` (o su sinónimo `@exception`). `@raises` es de otros lenguajes (docstrings de Python); `@exceptionType` y `@error` no existen en Javadoc.",
+   "epigrafe": "2. Generación de código y documentación",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-062",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-062",
+   "texto": "reformulado",
+   "q": "¿Cómo se denomina en un DFD el error de un proceso que **tiene entradas pero ninguna salida**?",
+   "ctx": null,
+   "op": {
+    "a": "Milagro",
+    "b": "Proceso primitivo",
+    "c": "Agujero negro",
+    "d": "Almacén huérfano"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Un proceso sin salidas es un **agujero negro**; uno sin entradas, un **milagro**. Ambos son errores. El proceso primitivo es el que ya no necesita más descomposición. \"Almacén huérfano\" no es un término de Métrica.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-063",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-063",
+   "texto": "reformulado",
+   "q": "En un DFD, ¿qué tipo de flujo entre un proceso y un almacén representa a la vez una **consulta y una actualización**?",
+   "ctx": null,
+   "op": {
+    "a": "De consulta",
+    "b": "De actualización",
+    "c": "De control",
+    "d": "De diálogo"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El flujo **de diálogo** es bidireccional (consulta y actualización). El de consulta solo lee; el de actualización crea, modifica o borra. El flujo de control no transporta datos: une un proceso de control con otro proceso.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-064",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-064",
+   "texto": "reformulado",
+   "q": "En un DFD, ¿qué elemento representa una **fuente o destino de información** situado fuera de los límites del sistema (una persona, una organización u otro sistema)?",
+   "ctx": null,
+   "op": {
+    "a": "Entidad externa",
+    "b": "Almacén de datos",
+    "c": "Proceso",
+    "d": "Actor"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Es la **entidad externa**. El almacén guarda información en reposo y el proceso transforma flujos. *Actor* es el término equivalente en casos de uso UML, no en DFD.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-065",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-065",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes herramientas es un **sistema de seguimiento de errores** (*bug tracker*)?",
+   "ctx": null,
+   "op": {
+    "a": "Mercurial",
+    "b": "Bugzilla",
+    "c": "Gimp",
+    "d": "Cassandra"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Bugzilla** (como MantisBT, Jira, Redmine o Trac) gestiona incidencias y errores. Mercurial es control de versiones; Gimp, edición de imágenes; Cassandra, una base de datos NoSQL.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-066",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-066",
+   "texto": "reformulado",
+   "q": "¿Qué herramienta de control de versiones, de **IBM**, se usó mucho en entornos corporativos y hoy se comercializa como HCL VersionVault?",
+   "ctx": null,
+   "op": {
+    "a": "Visual SourceSafe",
+    "b": "Perforce",
+    "c": "ClearCase",
+    "d": "Mercurial"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**ClearCase** (Rational, después IBM, hoy HCL VersionVault). Visual SourceSafe era de Microsoft; Perforce (Helix Core) es de Perforce Software; Mercurial es libre y distribuido.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-067",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-067",
+   "texto": "reformulado",
+   "q": "¿Cuáles son las cuatro fases del Proceso Unificado de Desarrollo?",
+   "ctx": null,
+   "op": {
+    "a": "Análisis, Diseño, Codificación y Pruebas",
+    "b": "Planificación, Sprint, Revisión y Retrospectiva",
+    "c": "Requisitos, Elaboración, Implantación y Mantenimiento",
+    "d": "Inicio, Elaboración, Construcción y Transición"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las fases del PUD/RUP son **Inicio (Inception), Elaboración, Construcción y Transición**; cada una tiene iteraciones y acaba en un hito. La b) son fases del modelo en cascada; la c) son eventos de Scrum; la d) mezcla términos.",
+   "epigrafe": "4. Otras metodologías de desarrollo",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-068",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-068",
+   "texto": "reformulado",
+   "q": "¿Cómo se denominan las herramientas CASE que cubren **todo el ciclo de vida** con un repositorio común?",
+   "ctx": null,
+   "op": {
+    "a": "I-CASE (CASE integradas)",
+    "b": "Upper CASE",
+    "c": "Middle CASE",
+    "d": "Lower CASE"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las **I-CASE** integran todas las fases sobre un repositorio común. Upper = planificación y requisitos; Middle = análisis y diseño; Lower = generación de código, pruebas e implantación.",
+   "epigrafe": "2. Generación de código y documentación",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-069",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-069",
+   "texto": "reformulado",
+   "q": "Las herramientas CASE que ayudan en la **planificación y el análisis de requisitos** (modelado del negocio) se denominan:",
+   "ctx": null,
+   "op": {
+    "a": "Lower CASE",
+    "b": "Upper CASE",
+    "c": "Middle CASE",
+    "d": "Back-end CASE"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las **Upper CASE** (front-end) cubren las fases iniciales. Lower CASE (también llamadas *back-end*) cubren la generación de código y las pruebas; Middle CASE, análisis y diseño.",
+   "epigrafe": "2. Generación de código y documentación",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-070",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-070",
+   "texto": "reformulado",
+   "q": "¿Cuál es el plug-in de Eclipse para trabajar con repositorios **Git**?",
+   "ctx": null,
+   "op": {
+    "a": "Subclipse",
+    "b": "Subversive",
+    "c": "EGit",
+    "d": "GitLens"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**EGit** (basado en JGit) integra Git en Eclipse. Subclipse y Subversive eran plug-ins de Eclipse para **Subversion**; GitLens es una extensión de Visual Studio Code.",
+   "epigrafe": "2. Generación de código y documentación",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-071",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-071",
+   "texto": "reformulado",
+   "q": "¿Qué licencia Creative Commons equivale a renunciar a los derechos y dedicar la obra al **dominio público**?",
+   "ctx": null,
+   "op": {
+    "a": "CC BY",
+    "b": "CC BY-SA",
+    "c": "CC BY-NC-ND",
+    "d": "CC0"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**CC0** dedica la obra al dominio público. BY exige reconocer al autor; SA (*ShareAlike*) obliga a compartir las obras derivadas con la misma licencia; NC prohíbe el uso comercial y ND las obras derivadas.",
+   "epigrafe": "2. Generación de código y documentación",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-072",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-072",
+   "texto": "reformulado",
+   "q": "En un DFD de Métrica v3, ¿cómo se llama el proceso que **no necesita más descomposición** y se describe con una especificación de proceso?",
+   "ctx": null,
+   "op": {
+    "a": "Proceso primitivo",
+    "b": "Proceso de control",
+    "c": "Proceso de contexto",
+    "d": "Subsistema"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **proceso primitivo** está en el último nivel y se describe con lenguaje estructurado, tablas o árboles de decisión. El de control coordina otros procesos; el diagrama de contexto tiene un único proceso que es todo el sistema; los subsistemas aparecen en el nivel 1.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-073",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-073",
+   "texto": "reformulado",
+   "q": "¿Qué modelo de ciclo de vida, propuesto por Boehm, organiza el desarrollo en ciclos con un **análisis de riesgos** en cada vuelta?",
+   "ctx": null,
+   "op": {
+    "a": "Modelo en cascada",
+    "b": "Modelo en espiral",
+    "c": "Modelo en V",
+    "d": "Modelo RAD"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **modelo en espiral** (Boehm, 1986) gestiona el riesgo explícitamente en cada ciclo. La cascada es secuencial; el modelo en V asocia un nivel de prueba a cada fase; RAD busca el desarrollo rápido con herramientas y prototipos.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-074",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-074",
+   "texto": "reformulado",
+   "q": "En Métrica v3, ¿qué técnica utiliza la **notación de Jackson** para representar los eventos que afectan a una entidad a lo largo de su vida?",
+   "ctx": null,
+   "op": {
+    "a": "Diagrama de Flujo de Datos",
+    "b": "Modelo Entidad/Relación extendido",
+    "c": "Historia de la Vida de las Entidades (HVE)",
+    "d": "Diagrama de casos de uso"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las **HVE** usan la notación de Jackson (secuencia, selección, iteración). El DFD modela procesos; el E/R, datos; los casos de uso, la interacción de los actores con el sistema.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 3
+  },
+  {
+   "id": "t23-v-075",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-075",
+   "texto": "reformulado",
+   "q": "En un DFD, un proceso que **crea, modifica o borra** datos de un almacén se comunica con él mediante un flujo:",
+   "ctx": null,
+   "op": {
+    "a": "De consulta",
+    "b": "De diálogo",
+    "c": "De control",
+    "d": "De actualización"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Crear, modificar o borrar es un flujo **de actualización**. El de consulta solo lee; el de diálogo combina consulta y actualización; el de control no lleva datos.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-076",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-076",
+   "texto": "reformulado",
+   "q": "En Métrica v3, ¿en qué proceso se elabora principalmente el **modelo de procesos** mediante DFD?",
+   "ctx": null,
+   "op": {
+    "a": "Análisis del Sistema de Información (ASI)",
+    "b": "Construcción del Sistema de Información (CSI)",
+    "c": "Implantación y Aceptación del Sistema (IAS)",
+    "d": "Mantenimiento de Sistemas de Información (MSI)"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los DFD se usan en **ASI** para el modelo lógico de procesos (también pueden aparecer en EVS a alto nivel). CSI construye el código; IAS implanta y acepta el sistema; MSI lo mantiene.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-077",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-077",
+   "texto": "reformulado",
+   "q": "¿Cuál es el núcleo de una herramienta CASE, donde se guardan todos los modelos y especificaciones del sistema?",
+   "ctx": null,
+   "op": {
+    "a": "El compilador",
+    "b": "El repositorio (diccionario de datos)",
+    "c": "El generador de informes",
+    "d": "El sistema de control de versiones"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **repositorio CASE** (diccionario) almacena todos los modelos (DFD, E/R, UML...) y permite comprobar su coherencia. El resto son, como mucho, componentes auxiliares.",
+   "epigrafe": "2. Generación de código y documentación",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-078",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-078",
+   "texto": "reformulado",
+   "q": "¿Qué tipo de mantenimiento **adapta el sistema a cambios en su entorno**, como una nueva versión del sistema operativo o del hardware?",
+   "ctx": null,
+   "op": {
+    "a": "Correctivo",
+    "b": "Perfectivo",
+    "c": "Adaptativo",
+    "d": "Evolutivo"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **adaptativo** responde a cambios del entorno técnico. El correctivo corrige errores; el perfectivo mejora la calidad interna o el rendimiento sin cambiar la funcionalidad; el evolutivo incorpora nuevas necesidades del usuario. (El proceso MSI de Métrica v3 solo cubre el correctivo y el evolutivo.)",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-v-079",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-079",
+   "texto": "reformulado",
+   "q": "En un DFD, ¿qué se necesita para que una entidad externa guarde datos en un almacén?",
+   "ctx": null,
+   "op": {
+    "a": "Un flujo directo de la entidad externa al almacén",
+    "b": "Un flujo de control entre ambos",
+    "c": "Duplicar el almacén en el diagrama",
+    "d": "Un proceso intermedio entre la entidad externa y el almacén"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Una entidad externa nunca se conecta directamente con un almacén: siempre hace falta un **proceso** en medio. Los flujos de control solo salen de procesos de control; duplicar un almacén solo mejora la legibilidad.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-v-080",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t23-h-080",
+   "texto": "reformulado",
+   "q": "¿Qué norma internacional define el **modelo de calidad del producto software** (familia SQuaRE), revisada en 2023?",
+   "ctx": null,
+   "op": {
+    "a": "ISO/IEC 25010",
+    "b": "ISO 9001",
+    "c": "ISO/IEC/IEEE 29119",
+    "d": "ISO/IEC 27001"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**ISO/IEC 25010** define las características de calidad del producto. ISO 9001 trata de la gestión de la calidad de la organización; ISO/IEC/IEEE 29119, de las pruebas del software; ISO/IEC 27001, de la seguridad de la información.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-n-001",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué comando de Git crea una rama nueva y cambia a ella en un solo paso?",
+   "ctx": null,
+   "op": {
+    "a": "git switch -c nueva",
+    "b": "git branch nueva",
+    "c": "git merge nueva",
+    "d": "git switch nueva"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`git switch -c nueva` (equivalente a `git checkout -b nueva`) crea la rama y cambia a ella. `git branch nueva` la crea pero no cambia; `git switch nueva` solo cambia a una rama que ya existe; `git merge` fusiona.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-n-002",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En una rama compartida se quiere deshacer un commit ya publicado **sin reescribir el historial**. ¿Qué comando es el adecuado?",
+   "ctx": null,
+   "op": {
+    "a": "git reset --hard HEAD~1",
+    "b": "git revert <hash>",
+    "c": "git commit --amend",
+    "d": "git rebase -i"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`git revert` crea un **commit nuevo** que invierte el anterior, sin tocar el historial publicado. `reset --hard`, `--amend` y `rebase` reescriben la historia, y no deben usarse sobre commits compartidos.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-n-003",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué hace `git reset --soft HEAD~1`?",
+   "ctx": null,
+   "op": {
+    "a": "Deshace el último commit y borra sus cambios",
+    "b": "Deshace el último commit y deja los cambios sin preparar",
+    "c": "Deshace el último commit y deja sus cambios preparados en el área de preparación",
+    "d": "Crea un commit nuevo que invierte el último"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`--soft` mueve la rama y deja los cambios **preparados**; `--mixed` (por defecto) los deja **sin preparar**; `--hard` los **borra**. Crear un commit inverso es `git revert`.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 3
+  },
+  {
+   "id": "t23-n-004",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué comando de Git guarda temporalmente los cambios sin confirmar para dejar limpio el directorio de trabajo y recuperarlos después?",
+   "ctx": null,
+   "op": {
+    "a": "git restore",
+    "b": "git clean",
+    "c": "git cherry-pick",
+    "d": "git stash"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`git stash` guarda los cambios y `git stash pop` los recupera. `git restore` descarta cambios; `git clean` borra ficheros sin seguimiento; `git cherry-pick` aplica un commit concreto.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-n-005",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según la Guía Scrum 2020, ¿qué evento tiene una duración máxima de **15 minutos**?",
+   "ctx": null,
+   "op": {
+    "a": "Daily Scrum",
+    "b": "Sprint Review",
+    "c": "Sprint Retrospective",
+    "d": "Sprint Planning"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **Daily Scrum** dura como máximo 15 minutos. Para un Sprint de un mes: Planning 8 h, Review 4 h, Retrospective 3 h.",
+   "epigrafe": "4. Otras metodologías de desarrollo",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-n-006",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según la Guía Scrum 2020, ¿qué compromiso está asociado al **Incremento**?",
+   "ctx": null,
+   "op": {
+    "a": "El Objetivo del Producto",
+    "b": "La Definición de Terminado (Definition of Done)",
+    "c": "El Objetivo del Sprint",
+    "d": "La velocidad del equipo"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Incremento → **Definición de Terminado**. Product Backlog → Objetivo del Producto. Sprint Backlog → Objetivo del Sprint. La velocidad es una práctica habitual, no un compromiso de la Guía.",
+   "epigrafe": "4. Otras metodologías de desarrollo",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-n-007",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuáles son los **tres pilares** del empirismo en Scrum?",
+   "ctx": null,
+   "op": {
+    "a": "Compromiso, foco y coraje",
+    "b": "Planificación, ejecución y revisión",
+    "c": "Transparencia, inspección y adaptación",
+    "d": "Individuos, interacciones y software funcionando"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los pilares son **transparencia, inspección y adaptación**. Compromiso, foco, apertura, respeto y coraje son los cinco **valores**. La d) mezcla términos del Manifiesto ágil.",
+   "epigrafe": "4. Otras metodologías de desarrollo",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-n-008",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes **es** uno de los cuatro valores del Manifiesto ágil?",
+   "ctx": null,
+   "op": {
+    "a": "Documentación extensiva sobre software funcionando",
+    "b": "Seguir un plan sobre responder ante el cambio",
+    "c": "Procesos y herramientas sobre individuos e interacciones",
+    "d": "Software funcionando sobre documentación extensiva"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los valores son: individuos e interacciones **sobre** procesos y herramientas; **software funcionando** sobre documentación extensiva; colaboración con el cliente sobre negociación contractual; **respuesta ante el cambio** sobre seguir un plan. Los distractores invierten el orden.",
+   "epigrafe": "4. Otras metodologías de desarrollo",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-n-009",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué práctica caracteriza a **Kanban**?",
+   "ctx": null,
+   "op": {
+    "a": "Limitar el trabajo en curso (WIP) en cada columna del tablero",
+    "b": "Trabajar en Sprints de duración fija",
+    "c": "Contar obligatoriamente con un Scrum Master",
+    "d": "Programar siempre en parejas"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Kanban visualiza el flujo y **limita el WIP**; no tiene iteraciones fijas ni roles prescritos. Los Sprints y el Scrum Master son de Scrum; la programación en parejas es de XP.",
+   "epigrafe": "4. Otras metodologías de desarrollo",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-n-010",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según Métrica v3, ¿qué pruebas eliminan el llamado **efecto onda**?",
+   "ctx": null,
+   "op": {
+    "a": "Pruebas de integración",
+    "b": "Pruebas de regresión",
+    "c": "Pruebas de implantación",
+    "d": "Pruebas unitarias"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las **pruebas de regresión** comprueban que un cambio en un componente no introduce errores en otros no modificados (el efecto onda).",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-n-011",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En Métrica v3, ¿en qué proceso se **especifica el plan de pruebas**, que después se detalla técnicamente en DSI?",
+   "ctx": null,
+   "op": {
+    "a": "Estudio de Viabilidad del Sistema (EVS)",
+    "b": "Construcción del Sistema de Información (CSI)",
+    "c": "Análisis del Sistema de Información (ASI)",
+    "d": "Planificación de Sistemas de Información (PSI)"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El plan de pruebas se especifica en **ASI** (ASI 10) y su especificación técnica se hace en DSI (DSI 10). En CSI se ejecutan las pruebas; EVS y PSI son anteriores.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-n-012",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes es una **interfaz** de Métrica v3 (no un proceso principal)?",
+   "ctx": null,
+   "op": {
+    "a": "Estudio de Viabilidad del Sistema",
+    "b": "Implantación y Aceptación del Sistema",
+    "c": "Planificación de Sistemas de Información",
+    "d": "Gestión de la Configuración"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las interfaces son Gestión de Proyectos, Seguridad, Aseguramiento de la Calidad y **Gestión de la Configuración**. EVS, IAS y PSI son procesos principales.",
+   "epigrafe": "3. Métrica versión 3",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-n-013",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En JUnit 5, ¿qué anotación ejecuta un método **una sola vez antes de todas las pruebas** de la clase?",
+   "ctx": null,
+   "op": {
+    "a": "@BeforeAll",
+    "b": "@BeforeEach",
+    "c": "@BeforeClass",
+    "d": "@Before"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`@BeforeAll` (método `static`) se ejecuta una vez por clase. `@BeforeEach` va antes de cada prueba. `@BeforeClass` y `@Before` son de **JUnit 4**.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-n-014",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En JUnit 5, ¿qué devuelve `assertThrows`?",
+   "ctx": null,
+   "op": {
+    "a": "Un booleano que indica si se lanzó la excepción",
+    "b": "La excepción capturada, para poder comprobar su mensaje o su causa",
+    "c": "Nada (void)",
+    "d": "El valor que devuelve el método probado"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`assertThrows` **devuelve la excepción** lanzada, de modo que se puede hacer, por ejemplo, `assertEquals(\"/ by zero\", ex.getMessage())`.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 3
+  },
+  {
+   "id": "t23-n-015",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué técnica de caja negra diseña casos de prueba con los valores situados **en los extremos** de cada clase de equivalencia?",
+   "ctx": null,
+   "op": {
+    "a": "Cobertura de decisiones",
+    "b": "Complejidad ciclomática",
+    "c": "Análisis de valores límite",
+    "d": "Pruebas de mutación"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **análisis de valores límite** prueba los bordes de cada partición. La cobertura de decisiones y la complejidad ciclomática son técnicas de **caja blanca**; las de mutación miden la calidad de las pruebas.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-n-016",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Un grafo de flujo tiene 9 aristas y 7 nodos. ¿Cuál es su **complejidad ciclomática** de McCabe?",
+   "ctx": null,
+   "op": {
+    "a": "2",
+    "b": "3",
+    "c": "16",
+    "d": "4"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "V(G) = aristas − nodos + 2 = 9 − 7 + 2 = **4**. Es el número de caminos independientes que hay que probar.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-n-017",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál es el ciclo del **desarrollo guiado por pruebas** (TDD)?",
+   "ctx": null,
+   "op": {
+    "a": "Rojo, verde, refactorizar",
+    "b": "Planificar, hacer, verificar, actuar",
+    "c": "Dado, cuando, entonces",
+    "d": "Analizar, diseñar, codificar, probar"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "TDD: se escribe una prueba que falla (**rojo**), el código mínimo que la supera (**verde**) y luego se **refactoriza**. *Dado/cuando/entonces* es la estructura Gherkin del BDD; PDCA es el ciclo de Deming.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 1
+  },
+  {
+   "id": "t23-n-018",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué tipo de **doble de prueba** verifica que se han producido las interacciones esperadas (por ejemplo, que se llamó a un método con ciertos argumentos)?",
+   "ctx": null,
+   "op": {
+    "a": "Stub",
+    "b": "Mock",
+    "c": "Dummy",
+    "d": "Fake"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **mock** verifica interacciones. El *stub* devuelve respuestas fijas; el *dummy* solo rellena parámetros; el *fake* es una implementación simplificada (como una BD en memoria).",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 3
+  },
+  {
+   "id": "t23-n-019",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué diferencia hay entre **verificación** y **validación**?",
+   "ctx": null,
+   "op": {
+    "a": "Son sinónimos",
+    "b": "Verificar se hace con el usuario y validar, con el código",
+    "c": "Verificar es comprobar que el producto cumple su especificación; validar, que satisface las necesidades del usuario",
+    "d": "Validar es pasar el análisis estático y verificar, las pruebas dinámicas"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Verificación: ¿estamos construyendo el producto **correctamente**? Validación: ¿estamos construyendo el producto **correcto**?",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-n-020",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué norma internacional regula actualmente el **proceso y la documentación de las pruebas del software**, en sustitución de IEEE 829?",
+   "ctx": null,
+   "op": {
+    "a": "ISO/IEC 25010",
+    "b": "ISO/IEC 12207",
+    "c": "ISO 9001",
+    "d": "ISO/IEC/IEEE 29119"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**ISO/IEC/IEEE 29119** (partes 1 a 5) sustituye a IEEE 829. ISO/IEC 25010 es el modelo de calidad del producto; ISO/IEC 12207, los procesos del ciclo de vida del software; ISO 9001, la gestión de la calidad.",
+   "epigrafe": "5. Pruebas del software",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-n-021",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué hace `git rebase main` estando en una rama de funcionalidad?",
+   "ctx": null,
+   "op": {
+    "a": "Reaplica los commits de la rama actual sobre la punta de main, dejando una historia lineal",
+    "b": "Fusiona main en la rama actual creando un commit de fusión",
+    "c": "Borra la rama main",
+    "d": "Sube la rama actual al remoto como main"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`rebase` **reescribe** los commits para que cuelguen de la punta de main. `merge` conserva la historia y crea un commit de fusión. Regla de oro: no hacer rebase de commits ya publicados.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-n-022",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En Git Flow, ¿desde qué rama se crean las ramas `hotfix/*` para corregir urgentemente un error en producción?",
+   "ctx": null,
+   "op": {
+    "a": "develop",
+    "b": "main (o master)",
+    "c": "feature/*",
+    "d": "release/*"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En Git Flow las **hotfix** salen de la rama de producción (`main`/`master`) y se fusionan después en `main` y en `develop`. Las `feature/*` salen de `develop`, y las `release/*` también.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 3
+  },
+  {
+   "id": "t23-n-023",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué comando de Git permite recuperar un commit \"perdido\" tras un `git reset --hard`, consultando los movimientos de HEAD?",
+   "ctx": null,
+   "op": {
+    "a": "git log --all",
+    "b": "git fsck --lost",
+    "c": "git reflog",
+    "d": "git revert"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`git reflog` muestra el registro local de por dónde ha pasado HEAD, incluidos los commits que ya no apunta ninguna rama. `git log --all` solo recorre commits alcanzables desde las referencias.",
+   "epigrafe": "6. Control de versiones",
+   "dificultad": 3
+  },
+  {
+   "id": "t23-n-024",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué diferencia hay entre **entrega continua** y **despliegue continuo**?",
+   "ctx": null,
+   "op": {
+    "a": "Son sinónimos",
+    "b": "La entrega continua no ejecuta pruebas automáticas",
+    "c": "El despliegue continuo exige aprobación manual de cada cambio",
+    "d": "En el despliegue continuo cada cambio que supera el pipeline llega a producción automáticamente; en la entrega continua ese paso es manual"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Entrega continua (*Continuous Delivery*) = siempre listo para desplegar, paso a producción manual. Despliegue continuo (*Continuous Deployment*) = automático hasta producción. Ambos ejecutan pruebas automáticas.",
+   "epigrafe": "7. Integración y entrega continuas (CI/CD)",
+   "dificultad": 2
+  },
+  {
+   "id": "t23-n-025",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En GitHub Actions, ¿cómo se ejecutan por defecto los distintos *jobs* de un workflow?",
+   "ctx": null,
+   "op": {
+    "a": "En paralelo, salvo que se encadenen con needs",
+    "b": "Siempre en secuencia, en el orden en que aparecen",
+    "c": "Solo uno por workflow",
+    "d": "En el mismo runner, compartiendo el sistema de ficheros"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los jobs se ejecutan **en paralelo** por defecto y cada uno en su propio runner. Con `needs` se establece una dependencia. Los **steps** de un job sí son secuenciales.",
+   "epigrafe": "7. Integración y entrega continuas (CI/CD)",
+   "dificultad": 3
+  }
+ ],
+ "tarjetas": [
+  {
+   "id": "t23-c-001",
+   "anverso": "Pruebas de integración (Métrica v3)",
+   "reverso": "Verifican el correcto ensamblaje de los componentes: que interactúan correctamente a través de sus interfaces, internas y externas (CSI 4).",
+   "epigrafe": "3. Métrica versión 3"
+  },
+  {
+   "id": "t23-c-002",
+   "anverso": "Pruebas del sistema (Métrica v3)",
+   "reverso": "Integración del sistema completo y con otros sistemas con los que se relaciona; verifican las especificaciones funcionales y técnicas (CSI 5).",
+   "epigrafe": "3. Métrica versión 3"
+  },
+  {
+   "id": "t23-c-003",
+   "anverso": "Pruebas de implantación (Métrica v3)",
+   "reverso": "Hardware y software integrados en el entorno de operación; el usuario acepta el sistema desde el punto de vista de operación (IAS 5).",
+   "epigrafe": "3. Métrica versión 3"
+  },
+  {
+   "id": "t23-c-004",
+   "anverso": "Pruebas de aceptación (Métrica v3)",
+   "reverso": "Validan los requisitos del usuario para la aceptación final del sistema (IAS 6).",
+   "epigrafe": "3. Métrica versión 3"
+  },
+  {
+   "id": "t23-c-005",
+   "anverso": "Pruebas de regresión",
+   "reverso": "Eliminan el «efecto onda»: un cambio no debe romper componentes no modificados. Repiten pruebas ya hechas y se suelen automatizar.",
+   "epigrafe": "3. Métrica versión 3"
+  },
+  {
+   "id": "t23-c-006",
+   "anverso": "Pruebas de rendimiento (Métrica v3)",
+   "reverso": "Subtipo de las pruebas del sistema: tiempos de respuesta dentro de los intervalos especificados.",
+   "epigrafe": "3. Métrica versión 3"
+  },
+  {
+   "id": "t23-c-007",
+   "anverso": "Procesos principales de Métrica v3",
+   "reverso": "PSI, EVS, ASI, DSI, CSI, IAS y MSI. Desarrollo = EVS + ASI + DSI + CSI + IAS.",
+   "epigrafe": "3. Métrica versión 3"
+  },
+  {
+   "id": "t23-c-008",
+   "anverso": "Interfaces de Métrica v3",
+   "reverso": "Gestión de Proyectos, Seguridad, Aseguramiento de la Calidad y Gestión de la Configuración.",
+   "epigrafe": "3. Métrica versión 3"
+  },
+  {
+   "id": "t23-c-009",
+   "anverso": "¿Quién elabora los manuales de usuario en Métrica v3?",
+   "reverso": "El Equipo del Proyecto (CSI 6). El Equipo de Formación solo imparte la formación.",
+   "epigrafe": "3. Métrica versión 3"
+  },
+  {
+   "id": "t23-c-010",
+   "anverso": "Tipos de flujo entre proceso y almacén (DFD)",
+   "reverso": "Consulta (lee), actualización (crea, modifica o borra) y diálogo (ambas a la vez).",
+   "epigrafe": "3. Métrica versión 3"
+  },
+  {
+   "id": "t23-c-011",
+   "anverso": "Elementos de un DFD",
+   "reverso": "Entidad externa, proceso, almacén de datos y flujo de datos (más proceso y flujo de control en tiempo real).",
+   "epigrafe": "3. Métrica versión 3"
+  },
+  {
+   "id": "t23-c-012",
+   "anverso": "Conexiones prohibidas en un DFD",
+   "reverso": "Almacén–almacén, entidad–almacén y entidad–entidad. Todo flujo tiene un proceso en al menos un extremo.",
+   "epigrafe": "3. Métrica versión 3"
+  },
+  {
+   "id": "t23-c-013",
+   "anverso": "DFD de nivel 0",
+   "reverso": "Diagrama de contexto: un único proceso que representa todo el sistema, con las entidades externas y sus flujos.",
+   "epigrafe": "3. Métrica versión 3"
+  },
+  {
+   "id": "t23-c-014",
+   "anverso": "Proceso primitivo",
+   "reverso": "El que no necesita más descomposición; se describe con una especificación de proceso.",
+   "epigrafe": "3. Métrica versión 3"
+  },
+  {
+   "id": "t23-c-015",
+   "anverso": "Consistencia al explotar un proceso (DFD)",
+   "reverso": "No faltan ni sobran flujos respecto al padre; un flujo sí puede dividirse; las entidades externas NO se descomponen.",
+   "epigrafe": "3. Métrica versión 3"
+  },
+  {
+   "id": "t23-c-016",
+   "anverso": "Tipos de mantenimiento",
+   "reverso": "Correctivo, evolutivo, adaptativo, perfectivo (y preventivo en ISO/IEC 14764). «Acumulativo» no existe. MSI de Métrica cubre correctivo y evolutivo.",
+   "epigrafe": "3. Métrica versión 3"
+  },
+  {
+   "id": "t23-c-017",
+   "anverso": "Upper / Middle / Lower CASE",
+   "reverso": "Upper: planificación y requisitos. Middle: análisis y diseño. Lower: generación de código y pruebas. I-CASE: todo el ciclo.",
+   "epigrafe": "2. Generación de código y documentación"
+  },
+  {
+   "id": "t23-c-018",
+   "anverso": "Javadoc: inicio del comentario y etiquetas clave",
+   "reverso": "Empieza por /** . @param, @return, @throws, @see paquete.Clase#metodo(Tipo). No existen @parameter ni @ref.",
+   "epigrafe": "2. Generación de código y documentación"
+  },
+  {
+   "id": "t23-c-019",
+   "anverso": "Refactorización",
+   "reverso": "Cambiar la estructura interna del código sin alterar su comportamiento externo (Fowler).",
+   "epigrafe": "2. Generación de código y documentación"
+  },
+  {
+   "id": "t23-c-020",
+   "anverso": "Plug-in de Eclipse ampliable",
+   "reverso": "Declara puntos de extensión; quien le aporta funcionalidad declara extensiones. Plug-in de Git: EGit.",
+   "epigrafe": "2. Generación de código y documentación"
+  },
+  {
+   "id": "t23-c-021",
+   "anverso": "Proceso Unificado: tres rasgos",
+   "reverso": "Iterativo e incremental, dirigido por casos de uso y centrado en la arquitectura. Fases: Inicio, Elaboración, Construcción y Transición.",
+   "epigrafe": "4. Otras metodologías de desarrollo"
+  },
+  {
+   "id": "t23-c-022",
+   "anverso": "Eventos Scrum y duración máxima (Sprint de 1 mes)",
+   "reverso": "Sprint ≤ 1 mes; Planning 8 h; Daily 15 min; Review 4 h; Retrospective 3 h.",
+   "epigrafe": "4. Otras metodologías de desarrollo"
+  },
+  {
+   "id": "t23-c-023",
+   "anverso": "Review frente a Retrospective",
+   "reverso": "Review: inspecciona el Incremento (producto) con los interesados. Retrospective: mejora el proceso y la eficacia del equipo.",
+   "epigrafe": "4. Otras metodologías de desarrollo"
+  },
+  {
+   "id": "t23-c-024",
+   "anverso": "Artefactos Scrum y sus compromisos",
+   "reverso": "Product Backlog → Objetivo del Producto; Sprint Backlog → Objetivo del Sprint; Incremento → Definición de Terminado.",
+   "epigrafe": "4. Otras metodologías de desarrollo"
+  },
+  {
+   "id": "t23-c-025",
+   "anverso": "Equipo Scrum",
+   "reverso": "Product Owner (uno), Scrum Master y Developers; 10 personas o menos, sin subequipos ni jerarquías.",
+   "epigrafe": "4. Otras metodologías de desarrollo"
+  },
+  {
+   "id": "t23-c-026",
+   "anverso": "Herramientas de carga y estrés",
+   "reverso": "Apache JMeter (libre, Java), Gatling, k6, Locust, LoadRunner.",
+   "epigrafe": "5. Pruebas del software"
+  },
+  {
+   "id": "t23-c-027",
+   "anverso": "Selenium WebDriver",
+   "reverso": "Automatiza pruebas en un navegador real, controlándolo como un usuario.",
+   "epigrafe": "5. Pruebas del software"
+  },
+  {
+   "id": "t23-c-028",
+   "anverso": "SonarQube",
+   "reverso": "Análisis ESTÁTICO de calidad y seguridad (no dinámico): bugs, vulnerabilidades, duplicados, métricas, Quality Gates.",
+   "epigrafe": "5. Pruebas del software"
+  },
+  {
+   "id": "t23-c-029",
+   "anverso": "Herramientas que no son de pruebas (intrusas)",
+   "reverso": "OneTrust (privacidad y consentimiento), Foglight (monitorización), Mercurial (versiones).",
+   "epigrafe": "5. Pruebas del software"
+  },
+  {
+   "id": "t23-c-030",
+   "anverso": "assertThrows (JUnit 5/6)",
+   "reverso": "assertThrows(Tipo.class, () -> codigo()). Pasa si se lanza ese tipo o una subclase; devuelve la excepción.",
+   "epigrafe": "5. Pruebas del software"
+  },
+  {
+   "id": "t23-c-031",
+   "anverso": "JUnit 4 → JUnit 5",
+   "reverso": "@Before → @BeforeEach; @BeforeClass → @BeforeAll; @Ignore → @Disabled; @Test(expected) → assertThrows.",
+   "epigrafe": "5. Pruebas del software"
+  },
+  {
+   "id": "t23-c-032",
+   "anverso": "Complejidad ciclomática de McCabe",
+   "reverso": "V(G) = aristas − nodos + 2 = decisiones + 1. Número de caminos independientes.",
+   "epigrafe": "5. Pruebas del software"
+  },
+  {
+   "id": "t23-c-033",
+   "anverso": "git fetch frente a git pull",
+   "reverso": "fetch descarga y actualiza origin/* sin integrar nada. pull = fetch + merge (o rebase).",
+   "epigrafe": "6. Control de versiones"
+  },
+  {
+   "id": "t23-c-034",
+   "anverso": "Commit en Git",
+   "reverso": "Guarda en el repositorio LOCAL una nueva instantánea del proyecto. Para publicarla hace falta git push.",
+   "epigrafe": "6. Control de versiones"
+  },
+  {
+   "id": "t23-c-035",
+   "anverso": "Comandos Git: crear repositorio, historial y etiquetas",
+   "reverso": "git init (repositorio vacío), git log (lista de commits), git tag (lista etiquetas).",
+   "epigrafe": "6. Control de versiones"
+  },
+  {
+   "id": "t23-c-036",
+   "anverso": "Subversion: primera descarga y ver cambios",
+   "reverso": "svn checkout (copia de trabajo inicial); svn status (ficheros modificados antes del commit).",
+   "epigrafe": "6. Control de versiones"
+  },
+  {
+   "id": "t23-c-037",
+   "anverso": "Modelo de datos de Git (2025)",
+   "reverso": "Objects, References, Index y Reflogs. Tipos de objeto: blob, tree, commit y tag.",
+   "epigrafe": "6. Control de versiones"
+  },
+  {
+   "id": "t23-c-038",
+   "anverso": "Plataforma de versiones de Microsoft",
+   "reverso": "Team Foundation Server, hoy Azure DevOps Server (TFVC o Git). Antes: Visual SourceSafe.",
+   "epigrafe": "6. Control de versiones"
+  },
+  {
+   "id": "t23-c-039",
+   "anverso": "Pull request",
+   "reverso": "Propuesta en la plataforma (GitHub, Bitbucket...) para fusionar los cambios de una rama en otra, con revisión. En GitLab: merge request.",
+   "epigrafe": "6. Control de versiones"
+  },
+  {
+   "id": "t23-c-040",
+   "anverso": "Workflows de GitHub Actions",
+   "reverso": "Ficheros .yml o .yaml en .github/workflows/. Claves: on, jobs, runs-on, steps.",
+   "epigrafe": "7. Integración y entrega continuas (CI/CD)"
+  },
+  {
+   "id": "t23-c-041",
+   "anverso": "Herramientas de CI/CD",
+   "reverso": "Jenkins (Jenkinsfile), Bamboo (Atlassian), GitHub Actions, GitLab CI (.gitlab-ci.yml), Azure Pipelines.",
+   "epigrafe": "7. Integración y entrega continuas (CI/CD)"
+  },
+  {
+   "id": "t23-c-042",
+   "anverso": "README.md frente a CODEOWNERS",
+   "reverso": "README: propósito, instalación y arranque local. CODEOWNERS: responsables de revisar cada ruta.",
+   "epigrafe": "1. Repositorios y plataformas colaborativas"
+  }
+ ],
+ "discrepancias": [
+  {
+   "ref": "LI2015-ej1-III-02",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 44
+   },
+   "clave_oficial": "a",
+   "temario_dice": "c) los flujos de datos del nivel 0 pueden dividirse en varios flujos en niveles posteriores",
+   "veredicto": "Pregunta defectuosa: a) y c) son reglas de Métrica v3. Se mantiene la clave oficial a), que es la regla más literal (todo proceso con al menos una entrada y una salida). La c) también es defendible."
+  }
+ ]
+}

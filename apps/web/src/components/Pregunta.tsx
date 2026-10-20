@@ -41,7 +41,7 @@ export function Pregunta({ q, elegida, corregida, onElegir, cabecera, mostrarCon
         <details className="ctxbox"><summary>Enunciado del supuesto</summary><Contexto texto={q.ctx} /></details>
       )}
       {q.subctx && <Contexto texto={q.subctx} abierto />}
-      <div className={`q-text ${pareceCodigo(q.q) ? 'code' : ''}`}>{q.q}</div>
+      <div className={`q-text ${pareceCodigo(q.q) ? 'code' : ''}`}>{pareceCodigo(q.q) ? q.q : <Negritas texto={q.q} />}</div>
       <div className="opts" role="radiogroup">
         {LETRAS.map(l => {
           let cls = 'opt';
@@ -59,12 +59,17 @@ export function Pregunta({ q, elegida, corregida, onElegir, cabecera, mostrarCon
       {corregida && (
         <div className="expl">
           {!q.ok ? <p><b>Pregunta anulada:</b> no puntúa.</p> : <p><b>Correcta: {q.ok})</b>{elegida ? (elegida === q.ok ? ' Has acertado.' : ` Marcaste ${elegida}).`) : ' La dejaste en blanco.'}</p>}
-          {q.explicacion ? <Markdown texto={q.explicacion} /> : <p className="note">Explicación pendiente de generar para esta pregunta.</p>}
+          {q.explicacion ? <Markdown texto={q.explicacion} /> : <p className="note">Sin explicación: solo las tienen las preguntas de tus 18 temas.</p>}
           <BotonDuda q={q} />
         </div>
       )}
     </article>
   );
+}
+
+/** Los enunciados son texto literal (pueden llevar código); solo se interpreta **negrita**. */
+function Negritas({ texto }: { texto: string }) {
+  return <>{texto.split(/\*\*([^*\s](?:[^*\n]*?[^*\s])?)\*\*/g).map((t, i) => (i % 2 ? <b key={i}>{t}</b> : t))}</>;
 }
 
 /** Contexto de supuesto: admite imágenes [[img:fichero.png]]. */

@@ -1,0 +1,3248 @@
+{
+ "tema": 11,
+ "generado": "2026-10-20",
+ "preguntas": [
+  {
+   "id": "t11-h-001",
+   "tipo": "historica",
+   "ref": "LI2025-ej1-25",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 25
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las siguientes características describe correctamente una unidad de estado sólido (SSD)?",
+   "ctx": null,
+   "op": {
+    "a": "Almacena datos en discos magnéticos giratorios de alta densidad.",
+    "b": "Utiliza memoria RAM volátil para el almacenamiento persistente de datos.",
+    "c": "Es un dispositivo para almacenar datos en memoria no volátil sin partes móviles.",
+    "d": "Requiere cabezales de lectura mecánicos para acceder a los datos almacenados."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Un **SSD** guarda los datos en **memoria flash NAND no volátil** y **no tiene partes móviles** (c). a) y d) describen un disco duro magnético (platos giratorios, cabezales). b) es falsa: la RAM es volátil y pierde los datos sin alimentación.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-001",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-001",
+   "texto": "reformulado",
+   "q": "¿Cuántos bits por celda almacena una memoria NAND de tipo TLC?",
+   "ctx": null,
+   "op": {
+    "a": "3",
+    "b": "1",
+    "c": "2",
+    "d": "4"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "SLC = 1 bit, MLC = 2, **TLC = 3** (la habitual en consumo) y QLC = 4. Más bits por celda dan más capacidad y menos durabilidad (ciclos de escritura).",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-002",
+   "tipo": "historica",
+   "ref": "LI2025-ej1-26",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 26
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál es el ancho de banda máximo de la especificación HDMI 2.1?",
+   "ctx": null,
+   "op": {
+    "a": "10 Gbps.",
+    "b": "18 Gbps.",
+    "c": "32 Gbps.",
+    "d": "48 Gbps."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "HDMI 2.1 (2017) llega a **48 Gbit/s** con FRL y cable Ultra High Speed (d): 4K a 120 Hz y 8K a 60 Hz. 18 Gbit/s es HDMI 2.0; 10 Gbit/s (10,2) es HDMI 1.3/1.4; 32 Gbit/s no es ninguna versión de HDMI (32,4 Gbit/s es DisplayPort 1.4). HDMI 2.2 (2025) sube a 96 Gbit/s.",
+   "epigrafe": "Visualización",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-v-002",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-002",
+   "texto": "reformulado",
+   "q": "¿Qué ancho de banda máximo tiene la especificación HDMI 2.0?",
+   "ctx": null,
+   "op": {
+    "a": "10,2 Gbit/s",
+    "b": "18 Gbit/s",
+    "c": "48 Gbit/s",
+    "d": "96 Gbit/s"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "HDMI 2.0 (2013) da **18 Gbit/s** (4K a 60 Hz). 10,2 Gbit/s son HDMI 1.3 y 1.4; 48 Gbit/s, HDMI 2.1; 96 Gbit/s, HDMI 2.2.",
+   "epigrafe": "Visualización",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-003",
+   "tipo": "historica",
+   "ref": "LI2025-ej1-27",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 27
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuántos fallos de dispositivo puede tolerar un conjunto RAID 5 sin pérdida de datos?",
+   "ctx": null,
+   "op": {
+    "a": "Ningún fallo de dispositivo.",
+    "b": "Un fallo de dispositivo.",
+    "c": "Dos fallos de dispositivo.",
+    "d": "Tres fallos de dispositivo."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "RAID 5 reparte bloques y **paridad distribuida** entre al menos 3 discos y tolera el **fallo de un solo disco** (b). Si falla un segundo antes de reconstruir, se pierde el volumen. Tolerar dos fallos es RAID 6; ninguno, RAID 0.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-003",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-003",
+   "texto": "reformulado",
+   "q": "¿Qué capacidad útil ofrecen 4 discos de 2 TB en RAID 5?",
+   "ctx": null,
+   "op": {
+    "a": "8 TB",
+    "b": "4 TB",
+    "c": "6 TB",
+    "d": "2 TB"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En RAID 5 la capacidad útil es **(n − 1) × C** = 3 × 2 TB = **6 TB**: un disco equivale a la paridad. 8 TB sería RAID 0; 4 TB, RAID 6 o RAID 10; 2 TB, RAID 1 con cuatro espejos.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-004",
+   "tipo": "historica",
+   "ref": "LI2025-ej1-28",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 28
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Qué es el Internet Printing Protocol (IPP)?",
+   "ctx": null,
+   "op": {
+    "a": "Una colección de estándares abiertos que define un protocolo de impresión en red de alto nivel.",
+    "b": "Un protocolo de compresión de datos orientado a la transmisión de documentos a impresoras.",
+    "c": "Un formato de archivo para documentos imprimibles de tipo vectorial.",
+    "d": "Un estándar de conexión física para impresoras mediante cable USB."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**IPP** (*Internet Printing Protocol*) es un conjunto de estándares abiertos (IETF, PWG; RFC 8011) que define un protocolo de impresión en red de alto nivel, sobre HTTP y el puerto **631/TCP** (a). Es la base de CUPS y de la impresión sin controlador (IPP Everywhere, AirPrint). No es compresión, ni formato de archivo, ni conexión física.",
+   "epigrafe": "Impresión",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-004",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-004",
+   "texto": "reformulado",
+   "q": "¿Qué puerto TCP usa por defecto el Internet Printing Protocol (IPP)?",
+   "ctx": null,
+   "op": {
+    "a": "9100",
+    "b": "515",
+    "c": "445",
+    "d": "631"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "IPP usa **631/TCP** (por eso CUPS se administra en http://localhost:631). 9100 es la impresión directa Raw/JetDirect, 515 es LPD/LPR y 445 es SMB.",
+   "epigrafe": "Impresión",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-005",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-23",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 23
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Qué es la latencia rotacional en los discos duros HDD?",
+   "ctx": null,
+   "op": {
+    "a": "El tiempo medio que tarda el disco en leer o escribir nueva información.",
+    "b": "El tiempo medio que tarda la aguja en situarse en el sector físico deseado.",
+    "c": "El tiempo medio necesario para mover la cabeza desde el cilindro actual al cilindro sobre el que se quiere operar.",
+    "d": "El tiempo medio que tarda la aguja en situarse en la pista deseada."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Clave oficial b). La **latencia rotacional** es el tiempo que se espera, con el cabezal ya en la pista, a que el **sector deseado pase bajo él** por el giro del plato (media = medio giro). La redacción oficial («la aguja tarda en situarse en el sector») es imprecisa, porque lo que se mueve es el disco y no el cabezal, pero es la única opción que habla del sector. c) y d) describen el **tiempo de búsqueda** (mover el cabezal a la pista o cilindro); a) mezcla todo el acceso.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-v-005",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-005",
+   "texto": "reformulado",
+   "q": "¿Cuál es la latencia rotacional media de un disco que gira a 7.200 rpm?",
+   "ctx": null,
+   "op": {
+    "a": "Unos 4,17 ms",
+    "b": "Unos 8,33 ms",
+    "c": "Unos 2 ms",
+    "d": "Unos 0,1 ms"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Una vuelta dura 60 / 7.200 = 8,33 ms; la latencia **media** es medio giro: **4,17 ms**. 8,33 ms es la vuelta completa; 2 ms es la latencia media a 15.000 rpm; 0,1 ms es el acceso típico de un SSD.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 3
+  },
+  {
+   "id": "t11-h-006",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-24",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 24
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Respecto a los sistemas RAID, señale la respuesta INCORRECTA:",
+   "ctx": null,
+   "op": {
+    "a": "RAID 1 está configurado como espejo, los datos son duplicados en otra unidad (mínimo dos) de forma sincronizada.",
+    "b": "RAID 5 es una implementación del striping de discos en la que se incluye información de paridad con cada escritura en disco.",
+    "c": "RAID 10 conocido como RAID 1+0, mantiene configuración de espejo con striping.",
+    "d": "RAID 6 es una variante de RAID 5 que implementa un doble sistema de paridad distribuida, lo que le permite funcionar con un mínimo de tres discos y tolerar el fallo simultáneo de hasta un solo disco."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La INCORRECTA es d): RAID 6 usa doble paridad distribuida, necesita un **mínimo de 4 discos** y tolera el fallo simultáneo de **dos** discos, no de uno. a) RAID 1 = espejo; b) RAID 5 = bandas con paridad; c) RAID 10 = espejos con bandas. Las tres son correctas.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-v-006",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-006",
+   "texto": "reformulado",
+   "q": "¿Cuántos discos necesita como mínimo RAID 6 y cuántos fallos simultáneos tolera?",
+   "ctx": null,
+   "op": {
+    "a": "3 discos; tolera 1 fallo",
+    "b": "4 discos; tolera 2 fallos",
+    "c": "3 discos; tolera 2 fallos",
+    "d": "6 discos; tolera 3 fallos"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "RAID 6 (doble paridad distribuida) exige **4 discos** como mínimo y aguanta **2 fallos**. 3 discos y 1 fallo es RAID 5.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-007",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-60",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 60
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿En qué arquitectura de almacenamiento se permite que varios usuarios y dispositivos en la red de área local accedan a los datos desde un área de almacenamiento centralizada en la red?",
+   "ctx": null,
+   "op": {
+    "a": "Arquitectura NAS.",
+    "b": "Arquitectura SAN.",
+    "c": "Arquitectura DAS.",
+    "d": "Arquitectura de Disco Interno."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**NAS** (*Network Attached Storage*) es almacenamiento centralizado en la LAN al que acceden muchos usuarios y equipos a **nivel de fichero** (NFS, SMB/CIFS) (a). La SAN es una red dedicada a **nivel de bloque**; el DAS está conectado directamente a un servidor.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-007",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-007",
+   "texto": "reformulado",
+   "q": "¿Qué arquitectura de almacenamiento ofrece acceso a nivel de bloque mediante una red dedicada (Fibre Channel, iSCSI)?",
+   "ctx": null,
+   "op": {
+    "a": "NAS",
+    "b": "DAS",
+    "c": "SAN",
+    "d": "RAID 0"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **SAN** (*Storage Area Network*) presenta volúmenes de **bloque** por una red dedicada (Fibre Channel, iSCSI, FCoE, NVMe-oF). NAS sirve **ficheros** por la LAN; DAS se conecta directo al servidor; RAID 0 es un nivel de RAID.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-008",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-20",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 20
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Según la Norma Técnica de Interoperabilidad de Digitalización de Documentos, el nivel de resolución mínimo en píxeles por pulgada (ppp) para imágenes electrónicas será de:",
+   "ctx": null,
+   "op": {
+    "a": "200 ppp para imágenes en blanco y negro, y 200 ppp para imágenes en color o escala de grises.",
+    "b": "200 ppp para imágenes en blanco y negro, y 150 ppp para imágenes en color o escala de grises.",
+    "c": "150 ppp para imágenes en blanco y negro, y 200 ppp para imágenes en color o escala de grises.",
+    "d": "150 ppp para imágenes en color, y 200 ppp para imágenes en blanco y negro o escala de grises."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **NTI de Digitalización de Documentos** (Resolución de 19 de julio de 2011) fija como nivel mínimo de resolución **200 píxeles por pulgada**, tanto para imágenes en blanco y negro como para color o escala de grises (a). Las demás opciones bajan uno de los dos valores a 150 ppp.",
+   "epigrafe": "Periféricos de entrada y digitalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-v-008",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-008",
+   "texto": "reformulado",
+   "q": "Según la NTI de Digitalización de Documentos, ¿qué resolución mínima debe tener la imagen electrónica de un documento digitalizado en color?",
+   "ctx": null,
+   "op": {
+    "a": "150 ppp",
+    "b": "300 ppp",
+    "c": "600 ppp",
+    "d": "200 ppp"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La NTI exige **200 ppp** como mínimo para cualquier imagen (blanco y negro, color o escala de grises). 300 o 600 ppp pueden usarse, pero no son el mínimo exigido.",
+   "epigrafe": "Periféricos de entrada y digitalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-009",
+   "tipo": "historica",
+   "ref": "LI2024-ej1-21",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 21
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale cuál de las siguientes es un formato de interfaz SSD:",
+   "ctx": null,
+   "op": {
+    "a": "HHP",
+    "b": "MMVe",
+    "c": "MMD",
+    "d": "M.2"
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**M.2** (antes NGFF) es un formato de tarjeta para SSD (2242, 2280...) que puede ir por SATA o por PCIe/NVMe (d). HHP, MMVe y MMD no existen; MMVe juega con el parecido a NVMe.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-009",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-009",
+   "texto": "reformulado",
+   "q": "Sobre un SSD en formato M.2, señale la afirmación correcta:",
+   "ctx": null,
+   "op": {
+    "a": "M.2 es un formato físico que puede usar el bus SATA o PCIe con protocolo NVMe",
+    "b": "M.2 es un protocolo de comunicación que sustituye a NVMe",
+    "c": "Todo SSD M.2 es más rápido que cualquier SSD SATA de 2,5\"",
+    "d": "M.2 es un conector exclusivo de discos duros magnéticos"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**M.2 es un formato físico**, no un protocolo: según la llave (B, M o B+M) el SSD va por **SATA** o por **PCIe/NVMe**. Un M.2 SATA rinde igual que uno de 2,5\" SATA (~550 MB/s). NVMe es el protocolo; los discos magnéticos no usan M.2.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-010",
+   "tipo": "historica",
+   "ref": "LI2024-ej1-22",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 22
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Un controlador de dispositivo periférico:",
+   "ctx": null,
+   "op": {
+    "a": "Es el componente electrónico de la unidad de entrada y salida.",
+    "b": "Es el componente mecánico de la unidad de entrada y salida.",
+    "c": "Es la interfaz entre el adaptador y la unidad de entrada y salida.",
+    "d": "Es la interfaz entre la tarjeta controladora y el cable de conexión."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Una unidad de entrada/salida tiene dos partes: el **componente mecánico** (el dispositivo propiamente dicho: motor, cabezales, teclas) y el **componente electrónico**, que es el **controlador** (*device controller*) (a). El controlador recibe órdenes de la CPU, gestiona el dispositivo y lo comunica con el bus. b) describe la parte mecánica; c) y d) confunden el controlador con la interfaz o el cable. La lección no lo trata de forma expresa: es un concepto clásico de estructura de computadores.",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 3
+  },
+  {
+   "id": "t11-v-010",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-010",
+   "texto": "reformulado",
+   "q": "En una unidad de entrada/salida, ¿qué papel tiene el controlador de dispositivo?",
+   "ctx": null,
+   "op": {
+    "a": "Es la parte mecánica que mueve los cabezales y motores",
+    "b": "Es la parte electrónica que recibe órdenes de la CPU y gobierna la parte mecánica del dispositivo",
+    "c": "Es el cable que une el periférico con el ordenador",
+    "d": "Es el programa de aplicación que imprime o escanea"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **controlador** es el componente **electrónico** de la unidad de E/S: hace de intermediario entre el bus y la parte mecánica. La parte mecánica es el dispositivo; el cable es el medio de conexión; la aplicación es software de usuario (el *driver* del SO es otra cosa: software que maneja ese controlador).",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-011",
+   "tipo": "historica",
+   "ref": "LI2024-ej1-R01",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 1
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale cuál es una resolución válida para una pantalla:",
+   "ctx": null,
+   "op": {
+    "a": "8K UHD - 7680 x 3840 píxeles.",
+    "b": "Ultra HD - 4320 x 1280 píxeles.",
+    "c": "WQHD - 2560 x 1440 píxeles.",
+    "d": "HD - 1920 × 1080 píxeles."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**WQHD/QHD = 2560 × 1440** (16:9) es correcta (c). a) 8K UHD es 7680 × **4320**; b) Ultra HD (4K) es 3840 × 2160; d) 1920 × 1080 es **Full HD**, no «HD» (HD o 720p es 1280 × 720). La trampa está en emparejar bien nombre y cifra.",
+   "epigrafe": "Visualización",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-v-011",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-011",
+   "texto": "reformulado",
+   "q": "¿Qué resolución corresponde a 4K UHD (2160p)?",
+   "ctx": null,
+   "op": {
+    "a": "4096 × 2304",
+    "b": "2560 × 1440",
+    "c": "3840 × 2160",
+    "d": "7680 × 4320"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "4K UHD de consumo es **3840 × 2160** (16:9). El 4K de cine (DCI) es 4096 × 2160; 2560 × 1440 es QHD y 7680 × 4320 es 8K UHD. 4096 × 2304 no es un estándar.",
+   "epigrafe": "Visualización",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-012",
+   "tipo": "historica",
+   "ref": "LI2024-ej1-R02",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 2
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál es un tipo de panel de una pantalla LCD?",
+   "ctx": null,
+   "op": {
+    "a": "IPS (In-Plane Switching).",
+    "b": "VN (Vertical Nematic).",
+    "c": "TA (Twisted Alignment).",
+    "d": "PSI (Plane Switching Input)."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los paneles LCD son **TN** (*Twisted Nematic*), **IPS** (*In-Plane Switching*) (a) y **VA** (*Vertical Alignment*). VN, TA y PSI son cruces inventados de esas siglas.",
+   "epigrafe": "Visualización",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-012",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-012",
+   "texto": "reformulado",
+   "q": "¿Qué tipo de panel LCD ofrece el mejor contraste nativo y los negros más profundos?",
+   "ctx": null,
+   "op": {
+    "a": "TN",
+    "b": "IPS",
+    "c": "OLED",
+    "d": "VA"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**VA** alcanza 3.000:1 o más. TN es el más rápido y barato, pero con peores ángulos y color; IPS da el mejor color y ángulos con contraste ~1.000:1. OLED no es un panel LCD: es emisivo.",
+   "epigrafe": "Visualización",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-013",
+   "tipo": "historica",
+   "ref": "LI2022-ej1-21",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 21
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de los siguientes es el nombre de un conector usado para carga y datos creado por el fabricante Apple?",
+   "ctx": null,
+   "op": {
+    "a": "USB-Tipo C",
+    "b": "iUSB",
+    "c": "iFirewire",
+    "d": "Lightning"
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Lightning** es el conector propietario de Apple (2012), de 8 pines y reversible, para carga y datos (d). Apple lo sustituyó por USB-C desde el iPhone 15 (2023), en parte por la directiva europea del cargador común. USB-C es un estándar del USB-IF, no de Apple; iUSB e iFirewire no existen.",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-013",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-013",
+   "texto": "reformulado",
+   "q": "¿Qué conector impone la Unión Europea como puerto de carga común en móviles, tabletas y, desde abril de 2026, portátiles?",
+   "ctx": null,
+   "op": {
+    "a": "USB-C",
+    "b": "Lightning",
+    "c": "Micro-USB",
+    "d": "USB tipo A"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La Directiva (UE) 2022/2380 obliga al **USB-C** (móviles y otros desde el 28/12/2024; portátiles desde el 28/04/2026). Lightning es el conector propietario de Apple que ha tenido que abandonar.",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-h-014",
+   "tipo": "historica",
+   "ref": "LI2022-ej1-27",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 27
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las siguientes es una tecnología de almacenamiento en disco mediante bus serie?",
+   "ctx": null,
+   "op": {
+    "a": "SATA",
+    "b": "ATA",
+    "c": "SCSI",
+    "d": "DLT"
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**SATA** (*Serial ATA*) es el bus serie de discos (a). ATA (PATA/IDE) y SCSI clásico son buses **paralelos**; DLT es una tecnología de **cinta** magnética, no un bus.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-014",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-014",
+   "texto": "reformulado",
+   "q": "¿Qué interfaz serie de almacenamiento, propia de servidores, ofrece doble puerto, llega a 24 Gbit/s y admite también discos SATA?",
+   "ctx": null,
+   "op": {
+    "a": "PATA",
+    "b": "SAS",
+    "c": "SCSI Ultra-320",
+    "d": "eSATA"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**SAS** (*Serial Attached SCSI*) es la versión serie de SCSI: 3, 6, 12 y 24 Gbit/s (SAS-4), doble puerto y compatibilidad con discos SATA. PATA y SCSI Ultra-320 son paralelos; eSATA es SATA externo.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-015",
+   "tipo": "historica",
+   "ref": "LI2022-ej1-28",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 28
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Respecto a la norma USB indique la respuesta INCORRECTA:",
+   "ctx": null,
+   "op": {
+    "a": "USB Type-C es lo mismo que USB 3.1",
+    "b": "La diferencia entre USB 3.1 Gen 1 y USB 3.1 Gen 2 se reduce solamente a la velocidad.",
+    "c": "USB 3.2 permite velocidades de hasta 20 Gbps.",
+    "d": "Los dispositivos USB 2.0 pueden lograr una velocidad de transferencia máxima hasta de 480 Mbps."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La INCORRECTA es a): **USB Type-C es un conector** (reversible, 24 pines) y USB 3.1 es una **versión** de la especificación. Un puerto USB-C puede ir a velocidad USB 2.0 o llegar a USB4. c) USB 3.2 Gen 2x2 llega a 20 Gbit/s; d) USB 2.0 da 480 Mbit/s. b) es la intención del tribunal (Gen 1 = 5 Gbit/s, Gen 2 = 10 Gbit/s), aunque estrictamente también cambia la codificación (8b/10b frente a 128b/132b).",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-v-015",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-015",
+   "texto": "reformulado",
+   "q": "Señale la afirmación CORRECTA sobre USB-C:",
+   "ctx": null,
+   "op": {
+    "a": "Es sinónimo de USB 3.1 y siempre transfiere a 10 Gbit/s",
+    "b": "Solo sirve para carga, no para datos",
+    "c": "Es un tipo de conector reversible que puede funcionar desde velocidad USB 2.0 hasta USB4",
+    "d": "Es un conector exclusivo de los dispositivos Apple"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**USB-C** es un **conector** (24 pines, reversible), independiente de la versión del protocolo: puede llevar USB 2.0, 3.x, USB4, Thunderbolt, DisplayPort y carga. No fija la velocidad ni es de Apple.",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-h-016",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-23",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 23
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Hablando de zonas de un disco duro, señale la FALSA:",
+   "ctx": null,
+   "op": {
+    "a": "Cilindro es un conjunto de varias pistas.",
+    "b": "Clúster es un conjunto continuo de sectores.",
+    "c": "Sector es cada uno de los lados un plato.",
+    "d": "Pista es una circunferencia dentro de una cara."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La FALSA es c): el **sector** es cada división de una **pista** (512 B o 4 KiB), no un lado del plato (eso es una **cara** o superficie). a) cilindro = pistas de igual radio en todas las caras; b) clúster = grupo de sectores contiguos (unidad lógica del sistema de ficheros); d) pista = circunferencia de una cara.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-016",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-016",
+   "texto": "reformulado",
+   "q": "En un disco duro, ¿qué es un clúster?",
+   "ctx": null,
+   "op": {
+    "a": "Cada una de las caras de un plato",
+    "b": "El conjunto de pistas del mismo radio en todas las superficies",
+    "c": "Una circunferencia concéntrica de una superficie",
+    "d": "Un grupo de sectores contiguos que el sistema de ficheros asigna como unidad mínima"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **clúster** (unidad de asignación) es un concepto **lógico** del sistema de ficheros: varios sectores contiguos. Las demás definiciones son de cara, cilindro y pista.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-h-017",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-24",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 24
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Según la nueva especificación de la interface USB, denominada USB-PD (Power Delivery), la potencia MÁXIMA que es capaz de alcanzar es:",
+   "ctx": null,
+   "op": {
+    "a": "18W",
+    "b": "36W",
+    "c": "60W",
+    "d": "100W"
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "Clave oficial d) **100 W** (20 V × 5 A), el máximo de USB PD 2.0/3.0 en 2017. **Desactualizada**: USB PD 3.1 (mayo de 2021) añadió el modo EPR, con hasta **48 V × 5 A = 240 W** y cable EPR. Si sale hoy sin citar versión, la respuesta es 240 W. 18, 36 y 60 W son perfiles intermedios (60 W = 20 V × 3 A, el máximo sin cable e-marker).",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-v-017",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-017",
+   "texto": "reformulado",
+   "q": "¿Qué potencia máxima permite USB Power Delivery 3.1 en modo EPR (Extended Power Range)?",
+   "ctx": null,
+   "op": {
+    "a": "240 W",
+    "b": "100 W",
+    "c": "60 W",
+    "d": "480 W"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "USB PD 3.1 EPR llega a **48 V × 5 A = 240 W**. 100 W era el máximo de PD 2.0/3.0 (20 V × 5 A); 60 W es 20 V × 3 A sin e-marker.",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-018",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-I-II-27",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 27
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En cuanto a impresoras de impacto, hay varios tipos principales, señale cuál NO es correcto:",
+   "ctx": null,
+   "op": {
+    "a": "de margarita.",
+    "b": "matricial.",
+    "c": "de inyección.",
+    "d": "de bola."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **inyección de tinta** (c) es una impresora **sin impacto**: proyecta gotas sin golpear el papel. Margarita, matricial (agujas) y bola sí son de impacto: golpean una cinta entintada contra el papel.",
+   "epigrafe": "Impresión",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-018",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-018",
+   "texto": "reformulado",
+   "q": "¿Qué ventaja conservan las impresoras de impacto (matriciales) frente a las láser y de inyección?",
+   "ctx": null,
+   "op": {
+    "a": "Son más silenciosas",
+    "b": "Pueden imprimir sobre papel autocopiativo, haciendo varias copias a la vez",
+    "c": "Ofrecen mayor resolución fotográfica",
+    "d": "Imprimen más páginas por minuto"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Al golpear el papel, las de impacto permiten **papel autocopiativo** (calco) y continuo. Por eso las matriciales siguen en uso para facturas y albaranes. Son más ruidosas, de menor resolución y más lentas.",
+   "epigrafe": "Impresión",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-019",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-I-II-28",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 28
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de los siguientes estándares se basa en una comunicación en serie?",
+   "ctx": null,
+   "op": {
+    "a": "PATA",
+    "b": "SCSI 1",
+    "c": "SATA",
+    "d": "SCSI 3.1"
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**SATA** (*Serial ATA*) es serie (c). PATA (*Parallel ATA*) y SCSI 1 y SCSI 3 en su forma clásica son buses **paralelos**. La versión serie de SCSI es SAS.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-019",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-019",
+   "texto": "reformulado",
+   "q": "¿Cuál de estas interfaces de disco es de tipo PARALELO?",
+   "ctx": null,
+   "op": {
+    "a": "SATA",
+    "b": "SAS",
+    "c": "PATA (IDE)",
+    "d": "NVMe sobre PCIe"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**PATA/IDE** usa un cable plano de 40/80 hilos y transmite en paralelo (hasta 133 MB/s). SATA, SAS y PCIe son serie, punto a punto.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-h-020",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-I-II-29",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 29
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las siguientes opciones describe la impresión con tecnología de sublimación de tinta?",
+   "ctx": null,
+   "op": {
+    "a": "Utilizan el calor para la transferencia de la tinta al soporte de la impresión.",
+    "b": "Un conjunto de agujas con temperatura alta, recorren el papel sensible a la temperatura, volviéndose en esos puntos de color negro.",
+    "c": "Se proyectan pequeñas cantidades de tinta hacia el soporte.",
+    "d": "Se golpea el soporte y con la fuerza del impacto se transfiere la tinta."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En la **sublimación** el **calor** transfiere el tinte de una cinta al soporte (a): el tinte pasa de sólido a gas sin pasar por líquido y penetra en el papel o tejido. b) es la impresión **térmica directa**; c) la **inyección de tinta**; d) las impresoras de **impacto**.",
+   "epigrafe": "Impresión",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-v-020",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-020",
+   "texto": "reformulado",
+   "q": "En la impresión por sublimación, ¿qué cambio de estado sufre el tinte?",
+   "ctx": null,
+   "op": {
+    "a": "Pasa de líquido a sólido al enfriarse sobre el papel",
+    "b": "Se funde y se deposita como cera líquida",
+    "c": "Se carga electrostáticamente como el tóner",
+    "d": "Pasa de sólido a gas sin pasar por líquido"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Sublimar es pasar de **sólido a gas** directamente. Por eso da tonos continuos (fotos, tarjetas plásticas). Fundir cera es la tecnología de cera sólida; la carga electrostática del tóner es la láser.",
+   "epigrafe": "Impresión",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-021",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-I-II-31",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 31
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las siguientes afirmaciones sobre los discos SSD es INCORRECTA?",
+   "ctx": null,
+   "op": {
+    "a": "El origen de las siglas SSD es Solid State Drive.",
+    "b": "El acceso a la información almacenada en un disco SSD es más rápido que en un disco duro HDD.",
+    "c": "La copia y duplicación de archivos en un disco SSD es más lenta que en un disco HDD.",
+    "d": "El coste de un disco SSD, a igualdad de tamaño, es superior al de un disco HDD."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La INCORRECTA es c): un SSD **copia y duplica archivos más rápido** que un HDD, porque no tiene que mover cabezales y su velocidad secuencial es muy superior. a) SSD = *Solid State Drive*; b) el acceso es más rápido; d) el precio por GB es mayor. Las tres son ciertas.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-021",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-021",
+   "texto": "reformulado",
+   "q": "Sobre el mantenimiento de un SSD, señale la afirmación correcta:",
+   "ctx": null,
+   "op": {
+    "a": "No conviene desfragmentarlo; el comando TRIM ayuda a mantener su rendimiento",
+    "b": "Hay que desfragmentarlo cada semana para que no pierda velocidad",
+    "c": "TRIM sirve para aparcar los cabezales",
+    "d": "Conviene llenarlo al 100 % para repartir el desgaste"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Al SSD **no le afecta la fragmentación** y desfragmentarlo solo lo desgasta. **TRIM** permite al SO avisar de qué bloques ya no se usan. No hay cabezales; dejar espacio libre (*over-provisioning*) favorece el rendimiento y la vida útil.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-022",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-I-II-34",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 34
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de los siguientes periféricos NO es un periférico de entrada?",
+   "ctx": null,
+   "op": {
+    "a": "Ratón",
+    "b": "Teclado",
+    "c": "Escáner",
+    "d": "Altavoz"
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **altavoz** es un periférico de **salida** (d). Ratón, teclado y escáner son de entrada.",
+   "epigrafe": "Periféricos de entrada y digitalización",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-022",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-022",
+   "texto": "reformulado",
+   "q": "¿Cuál de estos periféricos es de entrada/salida (mixto)?",
+   "ctx": null,
+   "op": {
+    "a": "Un plóter",
+    "b": "Una pantalla táctil",
+    "c": "Un micrófono",
+    "d": "Un lector de códigos de barras"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **pantalla táctil** muestra información (salida) y recoge pulsaciones (entrada). El plóter es de salida; micrófono y lector de códigos de barras, de entrada.",
+   "epigrafe": "Periféricos de entrada y digitalización",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-h-023",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-I-II-26",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 26
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En cuanto a los periféricos de entrada y, en concreto, los teclados, señale la distribución de teclado que se utiliza principalmente en regiones germanohablantes:",
+   "ctx": null,
+   "op": {
+    "a": "AZERTY",
+    "b": "QWERTZ",
+    "c": "HCESAR",
+    "d": "QWERPY"
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**QWERTZ** (b) se usa en Alemania, Austria y Suiza: intercambia Y y Z respecto a QWERTY porque la Z es mucho más frecuente en alemán. AZERTY es la francesa y belga; HCESAR es la portuguesa antigua; QWERPY no existe.",
+   "epigrafe": "Periféricos de entrada y digitalización",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-023",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-023",
+   "texto": "reformulado",
+   "q": "¿Qué distribución de teclado se usa principalmente en Francia y Bélgica?",
+   "ctx": null,
+   "op": {
+    "a": "QWERTZ",
+    "b": "QWERTY",
+    "c": "AZERTY",
+    "d": "Dvorak"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**AZERTY** es la de Francia y Bélgica. QWERTZ es la germánica; QWERTY, la de inglés y español (con Ñ); Dvorak, una alternativa ergonómica.",
+   "epigrafe": "Periféricos de entrada y digitalización",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-h-024",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-I-II-27",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 27
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cómo se denomina a los escáneres que son de gran tamaño y permiten escaneos por modelos de color CYMK o RGB, y que debido principalmente a su gran resolución óptica son muy utilizados en estudios de diseño gráfico o artístico?",
+   "ctx": null,
+   "op": {
+    "a": "de cama plana.",
+    "b": "de mano.",
+    "c": "de impacto.",
+    "d": "de tambor."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los **escáneres de tambor** (d) montan el original en un cilindro giratorio y usan fotomultiplicadores (PMT). Dan la **máxima resolución óptica** y rango dinámico, por eso se usan en preimpresión, diseño gráfico y arte. Los de cama plana y de mano dan menos calidad; «de impacto» es un tipo de impresora, no de escáner.",
+   "epigrafe": "Periféricos de entrada y digitalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-v-024",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-024",
+   "texto": "reformulado",
+   "q": "¿Qué tipo de sensor utilizan los escáneres de tambor profesionales?",
+   "ctx": null,
+   "op": {
+    "a": "CIS (Contact Image Sensor)",
+    "b": "CMOS de webcam",
+    "c": "Un cabezal de agujas",
+    "d": "Fotomultiplicadores (PMT)"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El escáner de tambor usa **tubos fotomultiplicadores (PMT)**, muy sensibles. CIS es el sensor barato de los escáneres planos finos; CMOS, el de cámaras y webcams; las agujas son de impresoras matriciales.",
+   "epigrafe": "Periféricos de entrada y digitalización",
+   "dificultad": 3
+  },
+  {
+   "id": "t11-h-025",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-I-II-29",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 29
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál es la velocidad de transmisión de datos de Thunderbolt 2?",
+   "ctx": null,
+   "op": {
+    "a": "10 Gbps",
+    "b": "480 Gbps",
+    "c": "20 Gbps",
+    "d": "32 Gbps"
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Thunderbolt 2** (2013) agrega los dos canales de 10 Gbit/s de Thunderbolt 1 y da **20 Gbit/s** (c). 10 Gbit/s es Thunderbolt 1; Thunderbolt 3 llegó a 40 Gbit/s. 480 Gbps no existe (480 Mbit/s es USB 2.0).",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-025",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-025",
+   "texto": "reformulado",
+   "q": "¿Qué conector físico usaban Thunderbolt 1 y Thunderbolt 2?",
+   "ctx": null,
+   "op": {
+    "a": "Mini DisplayPort",
+    "b": "USB-C",
+    "c": "FireWire 800",
+    "d": "HDMI tipo C"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Thunderbolt 1 y 2 usaban **Mini DisplayPort**. El salto a **USB-C** llegó con Thunderbolt 3 (2015).",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-026",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-I-II-30",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 30
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Indique cuál es la velocidad de transmisión de datos del estándar de interconexión de dispositivos USB 3.1 Gen 2:",
+   "ctx": null,
+   "op": {
+    "a": "480Mbps",
+    "b": "480Gbps",
+    "c": "10 Gbps",
+    "d": "100 Mbps"
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**USB 3.1 Gen 2** (hoy USB 3.2 Gen 2, «USB 10Gbps») da **10 Gbit/s** (c). 480 Mbit/s es USB 2.0; 480 Gbps no existe; 100 Mbps no corresponde a ninguna versión USB.",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-026",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-026",
+   "texto": "reformulado",
+   "q": "¿Qué velocidad máxima ofrece USB 3.2 Gen 2x2?",
+   "ctx": null,
+   "op": {
+    "a": "5 Gbit/s",
+    "b": "20 Gbit/s",
+    "c": "10 Gbit/s",
+    "d": "40 Gbit/s"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Gen 2x2 usa **dos carriles de 10 Gbit/s = 20 Gbit/s**. Gen 1 = 5 Gbit/s; Gen 2 = 10 Gbit/s; 40 Gbit/s es USB4.",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-027",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-I-II-31",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 31
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Los dispositivos de almacenamiento SSD (Solid State Drive):",
+   "ctx": null,
+   "op": {
+    "a": "Tienen mejor rendimiento (mayor ancho de banda y menor latencia) que los tradicionales HDD (Hard Disk Drive).",
+    "b": "Son más caros que los HDD.",
+    "c": "Están basados en memorias no volátiles.",
+    "d": "Todas las anteriores son correctas."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las tres primeras son ciertas, así que la respuesta es d). Los SSD tienen más ancho de banda y menos latencia que los HDD (a), son más caros por GB (b) y se basan en memoria flash **no volátil** (c).",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-027",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-027",
+   "texto": "reformulado",
+   "q": "¿Cuál de estas características es un INCONVENIENTE del SSD frente al HDD?",
+   "ctx": null,
+   "op": {
+    "a": "Su tiempo de acceso es mayor",
+    "b": "Es más sensible a golpes y vibraciones",
+    "c": "Su número de ciclos de escritura es limitado",
+    "d": "Consume más energía"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El SSD tiene **durabilidad de escritura limitada** (ciclos P/E; se mide en TBW o DWPD) y mayor precio por GB. En acceso, resistencia a golpes y consumo es mejor que el HDD.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-028",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-I-II-23",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 23
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En los discos magnéticos, señale cómo se denomina al tiempo que pasa desde que la cabeza de lectura/escritura se posiciona sobre la pista correcta hasta que pasa el bloque deseado debajo:",
+   "ctx": null,
+   "op": {
+    "a": "Tiempo de búsqueda.",
+    "b": "Tiempo de latencia.",
+    "c": "Tiempo de transferencia.",
+    "d": "Tiempo de posicionamiento."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Con el cabezal ya en la pista correcta, la espera hasta que el bloque **pasa por debajo** es la **latencia (rotacional)** (b). Mover el cabezal hasta la pista es el **tiempo de búsqueda** (a); leer los datos, el de **transferencia** (c). Tiempo de acceso = búsqueda + latencia + transferencia.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-028",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-028",
+   "texto": "reformulado",
+   "q": "En un disco magnético, ¿cómo se llama el tiempo necesario para mover el cabezal hasta la pista correcta?",
+   "ctx": null,
+   "op": {
+    "a": "Latencia rotacional",
+    "b": "Tiempo de transferencia",
+    "c": "MTBF",
+    "d": "Tiempo de búsqueda (seek time)"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **tiempo de búsqueda** (3 a 12 ms) es el movimiento del brazo hasta la pista. La latencia es la espera a que el sector llegue bajo el cabezal; la transferencia, la lectura. MTBF es el tiempo medio entre fallos.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-h-029",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-I-II-24",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 24
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál es el nombre de la tecnología que permite el reconocimiento óptico de un texto escaneado?",
+   "ctx": null,
+   "op": {
+    "a": "OCR.",
+    "b": "IVR.",
+    "c": "JPG.",
+    "d": "OTR."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**OCR** (*Optical Character Recognition*) convierte la imagen de un texto escaneado en texto editable (a). IVR es la respuesta de voz interactiva (centralitas); JPG es un formato de imagen; OTR no es esta tecnología.",
+   "epigrafe": "Periféricos de entrada y digitalización",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-029",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-029",
+   "texto": "reformulado",
+   "q": "¿Qué tecnología lee las marcas hechas en casillas, como las de una hoja de respuestas de un test?",
+   "ctx": null,
+   "op": {
+    "a": "OMR",
+    "b": "OCR",
+    "c": "ICR",
+    "d": "MICR"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**OMR** (*Optical Mark Recognition*) detecta marcas. OCR reconoce caracteres impresos; ICR, texto manuscrito; MICR, caracteres con tinta magnética (cheques).",
+   "epigrafe": "Periféricos de entrada y digitalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-030",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-I-II-25",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 25
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Qué protocolo se utiliza para conectar teclados, ratones y otros dispositivos inalámbricos a un PC?",
+   "ctx": null,
+   "op": {
+    "a": "802.3.",
+    "b": "Wi-Max.",
+    "c": "802.11.",
+    "d": "Bluetooth."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Bluetooth** (d), con el perfil **HID**, conecta teclados, ratones y otros periféricos inalámbricos de corto alcance. 802.3 es Ethernet (cable); 802.11 es Wi-Fi (red local); WiMAX (802.16) es acceso inalámbrico metropolitano.",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-030",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-030",
+   "texto": "reformulado",
+   "q": "En una piconet Bluetooth, ¿cuántos dispositivos esclavos activos puede tener un maestro?",
+   "ctx": null,
+   "op": {
+    "a": "1",
+    "b": "7",
+    "c": "127",
+    "d": "255"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Una **piconet** tiene **1 maestro y hasta 7 esclavos activos** (hasta 255 aparcados en las versiones clásicas). 127 es el máximo de dispositivos de un controlador USB.",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-031",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-I-II-26",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 26
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Cuál es la velocidad de transmisción de datos del estándar de interconexión de dispositivos denominado USB 2.0:",
+   "ctx": null,
+   "op": {
+    "a": "480Mbit/s.",
+    "b": "100 Mb/s.",
+    "c": "10 kb/s.",
+    "d": "1000 Mb/s."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "USB 2.0 (*High Speed*, 2000) da **480 Mbit/s** (a). 12 Mbit/s es USB 1.1 Full Speed; 5 Gbit/s, USB 3.0. 100 y 1000 Mb/s son velocidades de Ethernet.",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-031",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-031",
+   "texto": "reformulado",
+   "q": "¿Qué velocidad máxima tiene USB 3.0 (también llamado USB 3.1 Gen 1 o USB 3.2 Gen 1)?",
+   "ctx": null,
+   "op": {
+    "a": "480 Mbit/s",
+    "b": "10 Gbit/s",
+    "c": "5 Gbit/s",
+    "d": "20 Gbit/s"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "USB 3.0 = 3.1 Gen 1 = 3.2 Gen 1 = **5 Gbit/s** (SuperSpeed). 480 Mbit/s es USB 2.0; 10 Gbit/s, Gen 2; 20 Gbit/s, Gen 2x2.",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-h-032",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-I-II-29",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 29
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En la estructura física de un disco duro, señale qué se entiende por sector:",
+   "ctx": null,
+   "op": {
+    "a": "Conjunto de varias pistas.",
+    "b": "Cada una de las divisiones de una pista.",
+    "c": "Cada uno de los círculos concéntricos del disco.",
+    "d": "Cada una de las caras del disco."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **sector** es cada una de las divisiones de una pista (b) y la unidad física mínima de lectura/escritura. a) se acerca a cilindro; c) es la **pista**; d) es la **cara** o superficie.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-032",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-032",
+   "texto": "reformulado",
+   "q": "En la estructura física de un disco duro, ¿qué es un cilindro?",
+   "ctx": null,
+   "op": {
+    "a": "Cada división de una pista",
+    "b": "Cada una de las caras de un plato",
+    "c": "Un grupo de sectores asignado por el sistema de ficheros",
+    "d": "El conjunto de pistas con el mismo radio en todas las superficies"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **cilindro** agrupa las pistas de igual radio de todas las caras: se leen sin mover el brazo. Lo demás define sector, cara y clúster.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-h-033",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-32",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 32
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El Dot Pitch (Tamaño de punto) es:",
+   "ctx": null,
+   "op": {
+    "a": "Un parámetro que mide la calidad de imagen de un monitor. Cuanto menor sea el Dot Pitch, mejor será la calidad.",
+    "b": "Un parámetro que mide la calidad de imagen de un monitor. Cuanto mayor sea el Dot Pitch, mejor será la calidad.",
+    "c": "Un parámetro que mide la calidad de impresión. Cuanto menor sea el Dot Pitch, mejor será la calidad.",
+    "d": "Un parámetro que mide la calidad de impresión. Cuanto mayor sea el Dot Pitch, mejor será la calidad."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **dot pitch** mide la distancia entre dos puntos (o subpíxeles) del mismo color en un **monitor**; cuanto **menor**, más nitidez (a). No es un parámetro de impresión (para eso están los ppp).",
+   "epigrafe": "Visualización",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-033",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-033",
+   "texto": "reformulado",
+   "q": "Un monitor A tiene un dot pitch de 0,28 mm y un monitor B, de 0,24 mm. Con el mismo tamaño, ¿cuál ofrece una imagen más nítida?",
+   "ctx": null,
+   "op": {
+    "a": "B, porque su dot pitch es menor",
+    "b": "A, porque su dot pitch es mayor",
+    "c": "Ambos igual: el dot pitch no influye en la nitidez",
+    "d": "No se puede saber sin conocer los ppp de impresión"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En el dot pitch **menor es mejor**: puntos más juntos dan más detalle. Por eso el monitor de 0,24 mm es más nítido.",
+   "epigrafe": "Visualización",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-h-034",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-33",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 33
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El estándar de conectividad IEEE 1394b (también conocido popularmente como “Firewire”) alcanza la velocidad de transferencia:",
+   "ctx": null,
+   "op": {
+    "a": "200 Mbps como máximo.",
+    "b": "800 Mbps o incluso superior.",
+    "c": "400 Mbps como máximo.",
+    "d": "600 Mbps como máximo."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "IEEE 1394b (FireWire 800) da **800 Mbit/s**, y la norma prevé S1600 y S3200 (hasta 3,2 Gbit/s), de ahí «800 Mbps o incluso superior» (b). 400 Mbit/s era el máximo de 1394/1394a (FireWire 400).",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-v-034",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-034",
+   "texto": "reformulado",
+   "q": "¿Qué velocidad máxima ofrece FireWire 400 (IEEE 1394 / 1394a)?",
+   "ctx": null,
+   "op": {
+    "a": "800 Mbit/s",
+    "b": "400 Mbit/s",
+    "c": "480 Mbit/s",
+    "d": "3,2 Gbit/s"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "IEEE 1394 y 1394a admiten 100, 200 y **400 Mbit/s**. 800 Mbit/s es 1394b; 480 Mbit/s es USB 2.0; 3,2 Gbit/s es el máximo teórico de 1394b.",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-035",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-35",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 35
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Una impresión GDI (Graphics Device Interface) o Impresión basada en host es:",
+   "ctx": null,
+   "op": {
+    "a": "En las impresoras láser, la imagen sin revelar.",
+    "b": "La calidad más alta producida por una impresora matricial de puntos.",
+    "c": "Un tipo interfaz que utiliza tecnología de comunicación paralela para obtener una velocidad de transferencia de datos muy alta.",
+    "d": "Una tecnología en la que el sistema operativo se comunica directamente con la impresora para enviarle la imagen que está preparada para imprimirse."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En la impresión **GDI o basada en host** el **ordenador** (sistema operativo y controlador, con la interfaz GDI de Windows) rasteriza la página y envía la imagen ya preparada a la impresora (d), que no necesita lenguaje propio (PCL o PostScript). Por eso son más baratas («Winprinters»). Las demás opciones no tienen relación con GDI.",
+   "epigrafe": "Impresión",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-v-035",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-035",
+   "texto": "reformulado",
+   "q": "En una impresora GDI (Winprinter), ¿dónde se rasteriza la página?",
+   "ctx": null,
+   "op": {
+    "a": "En la propia impresora, con un intérprete PostScript",
+    "b": "En la impresora, con un intérprete PCL 6",
+    "c": "En el ordenador, mediante el controlador y la interfaz GDI de Windows",
+    "d": "En un servidor IPP de Internet"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En GDI el trabajo pesado lo hace el **PC**; la impresora solo recibe el mapa de bits. Las impresoras PostScript o PCL interpretan el lenguaje en su propio procesador.",
+   "epigrafe": "Impresión",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-036",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-36",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 36
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las siguientes afirmaciones sobre los nuevos discos ópticos de almacenamiento masivo es correcta?:",
+   "ctx": null,
+   "op": {
+    "a": "El coste de un disco Blu-Ray es inferior a su equivalente HD-DVD.",
+    "b": "Ambos sistemas, DVD-HD y Blu-Ray trabajan con un láser rojo.",
+    "c": "Los discos Blu-Ray tienen compabilidad “hacia atrás” con los antiguos DVD.",
+    "d": "Los discos HD-DVD tienen compabilidad “hacia atrás” con los antiguos DVD."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Clave oficial d): el **HD-DVD** se diseñó con una capa protectora de 0,6 mm como el DVD y era más fácil hacerlo compatible hacia atrás (incluso existían discos híbridos HD-DVD/DVD). b) es falsa: **ambos usan láser azul-violeta de 405 nm**. a) es falsa: en 2007 el Blu-ray era más caro de fabricar. c) es discutible: los lectores Blu-ray también leen DVD, pero el disco Blu-ray no es compatible con los lectores de DVD. Blu-ray acabó ganando: Toshiba abandonó HD-DVD en 2008.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 3
+  },
+  {
+   "id": "t11-v-036",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-036",
+   "texto": "reformulado",
+   "q": "¿Qué láser utilizan los discos Blu-ray y HD-DVD?",
+   "ctx": null,
+   "op": {
+    "a": "Ambos, láser rojo de 650 nm",
+    "b": "Blu-ray azul-violeta y HD-DVD rojo",
+    "c": "Ambos, láser infrarrojo de 780 nm",
+    "d": "Ambos, láser azul-violeta de 405 nm"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Blu-ray y HD-DVD usan el **mismo láser azul-violeta de 405 nm**. El rojo de 650 nm es del DVD y el infrarrojo de 780 nm, del CD. Blu-ray cabe más (25 GB por capa) por su capa protectora más fina (0,1 mm) y mayor apertura numérica.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-037",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-88",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 88
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se va a utilizar un CD-ROM, como medio de almacenamiento para un back-up y queremos que pueda ser leído por varios sistemas operativos. ¿En qué estándar de sistema de archivos nos podemos basar?.",
+   "ctx": null,
+   "op": {
+    "a": "ISO 7816.",
+    "b": "ISO/IEC 17799.",
+    "c": "ANSI/TIA/EIA-568-A.",
+    "d": "ISO 9660."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**ISO 9660** (d) es el sistema de ficheros estándar del CD-ROM, legible por casi cualquier sistema operativo. ISO 7816 es la norma de tarjetas inteligentes; ISO/IEC 17799 es la antigua norma de seguridad de la información (hoy 27002); ANSI/TIA/EIA-568-A es cableado estructurado.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-037",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-037",
+   "texto": "reformulado",
+   "q": "¿Qué extensión de ISO 9660 añade nombres largos en Unicode para sistemas Windows?",
+   "ctx": null,
+   "op": {
+    "a": "Joliet",
+    "b": "Rock Ridge",
+    "c": "UDF",
+    "d": "El Torito"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Joliet** añade nombres largos Unicode (Windows); **Rock Ridge** añade permisos y atributos Unix. UDF es el sistema de DVD y Blu-ray. El Torito define CD arrancables (la lección no lo trata).",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 3
+  },
+  {
+   "id": "t11-h-038",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "ej1",
+    "n": 26
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Indique la velocidad máxima de transferencia del USB 4.0:",
+   "ctx": null,
+   "op": {
+    "a": "Hasta 20 Gbps",
+    "b": "Hasta 30 Gbps",
+    "c": "Hasta 40 Gbps",
+    "d": "Hasta 50 Gbps"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**USB4** (2019, basado en Thunderbolt 3) llega a **40 Gbit/s** (c); también existe un modo de 20 Gbit/s, que es mínimo, no máximo. USB4 v2.0 (2022) sube a 80 Gbit/s simétricos (120 asimétricos). 30 y 50 Gbps no corresponden a ninguna versión.",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-038",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-038",
+   "texto": "reformulado",
+   "q": "¿Qué velocidad máxima simétrica ofrece USB4 versión 2.0?",
+   "ctx": null,
+   "op": {
+    "a": "40 Gbit/s",
+    "b": "80 Gbit/s",
+    "c": "120 Gbit/s",
+    "d": "20 Gbit/s"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "USB4 v2.0 (2022) da **80 Gbit/s simétricos** y puede llegar a 120 Gbit/s en un sentido (modo asimétrico). 40 Gbit/s es USB4 v1.",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-039",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "ej1",
+    "n": 27
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Indique cuál de las siguientes es una tecnología de interfaz hardware:",
+   "ctx": null,
+   "op": {
+    "a": "Thunderbird",
+    "b": "HIT",
+    "c": "Thunderbolt",
+    "d": "RISC"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Thunderbolt** (c) es la interfaz de Intel y Apple que combina PCIe y DisplayPort. Thunderbird es un cliente de correo de Mozilla (distractor por el parecido); RISC es un tipo de arquitectura de procesador, no una interfaz; HIT no es una interfaz conocida.",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-039",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-039",
+   "texto": "reformulado",
+   "q": "¿Quién desarrolló la interfaz Thunderbolt y qué protocolos combina?",
+   "ctx": null,
+   "op": {
+    "a": "Apple, con Sony; combina FireWire y USB",
+    "b": "El USB-IF; combina USB 2.0 y HDMI",
+    "c": "Intel, con Apple; combina PCIe y DisplayPort",
+    "d": "VESA; combina DVI y SATA"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Thunderbolt es de **Intel con Apple** (2011) y lleva **PCIe y DisplayPort** por un cable. FireWire fue de Apple (Sony lo llamaba i.LINK); VESA define DisplayPort.",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-040",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "ej1",
+    "n": 28
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En relación con el almacenamiento, ¿qué es un SSD?",
+   "ctx": null,
+   "op": {
+    "a": "Secure System Disk. Es un sistema de almacenamiento de datos cifrado AES 128.",
+    "b": "Solid State Disk. Es un dispositivo de almacenamiento de datos que utiliza discos magnéticos.",
+    "c": "Solid State Drive. Es un dispositivo de almacenamiento de datos que utiliza memoria no volátil.",
+    "d": "Solid State Device. Es un dispositivo de almacenamiento de datos que utiliza memoria volátil."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**SSD = Solid State Drive**, unidad que guarda los datos en memoria flash **no volátil** (c). b) usa discos magnéticos (eso es un HDD); d) habla de memoria volátil, que perdería los datos al apagar; a) se inventa las siglas.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-040",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-040",
+   "texto": "reformulado",
+   "q": "¿Qué técnica del SSD reparte las escrituras entre todas las celdas para alargar su vida útil?",
+   "ctx": null,
+   "op": {
+    "a": "Desfragmentación",
+    "b": "Latencia rotacional",
+    "c": "Striping",
+    "d": "Wear leveling (nivelación de desgaste)"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **wear leveling** distribuye las escrituras porque cada celda NAND aguanta un número limitado de ciclos. La desfragmentación no se debe hacer en un SSD; la latencia rotacional es de los HDD; el striping es una técnica de RAID.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-041",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 25
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Indique cuál de las siguientes afirmaciones, respecto a los distintos tipos de conexión, es correcta:",
+   "ctx": null,
+   "op": {
+    "a": "HDMI se trata de una entrada de vídeo que permite conectar la pantalla del ordenador en analógico.",
+    "b": "FireWire sirve tanto para conectar videocámaras digitales como para conectar discos duros externos.",
+    "c": "eSATA es una salida de audio digital.",
+    "d": "P.Link se trata de una salida para conectar una televisión, de modo que sea posible ver una película en la pantalla de la televisión, en lugar de en la del PC."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**FireWire** (IEEE 1394) se usó mucho para videocámaras DV y también para discos externos (b). a) HDMI es **digital**, no analógico; c) eSATA es SATA externo para **discos**, no audio; d) «P.Link» no es una salida de vídeo (el término de Sony era i.LINK, que es FireWire).",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-v-041",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-041",
+   "texto": "reformulado",
+   "q": "Sobre eSATA, señale la afirmación correcta:",
+   "ctx": null,
+   "op": {
+    "a": "Es SATA externo, llega a 6 Gbit/s y en su versión básica no aporta alimentación",
+    "b": "Es una salida de audio digital óptica",
+    "c": "Es una interfaz paralela para impresoras",
+    "d": "Es la versión inalámbrica de SATA"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**eSATA** es SATA para discos externos, hasta 6 Gbit/s, sin alimentación (la variante eSATAp sí la da). No es audio, ni paralela, ni inalámbrica.",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-042",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 26
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En cuanto al proceso de digitalización de la información, señale la información correcta:",
+   "ctx": null,
+   "op": {
+    "a": "El modo HSB clasifica los colores de acuerdo a tres características: tono, saturación y compresión.",
+    "b": "El sistema de representación del color CRYK se refiere a cyan, rojo, amarillo y negro.",
+    "c": "La resolución de una imagen es el número de bits utilizados para describir el color de cada píxel de la imagen.",
+    "d": "En cuanto a la profundidad de color, si tenemos 1 bit para describir el color de cada píxel podremos elegir 2 colores."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Con **1 bit por píxel** hay 2^1 = **2 colores** (monocromo) (d). a) HSB es tono, saturación y **brillo**, no compresión. b) el modelo es **CMYK**: cian, **magenta**, amarillo y negro. c) define la **profundidad de color**, no la resolución (que es el número de píxeles).",
+   "epigrafe": "Visualización",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-v-042",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-042",
+   "texto": "reformulado",
+   "q": "¿Cuántos colores puede representar una imagen con una profundidad de color de 24 bits por píxel?",
+   "ctx": null,
+   "op": {
+    "a": "65.536",
+    "b": "16.777.216",
+    "c": "256",
+    "d": "4.294.967.296"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "2^24 = **16.777.216** (~16,7 millones, *True Color*). 65.536 son 16 bits; 256, 8 bits; 4.294.967.296 serían 32 bits de color, pero los 32 bits habituales son 24 de color más 8 de canal alfa.",
+   "epigrafe": "Visualización",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-043",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 27
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes respuestas NO es una interfaz de conexión válida para discos SSD?",
+   "ctx": null,
+   "op": {
+    "a": "SAS",
+    "b": "SATA",
+    "c": "DVI",
+    "d": "PCIe"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**DVI** (c) es una interfaz de **vídeo** para monitores. SAS, SATA y PCIe (con NVMe) son interfaces de almacenamiento que usan los SSD.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-043",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-043",
+   "texto": "reformulado",
+   "q": "¿Qué protocolo, diseñado para memoria flash sobre PCIe, sustituye a AHCI en los SSD modernos?",
+   "ctx": null,
+   "op": {
+    "a": "SATA",
+    "b": "SCSI",
+    "c": "NVMe",
+    "d": "M.2"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**NVMe** maneja hasta 64K colas de 64K comandos, frente a 1 cola de 32 en AHCI. SATA es un bus, SCSI otra familia de interfaces y M.2 un formato físico.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-044",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 28
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "La tecnología Thunderbolt 3 permite transferencias de datos de hasta:",
+   "ctx": null,
+   "op": {
+    "a": "20 Gbps.",
+    "b": "30 Gbps.",
+    "c": "40 Gbps.",
+    "d": "60 Gbps."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Thunderbolt 3** (2015, conector USB-C) llega a **40 Gbit/s** (c). 20 Gbps es Thunderbolt 2. Thunderbolt 4 mantiene 40 Gbit/s y Thunderbolt 5 sube a 80 (120 con *Bandwidth Boost*).",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-044",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-044",
+   "texto": "reformulado",
+   "q": "¿Qué velocidad bidireccional ofrece Thunderbolt 5?",
+   "ctx": null,
+   "op": {
+    "a": "40 Gbit/s",
+    "b": "20 Gbit/s",
+    "c": "10 Gbit/s",
+    "d": "80 Gbit/s"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Thunderbolt 5 (2023) da **80 Gbit/s** bidireccionales y hasta 120 Gbit/s con *Bandwidth Boost*. 40 Gbit/s son Thunderbolt 3 y 4.",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-045",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 18
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué componente de un escáner determina la resolución óptica?",
+   "ctx": null,
+   "op": {
+    "a": "CCD (Charge-Coupled Device).",
+    "b": "DAC (Digital-Analog Converter).",
+    "c": "OCR (Optical Character Recognition).",
+    "d": "CAC (Charged-Analog Converter)."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **CCD** convierte la luz en carga eléctrica y su número de elementos por pulgada **fija la resolución óptica** (a). Un DAC convierte de digital a analógico (en un escáner se necesita lo contrario, un ADC); OCR es software de reconocimiento de texto; CAC no existe.",
+   "epigrafe": "Periféricos de entrada y digitalización",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-045",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-045",
+   "texto": "reformulado",
+   "q": "¿Qué es la resolución interpolada de un escáner?",
+   "ctx": null,
+   "op": {
+    "a": "La calculada por software a partir de la real, sin añadir detalle verdadero",
+    "b": "La que fija el número de elementos del sensor CCD",
+    "c": "La que se obtiene con un escáner de tambor",
+    "d": "La profundidad de color en bits"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **interpolada** se inventa píxeles intermedios por software y no aporta detalle. La que cuenta es la **óptica**, fijada por el sensor (CCD).",
+   "epigrafe": "Periféricos de entrada y digitalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-046",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 19
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Indique cuál de las siguientes es la afirmación correcta:",
+   "ctx": null,
+   "op": {
+    "a": "USB 1.1 transfiere señales y energía a los periféricos utilizando un cable de 4 hilos, apantallado para transmisiones a 12 Mbps y no apantallado para transmisiones a 1.5 Mbps.",
+    "b": "USB 1.1 transfiere señales y energía a los periféricos utilizando un cable de 5 hilos, apantallado para transmisiones a 12 Mbps y no apantallado para transmisiones a 1.5 Mbps.",
+    "c": "USB 1.1 transfiere señales y energía a los periféricos utilizando un cable de 4 hilos, apantallado para transmisiones a 1.2 Mbps y no apantallado para transmisiones a 15 Mbps.",
+    "d": "USB 1.1 transfiere señales y energía a los periféricos utilizando un cable de 5 hilos, apantallado para transmisiones a 1.2 Mbps y no apantallado para transmisiones a 15 Mbps."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "USB 1.1 usa **4 hilos** (VBUS, D+, D−, GND) y dos velocidades: **12 Mbit/s** (*Full Speed*, cable apantallado) y **1,5 Mbit/s** (*Low Speed*, admite cable no apantallado) (a). b) y d) dicen 5 hilos; c) y d) cambian las cifras (1,2 y 15 Mbps).",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 3
+  },
+  {
+   "id": "t11-v-046",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-046",
+   "texto": "reformulado",
+   "q": "¿Cuántos dispositivos puede direccionar como máximo un controlador USB?",
+   "ctx": null,
+   "op": {
+    "a": "63",
+    "b": "127",
+    "c": "7",
+    "d": "255"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "USB usa direcciones de 7 bits: **127 dispositivos** por controlador (topología en estrella escalonada, hasta 5 niveles de hubs). 63 es FireWire; 7, los esclavos activos de una piconet Bluetooth.",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-h-047",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 21
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "El bus AGP está orientado principalmente a...",
+   "ctx": null,
+   "op": {
+    "a": "La conexión en serie de diferentes dispositivos, igual que hacía el bus SCSI, pero mucho más rápido.",
+    "b": "La comunicación a alta velocidad entre el ordenador y los routers ADSL.",
+    "c": "La conexión de tarjetas gráficas, ofreciendo más velocidad y canales de comunicación que el bus PCI.",
+    "d": "La comunicación sin hilos de dispositivos a corta distancia."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**AGP** (*Accelerated Graphics Port*) es un bus paralelo dedicado a **tarjetas gráficas**, más rápido que PCI (c). **Obsoleta**: desde 2004 las gráficas usan **PCI Express x16** y AGP ya no se fabrica. Las demás opciones describen otras cosas (SCSI, ADSL, Bluetooth).",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-v-047",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t11-h-047",
+   "texto": "reformulado",
+   "q": "¿Qué bus utilizan hoy las tarjetas gráficas, en sustitución de AGP?",
+   "ctx": null,
+   "op": {
+    "a": "PCI de 32 bits",
+    "b": "ISA",
+    "c": "PCI Express x16",
+    "d": "SATA"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las gráficas usan **PCIe x16** (bus serie por carriles) desde 2004. PCI e ISA son buses paralelos antiguos; SATA es de discos.",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-n-001",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué ancho de banda máximo ofrece DisplayPort 2.1?",
+   "ctx": null,
+   "op": {
+    "a": "32,4 Gbit/s",
+    "b": "48 Gbit/s",
+    "c": "21,6 Gbit/s",
+    "d": "80 Gbit/s"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "DisplayPort 2.0/2.1 llega a **80 Gbit/s** (UHBR20). 32,4 Gbit/s es DP 1.4; 21,6 Gbit/s, DP 1.2; 48 Gbit/s es HDMI 2.1.",
+   "epigrafe": "Visualización",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-n-002",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué ancho de banda tiene HDMI 2.2, presentado en 2025?",
+   "ctx": null,
+   "op": {
+    "a": "96 Gbit/s",
+    "b": "48 Gbit/s",
+    "c": "18 Gbit/s",
+    "d": "120 Gbit/s"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "HDMI 2.2 dobla a HDMI 2.1: **96 Gbit/s**, con cable Ultra96 (4K a 480 Hz, 12K a 120 Hz).",
+   "epigrafe": "Visualización",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-n-003",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Desde qué fecha obliga la Directiva (UE) 2022/2380 a que los portátiles nuevos usen USB-C como puerto de carga?",
+   "ctx": null,
+   "op": {
+    "a": "28 de diciembre de 2024",
+    "b": "28 de abril de 2026",
+    "c": "1 de enero de 2023",
+    "d": "1 de enero de 2028"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Móviles, tabletas, cámaras y otros: desde el **28/12/2024**; portátiles: desde el **28/04/2026**.",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-n-004",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuántos discos de 4 TB se necesitan en RAID 6 para obtener 16 TB útiles?",
+   "ctx": null,
+   "op": {
+    "a": "4",
+    "b": "5",
+    "c": "6",
+    "d": "8"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En RAID 6 la capacidad útil es (n − 2) × C. Para 16 TB con discos de 4 TB: n − 2 = 4, así que **n = 6**. Con 5 serían 12 TB; con 4, 8 TB.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 3
+  },
+  {
+   "id": "t11-n-005",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué tipo de celda NAND almacena 4 bits por celda?",
+   "ctx": null,
+   "op": {
+    "a": "TLC",
+    "b": "MLC",
+    "c": "SLC",
+    "d": "QLC"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**QLC** (*Quad-Level Cell*) guarda 4 bits: más capacidad y menos ciclos de escritura (~1.000). TLC = 3, MLC = 2 y SLC = 1.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-n-006",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué capacidad nativa tiene una cinta LTO-9?",
+   "ctx": null,
+   "op": {
+    "a": "18 TB",
+    "b": "12 TB",
+    "c": "30 TB",
+    "d": "45 TB"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "LTO-9 (2021): **18 TB nativos**. LTO-8 tenía 12 TB y LTO-10 (2025) llega a 30 TB. 45 TB es la cifra comprimida de LTO-9, no la nativa.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-n-007",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué sistema de ficheros usan por defecto las tarjetas SDXC?",
+   "ctx": null,
+   "op": {
+    "a": "FAT32",
+    "b": "exFAT",
+    "c": "NTFS",
+    "d": "ext4"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**SDXC** (hasta 2 TB) usa **exFAT**; SDHC (hasta 32 GB), FAT32.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-n-008",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué modelo de color utiliza una impresora y de qué tipo es?",
+   "ctx": null,
+   "op": {
+    "a": "RGB, aditivo",
+    "b": "CMYK, aditivo",
+    "c": "CMYK, sustractivo",
+    "d": "RGB, sustractivo"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La impresión usa **CMYK** (cian, magenta, amarillo y negro), un modelo **sustractivo**: la tinta absorbe luz. RGB es aditivo (luz) y lo usan pantallas, cámaras y escáneres.",
+   "epigrafe": "Impresión",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-n-009",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Señale la afirmación correcta sobre Thunderbolt 4:",
+   "ctx": null,
+   "op": {
+    "a": "Duplica la velocidad de Thunderbolt 3 hasta 80 Gbit/s",
+    "b": "Vuelve al conector Mini DisplayPort",
+    "c": "Es incompatible con USB4",
+    "d": "Mantiene los 40 Gbit/s de Thunderbolt 3, con requisitos mínimos más exigentes"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Thunderbolt 4 (2020) **no sube la velocidad**: 40 Gbit/s como Thunderbolt 3, pero exige dos monitores 4K y PCIe a 32 Gbit/s, y es compatible con USB4. Los 80 Gbit/s son de Thunderbolt 5.",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-n-010",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué puerto TCP utiliza la impresión directa Raw, también llamada JetDirect o AppSocket?",
+   "ctx": null,
+   "op": {
+    "a": "9100",
+    "b": "631",
+    "c": "515",
+    "d": "161"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Raw/JetDirect usa **9100/TCP**. 631 es IPP, 515 es LPD/LPR y 161/UDP es SNMP (estado y consumibles).",
+   "epigrafe": "Impresión",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-n-011",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué es CUPS?",
+   "ctx": null,
+   "op": {
+    "a": "Un lenguaje de descripción de página de Adobe",
+    "b": "El sistema de impresión de Linux y macOS, basado en IPP",
+    "c": "El servicio de cola de impresión de Windows",
+    "d": "Un tipo de impresora de cera sólida"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**CUPS** (*Common Unix Printing System*) gestiona la impresión en Linux y macOS sobre IPP y se administra en http://localhost:631. El lenguaje de Adobe es PostScript; la cola de Windows es el *spooler* (spoolsv.exe).",
+   "epigrafe": "Impresión",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-n-012",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué componente de Windows fue el origen de la vulnerabilidad PrintNightmare (2021)?",
+   "ctx": null,
+   "op": {
+    "a": "El protocolo IPP de CUPS",
+    "b": "El controlador de vídeo GDI",
+    "c": "El servicio de cola de impresión (Print Spooler)",
+    "d": "El firmware de las impresoras láser"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**PrintNightmare** afectaba al **Print Spooler** de Windows (spoolsv.exe) y permitía ejecutar código con privilegios de sistema. Windows Protected Print Mode abandona los controladores de terceros por este tipo de riesgos.",
+   "epigrafe": "Impresión",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-n-013",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué tipo de transferencia USB usan el audio y el vídeo en tiempo real, con ancho de banda garantizado y sin reintentos?",
+   "ctx": null,
+   "op": {
+    "a": "Masiva (bulk)",
+    "b": "De interrupción",
+    "c": "De control",
+    "d": "Isócrona"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La transferencia **isócrona** garantiza el ritmo y no reintenta los errores. Bulk es para almacenamiento; la de interrupción, para teclado y ratón; la de control, para la configuración.",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 3
+  },
+  {
+   "id": "t11-n-014",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Señale la afirmación correcta sobre las tecnologías de pantalla:",
+   "ctx": null,
+   "op": {
+    "a": "En una pantalla OLED cada píxel emite su propia luz, mientras que un «monitor LED» es un LCD con retroiluminación LED",
+    "b": "Un «monitor LED» es una pantalla OLED",
+    "c": "Los cristales líquidos de un LCD emiten luz propia",
+    "d": "OLED necesita retroiluminación CCFL"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**OLED es emisivo** (negro perfecto, riesgo de quemado). Un LCD no emite luz: necesita retroiluminación, antes CCFL y hoy LED. Por eso «monitor LED» es en realidad un LCD.",
+   "epigrafe": "Visualización",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-n-015",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué formato físico de SSD, del tamaño de 2,5\" y con NVMe, se usa en servidores y permite conexión en caliente?",
+   "ctx": null,
+   "op": {
+    "a": "mSATA",
+    "b": "U.2",
+    "c": "M.2 2242",
+    "d": "CFexpress"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**U.2** (SFF-8639) es un SSD NVMe en caja de 2,5\" para servidores, con conexión en caliente. mSATA es una tarjeta SATA antigua; M.2 2242 es una tarjeta corta; CFexpress es una tarjeta de cámara.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 3
+  },
+  {
+   "id": "t11-n-016",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué es la grabación SMR en un disco duro?",
+   "ctx": null,
+   "op": {
+    "a": "Un sistema de autodiagnóstico del disco",
+    "b": "Grabación asistida por calor",
+    "c": "Grabación solapada de pistas: más densidad y escritura más lenta",
+    "d": "Una técnica de nivelación de desgaste de SSD"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**SMR** (*Shingled Magnetic Recording*) solapa las pistas como tejas: más capacidad y escrituras aleatorias más lentas que en CMR. El autodiagnóstico es SMART; la grabación asistida por calor, HAMR.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 3
+  },
+  {
+   "id": "t11-n-017",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En una impresora láser, ¿qué componente fija el tóner en el papel mediante calor y presión?",
+   "ctx": null,
+   "op": {
+    "a": "El tambor fotosensible",
+    "b": "El cabezal piezoeléctrico",
+    "c": "La cinta entintada",
+    "d": "El fusor"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **fusor** fija el tóner con calor y presión en la fase de fijación. El tambor fotosensible recibe la imagen del láser; el cabezal piezoeléctrico es de inyección (Epson) y la cinta entintada, de impacto.",
+   "epigrafe": "Impresión",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-n-018",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué tecnología de inyección de tinta expulsa las gotas deformando un cristal mediante corriente eléctrica, sin calentar la tinta?",
+   "ctx": null,
+   "op": {
+    "a": "Piezoeléctrica",
+    "b": "Térmica (de burbuja)",
+    "c": "Sublimación",
+    "d": "Transferencia térmica"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **piezoeléctrica** (Epson) deforma un cristal. La térmica o de burbuja (HP, Canon) calienta la tinta. Sublimación y transferencia térmica no son inyección.",
+   "epigrafe": "Impresión",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-n-019",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué tipo de pantalla táctil detecta la conductividad del dedo y admite gestos multitáctiles?",
+   "ctx": null,
+   "op": {
+    "a": "Resistiva",
+    "b": "Capacitiva",
+    "c": "De tinta electrónica",
+    "d": "Plasma"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **capacitiva** reacciona a la conductividad del dedo y es multitáctil (móviles). La resistiva responde a la presión de cualquier objeto. E-ink y plasma son tecnologías de visualización.",
+   "epigrafe": "Periféricos de entrada y digitalización",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-n-020",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué versión de Bluetooth introdujo el modo de bajo consumo BLE (Bluetooth Low Energy)?",
+   "ctx": null,
+   "op": {
+    "a": "2.0 + EDR",
+    "b": "5.0",
+    "c": "4.0",
+    "d": "6.0"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Bluetooth 4.0** introdujo BLE. 2.0 + EDR subió a 3 Mbit/s; 5.0 dio más alcance y 2 Mbit/s en LE; 6.0 (2024) añade *Channel Sounding* para medir distancias.",
+   "epigrafe": "Conectividad: buses e interfaces externas",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-n-021",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué tecnología reconoce texto manuscrito en documentos digitalizados?",
+   "ctx": null,
+   "op": {
+    "a": "OMR",
+    "b": "MICR",
+    "c": "TWAIN",
+    "d": "ICR"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**ICR** (*Intelligent Character Recognition*) reconoce escritura manual. OMR detecta marcas; MICR, caracteres con tinta magnética; TWAIN es el estándar de comunicación entre escáner y aplicaciones.",
+   "epigrafe": "Periféricos de entrada y digitalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-n-022",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál de estos códigos es bidimensional (2D)?",
+   "ctx": null,
+   "op": {
+    "a": "QR",
+    "b": "EAN-13",
+    "c": "Code 128",
+    "d": "Code 39"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**QR** es 2D, igual que DataMatrix y PDF417. EAN-13, Code 128 y Code 39 son códigos de barras lineales (1D).",
+   "epigrafe": "Periféricos de entrada y digitalización",
+   "dificultad": 1
+  },
+  {
+   "id": "t11-n-023",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué tamaño de sector físico usan los discos duros con Advanced Format?",
+   "ctx": null,
+   "op": {
+    "a": "512 bytes",
+    "b": "4.096 bytes",
+    "c": "1.024 bytes",
+    "d": "64 KiB"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Advanced Format** usa sectores de **4.096 bytes** (4Kn, o 512e emulando 512). 512 bytes es el sector clásico. 64 KiB es un tamaño de clúster posible, que es una unidad lógica.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 2
+  },
+  {
+   "id": "t11-n-024",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué norma regula el formato PDF para archivo a largo plazo, habitual en documentos digitalizados con OCR?",
+   "ctx": null,
+   "op": {
+    "a": "PDF/X (ISO 15930)",
+    "b": "ISO 9660",
+    "c": "PDF/A (ISO 19005)",
+    "d": "ISO 7816"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**PDF/A** (ISO 19005) es el PDF de archivo. PDF/X es para artes gráficas; ISO 9660 es el sistema de ficheros del CD-ROM e ISO 7816, la norma de tarjetas inteligentes.",
+   "epigrafe": "Periféricos de entrada y digitalización",
+   "dificultad": 3
+  },
+  {
+   "id": "t11-n-025",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Una organización tiene todos sus datos en un RAID 1. ¿De qué la protege ese RAID?",
+   "ctx": null,
+   "op": {
+    "a": "Del borrado accidental de ficheros",
+    "b": "Del cifrado de sus datos por un ransomware",
+    "c": "De la corrupción lógica del sistema de ficheros",
+    "d": "Del fallo físico de uno de los discos"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**RAID no es copia de seguridad**: protege de fallos de disco, pero un borrado, un ransomware o una corrupción lógica se replican al instante en el espejo. Hace falta además un backup.",
+   "epigrafe": "Almacenamiento",
+   "dificultad": 2
+  }
+ ],
+ "tarjetas": [
+  {
+   "id": "t11-c-001",
+   "anverso": "Velocidades USB 1.1 y 2.0",
+   "reverso": "USB 1.1: 1,5 Mbit/s (Low Speed) y 12 Mbit/s (Full Speed). USB 2.0: 480 Mbit/s (High Speed).",
+   "epigrafe": "Conectividad: buses e interfaces externas"
+  },
+  {
+   "id": "t11-c-002",
+   "anverso": "USB 3.0 = 3.1 Gen 1 = 3.2 Gen 1",
+   "reverso": "5 Gbit/s (SuperSpeed). USB 3.1/3.2 Gen 2: 10 Gbit/s. Gen 2x2: 20 Gbit/s.",
+   "epigrafe": "Conectividad: buses e interfaces externas"
+  },
+  {
+   "id": "t11-c-003",
+   "anverso": "USB4 y USB4 v2.0",
+   "reverso": "USB4: 40 Gbit/s (2019, basado en Thunderbolt 3). USB4 v2.0: 80 Gbit/s simétricos, 120 asimétricos.",
+   "epigrafe": "Conectividad: buses e interfaces externas"
+  },
+  {
+   "id": "t11-c-004",
+   "anverso": "Dispositivos máximos por controlador USB",
+   "reverso": "127 (direcciones de 7 bits), hasta 5 niveles de hubs.",
+   "epigrafe": "Conectividad: buses e interfaces externas"
+  },
+  {
+   "id": "t11-c-005",
+   "anverso": "USB Power Delivery: máximos",
+   "reverso": "PD 2.0/3.0: 100 W (20 V × 5 A). PD 3.1 EPR: 240 W (48 V × 5 A). En 2017 la respuesta fue 100 W.",
+   "epigrafe": "Conectividad: buses e interfaces externas"
+  },
+  {
+   "id": "t11-c-006",
+   "anverso": "USB-C obligatorio en la UE",
+   "reverso": "Directiva (UE) 2022/2380: móviles y otros desde 28/12/2024; portátiles desde 28/04/2026.",
+   "epigrafe": "Conectividad: buses e interfaces externas"
+  },
+  {
+   "id": "t11-c-007",
+   "anverso": "Thunderbolt 1, 2, 3, 4, 5",
+   "reverso": "10 / 20 / 40 / 40 / 80 Gbit/s (120 con Bandwidth Boost). TB1 y TB2 con Mini DisplayPort; desde TB3, USB-C.",
+   "epigrafe": "Conectividad: buses e interfaces externas"
+  },
+  {
+   "id": "t11-c-008",
+   "anverso": "FireWire (IEEE 1394)",
+   "reverso": "1394/1394a: FireWire 400 (400 Mbit/s). 1394b: FireWire 800 (800 Mbit/s, la norma prevé hasta 3,2 Gbit/s). Peer-to-peer, 63 dispositivos.",
+   "epigrafe": "Conectividad: buses e interfaces externas"
+  },
+  {
+   "id": "t11-c-009",
+   "anverso": "Lightning",
+   "reverso": "Conector propietario de Apple (2012), 8 pines, reversible. Sustituido por USB-C desde el iPhone 15.",
+   "epigrafe": "Conectividad: buses e interfaces externas"
+  },
+  {
+   "id": "t11-c-010",
+   "anverso": "AGP",
+   "reverso": "Bus paralelo dedicado a tarjetas gráficas. Obsoleto: sustituido por PCI Express x16 (2004).",
+   "epigrafe": "Conectividad: buses e interfaces externas"
+  },
+  {
+   "id": "t11-c-011",
+   "anverso": "Bluetooth: piconet",
+   "reverso": "1 maestro y hasta 7 esclavos activos; 2,4 GHz; perfil HID para teclados y ratones. BLE desde 4.0.",
+   "epigrafe": "Conectividad: buses e interfaces externas"
+  },
+  {
+   "id": "t11-c-012",
+   "anverso": "HDMI 2.0 / 2.1 / 2.2",
+   "reverso": "18 / 48 / 96 Gbit/s. En 2025 salió HDMI 2.1 = 48 Gbps.",
+   "epigrafe": "Visualización"
+  },
+  {
+   "id": "t11-c-013",
+   "anverso": "DisplayPort 2.0/2.1",
+   "reverso": "80 Gbit/s (UHBR20). Estándar VESA, libre de cánones, multistream (MST).",
+   "epigrafe": "Visualización"
+  },
+  {
+   "id": "t11-c-014",
+   "anverso": "Dot pitch",
+   "reverso": "Distancia entre dos puntos del mismo color en un monitor. Cuanto menor, más nitidez (0,25-0,28 mm típico).",
+   "epigrafe": "Visualización"
+  },
+  {
+   "id": "t11-c-015",
+   "anverso": "Paneles LCD: TN, IPS, VA",
+   "reverso": "TN: rápido y barato. IPS: mejor color y ángulos. VA: mejor contraste. OLED no es LCD.",
+   "epigrafe": "Visualización"
+  },
+  {
+   "id": "t11-c-016",
+   "anverso": "Resoluciones clave",
+   "reverso": "HD 1280×720; Full HD 1920×1080; WQHD 2560×1440; 4K UHD 3840×2160; 8K UHD 7680×4320.",
+   "epigrafe": "Visualización"
+  },
+  {
+   "id": "t11-c-017",
+   "anverso": "RGB frente a CMYK",
+   "reverso": "RGB: aditivo (luz; pantallas, escáneres). CMYK: sustractivo (tinta; impresión).",
+   "epigrafe": "Visualización"
+  },
+  {
+   "id": "t11-c-018",
+   "anverso": "Profundidad de color",
+   "reverso": "1 bit = 2 colores; 8 = 256; 16 = 65.536; 24 = 16,7 millones (True Color); 32 = 24 + alfa.",
+   "epigrafe": "Visualización"
+  },
+  {
+   "id": "t11-c-019",
+   "anverso": "Impresoras de impacto",
+   "reverso": "Matricial, margarita, bola, línea, cadena, tambor. Permiten papel autocopiativo. Inyección, láser y térmica NO son de impacto.",
+   "epigrafe": "Impresión"
+  },
+  {
+   "id": "t11-c-020",
+   "anverso": "Sublimación de tinta",
+   "reverso": "El calor hace pasar el tinte de sólido a gas sin pasar por líquido; tono continuo (fotos, tarjetas).",
+   "epigrafe": "Impresión"
+  },
+  {
+   "id": "t11-c-021",
+   "anverso": "Impresión GDI (basada en host)",
+   "reverso": "El PC rasteriza la página con GDI de Windows y envía el mapa de bits; la impresora no tiene lenguaje propio.",
+   "epigrafe": "Impresión"
+  },
+  {
+   "id": "t11-c-022",
+   "anverso": "IPP",
+   "reverso": "Internet Printing Protocol: estándar abierto de impresión en red sobre HTTP, puerto 631/TCP, base de CUPS.",
+   "epigrafe": "Impresión"
+  },
+  {
+   "id": "t11-c-023",
+   "anverso": "Puertos de impresión",
+   "reverso": "IPP 631; LPD 515; Raw/JetDirect 9100; SMB 445.",
+   "epigrafe": "Impresión"
+  },
+  {
+   "id": "t11-c-024",
+   "anverso": "Fases de la impresión láser",
+   "reverso": "Carga, exposición, revelado, transferencia, fijación (fusor) y limpieza.",
+   "epigrafe": "Impresión"
+  },
+  {
+   "id": "t11-c-025",
+   "anverso": "Pista, sector, cilindro, clúster",
+   "reverso": "Pista: circunferencia de una cara. Sector: división de una pista (512 B o 4 KiB). Cilindro: pistas de igual radio en todas las caras. Clúster: grupo lógico de sectores del sistema de ficheros.",
+   "epigrafe": "Almacenamiento"
+  },
+  {
+   "id": "t11-c-026",
+   "anverso": "Tiempo de búsqueda frente a latencia rotacional",
+   "reverso": "Búsqueda: mover el cabezal a la pista. Latencia: esperar a que el sector pase bajo el cabezal (media = medio giro).",
+   "epigrafe": "Almacenamiento"
+  },
+  {
+   "id": "t11-c-027",
+   "anverso": "Latencia media a 7.200 rpm",
+   "reverso": "(60 / 7.200) / 2 = 4,17 ms.",
+   "epigrafe": "Almacenamiento"
+  },
+  {
+   "id": "t11-c-028",
+   "anverso": "SSD",
+   "reverso": "Solid State Drive: memoria flash NAND no volátil, sin partes móviles. Más rápido, más caro por GB, ciclos de escritura limitados.",
+   "epigrafe": "Almacenamiento"
+  },
+  {
+   "id": "t11-c-029",
+   "anverso": "Celdas NAND",
+   "reverso": "SLC 1 bit, MLC 2, TLC 3, QLC 4, PLC 5. Más bits, menos durabilidad.",
+   "epigrafe": "Almacenamiento"
+  },
+  {
+   "id": "t11-c-030",
+   "anverso": "M.2 frente a NVMe",
+   "reverso": "M.2: formato físico (puede ir por SATA o PCIe). NVMe: protocolo sobre PCIe (64K colas frente a 1 de 32 en AHCI).",
+   "epigrafe": "Almacenamiento"
+  },
+  {
+   "id": "t11-c-031",
+   "anverso": "Interfaces serie y paralelo de disco",
+   "reverso": "Serie: SATA, SAS, PCIe/NVMe. Paralelo: PATA/IDE, SCSI clásico.",
+   "epigrafe": "Almacenamiento"
+  },
+  {
+   "id": "t11-c-032",
+   "anverso": "SATA I / II / III",
+   "reverso": "1,5 / 3 / 6 Gbit/s (~600 MB/s útiles).",
+   "epigrafe": "Almacenamiento"
+  },
+  {
+   "id": "t11-c-033",
+   "anverso": "RAID 0, 1, 5, 6, 10",
+   "reverso": "0: bandas, sin tolerancia. 1: espejo. 5: paridad distribuida, mín. 3 discos, tolera 1. 6: doble paridad, mín. 4, tolera 2. 10: bandas sobre espejos, mín. 4.",
+   "epigrafe": "Almacenamiento"
+  },
+  {
+   "id": "t11-c-034",
+   "anverso": "Capacidad útil en RAID 5 y RAID 6",
+   "reverso": "RAID 5: (n − 1) × C. RAID 6: (n − 2) × C.",
+   "epigrafe": "Almacenamiento"
+  },
+  {
+   "id": "t11-c-035",
+   "anverso": "DAS, NAS y SAN",
+   "reverso": "DAS: conectado al servidor. NAS: nivel de fichero por la LAN (NFS, SMB). SAN: nivel de bloque por red dedicada (FC, iSCSI).",
+   "epigrafe": "Almacenamiento"
+  },
+  {
+   "id": "t11-c-036",
+   "anverso": "Blu-ray frente a HD-DVD",
+   "reverso": "Ambos usan láser azul-violeta de 405 nm. Blu-ray 25 GB por capa; HD-DVD 15 GB, abandonado en 2008.",
+   "epigrafe": "Almacenamiento"
+  },
+  {
+   "id": "t11-c-037",
+   "anverso": "ISO 9660",
+   "reverso": "Sistema de ficheros del CD-ROM, multiplataforma. Extensiones Joliet (Windows) y Rock Ridge (Unix). DVD y Blu-ray usan UDF.",
+   "epigrafe": "Almacenamiento"
+  },
+  {
+   "id": "t11-c-038",
+   "anverso": "Distribuciones de teclado",
+   "reverso": "QWERTY (inglés, español); QWERTZ (Alemania, Austria, Suiza); AZERTY (Francia, Bélgica).",
+   "epigrafe": "Periféricos de entrada y digitalización"
+  },
+  {
+   "id": "t11-c-039",
+   "anverso": "CCD en un escáner",
+   "reverso": "Sensor que convierte luz en carga y fija la resolución óptica. Alternativas: CIS (barato), PMT (tambor).",
+   "epigrafe": "Periféricos de entrada y digitalización"
+  },
+  {
+   "id": "t11-c-040",
+   "anverso": "Escáner de tambor",
+   "reverso": "Original en un cilindro, sensores PMT, máxima resolución óptica: preimpresión y diseño.",
+   "epigrafe": "Periféricos de entrada y digitalización"
+  },
+  {
+   "id": "t11-c-041",
+   "anverso": "OCR, ICR, OMR, MICR",
+   "reverso": "OCR: texto impreso. ICR: manuscrito. OMR: marcas en casillas. MICR: tinta magnética (cheques).",
+   "epigrafe": "Periféricos de entrada y digitalización"
+  },
+  {
+   "id": "t11-c-042",
+   "anverso": "NTI de Digitalización: resolución mínima",
+   "reverso": "200 ppp, tanto en blanco y negro como en color o escala de grises.",
+   "epigrafe": "Periféricos de entrada y digitalización"
+  },
+  {
+   "id": "t11-c-043",
+   "anverso": "Periféricos de entrada, salida y mixtos",
+   "reverso": "Entrada: teclado, ratón, escáner, micrófono. Salida: monitor, impresora, altavoz. Mixtos: pantalla táctil, multifunción.",
+   "epigrafe": "Periféricos de entrada y digitalización"
+  }
+ ],
+ "discrepancias": [
+  {
+   "ref": "LI2007-ej1-ej1-36",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 36
+   },
+   "clave_oficial": "d",
+   "temario_dice": "Ambos usan láser azul-violeta de 405 nm; Blu-ray 25 GB por capa, HD-DVD 15 GB (sin verificar la opción)",
+   "veredicto": "Vale la oficial d (HD-DVD compatible hacia atrás con DVD). El resumen del temario describe la opción b en positivo (láser azul), pero la b dice «láser rojo» y es falsa. La c es discutible: los lectores Blu-ray leen DVD, pero el disco no es compatible con lectores DVD."
+  },
+  {
+   "ref": "LI2017-ej1-ej1-23",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 23
+   },
+   "clave_oficial": "c",
+   "temario_dice": "La falsa sería la que trata el clúster como división física o el cilindro como algo de un solo plato (sin verificar)",
+   "veredicto": "Vale la oficial c: la falsa es «sector es cada uno de los lados de un plato» (eso es una cara). Las definiciones de clúster y cilindro de la pregunta son correctas. La conjetura del temario no acertaba."
+  },
+  {
+   "ref": "LI2022-ej1-28",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 28
+   },
+   "clave_oficial": "a",
+   "temario_dice": "La incorrecta sería la que no casa con la tabla de velocidades (sin verificar)",
+   "veredicto": "Vale la oficial a: USB Type-C es un conector, no una versión (USB 3.1). Las cifras de las demás opciones son correctas. b) es algo discutible, porque Gen 1 y Gen 2 difieren también en la codificación, pero la intención del tribunal es clara."
+  },
+  {
+   "ref": "LI2024-ej1-R01",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 1
+   },
+   "clave_oficial": "c",
+   "temario_dice": "Una resolución estándar de la tabla, como 1920x1080 o 3840x2160 (sin verificar la opción)",
+   "veredicto": "Vale la oficial c (WQHD 2560 × 1440). La d da 1920 × 1080 pero la llama «HD», cuando es Full HD (HD es 1280 × 720). Lo que se evalúa es el par nombre-cifra, no solo la cifra."
+  },
+  {
+   "ref": "LI2025ext-ej1-23",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 23
+   },
+   "clave_oficial": "b",
+   "temario_dice": "No figura en el temario; la lección define la latencia como la espera a que el sector pase bajo el cabezal",
+   "veredicto": "Vale la oficial b, aunque está redactada de forma imprecisa: no es «la aguja» la que se sitúa en el sector, sino el sector el que llega bajo el cabezal al girar. c y d describen el tiempo de búsqueda."
+  }
+ ]
+}

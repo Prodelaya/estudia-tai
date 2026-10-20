@@ -1,0 +1,3828 @@
+{
+ "tema": 22,
+ "generado": "2026-10-20",
+ "preguntas": [
+  {
+   "id": "t22-h-001",
+   "tipo": "historica",
+   "ref": "LI2025-b3-17",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 17
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se debe implementar correctamente la estructura del contenido principal del aplicativo, garantizando accesibilidad a usuarios que utilizan tecnologías de asistencia como lectores de pantalla. ¿Qué actuación se recomienda en las pautas de accesibilidad WCAG 2.1?",
+   "ctx": null,
+   "op": {
+    "a": "Utilizar tablas HTML <table> para estructurar todo el contenido.",
+    "b": "Utilizar únicamente etiquetas <div> con atributos class para facilitar el diseño visual.",
+    "c": "Utilizar etiquetas semánticas HTML5 como <main>, <section> y <header> para estructurar el contenido.",
+    "d": "Utilizar únicamente estilos CSS para definir visualmente la estructura del contenido."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Las etiquetas **semánticas** de HTML5 (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`) exponen la estructura a los lectores de pantalla como puntos de referencia (*landmarks*). Responde al criterio 1.3.1 Información y relaciones.\n\n- a) Usar tablas para maquetar es una mala práctica: las tablas son para datos.\n- b) y d) Los `div` con clases y el CSS solo dan estructura **visual**; las tecnologías de apoyo no la perciben.",
+   "epigrafe": "HTML accesible y WAI-ARIA",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-002",
+   "tipo": "historica",
+   "ref": "LI2025-b3-18",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 18
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se quiere desarrollar un menú desplegable personalizado para el frontend de la aplicación. ¿Qué atributo es imprescindible para que un lector de pantalla informe al usuario de que el menú está desplegado?",
+   "ctx": null,
+   "op": {
+    "a": "aria-expanded=\"true\"",
+    "b": "role=\"dropdown-status\"",
+    "c": "alt=\"menu-state\"",
+    "d": "tabindex=\"1\""
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** `aria-expanded=\"true\"` en el control del menú indica que el elemento que controla está **desplegado** (\"false\" cuando está plegado). El script debe actualizarlo al abrir y cerrar.\n\n- b) `role=\"dropdown-status\"` no es un rol ARIA.\n- c) `alt` solo se usa en imágenes y áreas.\n- d) `tabindex` controla el orden del foco, no informa del estado.",
+   "epigrafe": "HTML accesible y WAI-ARIA",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-003",
+   "tipo": "historica",
+   "ref": "LI2025-b3-20",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 20
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de estas opciones recomienda OWASP para prevenir ataques XSS en la aplicación?",
+   "ctx": null,
+   "op": {
+    "a": "Validar y escapar correctamente los datos antes de mostrarlos en el navegador.",
+    "b": "Utilizar conexiones HTTP entre cliente y servidor.",
+    "c": "Alojar la aplicación en servidores con redundancia física y tolerancia a fallos.",
+    "d": "Almacenar los datos únicamente en Oracle Database 19c."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** OWASP recomienda **validar** la entrada y, sobre todo, **codificar o escapar la salida** según el contexto (HTML, atributo, JavaScript, URL) antes de mostrarla. Se complementa con CSP y cookies HttpOnly.\n\n- b) HTTP sin cifrar empeora la seguridad.\n- c) La redundancia física mejora la disponibilidad, no protege frente a XSS.\n- d) El gestor de base de datos no influye en el XSS, que ocurre en el navegador.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-004",
+   "tipo": "historica",
+   "ref": "LI2025-ej1-54",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 54
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "De acuerdo con el artículo 3 del Real Decreto 1112/2018, de 7 de septiembre, sobre accesibilidad de los sitios web y aplicaciones para dispositivos móviles del sector público, indique la opción correcta acerca del contenido accesible de sitios web y apps móviles:",
+   "ctx": null,
+   "op": {
+    "a": "Incluye la información textual y no textual, documentos y formularios descargables y contenidos multimedia pregrabados, así como el diseño de los dispositivos de interacción como pantallas, teclados y ratones.",
+    "b": "Incluye la información textual y no textual, documentos y formularios descargables, contenidos multimedia pregrabados, interacción bidireccional y la cumplimentación de procesos de identificación, autenticación, firma y pago.",
+    "c": "Los documentos y formularios descargables no están incluidos, por la posibilidad de tratarse de contenidos de terceros que no están bajo el control del sujeto obligado.",
+    "d": "La cumplimentación de procesos de identificación, autenticación, firma y pago no están incluidos, por gestionarse generalmente a través de sistemas de terceros."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** El art. 3 del RD 1112/2018 incluye como contenido accesible la información textual y no textual, los **documentos y formularios descargables**, los **contenidos multimedia pregrabados**, las formas de **interacción bidireccional** y la cumplimentación de procesos de **identificación, autenticación, firma y pago**.\n\n- a) El diseño de dispositivos físicos (pantallas, teclados, ratones) no es contenido de un sitio web.\n- c) y d) Los formularios descargables y los procesos de identificación, firma y pago **sí** están incluidos.",
+   "epigrafe": "RD 1112/2018 y normativa de accesibilidad",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-h-005",
+   "tipo": "historica",
+   "ref": "LI2025-ej1-55",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 55
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "De acuerdo con el CCN-CERT, ¿cuál de los siguientes NO se considera un mecanismo de Autenticación Multi-Factor (MFA)?",
+   "ctx": null,
+   "op": {
+    "a": "Contraseña + Token OTP (One Time Password).",
+    "b": "Escáner de Iris + Huella dactilar.",
+    "c": "Contraseña + Escáner de Iris.",
+    "d": "Tarjeta de identificación + Reconocimiento facial."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Iris + huella **no** es MFA: los dos son del mismo factor (\"algo que se es\", biometría). La MFA combina factores de **categorías distintas**: algo que se sabe, algo que se tiene y algo que se es.\n\n- a) Contraseña (se sabe) + token OTP (se tiene): MFA.\n- c) Contraseña (se sabe) + iris (se es): MFA.\n- d) Tarjeta (se tiene) + rostro (se es): MFA.\n\nOjo: la pregunta pide la que **NO** es MFA; la clave oficial es coherente con la regla de factores.",
+   "epigrafe": "Seguridad en el puesto de usuario",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-h-006",
+   "tipo": "historica",
+   "ref": "LI2025ext-b3-12",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 12,
+    "conv": "ext"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Para evitar ataques XSS mediante rastreo MIME se va a añadir una cabecera a las respuestas de las dos APIs al frontend. ¿De qué cabecera se trata?",
+   "ctx": null,
+   "op": {
+    "a": "X-Frame-Options: DENY",
+    "b": "X-Content-Type-Options: nosniff",
+    "c": "X-XSS-Protection: 0",
+    "d": "Content-Security-Policy: default-src https:"
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** `X-Content-Type-Options: nosniff` impide que el navegador **adivine** (*MIME sniffing*) el tipo de contenido y ejecute como script algo servido con otro tipo.\n\n- a) `X-Frame-Options: DENY` protege frente a **clickjacking**.\n- c) `X-XSS-Protection: 0` desactiva el antiguo filtro XSS del navegador (cabecera obsoleta).\n- d) CSP limita los orígenes de los recursos; mitiga XSS en general, pero no es la cabecera específica del rastreo MIME.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-h-007",
+   "tipo": "historica",
+   "ref": "LI2025ext-b3-14",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 14,
+    "conv": "ext"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Revisando el código HTML del apartado de gestión de usuarios de la aplicación ha detectado un problema de accesibilidad web:\n<h1>Gestión de usuarios</h1>\n<span><strong>Seleccione un usuario para ver acciones</strong></span>\n<h3>Administradores</h3>\nIndique cuál es:",
+   "ctx": null,
+   "op": {
+    "a": "Se está usando <strong>, en lugar de <b>, para dar mayor importancia semántica al texto.",
+    "b": "Se está usando <span>, en lugar de <p>, para mostrar un texto.",
+    "c": "Hay un salto en la jerarquía de encabezados, de <h1> a <h3>, sin pasar por <h2>.",
+    "d": "Falta un elemento <div> para contener a todos los demás elementos."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Se salta de `<h1>` a `<h3>` sin `<h2>`: la **jerarquía de encabezados** debe ser ordenada para que los lectores de pantalla transmitan bien la estructura (criterio 1.3.1).\n\n- a) Usar `<strong>` es correcto: aporta importancia semántica (mejor que `<b>`).\n- b) `<span>` dentro del flujo no es en sí un fallo de accesibilidad grave.\n- d) No hace falta un `<div>` contenedor.",
+   "epigrafe": "HTML accesible y WAI-ARIA",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-008",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-53",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 53,
+    "conv": "ext"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Qué práctica de seguridad en el desarrollo de software previene de forma directa las vulnerabilidades de inyección como SQLi o XSS?",
+   "ctx": null,
+   "op": {
+    "a": "Uso de contraseñas complejas por parte de los usuarios.",
+    "b": "Validación y saneamiento de las entradas de usuario al sistema.",
+    "c": "Instalación de un antivirus en el servidor.",
+    "d": "Minimizar el número de ventanas abiertas durante el desarrollo."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** La **validación y el saneamiento de las entradas** (junto con consultas parametrizadas y codificación de la salida) previenen directamente la inyección SQL y el XSS.\n\n- a) Las contraseñas complejas protegen frente a ataques de fuerza bruta, no frente a la inyección.\n- c) Un antivirus en el servidor no detecta peticiones con SQL o scripts maliciosos.\n- d) No tiene relación con la seguridad del código.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-009",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-54",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 54,
+    "conv": "ext"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale la respuesta correcta según la Directiva (UE) 2016/2102 del Parlamento Europeo y del Consejo, de 26 de octubre de 2016, sobre la accesibilidad de los sitios web y aplicaciones para dispositivos móviles de los organismos del sector público:",
+   "ctx": null,
+   "op": {
+    "a": "El diseño universal debe permitir que todas las personas puedan usar productos o servicios, en la mayor medida posible, sin adaptación o diseño especializado, pero no excluye dispositivos de apoyo para ciertos grupos cuando sean necesarios.",
+    "b": "El diseño universal implica que no deben existir ayudas técnicas (dispositivos de apoyo), porque todo debe funcionar igual para todos sin excepciones.",
+    "c": "La Directiva incluye en su ámbito de aplicación los sitios web y aplicaciones para dispositivos móviles de prestadores del servicio público de radiodifusión y sus filiales.",
+    "d": "La Directiva incluye en su ámbito de aplicación el contenido multimedia en directo de base temporal publicado después del 23 de septiembre de 2020."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** La Directiva (UE) 2016/2102 define el **diseño universal** como el que permite que todas las personas usen productos y servicios, en la mayor medida posible, sin adaptación ni diseño especializado, pero **sin excluir** los productos de apoyo cuando se necesiten.\n\n- b) Es falso: el diseño universal no elimina las ayudas técnicas.\n- c) Los prestadores del servicio público de **radiodifusión** están **excluidos** de su ámbito.\n- d) El contenido multimedia **en directo** está excluido.",
+   "epigrafe": "RD 1112/2018 y normativa de accesibilidad",
+   "dificultad": 3
+  },
+  {
+   "id": "t22-h-010",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-76",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 76,
+    "conv": "ext"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En el desarrollo de una aplicación web segura con HTTPS, ¿cuál es el propósito técnico del atributo \"HttpOnly\" en una cabecera \"Set-Cookie\"?",
+   "ctx": null,
+   "op": {
+    "a": "Obliga a que la cookie sólo se envíe si la conexión está cifrada mediante TLS.",
+    "b": "Impide que los scripts del lado del cliente accedan a la cookie, mitigando ataques XSS.",
+    "c": "Define que la cookie es válida para el dominio de segundo nivel y todos sus subdominios.",
+    "d": "Establece que la cookie debe eliminarse automáticamente al cerrar el navegador."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** `HttpOnly` impide que los scripts del cliente (`document.cookie`) lean la cookie, de modo que un XSS no puede robar la sesión.\n\n- a) Enviar la cookie solo por TLS es el atributo **Secure**.\n- c) El ámbito de dominios lo fija **Domain**.\n- d) Una cookie sin Expires ni Max-Age es de sesión y se borra al cerrar el navegador; no lo hace HttpOnly.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-011",
+   "tipo": "historica",
+   "ref": "LI2024-b3-05",
+   "origen": {
+    "anio": 2024,
+    "parte": "b3",
+    "n": 5
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "A este sistema le es de aplicación la normativa vigente de accesibilidad de sitios web. ¿Qué herramienta automatizada utilizaría para probar que la aplicación cumple con los estándares de accesibilidad?",
+   "ctx": null,
+   "op": {
+    "a": "QualWeb.",
+    "b": "Equal Automatic Checker.",
+    "c": "AccSite.",
+    "d": "Shovel."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** **QualWeb** es un evaluador automático de accesibilidad web (WCAG 2.1), usado por el Observatorio de Accesibilidad.\n\nEqual Automatic Checker, AccSite y Shovel no son herramientas conocidas de evaluación de accesibilidad: son distractores.",
+   "epigrafe": "Herramientas y productos de apoyo",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-012",
+   "tipo": "historica",
+   "ref": "LI2024-b3-R02",
+   "origen": {
+    "anio": 2024,
+    "parte": "b3",
+    "n": 22
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se quiere facilitar el uso de herramientas de asistencia en la página. ¿Qué atributo utilizaría para indicar que un elemento se actualizará?",
+   "ctx": null,
+   "op": {
+    "a": "aria-live.",
+    "b": "aria-cheked.",
+    "c": "aria-flowto.",
+    "d": "aria-valuenow."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** `aria-live` marca una **región viva** cuyo contenido se actualizará; el lector de pantalla anuncia los cambios (`polite` espera, `assertive` interrumpe).\n\n- b) `aria-checked` (mal escrito en la opción) indica el estado de una casilla.\n- c) `aria-flowto` indica un orden de lectura alternativo.\n- d) `aria-valuenow` es el valor actual de un deslizador o barra de progreso.",
+   "epigrafe": "HTML accesible y WAI-ARIA",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-013",
+   "tipo": "historica",
+   "ref": "LI2024-b3-R04",
+   "origen": {
+    "anio": 2024,
+    "parte": "b3",
+    "n": 24
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Qué tendrá que configurar en el backend si quiere restringir que las únicas peticiones HTTP de origen cruzado iniciadas desde scripts que se acepten procedan del frontend?",
+   "ctx": null,
+   "op": {
+    "a": "HSTS.",
+    "b": "CSP.",
+    "c": "TLS.",
+    "d": "CORS."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** **CORS** se configura en el servidor (cabecera `Access-Control-Allow-Origin` y relacionadas) para indicar **qué orígenes** pueden hacer peticiones desde scripts.\n\n- a) HSTS obliga a usar HTTPS.\n- b) CSP limita qué recursos carga la **página** (en el navegador), no quién llama a la API.\n- c) TLS cifra la conexión.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-h-014",
+   "tipo": "historica",
+   "ref": "LI2024-ej1-50",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 49
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Con respecto a las solicitudes de información accesible y quejas, el Real Decreto 1112/2018, de 7 de septiembre, sobre accesibilidad de los sitios web y aplicaciones para dispositivos móviles del sector público establece que:",
+   "ctx": null,
+   "op": {
+    "a": "Recibidas las solicitudes de información accesible y quejas, la entidad obligada deberá responder a la persona interesada en el plazo de veinte días naturales.",
+    "b": "Recibidas las solicitudes de información accesible y quejas, la entidad obligada deberá responder a la persona interesada en el plazo de veinte días hábiles.",
+    "c": "Recibidas las solicitudes de información accesible y quejas, la entidad obligada deberá responder a la persona interesada en el plazo de diez días naturales.",
+    "d": "Recibidas las solicitudes de información accesible y quejas, la entidad obligada deberá responder a la persona interesada en el plazo de diez días hábiles."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** El RD 1112/2018 fija **veinte días hábiles** para responder a solicitudes de información accesible y quejas.\n\nLas demás opciones cambian el número (diez) o el tipo de días (naturales).",
+   "epigrafe": "RD 1112/2018 y normativa de accesibilidad",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-015",
+   "tipo": "historica",
+   "ref": "LI2024-ej1-52",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 50
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale la respuesta correcta referente al término ATAG:",
+   "ctx": null,
+   "op": {
+    "a": "Son Pautas de Accesibilidad que explican cómo hacer que el contenido web sea más accesible para las personas con discapacidades.",
+    "b": "Es una Suite que define una forma de hacer que el contenido web y las aplicaciones web sean más accesibles para las personas con discapacidades.",
+    "c": "Son Pautas de Accesibilidad que explican cómo hacer que los agentes de usuario sean accesibles para las personas con discapacidades.",
+    "d": "Son un conjunto de normas que deben cumplir las herramientas de autor para ser accesibles y generar contenidos también accesibles."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** **ATAG** (*Authoring Tool Accessibility Guidelines*): normas para que las **herramientas de autor** (CMS, editores) sean accesibles (parte A) y ayuden a generar contenido accesible (parte B).\n\n- a) Es WCAG.\n- b) Es WAI-ARIA.\n- c) Es UAAG (agentes de usuario).",
+   "epigrafe": "Accesibilidad: conceptos y organismos",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-016",
+   "tipo": "historica",
+   "ref": "LI2022-b3-10",
+   "origen": {
+    "anio": 2022,
+    "parte": "b3",
+    "n": 10
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál es la normativa que define los requisitos de accesibilidad de los sitios web y aplicaciones móviles de los organismos del sector público?",
+   "ctx": null,
+   "op": {
+    "a": "Orden Ministerial 1112/2018, de 7 de septiembre.",
+    "b": "Ley Orgánica 1112/2018, de 7 de septiembre.",
+    "c": "Ley 1112/2018, de 7 de septiembre.",
+    "d": "Real Decreto 1112/2018, de 7 de septiembre."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** Es el **Real Decreto** 1112/2018, de 7 de septiembre.\n\nLas demás opciones cambian el rango normativo (Orden Ministerial, Ley Orgánica, Ley).",
+   "epigrafe": "RD 1112/2018 y normativa de accesibilidad",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-017",
+   "tipo": "historica",
+   "ref": "LI2022-b3-19",
+   "origen": {
+    "anio": 2022,
+    "parte": "b3",
+    "n": 18
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿A qué corresponde el ataque conocido por el acrónimo CSRF, que permite al atacante forzar al usuario a ejecutar acciones no deseadas en la aplicación web en la que está actualmente autenticado?",
+   "ctx": null,
+   "op": {
+    "a": "Cross Site Request Forgery",
+    "b": "Cross Site Repeat Forgery",
+    "c": "Cross Site Reduction Forgery",
+    "d": "Cross Send Request Forgery"
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** CSRF = **Cross-Site Request Forgery** (falsificación de petición en sitios cruzados): fuerza al usuario autenticado a ejecutar acciones no deseadas, aprovechando que el navegador envía su cookie de sesión.\n\nLas demás opciones alteran las siglas.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-018",
+   "tipo": "historica",
+   "ref": "LI2022-b3-R02",
+   "origen": {
+    "anio": 2022,
+    "parte": "b3",
+    "n": 20
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Qué característica o atributo de seguridad de las cookies, permite que el navegador solo envíe la cookie al servidor si ésta se originó en el mismo sitio web al que estamos intentando contactar?",
+   "ctx": null,
+   "op": {
+    "a": "Domain",
+    "b": "SameSite",
+    "c": "Secure",
+    "d": "HttpOnly"
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** **SameSite** controla si la cookie se envía en peticiones originadas en otros sitios (`Strict`: solo mismo sitio). Mitiga CSRF.\n\n- a) Domain fija los dominios a los que se envía.\n- c) Secure exige HTTPS.\n- d) HttpOnly impide el acceso desde JavaScript.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-019",
+   "tipo": "historica",
+   "ref": "LI2022-ej1-20",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 20
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Qué es WCAG?",
+   "ctx": null,
+   "op": {
+    "a": "Unas pautas de accesibilidad de contenidos web promovidas por el W3C.",
+    "b": "Una librería de Java EE para la creación de aplicaciones web creada por Oracle.",
+    "c": "Un componente del ecosistema Hadoop para el manejo de Big Data.",
+    "d": "Un framework javascript especialmente indicado para trabajar con bases de datos no relacionales."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** WCAG (*Web Content Accessibility Guidelines*) son las pautas de accesibilidad del contenido web del **W3C** (dentro de la WAI).\n\nLas demás opciones (librería Java EE, componente de Hadoop, framework JavaScript) son inventadas.",
+   "epigrafe": "Accesibilidad: conceptos y organismos",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-020",
+   "tipo": "historica",
+   "ref": "LI2022-ej1-56",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 53
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Para detectar, eliminar y/o mitigar las debilidades de una aplicación se pueden realizar diferentes análisis de seguridad durante el ciclo de vida del desarrollo de software, entre los que NO se encuentra:",
+   "ctx": null,
+   "op": {
+    "a": "SAST (Static Application Security Testing).",
+    "b": "S-SDLC (Secure Software Development Liability Control).",
+    "c": "DAST (Dynamic Application Security Testing).",
+    "d": "SCA (Software Composition Analysis)."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** **S-SDLC** no es un análisis: es la **metodología** de ciclo de vida de desarrollo seguro, y su nombre real es *Secure Software Development Life Cycle* (no \"Liability Control\").\n\n- a) SAST: análisis estático del código.\n- c) DAST: pruebas sobre la aplicación en ejecución.\n- d) SCA: análisis de componentes de terceros.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-h-021",
+   "tipo": "historica",
+   "ref": "LI2022-ej1-57",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 54
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El principio de la accesibilidad web que exige que los componentes y la navegación de la interfaz de usuario se puedan utilizar por cualquier persona usuaria es:",
+   "ctx": null,
+   "op": {
+    "a": "La perceptibilidad.",
+    "b": "La comprensibilidad.",
+    "c": "La robustez.",
+    "d": "La operabilidad."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** El principio **Operable** exige que los componentes de la interfaz y la navegación puedan utilizarse.\n\n- a) Perceptible: la información se presenta de forma que se pueda percibir.\n- b) Comprensible: información y manejo comprensibles.\n- c) Robusto: interpretable por diversos agentes de usuario y ayudas técnicas.",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-022",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "b3",
+    "n": 25
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Un usuario malintencionado introduce la cadena \"100 OR 1=1\" en el campo «Número de opositor» del formulario de inscripción de la web, para intentar obtener información de la base de datos de aspirantes. ¿Qué técnica está empleando?",
+   "ctx": null,
+   "op": {
+    "a": "Denegación de servicio.",
+    "b": "Phishing.",
+    "c": "Ataque de malware.",
+    "d": "Inyección SQL."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** Si la aplicación concatena la entrada en la consulta, `... WHERE num_opositor = 100 OR 1=1` es siempre cierta y devuelve **todas las filas**: es una **inyección SQL**. Se evita con consultas parametrizadas.\n\n- a) La denegación de servicio busca dejar el sistema sin servicio.\n- b) El phishing engaña al usuario para robarle credenciales.\n- c) El malware es software malicioso instalado en el equipo.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-023",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "ej1",
+    "n": 53
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En relación con el Real Decreto 1112/2018, sobre accesibilidad de los sitios web y aplicaciones para dispositivos móviles del sector público, indique qué respuesta es INCORRECTA:",
+   "ctx": null,
+   "op": {
+    "a": "Las entidades obligadas deberán ofrecer un mecanismo de comunicación para presentar sugerencias y quejas.",
+    "b": "La primera revisión de accesibilidad deberá haberse realizado en el caso de los sitios web antes de dos años desde la entrada en vigor de este real decreto.",
+    "c": "La primera revisión de accesibilidad deberá haberse realizado en el caso de las aplicaciones móviles, antes de dos años desde la entrada en vigor de este real decreto.",
+    "d": "La entidad obligada deberá responder a la persona interesada sobre las solicitudes de información accesible y quejas, en el plazo de veinte días hábiles."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Es INCORRECTA: para las **aplicaciones móviles** la primera revisión debía hacerse antes de **tres años** (dos años es el plazo de los sitios web).\n\na), b) y d) son correctas: canal de quejas y sugerencias, dos años para webs y veinte días hábiles para responder.",
+   "epigrafe": "RD 1112/2018 y normativa de accesibilidad",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-h-024",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "ej1",
+    "n": 54
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según las Pautas de Accesibilidad para el Contenido Web (WCAG) 2.1, ¿cuál es el objetivo de que un contenido sea Distinguible?",
+   "ctx": null,
+   "op": {
+    "a": "Crear contenido que pueda presentarse de diferentes formas (por ejemplo, con una disposición más simple) sin perder información o estructura.",
+    "b": "Facilitar a los usuarios ver y oír el contenido, incluyendo la separación entre el primer plano y el fondo.",
+    "c": "Proporcionar alternativas textuales para todo contenido no textual de modo que se pueda convertir a otros formatos que las personas necesiten, tales como textos ampliados, braille, voz, símbolos o en un lenguaje más simple.",
+    "d": "Proporcionar alternativas para los medios tempodependientes."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Pauta 1.4 **Distinguible**: facilitar ver y oír el contenido, incluida la separación entre primer plano y fondo (contraste, control del audio...).\n\n- a) Es la pauta 1.3 **Adaptable**.\n- c) Es la 1.1 **Alternativas textuales**.\n- d) Es la 1.2 **Medios tempodependientes**.",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-025",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "b4",
+    "n": 29
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Respecto a la seguridad en el puesto cliente macOS, ¿qué tecnología proporciona capacidades de cifrado para la totalidad del sistema de almacenamiento principal o disco duro del equipo?",
+   "ctx": null,
+   "op": {
+    "a": "FileVault",
+    "b": "Trello",
+    "c": "Finder",
+    "d": "Gatekeeper"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** **FileVault** cifra el disco completo en macOS (el equivalente a BitLocker en Windows o LUKS en Linux).\n\n- b) Trello es un gestor de tareas.\n- c) Finder es el explorador de archivos de macOS.\n- d) Gatekeeper controla qué aplicaciones se pueden ejecutar (firmadas o notarizadas), no cifra.",
+   "epigrafe": "Seguridad en el puesto de usuario",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-026",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 65
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Señale cuál NO es una pauta del Principio Perceptible de WCAG 2.1:",
+   "ctx": null,
+   "op": {
+    "a": "Alternativas textuales: Proporcione alternativas textuales para todo contenido no textual, de manera que pueda modificarse para ajustarse a las necesidades de las personas, como por ejemplo en una letra mayor, braille, voz, símbolos o un lenguaje más simple.",
+    "b": "Distinguible: Haga más fácil para los usuarios ver y oír el contenido, incluyendo la separación entre primer plano y fondo.",
+    "c": "Contenido multimedia dependiente del tiempo: Proporcione alternativas para contenidos multimedia sincronizados dependientes del tiempo.",
+    "d": "Ataques epilépticos: No diseñar contenido que pueda causar ataques epilépticos."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** La pauta 2.3 (convulsiones o ataques epilépticos) pertenece al principio **Operable**, no a Perceptible.\n\nLas pautas de Perceptible son 1.1 Alternativas textuales (a), 1.2 Medios tempodependientes (c), 1.3 Adaptable y 1.4 Distinguible (b).",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-h-027",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 102
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "El estándar de accesibilidad para productos y servicios TIC que aplica a las Administraciones Públicas españolas es:",
+   "ctx": null,
+   "op": {
+    "a": "UNE-EN 301549:2019",
+    "b": "UNE-EN 301341:2019",
+    "c": "UNE-EN 301876:2019",
+    "d": "UNE-EN 301803:2019"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**a)** La norma armonizada de requisitos de accesibilidad de productos y servicios TIC es la **UNE-EN 301 549**. Su cumplimiento da presunción de conformidad con el RD 1112/2018.\n\nLas demás numeraciones son inventadas.\n\n**Desactualizada**: la versión vigente es la **UNE-EN 301549:2022** (V3.2.1), que exige WCAG 2.1 nivel AA.",
+   "epigrafe": "RD 1112/2018 y normativa de accesibilidad",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-h-028",
+   "tipo": "historica",
+   "ref": "LI2017-b3-b3-05",
+   "origen": {
+    "anio": 2017,
+    "parte": "b3",
+    "n": 5
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Para el desarrollo de la nueva aplicación, en relación a los posibles ataques de Cross-Site Request Forgery (CSRF), el Organismo debe desarrollar una de las siguientes medidas con la que podrá incrementar la seguridad frente a estos ataques:",
+   "ctx": null,
+   "op": {
+    "a": "Redirigir las peticiones del puerto 80 al puerto 443 para que sean atendidas por HTTPs.",
+    "b": "Utilizar del campo \"Referer\" no mutable (de la cabecera HTTP) de las peticiones de los usuarios para verificar su validez.",
+    "c": "Utilizar tokens dinámicos, creados por sesión, usuario y formulario crítico, suficientemente aleatorios, que deben tener fecha de expiración.",
+    "d": "Ninguna de las anteriores."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** La defensa principal frente a CSRF son los **tokens anti-CSRF**: aleatorios, ligados a la sesión, al usuario y al formulario, y con caducidad. El atacante no puede adivinarlos.\n\n- a) Redirigir a HTTPS cifra la conexión, pero no impide CSRF (el navegador sigue enviando la cookie).\n- b) El Referer puede faltar o manipularse; solo sirve como comprobación complementaria.\n- d) Hay una medida correcta.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-h-029",
+   "tipo": "historica",
+   "ref": "LI2017-b3-b3-13",
+   "origen": {
+    "anio": 2017,
+    "parte": "b3",
+    "n": 13
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El desarrollo web del proyecto debe seguir las pautas de accesibilidad web WCAG 2.0, para el principio \"Operable\", indique cuál de las siguientes es una de sus pautas asociadas:",
+   "ctx": null,
+   "op": {
+    "a": "Facilitar a los usuarios ver y oír el contenido, incluyendo la separación entre el primer plano y el fondo.",
+    "b": "Proporcionar acceso a toda la funcionalidad mediante el teclado.",
+    "c": "Proporcionar alternativas para los medios tempodependientes.",
+    "d": "Hacer que las páginas web aparezcan y operen de manera predecible."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** La pauta 2.1 **Accesible por teclado** (toda la funcionalidad mediante teclado) es del principio **Operable**.\n\n- a) Distinguible (1.4) es de Perceptible.\n- c) Medios tempodependientes (1.2) es de Perceptible.\n- d) Predecible (3.2) es de Comprensible.",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-030",
+   "tipo": "historica",
+   "ref": "LI2017-b3-b3-R01",
+   "origen": {
+    "anio": 2017,
+    "parte": "b3",
+    "n": 31
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Según el WCAG 2.0, ¿cuál entre los siguientes es un criterio de conformidad de nivel A?",
+   "ctx": null,
+   "op": {
+    "a": "Se proporciona una interpretación en lengua de señas para todo el contenido de audio grabado dentro de contenido multimedia sincronizado.",
+    "b": "Se usan encabezados de sección para organizar el contenido.",
+    "c": "Se proporciona una audiodescripción para todo el contenido de vídeo grabado dentro de contenido multimedia sincronizado.",
+    "d": "Todo contenido no textual que se presenta al usuario tiene una alternativa textual que cumple el mismo propósito, excepto en las situaciones enumeradas a continuación: CAPTCHAs, etc."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** 1.1.1 **Contenido no textual** (alternativa textual, con excepciones como los CAPTCHA) es de nivel **A**.\n\n- a) Lengua de señas (1.2.6): AAA.\n- b) Encabezados de sección (2.4.10): AAA.\n- c) Audiodescripción (grabado) (1.2.5): AA.",
+   "epigrafe": "WCAG: criterios de conformidad",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-h-031",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-68",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 68
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En las pautas de accesibilidad para el contenido web 2.0 se han identificado 4 niveles de orientación, señale la respuesta correcta que enumera estos niveles desde lo más general a lo más particular:",
+   "ctx": null,
+   "op": {
+    "a": "Principios, pautas, criterios de conformidad, técnicas suficientes y recomendables.",
+    "b": "Principios, criterios de conformidad, pautas, técnicas suficientes y recomendables.",
+    "c": "Principios, pautas, técnicas suficientes y recomendables, criterios de conformidad.",
+    "d": "Principios, criterios de conformidad, técnicas suficientes y recomendables, pautas."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** De lo más general a lo más concreto: **principios → pautas → criterios de conformidad → técnicas** suficientes y recomendables.\n\nLas demás opciones alteran el orden.",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-032",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-70",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 70
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "La aplicación JAWS es:",
+   "ctx": null,
+   "op": {
+    "a": "Una herramienta para medir el tráfico de un página web.",
+    "b": "Un 'sniffer' de red.",
+    "c": "Un lector de pantalla para invidentes.",
+    "d": "Una herramienta de realización de pruebas automáticas."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** **JAWS** (Freedom Scientific) es un **lector de pantalla** comercial para Windows.\n\nNo mide tráfico web (a), no es un *sniffer* (b) ni una herramienta de pruebas automáticas (d).",
+   "epigrafe": "Herramientas y productos de apoyo",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-033",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-84",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 84
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cómo se denomina la vulnerabilidad web consistente en la ejecución de un comando malicioso de acceso o modificación de una base de datos como parte de una petición?",
+   "ctx": null,
+   "op": {
+    "a": "CRLF injection",
+    "b": "RFI",
+    "c": "SQL injection",
+    "d": "Cross Site Scripting"
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** La **inyección SQL** introduce SQL malicioso en una petición para consultar o modificar la base de datos.\n\n- a) La inyección CRLF inserta saltos de línea en cabeceras HTTP.\n- b) RFI (*Remote File Inclusion*) hace que el servidor incluya un fichero remoto.\n- d) El XSS ejecuta scripts en el navegador de la víctima.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-034",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-III-45",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 96
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de los siguientes criterios de conformidad es de nivel AAA según WCAG 2.0?",
+   "ctx": null,
+   "op": {
+    "a": "Contenido no textual.",
+    "b": "Idioma de las partes.",
+    "c": "Etiquetas o instrucciones.",
+    "d": "Pronunciación."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** 3.1.6 **Pronunciación** es de nivel **AAA**.\n\n- a) 1.1.1 Contenido no textual: A.\n- b) 3.1.2 Idioma de las partes: AA.\n- c) 3.3.2 Etiquetas o instrucciones: A.",
+   "epigrafe": "WCAG: criterios de conformidad",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-h-035",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-III-46",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 97
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En relación a la accesibilidad universal, señale la afirmación VERDADERA:",
+   "ctx": null,
+   "op": {
+    "a": "La accesibilidad universal está estandarizada a través de la ISO 20000.",
+    "b": "La aplicación de la accesibilidad universal en el ámbito de las telecomunicaciones y sociedad de la información está regulada por ley.",
+    "c": "El Esquema Nacional de Interoperabilidad (ENI) desarrolla una Norma Técnica de Interoperabilidad de Accesibilidad Universal.",
+    "d": "El PMBOK, del Project Management Institute, es una guía metodológica para implantar la accesibilidad universal en proyectos de Tecnologías de la Información."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** La accesibilidad universal en telecomunicaciones y sociedad de la información está **regulada por ley** (RDL 1/2013, LSSI, RD 1112/2018...).\n\n- a) La ISO 20000 es de gestión de servicios TI.\n- c) El ENI no tiene una NTI de accesibilidad universal.\n- d) PMBOK es una guía de gestión de proyectos.",
+   "epigrafe": "Accesibilidad: conceptos y organismos",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-h-036",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-III-47",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 98
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿A cuál de los principios descritos en la WCAG 2.0 está vinculada la pauta 3.3. Entrada de datos asistida?",
+   "ctx": null,
+   "op": {
+    "a": "Robusto",
+    "b": "Operable",
+    "c": "Perceptible",
+    "d": "Comprensible"
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** La pauta 3.3 **Entrada de datos asistida** (ayudar a evitar y corregir errores) pertenece al principio **Comprensible**, como todas las pautas 3.x.",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-037",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-III-48",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 99
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las siguientes opciones representa una aplicación de código abierto para sistema operativo Microsoft Windows que proporciona un lector de pantalla para personas ciegas o con baja visión?",
+   "ctx": null,
+   "op": {
+    "a": "NVDA",
+    "b": "Orca",
+    "c": "Voice Over",
+    "d": "Cortana"
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** **NVDA** (*NonVisual Desktop Access*) es un lector de pantalla **libre y gratuito** para Windows.\n\n- b) Orca es libre, pero para Linux.\n- c) VoiceOver es el de Apple.\n- d) Cortana es el asistente de voz de Microsoft, no un lector de pantalla.",
+   "epigrafe": "Herramientas y productos de apoyo",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-038",
+   "tipo": "historica",
+   "ref": "LI2015-b3-b3-21",
+   "origen": {
+    "anio": 2015,
+    "parte": "b3",
+    "n": 20
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En uno de los formularios HTML5 de la aplicación existe una tabla y se le pide hacerla accesible adaptándola a los navegadores no visuales basados en Braille, para ello se decide añadir un título a la misma, señale la opción que utilizaría para ello:",
+   "ctx": null,
+   "op": {
+    "a": "<table><title>Título de la tabla</title> ... </table>",
+    "b": "<table caption=\"título de la tabla\"> ... </table>",
+    "c": "<table><caption>Título de la tabla</caption> ... </table>",
+    "d": "<table title=\"título de la tabla\"> ... </table>"
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** El título de una tabla se indica con el elemento **`<caption>`**, primer hijo de `<table>`.\n\n- a) `<title>` es el título del documento y va en `<head>`.\n- b) `caption` no es un atributo.\n- d) El atributo `title` da un texto de ayuda, pero no es el título accesible de la tabla.",
+   "epigrafe": "HTML accesible y WAI-ARIA",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-039",
+   "tipo": "historica",
+   "ref": "LI2015-b3-b3-37",
+   "origen": {
+    "anio": 2015,
+    "parte": "b3",
+    "n": 36
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Dentro del proyecto en cuanto a desarrollo web se refiere se pretende seguir las pautas de accesibilidad al contenido web (WCAG) 2.0, señale cuál de las siguientes pautas NO está asociada al principio \"comprensible\" de las WCAG 2.0:",
+   "ctx": null,
+   "op": {
+    "a": "Ayudar a los usuarios a evitar y corregir los errores.",
+    "b": "Hacer que los contenidos textuales resulten legibles y comprensibles.",
+    "c": "Hacer que las páginas web aparezcan y operen de manera predecible.",
+    "d": "Proporcionar medios para ayudar a los usuarios a navegar, encontrar contenido y determinar dónde se encuentran."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** \"Proporcionar medios para ayudar a navegar, encontrar contenido y determinar dónde se encuentran\" es la pauta 2.4 **Navegable**, del principio **Operable**.\n\nLas demás son de Comprensible: a) 3.3 Entrada de datos asistida; b) 3.1 Legible; c) 3.2 Predecible.",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-h-040",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-III-47",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 88
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Las pautas de accesibilidad para herramientas de autor en WAI-W3C se conocen como:",
+   "ctx": null,
+   "op": {
+    "a": "UAAG.",
+    "b": "ATAG.",
+    "c": "WCAG.",
+    "d": "WGML."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** **ATAG** son las pautas de accesibilidad para **herramientas de autor**.\n\n- a) UAAG: agentes de usuario.\n- c) WCAG: contenido web.\n- d) WGML no es una pauta de la WAI.",
+   "epigrafe": "Accesibilidad: conceptos y organismos",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-041",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-III-48",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 89
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las siguientes herramientas NO se utiliza para realizar una evaluación automática de accesibilidad web?",
+   "ctx": null,
+   "op": {
+    "a": "SortSite.",
+    "b": "Wave.",
+    "c": "Achecker.",
+    "d": "WebCT."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** **WebCT** era una plataforma de e-learning, no una herramienta de accesibilidad.\n\nSortSite (a), WAVE (b) y AChecker (c) sí evalúan automáticamente la accesibilidad.",
+   "epigrafe": "Herramientas y productos de apoyo",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-042",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-III-49",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 90
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Las Web Content Accessibility Guidelines (WCAG) 2.0 se estructuran en 12 directrices en base a los principios:",
+   "ctx": null,
+   "op": {
+    "a": "Portable, interoperable y entendible.",
+    "b": "Usable, portable y legible.",
+    "c": "Perceptible, operable, comprensible y robusto.",
+    "d": "Ninguno de los anteriores son principios para las directrices de las WCAG 2.0"
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** WCAG 2.0 se organiza en cuatro principios: **perceptible, operable, comprensible y robusto** (POUR), con 12 pautas (13 desde WCAG 2.1).",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-043",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-III-R02",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 93
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En el ámbito de la accesibilidad web, las siglas WAI hacen referencia a:",
+   "ctx": null,
+   "op": {
+    "a": "Web Accessibility Integration.",
+    "b": "Web Accessibility Initiative.",
+    "c": "Web Accessibility Indicator.",
+    "d": "Web Accessibility Interconnection."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** WAI = **Web Accessibility Initiative**, la iniciativa de accesibilidad del W3C.\n\nLas demás opciones cambian la última palabra.",
+   "epigrafe": "Accesibilidad: conceptos y organismos",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-044",
+   "tipo": "historica",
+   "ref": "LI2008-b3-b3-02",
+   "origen": {
+    "anio": 2008,
+    "parte": "b3",
+    "n": 2
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En la pantalla el botón “enviar” es una imagen, según las normas de accesibilidad ¿cual será la opción correcta?",
+   "ctx": null,
+   "op": {
+    "a": "<td align=\"center\"><A href=\"javascript:enviar();\"><IMG src=\"../imgs/boton_enviar.gif\" alt=\"Enviar datos\"></A></td>",
+    "b": "<td align=\"center\"><A href=\"javascript:enviar();\"><IMG src=\"../imgs/boton_enviar.gif\" >Enviar Datos</A></td>",
+    "c": "<td align=\"center\"><Ahref=\"javascript:enviar();\"><IMG src=\"../imgs/boton_enviar.gif\" title=”Enviar Datos”> </A></td>",
+    "d": "<td align=\"center\" text=”Enviar_Datos”><A href= \"javascript:enviar(); \" ><IMG src=\"../imgs/boton_enviar.gif\" ></td>"
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** La imagen que actúa como botón o enlace debe tener un **`alt` que describa su función** (\"Enviar datos\").\n\n- b) El texto fuera de la imagen no da alternativa a la propia imagen, que queda sin `alt`.\n- c) `title` no sustituye a `alt` (y la etiqueta `<Ahref` está mal formada).\n- d) El atributo `text` en una celda no existe y la imagen no tiene `alt`.",
+   "epigrafe": "HTML accesible y WAI-ARIA",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-045",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-45",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 82
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Según las Técnicas Esenciales para las Directrices de Accesibilidad para el Contenido Web 1.0, organizar el documento de forma que pueda ser leído sin hojas de estilo es de:",
+   "ctx": null,
+   "op": {
+    "a": "Prioridad 1.",
+    "b": "Prioridad 2.",
+    "c": "Prioridad 3.",
+    "d": "Prioridad 4."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**a)** En WCAG 1.0, organizar el documento para que se pueda leer **sin hojas de estilo** era un punto de verificación de **prioridad 1**.\n\n**Obsoleta**: WCAG 1.0 está superada. Hoy no hay prioridades, sino criterios de nivel A, AA y AAA (aquí equivaldría a 1.3.1 Información y relaciones y 1.3.2 Secuencia significativa).",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-h-046",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-46",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 83
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál es una pauta de la Iniciativa de accesibilidad a la Web del World Wide Web Consortium (W3C/WAI)?",
+   "ctx": null,
+   "op": {
+    "a": "En los enlaces de hipertexto usar texto sencillo y fácil de comprender cuando se lea fuera de contexto, como por ejemplo \"pincha aquí\".",
+    "b": "Utilizar marcos (frames) que simplifiquen la página.",
+    "c": "Provea alternativas equivalentes para contenido visual y auditivo.",
+    "d": "Evitar en imágenes y animaciones atributos como \"alt\" que puede confundir con su texto alternativo."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** \"Proporcione alternativas equivalentes para el contenido visual y auditivo\" era la **pauta 1** de WCAG 1.0 (hoy, pautas 1.1 y 1.2).\n\n- a) \"Pincha aquí\" es justo lo contrario de un texto de enlace comprensible fuera de contexto.\n- b) Los marcos (frames) complican la accesibilidad.\n- d) El atributo `alt` es imprescindible.",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-047",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-47",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 84
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "La Web Accesibility Initiative indica una serie de componentes esenciales en la accesibilidad web, y define una serie de guías, ¿cuál de entre las siguientes corresponde a la generación de contenidos accesibles?",
+   "ctx": null,
+   "op": {
+    "a": "ATAG (Authoring Tool Accesibility Guideline).",
+    "b": "WCAG (Web Content Accesibility Guideline).",
+    "c": "WMAG (Web Management Acesibility Guideline).",
+    "d": "UAAG (User Agent Accesibility Guideline)."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** (clave oficial) **WCAG** son las pautas para que el **contenido web** sea accesible: el tribunal las asoció a la \"generación de contenidos accesibles\".\n\n- a) **ATAG** se dirige a las herramientas de autor (que sean accesibles y que ayuden a generar contenido accesible). Es un distractor fuerte: el temario la daba como respuesta.\n- c) WMAG no existe.\n- d) UAAG es para agentes de usuario.",
+   "epigrafe": "Accesibilidad: conceptos y organismos",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-h-048",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-48",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 85
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En relación con las normas WAI (Web Accessibility Initiative), Existen tres niveles de conformidad o adecuación con las directrices, hablamos de nivel \"\"Doble-A\"\" cuando:",
+   "ctx": null,
+   "op": {
+    "a": "Se satisfacen todos los controles de Prioridad 1.",
+    "b": "Se satisfacen todos los controles de Prioridad 2.",
+    "c": "Se satisfacen todos los controles de Prioridad 1 y 2.",
+    "d": "Se satisfacen todos los controles de Prioridad 1, 2 y 3. TAI-L1 2008 1/14"
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**c)** En WCAG 1.0, el nivel **Doble-A** se alcanzaba cumpliendo todos los puntos de **prioridad 1 y 2** (nivel A = prioridad 1; Triple-A = 1, 2 y 3).\n\n**Obsoleta**: hoy en WCAG 2.x el nivel AA exige cumplir todos los criterios de nivel A y AA.",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-h-049",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-49",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 86
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las siguientes pautas de accesibilidad web es obligatorio respetar para que un sistema cumpla el nivel A de la especificación WCAG (\"Web Content Accesibility Guidelines\")?:",
+   "ctx": null,
+   "op": {
+    "a": "Asegúrese de que toda la información transmitida a través de los colores también esté disponible sin color.",
+    "b": "Utilice hojas de estilo para controlar la maquetación y la presentación.",
+    "c": "Proporcione metadatos para añadir información semántica a las páginas y sitios.",
+    "d": "Identifique claramente el objetivo de cada vínculo."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** Asegurar que la información transmitida con **color** también esté disponible **sin color** era prioridad 1 (nivel A) en WCAG 1.0. Hoy es el criterio 1.4.1 Uso del color, nivel A.\n\nb), c) y d) eran puntos de prioridad 2 o 3, no obligatorios para el nivel A.",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-050",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-50",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 87
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál es el organismo en Internet que ha realizado las Guías para la Accesibilidad de Contenidos Web, WCAG, dentro de la iniciativa para la Accesibilidad de las webs WAI?",
+   "ctx": null,
+   "op": {
+    "a": "IETF.",
+    "b": "IANA.",
+    "c": "W3C.",
+    "d": "RIPE."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Las WCAG las elabora el **W3C** dentro de su iniciativa WAI.\n\n- a) La IETF publica los estándares de protocolos de Internet (RFC).\n- b) La IANA gestiona direcciones IP, puertos y nombres.\n- d) RIPE NCC es el registro regional de direcciones IP de Europa.",
+   "epigrafe": "Accesibilidad: conceptos y organismos",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-051",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-55",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 48
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El grupo de métodos basados en evaluadores expertos que inspeccionan o examinan aspectos relacionados con la usabilidad de una interfaz de usuario se conoce como:",
+   "ctx": null,
+   "op": {
+    "a": "Evaluación heurística.",
+    "b": "Test de usabilidad.",
+    "c": "Lay-Out de la Interfaz.",
+    "d": "Evaluación diagnóstica."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** La **evaluación heurística** es el método en que **expertos** revisan la interfaz frente a principios reconocidos (por ejemplo, las 10 heurísticas de Nielsen), sin usuarios.\n\n- b) El test de usabilidad se hace **con usuarios**.\n- c) y d) No son grupos de métodos de evaluación.",
+   "epigrafe": "Usabilidad e interfaz de usuario",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-052",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-57",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 50
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En el diseño de una interfaz de usuario existe una serie de principios relevantes. Uno de ellos es el de la denominada “Ley de Fitt”. ¿A qué se refiere este principio?:",
+   "ctx": null,
+   "op": {
+    "a": "Cuanto más grande y cercano sea un objeto al puntero del ratón más fácil será efectuar el clic sobre él.",
+    "b": "Los mensajes de ayuda han de ser sencillos y dar respuesta a problemas.",
+    "c": "Los valores por defecto han de ser opciones inteligentes y sensatas.",
+    "d": "Posibilidad de realizar la inversa de cualquier acción de riesgo, sin temor para explorar."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** La **Ley de Fitts**: el tiempo para alcanzar un objetivo depende de su **distancia** y su **tamaño**. Cuanto más grande y cercano, más fácil hacer clic.\n\nb), c) y d) son otros principios de diseño (ayuda, valores por defecto, reversibilidad).",
+   "epigrafe": "Usabilidad e interfaz de usuario",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-053",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-68",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 60
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Según las “Técnicas Esenciales para las Directrices de Accesibilidad para el Contenido Web 1.0”, proveer de un texto equivalente a una imagen es de:",
+   "ctx": null,
+   "op": {
+    "a": "Prioridad 1.",
+    "b": "Prioridad 2.",
+    "c": "Prioridad 3.",
+    "d": "Prioridad 4."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**a)** En WCAG 1.0, proporcionar un **texto equivalente** a las imágenes era **prioridad 1**.\n\nNo existía prioridad 4.\n\n**Obsoleta**: hoy es el criterio 1.1.1 Contenido no textual, de nivel A.",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-054",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-69",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 61
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El objetivo de la accesibilidad Web es:",
+   "ctx": null,
+   "op": {
+    "a": "La disminución de los costes de asistencia y ayuda al usuario.",
+    "b": "Reducción de los tiempos de aprendizaje.",
+    "c": "Facilitar el acceso a la información de las personas con discapacidad.",
+    "d": "Optimización de los costes de diseño y mantenimiento."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** El objetivo de la accesibilidad web es **facilitar el acceso a la información a las personas con discapacidad** (y, por extensión, a todas las personas).\n\na), b) y d) pueden ser beneficios indirectos, pero no son su objetivo.",
+   "epigrafe": "Accesibilidad: conceptos y organismos",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-055",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-70",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 62
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "La Organización Internacional para la Estandarización (ISO) define usabilidad como:",
+   "ctx": null,
+   "op": {
+    "a": "La capacidad de lograr un efecto deseado o esperado.",
+    "b": "La facilidad con la que algo puede ser usado, visitado o accedido en general por todas las personas, especialmente por aquellas que poseen algún tipo de discapacidad.",
+    "c": "La eficiencia y satisfacción con la que un producto permite alcanzar objetivos específicos a usuarios específicos en un contexto de uso específico.",
+    "d": "La capacidad administrativa de producir el máximo de resultados con el mínimo de recursos, el mínimo de energía y en el mínimo de tiempo posible. 07/TAIL-1 9-9"
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Según ISO 9241-11, la usabilidad es el grado en que un producto puede ser usado por **usuarios específicos** para lograr **objetivos específicos** con **eficacia, eficiencia y satisfacción** en un **contexto de uso** especificado (la opción omite \"eficacia\", pero es la única que corresponde).\n\n- a) Es la definición de eficacia.\n- b) Describe la accesibilidad.\n- d) Describe la eficiencia o productividad.",
+   "epigrafe": "Usabilidad e interfaz de usuario",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-056",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 37
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "La interfaz de usuario en la que se escriben las órdenes con una sintaxis y mandatos determinados y suele utilizarse por usuarios experimentados es una interfaz:",
+   "ctx": null,
+   "op": {
+    "a": "De línea de comandos (CUI).",
+    "b": "Gráfica (GUI).",
+    "c": "De menús.",
+    "d": "Orientada a objetos (OOUI)."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** En la interfaz de **línea de comandos** (CUI o CLI) se escriben órdenes con una sintaxis concreta: es potente y la usan sobre todo usuarios expertos.\n\n- b) La GUI usa ventanas, iconos, menús y puntero.\n- c) La de menús elige entre opciones.\n- d) La OOUI permite actuar directamente sobre objetos.",
+   "epigrafe": "Usabilidad e interfaz de usuario",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-057",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 38
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "A la hora de diseñar interfaces de usuario basados en menús, una premisa de máxima importancia es que:",
+   "ctx": null,
+   "op": {
+    "a": "Se empleen verbos de acción en participio.",
+    "b": "Se empleen verbos de acción en el menor número de casos posible.",
+    "c": "Se utilicen verbos de acción en gerundio.",
+    "d": "Se utilicen verbos de acción en infinitivo."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** Las opciones de menú se redactan con **verbos de acción en infinitivo** (\"Guardar\", \"Abrir\", \"Imprimir\"): son breves, claras y coherentes.\n\nParticipio y gerundio (a, c) no expresan la orden; evitar los verbos (b) resta claridad.",
+   "epigrafe": "Usabilidad e interfaz de usuario",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-h-058",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 39
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Al grado de eficacia, eficiencia y satisfacción con la que usuarios específicos pueden lograr objetivos específicos, en contextos de uso específicos se denomina:",
+   "ctx": null,
+   "op": {
+    "a": "Accesibilidad.",
+    "b": "Usabilidad.",
+    "c": "Trazabilidad.",
+    "d": "Semántica del diseño."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Es la definición de **usabilidad** de ISO 9241-11.\n\n- a) La accesibilidad busca que lo pueda usar cualquier persona, incluidas las personas con discapacidad.\n- c) La trazabilidad permite seguir el origen de requisitos o cambios.\n- d) No es un concepto normalizado.",
+   "epigrafe": "Usabilidad e interfaz de usuario",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-059",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 37
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes objetivos no es un principio básico en el diseño del interfaz de usuario?",
+   "ctx": null,
+   "op": {
+    "a": "Ocultar al usuario ocasional los entresijos técnicos.",
+    "b": "Permitir que la interacción del usuario se pueda interrumpir y deshacer.",
+    "c": "Aligerar la interacción a medida que avanza el nivel de conocimiento y permitir personalizar la interacción.",
+    "d": "Garantizar la autenticación del usuario mediante sistemas criptográficos."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** La autenticación criptográfica es una medida de **seguridad**, no un principio de diseño de interfaces.\n\na), b) y c) sí lo son: ocultar detalles técnicos, permitir interrumpir y deshacer, y adaptar la interacción a la experiencia del usuario.",
+   "epigrafe": "Usabilidad e interfaz de usuario",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-060",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 38
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En cuanto al diseño de interfaces, no es un criterio de \"usabilidad\":",
+   "ctx": null,
+   "op": {
+    "a": "La sencillez y facilidad de uso.",
+    "b": "La reversibilidad y control de errores.",
+    "c": "La Ley de Fitt.",
+    "d": "El diseño centrado en el dato."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** El criterio de usabilidad es el diseño centrado en el **usuario** (ISO 9241-210), no en el dato.\n\nSencillez (a), reversibilidad y control de errores (b) y la Ley de Fitts (c) sí son criterios de usabilidad.",
+   "epigrafe": "Usabilidad e interfaz de usuario",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-h-061",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 39
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "La interfaz de usuario de un programa, es un conjunto que abarca elementos de:",
+   "ctx": null,
+   "op": {
+    "a": "El software y su documentación.",
+    "b": "El software, el hardware y la documentación.",
+    "c": "Las pantallas, los formularios y los informes.",
+    "d": "Las pantallas, los formularios y el navegador."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** La interfaz de usuario es el medio de comunicación hombre-máquina y abarca **software, hardware** (teclado, pantalla, ratón) **y documentación**.\n\na) olvida el hardware; c) y d) solo enumeran elementos de software.",
+   "epigrafe": "Usabilidad e interfaz de usuario",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-001",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-001",
+   "texto": "reformulado",
+   "q": "¿Qué elemento HTML5 debe envolver el **contenido principal** de la página, único y distinto de cabeceras, menús y pies?",
+   "ctx": null,
+   "op": {
+    "a": "<main>",
+    "b": "<section>",
+    "c": "<aside>",
+    "d": "<article>"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`<main>` marca el contenido principal (un único `main` visible por página). `<section>` agrupa contenido temático; `<aside>`, contenido complementario; `<article>`, una pieza independiente (una noticia, una entrada).",
+   "epigrafe": "HTML accesible y WAI-ARIA",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-v-002",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-002",
+   "texto": "reformulado",
+   "q": "Un botón despliega un panel con `id=\"filtros\"`. ¿Qué atributo ARIA del botón indica **qué elemento controla**?",
+   "ctx": null,
+   "op": {
+    "a": "aria-labelledby=\"filtros\"",
+    "b": "aria-controls=\"filtros\"",
+    "c": "aria-describedby=\"filtros\"",
+    "d": "aria-owns-state=\"filtros\""
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`aria-controls` apunta al id del elemento controlado (suele ir junto a `aria-expanded`). `aria-labelledby` toma el **nombre** de otro elemento; `aria-describedby`, una **descripción**. `aria-owns-state` no existe.",
+   "epigrafe": "HTML accesible y WAI-ARIA",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-003",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-003",
+   "texto": "reformulado",
+   "q": "¿Qué tipo de XSS se produce cuando el script malicioso se **guarda en el servidor** (por ejemplo, en un comentario) y se sirve a todos los que visitan la página?",
+   "ctx": null,
+   "op": {
+    "a": "XSS reflejado",
+    "b": "XSS basado en DOM",
+    "c": "XSS almacenado (persistente)",
+    "d": "CSRF"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En el **almacenado** el script queda en la base de datos y afecta a cada visitante. En el **reflejado** viaja en la petición (un enlace) y se devuelve en la respuesta; en el **basado en DOM** lo inserta el JavaScript del cliente. CSRF es otro ataque.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-004",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-004",
+   "texto": "reformulado",
+   "q": "Según el RD 1112/2018, ¿cuál de estos contenidos está **excluido** de la obligación de accesibilidad?",
+   "ctx": null,
+   "op": {
+    "a": "Los formularios descargables",
+    "b": "Los procesos de autenticación y pago",
+    "c": "La información textual de la sede electrónica",
+    "d": "El contenido multimedia en directo"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **multimedia en directo** está excluido (también el de terceros no controlado, los mapas si la información esencial se da accesible, o los ofimáticos anteriores al 20/09/2018). Formularios, procesos de identificación y pago, y textos deben ser accesibles.",
+   "epigrafe": "RD 1112/2018 y normativa de accesibilidad",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-005",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-005",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes combinaciones **sí** es autenticación multifactor?",
+   "ctx": null,
+   "op": {
+    "a": "Contraseña + código de una app autenticadora en el móvil",
+    "b": "Contraseña + PIN",
+    "c": "Huella dactilar + reconocimiento facial",
+    "d": "Contraseña + pregunta de seguridad"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Contraseña (algo que se sabe) + app en el móvil (algo que se tiene) son **factores distintos**. Contraseña + PIN o + pregunta de seguridad son dos cosas que se saben; huella + rostro, dos biometrías.",
+   "epigrafe": "Seguridad en el puesto de usuario",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-v-006",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-006",
+   "texto": "reformulado",
+   "q": "¿Qué cabecera HTTP obliga al navegador a usar siempre **HTTPS** con un sitio, evitando la degradación a HTTP?",
+   "ctx": null,
+   "op": {
+    "a": "Strict-Transport-Security (HSTS)",
+    "b": "Content-Security-Policy",
+    "c": "X-Content-Type-Options",
+    "d": "Referrer-Policy"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**HSTS** fuerza HTTPS durante el tiempo indicado (`max-age`). CSP limita los orígenes de scripts y recursos; nosniff evita el rastreo MIME; Referrer-Policy controla qué se envía en la cabecera Referer.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-007",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-007",
+   "texto": "reformulado",
+   "q": "¿Qué criterio de conformidad WCAG exige que la estructura y las relaciones transmitidas visualmente (encabezados, listas, tablas, etiquetas) estén disponibles en el marcado?",
+   "ctx": null,
+   "op": {
+    "a": "2.4.2 Titulado de páginas",
+    "b": "1.3.1 Información y relaciones",
+    "c": "1.4.3 Contraste (mínimo)",
+    "d": "3.1.1 Idioma de la página"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**1.3.1** (nivel A) pide que la estructura esté en el código. 2.4.2 exige un `title` descriptivo; 1.4.3, contraste 4,5:1; 3.1.1, el atributo `lang`.",
+   "epigrafe": "HTML accesible y WAI-ARIA",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-008",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-008",
+   "texto": "reformulado",
+   "q": "¿Cuál es la defensa **principal** frente a la inyección SQL según OWASP?",
+   "ctx": null,
+   "op": {
+    "a": "Ocultar los mensajes de error de la base de datos",
+    "b": "Usar consultas parametrizadas (PreparedStatement) en lugar de concatenar la entrada",
+    "c": "Cifrar la base de datos",
+    "d": "Usar HTTPS en todas las peticiones"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las **consultas parametrizadas** separan el código SQL de los datos. Ocultar errores dificulta el ataque pero no lo evita; cifrar la BD protege los datos en reposo; HTTPS protege el transporte, no la consulta.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-v-009",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-009",
+   "texto": "reformulado",
+   "q": "¿Qué norma española **transpone** la Directiva (UE) 2016/2102 sobre accesibilidad de sitios web y apps del sector público?",
+   "ctx": null,
+   "op": {
+    "a": "La Ley 11/2023",
+    "b": "El Real Decreto 1494/2007",
+    "c": "El Real Decreto 1112/2018, de 7 de septiembre",
+    "d": "El Real Decreto Legislativo 1/2013"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **RD 1112/2018** transpone la Directiva 2016/2102. La Ley 11/2023 transpone la Directiva 2019/882 (Acta Europea de Accesibilidad, sector privado); el RD 1494/2007 era la norma anterior; el RDL 1/2013 es la Ley General de derechos de las personas con discapacidad.",
+   "epigrafe": "RD 1112/2018 y normativa de accesibilidad",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-010",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-010",
+   "texto": "reformulado",
+   "q": "¿Qué atributo de cookie hace que solo se envíe por **conexiones HTTPS**?",
+   "ctx": null,
+   "op": {
+    "a": "HttpOnly",
+    "b": "SameSite=Lax",
+    "c": "Path",
+    "d": "Secure"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Secure** limita el envío a HTTPS. HttpOnly impide el acceso desde JavaScript; SameSite controla el envío en peticiones entre sitios; Path limita las rutas.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-v-011",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-011",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes **no** es una herramienta de evaluación automática de accesibilidad web?",
+   "ctx": null,
+   "op": {
+    "a": "WAVE",
+    "b": "axe",
+    "c": "JMeter",
+    "d": "TAW"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**JMeter** hace pruebas de carga. WAVE (WebAIM), axe (Deque) y TAW (Fundación CTIC) evalúan accesibilidad. Recuerda que las automáticas solo detectan una parte de los problemas.",
+   "epigrafe": "Herramientas y productos de apoyo",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-v-012",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-012",
+   "texto": "reformulado",
+   "q": "¿A qué valor de `aria-live` equivale `role=\"alert\"`?",
+   "ctx": null,
+   "op": {
+    "a": "polite",
+    "b": "off",
+    "c": "status",
+    "d": "assertive"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`role=\"alert\"` equivale a `aria-live=\"assertive\"` (interrumpe para anunciar). `role=\"status\"` equivale a `polite`. `status` no es un valor de aria-live.",
+   "epigrafe": "HTML accesible y WAI-ARIA",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-013",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-013",
+   "texto": "reformulado",
+   "q": "Antes de una petición CORS con método PUT o con cabeceras no simples, ¿qué hace el navegador?",
+   "ctx": null,
+   "op": {
+    "a": "Envía una petición previa (preflight) con el método OPTIONS",
+    "b": "Envía la petición dos veces",
+    "c": "Bloquea la petición siempre",
+    "d": "Pide permiso al usuario"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Para peticiones no simples el navegador hace una **verificación previa** con OPTIONS y solo envía la real si el servidor la autoriza en las cabeceras `Access-Control-Allow-*`.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 3
+  },
+  {
+   "id": "t22-v-014",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-014",
+   "texto": "reformulado",
+   "q": "Según el RD 1112/2018, ¿con qué frecuencia mínima debe revisarse y actualizarse la **declaración de accesibilidad**?",
+   "ctx": null,
+   "op": {
+    "a": "Cada tres años",
+    "b": "Al menos una vez al año",
+    "c": "Solo cuando se rediseña el sitio",
+    "d": "Cada seis meses"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La declaración de accesibilidad se revisa **al menos anualmente**. Cada tres años es el informe de España a la Comisión Europea.",
+   "epigrafe": "RD 1112/2018 y normativa de accesibilidad",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-015",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-015",
+   "texto": "reformulado",
+   "q": "¿Qué pautas de la WAI se dirigen a los **agentes de usuario** (navegadores, reproductores multimedia)?",
+   "ctx": null,
+   "op": {
+    "a": "ATAG",
+    "b": "WCAG",
+    "c": "UAAG",
+    "d": "WAI-ARIA"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**UAAG** = *User Agent Accessibility Guidelines*. ATAG es para herramientas de autor; WCAG, para el contenido web; WAI-ARIA, para componentes dinámicos.",
+   "epigrafe": "Accesibilidad: conceptos y organismos",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-v-016",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-016",
+   "texto": "reformulado",
+   "q": "¿Qué norma regula la accesibilidad de **productos y servicios privados** (comercio electrónico, banca, libros electrónicos) en aplicación del Acta Europea de Accesibilidad?",
+   "ctx": null,
+   "op": {
+    "a": "El RD 1112/2018",
+    "b": "La UNE 139803:2012",
+    "c": "El RD 311/2022",
+    "d": "La Ley 11/2023, aplicable desde el 28 de junio de 2025"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **Ley 11/2023** transpone la Directiva (UE) 2019/882. El RD 1112/2018 es para el sector público; la UNE 139803 era la norma técnica anterior; el RD 311/2022 es el ENS.",
+   "epigrafe": "RD 1112/2018 y normativa de accesibilidad",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-017",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-017",
+   "texto": "reformulado",
+   "q": "¿Qué ataque aprovecha que el navegador envía automáticamente la **cookie de sesión** para que una web maliciosa lance una acción en otra aplicación donde la víctima está autenticada?",
+   "ctx": null,
+   "op": {
+    "a": "CSRF",
+    "b": "XSS",
+    "c": "Inyección SQL",
+    "d": "Clickjacking"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Es **CSRF**. El XSS ejecuta un script en el contexto del sitio; la inyección SQL altera consultas; el clickjacking engaña al usuario para que haga clic en un marco oculto.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-v-018",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-018",
+   "texto": "reformulado",
+   "q": "Desde 2020, ¿cómo trata Chrome una cookie que **no indica** el atributo SameSite?",
+   "ctx": null,
+   "op": {
+    "a": "Como SameSite=None",
+    "b": "Como SameSite=Lax",
+    "c": "Como SameSite=Strict",
+    "d": "La rechaza"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Por defecto se trata como **Lax**: se envía en navegación de nivel superior con GET desde otro sitio, pero no en peticiones de subrecursos entre sitios. `SameSite=None` exige además `Secure`.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 3
+  },
+  {
+   "id": "t22-v-019",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-019",
+   "texto": "reformulado",
+   "q": "¿Cuál es la versión de WCAG publicada por el W3C en **octubre de 2023**?",
+   "ctx": null,
+   "op": {
+    "a": "WCAG 2.1",
+    "b": "WCAG 3.0",
+    "c": "WCAG 2.2",
+    "d": "WCAG 2.0"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**WCAG 2.2** (5 de octubre de 2023) añade 9 criterios y elimina el 4.1.1. WCAG 2.1 es de 2018 y WCAG 2.0 de 2008; WCAG 3.0 sigue en borrador.",
+   "epigrafe": "Accesibilidad: conceptos y organismos",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-v-020",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-020",
+   "texto": "reformulado",
+   "q": "¿Qué tipo de análisis de seguridad revisa las **dependencias de terceros** de un proyecto en busca de vulnerabilidades conocidas?",
+   "ctx": null,
+   "op": {
+    "a": "SAST",
+    "b": "DAST",
+    "c": "RASP",
+    "d": "SCA (Software Composition Analysis)"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**SCA** (por ejemplo, OWASP Dependency-Check) analiza las librerías. SAST revisa el código propio sin ejecutarlo; DAST ataca la aplicación en ejecución; RASP la protege en tiempo de ejecución.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-021",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-021",
+   "texto": "reformulado",
+   "q": "¿Qué principio de WCAG exige que el contenido pueda ser interpretado de forma fiable por diversos **agentes de usuario, incluidas las ayudas técnicas**?",
+   "ctx": null,
+   "op": {
+    "a": "Robusto",
+    "b": "Perceptible",
+    "c": "Operable",
+    "d": "Comprensible"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Es **Robusto** (pauta 4.1 Compatible). Perceptible = presentar para que se perciba; Operable = poder utilizar; Comprensible = poder entender.",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-v-022",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-022",
+   "texto": "reformulado",
+   "q": "En un formulario de login, un atacante escribe como usuario `admin' --`. ¿Qué pretende?",
+   "ctx": null,
+   "op": {
+    "a": "Provocar un desbordamiento de búfer",
+    "b": "Comentar el resto de la consulta SQL para saltarse la comprobación de la contraseña",
+    "c": "Ejecutar un script en el navegador de otros usuarios",
+    "d": "Forzar una petición entre sitios"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`--` inicia un comentario en SQL: si la consulta se construye concatenando, la condición de la contraseña queda comentada. Es inyección SQL. El script en el navegador sería XSS; la petición entre sitios, CSRF.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-023",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-023",
+   "texto": "reformulado",
+   "q": "Según el RD 1112/2018, ¿desde qué fecha debían cumplir los requisitos de accesibilidad las **aplicaciones para dispositivos móviles** del sector público?",
+   "ctx": null,
+   "op": {
+    "a": "Desde el 20 de septiembre de 2019",
+    "b": "Desde el 20 de septiembre de 2020",
+    "c": "Desde el 23 de junio de 2021",
+    "d": "Desde el 28 de junio de 2025"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Apps: **23/06/2021**. Sitios web nuevos: 20/09/2019; existentes: 20/09/2020. El 28/06/2025 es la fecha de aplicación de la Ley 11/2023 al sector privado.",
+   "epigrafe": "RD 1112/2018 y normativa de accesibilidad",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-024",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-024",
+   "texto": "reformulado",
+   "q": "¿A qué pauta de WCAG pertenece el criterio **1.4.3 Contraste (mínimo)**, que exige una relación de 4,5:1 para el texto normal?",
+   "ctx": null,
+   "op": {
+    "a": "1.3 Adaptable",
+    "b": "2.4 Navegable",
+    "c": "3.1 Legible",
+    "d": "1.4 Distinguible"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los criterios 1.4.x son de **Distinguible** (principio Perceptible). 1.4.3 es nivel AA: 4,5:1 (3:1 para texto grande).",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-025",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-025",
+   "texto": "reformulado",
+   "q": "En macOS, ¿qué mecanismo permite ejecutar solo aplicaciones **firmadas o notarizadas** por Apple?",
+   "ctx": null,
+   "op": {
+    "a": "Gatekeeper",
+    "b": "FileVault",
+    "c": "BitLocker",
+    "d": "XProtect"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Gatekeeper** controla el origen de las aplicaciones. FileVault cifra el disco; BitLocker es el cifrado de Windows; XProtect es el antimalware integrado de macOS.",
+   "epigrafe": "Seguridad en el puesto de usuario",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-026",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-026",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes pautas pertenece al principio **Comprensible** de WCAG?",
+   "ctx": null,
+   "op": {
+    "a": "2.4 Navegable",
+    "b": "3.2 Predecible",
+    "c": "1.3 Adaptable",
+    "d": "4.1 Compatible"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Comprensible: 3.1 Legible, **3.2 Predecible** y 3.3 Entrada de datos asistida. Navegable es de Operable; Adaptable, de Perceptible; Compatible, de Robusto.",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-v-027",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-027",
+   "texto": "reformulado",
+   "q": "¿Qué nivel de WCAG exige la norma UNE-EN 301 549 vigente para los sitios web del sector público?",
+   "ctx": null,
+   "op": {
+    "a": "WCAG 2.2 nivel AAA",
+    "b": "WCAG 2.0 nivel A",
+    "c": "WCAG 2.1 nivel AA",
+    "d": "WCAG 1.0 doble A"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La EN 301 549 V3.2.1 remite a **WCAG 2.1 AA**. El W3C desaconseja exigir AAA a sitios completos; WCAG 2.2 es la versión más reciente del W3C pero aún no es la exigida legalmente.",
+   "epigrafe": "RD 1112/2018 y normativa de accesibilidad",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-028",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-028",
+   "texto": "reformulado",
+   "q": "¿Por qué **no** basta con usar el método GET de forma segura frente a CSRF si las operaciones que cambian datos se hacen con GET?",
+   "ctx": null,
+   "op": {
+    "a": "Porque GET cifra los parámetros",
+    "b": "Porque GET no permite cookies",
+    "c": "Porque GET siempre exige un token CSRF",
+    "d": "Porque una petición GET puede lanzarse con un simple enlace o una imagen desde otro sitio, y el navegador enviará la cookie"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las operaciones que cambian el estado no deben usar GET: basta un `<img src=\"https://app/borrar?id=1\">` en otra web para lanzarlas con la cookie de la víctima.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 3
+  },
+  {
+   "id": "t22-v-029",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-029",
+   "texto": "reformulado",
+   "q": "¿Qué pauta añadió WCAG 2.1 al principio **Operable**?",
+   "ctx": null,
+   "op": {
+    "a": "2.5 Modalidades de entrada",
+    "b": "2.3 Convulsiones y reacciones físicas",
+    "c": "1.3 Adaptable",
+    "d": "3.3 Entrada de datos asistida"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "WCAG 2.1 añadió la **2.5 Modalidades de entrada** (gestos del puntero, cancelación, tamaño del objetivo...), pasando de 12 a 13 pautas.",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-030",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-030",
+   "texto": "reformulado",
+   "q": "¿De qué nivel es el criterio WCAG **2.4.7 Foco visible**?",
+   "ctx": null,
+   "op": {
+    "a": "A",
+    "b": "AA",
+    "c": "AAA",
+    "d": "No es un criterio de WCAG"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "2.4.7 Foco visible es **AA**. Otros de la pauta Navegable: 2.4.1 Evitar bloques (A), 2.4.2 Titulado de páginas (A), 2.4.8 Ubicación (AAA).",
+   "epigrafe": "WCAG: criterios de conformidad",
+   "dificultad": 3
+  },
+  {
+   "id": "t22-v-031",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-031",
+   "texto": "reformulado",
+   "q": "En WCAG 2.x, ¿qué nivel de orientación es el que se puede **comprobar** y tiene asignado un nivel A, AA o AAA?",
+   "ctx": null,
+   "op": {
+    "a": "Los principios",
+    "b": "Las pautas",
+    "c": "Los criterios de conformidad",
+    "d": "Las técnicas suficientes"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Solo los **criterios de conformidad** son comprobables y tienen nivel. Las pautas son objetivos no comprobables; las técnicas son informativas.",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-v-032",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-032",
+   "texto": "reformulado",
+   "q": "¿Cuál es el lector de pantalla **incluido** en macOS e iOS?",
+   "ctx": null,
+   "op": {
+    "a": "NVDA",
+    "b": "TalkBack",
+    "c": "Orca",
+    "d": "VoiceOver"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**VoiceOver** viene con macOS e iOS. NVDA es libre para Windows; TalkBack es el de Android; Orca, el de Linux (GNOME).",
+   "epigrafe": "Herramientas y productos de apoyo",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-v-033",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-033",
+   "texto": "reformulado",
+   "q": "¿Qué vulnerabilidad permite que una aplicación vulnerable ejecute **comandos del sistema operativo** a partir de datos introducidos por el usuario?",
+   "ctx": null,
+   "op": {
+    "a": "Inyección de comandos (OS command injection)",
+    "b": "Inyección SQL",
+    "c": "CSRF",
+    "d": "Clickjacking"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Es la **inyección de comandos**, otra variante de inyección (junto a SQL, LDAP o XPath). Se evita no pasando la entrada a la shell y validando con listas blancas.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-034",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-034",
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes criterios de WCAG es de nivel **A**?",
+   "ctx": null,
+   "op": {
+    "a": "3.1.2 Idioma de las partes",
+    "b": "3.1.1 Idioma de la página",
+    "c": "3.1.4 Abreviaturas",
+    "d": "3.1.5 Nivel de lectura"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "3.1.1 Idioma de la página (atributo `lang`) es **A**. 3.1.2 es AA; 3.1.4 y 3.1.5 son AAA.",
+   "epigrafe": "WCAG: criterios de conformidad",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-035",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-035",
+   "texto": "reformulado",
+   "q": "Según el RDL 1/2013, ¿cómo se llaman las **adaptaciones** necesarias en un caso concreto para garantizar la accesibilidad, siempre que no supongan una carga desproporcionada?",
+   "ctx": null,
+   "op": {
+    "a": "Diseño universal",
+    "b": "Productos de apoyo",
+    "c": "Ajustes razonables",
+    "d": "Accesibilidad universal"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los **ajustes razonables** son adaptaciones caso por caso. El diseño universal concibe desde el origen productos para todos; los productos de apoyo son ayudas técnicas; la accesibilidad universal es la condición general que deben cumplir entornos y servicios.",
+   "epigrafe": "Accesibilidad: conceptos y organismos",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-036",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-036",
+   "texto": "reformulado",
+   "q": "¿A qué principio de WCAG pertenece la pauta **2.4 Navegable**?",
+   "ctx": null,
+   "op": {
+    "a": "Perceptible",
+    "b": "Comprensible",
+    "c": "Robusto",
+    "d": "Operable"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las pautas 2.x son de **Operable**: 2.1 Teclado, 2.2 Tiempo suficiente, 2.3 Convulsiones, 2.4 Navegable y 2.5 Modalidades de entrada.",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-v-037",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-037",
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes es un **magnificador** de pantalla comercial para Windows?",
+   "ctx": null,
+   "op": {
+    "a": "ZoomText",
+    "b": "NVDA",
+    "c": "Orca",
+    "d": "TalkBack"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**ZoomText** amplía la pantalla. NVDA, Orca y TalkBack son lectores de pantalla.",
+   "epigrafe": "Herramientas y productos de apoyo",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-038",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-038",
+   "texto": "reformulado",
+   "q": "En una tabla de datos accesible, ¿cómo se indica que una celda de cabecera se aplica a **toda su columna**?",
+   "ctx": null,
+   "op": {
+    "a": "<td header=\"col\">",
+    "b": "<th scope=\"col\">",
+    "c": "<th role=\"column\">",
+    "d": "<thead scope=\"all\">"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las cabeceras se marcan con `th` y el atributo `scope` (`col` o `row`). Las demás formas no son válidas.",
+   "epigrafe": "HTML accesible y WAI-ARIA",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-039",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-039",
+   "texto": "reformulado",
+   "q": "¿Qué pauta de WCAG pide **dar a los usuarios tiempo suficiente** para leer y usar el contenido?",
+   "ctx": null,
+   "op": {
+    "a": "1.2 Medios tempodependientes, del principio Perceptible",
+    "b": "3.2 Predecible, del principio Comprensible",
+    "c": "2.2 Tiempo suficiente, del principio Operable",
+    "d": "4.1 Compatible, del principio Robusto"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Es la **2.2 Tiempo suficiente** (Operable): tiempos ajustables, pausar, detener u ocultar contenido en movimiento. La 1.2 trata de alternativas para audio y vídeo.",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-040",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-040",
+   "texto": "reformulado",
+   "q": "¿Qué especificación de la WAI define **roles, estados y propiedades** para hacer accesibles los componentes dinámicos creados con JavaScript?",
+   "ctx": null,
+   "op": {
+    "a": "ATAG",
+    "b": "UAAG",
+    "c": "WCAG",
+    "d": "WAI-ARIA"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**WAI-ARIA** (*Accessible Rich Internet Applications*, versión 1.2). ATAG, UAAG y WCAG son pautas para herramientas de autor, agentes de usuario y contenido.",
+   "epigrafe": "Accesibilidad: conceptos y organismos",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-v-041",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-041",
+   "texto": "reformulado",
+   "q": "¿Qué validador de accesibilidad web en línea fue desarrollado en España por la **Fundación CTIC**?",
+   "ctx": null,
+   "op": {
+    "a": "TAW",
+    "b": "WAVE",
+    "c": "axe",
+    "d": "Lighthouse"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**TAW** es de la Fundación CTIC. WAVE es de WebAIM; axe, de Deque; Lighthouse, de Google.",
+   "epigrafe": "Herramientas y productos de apoyo",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-042",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-042",
+   "texto": "reformulado",
+   "q": "¿Cuántas **pautas** tiene WCAG 2.1?",
+   "ctx": null,
+   "op": {
+    "a": "12",
+    "b": "13",
+    "c": "4",
+    "d": "78"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "WCAG 2.0 tenía **12** pautas; WCAG 2.1 y 2.2 tienen **13** (se añadió la 2.5). 4 son los principios; 78 los criterios de WCAG 2.1.",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-043",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-043",
+   "texto": "reformulado",
+   "q": "¿Qué organismo elabora las pautas WCAG?",
+   "ctx": null,
+   "op": {
+    "a": "La IETF",
+    "b": "La ISO, a través del comité JTC 1",
+    "c": "El W3C, a través de su Web Accessibility Initiative (WAI)",
+    "d": "La Comisión Europea"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las WCAG son del **W3C** (WAI). La ISO solo las adopta como norma (ISO/IEC 40500); la IETF publica RFC de protocolos.",
+   "epigrafe": "Accesibilidad: conceptos y organismos",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-v-044",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-044",
+   "texto": "reformulado",
+   "q": "¿Qué valor del atributo `alt` debe tener una imagen **puramente decorativa**?",
+   "ctx": null,
+   "op": {
+    "a": "alt=\"imagen\"",
+    "b": "Ningún atributo alt",
+    "c": "alt con el nombre del fichero",
+    "d": "alt=\"\" (vacío), para que los lectores de pantalla la ignoren"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las decorativas llevan `alt=\"\"`. Si se omite el `alt`, algunos lectores leen el nombre del fichero; poner \"imagen\" añade ruido.",
+   "epigrafe": "HTML accesible y WAI-ARIA",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-v-045",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-045",
+   "texto": "reformulado",
+   "q": "¿Qué sustituyó en WCAG 2.0 a las **prioridades 1, 2 y 3** de WCAG 1.0?",
+   "ctx": null,
+   "op": {
+    "a": "Los niveles de conformidad A, AA y AAA de los criterios",
+    "b": "Los cuatro principios",
+    "c": "Las técnicas suficientes",
+    "d": "Las pautas numeradas del 1 al 14"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "WCAG 2.x asigna a cada criterio un nivel **A, AA o AAA**. Las 14 pautas numeradas eran de WCAG 1.0.",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-046",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-046",
+   "texto": "reformulado",
+   "q": "Según WCAG, ¿cuál es un texto de enlace **adecuado**?",
+   "ctx": null,
+   "op": {
+    "a": "«Pincha aquí»",
+    "b": "«Descargar el formulario de solicitud (PDF, 200 KB)»",
+    "c": "«Más»",
+    "d": "«https://sede.ejemplo.gob.es/f/12345»"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El propósito del enlace debe entenderse por su texto (criterios 2.4.4 y 2.4.9). «Pincha aquí», «Más» o una URL no lo explican.",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-v-047",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-047",
+   "texto": "reformulado",
+   "q": "Un editor de contenidos (CMS) debe **avisar al autor** si inserta una imagen sin texto alternativo. ¿Qué pautas de la WAI lo exigen?",
+   "ctx": null,
+   "op": {
+    "a": "WCAG",
+    "b": "UAAG",
+    "c": "ATAG",
+    "d": "WAI-ARIA"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La parte B de **ATAG** obliga a las herramientas de autor a ayudar a generar contenido accesible. WCAG se aplica al contenido resultante; UAAG, a navegadores; ARIA, a componentes dinámicos.",
+   "epigrafe": "Accesibilidad: conceptos y organismos",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-048",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-048",
+   "texto": "reformulado",
+   "q": "En WCAG 2.x, ¿qué hay que cumplir para declarar conformidad de nivel **AA**?",
+   "ctx": null,
+   "op": {
+    "a": "Solo los criterios de nivel AA",
+    "b": "La mitad de los criterios AAA",
+    "c": "Todos los criterios de nivel A y algunos AA",
+    "d": "Todos los criterios de nivel A y todos los de nivel AA"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Cada nivel incluye los anteriores: AA = todos los A + todos los AA. Además, la conformidad se aplica a páginas y procesos completos.",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-v-049",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-049",
+   "texto": "reformulado",
+   "q": "Un formulario marca los campos erróneos **solo en rojo**. ¿Qué criterio de WCAG incumple?",
+   "ctx": null,
+   "op": {
+    "a": "1.4.1 Uso del color",
+    "b": "1.4.3 Contraste (mínimo)",
+    "c": "2.4.7 Foco visible",
+    "d": "1.3.4 Orientación"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Si el color es el único medio de transmitir información se incumple **1.4.1 Uso del color** (A). Hay que añadir texto o iconos.",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-v-050",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-050",
+   "texto": "reformulado",
+   "q": "¿Con qué número se adoptó **WCAG 2.0** como norma ISO/IEC?",
+   "ctx": null,
+   "op": {
+    "a": "ISO/IEC 25010",
+    "b": "ISO/IEC 40500",
+    "c": "ISO 9241-11",
+    "d": "ISO/IEC 27001"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "WCAG 2.0 es la **ISO/IEC 40500:2012** (y WCAG 2.2, la ISO/IEC 40500:2025). ISO 9241-11 define la usabilidad; 25010, la calidad del producto; 27001, la seguridad de la información.",
+   "epigrafe": "Accesibilidad: conceptos y organismos",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-051",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-051",
+   "texto": "reformulado",
+   "q": "¿Qué método de evaluación de usabilidad pide a usuarios reales que **expresen en voz alta** lo que piensan mientras realizan tareas?",
+   "ctx": null,
+   "op": {
+    "a": "Evaluación heurística",
+    "b": "Recorrido cognitivo",
+    "c": "Pensamiento en voz alta (thinking aloud)",
+    "d": "Card sorting"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **pensamiento en voz alta** es un test con usuarios. La heurística y el recorrido cognitivo son inspecciones de expertos; el card sorting sirve para organizar la arquitectura de información.",
+   "epigrafe": "Usabilidad e interfaz de usuario",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-052",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-052",
+   "texto": "reformulado",
+   "q": "¿Qué ley establece que el tiempo de **decisión** crece con el número de opciones disponibles?",
+   "ctx": null,
+   "op": {
+    "a": "Ley de Fitts",
+    "b": "Ley de Moore",
+    "c": "Ley de Conway",
+    "d": "Ley de Hick"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **ley de Hick** (crecimiento logarítmico). Fitts trata del tiempo para alcanzar un objetivo según su tamaño y distancia; Moore, de la densidad de transistores; Conway, de la estructura de los sistemas y las organizaciones.",
+   "epigrafe": "Usabilidad e interfaz de usuario",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-053",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-053",
+   "texto": "reformulado",
+   "q": "En WCAG 2.x, ¿de qué nivel es el criterio **1.1.1 Contenido no textual** (alternativas textuales para imágenes)?",
+   "ctx": null,
+   "op": {
+    "a": "A",
+    "b": "AA",
+    "c": "AAA",
+    "d": "No tiene nivel: es una técnica"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "1.1.1 es nivel **A**: lo mínimo exigible. Equivale a la antigua prioridad 1 de WCAG 1.0.",
+   "epigrafe": "WCAG: estructura, principios y pautas",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-v-054",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-054",
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes es uno de los **7 principios del diseño universal** (Ron Mace, 1997)?",
+   "ctx": null,
+   "op": {
+    "a": "Uso exclusivo",
+    "b": "Tolerancia al error",
+    "c": "Máximo esfuerzo físico",
+    "d": "Diseño centrado en el dato"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los principios son: uso equitativo, flexibilidad, uso simple e intuitivo, información perceptible, **tolerancia al error**, mínimo esfuerzo físico, y tamaño y espacio para el acercamiento y el uso.",
+   "epigrafe": "Accesibilidad: conceptos y organismos",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-055",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-055",
+   "texto": "reformulado",
+   "q": "En la definición de usabilidad de ISO 9241-11, ¿qué mide la **eficacia**?",
+   "ctx": null,
+   "op": {
+    "a": "Los recursos empleados para lograr los objetivos",
+    "b": "La ausencia de incomodidad y la actitud positiva",
+    "c": "La precisión y completitud con que los usuarios logran sus objetivos",
+    "d": "El tiempo de respuesta del sistema"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Eficacia = **precisión y completitud**. Eficiencia = recursos empleados. Satisfacción = ausencia de incomodidad y actitud positiva.",
+   "epigrafe": "Usabilidad e interfaz de usuario",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-056",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-056",
+   "texto": "reformulado",
+   "q": "¿Qué siglas describen la interfaz gráfica clásica basada en **ventanas, iconos, menús y puntero**?",
+   "ctx": null,
+   "op": {
+    "a": "CLI",
+    "b": "NUI",
+    "c": "OOUI",
+    "d": "WIMP"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**WIMP** = *Windows, Icons, Menus, Pointer*. CLI es la línea de comandos; NUI, la interfaz natural (gestos, voz); OOUI, la orientada a objetos.",
+   "epigrafe": "Usabilidad e interfaz de usuario",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-057",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-057",
+   "texto": "reformulado",
+   "q": "¿Qué heurística de Nielsen pide que la interfaz use **palabras y conceptos familiares** para el usuario, en vez de términos técnicos del sistema?",
+   "ctx": null,
+   "op": {
+    "a": "Correspondencia entre el sistema y el mundo real",
+    "b": "Visibilidad del estado del sistema",
+    "c": "Diseño estético y minimalista",
+    "d": "Ayuda y documentación"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Es la **correspondencia con el mundo real**. La visibilidad del estado pide informar de lo que está pasando; el diseño minimalista, no mostrar información irrelevante.",
+   "epigrafe": "Usabilidad e interfaz de usuario",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-058",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-058",
+   "texto": "reformulado",
+   "q": "En la revisión de 2023 de **ISO/IEC 25010**, ¿qué nombre recibe la característica que antes se llamaba usabilidad?",
+   "ctx": null,
+   "op": {
+    "a": "Adecuación funcional",
+    "b": "Capacidad de interacción",
+    "c": "Mantenibilidad",
+    "d": "Compatibilidad"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En ISO/IEC 25010:2023 la usabilidad pasa a llamarse **capacidad de interacción**. Las demás son otras características de calidad del producto.",
+   "epigrafe": "Usabilidad e interfaz de usuario",
+   "dificultad": 3
+  },
+  {
+   "id": "t22-v-059",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-059",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes es una de las **8 reglas de oro de Shneiderman** para el diseño de interfaces?",
+   "ctx": null,
+   "op": {
+    "a": "Maximizar el número de opciones en cada menú",
+    "b": "Usar terminología diferente en cada pantalla",
+    "c": "Permitir deshacer las acciones fácilmente",
+    "d": "Ocultar los mensajes de error"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las reglas de Shneiderman incluyen consistencia, atajos para expertos, retroalimentación, diálogos con cierre, prevención de errores, **deshacer fácil**, control del usuario y reducir la carga de memoria.",
+   "epigrafe": "Usabilidad e interfaz de usuario",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-060",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-060",
+   "texto": "reformulado",
+   "q": "¿Qué norma ISO describe el **diseño centrado en las personas** como un proceso iterativo para sistemas interactivos?",
+   "ctx": null,
+   "op": {
+    "a": "ISO 9001",
+    "b": "ISO/IEC 27001",
+    "c": "ISO/IEC 40500",
+    "d": "ISO 9241-210"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**ISO 9241-210** trata el diseño centrado en el usuario. ISO 9001 es gestión de la calidad; 27001, seguridad de la información; 40500, WCAG 2.0.",
+   "epigrafe": "Usabilidad e interfaz de usuario",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-v-061",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t22-h-061",
+   "texto": "reformulado",
+   "q": "¿Qué tipo de interfaz permite interactuar mediante **gestos táctiles o la voz**, de forma intuitiva?",
+   "ctx": null,
+   "op": {
+    "a": "Interfaz natural de usuario (NUI)",
+    "b": "Interfaz de línea de comandos (CLI)",
+    "c": "Interfaz de menús",
+    "d": "Interfaz por lotes"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **NUI** usa gestos, voz o lenguaje natural. La CLI exige escribir órdenes; la de menús, elegir opciones; el proceso por lotes no es interactivo.",
+   "epigrafe": "Usabilidad e interfaz de usuario",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-n-001",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuántos criterios de conformidad tiene **WCAG 2.2**?",
+   "ctx": null,
+   "op": {
+    "a": "78",
+    "b": "86",
+    "c": "61",
+    "d": "65"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "WCAG 2.2 tiene **86** (añade 9 a los 78 de 2.1 y elimina el 4.1.1). WCAG 2.0 tenía 61; 65 eran los puntos de verificación de WCAG 1.0.",
+   "epigrafe": "WCAG: criterios de conformidad",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-n-002",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué criterio de WCAG 2.2 fija un tamaño mínimo de objetivo táctil o de clic de **24 x 24 píxeles CSS** (nivel AA)?",
+   "ctx": null,
+   "op": {
+    "a": "2.5.5 Tamaño del objetivo (mejorado)",
+    "b": "1.4.4 Cambio de tamaño del texto",
+    "c": "2.5.8 Tamaño del objetivo (mínimo)",
+    "d": "2.4.11 Foco no oculto (mínimo)"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**2.5.8** (AA, nuevo en 2.2): 24 x 24 px. El 2.5.5 (AAA, de 2.1) pide 44 x 44 px.",
+   "epigrafe": "WCAG: criterios de conformidad",
+   "dificultad": 3
+  },
+  {
+   "id": "t22-n-003",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué criterio de WCAG 2.2 prohíbe exigir **pruebas cognitivas** en el inicio de sesión (por ejemplo, impedir pegar la contraseña)?",
+   "ctx": null,
+   "op": {
+    "a": "3.3.7 Entrada redundante",
+    "b": "2.2.5 Reautenticación",
+    "c": "3.3.4 Prevención de errores",
+    "d": "3.3.8 Autenticación accesible (mínimo)"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**3.3.8** (AA): permitir gestores de contraseñas y pegar, o alternativas sin prueba cognitiva. 3.3.7 (A) evita pedir dos veces el mismo dato.",
+   "epigrafe": "WCAG: criterios de conformidad",
+   "dificultad": 3
+  },
+  {
+   "id": "t22-n-004",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según el criterio WCAG 1.4.3, ¿qué relación de contraste mínima debe tener el **texto normal** con su fondo?",
+   "ctx": null,
+   "op": {
+    "a": "4,5:1",
+    "b": "3:1",
+    "c": "7:1",
+    "d": "2:1"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "1.4.3 (AA): **4,5:1** para texto normal y 3:1 para texto grande. 7:1 es el contraste mejorado (1.4.6, AAA).",
+   "epigrafe": "WCAG: criterios de conformidad",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-n-005",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué criterio de WCAG fue **eliminado** en la versión 2.2?",
+   "ctx": null,
+   "op": {
+    "a": "4.1.2 Nombre, función, valor",
+    "b": "4.1.1 Procesamiento",
+    "c": "1.1.1 Contenido no textual",
+    "d": "2.4.2 Titulado de páginas"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**4.1.1 Procesamiento** (validez del marcado) se consideró obsoleto y se eliminó en 2.2. 4.1.2 sigue siendo la base de ARIA.",
+   "epigrafe": "WCAG: criterios de conformidad",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-n-006",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Un sitio web exige ampliar el texto hasta el **200 %** sin perder contenido ni funcionalidad. ¿Qué criterio WCAG lo pide?",
+   "ctx": null,
+   "op": {
+    "a": "1.4.10 Reajuste del texto (AA)",
+    "b": "1.4.12 Espaciado del texto (AA)",
+    "c": "1.4.4 Cambio de tamaño del texto (AA)",
+    "d": "1.3.4 Orientación (AA)"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**1.4.4**: ampliar hasta el 200 %. 1.4.10 pide no necesitar scroll en dos ejes a 320 px CSS; 1.4.12, tolerar más espaciado; 1.3.4, funcionar en vertical y horizontal.",
+   "epigrafe": "WCAG: criterios de conformidad",
+   "dificultad": 3
+  },
+  {
+   "id": "t22-n-007",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué **directiva europea** transpone el RD 1112/2018?",
+   "ctx": null,
+   "op": {
+    "a": "Directiva (UE) 2019/882",
+    "b": "Directiva (UE) 2022/2555 (NIS2)",
+    "c": "Directiva 2000/31/CE",
+    "d": "Directiva (UE) 2016/2102"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El RD 1112/2018 transpone la **2016/2102** (sector público). La 2019/882 es el Acta Europea de Accesibilidad (Ley 11/2023); NIS2 es de ciberseguridad; la 2000/31/CE, de comercio electrónico.",
+   "epigrafe": "RD 1112/2018 y normativa de accesibilidad",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-n-008",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según el RD 1112/2018, ¿puede una entidad dejar de hacer accesible una parte de su web alegando **carga desproporcionada**?",
+   "ctx": null,
+   "op": {
+    "a": "Sí, justificándolo y ofreciendo una alternativa accesible",
+    "b": "No, nunca",
+    "c": "Sí, sin necesidad de justificarlo",
+    "d": "Solo si la web tiene menos de 100 páginas"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **carga desproporcionada** se puede alegar para una parte concreta, justificándola en la declaración de accesibilidad y ofreciendo alternativas.",
+   "epigrafe": "RD 1112/2018 y normativa de accesibilidad",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-n-009",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según el RD 1112/2018, si la respuesta a una queja de accesibilidad no satisface al interesado, ¿qué puede hacer?",
+   "ctx": null,
+   "op": {
+    "a": "Acudir directamente al Tribunal Constitucional",
+    "b": "Presentar una reclamación ante la Unidad responsable de accesibilidad",
+    "c": "Presentar una queja ante el W3C",
+    "d": "Nada: la respuesta es definitiva"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Tras la queja cabe **reclamación** ante la Unidad responsable de accesibilidad de cada ámbito.",
+   "epigrafe": "RD 1112/2018 y normativa de accesibilidad",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-n-010",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué departamento coordina la accesibilidad web en la AGE y mantiene el **Observatorio de Accesibilidad Web**?",
+   "ctx": null,
+   "op": {
+    "a": "El Ministerio del Interior",
+    "b": "El CCN-CERT",
+    "c": "El Ministerio para la Transformación Digital y de la Función Pública, a través de la SGAD",
+    "d": "La Agencia Española de Protección de Datos"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **Ministerio para la Transformación Digital y de la Función Pública** (SGAD) coordina, mantiene el Observatorio y prepara el informe a la Comisión.",
+   "epigrafe": "RD 1112/2018 y normativa de accesibilidad",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-n-011",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué rol ARIA es equivalente a una región viva con `aria-live=\"polite\"`?",
+   "ctx": null,
+   "op": {
+    "a": "role=\"alert\"",
+    "b": "role=\"dialog\"",
+    "c": "role=\"navigation\"",
+    "d": "role=\"status\""
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`role=\"status\"` = polite; `role=\"alert\"` = assertive. dialog y navigation no son regiones vivas.",
+   "epigrafe": "HTML accesible y WAI-ARIA",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-n-012",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál es la **primera regla** de uso de ARIA?",
+   "ctx": null,
+   "op": {
+    "a": "Si existe un elemento HTML nativo con la semántica necesaria, usarlo en lugar de ARIA",
+    "b": "Añadir role a todos los elementos",
+    "c": "Usar siempre aria-label en lugar de texto visible",
+    "d": "Ocultar con aria-hidden los elementos interactivos"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Primero HTML nativo (`<button>`, `<nav>`...). ARIA no añade comportamiento y, mal usado, empeora la accesibilidad. Nunca se ocultan con aria-hidden elementos que reciben el foco.",
+   "epigrafe": "HTML accesible y WAI-ARIA",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-n-013",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué atributo ARIA asocia un campo de formulario con un texto de **ayuda o mensaje de error** que lo describe?",
+   "ctx": null,
+   "op": {
+    "a": "aria-labelledby",
+    "b": "aria-describedby",
+    "c": "aria-controls",
+    "d": "aria-current"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**aria-describedby** apunta a la descripción adicional. aria-labelledby da el **nombre**; aria-controls indica el elemento controlado; aria-current, el elemento actual.",
+   "epigrafe": "HTML accesible y WAI-ARIA",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-n-014",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué atributo del elemento `<html>` debe declararse para cumplir el criterio **3.1.1 Idioma de la página**?",
+   "ctx": null,
+   "op": {
+    "a": "charset",
+    "b": "xml:base",
+    "c": "lang",
+    "d": "dir"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`<html lang=\"es\">` permite al lector de pantalla usar la pronunciación correcta. charset es la codificación; dir, la dirección del texto.",
+   "epigrafe": "HTML accesible y WAI-ARIA",
+   "dificultad": 1
+  },
+  {
+   "id": "t22-n-015",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué categoría encabeza el **OWASP Top 10 2025**?",
+   "ctx": null,
+   "op": {
+    "a": "A01 Injection",
+    "b": "A01 Cryptographic Failures",
+    "c": "A01 Cross-Site Scripting",
+    "d": "A01 Broken Access Control"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Broken Access Control** sigue en primer lugar (como en 2021). La inyección baja al A05 y XSS forma parte de ella desde 2021.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-n-016",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué categoría **nueva** aparece en el puesto A03 del OWASP Top 10 2025?",
+   "ctx": null,
+   "op": {
+    "a": "Software Supply Chain Failures",
+    "b": "Server-Side Request Forgery",
+    "c": "Insecure Design",
+    "d": "Cross-Site Request Forgery"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Software Supply Chain Failures** (cadena de suministro) es nueva en el A03. SSRF se integra en Broken Access Control; CSRF salió del Top 10 en 2017.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 3
+  },
+  {
+   "id": "t22-n-017",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué cabecera HTTP mitiga el XSS **limitando los orígenes** desde los que la página puede cargar scripts?",
+   "ctx": null,
+   "op": {
+    "a": "Strict-Transport-Security",
+    "b": "Content-Security-Policy",
+    "c": "X-Frame-Options",
+    "d": "Access-Control-Allow-Origin"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**CSP** define de dónde pueden venir scripts y otros recursos. HSTS fuerza HTTPS; X-Frame-Options evita clickjacking; Access-Control-Allow-Origin es de CORS.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-n-018",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué algoritmo es adecuado para **almacenar contraseñas** de usuarios?",
+   "ctx": null,
+   "op": {
+    "a": "MD5",
+    "b": "SHA-1 sin sal",
+    "c": "Argon2id (hash lento con sal)",
+    "d": "AES con una clave fija en el código"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las contraseñas se guardan con un **hash lento y con sal** (Argon2id, bcrypt, PBKDF2). MD5 y SHA-1 son rápidos y rotos; cifrar con clave fija es reversible.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-n-019",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En el modelado de amenazas **STRIDE**, ¿qué significa la «R»?",
+   "ctx": null,
+   "op": {
+    "a": "Robo de credenciales",
+    "b": "Ransomware",
+    "c": "Replicación",
+    "d": "Repudio (Repudiation)"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "STRIDE: Spoofing (suplantación), Tampering (manipulación), **Repudiation** (repudio), Information disclosure, Denial of service y Elevation of privilege.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 3
+  },
+  {
+   "id": "t22-n-020",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué proyecto de OWASP es un **estándar de verificación** de requisitos de seguridad de aplicaciones?",
+   "ctx": null,
+   "op": {
+    "a": "ASVS",
+    "b": "ZAP",
+    "c": "Top 10",
+    "d": "Dependency-Check"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**ASVS** (*Application Security Verification Standard*, versión 5.0 de 2025). ZAP es un escáner DAST; el Top 10 es una lista de concienciación; Dependency-Check, una herramienta SCA.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-n-021",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué medida del **ENS** (RD 311/2022) regula el bloqueo del puesto de trabajo por inactividad?",
+   "ctx": null,
+   "op": {
+    "a": "mp.eq.1",
+    "b": "mp.eq.2",
+    "c": "op.exp.6",
+    "d": "op.acc.6"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**mp.eq.2** Bloqueo de puesto de trabajo. mp.eq.1 es puesto despejado; op.exp.6, protección frente a código dañino; op.acc.6, mecanismos de autenticación.",
+   "epigrafe": "Seguridad en el puesto de usuario",
+   "dificultad": 3
+  },
+  {
+   "id": "t22-n-022",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué herramienta del CCN actúa como **vacuna contra el ransomware** en el puesto de usuario?",
+   "ctx": null,
+   "op": {
+    "a": "CLARA",
+    "b": "INES",
+    "c": "microCLAUDIA",
+    "d": "PILAR"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**microCLAUDIA** es la vacuna anti-ransomware. CLARA comprueba el cumplimiento del ENS en Windows; INES informa del estado de seguridad; PILAR es la herramienta de análisis de riesgos (MAGERIT).",
+   "epigrafe": "Seguridad en el puesto de usuario",
+   "dificultad": 3
+  },
+  {
+   "id": "t22-n-023",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué método de autenticación es **más resistente al phishing**?",
+   "ctx": null,
+   "op": {
+    "a": "Código por SMS",
+    "b": "Pregunta de seguridad",
+    "c": "Contraseña larga",
+    "d": "Llaves de seguridad FIDO2/WebAuthn o passkeys"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**FIDO2/WebAuthn** ligan la credencial al dominio, así que una web falsa no puede usarla. El SMS es vulnerable a SIM swapping; preguntas y contraseñas se pueden robar.",
+   "epigrafe": "Seguridad en el puesto de usuario",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-n-024",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según Nielsen, ¿con cuántos usuarios se detectan la **mayoría** de los problemas de usabilidad en un ciclo de pruebas?",
+   "ctx": null,
+   "op": {
+    "a": "5",
+    "b": "1",
+    "c": "50",
+    "d": "100"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Nielsen sostiene que con **5 usuarios** se detecta la mayoría; es mejor hacer varias rondas pequeñas.",
+   "epigrafe": "Usabilidad e interfaz de usuario",
+   "dificultad": 2
+  },
+  {
+   "id": "t22-n-025",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué cuestionario estandarizado de 10 preguntas mide la **usabilidad percibida** de un sistema?",
+   "ctx": null,
+   "op": {
+    "a": "SUMI-ENS",
+    "b": "SUS (System Usability Scale)",
+    "c": "NASA-TLX",
+    "d": "WCAG-EM"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **SUS** da una puntuación de 0 a 100. NASA-TLX mide carga de trabajo; WCAG-EM es la metodología de evaluación de conformidad con WCAG.",
+   "epigrafe": "Usabilidad e interfaz de usuario",
+   "dificultad": 3
+  }
+ ],
+ "tarjetas": [
+  {
+   "id": "t22-c-001",
+   "anverso": "WAI",
+   "reverso": "Web Accessibility Initiative: iniciativa de accesibilidad del W3C.",
+   "epigrafe": "Accesibilidad: conceptos y organismos"
+  },
+  {
+   "id": "t22-c-002",
+   "anverso": "WCAG, ATAG, UAAG y WAI-ARIA",
+   "reverso": "WCAG: contenido web. ATAG: herramientas de autor. UAAG: agentes de usuario. ARIA: componentes dinámicos.",
+   "epigrafe": "Accesibilidad: conceptos y organismos"
+  },
+  {
+   "id": "t22-c-003",
+   "anverso": "ATAG",
+   "reverso": "Herramientas de autor accesibles (parte A) y que ayudan a generar contenido accesible (parte B).",
+   "epigrafe": "Accesibilidad: conceptos y organismos"
+  },
+  {
+   "id": "t22-c-004",
+   "anverso": "Versiones de WCAG",
+   "reverso": "1.0 (1999), 2.0 (2008, ISO/IEC 40500:2012), 2.1 (2018), 2.2 (oct. 2023). 3.0 en borrador.",
+   "epigrafe": "WCAG: estructura, principios y pautas"
+  },
+  {
+   "id": "t22-c-005",
+   "anverso": "Cuatro principios de WCAG",
+   "reverso": "Perceptible, Operable, Comprensible y Robusto (POUR).",
+   "epigrafe": "WCAG: estructura, principios y pautas"
+  },
+  {
+   "id": "t22-c-006",
+   "anverso": "Pautas de Perceptible",
+   "reverso": "1.1 Alternativas textuales; 1.2 Medios tempodependientes; 1.3 Adaptable; 1.4 Distinguible.",
+   "epigrafe": "WCAG: estructura, principios y pautas"
+  },
+  {
+   "id": "t22-c-007",
+   "anverso": "Pautas de Operable",
+   "reverso": "2.1 Teclado; 2.2 Tiempo suficiente; 2.3 Convulsiones; 2.4 Navegable; 2.5 Modalidades de entrada (2.1).",
+   "epigrafe": "WCAG: estructura, principios y pautas"
+  },
+  {
+   "id": "t22-c-008",
+   "anverso": "Pautas de Comprensible y Robusto",
+   "reverso": "Comprensible: 3.1 Legible, 3.2 Predecible, 3.3 Entrada de datos asistida. Robusto: 4.1 Compatible.",
+   "epigrafe": "WCAG: estructura, principios y pautas"
+  },
+  {
+   "id": "t22-c-009",
+   "anverso": "Niveles de orientación de WCAG (de general a concreto)",
+   "reverso": "Principios → pautas → criterios de conformidad → técnicas suficientes y recomendables.",
+   "epigrafe": "WCAG: estructura, principios y pautas"
+  },
+  {
+   "id": "t22-c-010",
+   "anverso": "Distinguible frente a Adaptable",
+   "reverso": "Distinguible: ver y oír, separar primer plano y fondo. Adaptable: presentar de otras formas sin perder estructura.",
+   "epigrafe": "WCAG: estructura, principios y pautas"
+  },
+  {
+   "id": "t22-c-011",
+   "anverso": "WCAG 1.0: niveles",
+   "reverso": "A = prioridad 1; Doble-A = prioridades 1 y 2; Triple-A = 1, 2 y 3. Obsoleto.",
+   "epigrafe": "WCAG: estructura, principios y pautas"
+  },
+  {
+   "id": "t22-c-012",
+   "anverso": "Número de pautas y criterios",
+   "reverso": "WCAG 2.0: 12 pautas, 61 criterios. 2.1: 13 pautas, 78. 2.2: 13 pautas, 86.",
+   "epigrafe": "WCAG: criterios de conformidad"
+  },
+  {
+   "id": "t22-c-013",
+   "anverso": "Criterios AAA que han salido",
+   "reverso": "3.1.6 Pronunciación, 1.2.6 Lengua de señas, 2.4.10 Encabezados de sección.",
+   "epigrafe": "WCAG: criterios de conformidad"
+  },
+  {
+   "id": "t22-c-014",
+   "anverso": "Contraste en WCAG",
+   "reverso": "1.4.3 (AA): 4,5:1, texto grande 3:1. 1.4.6 (AAA): 7:1, texto grande 4,5:1.",
+   "epigrafe": "WCAG: criterios de conformidad"
+  },
+  {
+   "id": "t22-c-015",
+   "anverso": "Novedades de WCAG 2.2",
+   "reverso": "9 criterios nuevos (2.5.8 objetivo 24 px, 3.3.8 autenticación accesible...) y se elimina 4.1.1.",
+   "epigrafe": "WCAG: criterios de conformidad"
+  },
+  {
+   "id": "t22-c-016",
+   "anverso": "Título accesible de una tabla",
+   "reverso": "<caption> dentro de <table>; cabeceras con <th scope=\"col|row\">.",
+   "epigrafe": "HTML accesible y WAI-ARIA"
+  },
+  {
+   "id": "t22-c-017",
+   "anverso": "Imagen como botón o enlace",
+   "reverso": "alt que describa la función (\"Enviar datos\"). title no sustituye a alt. Decorativas: alt=\"\".",
+   "epigrafe": "HTML accesible y WAI-ARIA"
+  },
+  {
+   "id": "t22-c-018",
+   "anverso": "aria-live",
+   "reverso": "Región que se actualizará; el lector anuncia los cambios. polite = role=\"status\"; assertive = role=\"alert\".",
+   "epigrafe": "HTML accesible y WAI-ARIA"
+  },
+  {
+   "id": "t22-c-019",
+   "anverso": "aria-expanded",
+   "reverso": "Indica si el elemento controlado está desplegado (true) o plegado (false).",
+   "epigrafe": "HTML accesible y WAI-ARIA"
+  },
+  {
+   "id": "t22-c-020",
+   "anverso": "Etiquetas semánticas HTML5",
+   "reverso": "header, nav, main, aside, footer, section, article: puntos de referencia para lectores de pantalla.",
+   "epigrafe": "HTML accesible y WAI-ARIA"
+  },
+  {
+   "id": "t22-c-021",
+   "anverso": "Lectores de pantalla",
+   "reverso": "JAWS (Windows, comercial), NVDA (Windows, libre), VoiceOver (Apple), TalkBack (Android), Orca (Linux).",
+   "epigrafe": "Herramientas y productos de apoyo"
+  },
+  {
+   "id": "t22-c-022",
+   "anverso": "Validadores automáticos de accesibilidad",
+   "reverso": "TAW, WAVE, AChecker, SortSite, axe, Lighthouse, QualWeb, Access Monitor. WebCT NO (e-learning).",
+   "epigrafe": "Herramientas y productos de apoyo"
+  },
+  {
+   "id": "t22-c-023",
+   "anverso": "RD 1112/2018",
+   "reverso": "Real Decreto de 7 de septiembre; accesibilidad de webs y apps del sector público; transpone la Directiva (UE) 2016/2102.",
+   "epigrafe": "RD 1112/2018 y normativa de accesibilidad"
+  },
+  {
+   "id": "t22-c-024",
+   "anverso": "Plazo de respuesta a solicitudes y quejas (RD 1112/2018)",
+   "reverso": "Veinte días hábiles.",
+   "epigrafe": "RD 1112/2018 y normativa de accesibilidad"
+  },
+  {
+   "id": "t22-c-025",
+   "anverso": "Primera revisión de accesibilidad (RD 1112/2018)",
+   "reverso": "Sitios web: antes de dos años. Aplicaciones móviles: antes de tres años.",
+   "epigrafe": "RD 1112/2018 y normativa de accesibilidad"
+  },
+  {
+   "id": "t22-c-026",
+   "anverso": "Fechas de aplicación del RD 1112/2018",
+   "reverso": "Webs nuevas: 20/09/2019. Webs existentes: 20/09/2020. Apps: 23/06/2021.",
+   "epigrafe": "RD 1112/2018 y normativa de accesibilidad"
+  },
+  {
+   "id": "t22-c-027",
+   "anverso": "Norma técnica de accesibilidad TIC",
+   "reverso": "UNE-EN 301 549 (vigente :2022, V3.2.1) → WCAG 2.1 AA.",
+   "epigrafe": "RD 1112/2018 y normativa de accesibilidad"
+  },
+  {
+   "id": "t22-c-028",
+   "anverso": "Contenido accesible (art. 3 RD 1112/2018)",
+   "reverso": "Texto y no texto, documentos y formularios descargables, multimedia pregrabado, interacción bidireccional, identificación, autenticación, firma y pago.",
+   "epigrafe": "RD 1112/2018 y normativa de accesibilidad"
+  },
+  {
+   "id": "t22-c-029",
+   "anverso": "Ley 11/2023",
+   "reverso": "Transpone el Acta Europea de Accesibilidad (Directiva 2019/882); sector privado desde el 28/06/2025.",
+   "epigrafe": "RD 1112/2018 y normativa de accesibilidad"
+  },
+  {
+   "id": "t22-c-030",
+   "anverso": "Usabilidad (ISO 9241-11)",
+   "reverso": "Eficacia, eficiencia y satisfacción de usuarios específicos con objetivos específicos en un contexto de uso.",
+   "epigrafe": "Usabilidad e interfaz de usuario"
+  },
+  {
+   "id": "t22-c-031",
+   "anverso": "Ley de Fitts",
+   "reverso": "Cuanto más grande y cercano el objetivo, más rápido y fácil es alcanzarlo.",
+   "epigrafe": "Usabilidad e interfaz de usuario"
+  },
+  {
+   "id": "t22-c-032",
+   "anverso": "Evaluación heurística",
+   "reverso": "Inspección de la usabilidad por expertos, sin usuarios (10 heurísticas de Nielsen).",
+   "epigrafe": "Usabilidad e interfaz de usuario"
+  },
+  {
+   "id": "t22-c-033",
+   "anverso": "Interfaz de usuario",
+   "reverso": "Abarca software, hardware y documentación. CUI/CLI para expertos; menús con verbos en infinitivo.",
+   "epigrafe": "Usabilidad e interfaz de usuario"
+  },
+  {
+   "id": "t22-c-034",
+   "anverso": "Autenticación multifactor",
+   "reverso": "Factores de categorías distintas: algo que se sabe, se tiene y se es. Dos biometrías no son MFA.",
+   "epigrafe": "Seguridad en el puesto de usuario"
+  },
+  {
+   "id": "t22-c-035",
+   "anverso": "Cifrado de disco completo",
+   "reverso": "BitLocker (Windows), FileVault (macOS), LUKS (Linux). Gatekeeper controla apps, no cifra.",
+   "epigrafe": "Seguridad en el puesto de usuario"
+  },
+  {
+   "id": "t22-c-036",
+   "anverso": "SAST, DAST, IAST y SCA",
+   "reverso": "SAST: código sin ejecutar. DAST: app en ejecución. IAST: agente durante pruebas. SCA: dependencias.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones"
+  },
+  {
+   "id": "t22-c-037",
+   "anverso": "S-SDLC",
+   "reverso": "Secure Software Development Life Cycle: metodología, no un tipo de análisis.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones"
+  },
+  {
+   "id": "t22-c-038",
+   "anverso": "CSRF y su defensa",
+   "reverso": "Cross-Site Request Forgery. Token aleatorio por sesión y formulario con caducidad; SameSite. HTTPS no basta.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones"
+  },
+  {
+   "id": "t22-c-039",
+   "anverso": "Atributos de cookie",
+   "reverso": "Secure: solo HTTPS. HttpOnly: no accesible por JS. SameSite: control entre sitios (Strict, Lax, None).",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones"
+  },
+  {
+   "id": "t22-c-040",
+   "anverso": "CORS",
+   "reverso": "Configuración del servidor que indica qué orígenes pueden llamar a la API desde scripts (Access-Control-Allow-Origin).",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones"
+  },
+  {
+   "id": "t22-c-041",
+   "anverso": "Prevención de XSS (OWASP)",
+   "reverso": "Codificar/escapar la salida según contexto, validar entrada, CSP, HttpOnly.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones"
+  },
+  {
+   "id": "t22-c-042",
+   "anverso": "Inyección SQL",
+   "reverso": "Entrada que altera la consulta (\"100 OR 1=1\"). Defensa: consultas parametrizadas.",
+   "epigrafe": "Seguridad en el desarrollo de aplicaciones"
+  }
+ ],
+ "discrepancias": [
+  {
+   "ref": "LI2008-ej1-III-47",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 84
+   },
+   "clave_oficial": "b",
+   "temario_dice": "a) ATAG («Guía WAI para generar contenidos accesibles desde herramientas de autor → ATAG»)",
+   "veredicto": "Se mantiene la oficial b) WCAG: el enunciado habla de «generación de contenidos accesibles» sin mencionar herramientas de autor. ATAG es defendible; pregunta ambigua."
+  },
+  {
+   "ref": "LI2025-ej1-55",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 55
+   },
+   "clave_oficial": "b",
+   "temario_dice": "La lección (Trampas) dice que la plantilla dio «Iris + Huella» como MFA válido y que choca con la regla de factores",
+   "veredicto": "La clave oficial es correcta: la pregunta pide la que NO es MFA, e iris + huella son el mismo factor. El error está en la nota de Trampas de la lección, que interpreta la pregunta al revés."
+  }
+ ]
+}

@@ -1,0 +1,3425 @@
+{
+ "tema": 20,
+ "generado": "2026-10-20",
+ "preguntas": [
+  {
+   "id": "t20-h-001",
+   "tipo": "historica",
+   "ref": "LI2025-b3-16",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 16
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El sistema implementa un Web Service REST que permite registrar un nuevo alumno en la base de datos. Lo utiliza una aplicación administrativa que envía una solicitud al backend para crear el nuevo registro. Tras crear correctamente el recurso en la base de datos, el Web Service debe devolver el código HTTP adecuado conforme a los estándares REST. ¿Cuál es el código de estado HTTP que existe específicamente para responder a este caso?",
+   "ctx": "Supuesto 2025 (Bloque III): aplicación de gestión académica con backend que expone servicios web REST.",
+   "op": {
+    "a": "200 OK",
+    "b": "201 Created",
+    "c": "204 No Content",
+    "d": "202 Accepted"
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b) 201 Created.** Cuando una petición (normalmente POST) **crea** un recurso, el código adecuado es 201, idealmente con la cabecera `Location` apuntando a la URI del nuevo recurso.\n\n- a) 200 OK es éxito genérico; vale, pero no es el específico de creación.\n- c) 204 No Content es éxito sin cuerpo (típico de DELETE o PUT).\n- d) 202 Accepted indica que la petición se aceptó pero se procesará más tarde (asíncrono): no confirma que se haya creado.",
+   "epigrafe": "REST",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-001",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-001",
+   "texto": null,
+   "q": "Una API REST recibe una petición DELETE, borra el recurso correctamente y no devuelve cuerpo en la respuesta. ¿Qué código de estado es el más adecuado?",
+   "ctx": null,
+   "op": {
+    "a": "204 No Content",
+    "b": "201 Created",
+    "c": "202 Accepted",
+    "d": "304 Not Modified"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**204 No Content** indica éxito sin cuerpo de respuesta, el caso típico de un DELETE (o un PUT) correcto. 201 es para creación, 202 para procesamiento diferido y 304 para cachés condicionales.",
+   "epigrafe": "REST",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-h-002",
+   "tipo": "historica",
+   "ref": "LI2025-ej1-50",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 50
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál es la finalidad de WSDL 2.0, según la especificación del W3C?",
+   "ctx": null,
+   "op": {
+    "a": "Ser un lenguaje XML para describir servicios web, permitiendo describir el servicio a partir de un modelo abstracto de lo que ofrece.",
+    "b": "Ser un protocolo de mensajería que define un “envelope” y reglas de codificación para invocaciones remotas.",
+    "c": "Ser un protocolo de aplicación que define métodos (GET, POST, PUT, DELETE) y códigos de estado para operar sobre recursos.",
+    "d": "Ser un protocolo de comunicación bidireccional con “handshake” y “framing” sobre TCP para tiempo real."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** WSDL 2.0 (Recomendación W3C de 2007) es un **lenguaje XML para describir servicios web**: separa una parte **abstracta** (interface, operaciones, tipos) de una **concreta** (binding y service/endpoint).\n\n- b) Describe **SOAP** (sobre, reglas de codificación).\n- c) Describe **HTTP**.\n- d) Describe **WebSocket** (RFC 6455).",
+   "epigrafe": "WSDL",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-002",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-002",
+   "texto": null,
+   "q": "En WSDL 2.0, ¿qué elemento sustituye al portType de WSDL 1.1 para agrupar las operaciones abstractas del servicio?",
+   "ctx": null,
+   "op": {
+    "a": "endpoint",
+    "b": "interface",
+    "c": "message",
+    "d": "binding"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "WSDL 2.0 renombra **portType** como **interface** y **port** como **endpoint**, y elimina el elemento **message** (los mensajes se describen directamente con tipos de XML Schema). **binding** existe en ambas versiones y fija protocolo y formato.",
+   "epigrafe": "WSDL",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-003",
+   "tipo": "historica",
+   "ref": "LI2025-ej1-51",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 51
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Según la categorización habitual de métodos HTTP, ¿cuál de los siguientes métodos es idempotente pero NO seguro?",
+   "ctx": null,
+   "op": {
+    "a": "GET",
+    "b": "POST",
+    "c": "PUT",
+    "d": "CONNECT"
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c) PUT.** Es **idempotente** (repetirlo deja el recurso igual que una sola vez) pero **no seguro** (modifica el estado del servidor).\n\n- a) GET es seguro **e** idempotente.\n- b) POST no es ni seguro ni idempotente.\n- d) CONNECT no es seguro ni idempotente (abre un túnel).\n\nOtros idempotentes no seguros: DELETE. Seguros: GET, HEAD, OPTIONS, TRACE.",
+   "epigrafe": "REST",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-v-003",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-003",
+   "texto": null,
+   "q": "Según RFC 9110, ¿cuál de los siguientes métodos HTTP es seguro e idempotente y devuelve únicamente las cabeceras, sin cuerpo?",
+   "ctx": null,
+   "op": {
+    "a": "PATCH",
+    "b": "DELETE",
+    "c": "HEAD",
+    "d": "POST"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**HEAD** es como GET pero sin cuerpo: seguro e idempotente. DELETE es idempotente pero no seguro; POST y PATCH no son, en general, ni seguros ni idempotentes.",
+   "epigrafe": "REST",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-h-004",
+   "tipo": "historica",
+   "ref": "LI2024-b3-08",
+   "origen": {
+    "anio": 2024,
+    "parte": "b3",
+    "n": 8
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En caso de utilizar Java para el backend, ¿qué tecnología puede utilizar para generar un cliente de servicios web?",
+   "ctx": "Supuesto 2024 (Bloque III): desarrollo de una aplicación con backend que debe integrarse con otras aplicaciones y con GEISER.",
+   "op": {
+    "a": "Apache Flink.",
+    "b": "Apache Xalan.",
+    "c": "Apache Xerces.",
+    "d": "Apache CXF."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d) Apache CXF.** Es un marco de servicios web (implementa JAX-WS y JAX-RS) que, entre otras cosas, genera clientes a partir de un WSDL con `wsdl2java`.\n\n- a) Apache Flink: procesamiento de flujos de datos (streaming).\n- b) Apache Xalan: procesador XSLT.\n- c) Apache Xerces: analizador (parser) XML.",
+   "epigrafe": "Implementación en Java y .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-v-004",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-004",
+   "texto": null,
+   "q": "¿Qué herramienta de línea de comandos del ecosistema JAX-WS (Metro) genera las clases cliente Java a partir de un documento WSDL?",
+   "ctx": null,
+   "op": {
+    "a": "wsgen",
+    "b": "javadoc",
+    "c": "jlink",
+    "d": "wsimport"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**wsimport** lee un WSDL y genera las clases del cliente (proxy/stub y JAXB). **wsgen** hace lo inverso: parte de la clase del servicio. javadoc genera documentación y jlink construye imágenes de runtime. Desde Java 11 no vienen en el JDK: se obtienen de Metro o CXF (wsdl2java).",
+   "epigrafe": "Implementación en Java y .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-005",
+   "tipo": "historica",
+   "ref": "LI2024-b3-12",
+   "origen": {
+    "anio": 2024,
+    "parte": "b3",
+    "n": 12
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Para que la aplicación de gestión pueda interactuar con esta aplicación, se va a exponer una capa de servicios web. ¿Cuál de las siguientes opciones NO es válida para documentar dichos servicios?",
+   "ctx": "Supuesto 2024 (Bloque III): desarrollo de una aplicación con backend que debe integrarse con otras aplicaciones y con GEISER.",
+   "op": {
+    "a": "RAML.",
+    "b": "REST.",
+    "c": "WSDL.",
+    "d": "OpenAPI/Swagger."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b) REST.** REST es un **estilo arquitectónico**, no un formato ni un lenguaje de documentación.\n\nSí sirven para documentar o describir servicios: a) **RAML** (lenguaje YAML para API REST), c) **WSDL** (servicios SOAP) y d) **OpenAPI/Swagger** (API REST, en YAML o JSON).",
+   "epigrafe": "Documentación y descripción de API",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-005",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-005",
+   "texto": null,
+   "q": "¿En qué formatos puede escribirse un documento de la especificación OpenAPI?",
+   "ctx": null,
+   "op": {
+    "a": "YAML y JSON",
+    "b": "XML y HTML",
+    "c": "WSDL y XSD",
+    "d": "Solo YAML"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Un documento OpenAPI (antes Swagger) se escribe en **YAML o JSON**. HTML es solo la presentación que generan herramientas como Swagger UI; WSDL y XSD son propios de SOAP.",
+   "epigrafe": "Documentación y descripción de API",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-h-006",
+   "tipo": "historica",
+   "ref": "LI2024-b3-15",
+   "origen": {
+    "anio": 2024,
+    "parte": "b3",
+    "n": 15
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se ha determinado que es necesaria la integración de la aplicación con GEISER, cuyos servicios web son de naturaleza SOAP. ¿Con qué firmará las peticiones generadas por la aplicación?",
+   "ctx": "Supuesto 2024 (Bloque III): desarrollo de una aplicación con backend que debe integrarse con otras aplicaciones y con GEISER.",
+   "op": {
+    "a": "WS-Security.",
+    "b": "SAML.",
+    "c": "JWT.",
+    "d": "XML-Encryption."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a) WS-Security.** Es el estándar OASIS que añade **firma (XML Signature)** y cifrado (XML Encryption) en la cabecera de los mensajes **SOAP**, junto con tokens de seguridad. Es lo que exigen los servicios SOAP de la AGE (GEISER, SCSP, Notifica...).\n\n- b) SAML es un formato de aserciones de identidad; puede viajar como token dentro de WS-Security, pero no firma la petición por sí mismo.\n- c) JWT es propio de REST/OAuth.\n- d) XML Encryption cifra, no firma.",
+   "epigrafe": "Seguridad y especificaciones WS-\\*",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-v-006",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-006",
+   "texto": null,
+   "q": "En un mensaje SOAP protegido con WS-Security, ¿en qué parte del mensaje se incluyen la firma XML y los tokens de seguridad?",
+   "ctx": null,
+   "op": {
+    "a": "En el elemento Fault del Body",
+    "b": "En un bloque wsse:Security dentro del Header",
+    "c": "En la cabecera HTTP Authorization",
+    "d": "En el elemento binding del WSDL"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "WS-Security define el bloque **wsse:Security** dentro de **soap:Header**, donde van la firma (ds:Signature), los tokens (BinarySecurityToken, UsernameToken, aserciones SAML) y el sello de tiempo. Es seguridad a nivel de mensaje, independiente del transporte.",
+   "epigrafe": "Seguridad y especificaciones WS-\\*",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-007",
+   "tipo": "historica",
+   "ref": "LI2024-ej1-46",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 45
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál es una característica de los sistemas distribuidos?",
+   "ctx": null,
+   "op": {
+    "a": "Falta de transparencia: un nodo no puede acceder a otros nodos del sistema y comunicarse con ellos.",
+    "b": "Procesamiento independiente: varias máquinas no pueden procesar la misma función a la vez.",
+    "c": "Escalabilidad: la capacidad computacional y de procesamiento puede escalarse hacia arriba según sea necesario cuando se añaden máquinas adicionales.",
+    "d": "Comunicación diferencial: usan nodos distintos para comunicarse y sincronizarse a través de redes independientes entre sí."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c) Escalabilidad.** Un sistema distribuido crece añadiendo máquinas (escalado horizontal).\n\nLas otras son inventadas y contrarias a lo que define a un sistema distribuido:\n- a) Buscan la **transparencia** (de acceso, ubicación, replicación...) y los nodos se comunican entre sí.\n- b) Permiten **procesamiento concurrente/paralelo**.\n- d) Los nodos se comunican por una red común mediante paso de mensajes.",
+   "epigrafe": "Sistemas distribuidos y arquitecturas orientadas a servicios",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-007",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-007",
+   "texto": null,
+   "q": "En un sistema distribuido, ¿cómo se llama la propiedad por la que el usuario accede a un recurso sin saber en qué nodo físico se encuentra?",
+   "ctx": null,
+   "op": {
+    "a": "Escalabilidad vertical",
+    "b": "Acoplamiento fuerte",
+    "c": "Transparencia de ubicación",
+    "d": "Consistencia eventual"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **transparencia de ubicación** oculta dónde reside el recurso. Hay otras transparencias: de acceso, de replicación, de fallos, de concurrencia y de migración. La consistencia eventual es un modelo de coherencia de datos y la escalabilidad vertical consiste en ampliar una sola máquina.",
+   "epigrafe": "Sistemas distribuidos y arquitecturas orientadas a servicios",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-008",
+   "tipo": "historica",
+   "ref": "LI2024-ej1-47",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 46
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale la opción correcta sobre la arquitectura de servicios web REST:",
+   "ctx": null,
+   "op": {
+    "a": "En la arquitectura REST, el servicio no almacena información sobre el estado del cliente entre peticiones.",
+    "b": "El uso de identificadores está basado en SOA.",
+    "c": "En la arquitectura REST, la interfaz para acceder a los recursos expuestos puede ser HTTP o FTP.",
+    "d": "Es una arquitectura no orientada a recursos."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** REST es **sin estado (stateless)**: cada petición lleva toda la información necesaria y el servidor no guarda la sesión del cliente entre peticiones.\n\n- b) Los recursos se identifican con **URI**; no tiene que ver con SOA.\n- c) La interfaz uniforme es **HTTP**; FTP no.\n- d) REST es una arquitectura **orientada a recursos** (ROA).",
+   "epigrafe": "REST",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-008",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-008",
+   "texto": null,
+   "q": "¿Cuál de las siguientes es una de las restricciones arquitectónicas de REST definidas por Roy Fielding?",
+   "ctx": null,
+   "op": {
+    "a": "Uso obligatorio de XML",
+    "b": "Sesión con estado en el servidor",
+    "c": "Descripción obligatoria en WSDL",
+    "d": "Interfaz uniforme"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las restricciones de REST (tesis de Fielding, 2000) son: cliente-servidor, **sin estado**, cacheable, **interfaz uniforme**, sistema en capas y código bajo demanda (la única opcional). REST no impone formato (JSON, XML...) ni WSDL.",
+   "epigrafe": "REST",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-h-009",
+   "tipo": "historica",
+   "ref": "LI2022-ej1-51",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 48
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale cuál es un estándar OASIS que define los mecanismos para establecer y compartir contextos de seguridad, y para obtener claves de contextos de seguridad:",
+   "ctx": null,
+   "op": {
+    "a": "WS-Addressing",
+    "b": "WS-Federation",
+    "c": "WS-SecureConversation",
+    "d": "WS-Policy"
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c) WS-SecureConversation.** Estándar OASIS que establece y comparte **contextos de seguridad** entre las partes y deriva claves de ellos, para no repetir la autenticación costosa en cada mensaje.\n\n- a) WS-Addressing (W3C): direcciones de respuesta e identificadores de mensaje.\n- b) WS-Federation: federación de identidades entre dominios.\n- d) WS-Policy (W3C): expresar requisitos y capacidades (políticas) del servicio.",
+   "epigrafe": "Seguridad y especificaciones WS-\\*",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-v-009",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-009",
+   "texto": null,
+   "q": "¿Qué especificación de la familia WS-* define un servicio de emisión de tokens de seguridad (STS) para emitir, renovar y validar tokens?",
+   "ctx": null,
+   "op": {
+    "a": "WS-Trust",
+    "b": "WS-ReliableMessaging",
+    "c": "WS-Addressing",
+    "d": "WS-Policy"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**WS-Trust** define el **STS** (Security Token Service) y las operaciones para emitir, renovar y validar tokens. WS-ReliableMessaging garantiza la entrega de mensajes, WS-Addressing añade direccionamiento y WS-Policy expresa políticas.",
+   "epigrafe": "Seguridad y especificaciones WS-\\*",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-010",
+   "tipo": "historica",
+   "ref": "LI2022-ej1-52",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 49
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale la afirmación correcta con respecto a WSIL:",
+   "ctx": null,
+   "op": {
+    "a": "Es un método alternativo al descubrimiento de servicios Web.",
+    "b": "Define el modelo de programación y la arquitectura de ejecución para desplegar y buscar servicios Web en el entorno Java EE.",
+    "c": "Define un modo de publicar y encontrar información sobre servicios Web.",
+    "d": "Es una organización diseñada para promover la interoperatividad de servicios Web entre plataformas, sistemas operativos y lenguajes de programación."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** WSIL (*Web Services Inspection Language*, IBM y Microsoft, 2001) es un **método alternativo** de descubrimiento de servicios web: un documento XML publicado en el propio sitio (por ejemplo `inspection.wsil`) que enumera sus servicios, sin necesidad de un registro central.\n\n- b) Describe **JSR 109** (Web Services for Java EE).\n- c) \"Publicar y encontrar información sobre servicios web\" es la definición de **UDDI**.\n- d) Describe la organización **WS-I**.\n\nEl temario daba por buena la c); ver discrepancias.",
+   "epigrafe": "Descubrimiento: UDDI y WSIL",
+   "dificultad": 3
+  },
+  {
+   "id": "t20-v-010",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-010",
+   "texto": null,
+   "q": "¿Qué especificación define un registro centralizado para publicar y localizar servicios web, con páginas blancas, amarillas y verdes?",
+   "ctx": null,
+   "op": {
+    "a": "WSIL",
+    "b": "UDDI",
+    "c": "WSDL",
+    "d": "BPEL"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**UDDI** es el registro centralizado (páginas blancas: datos del proveedor; amarillas: clasificación; verdes: información técnica). WSIL es la alternativa descentralizada, WSDL describe la interfaz de un servicio y BPEL orquesta servicios. Los registros UDDI públicos cerraron en 2006.",
+   "epigrafe": "Descubrimiento: UDDI y WSIL",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-h-011",
+   "tipo": "historica",
+   "ref": "LI2022-ej1-50",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 50
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Cuál de las siguientes afirmaciones sobre REST es FALSA:",
+   "ctx": null,
+   "op": {
+    "a": "REST es el acrónimo de Representational State Transfer.",
+    "b": "Los objetos en REST siempre se manipulan a partir de la URI.",
+    "c": "URI son las siglas de Unique Resource Identifier.",
+    "d": "Utiliza un protocolo cliente/servidor sin estado."
+   },
+   "ok": null,
+   "clave": "oficial",
+   "anulada": true,
+   "obsoleta": false,
+   "explicacion": "Pregunta **anulada**. Buscaba la falsa y había dos discutibles: c) es falsa porque URI significa **Uniform** Resource Identifier, no \"Unique\"; y b) es al menos dudosa porque en REST los recursos se identifican por la URI pero se manipulan mediante sus **representaciones** y los métodos HTTP. a) y d) son ciertas.",
+   "epigrafe": "REST",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-012",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "ej1",
+    "n": 49
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes NO es una característica de los servicios REST?",
+   "ctx": null,
+   "op": {
+    "a": "Usan de forma explícita los métodos del protocolo HTTP.",
+    "b": "Las peticiones no requieren que el servidor guarde información del estado de la aplicación.",
+    "c": "Permiten usar formatos XML y JSON para enviar o recibir datos.",
+    "d": "Usan la especificación UDDI para publicar y localizar información sobre los servicios expuestos."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d) es la que NO corresponde:** REST no usa **UDDI** (ni WSDL); esos estándares son de la pila clásica de servicios SOAP. Las API REST se documentan con OpenAPI y se descubren por enlaces (HATEOAS) o catálogos de API.\n\nSí son de REST: a) uso explícito de los métodos HTTP, b) ausencia de estado en el servidor y c) admitir XML y JSON.",
+   "epigrafe": "REST",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-011",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-012",
+   "texto": null,
+   "q": "¿Cuál de los siguientes elementos es propio de la pila clásica de servicios web SOAP y NO forma parte de REST?",
+   "ctx": null,
+   "op": {
+    "a": "Uso de los métodos GET, POST, PUT y DELETE",
+    "b": "Identificación de recursos mediante URI",
+    "c": "WSDL para describir la interfaz",
+    "d": "Intercambio de datos en formato JSON"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**WSDL** (como UDDI) pertenece a la pila SOAP. REST se apoya en URI, métodos HTTP y representaciones en cualquier formato (JSON, XML...). Para describir API REST se usa OpenAPI.",
+   "epigrafe": "REST",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-h-013",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "b3",
+    "n": 21
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En un servicio REST, ¿qué significa que la respuesta HTTP devuelva el código de estado 200?",
+   "ctx": "Supuesto 2018 (Bloque III): desarrollo de una aplicación que publica y consume servicios REST.",
+   "op": {
+    "a": "Que la petición se ha completado correctamente.",
+    "b": "Que no se ha encontrado el recurso solicitado.",
+    "c": "Que la petición tiene errores de sintaxis o no puede procesarse.",
+    "d": "Que se ha producido un error en el servidor."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** **200 OK**: la petición se ha completado con éxito.\n\n- b) Recurso no encontrado es **404**.\n- c) Petición mal formada es **400** (o 422 si la sintaxis es correcta pero falla la validación).\n- d) Error del servidor es **500** (familia 5xx).",
+   "epigrafe": "REST",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-012",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-013",
+   "texto": null,
+   "q": "Un cliente se autentica correctamente en una API REST, pero solicita un recurso para el que no tiene permisos. ¿Qué código debería devolver el servidor?",
+   "ctx": "Supuesto 2018 (Bloque III): desarrollo de una aplicación que publica y consume servicios REST.",
+   "op": {
+    "a": "401 Unauthorized",
+    "b": "404 Not Found",
+    "c": "409 Conflict",
+    "d": "403 Forbidden"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**403 Forbidden**: el servidor sabe quién eres, pero no tienes permiso. **401** significa en realidad \"no autenticado\" (faltan credenciales o no son válidas). 404 es recurso inexistente y 409 conflicto con el estado del recurso.",
+   "epigrafe": "REST",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-h-014",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 59
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En un documento WSDL, ¿cómo se denomina la operación de un servicio que recibe un mensaje pero no envía respuesta?",
+   "ctx": null,
+   "op": {
+    "a": "Unidireccional (one-way).",
+    "b": "Notificación (notification).",
+    "c": "Solicitud sin respuesta (request-no response).",
+    "d": "Petición sin respuesta (petition-no response)."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a) One-way (unidireccional).** En WSDL 1.1 hay cuatro tipos de operación según los mensajes del punto final:\n\n- **One-way**: recibe un mensaje y no responde (solo input).\n- **Request-response**: recibe y responde (input y output).\n- **Solicit-response**: el punto final envía y espera respuesta.\n- **Notification**: el punto final envía sin esperar respuesta (solo output); por eso b) es el distractor.\n\nc) y d) no existen. En WSDL 2.0 se habla de MEP (*in-only*, *in-out*...).",
+   "epigrafe": "WSDL",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-v-013",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-014",
+   "texto": null,
+   "q": "En WSDL 1.1, ¿qué tipo de operación describe un punto final que envía un mensaje sin haber recibido una petición previa y sin esperar respuesta?",
+   "ctx": null,
+   "op": {
+    "a": "Notification",
+    "b": "One-way",
+    "c": "Request-response",
+    "d": "Solicit-response"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Notification** es solo output: el servicio emite un mensaje sin esperar contestación. One-way es lo contrario (solo input), request-response recibe y contesta y solicit-response envía y espera respuesta.",
+   "epigrafe": "WSDL",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-015",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 60
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Indique la afirmación INCORRECTA sobre REST:",
+   "ctx": null,
+   "op": {
+    "a": "El transporte de datos se realiza con los métodos HTTP: GET, POST, PUT, DELETE o PATCH.",
+    "b": "Utiliza los códigos de respuesta nativos de HTTP, como 200, 204, 404 o 409.",
+    "c": "Cada recurso es direccionable a través de su URI.",
+    "d": "Aunque admite muchos tipos de datos, no es posible utilizar el formato XML."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d) es la INCORRECTA:** REST no impone formato; admite **XML**, JSON, HTML, texto plano, etc. (el tipo se negocia con las cabeceras Accept y Content-Type).\n\nLas otras son ciertas: a) usa los métodos HTTP, b) usa los códigos de estado nativos de HTTP y c) cada recurso se direcciona por su URI.",
+   "epigrafe": "REST",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-014",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-015",
+   "texto": null,
+   "q": "En una API REST, ¿qué cabecera HTTP usa el cliente para indicar el formato de representación que prefiere recibir (por ejemplo, application/json)?",
+   "ctx": null,
+   "op": {
+    "a": "Content-Length",
+    "b": "Accept",
+    "c": "Location",
+    "d": "ETag"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Con **Accept** el cliente negocia el formato de la respuesta; **Content-Type** indica el formato del cuerpo enviado. Location señala la URI de un recurso creado (201) y ETag identifica la versión de un recurso para cachés y concurrencia optimista.",
+   "epigrafe": "REST",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-016",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 61
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes elementos NO forma parte del esqueleto de un mensaje SOAP 1.2?",
+   "ctx": null,
+   "op": {
+    "a": "Envelope",
+    "b": "Header",
+    "c": "Body",
+    "d": "Title"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d) Title.** El mensaje SOAP 1.2 es un **Envelope** (obligatorio) con un **Header** opcional y un **Body** obligatorio; los errores van en un **Fault** dentro del Body. No existe ningún elemento Title.",
+   "epigrafe": "SOAP",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-015",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-016",
+   "texto": null,
+   "q": "En un mensaje SOAP 1.2, ¿dónde se sitúa el elemento Fault que informa de un error?",
+   "ctx": null,
+   "op": {
+    "a": "Como hijo directo del Envelope, después del Body",
+    "b": "Dentro del Header",
+    "c": "Dentro del Body",
+    "d": "En un elemento Footer al final del mensaje"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Fault** es hijo del **Body** (y si aparece, es su único hijo). El Envelope solo contiene Header (opcional) y Body (obligatorio). No existe Footer.",
+   "epigrafe": "SOAP",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-017",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-60",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 60
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En un documento WSDL 2.0, el elemento <binding> especifica:",
+   "ctx": null,
+   "op": {
+    "a": "el conjunto de puertos y dirección de los mismos.",
+    "b": "los protocolos de comunicación usados.",
+    "c": "los tipos de datos usados en los mensajes.",
+    "d": "las operaciones permitidas."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** El **binding** fija el **protocolo** concreto (SOAP 1.2, HTTP...) y el formato de los mensajes para las operaciones de una interface.\n\n- a) Puertos/endpoints y direcciones van en **service/endpoint**.\n- c) Los tipos de datos van en **types** (XML Schema).\n- d) Las operaciones permitidas se declaran en la **interface**.",
+   "epigrafe": "WSDL",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-v-016",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-017",
+   "texto": null,
+   "q": "En WSDL 2.0, ¿qué elemento asocia un binding con una dirección de red concreta en la que se puede invocar el servicio?",
+   "ctx": null,
+   "op": {
+    "a": "interface",
+    "b": "types",
+    "c": "operation",
+    "d": "endpoint"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **endpoint** (port en WSDL 1.1), dentro de **service**, une un binding con una dirección (URL). La interface agrupa operaciones abstractas, types define los tipos con XML Schema y operation es cada acción del servicio.",
+   "epigrafe": "WSDL",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-018",
+   "tipo": "historica",
+   "ref": "LI2016-b3-b3-12",
+   "origen": {
+    "anio": 2016,
+    "parte": "b3",
+    "n": 12
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En la línea 12, el servidor se mantiene esperando de forma continua la llegada de conexiones clientes, llamando al constructor de la clase Conecta cuando recibe una (pasando como parámetros directorio y socket de la conexión). ¿Qué código de entre los siguientes es válido?",
+   "ctx": "Supuesto 2016 (Bloque III): servidor Java de sockets que atiende conexiones de clientes; cada conexión la gestiona un objeto de la clase Conecta, que recibe el directorio y el socket.",
+   "op": {
+    "a": "while (1) {conn=ServerSocket.accept(); Conecta(dir,conn);}",
+    "b": "while (true) {conn=ServerSocket.accept(); new Conecta(dir,conn);}",
+    "c": "while (true) {conn=listener.accept(); new Conecta(dir,conn);}",
+    "d": "conn = listener.accept(); if (conn){new Conecta(dir,conn);}"
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** `while (true) {conn=listener.accept(); new Conecta(dir,conn);}`\n\n- El bucle infinito en Java se escribe `while (true)`; `while (1)` no compila porque la condición debe ser booleana (descarta a).\n- `accept()` es un método de **instancia**: se llama sobre el objeto ServerSocket creado (`listener`), no sobre la clase (descarta b).\n- Hace falta `new` para invocar un constructor (descarta a).\n- d) Atiende una sola conexión y `if (conn)` no es válido en Java.",
+   "epigrafe": "Sistemas distribuidos y arquitecturas orientadas a servicios",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-v-017",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-018",
+   "texto": null,
+   "q": "En Java, ¿qué método de la clase ServerSocket bloquea el hilo hasta que llega una conexión de un cliente y devuelve el Socket de esa conexión?",
+   "ctx": "Supuesto 2016 (Bloque III): servidor Java de sockets que atiende conexiones de clientes; cada conexión la gestiona un objeto de la clase Conecta, que recibe el directorio y el socket.",
+   "op": {
+    "a": "accept()",
+    "b": "listen()",
+    "c": "connect()",
+    "d": "bind()"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**accept()** espera la conexión y devuelve un **Socket** para hablar con ese cliente. El puerto se fija al construir el ServerSocket (o con bind()); connect() lo usa el **cliente**. listen() es de la API de sockets de C, no un método de ServerSocket.",
+   "epigrafe": "Sistemas distribuidos y arquitecturas orientadas a servicios",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-019",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-III-23",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 74
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "La API de Java JAX-RS es:",
+   "ctx": null,
+   "op": {
+    "a": "Java API for RESTful Web Services, es una API que proporciona soporte a la creación de servicios web REST.",
+    "b": "Java API for XML Web Services, es una API para la creación de servicios web.",
+    "c": "Java API for XML Registries, es una API para acceder a diferentes tipos de registros de metadatos basados en XML.",
+    "d": "Java API for XML based RPC, es una API que permite invocar un servicio web basado en Java cuya descripción está basada en WSDL."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** JAX-RS es la **Java API for RESTful Web Services** (JSR 311/339/370; hoy Jakarta RESTful Web Services). Se usa con anotaciones como @Path, @GET o @Produces. Implementaciones: Jersey, RESTEasy, Apache CXF.\n\n- b) Es **JAX-WS** (servicios SOAP).\n- c) Es **JAXR** (registros, retirada).\n- d) Es **JAX-RPC** (predecesora de JAX-WS, retirada).",
+   "epigrafe": "Implementación en Java y .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-018",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-019",
+   "texto": null,
+   "q": "En JAX-RS, ¿qué anotación asocia una clase o un método con la ruta relativa de la URI del recurso?",
+   "ctx": null,
+   "op": {
+    "a": "@WebService",
+    "b": "@Path",
+    "c": "@WebMethod",
+    "d": "@Entity"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**@Path** fija la ruta del recurso en JAX-RS, junto con @GET, @POST, @Produces o @PathParam. @WebService y @WebMethod son de **JAX-WS** (SOAP) y @Entity es de JPA.",
+   "epigrafe": "Implementación en Java y .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-h-020",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-III-32",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 83
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿A cuál de los siguientes elementos de la arquitectura cliente/servidor se le conoce también con el término front-end?",
+   "ctx": null,
+   "op": {
+    "a": "Base de Datos.",
+    "b": "Servidor.",
+    "c": "Cliente.",
+    "d": "Al conjunto de la arquitectura."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c) El cliente.** En cliente/servidor, el cliente es el **front-end** (lo que ve el usuario) y el servidor el **back-end**.",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-019",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-020",
+   "texto": null,
+   "q": "En una arquitectura cliente/servidor, ¿qué término se usa para referirse al servidor que presta los servicios y oculta la gestión de datos al usuario?",
+   "ctx": null,
+   "op": {
+    "a": "Front-end",
+    "b": "Middleware",
+    "c": "Back-end",
+    "d": "Thin client"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El servidor es el **back-end**; el cliente, el **front-end**. El middleware es el software intermedio que comunica ambos (ODBC, RPC, MOM...), y thin client es un cliente con solo la presentación.",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-h-021",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-III-33",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 84
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale la respuesta correcta en relación con los servicios web:",
+   "ctx": null,
+   "op": {
+    "a": "Las Arquitecturas Orientadas a Servicios (SOA) se implementan con HTML5, CSS3 y Javascript.",
+    "b": "Las arquitecturas SOA están formadas por servicios de aplicación fuertemente acoplados y altamente interoperables.",
+    "c": "Las arquitecturas SOA son un modelo orientado a la reutilización de los servicios en entornos de sistemas distribuidos.",
+    "d": "Los servicios de una arquitectura SOA se basan en una definición formal independiente de la plataforma subyacente. Esta definición formal se realiza en el lenguaje JAVA."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** SOA es un modelo orientado a la **reutilización de servicios** en entornos distribuidos.\n\n- a) SOA no se implementa con tecnologías de presentación como HTML5/CSS3/JS.\n- b) Los servicios SOA están **débilmente** acoplados, no fuertemente.\n- d) Comienza bien (contrato formal independiente de la plataforma), pero acaba diciendo que esa definición se hace en un lenguaje de programación concreto; el contrato se escribe en WSDL u otros formatos neutros.",
+   "epigrafe": "Sistemas distribuidos y arquitecturas orientadas a servicios",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-020",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-021",
+   "texto": null,
+   "q": "¿Qué principio de SOA establece que los servicios deben depender lo menos posible unos de otros para poder cambiar uno sin afectar a los demás?",
+   "ctx": null,
+   "op": {
+    "a": "Alta cohesión de datos compartidos",
+    "b": "Estado compartido entre servicios",
+    "c": "Dependencia de plataforma",
+    "d": "Bajo (débil) acoplamiento"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "SOA busca **bajo acoplamiento**, servicios autónomos, reutilizables, sin estado y descritos por un **contrato** estándar e independiente de la plataforma. Compartir estado o depender de la plataforma va contra esos principios.",
+   "epigrafe": "Sistemas distribuidos y arquitecturas orientadas a servicios",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-h-022",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-III-34",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 85
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Es una librería para la implementación de servicios web de la API Java JAX-WS:",
+   "ctx": null,
+   "op": {
+    "a": "Apache Axe.",
+    "b": "Jersey.",
+    "c": "Apache CXF.",
+    "d": "WS4All."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c) Apache CXF.** Es un marco de servicios web que implementa **JAX-WS** (y también JAX-RS).\n\n- b) **Jersey** es la implementación de referencia de **JAX-RS** (REST), no de JAX-WS.\n- a) \"Apache Axe\" y d) \"WS4All\" no existen (Apache Axis/Axis2 sí).",
+   "epigrafe": "Implementación en Java y .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-v-021",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-022",
+   "texto": null,
+   "q": "¿Cuál de las siguientes es la implementación de referencia de JAX-RS para crear servicios REST en Java?",
+   "ctx": null,
+   "op": {
+    "a": "Jersey",
+    "b": "Metro",
+    "c": "Apache Axis2",
+    "d": "Hibernate"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Jersey** es la implementación de referencia de JAX-RS (otras: RESTEasy, Apache CXF). **Metro** es la de referencia de JAX-WS, **Axis2** es un motor SOAP de Apache e Hibernate es un ORM (JPA).",
+   "epigrafe": "Implementación en Java y .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-023",
+   "tipo": "historica",
+   "ref": "LI2015-b3-b3-17",
+   "origen": {
+    "anio": 2015,
+    "parte": "b3",
+    "n": 16
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se crea en el proyecto NetBeans un servicio web con una operación que acepte como parámetros el cif de un cliente y un mes en concreto, y devuelva las fechas en las que ha reservado ese cliente en ese mes, para crear servicios web se utiliza la API Java:",
+   "ctx": "Supuesto 2015 (Bloque III): aplicación Java desarrollada en NetBeans para gestionar reservas de clientes.",
+   "op": {
+    "a": "JPA",
+    "b": "JMS",
+    "c": "JAX-WS",
+    "d": "JCA"
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c) JAX-WS.** Es la API Java para crear servicios web SOAP (anotaciones @WebService, @WebMethod).\n\n- a) JPA: persistencia objeto-relacional.\n- b) JMS: mensajería asíncrona.\n- d) JCA: conectores con sistemas de información empresariales (EIS).\n\nSi el servicio fuera REST, la API sería JAX-RS.",
+   "epigrafe": "Implementación en Java y .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-022",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-023",
+   "texto": null,
+   "q": "En Java EE, ¿qué API se utiliza para enviar y recibir mensajes de forma asíncrona a través de colas y temas (topics)?",
+   "ctx": "Supuesto 2015 (Bloque III): aplicación Java desarrollada en NetBeans para gestionar reservas de clientes.",
+   "op": {
+    "a": "JAX-WS",
+    "b": "JMS",
+    "c": "JPA",
+    "d": "JNDI"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**JMS** (Java Message Service) es la API de mensajería asíncrona (colas punto a punto y temas publicación/suscripción). JAX-WS crea servicios SOAP, JPA gestiona persistencia y JNDI localiza recursos por nombre.",
+   "epigrafe": "Implementación en Java y .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-h-024",
+   "tipo": "historica",
+   "ref": "LI2015-b3-b3-18",
+   "origen": {
+    "anio": 2015,
+    "parte": "b3",
+    "n": 17
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En la clase Java que implementa el servicio web se ha codificado el método \"convierte\" que será el que realice toda la funcionalidad del servicio, este método debe estar publicado como operación del servicio web pero con el nombre \"reservasPorCliente\", para ello hará uso de la siguiente notación JAX-WS:",
+   "ctx": "Supuesto 2015 (Bloque III): aplicación Java desarrollada en NetBeans para gestionar reservas de clientes.",
+   "op": {
+    "a": "@WebMethod",
+    "b": "@PublicMethod",
+    "c": "@PublicName",
+    "d": "@WebResult"
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a) @WebMethod**, con su atributo `operationName`: `@WebMethod(operationName = \"reservasPorCliente\")` publica el método `convierte` como operación con otro nombre.\n\n- d) **@WebResult** solo personaliza el nombre del valor devuelto en el WSDL.\n- b) y c) no existen en JAX-WS.",
+   "epigrafe": "Implementación en Java y .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-v-023",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-024",
+   "texto": null,
+   "q": "En JAX-WS, ¿qué anotación se aplica a una clase Java para exponerla como servicio web SOAP?",
+   "ctx": "Supuesto 2015 (Bloque III): aplicación Java desarrollada en NetBeans para gestionar reservas de clientes.",
+   "op": {
+    "a": "@RestController",
+    "b": "@Path",
+    "c": "@WebService",
+    "d": "@Stateless"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**@WebService** marca la clase como servicio JAX-WS; sus métodos públicos se publican como operaciones (personalizables con @WebMethod). @Path es de JAX-RS, @RestController de Spring y @Stateless de EJB.",
+   "epigrafe": "Implementación en Java y .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-h-025",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-III-38",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 79
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de los siguientes es un estándar que se utiliza como elemento de seguridad en los servicios web?",
+   "ctx": null,
+   "op": {
+    "a": "SAML",
+    "b": "WSDL",
+    "c": "SOAP",
+    "d": "UDDI"
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a) SAML** (*Security Assertion Markup Language*, OASIS): formato XML para intercambiar **aserciones** de autenticación y autorización. Se usa en servicios web (como token de WS-Security) y en inicio de sesión único (SSO).\n\nLas otras no son estándares de seguridad: WSDL describe el servicio, SOAP es el protocolo de mensajería y UDDI el registro.",
+   "epigrafe": "Seguridad y especificaciones WS-\\*",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-024",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-025",
+   "texto": null,
+   "q": "¿Qué estándar XML de OASIS se utiliza para expresar políticas de control de acceso y evaluar peticiones de autorización?",
+   "ctx": null,
+   "op": {
+    "a": "SAML",
+    "b": "WSDL",
+    "c": "XSLT",
+    "d": "XACML"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**XACML** (*eXtensible Access Control Markup Language*) define políticas de autorización y su evaluación (PDP, PEP). **SAML** transporta aserciones de identidad y atributos, pero no es un lenguaje de políticas. WSDL describe servicios y XSLT transforma XML.",
+   "epigrafe": "Seguridad y especificaciones WS-\\*",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-026",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-III-39",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 80
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las siguientes opciones NO es una ventaja propia de una arquitectura en 3 capas?",
+   "ctx": null,
+   "op": {
+    "a": "Reduce el tráfico en la red frente a una arquitectura de dos capas.",
+    "b": "Es una arquitectura mucho más escalable.",
+    "c": "La separación de roles en capas hace más fácil modificar y remplazar capas.",
+    "d": "Si aumenta el tamaño o complejidad de una capa, no afecta a las demás."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** **No** es ventaja propia de tres capas \"reducir el tráfico de red frente a dos capas\": añadir una capa intermedia introduce más saltos y comunicaciones. La reducción de tráfico se asocia más bien a los procedimientos almacenados en dos capas.\n\nSí son ventajas: b) escalabilidad, c) facilidad para modificar o sustituir capas y d) independencia entre capas.",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-v-025",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-026",
+   "texto": null,
+   "q": "En una arquitectura de dos capas, ¿qué variante reduce el tráfico de red haciendo que el cliente invoque lógica que se ejecuta dentro del SGBD?",
+   "ctx": null,
+   "op": {
+    "a": "Dos capas con procedimientos almacenados",
+    "b": "Dos capas con SQL remoto",
+    "c": "Presentación distribuida",
+    "d": "Base de datos distribuida"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Con **procedimientos almacenados** el cliente invoca rutinas que se ejecutan en el servidor de BD y solo viajan parámetros y resultados. Con **SQL remoto** el cliente envía sentencias y procesa todos los registros devueltos, lo que genera más tráfico.",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-027",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-III-40",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 81
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Axis2 es:",
+   "ctx": null,
+   "op": {
+    "a": "Una base de datos no-SQL.",
+    "b": "Un motor de búsqueda.",
+    "c": "Un motor nuclear de servicios web.",
+    "d": "Una librería para la automatización de tareas de compilación y despliegue de aplicaciones."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** **Apache Axis2** es un motor (*core engine*) de servicios web SOAP y REST, sucesor de Apache Axis, con implementaciones en Java y C.\n\n- a) No es una base de datos NoSQL.\n- b) No es un motor de búsqueda (sería Lucene/Solr).\n- d) Automatizar compilación y despliegue es Ant, Maven o Gradle.",
+   "epigrafe": "Implementación en Java y .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-026",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-027",
+   "texto": null,
+   "q": "¿Cuál de las siguientes herramientas es un motor de servicios web de Apache, sucesor de Apache Axis?",
+   "ctx": null,
+   "op": {
+    "a": "Maven",
+    "b": "Axis2",
+    "c": "Lucene",
+    "d": "Kafka"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Axis2** es el motor de servicios web de Apache que sustituye a Axis. **Maven** automatiza la construcción de proyectos, **Lucene** es una biblioteca de búsqueda y **Kafka** es una plataforma de streaming de eventos.",
+   "epigrafe": "Implementación en Java y .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-h-028",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-III-41",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 82
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿A qué hace referencia el modelo de 3 capas en el desarrollo de aplicaciones?",
+   "ctx": null,
+   "op": {
+    "a": "A que la declaración de clases se realizará con al menos tres niveles de acceso diferenciados: clases públicas, clases privadas y clases protegidas.",
+    "b": "A que se establecerán tres jerarquías de herencia de clases, en la que partiendo de una clase raíz, existirán al menos hasta otras dos capas más de herencia.",
+    "c": "A que las aplicaciones se separarán en 3 capas, estableciendo una capa de Lógica de Presentación, una capa de Lógica de Negocio y una capa de Datos o de Persistencia.",
+    "d": "A que el procesamiento de documentos XML puede realizarse mediante un parser DOM (modelo de árbol), SAX (basado en eventos tipo push) o STAX (basado en eventos tipo pull)."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** El modelo de 3 capas separa la aplicación en **presentación**, **lógica de negocio** y **datos o persistencia**.\n\n- a) Mezcla los modificadores de acceso de la POO.\n- b) Habla de jerarquías de herencia.\n- d) Enumera analizadores XML (DOM, SAX, StAX).\n\nNinguna tiene que ver con capas de arquitectura.",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-027",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-028",
+   "texto": null,
+   "q": "En una arquitectura de tres capas, ¿en qué capa se sitúa el servidor de aplicaciones que ejecuta las reglas y validaciones del negocio?",
+   "ctx": null,
+   "op": {
+    "a": "Capa de presentación",
+    "b": "Capa de datos o persistencia",
+    "c": "Capa de lógica de negocio",
+    "d": "Capa física de red"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **lógica de negocio** (capa intermedia) vive en el servidor de aplicaciones (Tomcat, WildFly...). La presentación es la interfaz de usuario y la capa de datos es el SGBD. \"Capa física de red\" pertenece al modelo OSI, no a la arquitectura de aplicaciones.",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-h-029",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-III-42",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 83
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El protocolo SOAP (Simple Object Access Protocol):",
+   "ctx": null,
+   "op": {
+    "a": "Es una recomendación del W3C.",
+    "b": "Es un estándar ISO.",
+    "c": "Es una norma UNE.",
+    "d": "Es un estándar ANSI."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** SOAP es una **recomendación del W3C** (SOAP 1.2, 2003; segunda edición 2007). No es estándar ISO, UNE ni ANSI.\n\nOtros organismos del entorno: OASIS publica WS-Security, SAML, UDDI y WS-SecureConversation; el W3C publica WSDL y WS-Addressing.",
+   "epigrafe": "SOAP",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-028",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-029",
+   "texto": null,
+   "q": "¿Qué organismo publica como estándar la especificación WS-Security?",
+   "ctx": null,
+   "op": {
+    "a": "W3C",
+    "b": "IETF",
+    "c": "ISO",
+    "d": "OASIS"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**OASIS** publica WS-Security, SAML, UDDI, WS-SecureConversation y WS-Trust. El **W3C** publica SOAP, WSDL, XML Signature y WS-Addressing. El IETF publica las RFC (HTTP, TLS, JWT).",
+   "epigrafe": "Seguridad y especificaciones WS-\\*",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-030",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-III-43",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 84
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Para la implantación de una arquitectura Cliente/Servidor del tipo \"cliente fino - servidor grueso\":",
+   "ctx": null,
+   "op": {
+    "a": "Se necesitan un mínimo de 2 equipos si se utiliza el modelo de 2 capas.",
+    "b": "Se necesitan un mínimo de 3 equipos si se utiliza el modelo de 3 capas.",
+    "c": "Puede ser implantada en un único equipo.",
+    "d": "El cliente es el responsable del acceso a los datos físicos y de procesar la lógica de negocio."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Cliente fino y servidor grueso puede implantarse en un **único equipo**: las capas y los roles cliente/servidor son **lógicos**, no exigen máquinas distintas.\n\n- a) y b) No hacen falta 2 o 3 equipos.\n- d) En cliente fino el cliente **solo** presenta; los datos y la lógica están en el servidor.",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-v-029",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-030",
+   "texto": null,
+   "q": "¿Qué caracteriza a un cliente grueso (fat client) frente a un cliente fino?",
+   "ctx": null,
+   "op": {
+    "a": "Ejecuta la presentación y también la lógica de negocio",
+    "b": "Ejecuta solo la presentación",
+    "c": "No necesita ningún servidor",
+    "d": "Siempre se ejecuta en un navegador web"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **cliente grueso** asume presentación y lógica de negocio (por ejemplo, una aplicación de escritorio que accede directamente a la BD); el **fino** solo presenta (navegador). Ambos necesitan servidor.",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-h-031",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-31",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 68
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Qué es BPEL?",
+   "ctx": null,
+   "op": {
+    "a": "Lenguaje basado en XML diseñado para el control centralizado de la invocación de diferentes servicios Web.",
+    "b": "Una implementación libre de SOAP.",
+    "c": "Arquitectura de software que define la utilización de servicios para dar soporte a los requerimientos de software del usuario.",
+    "d": "Formato XML usado para describir la interfaz pública a los servicios Web."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** **BPEL** (WS-BPEL 2.0, OASIS) es un lenguaje XML para **orquestar** servicios web: describe procesos de negocio que invocan servicios bajo un control centralizado.\n\n- b) Implementación libre de SOAP: Apache Axis, por ejemplo.\n- c) Es la definición de **SOA**.\n- d) Es la definición de **WSDL**.",
+   "epigrafe": "Sistemas distribuidos y arquitecturas orientadas a servicios",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-030",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-031",
+   "texto": null,
+   "q": "¿Qué diferencia la orquestación de la coreografía de servicios web?",
+   "ctx": null,
+   "op": {
+    "a": "La orquestación no usa mensajes XML; la coreografía sí",
+    "b": "La orquestación tiene un coordinador central; en la coreografía cada servicio conoce su papel sin control central",
+    "c": "La coreografía se describe con WSDL y la orquestación con UDDI",
+    "d": "Son sinónimos"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En la **orquestación** (BPEL) un proceso central invoca y coordina los servicios. En la **coreografía** (WS-CDL) se describe la colaboración entre iguales sin un director; cada participante sabe cuándo actuar.",
+   "epigrafe": "Sistemas distribuidos y arquitecturas orientadas a servicios",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-032",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-32",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 69
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En la configuración para los componentes de software cliente/servidor denominada \"presentación remota\",",
+   "ctx": null,
+   "op": {
+    "a": "Los datos de que consta la base de datos se distribuyen entre múltiples clientes y servidores.",
+    "b": "La lógica primaria de la base de datos y de la aplicación permanecen en el servidor.",
+    "c": "Se asignan al cliente los procesos asociados a la introducción de datos.",
+    "d": "Se ubica el Sistema Gestor de Base de Datos (SGBD) en el cliente y la base de datos física en el servidor."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** En la **presentación remota** (modelo de Gartner), toda la presentación está en el cliente, mientras que la **lógica de la aplicación y la base de datos permanecen en el servidor**.\n\n- a) Describe la **base de datos distribuida**.\n- c) Dar al cliente procesos de entrada de datos acerca a la lógica distribuida.\n- d) No tiene sentido un SGBD en el cliente con la BD física en el servidor; se parece a la gestión remota de datos, pero mal descrita.",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-v-031",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-032",
+   "texto": null,
+   "q": "Según los modelos de Gartner, ¿en qué configuración el cliente tiene la presentación y toda la lógica de la aplicación, y el servidor solo gestiona los datos?",
+   "ctx": null,
+   "op": {
+    "a": "Presentación remota",
+    "b": "Presentación distribuida",
+    "c": "Gestión remota de datos",
+    "d": "Lógica distribuida"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En la **gestión remota de datos** (acceso remoto a datos) el servidor solo aloja el SGBD. En la presentación remota el servidor tiene lógica y datos; en la lógica distribuida la lógica se reparte; en la presentación distribuida incluso la presentación se reparte.",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-033",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-33",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 70
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Qué afirmación es correcta en relación con el protocolo SOAP?",
+   "ctx": null,
+   "op": {
+    "a": "Es un protocolo de comunicación basado en HTML.",
+    "b": "Especifica el formato del mensaje de la comunicación entre ordenadores.",
+    "c": "Se utiliza para intercambio de información ente ordenadores con el mismo sistema operativo.",
+    "d": "Define los protocolos de transporte utilizados en el envío del mensaje."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** SOAP especifica el **formato de los mensajes** XML (sobre, cabecera, cuerpo) que intercambian las aplicaciones.\n\n- a) Se basa en **XML**, no en HTML.\n- c) Precisamente sirve para comunicar sistemas **heterogéneos**.\n- d) No define el transporte: viaja sobre HTTP, SMTP, JMS, etc.",
+   "epigrafe": "SOAP",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-032",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-033",
+   "texto": null,
+   "q": "¿Qué afirmación sobre el transporte de los mensajes SOAP es correcta?",
+   "ctx": null,
+   "op": {
+    "a": "SOAP solo puede viajar sobre HTTP",
+    "b": "SOAP define su propio protocolo de transporte sobre UDP",
+    "c": "SOAP requiere obligatoriamente FTP",
+    "d": "SOAP es independiente del transporte y puede viajar sobre HTTP, SMTP o JMS, entre otros"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "SOAP define el **mensaje**, no el transporte. El *binding* más habitual es HTTP (POST), pero hay bindings para SMTP, JMS u otros. Por eso se dice que es independiente del transporte.",
+   "epigrafe": "SOAP",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-h-034",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-34",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 71
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En la arquitectura cliente/servidor en 2 capas, habitualmente inicia la comunicación:",
+   "ctx": null,
+   "op": {
+    "a": "El Cliente.",
+    "b": "El Servidor.",
+    "c": "Ambos.",
+    "d": "El Servidor, a petición del Cliente."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a) El cliente.** En cliente/servidor el cliente **inicia** la comunicación con una petición; el servidor espera de forma pasiva y responde.",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-033",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-034",
+   "texto": null,
+   "q": "En una arquitectura cliente/servidor, ¿cuál es el comportamiento habitual del proceso servidor?",
+   "ctx": null,
+   "op": {
+    "a": "Espera pasivamente peticiones y las atiende",
+    "b": "Inicia la comunicación con los clientes",
+    "c": "Solo puede atender a un cliente durante toda su vida",
+    "d": "Debe ejecutarse siempre en una máquina distinta de la del cliente"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El servidor **espera** peticiones de forma pasiva (escucha en un puerto) y las atiende, normalmente de muchos clientes. Cliente y servidor son roles lógicos y pueden estar en la misma máquina.",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-h-035",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-35",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 72
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En un documento WSDL, el elemento ‘wsdl:binding’ se utiliza",
+   "ctx": null,
+   "op": {
+    "a": "Para la definición de los datos del mensaje que se van a comunicar.",
+    "b": "Como elemento contenedor para definiciones de tipos de datos.",
+    "c": "No es un elemento válido.",
+    "d": "Para especificar el protocolo concreto y especificación del formato de datos para un tipo de puerto determinado."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** **wsdl:binding** especifica el **protocolo concreto** (por ejemplo SOAP sobre HTTP) y el **formato de datos** para un portType.\n\n- a) La definición de los datos del mensaje es **message**.\n- b) El contenedor de tipos de datos es **types**.\n- c) Sí es un elemento válido.",
+   "epigrafe": "WSDL",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-034",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-035",
+   "texto": null,
+   "q": "En WSDL 1.1, ¿qué elemento define el formato abstracto de los datos que se intercambian, compuesto por partes (part)?",
+   "ctx": null,
+   "op": {
+    "a": "binding",
+    "b": "message",
+    "c": "service",
+    "d": "port"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**message** define los datos de cada mensaje mediante sus **part**. binding fija protocolo y formato, service agrupa los ports y port asocia un binding a una dirección. En WSDL 2.0 message desaparece.",
+   "epigrafe": "WSDL",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-036",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-36",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 73
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Respecto de la arquitectura de aplicaciones con tres capas, ¿cuál de las siguientes afirmaciones es correcta?",
+   "ctx": null,
+   "op": {
+    "a": "Las funciones de la aplicación se dividen en lógica de presentación y en lógica de negocio.",
+    "b": "Este modelo implica que cada capa vaya alojada en un servidor diferente.",
+    "c": "Cuando se actualiza una capa siempre es necesario recompilar el resto de capas.",
+    "d": "La capa de la lógica de negocio es la responsable de tratar los datos."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** La **lógica de negocio** procesa y trata los datos (reglas, cálculos, validaciones) antes de presentarlos o persistirlos.\n\n- a) Son **tres** lógicas: presentación, negocio y datos.\n- b) Las capas son lógicas: no exigen un servidor por capa.\n- c) Al cambiar una capa no hay que recompilar las demás si no cambia su interfaz.",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-v-035",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-036",
+   "texto": null,
+   "q": "¿Qué diferencia hay entre 'layer' y 'tier' al hablar de arquitecturas multicapa?",
+   "ctx": null,
+   "op": {
+    "a": "Son sinónimos exactos",
+    "b": "Layer es un nivel físico y tier una capa lógica",
+    "c": "Layer es una capa lógica de la aplicación y tier es un nivel físico de despliegue",
+    "d": "Tier solo se usa en arquitecturas de dos capas"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Layer** es la separación **lógica** (presentación, negocio, datos); **tier** es el nivel **físico** (máquinas o procesos). Tres layers pueden desplegarse en un solo tier.",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 3
+  },
+  {
+   "id": "t20-h-037",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-42",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 79
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En el estándar \"Web Service Description Language\" (WSDL), ¿con qué elemento se describen las acciones soportadas por el servicio?",
+   "ctx": null,
+   "op": {
+    "a": "Funciones.",
+    "b": "Acciones.",
+    "c": "Operaciones.",
+    "d": "Primitivas."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c) Operaciones** (`operation`). En WSDL las acciones del servicio se declaran como operaciones dentro de portType (1.1) o interface (2.0), con sus mensajes de entrada, salida y error.\n\nFunciones, acciones y primitivas no son elementos de WSDL.",
+   "epigrafe": "WSDL",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-036",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-037",
+   "texto": null,
+   "q": "En WSDL 1.1, ¿qué elemento agrupa el conjunto abstracto de operaciones que ofrece un servicio?",
+   "ctx": null,
+   "op": {
+    "a": "types",
+    "b": "definitions",
+    "c": "import",
+    "d": "portType"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**portType** (interface en WSDL 2.0) agrupa las operaciones abstractas. **types** contiene los tipos (XML Schema), **definitions** es la raíz del documento WSDL 1.1 e **import** incorpora otros documentos.",
+   "epigrafe": "WSDL",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-038",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-63",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 55
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El protocolo que contiene las especificaciones sobre cómo debe garantizarse la integridad y seguridad en mensajería de Servicios Web es:",
+   "ctx": null,
+   "op": {
+    "a": "WS-Security (WSS).",
+    "b": "Kerberos.",
+    "c": "Transport Layer Security (TLS).",
+    "d": "BinarySecurityToken.."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a) WS-Security (WSS)**, de OASIS: define cómo garantizar **integridad** (XML Signature) y **confidencialidad** (XML Encryption) en los mensajes SOAP, y cómo adjuntar tokens de seguridad.\n\n- b) Kerberos es un protocolo de autenticación de red (puede usarse como token dentro de WSS).\n- c) TLS protege el **transporte**, no el mensaje.\n- d) BinarySecurityToken es un **elemento** de WS-Security, no un protocolo.",
+   "epigrafe": "Seguridad y especificaciones WS-\\*",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-037",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-038",
+   "texto": null,
+   "q": "¿Qué ventaja tiene la seguridad a nivel de mensaje (WS-Security) frente a la seguridad a nivel de transporte (TLS) en servicios web?",
+   "ctx": null,
+   "op": {
+    "a": "La protección acompaña al mensaje de extremo a extremo, aunque pase por intermediarios",
+    "b": "No requiere certificados ni claves",
+    "c": "Es más rápida que TLS",
+    "d": "Cifra automáticamente toda la conexión TCP"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "TLS protege solo **punto a punto**: cada intermediario descifra el mensaje. WS-Security firma y cifra el propio mensaje (o partes de él), y la protección se mantiene **de extremo a extremo** aunque pase por varios nodos. Es más costosa que TLS y también usa claves y certificados.",
+   "epigrafe": "Seguridad y especificaciones WS-\\*",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-039",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-94",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 85
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El paradigma de Servicios Web (Web Services) se basa en:",
+   "ctx": null,
+   "op": {
+    "a": "El intercambio de mensajes XML.",
+    "b": "El empleo de servidores “Apache”.",
+    "c": "La utilización de aplicaciones Java, JavaBeans y applets.",
+    "d": "La firma electrónica avanzada."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** Los servicios web se basan en el **intercambio de mensajes XML** (SOAP, WSDL, UDDI son XML), lo que da interoperabilidad entre plataformas y lenguajes.\n\n- b) No dependen de servidores Apache.\n- c) No están ligados a Java.\n- d) La firma electrónica es opcional (WS-Security).",
+   "epigrafe": "Servicios web: conceptos y pila de estándares",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-038",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-039",
+   "texto": null,
+   "q": "¿Cuál es la principal ventaja de los servicios web que explica su adopción para integrar aplicaciones?",
+   "ctx": null,
+   "op": {
+    "a": "Que solo funcionan en sistemas Windows",
+    "b": "La interoperabilidad entre plataformas y lenguajes distintos",
+    "c": "Que obligan a usar el mismo lenguaje en cliente y servidor",
+    "d": "Que no requieren red"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los servicios web se apoyan en estándares abiertos (HTTP, XML, JSON), así que una aplicación .NET puede consumir un servicio Java o Python: la clave es la **interoperabilidad**.",
+   "epigrafe": "Servicios web: conceptos y pila de estándares",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-h-040",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 48
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "La escalabilidad horizontal es:",
+   "ctx": null,
+   "op": {
+    "a": "La facilidad para añadir o suprimir estaciones similares para aumentar el rendimiento o la capacidad.",
+    "b": "La facilidad para migrar a servidores mayores o menores.",
+    "c": "Una característica de las aplicaciones cliente/servidor que facilita añadir nuevas funcionalidades.",
+    "d": "Una característica de las aplicaciones de n capas que facilita añadir nuevas funcionalidades."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** La **escalabilidad horizontal** (*scale out*) es añadir o quitar máquinas similares para aumentar rendimiento o capacidad, normalmente con un balanceador de carga.\n\n- b) Migrar a servidores mayores o menores es escalabilidad **vertical** (*scale up*).\n- c) y d) Añadir funcionalidades es extensibilidad, no escalabilidad.",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-039",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-040",
+   "texto": null,
+   "q": "Un organismo sustituye su servidor de aplicaciones por otro con el doble de CPU y memoria para atender más usuarios. ¿Qué tipo de escalado ha aplicado?",
+   "ctx": null,
+   "op": {
+    "a": "Escalado horizontal (scale out)",
+    "b": "Escalado diagonal mediante balanceador",
+    "c": "Escalado vertical (scale up)",
+    "d": "Particionado funcional (sharding)"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Ampliar o sustituir una máquina por otra mayor es **escalado vertical**. El horizontal añade nodos similares tras un balanceador. El sharding reparte datos entre nodos, no amplía una máquina.",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-h-041",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 49
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En una arquitectura de n capas aplicada a sistemas web, ¿cuál de los siguientes elementos pertenece a la capa de datos?",
+   "ctx": null,
+   "op": {
+    "a": "DCOM",
+    "b": "Navegador web",
+    "c": "Informix",
+    "d": "EJB"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c) Informix**, un sistema gestor de bases de datos (de IBM), pertenece a la **capa de datos**.\n\n- a) DCOM es middleware de objetos distribuidos de Microsoft.\n- b) El navegador es la capa de **presentación**.\n- d) Los EJB son componentes de la **lógica de negocio** (servidor de aplicaciones).",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-040",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-041",
+   "texto": null,
+   "q": "En una arquitectura web de n capas, ¿cuál de los siguientes elementos pertenece a la capa de lógica de negocio?",
+   "ctx": null,
+   "op": {
+    "a": "El navegador del usuario",
+    "b": "Un SGBD PostgreSQL",
+    "c": "Una cabina de almacenamiento SAN",
+    "d": "Un servidor de aplicaciones Java EE con EJB"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los **EJB** en un servidor de aplicaciones (WildFly, WebLogic...) ejecutan la **lógica de negocio**. El navegador es presentación; PostgreSQL y la SAN están en la capa de datos y almacenamiento.",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-h-042",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 50
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Cuando el servidor de base de datos recibe solicitudes SQL del cliente y es el cliente quien procesa los registros devueltos, ¿qué modelo cliente/servidor se está implementando?",
+   "ctx": null,
+   "op": {
+    "a": "Dos capas con SQL remoto.",
+    "b": "Dos capas con procedimientos almacenados.",
+    "c": "Tres capas con SQL remoto.",
+    "d": "Tres capas con procedimientos almacenados."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a) Dos capas con SQL remoto.** El cliente contiene la lógica, envía sentencias SQL al servidor de BD y procesa los registros que recibe.\n\n- b) Con **procedimientos almacenados**, la lógica se ejecuta en el SGBD y el cliente solo los invoca.\n- c) y d) En tres capas el cliente no habla directamente con la BD: lo hace la capa intermedia.",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-v-041",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-042",
+   "texto": null,
+   "q": "¿Cuál es un inconveniente típico de la arquitectura de dos capas con SQL remoto?",
+   "ctx": null,
+   "op": {
+    "a": "Mucho tráfico de red y lógica de negocio repetida en cada cliente",
+    "b": "No permite usar un SGBD relacional",
+    "c": "Exige un servidor de aplicaciones intermedio",
+    "d": "El cliente no puede enviar sentencias SQL"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En dos capas con SQL remoto viajan todos los registros por la red y la lógica está **en cada cliente**, lo que complica los despliegues y la escalabilidad. Precisamente no hay servidor intermedio, y el cliente sí envía SQL.",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-043",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 46
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Respecto al protocolo SOAP (Simple Object Access Protocol), se puede afirmar que:",
+   "ctx": null,
+   "op": {
+    "a": "Puede escribirse en cualquier lenguaje de programación.",
+    "b": "Depende del protocolo de transporte subyacente.",
+    "c": "No permite el envío de mensajes a otras aplicaciones.",
+    "d": "Es el protocolo utilizado por los servicios web para el intercambio de mensajes entre aplicaciones."
+   },
+   "ok": "d",
+   "clave": "claude-dudosa",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** SOAP es el **protocolo de mensajería** que usan los servicios web para intercambiar mensajes XML entre aplicaciones.\n\n- a) SOAP no se \"escribe\" en un lenguaje de programación: es un formato XML que puede generarse y consumirse **desde** cualquier lenguaje. Si la opción se leyera así podría parecer cierta, de ahí que la clave sea dudosa.\n- b) Es **independiente** del transporte (HTTP, SMTP, JMS...).\n- c) Su función es justamente enviar mensajes a otras aplicaciones.",
+   "epigrafe": "SOAP",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-v-042",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-043",
+   "texto": null,
+   "q": "¿Qué ocurre con el acrónimo SOAP a partir de la versión 1.2 de la especificación?",
+   "ctx": null,
+   "op": {
+    "a": "Pasa a significar Service Oriented Architecture Protocol",
+    "b": "Deja de considerarse acrónimo de Simple Object Access Protocol y pasa a ser solo un nombre",
+    "c": "Se renombra como REST",
+    "d": "Pasa a significar Secure Object Access Protocol"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Desde **SOAP 1.2** (W3C, 2003) el nombre ya no se expande: el protocolo no es simple ni está ligado a objetos. En exámenes antiguos aparece como Simple Object Access Protocol, y esa expansión se acepta.",
+   "epigrafe": "SOAP",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-044",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 48
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En una arquitectura cliente/servidor, en el modo de funcionamiento asíncrono:",
+   "ctx": null,
+   "op": {
+    "a": "El proceso cliente espera hasta que el servidor completa la petición.",
+    "b": "El proceso cliente espera hasta que vence el plazo máximo establecido.",
+    "c": "El proceso cliente continúa en cuanto el servidor acusa recibo de la petición.",
+    "d": "El proceso cliente continúa hasta que se produce un timeout."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** En el modo **asíncrono** (no bloqueante), el cliente sigue trabajando en cuanto el servidor **acusa recibo** de la petición y recoge la respuesta después.\n\n- a) Esperar a que el servidor complete la petición es el modo **síncrono**.\n- b) y d) El *timeout* es solo un límite de espera; no define el modo asíncrono.",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-v-043",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-044",
+   "texto": null,
+   "q": "En una comunicación cliente/servidor síncrona o bloqueante, ¿qué hace el cliente tras enviar la petición?",
+   "ctx": null,
+   "op": {
+    "a": "Continúa en cuanto el servidor acusa recibo",
+    "b": "Deposita la petición en una cola y no espera respuesta",
+    "c": "Espera, bloqueado, hasta recibir la respuesta del servidor",
+    "d": "Cierra la conexión inmediatamente"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En modo **síncrono** el cliente queda bloqueado hasta recibir la respuesta. Seguir trabajando tras el acuse es el modo **asíncrono**, y depositar en una cola es mensajería (MOM).",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-h-045",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 50
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuándo se habla de presentación distribuida o \"embellecimiento\" en cliente/servidor?",
+   "ctx": null,
+   "op": {
+    "a": "Cuando la aplicación la soporta el servidor, pero la presentación es totalmente remota y reside en el cliente.",
+    "b": "Cuando la lógica de los procesos se reparte entre componentes del cliente y del servidor.",
+    "c": "Cuando el cliente asume parte de las funciones de presentación, aunque siguen existiendo programas en el servidor dedicados a esta tarea.",
+    "d": "Cuando el cliente realiza tanto las funciones de presentación como los procesos."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** En la **presentación distribuida** (\"embellecimiento\" o *revamping*), el cliente asume **parte** de la presentación, pero siguen existiendo programas de presentación en el servidor. Es el típico lavado de cara de aplicaciones de terminal.\n\n- a) Presentación **remota**: toda la presentación en el cliente.\n- b) **Lógica distribuida**.\n- d) El cliente con presentación y procesos corresponde a la **gestión remota de datos**.",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-v-044",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-045",
+   "texto": null,
+   "q": "Según los modelos de Gartner, ¿en qué configuración los datos están repartidos entre el cliente y el servidor?",
+   "ctx": null,
+   "op": {
+    "a": "Presentación distribuida",
+    "b": "Presentación remota",
+    "c": "Gestión remota de datos",
+    "d": "Base de datos distribuida"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En la **base de datos distribuida** incluso los datos se reparten entre cliente y servidor. Truco: \"distribuida\" significa que esa función se parte entre ambos lados; \"remota\", que está entera en el otro lado.",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-046",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-47",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 47
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál es la última versión de SOAP (Simple Object Access Protocol)?",
+   "ctx": null,
+   "op": {
+    "a": "SOAP 1.1",
+    "b": "SOAP 1.2",
+    "c": "SOAP 2.0",
+    "d": "SOAP 2.1"
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b) SOAP 1.2** (Recomendación W3C de 2003, segunda edición de 2007) es la última versión. SOAP 1.1 era una nota W3C de 2000; las versiones 2.0 y 2.1 no existen.",
+   "epigrafe": "SOAP",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-045",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-046",
+   "texto": null,
+   "q": "¿Qué tipo MIME usa SOAP 1.2 para sus mensajes cuando viajan sobre HTTP?",
+   "ctx": null,
+   "op": {
+    "a": "application/soap+xml",
+    "b": "text/xml",
+    "c": "application/json",
+    "d": "multipart/form-data"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "SOAP 1.2 usa **application/soap+xml** (con la acción en el parámetro action). **text/xml** era el de SOAP 1.1, que además usaba la cabecera SOAPAction. application/json es de REST y multipart/form-data, de formularios.",
+   "epigrafe": "SOAP",
+   "dificultad": 3
+  },
+  {
+   "id": "t20-h-047",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-49",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 49
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale la afirmación correcta con respecto a REST:",
+   "ctx": null,
+   "op": {
+    "a": "Es un protocolo estándar de la capa de aplicación diseñado para garantizar el intercambio de mensajes NTP entre plataformas heterogéneas.",
+    "b": "Es un conjunto de principios arquitectónicos que se ajusta a las necesidades de las aplicaciones móviles y los servicios web ligeros.",
+    "c": "Es un protocolo propietario desarrollado por el consorcio W3C para sustituir las especificaciones basadas en RPC en entornos de escritorio.",
+    "d": "Es un patrón de diseño exclusivo para aplicaciones web tradicionales que prohíbe explícitamente la transferencia de datos en formatos JSON."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** REST es un **conjunto de principios arquitectónicos** (Fielding, 2000), ligero y muy usado en aplicaciones móviles y servicios web.\n\n- a) No es un protocolo estándar ni tiene relación con NTP.\n- c) No es un protocolo propietario ni del W3C.\n- d) No es exclusivo de webs tradicionales y admite JSON (de hecho es su formato más habitual).",
+   "epigrafe": "REST",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-046",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-047",
+   "texto": null,
+   "q": "¿Qué nivel del modelo de madurez de Richardson exige que las respuestas incluyan enlaces a las acciones posibles (HATEOAS)?",
+   "ctx": null,
+   "op": {
+    "a": "Nivel 0",
+    "b": "Nivel 3",
+    "c": "Nivel 1",
+    "d": "Nivel 2"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Modelo de Richardson: **0** un único punto de entrada (estilo RPC/POX), **1** recursos con URI propias, **2** uso correcto de verbos y códigos HTTP y **3** controles hipermedia (**HATEOAS**). Solo el nivel 3 es REST en sentido estricto.",
+   "epigrafe": "REST",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-048",
+   "tipo": "historica",
+   "ref": "LI2025ext-b3-08",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 8
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se desea añadir a la API de Java la integración con los servicios de Notifica. ¿Cómo podría, a partir del fichero notifica.wsdl, generar las clases Java para esos servicios web en un paquete llamado “notificaciones”?",
+   "ctx": "Supuesto 2025 extraordinario (Bloque III): desarrollo de una API Java de persistencia que se integra con servicios de la AGE como Notifica.",
+   "op": {
+    "a": "wsgen -d notificaciones notifica.wsdl",
+    "b": "schemagen -p notificaciones notifica.wsdl",
+    "c": "xjc -d notificaciones notifica.wsdl",
+    "d": "wsimport -p notificaciones notifica.wsdl"
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** `wsimport -p notificaciones notifica.wsdl` genera las clases cliente JAX-WS a partir del WSDL en el paquete indicado con `-p`.\n\n- a) **wsgen** hace lo inverso: genera artefactos a partir de la clase del servicio, no de un WSDL.\n- b) **schemagen** genera un XSD a partir de clases Java.\n- c) **xjc** genera clases JAXB desde un XSD; con `-d` se indica el directorio de salida, no el paquete.",
+   "epigrafe": "Implementación en Java y .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-v-047",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-048",
+   "texto": null,
+   "q": "En JAX-WS, ¿para qué sirve la herramienta wsgen?",
+   "ctx": "Supuesto 2025 extraordinario (Bloque III): desarrollo de una API Java de persistencia que se integra con servicios de la AGE como Notifica.",
+   "op": {
+    "a": "Para generar el cliente a partir de un WSDL remoto",
+    "b": "Para validar documentos OpenAPI",
+    "c": "Para generar los artefactos del servicio (y opcionalmente el WSDL) a partir de la clase Java que lo implementa",
+    "d": "Para generar clases JAXB a partir de un XSD"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**wsgen** va de la clase Java al WSDL y los artefactos (enfoque *code first*). El cliente se genera con **wsimport** desde el WSDL (*contract first*), las clases JAXB con **xjc** desde un XSD, y OpenAPI no tiene relación con JAX-WS.",
+   "epigrafe": "Implementación en Java y .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-049",
+   "tipo": "historica",
+   "ref": "LI2025ext-b3-13",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 13
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En las peticiones a la API de persistencia observa que se incluye la cabecera:\nAuthorization: Bearer eyJhbG.eyJzdW.KMUFsI ¿De qué tipo de autenticación se trata?",
+   "ctx": "Supuesto 2025 extraordinario (Bloque III): desarrollo de una API Java de persistencia que se integra con servicios de la AGE como Notifica.",
+   "op": {
+    "a": "Básica.",
+    "b": "A través de una API Key.",
+    "c": "A través de una cookie.",
+    "d": "A través de un JWT (JSON Web Token)."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d) JWT (JSON Web Token).** El esquema `Bearer` con un valor de tres partes en Base64URL separadas por puntos (cabecera.carga.firma, y la cabecera suele empezar por `eyJ`, que es `{\"` codificado) es un **JWT** (RFC 7519).\n\n- a) La autenticación básica usa `Authorization: Basic` con usuario:contraseña en Base64.\n- b) Una API Key suele ir en una cabecera propia (por ejemplo `X-API-Key`) o en la query.\n- c) Una cookie va en la cabecera `Cookie`.",
+   "epigrafe": "REST",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-v-048",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-049",
+   "texto": null,
+   "q": "¿Cuáles son las tres partes de un JWT firmado (JWS), separadas por puntos?",
+   "ctx": "Supuesto 2025 extraordinario (Bloque III): desarrollo de una API Java de persistencia que se integra con servicios de la AGE como Notifica.",
+   "op": {
+    "a": "Usuario, contraseña y dominio",
+    "b": "Clave pública, clave privada y certificado",
+    "c": "Envelope, Header y Body",
+    "d": "Cabecera, carga útil (payload) y firma"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Un JWT es **cabecera.payload.firma**, cada parte en Base64URL. La cabecera indica el algoritmo (alg), el payload lleva las *claims* (sub, exp, iss...) y la firma garantiza la integridad. El payload **no** va cifrado salvo en JWE. Envelope, Header y Body son de SOAP.",
+   "epigrafe": "REST",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-h-050",
+   "tipo": "historica",
+   "ref": "LI2025ext-b3-17",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 17
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Uno de sus compañeros ha desarrollado un servicio REST que recibe un JSON y le ha pedido ayuda para probar su funcionamiento, para lo cual va a utilizar la herramienta Postman versión 12. ¿Con qué tipo de dato debería enviar el cuerpo de la petición?",
+   "ctx": "Supuesto 2025 extraordinario (Bloque III): desarrollo de una API Java de persistencia que se integra con servicios de la AGE como Notifica.",
+   "op": {
+    "a": "none",
+    "b": "GraphQL",
+    "c": "raw",
+    "d": "x-www-form-urlencoded"
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c) raw**, seleccionando el tipo **JSON** (Postman añade `Content-Type: application/json`).\n\n- a) none envía la petición sin cuerpo.\n- b) GraphQL es para consultas GraphQL.\n- d) x-www-form-urlencoded envía pares clave=valor de formulario, no un documento JSON.",
+   "epigrafe": "Documentación y descripción de API",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-v-049",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-050",
+   "texto": null,
+   "q": "Al enviar un documento JSON en el cuerpo de una petición POST a una API REST, ¿qué cabecera debe indicar el formato del cuerpo?",
+   "ctx": "Supuesto 2025 extraordinario (Bloque III): desarrollo de una API Java de persistencia que se integra con servicios de la AGE como Notifica.",
+   "op": {
+    "a": "Content-Type: application/json",
+    "b": "Accept: text/html",
+    "c": "Content-Encoding: json",
+    "d": "Transfer-Encoding: chunked"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Content-Type** describe el formato del cuerpo enviado; para JSON es **application/json**. Accept indica lo que el cliente quiere recibir, Content-Encoding indica la compresión (gzip...) y Transfer-Encoding el modo de transferencia.",
+   "epigrafe": "REST",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-h-051",
+   "tipo": "historica",
+   "ref": "LI2025ext-b3-19",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 19
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Un compañero le consulta por los formatos en los que puede generar la documentación de OpenAPI/Swagger. ¿Cuáles son?",
+   "ctx": "Supuesto 2025 extraordinario (Bloque III): desarrollo de una API Java de persistencia que se integra con servicios de la AGE como Notifica.",
+   "op": {
+    "a": "YAML y HTML.",
+    "b": "JSON y XML.",
+    "c": "YAML y JSON.",
+    "d": "HTML y XML."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c) YAML y JSON.** Un documento OpenAPI/Swagger puede escribirse en cualquiera de los dos formatos, que son equivalentes.\n\nHTML es la vista que generan herramientas como Swagger UI o Redoc, no un formato de la especificación; XML no se admite.",
+   "epigrafe": "Documentación y descripción de API",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-v-050",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-051",
+   "texto": null,
+   "q": "¿Qué herramienta del ecosistema Swagger genera a partir de un documento OpenAPI una página HTML interactiva para probar los endpoints?",
+   "ctx": null,
+   "op": {
+    "a": "Swagger Codegen",
+    "b": "Swagger UI",
+    "c": "Swagger Hub Registry",
+    "d": "Swagger WSDL"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Swagger UI** genera la documentación interactiva. **Swagger Codegen** (u OpenAPI Generator) genera código cliente o servidor. \"Swagger WSDL\" no existe. Desde 2016 la especificación se llama OpenAPI y Swagger es el nombre de las herramientas.",
+   "epigrafe": "Documentación y descripción de API",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-h-052",
+   "tipo": "historica",
+   "ref": "LI2025ext-b3-20",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 20
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Para evitar ataques de denegación de servicio se ha decidido implementar un control de peticiones máximas en un periodo de tiempo concreto (rate limiting). ¿Qué código HTTP deberá devolverse cuando un usuario alcance el límite establecido?",
+   "ctx": "Supuesto 2025 extraordinario (Bloque III): desarrollo de una API Java de persistencia que se integra con servicios de la AGE como Notifica.",
+   "op": {
+    "a": "425",
+    "b": "429",
+    "c": "502",
+    "d": "503"
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b) 429 Too Many Requests** (RFC 6585): el cliente ha superado el límite de peticiones. Suele acompañarse de la cabecera `Retry-After`.\n\n- a) 425 Too Early: riesgo de repetición con TLS 1.3 0-RTT.\n- c) 502 Bad Gateway: error del servidor intermedio.\n- d) 503 Service Unavailable: el servidor no está disponible (sobrecarga o mantenimiento); no es específico del límite por cliente.",
+   "epigrafe": "REST",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-v-051",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t20-h-052",
+   "texto": null,
+   "q": "¿Qué código HTTP devuelve un servidor que no está disponible temporalmente por mantenimiento o sobrecarga?",
+   "ctx": null,
+   "op": {
+    "a": "429 Too Many Requests",
+    "b": "500 Internal Server Error",
+    "c": "503 Service Unavailable",
+    "d": "504 Gateway Timeout"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**503** indica que el servicio no está disponible temporalmente y puede llevar Retry-After. **429** es por exceso de peticiones de un cliente concreto, **500** un error genérico del servidor y **504** que un intermediario no recibió respuesta a tiempo.",
+   "epigrafe": "REST",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-n-001",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "¿Qué atributo de un bloque del Header SOAP obliga al receptor a procesarlo o, si no lo entiende, a devolver un Fault?",
+   "ctx": null,
+   "op": {
+    "a": "actor",
+    "b": "encodingStyle",
+    "c": "relay",
+    "d": "mustUnderstand"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**mustUnderstand=\"true\"** obliga al nodo destinatario a procesar el bloque o generar un Fault (código MustUnderstand). **role** (antes actor) indica a qué nodo va dirigido y **relay** (SOAP 1.2) si se reenvía cuando no se procesa. encodingStyle declara las reglas de serialización.",
+   "epigrafe": "SOAP",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-n-002",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "¿Qué especificación W3C añade a los mensajes SOAP información de direccionamiento como ReplyTo y MessageID?",
+   "ctx": null,
+   "op": {
+    "a": "WS-Addressing",
+    "b": "WS-Policy",
+    "c": "WS-Security",
+    "d": "WS-ReliableMessaging"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**WS-Addressing** define las cabeceras To, Action, MessageID, ReplyTo, FaultTo..., lo que permite enrutar mensajes independientemente del transporte. WS-Policy expresa requisitos, WS-Security protege y WS-ReliableMessaging garantiza la entrega.",
+   "epigrafe": "Seguridad y especificaciones WS-\\*",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-n-003",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "¿Qué RFC vigente define la semántica de HTTP (métodos, códigos de estado y cabeceras) desde 2022?",
+   "ctx": null,
+   "op": {
+    "a": "RFC 2616",
+    "b": "RFC 9110",
+    "c": "RFC 7231",
+    "d": "RFC 6455"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**RFC 9110** (junio de 2022) define la semántica de HTTP y deja obsoletas las RFC 7230-7235, que a su vez sustituyeron a la RFC 2616. RFC 6455 es WebSocket.",
+   "epigrafe": "Trampas y respuestas desactualizadas",
+   "dificultad": 3
+  },
+  {
+   "id": "t20-n-004",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "¿Sobre qué protocolo de transporte funciona HTTP/3?",
+   "ctx": null,
+   "op": {
+    "a": "TCP con TLS 1.2",
+    "b": "SCTP",
+    "c": "QUIC, que funciona sobre UDP",
+    "d": "UDP sin cifrar"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**HTTP/3** (RFC 9114) va sobre **QUIC** (RFC 9000), que funciona sobre UDP e integra TLS 1.3. HTTP/1.1 y HTTP/2 van sobre TCP. QUIC siempre cifra.",
+   "epigrafe": "REST",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-n-005",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "Una API REST recibe un JSON sintácticamente válido pero cuyos campos no superan las reglas de validación. ¿Qué código es el más específico?",
+   "ctx": null,
+   "op": {
+    "a": "415 Unsupported Media Type",
+    "b": "405 Method Not Allowed",
+    "c": "409 Conflict",
+    "d": "422 Unprocessable Content"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**422** (antes Unprocessable Entity; Unprocessable Content en RFC 9110) indica que la petición se entiende pero el contenido no es válido. **415** es formato no soportado, **405** método no permitido sobre el recurso y **409** conflicto con el estado actual.",
+   "epigrafe": "REST",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-n-006",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "¿Cuál de las siguientes restricciones de la arquitectura REST es opcional?",
+   "ctx": null,
+   "op": {
+    "a": "Código bajo demanda",
+    "b": "Sin estado",
+    "c": "Interfaz uniforme",
+    "d": "Cliente-servidor"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "De las seis restricciones de Fielding, solo el **código bajo demanda** (que el servidor envíe código ejecutable al cliente, como JavaScript) es opcional. Cliente-servidor, sin estado, cacheable, interfaz uniforme y sistema en capas son obligatorias.",
+   "epigrafe": "REST",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-n-007",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "¿Qué especificación se utiliza para documentar API asíncronas o dirigidas por eventos (Kafka, MQTT, AMQP)?",
+   "ctx": null,
+   "op": {
+    "a": "OpenAPI 2.0",
+    "b": "AsyncAPI",
+    "c": "WSDL 1.1",
+    "d": "RAML"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**AsyncAPI** describe API basadas en mensajes y eventos (canales, mensajes, brokers), con una sintaxis parecida a OpenAPI. OpenAPI y RAML se orientan a API REST petición-respuesta, y WSDL a SOAP.",
+   "epigrafe": "Documentación y descripción de API",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-n-008",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "¿Qué método HTTP se utiliza para modificar parcialmente un recurso y, en general, NO es idempotente?",
+   "ctx": null,
+   "op": {
+    "a": "PUT",
+    "b": "DELETE",
+    "c": "PATCH",
+    "d": "HEAD"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**PATCH** (RFC 5789) aplica cambios parciales y no se garantiza que sea idempotente. **PUT** reemplaza la representación completa y es idempotente, igual que DELETE. HEAD es seguro.",
+   "epigrafe": "REST",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-n-009",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "En la gestión de la caché HTTP de una API, ¿qué cabecera de respuesta contiene un identificador de versión del recurso que el cliente puede enviar luego en If-None-Match?",
+   "ctx": null,
+   "op": {
+    "a": "Location",
+    "b": "Allow",
+    "c": "Retry-After",
+    "d": "ETag"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**ETag** identifica la versión del recurso; el cliente lo envía en **If-None-Match** y, si no ha cambiado, recibe **304 Not Modified**. Con If-Match se hace control optimista de concurrencia (412 si no coincide).",
+   "epigrafe": "REST",
+   "dificultad": 3
+  },
+  {
+   "id": "t20-n-010",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "¿Qué protocolo de llamada a procedimiento remoto, desarrollado por Google, usa HTTP/2 y Protocol Buffers?",
+   "ctx": null,
+   "op": {
+    "a": "gRPC",
+    "b": "GraphQL",
+    "c": "SOAP",
+    "d": "JSON-RPC sobre SMTP"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**gRPC** usa **HTTP/2** y **Protocol Buffers** (binario), con streaming bidireccional. GraphQL es un lenguaje de consulta de API sobre un único endpoint (Facebook) y SOAP usa XML.",
+   "epigrafe": "Otros protocolos y estándares de integración",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-n-011",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "¿Qué característica distingue a GraphQL de una API REST clásica?",
+   "ctx": null,
+   "op": {
+    "a": "Usa obligatoriamente XML y WSDL",
+    "b": "El cliente indica en la consulta exactamente qué campos quiere recibir, normalmente a través de un único endpoint",
+    "c": "Exige un endpoint distinto para cada campo",
+    "d": "Solo admite el método DELETE"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En **GraphQL** el cliente pide los campos exactos (evita el *over-fetching* y el *under-fetching*) contra un único endpoint, normalmente con POST. Tiene esquema tipado, consultas (query), modificaciones (mutation) y suscripciones.",
+   "epigrafe": "Otros protocolos y estándares de integración",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-n-012",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "¿Qué protocolo, estandarizado en la RFC 6455, ofrece comunicación bidireccional full-dúplex entre navegador y servidor sobre una única conexión TCP?",
+   "ctx": null,
+   "op": {
+    "a": "Server-Sent Events",
+    "b": "Long polling",
+    "c": "WebSocket",
+    "d": "SOAP"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**WebSocket** abre la conexión con un *handshake* HTTP (Upgrade) y luego intercambia tramas en ambos sentidos. Los **Server-Sent Events** solo envían del servidor al cliente y el *long polling* simula el envío del servidor con peticiones HTTP repetidas.",
+   "epigrafe": "Otros protocolos y estándares de integración",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-n-013",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "En la arquitectura de microservicios, ¿qué componente ofrece un punto único de entrada a los clientes y enruta, autentica y limita las peticiones hacia los servicios internos?",
+   "ctx": null,
+   "op": {
+    "a": "Service mesh sidecar",
+    "b": "Base de datos compartida",
+    "c": "Bus ESB centralizado con lógica de negocio",
+    "d": "API Gateway"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **API Gateway** es la fachada de entrada: enrutado, autenticación, *rate limiting* y agregación. El *sidecar* de un service mesh gestiona la comunicación entre servicios internos (este-oeste). Las BD compartidas y el ESB con lógica se evitan en microservicios.",
+   "epigrafe": "Sistemas distribuidos y arquitecturas orientadas a servicios",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-n-014",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "¿Qué patrón de microservicios evita que un servicio siga llamando a otro que está fallando, devolviendo un error rápido durante un tiempo?",
+   "ctx": null,
+   "op": {
+    "a": "Circuit breaker",
+    "b": "Saga",
+    "c": "CQRS",
+    "d": "Strangler fig"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **circuit breaker** abre el circuito tras varios fallos y responde de inmediato hasta que el servicio se recupera. **Saga** coordina transacciones distribuidas con compensaciones, **CQRS** separa lecturas y escrituras y **Strangler fig** migra un monolito poco a poco.",
+   "epigrafe": "Sistemas distribuidos y arquitecturas orientadas a servicios",
+   "dificultad": 3
+  },
+  {
+   "id": "t20-n-015",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "¿Qué es un ESB (Enterprise Service Bus) en una arquitectura SOA?",
+   "ctx": null,
+   "op": {
+    "a": "Un lenguaje de descripción de interfaces",
+    "b": "Un middleware que enruta, transforma y media los mensajes entre servicios heterogéneos",
+    "c": "Un registro de servicios equivalente a UDDI",
+    "d": "Un protocolo de transporte binario"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **ESB** es la infraestructura de integración típica de SOA: enrutado, transformación de formatos, mediación de protocolos y orquestación ligera (por ejemplo, Mule o Apache ServiceMix).",
+   "epigrafe": "Sistemas distribuidos y arquitecturas orientadas a servicios",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-n-016",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "¿Qué flujo de OAuth 2.0 se recomienda para que una aplicación web o móvil obtenga un token en nombre del usuario?",
+   "ctx": null,
+   "op": {
+    "a": "Implicit",
+    "b": "Resource Owner Password Credentials",
+    "c": "Authorization Code con PKCE",
+    "d": "Basic Authentication"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Authorization Code con PKCE** es el flujo recomendado (OAuth 2.0 Security BCP y OAuth 2.1). Los flujos **Implicit** y **Password** se desaconsejan y desaparecen en OAuth 2.1. Basic es un esquema de autenticación HTTP, no un flujo OAuth.",
+   "epigrafe": "REST",
+   "dificultad": 3
+  },
+  {
+   "id": "t20-n-017",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "¿Qué capa añade OpenID Connect sobre OAuth 2.0?",
+   "ctx": null,
+   "op": {
+    "a": "Cifrado del transporte equivalente a TLS",
+    "b": "Descripción de servicios en WSDL",
+    "c": "Firma de mensajes SOAP",
+    "d": "Autenticación del usuario mediante un ID Token en formato JWT"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "OAuth 2.0 trata la **autorización** (tokens de acceso). **OpenID Connect** añade la **autenticación** con un **ID Token** (JWT) y el endpoint UserInfo. La firma de SOAP es cosa de WS-Security.",
+   "epigrafe": "REST",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-n-018",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "En Spring, ¿qué anotación combina @Controller y @ResponseBody para crear controladores de servicios REST?",
+   "ctx": null,
+   "op": {
+    "a": "@RestController",
+    "b": "@Service",
+    "c": "@Repository",
+    "d": "@WebService"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**@RestController** devuelve directamente el cuerpo (JSON) de cada método, mapeado con @GetMapping, @PostMapping, etc. @Service y @Repository son estereotipos de negocio y datos; @WebService es de JAX-WS.",
+   "epigrafe": "Implementación en Java y .NET",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-n-019",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "En .NET, ¿qué herramienta se usa para generar el proxy cliente de un servicio SOAP existente a partir de su WSDL?",
+   "ctx": null,
+   "op": {
+    "a": "NuGet",
+    "b": "dotnet-svcutil",
+    "c": "dotnet ef",
+    "d": "MSBuild"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**dotnet-svcutil** (o Connected Services en Visual Studio) genera el cliente WCF a partir del WSDL. Para alojar servicios WCF en .NET moderno se usa **CoreWCF**. NuGet gestiona paquetes, dotnet ef es Entity Framework y MSBuild compila.",
+   "epigrafe": "Implementación en Java y .NET",
+   "dificultad": 3
+  },
+  {
+   "id": "t20-n-020",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "¿Cuál es la versión más reciente de la especificación OpenAPI, publicada en septiembre de 2025?",
+   "ctx": null,
+   "op": {
+    "a": "OpenAPI 3.0",
+    "b": "Swagger 2.0",
+    "c": "OpenAPI 3.2",
+    "d": "OpenAPI 4.0"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **3.2.0** (septiembre de 2025) es la última. La 3.1 (2021) se alineó con JSON Schema, la 3.0 (2017) fue la primera con el nombre OpenAPI y Swagger 2.0 es la anterior. OpenAPI 4.0 (\"Moonwalk\") aún no está publicada.",
+   "epigrafe": "Documentación y descripción de API",
+   "dificultad": 3
+  },
+  {
+   "id": "t20-n-021",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "En un sistema distribuido, ¿qué establece el teorema CAP?",
+   "ctx": null,
+   "op": {
+    "a": "Que un sistema puede garantizar a la vez consistencia, disponibilidad y tolerancia a particiones",
+    "b": "Que todo sistema distribuido debe usar transacciones ACID",
+    "c": "Que la latencia es siempre proporcional al número de nodos",
+    "d": "Que ante una partición de red hay que elegir entre consistencia y disponibilidad"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **teorema CAP** (Brewer) dice que, cuando hay una **partición** de red, un sistema distribuido debe sacrificar la **consistencia** o la **disponibilidad**. No se pueden garantizar las tres propiedades a la vez.",
+   "epigrafe": "Sistemas distribuidos y arquitecturas orientadas a servicios",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-n-022",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "¿Qué característica de un servicio REST facilita escalarlo horizontalmente detrás de un balanceador de carga?",
+   "ctx": null,
+   "op": {
+    "a": "Que no guarda estado de sesión del cliente, así que cualquier nodo puede atender cualquier petición",
+    "b": "Que usa siempre XML",
+    "c": "Que requiere sesiones pegajosas (sticky sessions)",
+    "d": "Que se describe con WSDL"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Como REST es **sin estado**, cada petición es autocontenida y cualquier réplica puede atenderla: basta con añadir nodos tras el balanceador. Las *sticky sessions* son un parche para aplicaciones con estado.",
+   "epigrafe": "Arquitectura cliente/servidor",
+   "dificultad": 1
+  },
+  {
+   "id": "t20-n-023",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "¿Qué servicio común de la AGE se usa para que una Administración consulte datos de un ciudadano en poder de otra, mediante servicios web SOAP?",
+   "ctx": null,
+   "op": {
+    "a": "Cl@ve",
+    "b": "Plataforma de Intermediación de Datos (SCSP)",
+    "c": "@firma",
+    "d": "Sistema de Interconexión de Registros (SIR) para notificaciones en papel"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **Plataforma de Intermediación de Datos** usa el protocolo **SCSP** (servicios SOAP con WS-Security) para sustituir certificados en papel. Cl@ve es identificación, @firma valida firmas y SIR intercambia asientos registrales.",
+   "epigrafe": "Seguridad y especificaciones WS-\\*",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-n-024",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "En JAX-RS, ¿qué anotación indica el tipo de contenido que un método puede devolver, por ejemplo application/json?",
+   "ctx": null,
+   "op": {
+    "a": "@Consumes",
+    "b": "@PathParam",
+    "c": "@Produces",
+    "d": "@QueryParam"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**@Produces** declara el tipo MIME de la respuesta y **@Consumes** el que acepta en la petición. **@PathParam** y **@QueryParam** inyectan parámetros de la ruta y de la query string.",
+   "epigrafe": "Implementación en Java y .NET",
+   "dificultad": 2
+  },
+  {
+   "id": "t20-n-025",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": null,
+   "q": "¿Qué especificación WS-* garantiza la entrega de mensajes SOAP (como máximo una vez, al menos una vez o exactamente una vez, y en orden)?",
+   "ctx": null,
+   "op": {
+    "a": "WS-Trust",
+    "b": "WS-Federation",
+    "c": "WS-Discovery",
+    "d": "WS-ReliableMessaging"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**WS-ReliableMessaging** (OASIS) asegura la entrega fiable y ordenada mediante secuencias y acuses. WS-Trust emite tokens, WS-Federation federa identidades y WS-Discovery localiza servicios en red local por multicast.",
+   "epigrafe": "Seguridad y especificaciones WS-\\*",
+   "dificultad": 3
+  }
+ ],
+ "tarjetas": [
+  {
+   "id": "t20-c-001",
+   "anverso": "¿Quién inicia la comunicación en cliente/servidor?",
+   "reverso": "El cliente. El servidor espera pasivamente. Cliente = front-end; servidor = back-end.",
+   "epigrafe": "Arquitectura cliente/servidor"
+  },
+  {
+   "id": "t20-c-002",
+   "anverso": "Modo síncrono frente a asíncrono",
+   "reverso": "Síncrono: el cliente se bloquea hasta la respuesta. Asíncrono: continúa en cuanto el servidor acusa recibo. El timeout no define el modo.",
+   "epigrafe": "Arquitectura cliente/servidor"
+  },
+  {
+   "id": "t20-c-003",
+   "anverso": "Cliente fino frente a cliente grueso",
+   "reverso": "Fino: solo presentación (navegador). Grueso: presentación + lógica; el servidor sirve datos. Cliente fino-servidor grueso cabe en un único equipo.",
+   "epigrafe": "Arquitectura cliente/servidor"
+  },
+  {
+   "id": "t20-c-004",
+   "anverso": "Cinco modelos de Gartner",
+   "reverso": "Presentación distribuida, presentación remota, lógica distribuida, gestión remota de datos, base de datos distribuida. \"Distribuida\" = se reparte; \"remota\" = entera en el otro lado.",
+   "epigrafe": "Arquitectura cliente/servidor"
+  },
+  {
+   "id": "t20-c-005",
+   "anverso": "Presentación distribuida (embellecimiento)",
+   "reverso": "El cliente asume parte de la presentación, pero siguen existiendo programas de presentación en el servidor.",
+   "epigrafe": "Arquitectura cliente/servidor"
+  },
+  {
+   "id": "t20-c-006",
+   "anverso": "Presentación remota",
+   "reverso": "Toda la presentación en el cliente; lógica de aplicación y BD en el servidor.",
+   "epigrafe": "Arquitectura cliente/servidor"
+  },
+  {
+   "id": "t20-c-007",
+   "anverso": "Dos capas: SQL remoto frente a procedimientos almacenados",
+   "reverso": "SQL remoto: el cliente envía SQL y procesa los registros (más tráfico). Procedimientos almacenados: la lógica se ejecuta en el SGBD.",
+   "epigrafe": "Arquitectura cliente/servidor"
+  },
+  {
+   "id": "t20-c-008",
+   "anverso": "Tres capas",
+   "reverso": "Presentación, lógica de negocio y datos/persistencia. Capas lógicas: no exigen un servidor por capa ni recompilar las demás al cambiar una.",
+   "epigrafe": "Arquitectura cliente/servidor"
+  },
+  {
+   "id": "t20-c-009",
+   "anverso": "Escalabilidad horizontal y vertical",
+   "reverso": "Horizontal (scale out): añadir nodos similares tras un balanceador. Vertical (scale up): máquina mayor o más CPU/RAM.",
+   "epigrafe": "Arquitectura cliente/servidor"
+  },
+  {
+   "id": "t20-c-010",
+   "anverso": "Tipos de middleware",
+   "reverso": "Datos: ODBC/JDBC. RPC: RMI, gRPC. Objetos: CORBA, DCOM. Mensajes (MOM): JMS, MQ, Kafka. Transacciones: CICS, Tuxedo.",
+   "epigrafe": "Arquitectura cliente/servidor"
+  },
+  {
+   "id": "t20-c-011",
+   "anverso": "Principios de SOA",
+   "reverso": "Bajo acoplamiento, reutilización, contrato estándar independiente de plataforma, autonomía, servicios sin estado, descubribles y componibles.",
+   "epigrafe": "Sistemas distribuidos y arquitecturas orientadas a servicios"
+  },
+  {
+   "id": "t20-c-012",
+   "anverso": "BPEL",
+   "reverso": "Lenguaje XML (OASIS WS-BPEL 2.0) para orquestar servicios web con control centralizado.",
+   "epigrafe": "Sistemas distribuidos y arquitecturas orientadas a servicios"
+  },
+  {
+   "id": "t20-c-013",
+   "anverso": "Orquestación frente a coreografía",
+   "reverso": "Orquestación: coordinador central (BPEL). Coreografía: colaboración entre iguales sin director (WS-CDL).",
+   "epigrafe": "Sistemas distribuidos y arquitecturas orientadas a servicios"
+  },
+  {
+   "id": "t20-c-014",
+   "anverso": "Teorema CAP",
+   "reverso": "Con partición de red se elige entre consistencia y disponibilidad.",
+   "epigrafe": "Sistemas distribuidos y arquitecturas orientadas a servicios"
+  },
+  {
+   "id": "t20-c-015",
+   "anverso": "Servidor de sockets en Java",
+   "reverso": "ServerSocket listener = new ServerSocket(puerto); while (true) { Socket s = listener.accept(); new Conecta(dir, s); }",
+   "epigrafe": "Sistemas distribuidos y arquitecturas orientadas a servicios"
+  },
+  {
+   "id": "t20-c-016",
+   "anverso": "Pila clásica de servicios web",
+   "reverso": "Transporte HTTP, mensajería SOAP, descripción WSDL, descubrimiento UDDI, todo sobre XML. Base: intercambio de mensajes XML.",
+   "epigrafe": "Servicios web: conceptos y pila de estándares"
+  },
+  {
+   "id": "t20-c-017",
+   "anverso": "Estructura de un mensaje SOAP 1.2",
+   "reverso": "Envelope (obligatorio) > Header (opcional) + Body (obligatorio). Fault va dentro del Body. No hay Title ni Footer.",
+   "epigrafe": "SOAP"
+  },
+  {
+   "id": "t20-c-018",
+   "anverso": "SOAP: organismo y versión",
+   "reverso": "Recomendación del W3C. Última versión: SOAP 1.2 (2003, 2.ª ed. 2007). Desde la 1.2 ya no es acrónimo.",
+   "epigrafe": "SOAP"
+  },
+  {
+   "id": "t20-c-019",
+   "anverso": "SOAP 1.1 frente a SOAP 1.2",
+   "reverso": "1.1: text/xml y cabecera SOAPAction. 1.2: application/soap+xml con parámetro action; actor pasa a llamarse role.",
+   "epigrafe": "SOAP"
+  },
+  {
+   "id": "t20-c-020",
+   "anverso": "Atributo mustUnderstand",
+   "reverso": "En un bloque del Header SOAP obliga al receptor a procesarlo o devolver un Fault.",
+   "epigrafe": "SOAP"
+  },
+  {
+   "id": "t20-c-021",
+   "anverso": "Elementos de WSDL 1.1",
+   "reverso": "definitions, types, message, portType, binding, service y port. operation está dentro de portType.",
+   "epigrafe": "WSDL"
+  },
+  {
+   "id": "t20-c-022",
+   "anverso": "WSDL 1.1 frente a 2.0",
+   "reverso": "portType pasa a interface y port a endpoint; message desaparece; la raíz definitions pasa a description. WSDL 2.0 es Recomendación W3C de 2007.",
+   "epigrafe": "WSDL"
+  },
+  {
+   "id": "t20-c-023",
+   "anverso": "wsdl:binding",
+   "reverso": "Protocolo concreto (SOAP/HTTP) y formato de datos para un portType o interface.",
+   "epigrafe": "WSDL"
+  },
+  {
+   "id": "t20-c-024",
+   "anverso": "Tipos de operación en WSDL 1.1",
+   "reverso": "One-way (solo input), request-response, solicit-response, notification (solo output). En WSDL 2.0 se habla de MEP: in-only, in-out...",
+   "epigrafe": "WSDL"
+  },
+  {
+   "id": "t20-c-025",
+   "anverso": "UDDI",
+   "reverso": "Registro centralizado de servicios (páginas blancas, amarillas, verdes). Estándar OASIS; registros públicos cerrados en 2006.",
+   "epigrafe": "Descubrimiento: UDDI y WSIL"
+  },
+  {
+   "id": "t20-c-026",
+   "anverso": "WSIL",
+   "reverso": "Web Services Inspection Language: método alternativo y descentralizado de descubrimiento; documento XML en el propio sitio.",
+   "epigrafe": "Descubrimiento: UDDI y WSIL"
+  },
+  {
+   "id": "t20-c-027",
+   "anverso": "WS-Security",
+   "reverso": "OASIS. Integridad (XML Signature), confidencialidad (XML Encryption) y tokens en el bloque wsse:Security del Header SOAP. Sirve para firmar peticiones SOAP (GEISER, SCSP).",
+   "epigrafe": "Seguridad y especificaciones WS-\\*"
+  },
+  {
+   "id": "t20-c-028",
+   "anverso": "Familia WS-*",
+   "reverso": "WS-Trust: STS y tokens. WS-SecureConversation: contextos de seguridad. WS-Policy: políticas. WS-Addressing: direccionamiento. WS-ReliableMessaging: entrega fiable. WS-Federation: federación.",
+   "epigrafe": "Seguridad y especificaciones WS-\\*"
+  },
+  {
+   "id": "t20-c-029",
+   "anverso": "SAML y XACML",
+   "reverso": "SAML: aserciones XML de autenticación y atributos (SSO, token en WS-Security). XACML: lenguaje de políticas de autorización.",
+   "epigrafe": "Seguridad y especificaciones WS-\\*"
+  },
+  {
+   "id": "t20-c-030",
+   "anverso": "Restricciones REST (Fielding)",
+   "reverso": "Cliente-servidor, sin estado, cacheable, interfaz uniforme, sistema en capas y código bajo demanda (la única opcional).",
+   "epigrafe": "REST"
+  },
+  {
+   "id": "t20-c-031",
+   "anverso": "REST: cosas que NO son",
+   "reverso": "No es protocolo ni formato; no usa UDDI ni WSDL; no usa FTP; admite XML y JSON.",
+   "epigrafe": "REST"
+  },
+  {
+   "id": "t20-c-032",
+   "anverso": "Métodos HTTP seguros e idempotentes",
+   "reverso": "Seguros (y por tanto idempotentes): GET, HEAD, OPTIONS, TRACE. Idempotentes no seguros: PUT, DELETE. Ni lo uno ni lo otro: POST, PATCH.",
+   "epigrafe": "REST"
+  },
+  {
+   "id": "t20-c-033",
+   "anverso": "Códigos 2xx en REST",
+   "reverso": "200 OK; 201 Created (+Location); 202 Accepted (asíncrono); 204 No Content.",
+   "epigrafe": "REST"
+  },
+  {
+   "id": "t20-c-034",
+   "anverso": "Códigos 4xx en REST",
+   "reverso": "400 Bad Request; 401 no autenticado; 403 sin permiso; 404 no existe; 405 método no permitido; 409 conflicto; 415 tipo no soportado; 422 validación; 429 demasiadas peticiones.",
+   "epigrafe": "REST"
+  },
+  {
+   "id": "t20-c-035",
+   "anverso": "Modelo de madurez de Richardson",
+   "reverso": "0: POX/RPC; 1: recursos; 2: verbos y códigos HTTP; 3: HATEOAS.",
+   "epigrafe": "REST"
+  },
+  {
+   "id": "t20-c-036",
+   "anverso": "JWT",
+   "reverso": "Cabecera.payload.firma en Base64URL (RFC 7519). Viaja en Authorization: Bearer. El payload no va cifrado.",
+   "epigrafe": "REST"
+  },
+  {
+   "id": "t20-c-037",
+   "anverso": "Documentar API",
+   "reverso": "REST: OpenAPI/Swagger (YAML o JSON), RAML, API Blueprint. SOAP: WSDL. Eventos: AsyncAPI. REST no documenta nada.",
+   "epigrafe": "Documentación y descripción de API"
+  },
+  {
+   "id": "t20-c-038",
+   "anverso": "JAX-WS frente a JAX-RS",
+   "reverso": "JAX-WS: SOAP (@WebService, @WebMethod(operationName)); implementaciones Metro y CXF. JAX-RS: REST (@Path, @GET, @Produces); implementaciones Jersey, RESTEasy y CXF.",
+   "epigrafe": "Implementación en Java y .NET"
+  },
+  {
+   "id": "t20-c-039",
+   "anverso": "wsimport, wsgen, xjc",
+   "reverso": "wsimport: WSDL → cliente (-p paquete). wsgen: clase → artefactos/WSDL. xjc: XSD → clases JAXB. Fuera del JDK desde Java 11.",
+   "epigrafe": "Implementación en Java y .NET"
+  },
+  {
+   "id": "t20-c-040",
+   "anverso": "Apache CXF y Axis2",
+   "reverso": "CXF: marco que implementa JAX-WS y JAX-RS y genera clientes (wsdl2java). Axis2: motor (core engine) de servicios web de Apache.",
+   "epigrafe": "Implementación en Java y .NET"
+  },
+  {
+   "id": "t20-c-041",
+   "anverso": "APIs Java retiradas",
+   "reverso": "JAX-RPC y JAXR están retiradas (pruned). Hoy se usan JAX-WS y JAX-RS (paquetes jakarta.* desde Jakarta EE 9).",
+   "epigrafe": "Trampas y respuestas desactualizadas"
+  },
+  {
+   "id": "t20-c-042",
+   "anverso": "gRPC, GraphQL y WebSocket",
+   "reverso": "gRPC: HTTP/2 + Protocol Buffers. GraphQL: el cliente elige los campos, un endpoint. WebSocket: full-dúplex (RFC 6455).",
+   "epigrafe": "Otros protocolos y estándares de integración"
+  }
+ ],
+ "discrepancias": [
+  {
+   "ref": "LI2022-ej1-52",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 49
+   },
+   "clave_oficial": "a",
+   "temario_dice": "c) Define un modo de publicar y encontrar información sobre servicios web",
+   "veredicto": "Clave oficial correcta; el temario se equivoca. La c) es la definición clásica de UDDI. WSIL se presenta en su especificación (IBM/Microsoft) como alternativa descentralizada de descubrimiento, que es la a)."
+  }
+ ]
+}

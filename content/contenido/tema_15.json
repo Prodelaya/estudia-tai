@@ -1,0 +1,3876 @@
+{
+ "tema": 15,
+ "generado": "2026-10-20",
+ "preguntas": [
+  {
+   "id": "t15-h-001",
+   "tipo": "historica",
+   "ref": "LI2025-ej1-37",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 37
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En el modelo de datos dimensional de Kimball, una dimensión outrigger es:",
+   "ctx": null,
+   "op": {
+    "a": "Una tabla de hechos enlazada en otra tabla de hechos.",
+    "b": "Una tabla de dimensión enlazada en otra tabla de dimensión.",
+    "c": "Una tabla de dimensión enlazada en una tabla de hechos.",
+    "d": "Una tabla de hechos enlazada en una tabla de dimensión."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** En Kimball, una dimensión **outrigger** es una tabla de dimensión **enlazada desde otra dimensión** (no desde la tabla de hechos). Ejemplo: Cliente apunta a una dimensión Fecha de alta.\n\n- c) Una dimensión enlazada en la tabla de hechos es una dimensión normal: es el distractor típico.\n- a) y d) Las tablas de hechos no se enlazan entre sí ni desde dimensiones de esa forma.",
+   "epigrafe": "Modelado dimensional (Kimball)",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-h-002",
+   "tipo": "historica",
+   "ref": "LI2025-ej1-38",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 38
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En una entidad de base de datos con 4 columnas y 7 filas:",
+   "ctx": null,
+   "op": {
+    "a": "El grado es 4 y la cardinalidad 7.",
+    "b": "La cardinalidad es 4 y el grado 7.",
+    "c": "El grado es 4 y el dominio 7.",
+    "d": "El dominio es 4 y la cardinalidad 7."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** En el modelo relacional, el **grado** es el número de atributos (columnas) y la **cardinalidad** el número de tuplas (filas): grado 4, cardinalidad 7.\n\n- b) Invierte los términos.\n- c) y d) El **dominio** es el conjunto de valores posibles de un atributo, no un recuento de filas o columnas.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-003",
+   "tipo": "historica",
+   "ref": "LI2025-ej1-39",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 39
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Un atributo representado con una elipse discontinua en un diagrama entidad-relación significa que es un atributo:",
+   "ctx": null,
+   "op": {
+    "a": "Clave primaria.",
+    "b": "Compuesto.",
+    "c": "Multivaluado.",
+    "d": "Derivado."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** En notación de Chen, la elipse **discontinua** representa un atributo **derivado** (se calcula a partir de otros, como la edad a partir de la fecha de nacimiento).\n\n- a) El identificador se marca con el nombre subrayado.\n- b) El compuesto tiene elipses que cuelgan de él.\n- c) El multivaluado se dibuja con elipse doble.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-004",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-33",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 33,
+    "conv": "ext"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "De las siguientes afirmaciones sobre bases de datos relacionales, indique cuál de ellas es INCORRECTA:",
+   "ctx": null,
+   "op": {
+    "a": "Se llama clave primaria o clave principal a un campo o a una combinación de campos que identifica de forma única a cada fila de una tabla.",
+    "b": "Un dominio es el conjunto válido de valores que puede tomar un atributo.",
+    "c": "Una superclave es cualquier conjunto de atributos que identifica unívocamente a cada tupla de una relación.",
+    "d": "Las bases de datos relacionales utilizan un método simple de clave-valor para almacenar datos."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** Es INCORRECTA: el almacenamiento **clave-valor** es propio de bases de datos NoSQL (Redis, DynamoDB), no de las relacionales, que organizan los datos en tablas (relaciones) con filas y columnas.\n\na), b) y c) son definiciones correctas de clave primaria, dominio y superclave.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-005",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-35",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 35,
+    "conv": "ext"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En el diseño conceptual de bases de datos, un atributo es:",
+   "ctx": null,
+   "op": {
+    "a": "Un objeto, real o abstracto, distinguible de otros objetos.",
+    "b": "Una conexión semántica entre dos, o más, conjuntos de entidades.",
+    "c": "Una propiedad asociada a un conjunto de entidades.",
+    "d": "Una asociación que se establece entre tipos de entidad."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Un **atributo** es una propiedad o característica asociada a un conjunto de entidades (o a una relación).\n\n- a) Un objeto real o abstracto distinguible es una **entidad**.\n- b) y d) Una conexión o asociación entre entidades es una **relación** (interrelación).",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-006",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-36",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 36,
+    "conv": "ext"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Indique cuál de las siguientes definiciones es correcta respecto al modelo Entidad/Relación extendido.",
+   "ctx": null,
+   "op": {
+    "a": "La generalización permite abstraer un tipo de entidad de nivel inferior (subtipo) a partir de varios tipos de entidad (supertipos).",
+    "b": "En la especialización, un subtipo se descompone en uno o varios supertipos, los cuales heredan todos los atributos y relaciones del subtipo, además de tener los suyos propios.",
+    "c": "La agregación consiste en construir un nuevo tipo de entidad como composición de otros y su tipo de relación y así poder manejarlo en un nivel de abstracción mayor.",
+    "d": "En una asociación se relacionan dos tipos de entidades independientes que pertenecen al mismo dominio y que coyunturalmente no se asocian."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** La **agregación** construye un nuevo tipo de entidad como composición de otros y de su relación, para manejarlo en un nivel de abstracción mayor.\n\n- a) Invertida: la generalización abstrae un **supertipo** (nivel superior) a partir de varios subtipos.\n- b) Invertida: en la especialización un supertipo se descompone en subtipos, que heredan sus atributos.\n- d) La asociación relaciona entidades de dominios **independientes** que **coyunturalmente sí** se asocian.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-h-007",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-37",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 37,
+    "conv": "ext"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En el contexto de las bases de datos relacionales, ¿cómo se denomina a una columna o grupo de columnas de una tabla que contiene valores que coinciden con la clave primaria de otra tabla?",
+   "ctx": null,
+   "op": {
+    "a": "Clave primaria externa.",
+    "b": "Clave referencia.",
+    "c": "Clave foránea.",
+    "d": "Clave compuesta."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Una **clave foránea** (ajena, externa) es la columna o grupo de columnas cuyos valores deben coincidir con la clave primaria (o una candidata) de otra tabla.\n\n\"Clave primaria externa\" y \"clave referencia\" no son términos del modelo. Una **clave compuesta** es la formada por varios atributos, sea primaria o no.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-008",
+   "tipo": "historica",
+   "ref": "LI2024-b3-04",
+   "origen": {
+    "anio": 2024,
+    "parte": "b3",
+    "n": 4
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Qué tipo de correspondencia hay entre las tablas “SolicitudBeca” y “FicheroAdjunto”?",
+   "ctx": "En el esquema de tablas del supuesto, FicheroAdjunto tiene una clave ajena que referencia a SolicitudBeca.",
+   "op": {
+    "a": "Un registro de SolicitudBeca puede tener N registros de FicheroAdjunto.",
+    "b": "Un registro de SolicitudBeca puede tener como máximo un registro de FicheroAdjunto.",
+    "c": "N registros de SolicitudBeca pueden tener M registros de FicheroAdjunto.",
+    "d": "Un registro de SolicitudBeca puede tener cero o como máximo un registro de FicheroAdjunto."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** La clave ajena está en el lado \"muchos\": como FicheroAdjunto referencia a SolicitudBeca, cada solicitud puede tener **N** ficheros adjuntos (relación 1:N).\n\n- b) y d) Limitar a un fichero sería 1:1.\n- c) Una N:M necesitaría una tabla intermedia.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-009",
+   "tipo": "historica",
+   "ref": "LI2024-b3-17",
+   "origen": {
+    "anio": 2024,
+    "parte": "b3",
+    "n": 17
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Según “Técnicas y Practicas” de Métrica v3, si se quisiera optimizar el modelo físico de datos para reducir o simplificar el número de accesos a la base de datos, ¿cuál de las siguientes acciones se aplicaría?",
+   "ctx": null,
+   "op": {
+    "a": "Combinar entidades si los accesos son frecuentes en transacciones distintas.",
+    "b": "Eliminar entidades.",
+    "c": "Introducir elementos redundantes.",
+    "d": "Normalizar las tablas en Forma Normal de Boyce-Codd (FNBC)."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Métrica v3 (Técnicas y Prácticas) propone, para reducir accesos, **introducir elementos redundantes** (desnormalizar), dividir entidades, combinar entidades accedidas en la **misma** transacción y redefinir relaciones.\n\n- a) Combinar entidades solo si los accesos son frecuentes **dentro de la misma** transacción; \"en transacciones distintas\" es el distractor.\n- b) Eliminar entidades no es una técnica de optimización: perdería información.\n- d) Normalizar más (FNBC) aumenta tablas y accesos.",
+   "epigrafe": "Diseño lógico y físico en Métrica v3",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-h-010",
+   "tipo": "historica",
+   "ref": "LI2024-ej1-31",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 30
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "De acuerdo con Métrica v3, en el Modelo Entidad/Relación Extendido, ¿cuál es el término que representa la participación en la relación de cada una de las entidades afectadas?",
+   "ctx": null,
+   "op": {
+    "a": "Atributo.",
+    "b": "Cardinalidad.",
+    "c": "Tipo de Correspondencia.",
+    "d": "Dominio."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** En Métrica v3, la **cardinalidad** \"representa la participación en la relación de cada una de las entidades afectadas\": mínimo y máximo, como (0,n) o (1,1).\n\n- c) El **tipo de correspondencia** es el número **máximo** de ocurrencias (1:1, 1:N, N:M).\n- a) y d) Atributo y dominio no describen la participación en una relación.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-011",
+   "tipo": "historica",
+   "ref": "LI2024-ej1-32",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 31
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale la respuesta correcta sobre la normalización de bases de datos en Métrica v3:",
+   "ctx": null,
+   "op": {
+    "a": "Un atributo tiene dependencia funcional completa de otro si, y sólo si, depende de él a través de otro atributo.",
+    "b": "Una entidad está en 1FN si tiene grupos repetitivos, es decir, un atributo puede tomar varios valores de un dominio simple.",
+    "c": "Una entidad está en 2FN si está en 1FN y todos los atributos que no forman parte de las claves candidatas tienen dependencia funcional completa respecto de éstas.",
+    "d": "Una relación en 3FN estará también en 2FN, pero no en 1FN."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Es la definición literal de **2FN** en Métrica v3: en 1FN y todos los atributos que no forman parte de las claves candidatas con dependencia funcional **completa** respecto de ellas.\n\n- a) Depender \"a través de otro atributo\" es dependencia **transitiva**, no completa.\n- b) La 1FN exige que **no** haya grupos repetitivos.\n- d) Cada forma normal incluye las anteriores: una relación en 3FN está también en 2FN y en 1FN.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-h-012",
+   "tipo": "historica",
+   "ref": "LI2024-ej1-33",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 32
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale, de entre las siguientes opciones, el mecanismo en el Modelo Entidad/Relación Extendido que recoge Métrica v3 consistente en relacionar dos tipos de entidades que normalmente son de dominios independientes, pero coyunturalmente se asocian:",
+   "ctx": null,
+   "op": {
+    "a": "Asociación.",
+    "b": "Generalización.",
+    "c": "PERT.",
+    "d": "Regresión."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** Es la definición literal de **asociación** en Métrica v3: relacionar dos tipos de entidades que normalmente son de dominios independientes pero coyunturalmente se asocian (un tipo de agregación).\n\n- b) La generalización agrupa subtipos en un supertipo.\n- c) PERT es una técnica de planificación de proyectos.\n- d) Regresión es un tipo de prueba.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-013",
+   "tipo": "historica",
+   "ref": "LI2022-ej1-36",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 36
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale la respuesta correcta relativa al Modelo Entidad/Relación Extendido según establece METRICA v3:",
+   "ctx": null,
+   "op": {
+    "a": "Un atributo se define sobre diversos dominios.",
+    "b": "El dominio no tiene existencia propia y depende de las entidades, las relaciones o los atributos.",
+    "c": "La entidad es aquel objeto, real o abstracto, acerca del cual se desea almacenar información en la base de datos.",
+    "d": "La clave candidata es el conjunto de atributos que garantizan la unicidad de las ocurrencias e identifican la ocurrencia unívocamente."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Métrica v3 define la **entidad** como \"aquel objeto, real o abstracto, acerca del cual se desea almacenar información en la base de datos\".\n\n- a) Cada atributo toma valores de **un único** dominio.\n- b) El dominio **tiene existencia propia**, con independencia de entidades, relaciones o atributos.\n- d) Le falta la **minimalidad**: la clave candidata identifica unívoca y **mínimamente** cada ocurrencia (si no, es una superclave).",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-h-014",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "b3",
+    "n": 15
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Al consolidar datos de varias fuentes, se encuentra en una base de datos antigua un registro con los campos NIF, primer apellido, segundo apellido, nombre, dirección y teléfonos. El campo de teléfonos contiene dos valores separados por punto y coma: \"916666666;917777777\" (NIF \"12345678Z\"). ¿En qué forma normal está la tabla?",
+   "ctx": null,
+   "op": {
+    "a": "Primera forma normal.",
+    "b": "Segunda forma normal.",
+    "c": "Tercera forma normal.",
+    "d": "No está en ninguna forma normal."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** El campo de teléfonos guarda **dos valores** en una misma celda: es un grupo repetitivo y viola la **1FN** (valores atómicos). Si no está en 1FN, no está en ninguna forma normal.\n\na), b) y c) exigen al menos la 1FN. La solución sería una tabla Telefono(NIF, numero).",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-h-015",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "ej1",
+    "n": 36
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Una tabla se encuentra en Tercera Forma Normal (3FN) si:",
+   "ctx": null,
+   "op": {
+    "a": "Está en 2FN y todo atributo que no forma parte de una clave candidata depende de ella al completo.",
+    "b": "Está en 2FN y no existe ninguna dependencia transitiva de atributos no principales respecto de las claves.",
+    "c": "Está en 2FN y no existen relaciones de dependencia de reunión no triviales que no se generen desde las claves.",
+    "d": "Está en 2FN y los atributos que no forman parte de ninguna clave dependen de la clave principal."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** 3FN = 2FN + **ninguna dependencia transitiva** de atributos no principales respecto de las claves.\n\n- a) Dependencia completa de la clave es la condición de la **2FN**.\n- c) Las dependencias de reunión son la base de la **5FN**.\n- d) Depender de la clave no basta: hay que depender **directamente**, no a través de otro atributo.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-016",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "ej1",
+    "n": 37
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según Métrica v3, en la teoría de la normalización se define el término de Dependencia Funcional como:",
+   "ctx": null,
+   "op": {
+    "a": "Un atributo Y depende funcionalmente respecto de otro X, si depende funcionalmente de él en su totalidad, es decir, no depende de ninguno de los posibles atributos que formen parte de X.",
+    "b": "Un atributo Y se dice que depende funcionalmente de otro X si, y sólo si, a cada valor de X le corresponde un único valor de Y.",
+    "c": "Un atributo depende funcionalmente de otro si, y sólo si, depende de él a través de otro atributo.",
+    "d": "Un atributo X sólo puede tomar un único valor de dominio simple."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Definición de Métrica v3: Y depende funcionalmente de X (X → Y) si, y solo si, a cada valor de X le corresponde **un único valor** de Y.\n\n- a) Es la dependencia funcional **completa**.\n- c) Es la dependencia **transitiva**.\n- d) Es la condición de la **1FN**.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-017",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "b3",
+    "n": 6
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes opciones es correcta al transformar la jerarquía de AccionFormativa al modelo físico?",
+   "ctx": "Modelo E/R del supuesto: AccionFormativa(idAccionFormativa PK, denominación, número de alumnos) es supertipo de dos subtipos: Curso (horas teóricas, horas prácticas) y Taller (especialidad, material).",
+   "op": {
+    "a": "Una tabla AccionFormativa con sus atributos, y tablas separadas Curso y Taller con sus atributos propios, sin claves foráneas.",
+    "b": "Una única tabla AccionFormativa que incluye todos los atributos de los subtipos.",
+    "c": "Una tabla AccionFormativa con claves foráneas idCurso e idTaller, más las tablas Curso y Taller.",
+    "d": "Una tabla AccionFormativa con sus atributos, y tablas Curso y Taller que incluyen como clave foránea la idAccionFormativa."
+   },
+   "ok": "d",
+   "clave": "claude-dudosa",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** Una tabla para el supertipo y una por subtipo, cuya clave es la del supertipo y a la vez **clave ajena** hacia él. Es la transformación más fiel y general de una jerarquía.\n\n- a) Sin claves foráneas se pierde la relación entre el supertipo y sus subtipos.\n- c) Las claves ajenas van de los subtipos al supertipo, no al revés (además, una de las dos quedaría siempre a nulo).\n- b) **Duda**: la tabla única también es una transformación válida si añade un atributo discriminador y los subtipos tienen pocos atributos. Tal como está redactada (sin discriminador) es incompleta, por eso se elige d). Texto reconstruido desde forjatic; clave no oficial.",
+   "epigrafe": "Transformación del modelo E/R al relacional",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-h-018",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 40
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según Métrica v3, en el modelo Entidad/Relación extendido las relaciones se definen por:",
+   "ctx": null,
+   "op": {
+    "a": "Categoría, nombre, tipo de correspondencia.",
+    "b": "Atributo, cardinalidad, nombre.",
+    "c": "Atributo, dominio, nombre.",
+    "d": "Cardinalidad, nombre, tipo de correspondencia."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** En Métrica v3 una relación se caracteriza por su **nombre**, su **tipo de correspondencia** y la **cardinalidad** de cada entidad (también por su grado).\n\nCategoría (a), atributo (b, c) y dominio (c) no definen una relación.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-019",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 43
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En la teoría de normalización cuando una relación puede ser reconstruida sin pérdida de información a partir de una combinación de algunas de sus proyecciones se dice que tiene una:",
+   "ctx": null,
+   "op": {
+    "a": "Dependencia de reunión.",
+    "b": "Dependencia multivaluada.",
+    "c": "Dependencia funcional de Boyce/Codd.",
+    "d": "Dependencia funcional mutua."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** Si una relación se reconstruye sin pérdida a partir de la reunión (*join*) de algunas de sus proyecciones, tiene una **dependencia de reunión**. Es la base de la **5FN**.\n\n- b) La multivaluada (base de la 4FN) asocia a cada valor de X un conjunto de valores de Y.\n- c) y d) \"Dependencia funcional de Boyce/Codd\" y \"mutua\" no son conceptos estándar.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-h-020",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 44
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En el contexto del modelo relacional, ¿qué regla de integridad determina que los atributos de la clave primaria de una relación no puedan tener valores nulos?",
+   "ctx": null,
+   "op": {
+    "a": "Integridad referencial.",
+    "b": "Integridad de propagación.",
+    "c": "Integridad de entidad.",
+    "d": "Integridad de negocio."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** La **integridad de entidad** prohíbe nulos en los atributos de la clave primaria.\n\n- a) La referencial exige que los valores de la clave ajena existan en la clave referenciada o sean nulos.\n- b) \"De propagación\" no existe.\n- d) Las reglas de negocio son restricciones semánticas propias del problema.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-021",
+   "tipo": "historica",
+   "ref": "LI2017-b3-b3-12",
+   "origen": {
+    "anio": 2017,
+    "parte": "b3",
+    "n": 12
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Según el modelo E/R anterior, en el nuevo sistema un Trabajador:",
+   "ctx": "Diagrama E/R del supuesto: Trabajador participa en «Relación 1» (1:N) con UbicacionCentral y en «Relación 2» (1:1) con UbicacionExterior; un arco de exclusividad une ambas relaciones en el lado de Trabajador. UbicacionCentral y UbicacionExterior son subtipos de Ubicacion (Telefono, Direccion).",
+   "op": {
+    "a": "Puede tener un puesto de trabajo en una ubicación central y otro en una ubicación en el exterior.",
+    "b": "Tendrá un puesto de trabajo en el exterior y al menos otro en la ubicación central.",
+    "c": "Trabajará en la ubicación central o en una ubicación exterior.",
+    "d": "Solo trabajara en un puesto de trabajo en una ubicación central o en una ubicación exterior."
+   },
+   "ok": "c",
+   "clave": "claude-dudosa",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Clave no oficial (la del JSON del examen, resuelta por Claude, es d).** El **arco de exclusividad** indica que un trabajador participa en la Relación 1 **o** en la Relación 2, nunca en ambas: trabaja en una ubicación central **o** en una exterior.\n\n- a) y b) Contradicen la exclusividad (puesto central y exterior a la vez).\n- c) Expresa exactamente la exclusividad, sin afirmar nada que el diagrama no diga.\n- d) Añade \"solo un puesto de trabajo\": con la Relación 1 de tipo 1:N, si la N está en el lado de UbicacionCentral un trabajador podría tener varios puestos centrales. Solo sería correcta si el 1:N se leyera como \"muchos trabajadores por ubicación\". Por esa ambigüedad la clave es dudosa.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 3
+  },
+  {
+   "id": "t15-h-022",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-40",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 40
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Una tabla se encuentra en 5NF, Quinta Forma Normal, si:",
+   "ctx": null,
+   "op": {
+    "a": "Si y solo si esta en 4NF o en BCNF (cualquiera de ambas) y no posee dependencias multivaluadas no triviales.",
+    "b": "Si y solo si está en 4FN y cada dependencia funcional no trivial tiene una clave candidata como determinante.",
+    "c": "Si y solo si está en 4NF y cada dependencia de unión (join) en ella es implicada por las claves candidatas.",
+    "d": "Si y solo si ninguno de sus atributos no-principales son funcionalmente dependientes en una parte (subconjunto propio) de una clave candidata."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** **5FN** (forma normal de proyección-reunión): está en 4FN y **cada dependencia de reunión está implicada por las claves candidatas**.\n\n- a) Sin dependencias multivaluadas no triviales es la **4FN**.\n- b) Todo determinante clave candidata es la **FNBC**.\n- d) Sin dependencias de una parte de la clave es la **2FN**.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-h-023",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-41",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 41
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Cuál de las siguientes afirmaciones NO es uno de los objetivos que se persigue al normalizar una base de datos:",
+   "ctx": null,
+   "op": {
+    "a": "Organizar los datos en grupos lógicos.",
+    "b": "Reducir las relaciones existentes entre tablas.",
+    "c": "Garantizar la integridad de la información.",
+    "d": "Minimizar la repetición de información."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Reducir las relaciones entre tablas **no** es un objetivo: normalizar suele **aumentar** el número de tablas y de relaciones.\n\nOrganizar los datos en grupos lógicos (a), garantizar la integridad (c) y minimizar la repetición de información (d) sí son objetivos.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-024",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-42",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 42
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En la teoría de la normalización se utiliza el concepto de dependencia funcional, ¿cuál de las siguientes NO es una de sus características?",
+   "ctx": null,
+   "op": {
+    "a": "Son propiedades inherentes al contenido semántico de los datos, que se han de cumplir para cualquier extensión del esquema de relación.",
+    "b": "Se tratan de restricciones de integridad que permiten conocer qué interrelaciones existen entre los atributos del mundo real.",
+    "c": "Todas las restricciones de integridad se pueden representar mediante estas dependencias.",
+    "d": "Son invariantes en el tiempo."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** NO es cierto que **todas** las restricciones de integridad se representen con dependencias funcionales: hay dependencias multivaluadas, de reunión, de dominio, reglas de negocio, etc.\n\na), b) y d) sí son características: son propiedades semánticas que se cumplen para cualquier extensión, reflejan interrelaciones del mundo real y son invariantes en el tiempo.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-h-025",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-I-II-49",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 47
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las siguientes NO es un objetivo perseguido por Codd en la presentación de su modelo relacional?",
+   "ctx": null,
+   "op": {
+    "a": "Independencia lógica.",
+    "b": "Independencia conceptual.",
+    "c": "Independencia física.",
+    "d": "Uniformidad."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** \"Independencia conceptual\" no figura entre los objetivos de Codd.\n\nCodd buscaba **independencia física** (c), **independencia lógica** (a), **uniformidad** (d: todo son tablas), flexibilidad y sencillez.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-h-026",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-I-II-50",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 48
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En relación a los sistemas de gestión de bases de datos relacionales, la unidad de información que está asociada a un dominio del que toma sus valores es:",
+   "ctx": null,
+   "op": {
+    "a": "El atributo.",
+    "b": "La relación.",
+    "c": "El grado.",
+    "d": "La cardinalidad."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** El **atributo** es la unidad de información asociada a un dominio, del que toma sus valores.\n\n- b) La relación es la tabla completa.\n- c) El grado es el número de atributos.\n- d) La cardinalidad es el número de tuplas.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-027",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-III-03",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 54
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En los modelos entidad relación que se usan para modelar conceptualmente un esquema relacional:",
+   "ctx": null,
+   "op": {
+    "a": "Se produce dependencia por existencia cuando una entidad fuerte no puede existir sin otra entidad débil.",
+    "b": "Se produce dependencia por identificación cuando las ocurrencias de la entidad fuerte no se pueden identificar solo mediante sus propios atributos, si no que se tiene que añadir la clave de la ocurrencia de otra entidad débil.",
+    "c": "La cardinalidad es el número de entidades con la cual otra entidad se puede asociar mediante una relación binaria.",
+    "d": "El grado es el número de valores que puede tomar el atributo de una entidad."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** La cardinalidad indica con cuántas ocurrencias de la otra entidad se puede asociar una entidad en una relación binaria.\n\n- a) y b) Están invertidas: es la entidad **débil** la que depende (en existencia o en identificación) de la **fuerte**, no al revés.\n- d) El grado de una relación es el número de entidades que participan, no el número de valores de un atributo.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-h-028",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-III-04",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 55
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Las consecuencias principales de que una base de datos NO esté normalizada adecuadamente son:",
+   "ctx": null,
+   "op": {
+    "a": "Errores de inconsistencias, incoherencias, actualización y redundancia de datos.",
+    "b": "Problemas de bloqueo en las transacciones de la base de datos.",
+    "c": "Problemas de disponibilidad de la base de datos.",
+    "d": "Dificultad para dimensionar adecuadamente las necesidades de almacenamiento de la base de datos."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** No normalizar provoca **inconsistencias, incoherencias, anomalías de actualización y redundancia** de datos.\n\nLos bloqueos de transacciones (b), la disponibilidad (c) y el dimensionamiento del almacenamiento (d) no son consecuencias propias de la falta de normalización.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-029",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-III-05",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 56
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Según la integridad de los datos en el modelo relacional. ¿A qué regla de integridad le corresponde la siguiente definición: \"Los valores de claves foráneas deben existir en la clave primaria referenciada o bien deben ser valores nulos\"?",
+   "ctx": null,
+   "op": {
+    "a": "La regla de integridad referencial.",
+    "b": "La regla de integridad de dominio.",
+    "c": "La regla de integridad foránea inversa.",
+    "d": "La regla de integridad de unicidad."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** \"Los valores de claves foráneas deben existir en la clave primaria referenciada o ser nulos\" es la **integridad referencial**.\n\n- b) La de dominio exige valores del dominio del atributo.\n- c) \"Foránea inversa\" no existe.\n- d) La de unicidad prohíbe valores repetidos en la clave.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-030",
+   "tipo": "historica",
+   "ref": "LI2015-b3-b3-R01",
+   "origen": {
+    "anio": 2015,
+    "parte": "b3",
+    "n": 40
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Un atributo compuesto en el modelo entidad-relación, en el modelo relacional se transforma en:",
+   "ctx": null,
+   "op": {
+    "a": "clave compuesta en el modelo relacional.",
+    "b": "una nueva relación formada con la clave primaria de la entidad y el atributo, siendo ambos clave primaria de la nueva relación",
+    "c": "los atributos simples (campos) que componen el atributo compuesto, desapareciendo éste como tal de la relación.",
+    "d": "una nueva relación formada por el atributo compuesto y los atributos simples, siendo el atributo compuesto clave primaria de esta nueva relación."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Un atributo compuesto se transforma en **los atributos simples que lo componen**, y el compuesto desaparece como tal. Por ejemplo, Dirección → calle, número, CP.\n\n- a) No tiene por qué formar clave.\n- b) Crear una relación nueva es la transformación de un atributo **multivaluado**.\n- d) No se crea una tabla para el compuesto.",
+   "epigrafe": "Transformación del modelo E/R al relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-031",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-III-01",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 43
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Dentro del modelo entidad relación, el número de tipos de entidad que participan en un tipo de relación se denomina:",
+   "ctx": null,
+   "op": {
+    "a": "Participación.",
+    "b": "Grado.",
+    "c": "Agregación.",
+    "d": "Cardinalidad."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** El **grado** de una relación E/R es el número de tipos de entidad que participan (unaria, binaria, ternaria...).\n\n- a) y d) Participación y cardinalidad hablan del número de ocurrencias de cada entidad.\n- c) La agregación es una abstracción que trata una relación como entidad.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-032",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-III-05",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 47
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las siguientes características relacionadas con los modelos conceptuales de datos es FALSA?",
+   "ctx": null,
+   "op": {
+    "a": "Representan la visión estática del dominio de la información del Sistema de Información a modelar.",
+    "b": "Ayudan a representar las necesidades del usuario.",
+    "c": "Representan toda la información que va a tratar el Sistema de Información objeto del análisis.",
+    "d": "Representan la estructura física de la información que maneja el Sistema de Información."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** Es FALSA: el modelo conceptual **no** representa la estructura física; eso es tarea del modelo físico.\n\na), b) y c) son ciertas: representa la visión estática del dominio, ayuda a recoger las necesidades del usuario y representa toda la información que tratará el sistema.",
+   "epigrafe": "Niveles de modelado y proceso de diseño",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-033",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-III-06",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 48
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Dentro del modelo entidad-relación se puede definir el dominio de un atributo como:",
+   "ctx": null,
+   "op": {
+    "a": "El número mínimo de correspondencias en las que puede tomar parte cada ocurrencia de dicha entidad.",
+    "b": "Es una correspondencia o asociación entre dos o más entidades con los mismos atributos.",
+    "c": "El conjunto de todos los valores posibles que puede tomar el atributo.",
+    "d": "El número de tuplas o filas de un atributo."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** El dominio de un atributo es el **conjunto de todos los valores posibles** que puede tomar.\n\n- a) Es la cardinalidad mínima.\n- b) Una asociación entre entidades es una relación.\n- d) El número de tuplas es la cardinalidad de una tabla.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-034",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-III-09",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 51
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las siguientes operaciones NO se considera fundamental en el álgebra relacional?",
+   "ctx": null,
+   "op": {
+    "a": "Proyección.",
+    "b": "Intersección.",
+    "c": "Selección.",
+    "d": "Unión."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** La **intersección** no es fundamental: se obtiene con la diferencia, R ∩ S = R − (R − S).\n\nProyección (a), selección (c) y unión (d) son fundamentales, junto con la diferencia, el producto cartesiano y el renombrado.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-h-035",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-III-10",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 52
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Dentro del modelo relacional, señale la afirmación errónea:",
+   "ctx": null,
+   "op": {
+    "a": "En una relación puede haber varias claves candidatas.",
+    "b": "Una clave primaria es, a su vez, clave candidata.",
+    "c": "Si se elimina un atributo de una clave candidata, ésta deja de serlo.",
+    "d": "Una relación puede no tener clave candidata."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** Es ERRÓNEA: toda relación tiene **al menos una** clave candidata, porque no puede haber tuplas repetidas (en el peor caso, el conjunto de todos sus atributos).\n\na), b) y c) son correctas: puede haber varias candidatas, la primaria es una candidata y la candidata es mínima (si se le quita un atributo deja de serlo).",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-036",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-III-11",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 53
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El modelo de datos relacional fue introducido por:",
+   "ctx": null,
+   "op": {
+    "a": "Codd.",
+    "b": "Hamming.",
+    "c": "Ritchie.",
+    "d": "Adleman."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** El modelo relacional lo propuso **Edgar F. Codd** (IBM) en 1970.\n\nHamming (b) es conocido por los códigos de corrección de errores; Ritchie (c), por el lenguaje C y Unix; Adleman (d), por el algoritmo RSA.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-037",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-I-II-46",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 35
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál es una restricción inherente al Modelo Relacional de los sistemas gestores de base de datos?",
+   "ctx": null,
+   "op": {
+    "a": "El atributo que forma parte de la clave tiene que ser numérico.",
+    "b": "El atributo que forma parte de la clave no puede ser numérico.",
+    "c": "El atributo que forma parte de la clave no puede tomar el valor cero.",
+    "d": "El atributo que forma parte de la clave no puede tomar valores nulos (por nulo se interpreta valores desconocidos)."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** El atributo que forma parte de la clave **no puede tomar valores nulos** (desconocidos): es la regla de integridad de entidad.\n\nEl tipo de dato de la clave (numérico o no) y el valor cero (a, b, c) no tienen ninguna restricción en el modelo.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-038",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-I-II-48",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 37
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Queremos almacenar en una base de datos relacional los alumnos de un determinado curso y las asignaturas en las que están matriculados. Teniendo en cuenta que un alumno estará matriculado en varias asignaturas, y que en una asignatura habrá matriculados varios alumnos, ¿cuál de las siguientes opciones refleja las tablas que serían necesarias para que dicha relación estuviese en tercera forma normal?",
+   "ctx": null,
+   "op": {
+    "a": "Una tabla alumnos con el código de alumno, sus datos personales y el código de las asignaturas en las que está matriculado.",
+    "b": "Una tabla asignaturas con el código de la asignatura, su denominación, y el código de los alumnos que están matriculados.",
+    "c": "Tres tablas: Una tabla alumnos con el código de alumno y sus datos personales, otra tabla asignatura con el código de la asignatura y su denominación, y una tercera tabla que contuviese una fila por cada alumno y en esa fila los códigos de las asignaturas en las que estuviese matriculado.",
+    "d": "Tres tablas: Una tabla alumnos con el código de alumno y sus datos personales, otra tabla asignatura con el código de la asignatura y su denominación, y una tercera tabla que contuviese, en cada fila, una tupla (código de alumno, código de asignatura) por cada alumno y cada asignatura en la éste estuviese matriculado."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** Una relación N:M necesita **tres tablas**: Alumno, Asignatura y una tabla intermedia con una tupla (código de alumno, código de asignatura) por cada matrícula.\n\n- a) y b) Meter los códigos de varias asignaturas (o alumnos) en una fila crea grupos repetitivos.\n- c) Una fila por alumno con todos los códigos de asignatura también es un grupo repetitivo: no está ni en 1FN.",
+   "epigrafe": "Transformación del modelo E/R al relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-039",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-I-II-50",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 38
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Si en una Base de Datos Relacional tenemos una tabla que contiene una tupla cuya única clave ajena tiene un valor nulo:",
+   "ctx": null,
+   "op": {
+    "a": "Estaremos incumpliendo la regla de integridad de la entidad.",
+    "b": "Estaremos incumpliendo la regla de integridad referencial.",
+    "c": "Dicha tupla no está relacionada con ninguna otra tupla de la entidad a la que hace referencia la clave ajena.",
+    "d": "Existirá una tupla en la entidad a la que hace referencia la clave ajena, con la que estará relacionada."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Una clave ajena a nulo significa que esa tupla **no está relacionada** con ninguna tupla de la tabla referenciada. No incumple ninguna regla.\n\n- a) La integridad de entidad trata de nulos en la **clave primaria**.\n- b) La integridad referencial admite nulos en la clave ajena.\n- d) Con nulo no existe la tupla relacionada.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-h-040",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 39
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Una tabla se dice que está en 3ª Forma Normal si se encuentra en 2ª Forma Normal y:",
+   "ctx": null,
+   "op": {
+    "a": "Las únicas dependencias funcionales elementales son aquellas en las que la clave principal (y claves secundarias) determinan un atributo.",
+    "b": "Todo atributo secundario depende totalmente de la clave completa.",
+    "c": "Los valores que componen los atributos son elementales y únicos.",
+    "d": "No existen atributos no primarios que son transitivamente dependientes de cada posible clave de la tabla."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** 3FN = 2FN + **no hay atributos no primarios que dependan transitivamente** de las claves.\n\n- a) Que solo las claves determinen atributos se parece a la **FNBC**.\n- b) Dependencia total de la clave completa es la **2FN**.\n- c) Valores elementales (atómicos) es la **1FN**.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-h-041",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-02",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 40
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En una tabla de una base de datos relacional, si no existen grupos repetitivos, y todos los elementos son independientes entre sí y dependen solamente de la clave primaria de forma plena, ¿ante qué forma normal nos encontramos?",
+   "ctx": null,
+   "op": {
+    "a": "1FN.",
+    "b": "2FN.",
+    "c": "3FN.",
+    "d": "No se encuentra en ninguna forma normal."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Sin grupos repetitivos (1FN), dependencia **plena** de la clave primaria (2FN) y atributos **independientes entre sí**, es decir, sin dependencias transitivas: **3FN**.\n\na) y b) se quedan cortas: el enunciado ya cumple también la condición de la 3FN. d) es falsa.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-h-042",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-03",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 41
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En el modelo relacional, una relación R, decimos que está en segunda forma normal (2FN) si:",
+   "ctx": null,
+   "op": {
+    "a": "Está en primera forma normal (1FN) y todos los atributos que no forman parte de las claves candidatas tienen dependencia funcional completa respecto de éstas.",
+    "b": "Todos los atributos que no forman parte de las claves candidatas tienen dependencia funcional completa respecto de éstas.",
+    "c": "Todos sus atributos no principales dependen directamente de la clave primaria.",
+    "d": "No tiene grupos repetitivos, es decir, un atributo sólo puede tomar un único valor de un dominio simple."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** 2FN: en **1FN** y todos los atributos que no forman parte de las claves candidatas con dependencia funcional **completa** respecto de ellas.\n\n- b) Le falta la condición previa de estar en 1FN.\n- c) Dependencia directa de la clave es la **3FN**.\n- d) Sin grupos repetitivos es la **1FN**.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-043",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-04",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 42
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "La tabla siguiente EMPLEADOS (COD_EMPLEADO, COD_DEPARTAMENTO, TIPO, EDAD,PLANTA_DEPARTAMENTO) donde la clave principal es COD_EMPLEADO y COD_DEPARTAMENTO.",
+   "ctx": null,
+   "op": {
+    "a": "Cumple la segunda forma normal.",
+    "b": "No cumple la tercera forma normal, pero cumple la segunda.",
+    "c": "No cumple la segunda forma normal.",
+    "d": "No cumple la cuarta forma normal, pero cumple la tercera."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** No cumple la **2FN**: con clave (COD_EMPLEADO, COD_DEPARTAMENTO), EDAD depende solo de COD_EMPLEADO y PLANTA_DEPARTAMENTO solo de COD_DEPARTAMENTO. Son dependencias **parciales**.\n\na), b) y d) suponen que cumple la 2FN, y no la cumple.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-h-044",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-05",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 43
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cómo se llama el operador del álgebra relacional que aplicado sobre una relación permite obtener un subconjunto de sus atributos manteniendo el mismo número de tuplas?",
+   "ctx": null,
+   "op": {
+    "a": "Unión de conjuntos.",
+    "b": "Producto cartesiano.",
+    "c": "Selección.",
+    "d": "Proyección. TAI-L1 2008 1/14"
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** La **proyección** (π) obtiene un subconjunto de **atributos** (columnas).\n\n- c) La selección (σ) obtiene un subconjunto de **tuplas** (filas).\n- a) La unión combina dos relaciones compatibles.\n- b) El producto cartesiano combina cada tupla de una relación con todas las de otra.\n\nMatiz: en teoría la proyección elimina tuplas duplicadas, así que el número de tuplas puede reducirse; el enunciado simplifica.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-045",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-III-06",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 44
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las siguientes afirmaciones NO es correcta?",
+   "ctx": null,
+   "op": {
+    "a": "Las bases de datos relacionales se normalizan para evitar la redundancia de datos.",
+    "b": "Ningún atributo que compone una clave primaria puede ser nulo.",
+    "c": "Un atributo nulo representa el valor cero o una cadena vacía.",
+    "d": "Uno de los objetivos de la normalización es facilitar el mantenimiento de datos y programas."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** NO es correcta: un nulo representa un valor **desconocido o inaplicable**, no el cero ni la cadena vacía.\n\na), b) y d) son correctas.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-046",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 91
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Una de las principales funciones del administrador de bases de datos es responsabilizarse de la integridad de los datos. ¿Cuál de entre los siguientes no es un fallo de integridad en una base de datos?",
+   "ctx": null,
+   "op": {
+    "a": "Tablas con claves primarias cuyos valores no son únicos para cada fila.",
+    "b": "Tablas con valores inválidos o nulos.",
+    "c": "Tablas con claves primarias y relación padre/hijo en las que se elimina una fila de la tabla hijo sin comprobar si existía una fila con la clave ajena correspondiente a la primaria de la fila eliminada en la tabla hijo.",
+    "d": "Tablas con claves primarias y relación padre/hijo en las que se elimina una fila de la tabla padre sin comprobar si existía una fila con la clave ajena correspondiente a la primaria de la fila eliminada en la tabla padre."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Borrar una fila **hija** no deja ninguna referencia colgando, así que no es un fallo de integridad.\n\n- a) Claves primarias repetidas violan la unicidad.\n- b) Valores inválidos (o nulos donde no se admiten) violan la integridad de dominio o de entidad.\n- d) Borrar un **padre** con hijos que lo referencian deja claves ajenas huérfanas: viola la integridad referencial.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-h-047",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-50",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 43
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "La “cardinalidad” en el modelo relacional es:",
+   "ctx": null,
+   "op": {
+    "a": "El número máximo de registros que se encuentran involucrados en una relación entre tablas.",
+    "b": "El número de tuplas de una relación.",
+    "c": "El número de columnas que se corresponden en una relación entre tablas.",
+    "d": "El número mínimo de registros que se encuentran involucrados en una relación entre tablas."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** En el modelo relacional, la **cardinalidad** de una relación es su **número de tuplas** (filas).\n\na), c) y d) confunden la cardinalidad relacional con la del modelo E/R (participación mínima y máxima en una relación entre entidades).",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-048",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-53",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 46
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El principal beneficio de la normalización de las tablas de datos en una base de datos es:",
+   "ctx": null,
+   "op": {
+    "a": "Minimizar la redundancia de la información.",
+    "b": "Incrementar la capacidad transaccional de la base de datos.",
+    "c": "Maximizar la integridad.",
+    "d": "Minimizar el tiempo de respuesta ante consultas complejas."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** El principal beneficio de normalizar es **minimizar la redundancia**, y con ella las anomalías de inserción, borrado y modificación.\n\n- b) y d) Normalizar no mejora la capacidad transaccional ni el tiempo de respuesta: suele añadir reuniones.\n- c) Ayuda a la integridad, pero el beneficio principal es reducir la redundancia.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-049",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-54",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 47
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En una base de datos relacional las tablas y relaciones deben cumplir una serie de reglas, son las denominadas formas normales. ¿En cuantos niveles se establecen?:",
+   "ctx": null,
+   "op": {
+    "a": "3.",
+    "b": "4.",
+    "c": "5.",
+    "d": "6."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** (clave oficial) La plantilla dio **5** niveles: 1FN, 2FN, 3FN, 4FN y 5FN, considerando la FNBC una variante reforzada de la 3FN.\n\nEs discutible: si se cuenta la FNBC aparte, las formas clásicas son **seis** (d). Y hay más (FNDC, 6FN). No hay un número oficial universal; para el examen, recuerda que la respuesta dada fue 5.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 3
+  },
+  {
+   "id": "t15-h-050",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-56",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 49
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Los valores de los atributos que forma parte de la clave principal o primaria son únicos, y la base de datos no puede admitir valores nulos ni duplicados. Esta restricción se denomina:",
+   "ctx": null,
+   "op": {
+    "a": "Integridad Auto-Referencial.",
+    "b": "Integridad de Entidad.",
+    "c": "Integridad de Dominio.",
+    "d": "Integridad Referencial."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** La **integridad de entidad** garantiza que los atributos de la clave primaria no sean nulos (y, con la unicidad, no se repitan).\n\n- a) \"Auto-referencial\" no es una regla de integridad.\n- c) La de dominio controla que los valores pertenezcan al dominio.\n- d) La referencial controla las claves ajenas.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-051",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-73",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 65
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "La primera tarea a realizar en el diseño conceptual para crear una base de datos es:",
+   "ctx": null,
+   "op": {
+    "a": "Identificar las entidades.",
+    "b": "Identificar las relaciones.",
+    "c": "Identificar los atributos y asociarlos a entidades y relaciones.",
+    "d": "Identificar las entidades y sus identificadores o claves."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** La primera tarea del diseño conceptual es **identificar las entidades**. Después se identifican las relaciones, los atributos y los identificadores.\n\n- b) y c) Relaciones y atributos se definen sobre entidades ya identificadas.\n- d) Los identificadores se eligen después, al conocer los atributos.",
+   "epigrafe": "Niveles de modelado y proceso de diseño",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-052",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-75",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 67
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En la obtención del modelo físico de datos, ¿a qué nos referimos cuando hablamos de tiempo de respuesta?.",
+   "ctx": null,
+   "op": {
+    "a": "Número de transacciones procesadas por unidad de tiempo.",
+    "b": "Tiempo que se tarda en transferir páginas de memoria a disco.",
+    "c": "Tiempo que se tarda en efectuar una transacción.",
+    "d": "Frecuencia con que se efectúa una transacción."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** El **tiempo de respuesta** es el tiempo que se tarda en efectuar una transacción.\n\n- a) Transacciones por unidad de tiempo es la **productividad** (*throughput*).\n- b) Transferir páginas de memoria a disco es paginación.\n- d) La frecuencia de una transacción es un dato de carga, no de respuesta.",
+   "epigrafe": "Diseño lógico y físico en Métrica v3",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-053",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 27
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En un sistema gestor de bases de datos construido sobre el modelo relacional, se denomina dominio:",
+   "ctx": null,
+   "op": {
+    "a": "Al número de tuplas que tenga una relación.",
+    "b": "Al número de atributos que tenga la relación.",
+    "c": "Al rango de valores que puede tener un atributo dado.",
+    "d": "Al producto del número de tuplas y atributos de una relación."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** El **dominio** es el rango o conjunto de valores que puede tomar un atributo.\n\n- a) El número de tuplas es la cardinalidad.\n- b) El número de atributos es el grado.\n- d) No es ningún concepto del modelo.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-054",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 31
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En el modelo entidad/relación, ¿qué se entiende por “tipo de correspondencia”?",
+   "ctx": null,
+   "op": {
+    "a": "El número máximo de ocurrencias de cada entidad que pueden intervenir en la relación.",
+    "b": "El número de entidades que participan en una relación.",
+    "c": "El número mínimo y máximo de ocurrencias de una entidad que pueden estar relacionadas con una ocurrencia de otra entidad participante en la relación.",
+    "d": "Es el número de elementos con características comunes que componen una entidad."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** El **tipo de correspondencia** es el número **máximo** de ocurrencias de cada entidad que intervienen en la relación (1:1, 1:N, N:M).\n\n- b) El número de entidades participantes es el **grado**.\n- c) Mínimo y máximo es la **cardinalidad**.\n- d) No es un concepto del modelo.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-h-055",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 33
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Dada la siguiente relación: Calificación (Dni_Profesor, Nombre_Profesor, Dni_Alumno, Nota_Asignatura). La clave primaria está formada por Dni_profesor y Dni_Alumno, y Dni_profesor implica Nombre_Profesor. ¿En qué forma normal está?",
+   "ctx": null,
+   "op": {
+    "a": "En primera forma normal.",
+    "b": "En segunda forma normal.",
+    "c": "En tercera forma normal.",
+    "d": "En forma normal de Boyce-Codd."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** Nombre_Profesor depende solo de Dni_Profesor, que es **parte** de la clave: hay una dependencia parcial. Está en **1FN** pero no en 2FN.\n\nComo no está en 2FN, tampoco puede estar en 3FN ni en FNBC.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-h-056",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 34
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En el modelo relacional, un atributo o conjunto de atributos de una relación R2 cuyos valores han de concordar con los de la clave primaria de una relación R1 es una:",
+   "ctx": null,
+   "op": {
+    "a": "Clave candidata.",
+    "b": "Clave referencial.",
+    "c": "Clave secundaria.",
+    "d": "Clave ajena."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** Es una **clave ajena** (foránea o externa).\n\n- a) La clave candidata identifica las tuplas de su propia relación.\n- b) \"Clave referencial\" no es el término del modelo.\n- c) \"Clave secundaria\" se usa a veces para la alternativa o para un índice, no para la ajena.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-057",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 42
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "El cálculo relacional como lenguaje de interrogación de bases de datos:",
+   "ctx": null,
+   "op": {
+    "a": "Toma su nombre del cálculo de predicados, que es una rama de la lógica.",
+    "b": "Es un lenguaje procedural o procedimental.",
+    "c": "Proporciona una serie de operaciones que se usan para indicar al sistema cómo construir la relación a partir de las relaciones de la base de datos.",
+    "d": "Es un lenguaje gráfico."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** El cálculo relacional toma su nombre del **cálculo de predicados** (lógica de primer orden).\n\n- b) y c) Describen el **álgebra relacional**, que es procedimental (indica cómo). El cálculo es **declarativo** (indica qué).\n- d) No es gráfico, aunque QBE, lenguaje gráfico, se basa en el cálculo de dominios.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-h-058",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "b3",
+    "n": 16
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En la tabla de municipios, ¿qué campo es la clave ajena?",
+   "ctx": "Supuesto: base de datos con las tablas provincias (codprov, nombre...) y municipios (codprov, codmuni, nombre, poblacion...). Cada municipio pertenece a una provincia.",
+   "op": {
+    "a": "codmuni.",
+    "b": "codprov.",
+    "c": "no tiene clave ajena.",
+    "d": "combinación de codprov y codmuni."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** **codprov** en municipios referencia la clave primaria de provincias: es la clave ajena.\n\n- a) codmuni identifica el municipio dentro de su provincia: forma parte de la clave primaria, no referencia a otra tabla.\n- c) Sí la tiene: el municipio pertenece a una provincia.\n- d) La combinación (codprov, codmuni) es la clave **primaria** de municipios.\n\nTexto del supuesto reconstruido (las tablas venían en una imagen).",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-059",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 32
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "El modelo conceptual de datos representa:",
+   "ctx": null,
+   "op": {
+    "a": "Información lógica de un sistema, Estructura y Reglas.",
+    "b": "Sólo la información y la estructura de la información del sistema.",
+    "c": "La descripción detallada de todos los elementos de información lógica, su estructura y las reglas que se establecen entre ellos.",
+    "d": "Los conceptos a los que hace referencia la información en el sistema."
+   },
+   "ok": "a",
+   "clave": "claude-dudosa",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** El modelo conceptual representa la **información** del sistema, su **estructura** y sus **reglas** o restricciones, a alto nivel.\n\n- b) \"Sólo\" deja fuera las reglas.\n- c) La descripción **detallada** de todos los elementos encaja mejor con el modelo lógico.\n- d) Se queda corta.\n\n**Duda**: no hay clave oficial y c) se diferencia de a) solo por \"detallada\"; la respuesta se apoya en el temario (sin verificar).",
+   "epigrafe": "Niveles de modelado y proceso de diseño",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-h-060",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 34
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En el diseño de una base de datos hay que tener en cuenta que:",
+   "ctx": null,
+   "op": {
+    "a": "La organización lógica puede ser cambiante y debe ser prevista para reorganizaciones periódicas.",
+    "b": "Las técnicas de direccionamiento tienen gran efecto sobre las estructuras lógicas.",
+    "c": "Las inserciones y eliminaciones de registros suelen tener un gran efecto sobre la distribución física de los datos.",
+    "d": "La eliminación de la redundancia es uno de los objetivos de la organización física."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Las inserciones y borrados afectan mucho a la **distribución física** (huecos, fragmentación, reorganización de índices).\n\n- a) Es la organización **física** la que cambia y se reorganiza periódicamente; la lógica debe ser estable.\n- b) El direccionamiento afecta a las estructuras **físicas**.\n- d) Eliminar la redundancia es objetivo del diseño **lógico** (normalización); en el físico incluso se introduce a propósito.",
+   "epigrafe": "Niveles de modelado y proceso de diseño",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-h-061",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 35
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Se dice que una entidad está en segunda forma normal (2FN) si:",
+   "ctx": null,
+   "op": {
+    "a": "No contiene grupos repetitivos.",
+    "b": "Si todos los atributos dependen funcionalmente de la clave.",
+    "c": "Si todos los atributos de la entidad que no forman parte de la clave tienen una dependencia funcional completa de la misma, es decir, dependen de toda la clave.",
+    "d": "Si todas las dependencias multivaluadas son dependencias funcionales."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** 2FN: los atributos que no forman parte de la clave tienen dependencia funcional **completa** de ella (dependen de toda la clave, no de una parte).\n\n- a) Es la 1FN.\n- b) Depender de la clave no basta: tiene que ser de la clave **completa**.\n- d) Se refiere a la 4FN.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-h-062",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 36
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En el modelo lógico-relacional, la regla de \"integridad de entidad\" dice que:",
+   "ctx": null,
+   "op": {
+    "a": "Si existe clave ajena, su valor ha de ser igual al atributo clave o ser nulo.",
+    "b": "Cada fila tiene que ser única, no puede haber filas duplicadas.",
+    "c": "La clave principal no puede tener valor nulo.",
+    "d": "Cada columna debe extraer sus valores de un dominio."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Integridad de entidad: la **clave principal no puede ser nula**.\n\n- a) Es la integridad **referencial**.\n- b) Que no haya filas duplicadas es una restricción **inherente** del modelo.\n- d) Es la integridad de **dominio**.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-v-001",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-001",
+   "texto": "reformulado",
+   "q": "En el modelado dimensional de Kimball, ¿cómo se llama un atributo de dimensión que se guarda en la propia tabla de hechos, sin tabla de dimensión propia (por ejemplo, el número de factura)?",
+   "ctx": null,
+   "op": {
+    "a": "Dimensión degenerada",
+    "b": "Dimensión outrigger",
+    "c": "Dimensión conformada",
+    "d": "Dimensión basura (junk)"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **degenerada** vive en la tabla de hechos. La outrigger cuelga de otra dimensión; la conformada se comparte con el mismo significado entre varias tablas de hechos; la basura agrupa indicadores de baja cardinalidad.",
+   "epigrafe": "Modelado dimensional (Kimball)",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-002",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-002",
+   "texto": "reformulado",
+   "q": "Una relación tiene 6 atributos y 120 tuplas. Si se le añade una columna nueva, ¿qué cambia?",
+   "ctx": null,
+   "op": {
+    "a": "La cardinalidad, que pasa a 121",
+    "b": "El grado, que pasa a 7",
+    "c": "El dominio de todos los atributos",
+    "d": "Nada: grado y cardinalidad no dependen de las columnas"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Añadir una columna aumenta el **grado** (número de atributos). La cardinalidad solo cambia al insertar o borrar tuplas. Los dominios de los atributos existentes no cambian.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-v-003",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-003",
+   "texto": "reformulado",
+   "q": "En la notación de Chen del modelo E/R, ¿qué representa una **elipse doble**?",
+   "ctx": null,
+   "op": {
+    "a": "Un atributo derivado",
+    "b": "Un atributo identificador",
+    "c": "Un atributo multivaluado",
+    "d": "Una entidad débil"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Elipse doble = **multivaluado** (al pasar a relacional genera una tabla nueva). Elipse discontinua = derivado; nombre subrayado = identificador; la entidad débil es un **rectángulo** doble.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-004",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-004",
+   "texto": "reformulado",
+   "q": "En el modelo relacional, ¿qué es una **superclave**?",
+   "ctx": null,
+   "op": {
+    "a": "Una clave candidata que no se ha elegido como primaria",
+    "b": "Una clave ajena que referencia a varias tablas",
+    "c": "La clave primaria de la tabla con más filas",
+    "d": "Un conjunto de atributos que identifica unívocamente cada tupla, aunque pueda contener atributos sobrantes"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **superclave** identifica cada tupla, sin exigir minimalidad. La clave **candidata** es una superclave mínima; la candidata no elegida es la **alternativa**.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-005",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-005",
+   "texto": "reformulado",
+   "q": "Según Métrica v3, ¿qué es una **entidad** en el modelo E/R extendido?",
+   "ctx": null,
+   "op": {
+    "a": "Un objeto, real o abstracto, acerca del cual se desea almacenar información en la base de datos",
+    "b": "Una propiedad o característica de un objeto",
+    "c": "Una asociación entre dos o más objetos",
+    "d": "El conjunto de valores que puede tomar una propiedad"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Es la definición literal de **entidad** de Métrica v3. La propiedad es el **atributo**; la asociación, la **relación**; el conjunto de valores, el **dominio**.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-v-006",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-006",
+   "texto": "reformulado",
+   "q": "En una jerarquía de generalización, si una ocurrencia del supertipo puede pertenecer **a la vez a varios subtipos**, la jerarquía es:",
+   "ctx": null,
+   "op": {
+    "a": "Exclusiva",
+    "b": "Solapada (inclusiva)",
+    "c": "Total",
+    "d": "Parcial"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Solapada** = puede estar en varios subtipos; **exclusiva** = en uno solo. **Total/parcial** es otra dimensión: si toda ocurrencia del supertipo pertenece o no a algún subtipo.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-007",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-007",
+   "texto": "reformulado",
+   "q": "¿Qué opción de una clave ajena hace que, al borrar una fila de la tabla padre, se **borren automáticamente** las filas hijas que la referencian?",
+   "ctx": null,
+   "op": {
+    "a": "ON DELETE RESTRICT",
+    "b": "ON DELETE SET NULL",
+    "c": "ON DELETE CASCADE",
+    "d": "ON DELETE NO ACTION"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**CASCADE** propaga el borrado. RESTRICT y NO ACTION lo rechazan si hay hijos; SET NULL pone a nulo la clave ajena de los hijos.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-v-008",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-008",
+   "texto": "reformulado",
+   "q": "En un esquema relacional, la tabla Linea tiene una clave ajena num_factura que referencia a Factura. ¿Qué tipo de correspondencia representa?",
+   "ctx": null,
+   "op": {
+    "a": "1:1: cada factura tiene exactamente una línea",
+    "b": "N:M entre facturas y líneas",
+    "c": "N:1: una línea puede pertenecer a varias facturas",
+    "d": "1:N: una factura puede tener varias líneas"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La clave ajena va en el lado **N**: cada línea apunta a una factura, y una factura puede tener muchas líneas. Una N:M requeriría tabla intermedia.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-v-009",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-009",
+   "texto": "reformulado",
+   "q": "Según Métrica v3, ¿en qué actividad del proceso DSI se realiza la **optimización del modelo físico de datos**?",
+   "ctx": null,
+   "op": {
+    "a": "DSI 6 Diseño físico de datos",
+    "b": "ASI 6 Elaboración del modelo de datos",
+    "c": "CSI 2 Generación del código",
+    "d": "EVS 3 Definición de requisitos"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La optimización del modelo físico es una tarea de **DSI 6 Diseño físico de datos** (junto con el diseño del modelo físico, los caminos de acceso y la distribución de datos). ASI 6 elabora el modelo conceptual y lógico y lo normaliza.",
+   "epigrafe": "Diseño lógico y físico en Métrica v3",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-010",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-010",
+   "texto": "reformulado",
+   "q": "En el modelo E/R de Métrica v3, ¿qué indica el **tipo de correspondencia** de una relación?",
+   "ctx": null,
+   "op": {
+    "a": "El número de entidades que participan en la relación",
+    "b": "El número máximo de ocurrencias de cada entidad que pueden intervenir en una ocurrencia de la relación (1:1, 1:N, N:M)",
+    "c": "El número mínimo de ocurrencias de cada entidad",
+    "d": "El dominio de los atributos de la relación"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Tipo de correspondencia = **máximos** (1:1, 1:N, N:M). El número de entidades participantes es el **grado**; mínimo y máximo juntos son la **cardinalidad**.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-011",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-011",
+   "texto": "reformulado",
+   "q": "Según Métrica v3, una entidad está en **3FN** si está en 2FN y:",
+   "ctx": null,
+   "op": {
+    "a": "No tiene grupos repetitivos",
+    "b": "Todo determinante es clave candidata",
+    "c": "Todos sus atributos no principales dependen directamente de la clave primaria, sin dependencias transitivas",
+    "d": "No tiene dependencias multivaluadas no triviales"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "3FN = 2FN + **sin dependencias transitivas** de atributos no principales. \"Sin grupos repetitivos\" es la 1FN; \"todo determinante es clave candidata\", la FNBC; sin multivaluadas, la 4FN.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-012",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-012",
+   "texto": "reformulado",
+   "q": "En el modelo E/R extendido de Métrica v3, ¿qué tipo de agregación forma un todo a partir de la unión de sus partes (por ejemplo, un coche y sus piezas)?",
+   "ctx": null,
+   "op": {
+    "a": "Asociación",
+    "b": "Especialización",
+    "c": "Dependencia en identificación",
+    "d": "Compuesto/componente"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La agregación **compuesto/componente** forma el todo por unión de partes. La **asociación** une entidades de dominios independientes que coyunturalmente se relacionan. La especialización descompone un supertipo; la dependencia en identificación es propia de las entidades débiles.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-013",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-013",
+   "texto": "reformulado",
+   "q": "Según Métrica v3, ¿cuál de las siguientes afirmaciones sobre el **dominio** es correcta?",
+   "ctx": null,
+   "op": {
+    "a": "Tiene existencia propia, con independencia de las entidades, relaciones o atributos que lo usen",
+    "b": "Depende de la entidad en la que se define",
+    "c": "Un mismo atributo puede definirse sobre varios dominios",
+    "d": "Es el número de valores distintos que toma un atributo en una tabla"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El dominio es un conjunto de valores homogéneos con nombre, con **existencia propia**. Cada atributo se define sobre **un único** dominio. No es un recuento de valores.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-014",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-014",
+   "texto": "reformulado",
+   "q": "Una tabla Cliente(NIF, nombre, telefono1, telefono2, telefono3) guarda hasta tres teléfonos en columnas separadas. ¿Qué problema de diseño presenta según la teoría de la normalización?",
+   "ctx": null,
+   "op": {
+    "a": "Una dependencia transitiva entre NIF y nombre",
+    "b": "Un grupo repetitivo disfrazado en varias columnas, que conviene llevar a una tabla aparte",
+    "c": "Una dependencia parcial de la clave",
+    "d": "Ninguno: está en FNBC sin redundancia"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Repetir el mismo dato en columnas numeradas es un **grupo repetitivo**: limita a tres teléfonos y deja nulos. Se resuelve con Telefono(NIF, numero). No hay dependencias parciales (la clave es simple) ni transitivas.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 3
+  },
+  {
+   "id": "t15-v-015",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-015",
+   "texto": "reformulado",
+   "q": "Una tabla está en **FNBC** (forma normal de Boyce-Codd) si:",
+   "ctx": null,
+   "op": {
+    "a": "Está en 2FN y no tiene dependencias transitivas",
+    "b": "No tiene dependencias multivaluadas no triviales",
+    "c": "Todo determinante de una dependencia funcional no trivial es clave candidata",
+    "d": "Toda dependencia de reunión está implicada por las claves candidatas"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "FNBC: **todo determinante es clave candidata** (más estricta que la 3FN). b) es la 3FN; c), la 4FN; d), la 5FN.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-016",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-016",
+   "texto": "reformulado",
+   "q": "Según Métrica v3, ¿cómo se llama la dependencia en la que un atributo depende de una clave compuesta **en su totalidad**, y no de ninguno de sus subconjuntos?",
+   "ctx": null,
+   "op": {
+    "a": "Dependencia funcional transitiva",
+    "b": "Dependencia multivaluada",
+    "c": "Dependencia de reunión",
+    "d": "Dependencia funcional completa"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Es la dependencia **completa** (plena), base de la 2FN. La transitiva se da a través de otro atributo (3FN); la multivaluada asocia un conjunto de valores (4FN); la de reunión, base de la 5FN.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-v-017",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-017",
+   "texto": "reformulado",
+   "q": "Una jerarquía **total y exclusiva** Vehiculo → {Coche, Moto} se quiere transformar sin crear tabla para el supertipo. ¿Qué opción es válida?",
+   "ctx": null,
+   "op": {
+    "a": "Una tabla por subtipo, cada una con los atributos comunes del supertipo repetidos",
+    "b": "Una sola tabla Vehiculo sin atributo discriminador",
+    "c": "Una tabla Vehiculo con claves ajenas a Coche y a Moto",
+    "d": "Ninguna: el supertipo siempre necesita tabla propia"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Si la jerarquía es total y exclusiva, toda ocurrencia está en un único subtipo, así que basta **una tabla por subtipo** con los atributos comunes repetidos. Si fuera parcial, se perderían las ocurrencias que no están en ningún subtipo.",
+   "epigrafe": "Transformación del modelo E/R al relacional",
+   "dificultad": 3
+  },
+  {
+   "id": "t15-v-018",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-018",
+   "texto": "reformulado",
+   "q": "En el modelo E/R, ¿cómo se llama una relación en la que participa **una sola entidad consigo misma** (por ejemplo, Empleado «es jefe de» Empleado)?",
+   "ctx": null,
+   "op": {
+    "a": "Binaria",
+    "b": "Reflexiva o unaria (grado 1)",
+    "c": "Ternaria",
+    "d": "Exclusiva"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Grado = número de entidades participantes. Si es una sola entidad, la relación es **unaria o reflexiva**. Binaria = 2; ternaria = 3. *Exclusiva* se refiere a relaciones excluyentes entre sí (arco).",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-v-019",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-019",
+   "texto": "reformulado",
+   "q": "La **4FN** elimina un tipo concreto de dependencia. ¿Cuál?",
+   "ctx": null,
+   "op": {
+    "a": "Las dependencias transitivas",
+    "b": "Las dependencias parciales de la clave",
+    "c": "Las dependencias multivaluadas no triviales que no parten de una superclave",
+    "d": "Las dependencias de reunión no implicadas por las claves"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "4FN (Fagin, 1977): sin dependencias **multivaluadas** no triviales. Las transitivas son de la 3FN; las parciales, de la 2FN; las de reunión, de la 5FN.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-020",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-020",
+   "texto": "reformulado",
+   "q": "¿Qué regla de integridad exige que los valores de una clave ajena **existan en la clave primaria referenciada o sean nulos**?",
+   "ctx": null,
+   "op": {
+    "a": "Integridad de entidad",
+    "b": "Integridad de dominio",
+    "c": "Integridad de unicidad",
+    "d": "Integridad referencial"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Es la **integridad referencial**. La de entidad prohíbe nulos en la clave primaria; la de dominio exige valores del dominio del atributo; la de unicidad prohíbe repetir valores de clave.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-v-021",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-021",
+   "texto": "reformulado",
+   "q": "En un diagrama E/R, un **arco de exclusividad** que une dos relaciones de la entidad A indica que:",
+   "ctx": null,
+   "op": {
+    "a": "Cada ocurrencia de A participa en una de las dos relaciones, pero no en ambas",
+    "b": "Cada ocurrencia de A participa obligatoriamente en las dos relaciones",
+    "c": "Las dos relaciones tienen el mismo tipo de correspondencia",
+    "d": "A es una entidad débil respecto de ambas"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las **relaciones exclusivas** se marcan con un arco: una ocurrencia participa en una u otra, nunca en las dos. No dice nada del tipo de correspondencia ni de debilidad.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-022",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-022",
+   "texto": "reformulado",
+   "q": "¿Qué forma normal propuso **Ronald Fagin en 1977**, basada en las dependencias multivaluadas?",
+   "ctx": null,
+   "op": {
+    "a": "Forma normal de Boyce-Codd",
+    "b": "Cuarta forma normal (4FN)",
+    "c": "Tercera forma normal (3FN)",
+    "d": "Sexta forma normal (6FN)"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Fagin propuso la **4FN** (1977), la 5FN (1979) y la FNDC (1981). La FNBC es de Boyce y Codd (1974); la 3FN, de Codd (1971); la 6FN, de Date (2003).",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 3
+  },
+  {
+   "id": "t15-v-023",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-023",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes es una **anomalía** típica de una tabla sin normalizar como Pedido(num_pedido, cod_cliente, nombre_cliente, producto)?",
+   "ctx": null,
+   "op": {
+    "a": "No se pueden hacer consultas con JOIN",
+    "b": "La tabla no admite clave primaria",
+    "c": "Al borrar el único pedido de un cliente se pierden los datos de ese cliente",
+    "d": "Las consultas siempre son más lentas que con tablas normalizadas"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Es una **anomalía de borrado**. También hay de inserción (no dar de alta un cliente sin pedidos) y de modificación (cambiar el nombre en todas sus filas). La tabla sí admite clave y las consultas no tienen por qué ser más lentas.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-024",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-024",
+   "texto": "reformulado",
+   "q": "¿Qué axioma de Armstrong afirma que **si Y ⊆ X, entonces X → Y**?",
+   "ctx": null,
+   "op": {
+    "a": "Aumentatividad",
+    "b": "Transitividad",
+    "c": "Pseudotransitividad",
+    "d": "Reflexividad"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Reflexividad**: un conjunto determina cualquiera de sus subconjuntos. Aumentatividad: si X → Y, entonces XZ → YZ. Transitividad: X → Y e Y → Z implican X → Z.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-025",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-025",
+   "texto": "reformulado",
+   "q": "¿Qué regla de Codd exige que todo dato sea accesible indicando **tabla, valor de clave primaria y nombre de columna**?",
+   "ctx": null,
+   "op": {
+    "a": "Regla 2, de acceso garantizado",
+    "b": "Regla 1, de información",
+    "c": "Regla 8, de independencia física",
+    "d": "Regla 12, de no subversión"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **regla 2** es la de acceso garantizado. La 1 dice que toda la información se representa como valores en tablas; la 8 trata de la independencia física; la 12 impide saltarse las reglas con un lenguaje de bajo nivel.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 3
+  },
+  {
+   "id": "t15-v-026",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-026",
+   "texto": "reformulado",
+   "q": "En la terminología relacional, ¿cómo se llama cada **fila** de una relación?",
+   "ctx": null,
+   "op": {
+    "a": "Atributo",
+    "b": "Tupla",
+    "c": "Dominio",
+    "d": "Grado"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Fila = **tupla** (registro en ficheros). Columna = atributo (campo). El dominio es el conjunto de valores posibles; el grado, el número de atributos.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-v-027",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-027",
+   "texto": "reformulado",
+   "q": "Una Línea de factura no puede existir sin su Factura y se identifica con el número de factura más un número de línea. ¿Qué tipo de dependencia tiene Línea respecto de Factura?",
+   "ctx": null,
+   "op": {
+    "a": "Solo dependencia en existencia",
+    "b": "Ninguna: ambas son entidades fuertes",
+    "c": "Dependencia en identificación (que implica también dependencia en existencia)",
+    "d": "Una relación exclusiva"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Si la entidad débil necesita la clave de la fuerte para identificarse, hay **dependencia en identificación**, que siempre implica dependencia en existencia.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-028",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-028",
+   "texto": "reformulado",
+   "q": "Según la teoría clásica, ¿cuál es el **principal beneficio** de normalizar?",
+   "ctx": null,
+   "op": {
+    "a": "Mejorar siempre el rendimiento de las consultas",
+    "b": "Reducir el número de tablas",
+    "c": "Eliminar la necesidad de claves ajenas",
+    "d": "Minimizar la redundancia de la información"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El principal beneficio es **minimizar la redundancia** (y con ello las anomalías). Normalizar suele aumentar tablas y reuniones, y necesita más claves ajenas, no menos.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-v-029",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-029",
+   "texto": "reformulado",
+   "q": "Se intenta insertar en Municipio una fila con cod_provincia = '99', que no existe en Provincia. ¿Qué regla se incumple?",
+   "ctx": null,
+   "op": {
+    "a": "La integridad referencial",
+    "b": "La integridad de entidad",
+    "c": "La regla de no subversión",
+    "d": "La primera forma normal"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La clave ajena toma un valor que no existe en la tabla referenciada: se viola la **integridad referencial**. La de entidad trata de nulos en la clave primaria.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-v-030",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-030",
+   "texto": "reformulado",
+   "q": "¿Cómo se transforma al modelo relacional un atributo **multivaluado** (por ejemplo, los teléfonos de un cliente)?",
+   "ctx": null,
+   "op": {
+    "a": "En una columna con los valores separados por comas",
+    "b": "En una tabla nueva con la clave de la entidad y el valor del atributo",
+    "c": "En tantas columnas como valores posibles",
+    "d": "En un atributo derivado que no se almacena"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El multivaluado genera una **tabla nueva** (Telefono(id_cliente, numero)). Separar valores por comas viola la 1FN; varias columnas numeradas son un grupo repetitivo encubierto.",
+   "epigrafe": "Transformación del modelo E/R al relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-v-031",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-031",
+   "texto": "reformulado",
+   "q": "Una relación E/R «Imparte» une Profesor, Asignatura y Aula. ¿Cuál es su grado?",
+   "ctx": null,
+   "op": {
+    "a": "2 (binaria)",
+    "b": "1 (unaria)",
+    "c": "3 (ternaria)",
+    "d": "Depende del número de ocurrencias"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Participan tres tipos de entidad: grado **3**. El grado no depende del número de ocurrencias. Al pasar a relacional, una ternaria genera una tabla con las claves de las tres entidades.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-v-032",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-032",
+   "texto": "reformulado",
+   "q": "¿Qué nivel de modelado de datos **depende del SGBD concreto** (Oracle, PostgreSQL...) e incluye índices, particiones y tipos exactos?",
+   "ctx": null,
+   "op": {
+    "a": "El modelo conceptual",
+    "b": "El modelo lógico",
+    "c": "El modelo externo",
+    "d": "El modelo físico"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **físico** depende del producto. El conceptual no depende de nada; el lógico depende del tipo de modelo (relacional) pero no del producto; el externo son las vistas de usuario (ANSI/SPARC).",
+   "epigrafe": "Niveles de modelado y proceso de diseño",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-v-033",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-033",
+   "texto": "reformulado",
+   "q": "¿Qué arquitectura define tres niveles de esquema (externo, conceptual e interno) para lograr la independencia de datos?",
+   "ctx": null,
+   "op": {
+    "a": "ANSI/SPARC",
+    "b": "Modelo de Codd",
+    "c": "Métrica v3",
+    "d": "Modelo de Kimball"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La arquitectura **ANSI/SPARC** separa los niveles externo, conceptual e interno, de donde salen la independencia física y la lógica.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-034",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-034",
+   "texto": "reformulado",
+   "q": "¿Qué operación del álgebra relacional responde a consultas del tipo «alumnos matriculados en **todas** las asignaturas»?",
+   "ctx": null,
+   "op": {
+    "a": "La proyección",
+    "b": "La división",
+    "c": "La unión",
+    "d": "La selección"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **división** (÷) obtiene los valores relacionados con todos los de otra relación. En SQL se expresa con NOT EXISTS anidados.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-035",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-035",
+   "texto": "reformulado",
+   "q": "En el modelo relacional, ¿cómo se llama una clave candidata que **no** se ha elegido como clave primaria?",
+   "ctx": null,
+   "op": {
+    "a": "Clave ajena",
+    "b": "Superclave mínima",
+    "c": "Clave alternativa",
+    "d": "Clave secundaria de dominio"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las candidatas no elegidas son **claves alternativas**. La clave ajena referencia a otra tabla; una superclave mínima es, precisamente, una candidata.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-v-036",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-036",
+   "texto": "reformulado",
+   "q": "¿Quién propuso el **modelo Entidad/Relación** en 1976?",
+   "ctx": null,
+   "op": {
+    "a": "Edgar F. Codd",
+    "b": "Ralph Kimball",
+    "c": "Ronald Fagin",
+    "d": "Peter Chen"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El modelo E/R es de **Peter Chen** (1976). Codd propuso el modelo relacional (1970); Kimball, el modelado dimensional; Fagin, la 4FN y la 5FN.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-v-037",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-037",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes es una restricción **inherente** al modelo relacional (no la define el diseñador)?",
+   "ctx": null,
+   "op": {
+    "a": "No puede haber dos tuplas iguales en una relación",
+    "b": "El atributo edad debe ser mayor que 0",
+    "c": "El salario no puede superar 5000",
+    "d": "Todo cliente debe tener teléfono"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las restricciones **inherentes** las impone el propio modelo: no hay tuplas duplicadas, los valores son atómicos, el orden no importa. Las demás son restricciones **semánticas** o de usuario (CHECK, NOT NULL...).",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-038",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-038",
+   "texto": "reformulado",
+   "q": "En una relación N:M entre Proyecto y Empleado con el atributo «horas dedicadas», ¿dónde va ese atributo al pasar a relacional?",
+   "ctx": null,
+   "op": {
+    "a": "En la tabla Proyecto",
+    "b": "En la tabla intermedia, cuya clave es (id_proyecto, id_empleado)",
+    "c": "En la tabla Empleado",
+    "d": "En una tabla aparte solo con las horas"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Un atributo de una relación N:M depende de **la pareja** proyecto-empleado, así que va en la tabla de la relación.",
+   "epigrafe": "Transformación del modelo E/R al relacional",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-039",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-039",
+   "texto": "reformulado",
+   "q": "En SQL, ¿cuál es el resultado de evaluar la condición `cod_provincia = NULL`?",
+   "ctx": null,
+   "op": {
+    "a": "TRUE si la columna es nula",
+    "b": "FALSE siempre",
+    "c": "UNKNOWN (desconocido); por eso se usa IS NULL",
+    "d": "Un error de sintaxis"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Comparar con nulo da **UNKNOWN** (lógica trivaluada), y la fila no se selecciona. Para preguntar por nulos se usa `IS NULL` / `IS NOT NULL`.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-040",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-040",
+   "texto": "reformulado",
+   "q": "En la tabla Pedido(num_pedido, cod_cliente, nombre_cliente), con clave num_pedido, ¿qué problema hay?",
+   "ctx": null,
+   "op": {
+    "a": "Una dependencia parcial de la clave, que impide la 2FN",
+    "b": "Un grupo repetitivo, que impide la 1FN",
+    "c": "Ninguno: está en FNBC",
+    "d": "Una dependencia transitiva num_pedido → cod_cliente → nombre_cliente, que impide la 3FN"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "nombre_cliente depende de la clave **a través de** cod_cliente: es transitiva y la tabla no está en 3FN. No puede haber dependencia parcial con clave simple. Solución: Cliente(cod_cliente, nombre_cliente).",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-041",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-041",
+   "texto": "reformulado",
+   "q": "Una tabla está en 1FN y su clave primaria tiene **un solo atributo**. ¿En qué forma normal está como mínimo?",
+   "ctx": null,
+   "op": {
+    "a": "En 2FN, porque no puede haber dependencias parciales de una clave simple",
+    "b": "Solo en 1FN",
+    "c": "En 3FN",
+    "d": "En FNBC"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La 2FN prohíbe que un atributo dependa de **parte** de la clave; con clave de un atributo no hay partes. Para la 3FN habría que comprobar además que no hay dependencias transitivas.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 3
+  },
+  {
+   "id": "t15-v-042",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-042",
+   "texto": "reformulado",
+   "q": "Según Métrica v3, ¿cuándo está una entidad en **1FN**?",
+   "ctx": null,
+   "op": {
+    "a": "Cuando todos sus atributos dependen de la clave completa",
+    "b": "Cuando no tiene grupos repetitivos: un atributo solo puede tomar un único valor de un dominio simple",
+    "c": "Cuando no tiene dependencias transitivas",
+    "d": "Cuando todo determinante es clave candidata"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Es la definición literal de **1FN**. La dependencia de la clave completa es la 2FN; sin transitivas, la 3FN; todo determinante clave, la FNBC.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-v-043",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-043",
+   "texto": "reformulado",
+   "q": "Calificacion(Dni_Profesor, Nombre_Profesor, Dni_Alumno, Nota), con clave (Dni_Profesor, Dni_Alumno). ¿Qué descomposición la lleva a 2FN?",
+   "ctx": null,
+   "op": {
+    "a": "Alumno(Dni_Alumno, Nota) y Profesor(Dni_Profesor, Nombre_Profesor)",
+    "b": "Una sola tabla con clave Dni_Alumno",
+    "c": "Profesor(Dni_Profesor, Nombre_Profesor) y Calificacion(Dni_Profesor, Dni_Alumno, Nota)",
+    "d": "Calificacion(Dni_Profesor, Nombre_Profesor) y Nota(Dni_Alumno, Nota)"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Nombre_Profesor depende solo de Dni_Profesor (dependencia parcial). Se saca a Profesor y la nota, que depende de la clave completa, se queda en Calificacion. Las otras opciones pierden información o dependencias.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 3
+  },
+  {
+   "id": "t15-v-044",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-044",
+   "texto": "reformulado",
+   "q": "¿Qué operación del álgebra relacional equivale a la cláusula **WHERE** de SQL?",
+   "ctx": null,
+   "op": {
+    "a": "La proyección (π)",
+    "b": "El producto cartesiano (×)",
+    "c": "El renombrado (ρ)",
+    "d": "La selección (σ)"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "WHERE filtra filas: **selección**. La proyección equivale a la lista de columnas del SELECT; el producto, a CROSS JOIN; el renombrado, a AS.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-v-045",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-045",
+   "texto": "reformulado",
+   "q": "En el modelo relacional, ¿qué significa que un atributo tenga valor **nulo**?",
+   "ctx": null,
+   "op": {
+    "a": "Que su valor es desconocido o no aplicable",
+    "b": "Que vale cero",
+    "c": "Que contiene una cadena vacía",
+    "d": "Que la fila está marcada para borrarse"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Nulo = **desconocido o inaplicable**. No equivale a 0 ni a ''.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-v-046",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-046",
+   "texto": "reformulado",
+   "q": "Se quiere borrar una provincia que tiene municipios que la referencian, y la clave ajena está definida con ON DELETE RESTRICT. ¿Qué ocurre?",
+   "ctx": null,
+   "op": {
+    "a": "Se borran también los municipios",
+    "b": "El borrado se rechaza mientras existan municipios que la referencien",
+    "c": "La clave ajena de los municipios pasa a nulo",
+    "d": "Se borra la provincia y los municipios quedan huérfanos"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "RESTRICT (y NO ACTION) **rechazan** el borrado si hay hijos. CASCADE borraría los municipios; SET NULL pondría su clave ajena a nulo. Dejar huérfanos violaría la integridad referencial.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-047",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-047",
+   "texto": "reformulado",
+   "q": "¿Qué término del modelo relacional designa el **número de atributos** de una relación?",
+   "ctx": null,
+   "op": {
+    "a": "Cardinalidad",
+    "b": "Dominio",
+    "c": "Grado",
+    "d": "Extensión"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Grado** = número de atributos (columnas). Cardinalidad = número de tuplas. La extensión es el conjunto de tuplas en un momento dado.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-v-048",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-048",
+   "texto": "reformulado",
+   "q": "¿Por qué se **desnormaliza** a veces una base de datos en el diseño físico o en un almacén de datos?",
+   "ctx": null,
+   "op": {
+    "a": "Para eliminar la redundancia",
+    "b": "Para garantizar la integridad referencial",
+    "c": "Para cumplir la FNBC",
+    "d": "Para reducir reuniones y accesos y mejorar el rendimiento de las consultas"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Desnormalizar introduce redundancia **a propósito** para reducir joins y accesos (totales precalculados, columnas copiadas, vistas materializadas). Exige controlar esa redundancia.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-049",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-049",
+   "texto": "reformulado",
+   "q": "¿Qué forma normal, propuesta por C. J. Date en 2003, descompone las tablas hasta dejar la clave y un único atributo más?",
+   "ctx": null,
+   "op": {
+    "a": "Sexta forma normal (6FN)",
+    "b": "Quinta forma normal (5FN)",
+    "c": "Forma normal dominio-clave (FNDC)",
+    "d": "Forma normal de Boyce-Codd"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **6FN** (Date, 2003) no admite dependencias de reunión no triviales. La 5FN y la FNDC son de Fagin (1979 y 1981); la FNBC, de Boyce y Codd (1974).",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 3
+  },
+  {
+   "id": "t15-v-050",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-050",
+   "texto": "reformulado",
+   "q": "¿Qué regla de integridad se incumple al insertar en la columna `edad` (dominio: enteros de 0 a 120) el valor 'abc'?",
+   "ctx": null,
+   "op": {
+    "a": "Integridad de entidad",
+    "b": "Integridad de dominio",
+    "c": "Integridad referencial",
+    "d": "Integridad de unicidad"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Cada valor debe pertenecer al **dominio** de su atributo. La de entidad trata de nulos en la clave primaria; la referencial, de claves ajenas; la de unicidad, de valores repetidos.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-v-051",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-051",
+   "texto": "reformulado",
+   "q": "En el diseño de bases de datos, ¿qué modelo se obtiene **a partir del conceptual** expresado en un modelo de datos concreto (por ejemplo, el relacional), pero sin depender del SGBD?",
+   "ctx": null,
+   "op": {
+    "a": "El modelo físico",
+    "b": "El modelo externo",
+    "c": "El modelo lógico",
+    "d": "El diccionario de datos"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **lógico** traduce el conceptual al modelo relacional (y se normaliza). El físico ya depende del SGBD. En Métrica v3, conceptual y lógico se hacen en ASI 6 y el físico en DSI 6.",
+   "epigrafe": "Niveles de modelado y proceso de diseño",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-v-052",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-052",
+   "texto": "reformulado",
+   "q": "En el diseño físico de datos, ¿qué es la **productividad** (*throughput*)?",
+   "ctx": null,
+   "op": {
+    "a": "El tiempo que tarda una transacción",
+    "b": "El espacio que ocupan ficheros e índices",
+    "c": "El número de índices de una tabla",
+    "d": "El número de transacciones procesadas por unidad de tiempo"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Productividad** = transacciones por unidad de tiempo. El tiempo de una transacción es el **tiempo de respuesta**; el espacio de ficheros e índices es el **espacio de almacenamiento**.",
+   "epigrafe": "Diseño lógico y físico en Métrica v3",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-v-053",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-053",
+   "texto": "reformulado",
+   "q": "En el modelo relacional, ¿qué nombre recibe la parte **estable** de una relación (su nombre y sus atributos), frente al conjunto de tuplas que cambia con el tiempo?",
+   "ctx": null,
+   "op": {
+    "a": "El esquema o intensión",
+    "b": "La extensión",
+    "c": "La cardinalidad",
+    "d": "El dominio"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **esquema (intensión)** es estable; la **extensión** (las tuplas) cambia. La cardinalidad es el número de tuplas; el dominio, los valores posibles de un atributo.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-054",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-054",
+   "texto": "reformulado",
+   "q": "Entre Empleado y Departamento, cada empleado pertenece a uno y solo un departamento, y cada departamento tiene de 0 a n empleados. ¿Cuál es el tipo de correspondencia?",
+   "ctx": null,
+   "op": {
+    "a": "1:1",
+    "b": "1:N",
+    "c": "N:M",
+    "d": "(0,n)"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Mirando los **máximos**: un departamento, muchos empleados → **1:N**. (0,n) es la **cardinalidad** de Empleado en esa relación vista desde Departamento, no el tipo de correspondencia.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-055",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-055",
+   "texto": "reformulado",
+   "q": "Clase(alumno, asignatura, profesor), con clave (alumno, asignatura), donde cada profesor imparte una sola asignatura (profesor → asignatura). ¿En qué forma normal está como máximo?",
+   "ctx": null,
+   "op": {
+    "a": "Solo en 1FN",
+    "b": "En 2FN, pero no en 3FN",
+    "c": "En 3FN, pero no en FNBC",
+    "d": "En FNBC"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "No hay atributos no principales (profesor forma parte de una clave candidata: (alumno, profesor)), así que cumple la 3FN. Pero el determinante «profesor» no es clave candidata: **no está en FNBC**.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 3
+  },
+  {
+   "id": "t15-v-056",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-056",
+   "texto": "reformulado",
+   "q": "¿Puede una clave ajena referenciar a **la misma tabla** en la que está definida?",
+   "ctx": null,
+   "op": {
+    "a": "No: la clave ajena siempre apunta a otra tabla",
+    "b": "Solo si la tabla no tiene clave primaria",
+    "c": "Solo en bases de datos NoSQL",
+    "d": "Sí: es una relación reflexiva, por ejemplo Empleado.id_jefe referencia a Empleado.id"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Una clave ajena puede apuntar a su propia tabla para representar relaciones **reflexivas** (jefe-empleado, categoría-subcategoría).",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-057",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-057",
+   "texto": "reformulado",
+   "q": "¿En qué tipo de cálculo relacional se basa el lenguaje gráfico **QBE** (Query By Example)?",
+   "ctx": null,
+   "op": {
+    "a": "En el cálculo relacional de dominios",
+    "b": "En el cálculo relacional de tuplas",
+    "c": "En el álgebra relacional",
+    "d": "En el modelo dimensional"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "QBE se basa en el cálculo de **dominios** (variables que recorren valores). QUEL (Ingres) y, en parte, SQL se inspiran en el cálculo de **tuplas**.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 3
+  },
+  {
+   "id": "t15-v-058",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-058",
+   "texto": "reformulado",
+   "q": "En la tabla municipios(codprov, codmuni, nombre), la clave primaria es (codprov, codmuni). ¿Qué tipo de clave es?",
+   "ctx": null,
+   "op": {
+    "a": "Una superclave no mínima",
+    "b": "Una clave compuesta que incluye la clave ajena hacia provincias",
+    "c": "Una clave alternativa",
+    "d": "Una clave simple"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Tiene dos atributos (compuesta) y uno de ellos, codprov, es a la vez clave ajena. Es mínima: con codmuni solo no basta si se repite en provincias distintas.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-059",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-059",
+   "texto": "reformulado",
+   "q": "¿Cuál de estas afirmaciones sobre el **modelo conceptual** es correcta?",
+   "ctx": null,
+   "op": {
+    "a": "Depende del SGBD elegido",
+    "b": "Describe índices y particiones",
+    "c": "Es independiente del tipo de modelo de datos y del SGBD que se vaya a usar",
+    "d": "Solo se puede expresar con UML"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El modelo conceptual no depende de nada: ni del modelo (relacional, documental...) ni del producto. Índices y particiones son del físico. Se expresa con E/R o con diagramas de clases UML.",
+   "epigrafe": "Niveles de modelado y proceso de diseño",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-v-060",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-060",
+   "texto": "reformulado",
+   "q": "¿Qué tipo de índice es el más adecuado para columnas de **baja cardinalidad** (pocos valores distintos), típico en almacenes de datos?",
+   "ctx": null,
+   "op": {
+    "a": "Árbol B+",
+    "b": "Hash",
+    "c": "Índice agrupado (clustered)",
+    "d": "Bitmap"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El índice **bitmap** es eficiente con pocos valores distintos. El B+ es el general (rangos y orden); el hash, para búsquedas por igualdad; el agrupado ordena físicamente las filas.",
+   "epigrafe": "Niveles de modelado y proceso de diseño",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-061",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-061",
+   "texto": "reformulado",
+   "q": "¿En qué situación es imposible que una tabla en 1FN incumpla la **2FN**?",
+   "ctx": null,
+   "op": {
+    "a": "Cuando su clave primaria (y toda clave candidata) es de un solo atributo",
+    "b": "Cuando tiene más de una clave candidata",
+    "c": "Cuando tiene claves ajenas",
+    "d": "Cuando tiene muchas filas"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La 2FN solo se puede incumplir con dependencias **parciales**, que exigen una clave compuesta. Con claves simples, toda tabla en 1FN está en 2FN.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-v-062",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t15-h-062",
+   "texto": "reformulado",
+   "q": "¿Por qué no puede ser nulo ningún atributo de la clave primaria?",
+   "ctx": null,
+   "op": {
+    "a": "Porque los nulos ocupan demasiado espacio",
+    "b": "Porque la clave debe identificar cada tupla, y un valor desconocido no permitiría identificarla",
+    "c": "Porque SQL no admite nulos en ninguna columna",
+    "d": "Porque la clave primaria siempre es numérica"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La clave primaria sirve para **identificar** cada tupla; si una parte es desconocida, la tupla no queda identificada. Es la regla de integridad de entidad.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-n-001",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué condición añade la **FNBC** a la 3FN?",
+   "ctx": null,
+   "op": {
+    "a": "Que no haya dependencias multivaluadas",
+    "b": "Que no haya grupos repetitivos",
+    "c": "Que todo determinante de una dependencia funcional no trivial sea clave candidata",
+    "d": "Que la clave primaria sea simple"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "FNBC: **todo determinante es clave candidata**. Sin multivaluadas es la 4FN; sin grupos repetitivos, la 1FN.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-n-002",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Al llevar una tabla a **FNBC**, ¿qué propiedad de la descomposición puede perderse?",
+   "ctx": null,
+   "op": {
+    "a": "La reunión sin pérdida",
+    "b": "La primera forma normal",
+    "c": "La integridad de entidad",
+    "d": "La conservación de las dependencias funcionales"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Hasta la 3FN siempre se consiguen reunión sin pérdida y conservación de dependencias. En FNBC la reunión sin pérdida se mantiene, pero puede perderse la **conservación de dependencias**.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 3
+  },
+  {
+   "id": "t15-n-003",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Se tiene X → Y e Y → Z. ¿Qué axioma de Armstrong permite deducir X → Z?",
+   "ctx": null,
+   "op": {
+    "a": "Transitividad",
+    "b": "Reflexividad",
+    "c": "Aumentatividad",
+    "d": "Descomposición"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Transitividad**: X → Y e Y → Z implican X → Z. Reflexividad: Y ⊆ X implica X → Y. Aumentatividad: X → Y implica XZ → YZ. Descomposición: X → YZ implica X → Y.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-n-004",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Si el **cierre** de un conjunto de atributos X (X+) contiene todos los atributos de la relación, ¿qué se puede afirmar de X?",
+   "ctx": null,
+   "op": {
+    "a": "Que X es clave ajena",
+    "b": "Que X es superclave",
+    "c": "Que la relación no está en 1FN",
+    "d": "Que X es un atributo derivado"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Si X determina todos los atributos, X es **superclave**. Si además es mínimo, es clave candidata.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-n-005",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En una **dependencia multivaluada** X →→ Y:",
+   "ctx": null,
+   "op": {
+    "a": "A cada valor de X le corresponde un único valor de Y",
+    "b": "Y depende de X a través de otro atributo",
+    "c": "A cada valor de X le corresponde un conjunto de valores de Y, independiente del resto de atributos",
+    "d": "X e Y son claves candidatas"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Es la base de la 4FN. a) Un único valor es la dependencia **funcional**; c) a través de otro atributo es la **transitiva**.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-n-006",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Profesor(id, idioma, curso): cada profesor habla varios idiomas e imparte varios cursos, de forma independiente. ¿Qué forma normal incumple?",
+   "ctx": null,
+   "op": {
+    "a": "La 1FN",
+    "b": "La 2FN",
+    "c": "La 3FN",
+    "d": "La 4FN, por tener dos dependencias multivaluadas independientes"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "id →→ idioma e id →→ curso son independientes y obligan a combinar cada idioma con cada curso. Se descompone en ProfesorIdioma(id, idioma) y ProfesorCurso(id, curso): **4FN**.",
+   "epigrafe": "Dependencias funcionales y normalización",
+   "dificultad": 3
+  },
+  {
+   "id": "t15-n-007",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cómo se transforma al modelo relacional una relación **N:M** entre dos entidades?",
+   "ctx": null,
+   "op": {
+    "a": "En una tabla nueva cuya clave es la unión de las claves de ambas entidades",
+    "b": "Poniendo la clave de una entidad como clave ajena en la otra",
+    "c": "Fusionando las dos tablas",
+    "d": "No se puede representar en el modelo relacional"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La N:M genera una **tabla intermedia** con las dos claves (que suelen ser también claves ajenas). La clave ajena en uno de los lados vale para 1:N.",
+   "epigrafe": "Transformación del modelo E/R al relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-n-008",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cómo se transforma al modelo relacional una relación **1:N**?",
+   "ctx": null,
+   "op": {
+    "a": "La clave del lado N pasa como clave ajena al lado 1",
+    "b": "La clave de la entidad del lado 1 pasa como clave ajena a la tabla del lado N",
+    "c": "Se crea siempre una tabla intermedia",
+    "d": "Se fusionan las dos entidades en una tabla"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En 1:N la clave ajena va en el lado **N**. Una tabla intermedia solo es obligatoria en N:M (en 1:N es opcional, por ejemplo si la relación tiene muchos atributos o es poco frecuente).",
+   "epigrafe": "Transformación del modelo E/R al relacional",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-n-009",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cómo se suele tratar un **atributo derivado** (por ejemplo, la edad calculada a partir de la fecha de nacimiento) al pasar a relacional?",
+   "ctx": null,
+   "op": {
+    "a": "Se crea una tabla nueva para él",
+    "b": "Se convierte en clave primaria",
+    "c": "Normalmente no se almacena: se calcula al consultar o mediante una vista",
+    "d": "Se guarda en una tabla de hechos"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El derivado se **calcula** (consulta, vista o columna calculada). Solo se almacena si se desnormaliza a propósito por rendimiento.",
+   "epigrafe": "Transformación del modelo E/R al relacional",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-n-010",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cómo se transforma una **entidad débil** con dependencia en identificación?",
+   "ctx": null,
+   "op": {
+    "a": "En una tabla sin clave primaria",
+    "b": "En columnas dentro de la tabla de la entidad fuerte",
+    "c": "En una tabla con clave ajena opcional (nula) a la fuerte",
+    "d": "En una tabla cuya clave primaria incluye la clave de la entidad fuerte"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La clave de la débil se forma con la de la fuerte más un discriminador propio (por ejemplo, num_factura + num_linea). La clave ajena no puede ser nula.",
+   "epigrafe": "Transformación del modelo E/R al relacional",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-n-011",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según Métrica v3, ¿en qué tarea se realiza la **normalización del modelo lógico de datos**?",
+   "ctx": null,
+   "op": {
+    "a": "ASI 6.3, dentro de la actividad ASI 6 Elaboración del modelo de datos",
+    "b": "DSI 6.3 Optimización del modelo físico",
+    "c": "CSI 1 Preparación del entorno",
+    "d": "EVS 2 Estudio de la situación actual"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "ASI 6 incluye el modelo conceptual (6.1), el lógico (6.2), su **normalización (6.3)** y la especificación de migración (6.4). La optimización física es DSI 6.3.",
+   "epigrafe": "Diseño lógico y físico en Métrica v3",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-n-012",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según Métrica v3, ¿en qué actividad se especifican los **caminos de acceso** a los datos?",
+   "ctx": null,
+   "op": {
+    "a": "ASI 6 Elaboración del modelo de datos",
+    "b": "DSI 6 Diseño físico de datos",
+    "c": "ASI 10 Especificación del plan de pruebas",
+    "d": "IAS 5 Pruebas de implantación"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "DSI 6.2 especifica los caminos de acceso (secuencial, por índice, por hash) según las transacciones más frecuentes.",
+   "epigrafe": "Diseño lógico y físico en Métrica v3",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-n-013",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué ventaja tiene el **particionamiento** de una tabla grande (por rango, lista o hash)?",
+   "ctx": null,
+   "op": {
+    "a": "Elimina la redundancia de datos",
+    "b": "Sustituye a la clave primaria",
+    "c": "Permite acceder solo a las particiones necesarias y gestionar los datos por partes",
+    "d": "Lleva la tabla a FNBC"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El particionamiento es una técnica **física**: mejora el acceso (poda de particiones) y la gestión. No cambia el modelo lógico ni la normalización.",
+   "epigrafe": "Diseño lógico y físico en Métrica v3",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-n-014",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En el modelado dimensional de Kimball, ¿qué contiene una **tabla de hechos**?",
+   "ctx": null,
+   "op": {
+    "a": "Descripciones textuales de clientes y productos",
+    "b": "Solo claves naturales del sistema origen",
+    "c": "Los metadatos del almacén de datos",
+    "d": "Medidas numéricas de un proceso de negocio y claves ajenas a las dimensiones"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La tabla de **hechos** guarda medidas (importe, unidades) y claves a las dimensiones. El contexto descriptivo está en las tablas de **dimensión**.",
+   "epigrafe": "Modelado dimensional (Kimball)",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-n-015",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué tipo de **dimensión lentamente cambiante (SCD)** conserva el historial añadiendo una fila nueva con fechas de vigencia?",
+   "ctx": null,
+   "op": {
+    "a": "Tipo 2",
+    "b": "Tipo 0",
+    "c": "Tipo 1",
+    "d": "Tipo 3"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "SCD **tipo 2** añade fila nueva. Tipo 0 conserva el valor original; tipo 1 sobrescribe (pierde historia); tipo 3 añade una columna con el valor anterior.",
+   "epigrafe": "Modelado dimensional (Kimball)",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-n-016",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué esquema dimensional **normaliza** las tablas de dimensión en varias tablas relacionadas?",
+   "ctx": null,
+   "op": {
+    "a": "Estrella",
+    "b": "Copo de nieve (snowflake)",
+    "c": "Constelación",
+    "d": "Tabla puente"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En el **copo de nieve** las dimensiones se normalizan. En la **estrella** son tablas desnormalizadas alrededor de los hechos; la **constelación** tiene varias tablas de hechos que comparten dimensiones.",
+   "epigrafe": "Modelado dimensional (Kimball)",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-n-017",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál es la **primera decisión de diseño** tras elegir el proceso de negocio en el método de cuatro pasos de Kimball?",
+   "ctx": null,
+   "op": {
+    "a": "Elegir las medidas",
+    "b": "Definir los índices bitmap",
+    "c": "Declarar el grano (nivel de detalle de una fila de hechos)",
+    "d": "Normalizar las dimensiones"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los cuatro pasos: proceso de negocio, **grano**, dimensiones y hechos. El grano condiciona todo lo demás.",
+   "epigrafe": "Modelado dimensional (Kimball)",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-n-018",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Un saldo de cuenta bancaria se puede sumar entre cuentas, pero no a lo largo del tiempo. ¿Qué tipo de medida es?",
+   "ctx": null,
+   "op": {
+    "a": "Aditiva",
+    "b": "No aditiva",
+    "c": "Degenerada",
+    "d": "Semiaditiva"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las **semiaditivas** se suman en algunas dimensiones pero no en el tiempo (saldos, existencias). Las aditivas se suman en todas; las no aditivas (porcentajes) en ninguna.",
+   "epigrafe": "Modelado dimensional (Kimball)",
+   "dificultad": 3
+  },
+  {
+   "id": "t15-n-019",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué usan las tablas de dimensión de Kimball como clave primaria?",
+   "ctx": null,
+   "op": {
+    "a": "Claves subrogadas: enteros sin significado de negocio",
+    "b": "Las claves naturales del sistema origen",
+    "c": "El NIF del cliente siempre",
+    "d": "Una clave compuesta con la fecha"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las **claves subrogadas** aíslan el almacén de los cambios en los sistemas origen y permiten SCD tipo 2 (varias filas para el mismo cliente).",
+   "epigrafe": "Modelado dimensional (Kimball)",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-n-020",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué enfoque de almacén de datos se asocia a **Bill Inmon**?",
+   "ctx": null,
+   "op": {
+    "a": "Ascendente: data marts integrados con dimensiones conformadas",
+    "b": "Descendente: un almacén corporativo integrado en 3FN del que salen los data marts",
+    "c": "Un único esquema en estrella para toda la organización",
+    "d": "Bases de datos NoSQL de documentos"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Inmon = **top-down** con almacén corporativo normalizado. Kimball = **bottom-up** con data marts y dimensiones conformadas (bus de datos).",
+   "epigrafe": "Modelado dimensional (Kimball)",
+   "dificultad": 3
+  },
+  {
+   "id": "t15-n-021",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En la arquitectura ANSI/SPARC, poder cambiar la organización de los ficheros e índices **sin modificar el esquema conceptual** es la:",
+   "ctx": null,
+   "op": {
+    "a": "Independencia lógica",
+    "b": "Integridad referencial",
+    "c": "Independencia física",
+    "d": "Independencia de distribución"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Independencia física**: cambios en el nivel interno no afectan al conceptual. La lógica: cambios en el conceptual no afectan a las vistas externas.",
+   "epigrafe": "Niveles de modelado y proceso de diseño",
+   "dificultad": 1
+  },
+  {
+   "id": "t15-n-022",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En notación de Chen, ¿qué indica una **línea doble** entre una entidad y una relación?",
+   "ctx": null,
+   "op": {
+    "a": "Que la relación es N:M",
+    "b": "Que el atributo es multivaluado",
+    "c": "Que la entidad es un supertipo",
+    "d": "Participación total (obligatoria) de la entidad en la relación"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La línea doble indica **participación total**: toda ocurrencia de la entidad participa en la relación. El multivaluado es una elipse doble.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-n-023",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En una generalización **total**, ¿qué se cumple?",
+   "ctx": null,
+   "op": {
+    "a": "Toda ocurrencia del supertipo pertenece al menos a un subtipo",
+    "b": "Cada ocurrencia pertenece a un solo subtipo",
+    "c": "Los subtipos no tienen atributos propios",
+    "d": "El supertipo no tiene atributos"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Total** = toda ocurrencia está en algún subtipo (si no, es parcial). Que esté en un único subtipo es la propiedad **exclusiva**.",
+   "epigrafe": "Modelo Entidad/Relación",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-n-024",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué operación del álgebra relacional exige que las dos relaciones sean **compatibles** (mismo grado y dominios)?",
+   "ctx": null,
+   "op": {
+    "a": "La selección",
+    "b": "La unión",
+    "c": "La proyección",
+    "d": "El producto cartesiano"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Unión, diferencia e intersección exigen relaciones **compatibles**. Selección y proyección son unarias; el producto cartesiano admite cualquier par.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 2
+  },
+  {
+   "id": "t15-n-025",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "La expresión π nombre (σ salario > 3000 (Empleado)) equivale en SQL a:",
+   "ctx": null,
+   "op": {
+    "a": "SELECT * FROM Empleado WHERE nombre > 3000",
+    "b": "SELECT salario FROM Empleado WHERE nombre = 3000",
+    "c": "SELECT DISTINCT nombre FROM Empleado WHERE salario > 3000",
+    "d": "SELECT nombre, salario FROM Empleado"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "σ filtra filas (WHERE) y π elige columnas (lista del SELECT). El DISTINCT refleja que la proyección elimina duplicados.",
+   "epigrafe": "Modelo relacional",
+   "dificultad": 2
+  }
+ ],
+ "tarjetas": [
+  {
+   "id": "t15-c-001",
+   "anverso": "Grado y cardinalidad (modelo relacional)",
+   "reverso": "Grado = número de atributos (columnas). Cardinalidad = número de tuplas (filas).",
+   "epigrafe": "Modelo relacional"
+  },
+  {
+   "id": "t15-c-002",
+   "anverso": "Dominio",
+   "reverso": "Conjunto de valores posibles de un atributo. En Métrica v3 tiene existencia propia.",
+   "epigrafe": "Modelo relacional"
+  },
+  {
+   "id": "t15-c-003",
+   "anverso": "Superclave, clave candidata, primaria y alternativa",
+   "reverso": "Superclave identifica; candidata = superclave mínima; primaria = candidata elegida; alternativa = candidata no elegida.",
+   "epigrafe": "Modelo relacional"
+  },
+  {
+   "id": "t15-c-004",
+   "anverso": "Clave ajena (foránea)",
+   "reverso": "Atributos de R2 cuyos valores deben coincidir con la clave primaria (o candidata) de R1, o ser nulos.",
+   "epigrafe": "Modelo relacional"
+  },
+  {
+   "id": "t15-c-005",
+   "anverso": "Integridad de entidad",
+   "reverso": "Ningún atributo de la clave primaria puede ser nulo.",
+   "epigrafe": "Modelo relacional"
+  },
+  {
+   "id": "t15-c-006",
+   "anverso": "Integridad referencial",
+   "reverso": "Los valores de la clave ajena existen en la clave referenciada o son nulos.",
+   "epigrafe": "Modelo relacional"
+  },
+  {
+   "id": "t15-c-007",
+   "anverso": "Valor nulo",
+   "reverso": "Desconocido o inaplicable. No es cero ni cadena vacía. Comparar con nulo da UNKNOWN.",
+   "epigrafe": "Modelo relacional"
+  },
+  {
+   "id": "t15-c-008",
+   "anverso": "Clave ajena a nulo",
+   "reverso": "La tupla no está relacionada con ninguna de la tabla referenciada. No viola ninguna regla.",
+   "epigrafe": "Modelo relacional"
+  },
+  {
+   "id": "t15-c-009",
+   "anverso": "¿Es fallo de integridad borrar una fila hija?",
+   "reverso": "No. Sí lo es borrar un padre con hijos que lo referencian.",
+   "epigrafe": "Modelo relacional"
+  },
+  {
+   "id": "t15-c-010",
+   "anverso": "Objetivos de Codd",
+   "reverso": "Independencia física y lógica, flexibilidad, uniformidad y sencillez. NO «independencia conceptual».",
+   "epigrafe": "Modelo relacional"
+  },
+  {
+   "id": "t15-c-011",
+   "anverso": "Operaciones fundamentales del álgebra relacional",
+   "reverso": "Selección, proyección, unión, diferencia y producto cartesiano (+ renombrado). Intersección, reunión y división son derivadas.",
+   "epigrafe": "Modelo relacional"
+  },
+  {
+   "id": "t15-c-012",
+   "anverso": "Proyección frente a selección",
+   "reverso": "Proyección (π): subconjunto de atributos (columnas). Selección (σ): subconjunto de tuplas (filas).",
+   "epigrafe": "Modelo relacional"
+  },
+  {
+   "id": "t15-c-013",
+   "anverso": "Cálculo relacional",
+   "reverso": "Declarativo (no procedimental). Toma su nombre del cálculo de predicados. Tuplas → QUEL; dominios → QBE.",
+   "epigrafe": "Modelo relacional"
+  },
+  {
+   "id": "t15-c-014",
+   "anverso": "Autor del modelo relacional y del modelo E/R",
+   "reverso": "Relacional: Edgar F. Codd (IBM, 1970). E/R: Peter Chen (1976).",
+   "epigrafe": "Modelo Entidad/Relación"
+  },
+  {
+   "id": "t15-c-015",
+   "anverso": "Grado de una relación E/R",
+   "reverso": "Número de tipos de entidad que participan (unaria, binaria, ternaria...).",
+   "epigrafe": "Modelo Entidad/Relación"
+  },
+  {
+   "id": "t15-c-016",
+   "anverso": "Tipo de correspondencia (Métrica v3)",
+   "reverso": "Número máximo de ocurrencias de cada entidad en la relación: 1:1, 1:N, N:M.",
+   "epigrafe": "Modelo Entidad/Relación"
+  },
+  {
+   "id": "t15-c-017",
+   "anverso": "Cardinalidad (E/R, Métrica v3)",
+   "reverso": "Participación de cada entidad en la relación: mínimo y máximo, (0,1), (1,n)...",
+   "epigrafe": "Modelo Entidad/Relación"
+  },
+  {
+   "id": "t15-c-018",
+   "anverso": "Las relaciones se definen por… (Métrica v3)",
+   "reverso": "Nombre, tipo de correspondencia y cardinalidad (y grado). Nunca por atributo, dominio o categoría.",
+   "epigrafe": "Modelo Entidad/Relación"
+  },
+  {
+   "id": "t15-c-019",
+   "anverso": "Entidad (Métrica v3)",
+   "reverso": "Objeto real o abstracto acerca del cual se desea almacenar información en la base de datos.",
+   "epigrafe": "Modelo Entidad/Relación"
+  },
+  {
+   "id": "t15-c-020",
+   "anverso": "Asociación (Métrica v3)",
+   "reverso": "Relacionar dos entidades de dominios independientes que coyunturalmente se asocian.",
+   "epigrafe": "Modelo Entidad/Relación"
+  },
+  {
+   "id": "t15-c-021",
+   "anverso": "Dependencia en existencia frente a identificación",
+   "reverso": "Existencia: la débil no existe sin la fuerte. Identificación: además necesita la clave de la fuerte para identificarse.",
+   "epigrafe": "Modelo Entidad/Relación"
+  },
+  {
+   "id": "t15-c-022",
+   "anverso": "Símbolos de Chen para atributos",
+   "reverso": "Subrayado = identificador; elipse doble = multivaluado; discontinua = derivado; con elipses colgando = compuesto.",
+   "epigrafe": "Modelo Entidad/Relación"
+  },
+  {
+   "id": "t15-c-023",
+   "anverso": "Jerarquías: total/parcial y exclusiva/solapada",
+   "reverso": "Total: toda ocurrencia en algún subtipo. Exclusiva: en un solo subtipo. Solapada: en varios.",
+   "epigrafe": "Modelo Entidad/Relación"
+  },
+  {
+   "id": "t15-c-024",
+   "anverso": "Transformar atributo compuesto y multivaluado",
+   "reverso": "Compuesto → una columna por componente (desaparece). Multivaluado → tabla nueva (clave + valor).",
+   "epigrafe": "Transformación del modelo E/R al relacional"
+  },
+  {
+   "id": "t15-c-025",
+   "anverso": "Transformar relaciones 1:N y N:M",
+   "reverso": "1:N → clave del lado 1 como ajena en el lado N. N:M → tabla nueva con ambas claves.",
+   "epigrafe": "Transformación del modelo E/R al relacional"
+  },
+  {
+   "id": "t15-c-026",
+   "anverso": "Transformar una jerarquía",
+   "reverso": "Tabla única con discriminador; supertipo + tabla por subtipo (clave = ajena al supertipo); o solo subtipos si es total y exclusiva.",
+   "epigrafe": "Transformación del modelo E/R al relacional"
+  },
+  {
+   "id": "t15-c-027",
+   "anverso": "Dependencia funcional (Métrica v3)",
+   "reverso": "Y depende de X si, y solo si, a cada valor de X le corresponde un único valor de Y.",
+   "epigrafe": "Dependencias funcionales y normalización"
+  },
+  {
+   "id": "t15-c-028",
+   "anverso": "Dependencia completa frente a transitiva",
+   "reverso": "Completa: de toda la clave, no de una parte. Transitiva: a través de otro atributo.",
+   "epigrafe": "Dependencias funcionales y normalización"
+  },
+  {
+   "id": "t15-c-029",
+   "anverso": "1FN (Métrica v3)",
+   "reverso": "Sin grupos repetitivos: cada atributo toma un único valor de un dominio simple.",
+   "epigrafe": "Dependencias funcionales y normalización"
+  },
+  {
+   "id": "t15-c-030",
+   "anverso": "2FN (Métrica v3)",
+   "reverso": "1FN + atributos no principales con dependencia funcional completa de las claves candidatas.",
+   "epigrafe": "Dependencias funcionales y normalización"
+  },
+  {
+   "id": "t15-c-031",
+   "anverso": "3FN (Métrica v3)",
+   "reverso": "2FN + sin dependencias transitivas de atributos no principales respecto de las claves.",
+   "epigrafe": "Dependencias funcionales y normalización"
+  },
+  {
+   "id": "t15-c-032",
+   "anverso": "FNBC, 4FN y 5FN",
+   "reverso": "FNBC: todo determinante es clave candidata. 4FN: sin multivaluadas no triviales. 5FN: dependencias de reunión implicadas por las claves.",
+   "epigrafe": "Dependencias funcionales y normalización"
+  },
+  {
+   "id": "t15-c-033",
+   "anverso": "Dependencia de reunión",
+   "reverso": "La relación se reconstruye sin pérdida a partir de la reunión de algunas de sus proyecciones. Base de la 5FN.",
+   "epigrafe": "Dependencias funcionales y normalización"
+  },
+  {
+   "id": "t15-c-034",
+   "anverso": "Principal beneficio de normalizar",
+   "reverso": "Minimizar la redundancia. NO es objetivo reducir relaciones ni mejorar el rendimiento.",
+   "epigrafe": "Dependencias funcionales y normalización"
+  },
+  {
+   "id": "t15-c-035",
+   "anverso": "Características de las dependencias funcionales",
+   "reverso": "Semánticas, se cumplen en cualquier extensión, invariantes en el tiempo. NO representan todas las restricciones.",
+   "epigrafe": "Dependencias funcionales y normalización"
+  },
+  {
+   "id": "t15-c-036",
+   "anverso": "Teléfonos «916666666;917777777» en un campo",
+   "reverso": "Viola la 1FN: la tabla no está en ninguna forma normal.",
+   "epigrafe": "Dependencias funcionales y normalización"
+  },
+  {
+   "id": "t15-c-037",
+   "anverso": "Optimizar el modelo físico (Métrica v3)",
+   "reverso": "Introducir redundancia, dividir entidades, combinar las que se acceden en la MISMA transacción y redefinir relaciones.",
+   "epigrafe": "Diseño lógico y físico en Métrica v3"
+  },
+  {
+   "id": "t15-c-038",
+   "anverso": "Tiempo de respuesta frente a productividad",
+   "reverso": "Tiempo de respuesta: lo que tarda una transacción. Productividad: transacciones por unidad de tiempo.",
+   "epigrafe": "Diseño lógico y físico en Métrica v3"
+  },
+  {
+   "id": "t15-c-039",
+   "anverso": "Actividades de datos en Métrica v3",
+   "reverso": "ASI 6: modelo conceptual, lógico y normalización. DSI 6: diseño físico, caminos de acceso, optimización y distribución.",
+   "epigrafe": "Diseño lógico y físico en Métrica v3"
+  },
+  {
+   "id": "t15-c-040",
+   "anverso": "Dimensión outrigger",
+   "reverso": "Dimensión enlazada desde otra dimensión, no desde la tabla de hechos.",
+   "epigrafe": "Modelado dimensional (Kimball)"
+  },
+  {
+   "id": "t15-c-041",
+   "anverso": "Dimensión degenerada y conformada",
+   "reverso": "Degenerada: atributo de dimensión en la tabla de hechos (nº de factura). Conformada: compartida por varias tablas de hechos.",
+   "epigrafe": "Modelado dimensional (Kimball)"
+  },
+  {
+   "id": "t15-c-042",
+   "anverso": "Estrella frente a copo de nieve",
+   "reverso": "Estrella: dimensiones desnormalizadas. Copo de nieve: dimensiones normalizadas en varias tablas.",
+   "epigrafe": "Modelado dimensional (Kimball)"
+  }
+ ],
+ "discrepancias": [
+  {
+   "ref": "LI2007-ej1-ej1-54",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 47
+   },
+   "clave_oficial": "c",
+   "temario_dice": "Temario: las formas clásicas son 1FN, 2FN, 3FN, FNBC, 4FN y 5FN (seis); «opción oficial dudosa»",
+   "veredicto": "Se mantiene la oficial c) (5 niveles, FNBC como variante de la 3FN). Pregunta discutible: contando la FNBC serían 6 (d). No hay número universal."
+  },
+  {
+   "ref": "LI2017-b3-b3-12",
+   "origen": {
+    "anio": 2017,
+    "parte": "b3",
+    "n": 12
+   },
+   "clave_oficial": "d (clave del JSON, resuelta por Claude; no oficial)",
+   "temario_dice": "Temario: «leer cardinalidad y exclusividad del diagrama» (sin verificar), sin letra",
+   "veredicto": "Se propone c): el arco de exclusividad dice central O exterior. d) añade «solo un puesto», que choca con la Relación 1 de tipo 1:N si la N está en el lado de UbicacionCentral. Ambigua: clave claude-dudosa."
+  }
+ ]
+}

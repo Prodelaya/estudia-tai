@@ -1,0 +1,3700 @@
+{
+ "tema": 13,
+ "generado": "2026-10-20",
+ "preguntas": [
+  {
+   "id": "t13-h-001",
+   "tipo": "historica",
+   "ref": "LI2025-ej1-31",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 31
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál es el kernel sobre el que se basa Android?",
+   "ctx": null,
+   "op": {
+    "a": "Mach Kernel.",
+    "b": "Windows NT Kernel.",
+    "c": "Kernel de Linux.",
+    "d": "Microkernel L4."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Android se apoya en un **núcleo Linux** modificado (Binder para IPC, gestión de energía propia). Desde Android 11-12 Google usa el **GKI** (Generic Kernel Image): un núcleo Linux común con los módulos del fabricante aparte.\n\n- a) Mach forma parte de **XNU**, el núcleo de macOS e iOS.\n- b) El núcleo NT es el de Windows.\n- d) L4 es una familia de micronúcleos de investigación; no es la base de Android.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-002",
+   "tipo": "historica",
+   "ref": "LI2025-ej1-32",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 32
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En el contexto de iOS, ¿cómo se denomina la técnica que garantiza que las aplicaciones solo accedan a sus propios recursos y datos, mejorando la seguridad del sistema?",
+   "ctx": null,
+   "op": {
+    "a": "Sandboxing.",
+    "b": "Jailbreaking.",
+    "c": "Sideloading.",
+    "d": "Hypervisioning."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** El **sandboxing** encierra cada app de iOS en su propio contenedor: solo accede a sus ficheros, y para usar recursos sensibles (cámara, ubicación, contactos) necesita permisos del usuario y *entitlements*.\n\n- b) El *jailbreaking* es lo contrario: romper las restricciones de iOS.\n- c) El *sideloading* es instalar apps desde fuera de la tienda oficial.\n- d) \"Hypervisioning\" no es una técnica de iOS.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-003",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-25",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 25,
+    "conv": "ext"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de los siguientes algoritmos de planificación de CPU asigna un quantum de tiempo de CPU a cada proceso?",
+   "ctx": null,
+   "op": {
+    "a": "FCFS.",
+    "b": "SJF.",
+    "c": "Por prioridades.",
+    "d": "Round Robin."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** **Round Robin** da a cada proceso un **quantum** (rodaja de tiempo). Si no termina, vuelve al final de la cola circular. Es expropiativo y no produce inanición.\n\n- a) FCFS atiende por orden de llegada, sin quantum ni expropiación.\n- b) SJF elige el trabajo más corto.\n- c) Por prioridades elige el de mayor prioridad; puede combinarse con quantum, pero no se define por él.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-004",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-29",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 29,
+    "conv": "ext"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En un sistema Linux, el directorio /etc contiene:",
+   "ctx": null,
+   "op": {
+    "a": "Los ficheros y directorios del usuario.",
+    "b": "Los ficheros de configuración del sistema.",
+    "c": "Los directorios de los usuarios.",
+    "d": "Los ficheros binarios ejecutables esenciales del sistema."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** **/etc** guarda los ficheros de **configuración** del sistema (passwd, fstab, hosts, ssh/...).\n\n- a) y c) Los ficheros y directorios de los usuarios están en **/home**.\n- d) Los binarios esenciales están en **/bin** (y /sbin los de administración).",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-005",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-31",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 31,
+    "conv": "ext"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El framework de Wi-Fi en Android 14 y superior tiene tres HAL de Wi-Fi. Señale cuál es uno de ellos:",
+   "ctx": null,
+   "op": {
+    "a": "HAL de Supervisor.",
+    "b": "HAL de Comunicación.",
+    "c": "HAL de Hostapd.",
+    "d": "HAL de Wi-Fi."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Según la documentación de AOSP, el framework de Wi-Fi tiene **tres HAL**: **Vendor HAL** (paquete android.hardware.wifi), **Supplicant HAL** (wpa_supplicant) y **Hostapd HAL** (punto de acceso o *hotspot*).\n\n- a) y b) \"HAL de Supervisor\" y \"HAL de Comunicación\" no existen.\n- d) \"HAL de Wi-Fi\" es ambiguo: el Vendor HAL se implementa en el paquete android.hardware.wifi y a veces se le llama así. Por eso la opción inequívoca es Hostapd.\n\nLa lección no entra en este detalle; basta saber que la **HAL** (capa de abstracción de hardware) separa el framework del hardware, y desde Android 8 (Project Treble) va aparte.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 3
+  },
+  {
+   "id": "t13-h-006",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-32",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 32,
+    "conv": "ext"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Dentro de los elementos constitutivos de un sistema operativo, ¿cómo se denomina a la estructura de datos que contiene información sobre un proceso?",
+   "ctx": null,
+   "op": {
+    "a": "Tabla de páginas.",
+    "b": "Vector de interrupciones.",
+    "c": "Descriptor de segmento.",
+    "d": "Bloque de control de proceso."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** El **PCB** (Process Control Block, bloque de control de proceso) guarda todo lo que el SO sabe de un proceso: PID, estado, contador de programa, registros, información de memoria, ficheros abiertos, prioridad y contabilidad.\n\n- a) La tabla de páginas traduce páginas lógicas a marcos físicos.\n- b) El vector de interrupciones apunta a las rutinas que atienden cada interrupción.\n- c) El descriptor de segmento describe un segmento de memoria (base, límite, permisos).",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-007",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-R01",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 81,
+    "conv": "ext"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En el sistema operativo Android, ¿qué extensión tienen los archivos ejecutables Dalvik?",
+   "ctx": null,
+   "op": {
+    "a": ".dex",
+    "b": ".apk",
+    "c": ".dvk",
+    "d": ".dxk"
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** Dalvik ejecuta bytecode en formato **.dex** (Dalvik Executable). Al compilar, las clases Java/Kotlin se convierten en uno o varios classes.dex que viajan dentro del APK. ART sigue usando .dex como entrada.\n\n- b) **.apk** es el paquete de la aplicación (un ZIP con los .dex, recursos y manifiesto), no el ejecutable Dalvik.\n- c) y d) .dvk y .dxk no existen.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-008",
+   "tipo": "historica",
+   "ref": "LI2024-ej1-26",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 25
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál es la función del kernel en un sistema operativo Unix/Linux?",
+   "ctx": null,
+   "op": {
+    "a": "Gestionar la interfaz gráfica.",
+    "b": "Controlar los procesos, la memoria y la administración de dispositivos.",
+    "c": "Proveer servicios de red como TCP/IP.",
+    "d": "Facilitar la comunicación entre usuarios a través de terminales."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** El kernel **controla los procesos, la memoria y los dispositivos**: planifica la CPU, gestiona la memoria virtual, atiende interrupciones y drivers, y recibe las llamadas al sistema.\n\n- a) La interfaz gráfica (X11, Wayland, entornos de escritorio) va en espacio de usuario.\n- c) La pila TCP/IP está en el núcleo de Linux, pero \"proveer servicios de red\" no es *la* función del kernel; los servicios de red (servidores) son programas de usuario.\n- d) La comunicación entre usuarios por terminales (write, talk) la hacen utilidades de usuario.",
+   "epigrafe": "Conceptos generales de sistemas operativos",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-009",
+   "tipo": "historica",
+   "ref": "LI2024-ej1-27",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 26
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale la respuesta INCORRECTA. Android NDK:",
+   "ctx": null,
+   "op": {
+    "a": "Es un conjunto de herramientas que permiten implementar partes de las aplicaciones de Android mediante C y C++.",
+    "b": "Genera librerías binarias para cada arquitectura de procesador que se pueden invocar desde Java por medio de JNI (Java Native Interface).",
+    "c": "Se recomienda su uso con aplicaciones intensivas a nivel computacional, como juegos o simulaciones físicas.",
+    "d": "No permite la reutilización de código, no pudiendo usar bibliotecas de otros desarrolladores."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** Es la INCORRECTA: el **NDK sí permite reutilizar código** y bibliotecas de terceros escritas en C/C++ (por ejemplo, motores de juego, códecs, OpenCV).\n\n- a) Correcta: el NDK permite implementar partes de la app en C y C++.\n- b) Correcta: genera bibliotecas nativas (.so) por arquitectura (arm64-v8a, x86_64...) que se llaman desde Java/Kotlin con **JNI**.\n- c) Correcta: se recomienda para tareas intensivas en cálculo (juegos, simulación física).",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-h-010",
+   "tipo": "historica",
+   "ref": "LI2024-ej1-55",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 53
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de los siguientes conceptos permite que un proceso ejecute múltiples tareas de manera simultánea o concurrente en un sistema operativo?",
+   "ctx": null,
+   "op": {
+    "a": "Segmentación.",
+    "b": "Paginación.",
+    "c": "Prepaging.",
+    "d": "Hilos."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** Los **hilos** (threads) permiten que un mismo proceso ejecute varias tareas concurrentes. Comparten código, datos, montículo y ficheros; cada hilo tiene su pila, registros y contador de programa.\n\n- a) La segmentación divide la memoria en segmentos lógicos (código, datos, pila).\n- b) La paginación divide la memoria en páginas de tamaño fijo.\n- c) El *prepaging* (prepaginación) carga páginas por adelantado.\n\nLas tres son técnicas de **memoria**, no de concurrencia.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-011",
+   "tipo": "historica",
+   "ref": "LI2024-ej1-R05",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 82
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale la respuesta correcta:",
+   "ctx": null,
+   "op": {
+    "a": "Xcode es un IDE que contiene herramientas destinadas exclusivamente al desarrollo software para iOS.",
+    "b": "Xcode Cloud no existe.",
+    "c": "SwiftUI es un framework que facilita la creación de aplicaciones para cualquier dispositivo Apple.",
+    "d": "iOS SDK permite el desarrollo de aplicaciones para macOS, iOS, watchOS y tvOS."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** **SwiftUI** (2019) es el framework declarativo de interfaz de Apple para **todas** sus plataformas: iOS, iPadOS, macOS, watchOS, tvOS y visionOS.\n\n- a) Falsa: Xcode sirve para desarrollar para todas las plataformas Apple, no solo iOS.\n- b) Falsa: **Xcode Cloud** existe desde 2022 (CI/CD de Apple en la nube).\n- d) Falsa: el iOS SDK es para iOS; cada plataforma tiene su propio SDK (macOS SDK, watchOS SDK...).",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-h-012",
+   "tipo": "historica",
+   "ref": "LI2022-ej1-31",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 31
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las versiones siguientes es la más reciente del sistema operativo macOS?",
+   "ctx": null,
+   "op": {
+    "a": "macOS Sierra",
+    "b": "macOS Monterey",
+    "c": "macOS Big Sur",
+    "d": "macOS Ventura"
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** De las cuatro, la más reciente es **Ventura** (macOS 13, 2022). Orden: Sierra (10.12, 2016) → Big Sur (11, 2020) → Monterey (12, 2021) → Ventura (13, 2022).\n\nDespués vinieron Sonoma (14, 2023), Sequoia (15, 2024) y, con la nueva numeración por año, macOS 26 Tahoe (2025) y siguientes. Entre estas cuatro opciones la respuesta sigue siendo Ventura, pero si te preguntan \"la más reciente\" hoy, revisa la tabla de versiones de la lección.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-013",
+   "tipo": "historica",
+   "ref": "LI2022-ej1-32",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 32
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Cuál de las siguientes afirmaciones NO es correcta:",
+   "ctx": null,
+   "op": {
+    "a": "En Windows de 64 bits, un proceso de 64 bits no puede cargar una biblioteca de vínculos dinámicos (DLL) de 32 bits.",
+    "b": "En Windows de 64 bits, un proceso de 32 bits no puede cargar un archivo DLL de 64 bits.",
+    "c": "En Windows de 64 bits se admiten llamadas a procedimientos remotos (RPC) entre procesos de 64 y 32 bits solo en el mismo equipo.",
+    "d": "En Windows de 64 bits se admiten llamadas a procedimientos remotos (RPC) entre procesos de 64 y 32 bits tanto en el mismo equipo como entre equipos distintos."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Es la NO correcta. En Windows de 64 bits **sí se admite RPC entre procesos de 32 y 64 bits, tanto en el mismo equipo como entre equipos distintos**; decir \"solo en el mismo equipo\" es falso.\n\n- a) Correcta: un proceso de 64 bits no puede cargar una DLL de 32 bits.\n- b) Correcta: un proceso de 32 bits no puede cargar una DLL de 64 bits.\n- d) Correcta: es la regla real de RPC.",
+   "epigrafe": "Windows",
+   "dificultad": 3
+  },
+  {
+   "id": "t13-h-014",
+   "tipo": "historica",
+   "ref": "LI2022-ej1-61",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 58
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale la respuesta INCORRECTA sobre el kernel de un Sistema Operativo:",
+   "ctx": null,
+   "op": {
+    "a": "Controla todas las funciones importantes del hardware.",
+    "b": "Se encarga del procesamiento paralelo de tareas (multitasking).",
+    "c": "Es el núcleo del procesador.",
+    "d": "Recibe peticiones de servicio de los procesos y los comunica con el hardware."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Es la INCORRECTA: el kernel **no es el núcleo del procesador**. El kernel es software (la parte del SO en modo privilegiado); el núcleo (*core*) del procesador es hardware. Es una trampa de vocabulario.\n\n- a) Correcta: controla el hardware mediante drivers.\n- b) Correcta: planifica los procesos y hace posible la multitarea.\n- d) Correcta: recibe las llamadas al sistema y las traslada al hardware.",
+   "epigrafe": "Conceptos generales de sistemas operativos",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-015",
+   "tipo": "historica",
+   "ref": "LI2022-ej1-62",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 59
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En un sistema UNIX, cuál es la respuesta INCORRECTA:",
+   "ctx": null,
+   "op": {
+    "a": "El GID es el número de identificación de grupo.",
+    "b": "El UID es el número de identificación de usuario.",
+    "c": "El administrador del sistema se denomina root.",
+    "d": "El proceso init se refiere al proceso de arranque de un usuario."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** Es la INCORRECTA: **init** no es \"el proceso de arranque de un usuario\", sino el **primer proceso del sistema** (PID 1), padre de todos los demás y adoptante de los huérfanos. Hoy casi todas las distribuciones usan **systemd** como init.\n\n- a) Correcta: GID es el identificador de grupo.\n- b) Correcta: UID es el identificador de usuario.\n- c) Correcta: el administrador es root (UID 0).",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-016",
+   "tipo": "historica",
+   "ref": "LI2022-ej1-R02",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 78
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Dentro de los dispositivos Android, es posible encontrar un gran número de capas de personalización. Señale cuál NO es una de ellas:",
+   "ctx": null,
+   "op": {
+    "a": "MIUI",
+    "b": "PenPoint OS",
+    "c": "One UI",
+    "d": "OriginOS"
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** **PenPoint OS** no es una capa de Android: fue un SO para ordenadores de lápiz de GO Corporation (1991).\n\n- a) MIUI es la capa de Xiaomi (sustituida por HyperOS en 2023).\n- c) One UI es la de Samsung.\n- d) OriginOS es la de vivo.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-017",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "ej1",
+    "n": 31
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En una distribución Linux, ¿qué directorio contiene, entre otros, los ficheros de configuración tanto de los componentes del sistema operativo como de los programas y aplicaciones instalados después?",
+   "ctx": null,
+   "op": {
+    "a": "/root",
+    "b": "/bin",
+    "c": "/dev",
+    "d": "/etc"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** **/etc** contiene los ficheros de configuración del sistema y de las aplicaciones instaladas (passwd, fstab, hosts, ssh/sshd_config...).\n\n- a) /root es la carpeta personal del superusuario.\n- b) /bin guarda ejecutables esenciales (ls, cp, cat).\n- c) /dev contiene los ficheros de dispositivo.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-018",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "ej1",
+    "n": 32
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En los sistemas Linux, si se ejecuta el comando chmod 640 para modificar los permisos de un archivo, ¿qué permisos se asignan?",
+   "ctx": null,
+   "op": {
+    "a": "Lectura, escritura y ejecución al propietario, lectura al grupo y ningún acceso al resto de usuarios.",
+    "b": "Lectura, escritura y ejecución al propietario, lectura y escritura al grupo y ejecución al resto de usuarios.",
+    "c": "Lectura y escritura al propietario, lectura al grupo y ningún acceso al resto de usuarios.",
+    "d": "Lectura y escritura al propietario, ejecución al grupo y ningún acceso al resto de usuarios."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Cada cifra octal son tres bits r-w-x: **6 = 110 = rw-**, **4 = 100 = r--**, **0 = 000 = ---**. chmod 640 da **rw-r-----**: lectura y escritura al propietario, lectura al grupo y nada al resto.\n\n- a) y b) Dan ejecución al propietario, que sería un 7.\n- d) Ejecución al grupo sería un 1, no un 4.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-019",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "b4",
+    "n": 18
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En la web del CCN-CERT hay un aviso de vulnerabilidad que afecta a algunas distribuciones Debian y necesita saber si está afectado. Elija la afirmación verdadera:",
+   "ctx": "Supuesto de 2019: CPD de una Dirección Territorial con servidores Debian gestionados con Salt, APT y Docker. Hay un aviso del CCN-CERT sobre una vulnerabilidad que afecta a algunas versiones de Debian.",
+   "op": {
+    "a": "La distribución estable es Debian 10 \"etch\" y la antigua estable es Debian 9 \"lenny\".",
+    "b": "La distribución estable es Debian 10 \"woody\" y la antigua estable es Debian 9 \"sarge\".",
+    "c": "La distribución estable es Debian 10 \"jessie\" y la antigua estable es Debian 9 \"potato\".",
+    "d": "La distribución estable es Debian 10 \"buster\" y la antigua estable es Debian 9 \"stretch\"."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**d)** En 2019 la versión **estable** era **Debian 10 \"buster\"** y la **antigua estable**, **Debian 9 \"stretch\"**. Los nombres son personajes de Toy Story.\n\n- a), b) y c) Emparejan los números 10 y 9 con nombres de versiones antiguas: etch (4), lenny (5), woody (3.0), sarge (3.1), jessie (8), potato (2.2).\n\n**Obsoleta**: a octubre de 2026 la estable es **Debian 13 \"trixie\"** (agosto de 2025) y la antigua estable, **Debian 12 \"bookworm\"**.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-h-020",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 34
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Seleccione la respuesta adecuada respecto al uso de BitLocker en Windows:",
+   "ctx": null,
+   "op": {
+    "a": "Característica de protección de la información que ayuda a mitigar el acceso no autorizado a datos, mejorando las protecciones de archivo y de sistema.",
+    "b": "Permite a un usuario acceder a las aplicaciones y datos almacenados en otro ordenador mediante un acceso por red.",
+    "c": "Desfragmenta el disco duro y las unidades para mejorar el rendimiento del sistema, realizándolo bit a bit.",
+    "d": "Es una herramienta de organización de trabajo en equipo y colaboración en línea."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** **BitLocker** es el cifrado de volumen completo de Windows: protege la información y mitiga el acceso no autorizado a los datos (por ejemplo, si roban el portátil). Usa AES (XTS-AES 128 por defecto) y suele apoyarse en el TPM. BitLocker To Go cifra unidades extraíbles.\n\n- b) El acceso a otro equipo por red es Escritorio remoto.\n- c) Desfragmentar es otra herramienta (Optimizar unidades); BitLocker no trabaja \"bit a bit\".\n- d) La colaboración en equipo es Teams, SharePoint, etc.",
+   "epigrafe": "Windows",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-021",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 35
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Indique cuál de las siguientes opciones NO corresponde con un identificador vinculado a información sobre un proceso en Linux:",
+   "ctx": null,
+   "op": {
+    "a": "TPID: identificador del hilo (thread) del proceso.",
+    "b": "UID: identificador del usuario propietario.",
+    "c": "PPID: identificador del proceso padre.",
+    "d": "PID: identificador único del proceso."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** \"TPID\" no es un identificador de proceso en Linux; es un distractor inventado. El identificador de hilo es el **TID** (y TGID el del grupo de hilos).\n\n- b) UID: usuario propietario del proceso. Sí existe.\n- c) PPID: proceso padre. Sí existe.\n- d) PID: identificador único del proceso. Sí existe.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-h-022",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 36
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En un sistema operativo, indique el scheduler que decide qué proceso entra en el procesador para su ejecución:",
+   "ctx": null,
+   "op": {
+    "a": "Short term scheduler.",
+    "b": "Mid term scheduler.",
+    "c": "Long term scheduler.",
+    "d": "Main term scheduler."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** El **planificador a corto plazo** (*short term scheduler* o planificador de CPU) elige qué proceso listo pasa a la CPU. Se ejecuta muy a menudo; el *dispatcher* hace después el cambio de contexto.\n\n- b) El de medio plazo (*mid term*) saca procesos a disco y los vuelve a traer (swapping).\n- c) El de largo plazo (*long term*, de trabajos) decide qué trabajos entran al sistema.\n- d) \"Main term scheduler\" no existe.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-023",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 37
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "La versión Pie de Android se corresponde con la versión:",
+   "ctx": null,
+   "op": {
+    "a": "7.0",
+    "b": "8.0",
+    "c": "9.0",
+    "d": "10.0"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Android **Pie** es la versión **9** (API 28, 2018). Fue el último nombre de postre público.\n\n- a) 7.0 es Nougat.\n- b) 8.0 es Oreo.\n- d) 10 ya no tuvo nombre público (internamente, Quince Tart).",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-024",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2017,
+    "parte": "b4",
+    "n": 33
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Si la versión del sistema operativo de los macOS de la unidad administrativa es \"ProductVersion: 10.13.4\", ¿con qué nombre de versión se corresponde?",
+   "ctx": "Supuesto: unidad administrativa de un ministerio que debe actualizar los puestos de usuario, entre ellos equipos macOS.",
+   "op": {
+    "a": "El Capitan",
+    "b": "Mavericks",
+    "c": "Yosemite",
+    "d": "High Sierra"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** macOS **10.13** es **High Sierra** (2017), y 10.13.4 es una actualización menor de esa versión. Introdujo APFS en Mac.\n\n- a) El Capitan es 10.11 (2015).\n- b) Mavericks es 10.9 (2013), la primera con nombre de lugar de California.\n- c) Yosemite es 10.10 (2014).",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-025",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-18",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 18
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale la respuesta correcta sobre el sistema de archivos ReFS:",
+   "ctx": null,
+   "op": {
+    "a": "Es el nuevo sistema de archivos de Mac OS.",
+    "b": "Longitud máxima del nombre del archivo es 512 caracteres.",
+    "c": "El tamaño máximo de archivo es 18 EB (exabytes).",
+    "d": "Su nombre significa Sistema de Archivos Repetible."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** ReFS (**Resilient** File System, Windows Server 2012) admite en teoría ficheros de hasta 2^64 bytes, unos **18 EB** (16 EiB). Es la única opción no falsa.\n\n- a) Falsa: es de Microsoft; el sistema de Mac es APFS.\n- b) Falsa: el nombre admite 255 caracteres.\n- d) Falsa: significa sistema de archivos **resiliente**, no repetible.\n\nMatiz: Microsoft documenta hoy límites prácticos menores (35 PB), pero la respuesta de aquella pregunta es la de 18 EB.",
+   "epigrafe": "Gestión de E/S y sistemas de ficheros",
+   "dificultad": 3
+  },
+  {
+   "id": "t13-h-026",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-30",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 30
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En UNIX una llamada fork(), señale la FALSA:",
+   "ctx": null,
+   "op": {
+    "a": "Retorna al proceso padre el PID del proceso creado.",
+    "b": "Crea un nuevo proceso hijo.",
+    "c": "Crea un nuevo proceso copia de sí mismo.",
+    "d": "Devuelve al proceso hijo el ID del proceso padre."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** Es la FALSA: fork() **devuelve 0 al hijo**, no el ID del padre. Si el hijo quiere el PID de su padre llama a getppid().\n\n- a) Verdadera: al padre le devuelve el PID del hijo (y -1 si falla).\n- b) y c) Verdaderas: crea un proceso hijo que es copia del que llama.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-h-027",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-32",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 32
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En Linux, la carpeta /bin:",
+   "ctx": null,
+   "op": {
+    "a": "Es la papelera de reciclaje.",
+    "b": "Contiene ficheros ejecutables y algunas utilidades del sistema operativo.",
+    "c": "Contiene los directorios de los usuarios.",
+    "d": "Contiene programas, ficheros y directorios del usuario."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** **/bin** guarda los **ejecutables esenciales** de usuario (ls, cp, cat, bash). En muchas distribuciones actuales es un enlace a /usr/bin (*usr merge*).\n\n- a) Linux no tiene una papelera de sistema en /bin (los escritorios usan ~/.local/share/Trash).\n- c) Los directorios de los usuarios están en /home.\n- d) Los programas y ficheros de cada usuario están en su carpeta de /home.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-028",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-34",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 34
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Indique cuál de los siguientes es un sistema operativo para móviles:",
+   "ctx": null,
+   "op": {
+    "a": "Knoppix",
+    "b": "Ubuntu",
+    "c": "MeeGo",
+    "d": "Suse"
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** **MeeGo** (Nokia e Intel, 2010) fue un sistema operativo para móviles y dispositivos embebidos basado en Linux.\n\n- a) Knoppix es una distribución Linux *live* basada en Debian.\n- b) Ubuntu es una distribución de escritorio y servidor (Ubuntu Touch fue otro proyecto).\n- d) SUSE es una distribución de escritorio y servidor.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-029",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-35",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 35
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "La versión 4.1 del sistema operativo Android es:",
+   "ctx": null,
+   "op": {
+    "a": "Ice Cream Sandwich",
+    "b": "Jelly Bean",
+    "c": "KitKat",
+    "d": "Lollipop"
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Android **4.1** (4.1 a 4.3) es **Jelly Bean** (2012), la de Project Butter.\n\n- a) Ice Cream Sandwich es 4.0.\n- c) KitKat es 4.4.\n- d) Lollipop es 5.x.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-030",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-I-II-41",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 39
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En Android las aplicaciones se distribuyen en paquetes con extensión:",
+   "ctx": null,
+   "op": {
+    "a": ".exe",
+    "b": ".apk",
+    "c": ".yum",
+    "d": ".ogg"
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Las apps de Android se empaquetan en **.apk** (Android Package), un ZIP con el bytecode .dex, recursos y el AndroidManifest.xml. Para publicar en Google Play se exige desde 2021 el formato .aab.\n\n- a) .exe es de Windows.\n- c) yum es el gestor de paquetes de Red Hat (los paquetes son .rpm).\n- d) .ogg es un contenedor multimedia.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-031",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-I-II-42",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 40
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale cuál de las siguientes NO es una distribución de Linux:",
+   "ctx": null,
+   "op": {
+    "a": "Mint",
+    "b": "OpenSUSE",
+    "c": "Arch",
+    "d": "Kilimanjaro"
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** **Kilimanjaro** no es una distribución Linux; es un distractor.\n\n- a) Linux Mint: basada en Ubuntu.\n- b) openSUSE: familia SUSE, paquetes .rpm con zypper.\n- c) Arch Linux: distribución *rolling release* con pacman.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-032",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-I-II-43",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 41
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las siguientes es una distribución de GNU/Linux basada en Ubuntu?",
+   "ctx": null,
+   "op": {
+    "a": "Ututo XS",
+    "b": "PCLinuxOS",
+    "c": "centOS 7.0",
+    "d": "Trisquel 7.0"
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** **Trisquel** es una distribución 100 % libre, de origen gallego, **basada en Ubuntu**.\n\n- a) Ututo XS se basa en Gentoo.\n- b) PCLinuxOS nació de Mandrake/Mandriva.\n- c) CentOS se basa en Red Hat Enterprise Linux.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-h-033",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-I-II-47",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 45
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Qué versión de Android fue ideada en exclusiva para tablets?",
+   "ctx": null,
+   "op": {
+    "a": "Lollipop",
+    "b": "Jelly bean",
+    "c": "Honeycomb",
+    "d": "Nougat"
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** **Honeycomb** (Android 3.x, 2011) se hizo solo para tablets. Ice Cream Sandwich (4.0) volvió a unir móvil y tablet.\n\n- a) Lollipop (5.x) es para todo tipo de dispositivos.\n- b) Jelly Bean (4.1-4.3), igual.\n- d) Nougat (7.x), igual. La versión moderna orientada a pantallas grandes fue 12L, no exclusiva.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-034",
+   "tipo": "historica",
+   "ref": "LI2016-ej1_iv-IV-R02",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 156
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Indique la tecnología utilizada por Microsoft en sus sistemas operativos Windows, cuyo objetivo específico es la sincronización de datos entre equipos de escritorio y dispositivos móviles:",
+   "ctx": null,
+   "op": {
+    "a": "System Center Console Manager (SCCM).",
+    "b": "ActiveSync.",
+    "c": "Identity Manager.",
+    "d": "Yammer."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** **ActiveSync** era la tecnología de Microsoft para sincronizar el PC con dispositivos móviles (Windows Mobile). En Vista se sustituyó por el Centro de dispositivos de Windows Mobile; su protocolo, **Exchange ActiveSync**, sigue vivo para el correo móvil.\n\n- a) SCCM (System Center Configuration Manager) gestiona configuraciones e implantaciones en equipos.\n- c) Identity Manager gestiona identidades.\n- d) Yammer es una red social corporativa.",
+   "epigrafe": "Windows",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-035",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-I-II-35",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 28
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Cuál de los siguientes sistemas de archivos NO fue creado para Windows:",
+   "ctx": null,
+   "op": {
+    "a": "NTFS",
+    "b": "FAT16",
+    "c": "FAT32",
+    "d": "Ext2"
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** **Ext2** es el sistema de ficheros clásico de **Linux** (después ext3 con journaling y ext4 con extents).\n\n- a) NTFS nació con Windows NT 3.1 (1993).\n- b) FAT16 viene de MS-DOS y se usó en Windows.\n- c) FAT32 apareció con Windows 95 OSR2.",
+   "epigrafe": "Gestión de E/S y sistemas de ficheros",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-036",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-I-II-37",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 30
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Seleccione la respuesta correcta con respecto al algoritmo de planificación Round Robin, es un algoritmo que:",
+   "ctx": null,
+   "op": {
+    "a": "provoca aplazamientos indefinidos.",
+    "b": "hace uso de \"quantum\" o \"time-slice\".",
+    "c": "prioriza el proceso cuyo tiempo restante sea menor.",
+    "d": "prioriza el proceso más corto."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Round Robin usa un **quantum** o *time-slice*: cada proceso ejecuta como máximo ese tiempo y vuelve al final de la cola circular.\n\n- a) Falsa: RR no provoca aplazamiento indefinido (inanición); todos tienen turno.\n- c) Priorizar el menor tiempo restante es **SRTF**.\n- d) Priorizar el proceso más corto es **SJF**.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-037",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-I-II-38",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 31
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En relación con el gestor de arranque en sistemas Linux, señale la respuesta correcta:",
+   "ctx": null,
+   "op": {
+    "a": "LILO es un gestor de arranque muy básico y no permite realizar control de errores.",
+    "b": "GRUB es anterior a LILO y es por ello que ya no se preinstala en nuevas distribuciones de GNU/Linux.",
+    "c": "Aunque sería la solución ideal, tanto LILO como GRUB no pueden instalarse en el Master Boot Record (MBR).",
+    "d": "GRUB 2 ha reemplazado a lo que se conocía hasta entonces como GRUB, pasando ésta a denominarse GRUB Legacy."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** **GRUB 2** sustituyó al GRUB original, que pasó a llamarse **GRUB Legacy**. Es el gestor de arranque estándar actual.\n\n- a) Falsa: LILO es básico, pero no es cierto que no tenga control de errores.\n- b) Falsa: **LILO es anterior** a GRUB.\n- c) Falsa: ambos pueden instalarse en el MBR.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-h-038",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-I-II-39",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 32
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Dado un sistema de ficheros de tipo UNIX, ¿cuál de las siguientes opciones NO forma parte de la lista de elementos de información almacenados en cada inodo (inode)?",
+   "ctx": null,
+   "op": {
+    "a": "Propietario.",
+    "b": "Nombre del fichero.",
+    "c": "Tipo de archivo.",
+    "d": "Permisos de acceso."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** El **nombre del fichero NO está en el inodo**: está en la **entrada de directorio**, que asocia nombre y número de inodo. Por eso un fichero puede tener varios nombres (enlaces duros).\n\n- a) El propietario (UID) sí está en el inodo.\n- c) El tipo de fichero sí está.\n- d) Los permisos sí están.",
+   "epigrafe": "Gestión de E/S y sistemas de ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-h-039",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-I-II-40",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 33
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál es la plataforma de ejecución de aplicaciones, o máquina virtual, sobre la que ejecutan las aplicaciones y diversos servicios de sistema en las versiones a partir de KitKat (Android 4.4) de los sistemas operativos de tipo Android?",
+   "ctx": null,
+   "op": {
+    "a": "JVM (Java Virtual Machine).",
+    "b": "DVM (Dalvik Virtual Machine).",
+    "c": "ART (Android Runtime).",
+    "d": "AVM (Android Virtual Machine)."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** **ART** (Android Runtime), con compilación AOT, sustituyó a Dalvik. Matiz: en Android **4.4 KitKat** ART solo era **opcional** (Dalvik seguía por defecto); es el runtime por defecto desde **5.0 Lollipop**. Aun así, ART es la única respuesta defendible de la lista.\n\n- a) La JVM de escritorio no se usa en Android.\n- b) Dalvik era el runtime anterior (hasta 4.4).\n- d) \"AVM\" no existe.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-h-040",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-I-II-41",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 34
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Relacionado con la gestión de memoria, la técnica de paginación puede provocar:",
+   "ctx": null,
+   "op": {
+    "a": "La tabla de páginas se quede sin memoria provocando un error de Memory Exception.",
+    "b": "Fragmentación interna.",
+    "c": "Fragmentación externa.",
+    "d": "Fragmentación interna y externa a la vez."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** La **paginación** produce **fragmentación interna**: las páginas son de tamaño fijo y la última página de un proceso suele quedar a medio llenar. No hay fragmentación externa porque cualquier marco libre sirve.\n\n- a) No es un efecto propio de la paginación.\n- c) La fragmentación externa es típica de la **segmentación** y de las particiones variables.\n- d) La paginación no produce las dos.",
+   "epigrafe": "Gestión de memoria",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-041",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-I-II-43",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 36
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El algoritmo de planificación SRR (Selfish Round Robin) es una variante del algoritmo Round Robin, la cual consiste en que:",
+   "ctx": null,
+   "op": {
+    "a": "Emplea dos colas, una para los procesos nuevos y otra para los procesos antiguos.",
+    "b": "Emplea 32 colas, una para cada prioridad, donde la 0 es la cola de prioridad más baja y la 31 la de prioridad más alta.",
+    "c": "La longitud del quantum se calcula cuando se produce una conmutación de contexto.",
+    "d": "Se aumenta la longitud del quantum actual en un valor fijo T cada vez que llega un nuevo proceso."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** **Selfish Round Robin** usa **dos colas**: una de procesos nuevos y otra de aceptados. La prioridad de los nuevos crece más deprisa que la de los aceptados; cuando un nuevo la iguala, pasa a la cola RR.\n\n- b) 32 colas de prioridad (0 a 31) describe el planificador de **Windows**.\n- c) y d) Describen variantes de quantum dinámico, no SRR.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 3
+  },
+  {
+   "id": "t13-h-042",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-I-II-45",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 38
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de los siguientes es el lenguaje de programación empleado para desarrollar aplicaciones nativas para Android?",
+   "ctx": null,
+   "op": {
+    "a": "C++",
+    "b": "Java",
+    "c": "Objective-C",
+    "d": "Swift"
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** En 2015 el lenguaje oficial para apps nativas de Android era **Java**. Hoy Google recomienda **Kotlin** (*Kotlin first* desde 2019), aunque Java sigue soportado.\n\n- a) C++ se usa con el NDK para partes nativas, no como lenguaje principal.\n- c) Objective-C es el lenguaje histórico de iOS y macOS.\n- d) Swift es el lenguaje actual de Apple (2014).",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-043",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-I-II-38",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 27
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En un sistema operativo, señale cómo se denomina al planificador de la CPU que puede cambiar un proceso de memoria a disco haciéndolo entrar más tarde:",
+   "ctx": null,
+   "op": {
+    "a": "Planificador a corto plazo.",
+    "b": "Planificador a medio plazo.",
+    "c": "Planificador a largo plazo.",
+    "d": "Planificador de trabajos."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** El **planificador a medio plazo** (*swapper*) saca procesos de memoria a disco y los vuelve a traer más tarde. Así regula la carga de memoria.\n\n- a) El de corto plazo elige qué proceso listo usa la CPU.\n- c) y d) El de largo plazo, o planificador de trabajos, admite trabajos en el sistema.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-044",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-I-II-39",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 28
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale qué directorio de Unix almacena la información de los dispositivos de E/S:",
+   "ctx": null,
+   "op": {
+    "a": "/etc.",
+    "b": "/tmp.",
+    "c": "/dev.",
+    "d": "/bin."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** **/dev** contiene los **ficheros de dispositivo** (discos /dev/sda, terminales /dev/tty, /dev/null). En Unix \"todo es un fichero\".\n\n- a) /etc: configuración.\n- b) /tmp: temporales.\n- d) /bin: ejecutables esenciales.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-045",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-I-II-40",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 29
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale la afirmación correcta sistemas operativos:",
+   "ctx": null,
+   "op": {
+    "a": "El sistema operativo Windows utiliza licencias GPL.",
+    "b": "Unix y Linux se diferencian en que el primero sólo se puede ejecutar en equipos con procesadores SPARC y el segundo sólo en sistemas con procesadores Intel.",
+    "c": "Ubuntu, Fedora, Suse y Debian son distintas versiones de Linux.",
+    "d": "La principal dificultad para el uso de Linux en ordenadores personales es que carece de interfaz gráfico de usuario. ."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Ubuntu, Fedora, SUSE y Debian son **distribuciones de Linux**.\n\n- a) Falsa: Windows es software propietario; la GPL v2 es la licencia del núcleo **Linux**.\n- b) Falsa: Unix corre en muchas arquitecturas (no solo SPARC) y Linux también (ARM, POWER, RISC-V...).\n- d) Falsa: Linux tiene interfaces gráficas (GNOME, KDE Plasma, Xfce).",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-046",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-I-II-41",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 30
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Los posibles estados de un Proceso son todos los siguientes, excepto:",
+   "ctx": null,
+   "op": {
+    "a": "En Ejecución.",
+    "b": "Bloqueado.",
+    "c": "Listo para Ejecutar.",
+    "d": "Ocioso."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** \"Ocioso\" no es un estado de proceso. El modelo clásico de cinco estados es: **Nuevo, Listo, En ejecución, Bloqueado y Terminado** (más los suspendidos si hay swapping).\n\n- a), b) y c) Ejecución, bloqueado y listo sí son estados.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-047",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-I-II-44",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 33
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En relación con la planificación de procesos de un sistema operativo, ¿qué se entiende por Round Robin?",
+   "ctx": null,
+   "op": {
+    "a": "A cada proceso se le asigna una prioridad.",
+    "b": "A cada proceso se le asigna un intervalo de tiempo de ejecución según una cola circular.",
+    "c": "Es prioritario el trabajo más corto.",
+    "d": "Los procesos se ejecutan por turno de llegada."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** En **Round Robin** cada proceso recibe un intervalo de tiempo (quantum) por turnos según una **cola circular**.\n\n- a) Asignar prioridades es la planificación por prioridades.\n- c) El trabajo más corto primero es SJF.\n- d) Por orden de llegada es FCFS.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-048",
+   "tipo": "historica",
+   "ref": "LI2007-b3-S2-17",
+   "origen": {
+    "anio": 2007,
+    "parte": "b4",
+    "n": 27
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El Ministerio de Cultura ha optado por Unix como sistema operativo para las máquinas que albergan sistemas gestores de base de datos (SGBDs), y Linux para las máquinas que albergan el resto de servicios. ¿Sobre cuál de los siguientes sistemas operativos correrá el SGBD que alberga la base de datos de la tienda virtual?",
+   "ctx": "Supuesto de 2007: Museo Nacional de Artes Escénicas (Ministerio de Cultura), con tienda virtual para los «amigos de los museos».",
+   "op": {
+    "a": "S.u.S.E.",
+    "b": "Sun Solares.",
+    "c": "Debian.",
+    "d": "Redhat Enterprise."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Si los SGBD van sobre **Unix** y lo demás sobre Linux, la única opción Unix es **Sun Solaris** (hoy Oracle Solaris), un Unix System V.\n\n- a) SUSE, c) Debian y d) Red Hat Enterprise son distribuciones de **Linux**, que se reservan para el resto de servicios.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-049",
+   "tipo": "historica",
+   "ref": "LI2007-b3-S2-18",
+   "origen": {
+    "anio": 2007,
+    "parte": "b4",
+    "n": 28
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "La Dirección cree conveniente acometer la migración del sistema operativo de los 6 equipos de la biblioteca al último sistema operativo disponible para ordenadores personales que Microsoft ha sacado al mercado recientemente:",
+   "ctx": "Supuesto de 2007: Museo Nacional de Artes Escénicas (Ministerio de Cultura). Se quieren migrar los 6 equipos de la biblioteca.",
+   "op": {
+    "a": "Windows XP Professional",
+    "b": "2007 Microsoft Office System",
+    "c": "Windows 2000",
+    "d": "Windows Vista."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**d)** En 2007 el último sistema operativo de escritorio de Microsoft era **Windows Vista** (enero de 2007).\n\n- a) Windows XP es de 2001.\n- b) 2007 Microsoft Office System es una suite ofimática, no un sistema operativo.\n- c) Windows 2000 es anterior a XP.\n\n**Obsoleta** por el paso del tiempo: hoy el Windows de escritorio vigente es **Windows 11**; Windows 10 perdió el soporte general el 14 de octubre de 2025.",
+   "epigrafe": "Windows",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-050",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-38",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 31
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El tamaño máximo de archivo que puede gestionar un sistema FAT 16 es:",
+   "ctx": null,
+   "op": {
+    "a": "4 GB.",
+    "b": "2 GB.",
+    "c": "1 GB.",
+    "d": "8 GB."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** El tamaño máximo de archivo en **FAT16** es **2 GB** (respuesta clásica). Con clúster de 64 KB en Windows NT llega a 4 GB, pero no es la respuesta habitual.\n\n- a) 4 GB es el límite de **FAT32** (4 GB menos 1 byte), o FAT16 con clúster de 64 KB en NT.\n- c) y d) No corresponden a FAT16.",
+   "epigrafe": "Gestión de E/S y sistemas de ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-h-051",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-44",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 37
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "De las siguientes versiones de Microsoft Windows Vista, ¿cuál incluye cifrado BitLocker?:",
+   "ctx": null,
+   "op": {
+    "a": "HOME BASIC.",
+    "b": "HOME PREMIUM.",
+    "c": "ULTIMATE.",
+    "d": "BUSINESS."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": true,
+   "explicacion": "**c)** BitLocker apareció en Windows Vista **Ultimate** y **Enterprise**. Home Basic, Home Premium y Business no lo incluían.\n\n**Obsoleta**: Vista no tiene soporte. Hoy BitLocker viene en Windows 11 **Pro, Enterprise y Education**; Home solo tiene \"cifrado de dispositivo\".",
+   "epigrafe": "Windows",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-052",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-46",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 39
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En el sistema operativo Windows, la diferencia básica entre una llamada al sistema y una llamada a una librería es que:",
+   "ctx": null,
+   "op": {
+    "a": "Una llamada al sistema se ejecuta en el espacio de usuario, y la llamada a una librería en el kernel.",
+    "b": "Una llamada al sistema se ejecuta en el kernel, y la llamada a una librería en el espacio de usuario.",
+    "c": "La llamada al sistema está programada en lenguaje máquina, y la llamada a una librería en lenguaje de script.",
+    "d": "No existen diferencias, puesto que el sistema está constituido por librerías."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Una **llamada al sistema** se ejecuta en el **núcleo** (provoca el paso a modo núcleo); una **llamada a biblioteca** se ejecuta en **espacio de usuario**, aunque internamente pueda hacer llamadas al sistema (printf acaba llamando a write).\n\n- a) Es justo al revés.\n- c) El lenguaje de programación no es la diferencia.\n- d) Sí hay diferencia: el modo de ejecución.\n\nEn Windows, la API Win32 (kernel32.dll) llama a funciones de ntdll.dll, que hacen la transición al núcleo.",
+   "epigrafe": "Conceptos generales de sistemas operativos",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-053",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 25
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes afirmaciones sobre el sistema de gestión de archivos NTFS es correcta?",
+   "ctx": null,
+   "op": {
+    "a": "NTFS es propio y exclusivo de Unix.",
+    "b": "NTFS es propio y exclusivo de Windows.",
+    "c": "NTFS es software de fuente abierta, licencia GNU.",
+    "d": "NTFS es el predecesor del sistema de gestión de archivos FAT."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** **NTFS** (Windows NT 3.1, 1993) es el sistema de ficheros propio de **Windows**: journaling, ACL, cifrado EFS, compresión y cuotas. Hoy Linux puede leerlo y escribirlo con controladores como ntfs3, pero sigue siendo de Microsoft.\n\n- a) Falsa: no es de Unix.\n- c) Falsa: es propietario de Microsoft, no libre.\n- d) Falsa: FAT es **anterior** a NTFS.",
+   "epigrafe": "Gestión de E/S y sistemas de ficheros",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-054",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 26
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En el funcionamiento de los procesos de un sistema operativo se dice que se produce inanición cuando:",
+   "ctx": null,
+   "op": {
+    "a": "Un proceso está esperando continuamente para usar un recurso que otros procesos están usando, sin llegar a alcanzar nunca la asignación de dicho recurso.",
+    "b": "Un proceso entra en su sección crítica y queda bloqueado por la alta frecuencia de paginación heteroscedástica.",
+    "c": "Dos procesos entran en su sección crítica, produciéndose peligro de interbloqueo.",
+    "d": "Un recurso no puede ser usado simultáneamente por dos procesos."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** Hay **inanición** (*starvation*) cuando un proceso espera indefinidamente un recurso que siempre se asigna a otros. El sistema sigue avanzando, pero ese proceso no. Se corrige con envejecimiento (*aging*).\n\n- b) \"Paginación heteroscedástica\" no existe: es un distractor.\n- c) Describe un riesgo de **interbloqueo**, que es otra cosa.\n- d) Describe la **exclusión mutua**.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-055",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 54
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Señale los tres tipos de acceso de que disponen los ficheros en un sistema operativo UNIX:",
+   "ctx": null,
+   "op": {
+    "a": "Lectura, escritura y borrado.",
+    "b": "Lectura, escritura y ejecución.",
+    "c": "Propietario, grupo y administrador.",
+    "d": "Copiar, sustituir y eliminar."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Los tres tipos de acceso en Unix son **lectura (r), escritura (w) y ejecución (x)**, para tres clases de usuario: propietario (u), grupo (g) y otros (o).\n\n- a) El borrado no es un permiso del fichero: depende del permiso de **escritura en el directorio**.\n- c) Propietario, grupo y otros son las **clases** de usuario, no los tipos de acceso (y no existe una clase \"administrador\").\n- d) No son permisos de Unix.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-h-056",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 28
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En los sistemas operativos de servidor Windows, los procesos que están en ejecución pertenecen:",
+   "ctx": null,
+   "op": {
+    "a": "Al usuario SYSTEM.",
+    "b": "Al usuario Administrador.",
+    "c": "Al usuario que ha iniciado la sesión.",
+    "d": "Pueden pertenecer a SYSTEM, al usuario que ha iniciado la sesión o a cualquier otro usuario que haya establecido sesión remota en el servidor."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** En Windows Server cada proceso pertenece a la cuenta con la que se lanza: a **SYSTEM** (LocalSystem) u otras cuentas de servicio, al usuario de la sesión local o a cualquier usuario con **sesión remota** (Escritorio remoto). No pertenecen todos a un único usuario.\n\n- a), b) y c) Cada una describe solo una parte de los casos.",
+   "epigrafe": "Windows",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-h-057",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 29
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Cuando el sistema operativo utiliza técnicas de paginación o swapping y tiene un proceso en espera, pero no residente, ¿a qué estado pasa al ocurrir el evento?",
+   "ctx": null,
+   "op": {
+    "a": "En espera y residente.",
+    "b": "Ejecutable, pero no residente.",
+    "c": "Se descarga de la memoria al disco duro.",
+    "d": "Pasa a estado de bloqueado."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Con swapping aparecen los estados **suspendidos**. Un proceso **en espera no residente** (bloqueado y suspendido) que recibe su evento pasa a **ejecutable no residente** (listo y suspendido): ya podría ejecutarse, pero sigue en disco hasta que el planificador de medio plazo lo traiga a memoria.\n\n- a) Ocurrir el evento no lo trae a memoria.\n- c) Ya está en disco.\n- d) Ya estaba bloqueado; el evento lo desbloquea.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-h-058",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 30
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál es el directorio raíz en Unix?",
+   "ctx": null,
+   "op": {
+    "a": "/",
+    "b": "/root",
+    "c": "/su",
+    "d": "/<nombre de máquina>"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** La raíz del árbol de directorios de Unix es **/**. De ella cuelgan todos los demás, incluidos los de otros discos montados.\n\n- b) **/root** es la carpeta personal del superusuario, no la raíz. Es la trampa típica.\n- c) /su no existe (su es un comando para cambiar de usuario).\n- d) Unix no usa el nombre de máquina en las rutas.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-v-001",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-001",
+   "texto": "reformulado",
+   "q": "¿Sobre qué núcleo se construyen **iOS y macOS**?",
+   "ctx": null,
+   "op": {
+    "a": "XNU, un núcleo híbrido que combina Mach y partes de BSD",
+    "b": "Un núcleo Linux modificado",
+    "c": "El núcleo Windows NT",
+    "d": "El micronúcleo seL4"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "iOS y macOS comparten la base **Darwin** con el núcleo **XNU** (híbrido: Mach + BSD). Linux es el núcleo de Android; NT, el de Windows; seL4 es un micronúcleo verificado de uso en investigación y sistemas críticos.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-v-002",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-002",
+   "texto": "reformulado",
+   "q": "¿Cómo se llama la práctica de **eliminar las restricciones** de seguridad de iOS para poder instalar software no autorizado por Apple?",
+   "ctx": null,
+   "op": {
+    "a": "Sandboxing",
+    "b": "Jailbreaking",
+    "c": "Rooting",
+    "d": "Code signing"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Jailbreak** es el término de iOS. *Rooting* es el equivalente en Android (obtener permisos de root). El *sandboxing* y la firma de código (*code signing*) son justo las defensas que el jailbreak desactiva.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-v-003",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-003",
+   "texto": "reformulado",
+   "q": "En Round Robin, ¿qué ocurre si el **quantum es muy grande** (mayor que cualquier ráfaga de CPU)?",
+   "ctx": null,
+   "op": {
+    "a": "Se produce inanición de los procesos largos",
+    "b": "Aumentan mucho los cambios de contexto",
+    "c": "El algoritmo degenera en FCFS",
+    "d": "El algoritmo se convierte en SJF"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Con un quantum enorme ningún proceso agota su rodaja, así que todos se atienden por **orden de llegada** (FCFS). Un quantum muy **pequeño** es lo que dispara los cambios de contexto. RR no produce inanición.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-004",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-004",
+   "texto": "reformulado",
+   "q": "En la jerarquía FHS de Linux, ¿dónde se guardan los **ficheros de registro (logs)**?",
+   "ctx": null,
+   "op": {
+    "a": "/etc/log",
+    "b": "/usr/log",
+    "c": "/tmp/log",
+    "d": "/var/log"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**/var** contiene datos variables: logs (/var/log), colas, cachés y correo. /etc es configuración; /usr, programas de solo lectura; /tmp, temporales que se pueden borrar al reiniciar.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-v-005",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-005",
+   "texto": "reformulado",
+   "q": "¿Qué iniciativa de **Android 8 Oreo** separó la implementación del fabricante (HAL) del framework de Android para acelerar las actualizaciones?",
+   "ctx": null,
+   "op": {
+    "a": "Project Treble",
+    "b": "Project Butter",
+    "c": "Project Mainline",
+    "d": "Material You"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Project Treble** (Android 8) creó una interfaz estable entre el framework y la HAL del fabricante. Project Butter (4.1 Jelly Bean) mejoró la fluidez; Mainline (Android 10) actualiza módulos del sistema por Google Play; Material You es el diseño de Android 12.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-006",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-006",
+   "texto": "reformulado",
+   "q": "¿Cuál de estos datos **NO** se guarda en el PCB de un proceso?",
+   "ctx": null,
+   "op": {
+    "a": "El contador de programa",
+    "b": "El código fuente del programa",
+    "c": "El estado del proceso",
+    "d": "La lista de ficheros abiertos"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El PCB guarda el **contexto** del proceso: identificador, estado, contador de programa, registros, memoria, ficheros abiertos, prioridad. El código del programa está en la memoria del proceso (y el **fuente** ni siquiera interviene en la ejecución).",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-v-007",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-007",
+   "texto": "reformulado",
+   "q": "¿Qué formato exige **Google Play** desde agosto de 2021 para publicar aplicaciones nuevas?",
+   "ctx": null,
+   "op": {
+    "a": "Android Package (.apk)",
+    "b": "Dalvik Executable (.dex)",
+    "c": "Android App Bundle (.aab)",
+    "d": "Android Archive (.aar)"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Desde agosto de 2021 las apps nuevas se suben como **.aab**; Play genera a partir de él los APK optimizados para cada dispositivo. El .apk sigue siendo el paquete instalable; el .dex, el bytecode; el .aar, una biblioteca Android para reutilizar en otros proyectos.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-008",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-008",
+   "texto": "reformulado",
+   "q": "¿En qué modo del procesador se ejecuta el núcleo del sistema operativo?",
+   "ctx": null,
+   "op": {
+    "a": "En modo usuario, como cualquier aplicación",
+    "b": "En modo protegido de usuario (anillo 3)",
+    "c": "En modo real, sin protección de memoria",
+    "d": "En modo privilegiado (modo núcleo, supervisor o anillo 0)"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El núcleo corre en **modo privilegiado** (anillo 0 en x86), con acceso a todas las instrucciones y al hardware. Las aplicaciones van en **modo usuario** (anillo 3) y piden servicios al núcleo mediante llamadas al sistema. El modo real es el modo de arranque heredado de x86.",
+   "epigrafe": "Conceptos generales de sistemas operativos",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-v-009",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-009",
+   "texto": "reformulado",
+   "q": "¿Qué mecanismo permite que el código Java o Kotlin de una app Android llame a funciones escritas en C/C++ con el NDK?",
+   "ctx": null,
+   "op": {
+    "a": "JNI (Java Native Interface)",
+    "b": "ADB (Android Debug Bridge)",
+    "c": "AIDL (Android Interface Definition Language)",
+    "d": "JIT (Just-In-Time)"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**JNI** es el puente entre el código gestionado (Java/Kotlin) y el nativo (C/C++). ADB es la herramienta de depuración por línea de comandos; AIDL define interfaces para IPC entre procesos (Binder); JIT es una técnica de compilación en tiempo de ejecución.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-010",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-010",
+   "texto": "reformulado",
+   "q": "¿Qué elemento tiene **cada hilo** por separado, en lugar de compartirlo con los demás hilos de su proceso?",
+   "ctx": null,
+   "op": {
+    "a": "El código del programa",
+    "b": "Su propia pila",
+    "c": "El montículo (heap)",
+    "d": "Los ficheros abiertos"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Cada hilo tiene **pila, registros y contador de programa** propios. Código, datos globales, montículo y ficheros abiertos son del proceso y los comparten todos sus hilos (por eso hay que sincronizar el acceso a los datos compartidos).",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-011",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-011",
+   "texto": "reformulado",
+   "q": "¿Qué herramienta de Apple sirve para **distribuir versiones beta** de una app a probadores antes de publicarla en el App Store?",
+   "ctx": null,
+   "op": {
+    "a": "Instruments",
+    "b": "Xcode Cloud",
+    "c": "TestFlight",
+    "d": "Swift Playgrounds"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**TestFlight** distribuye betas a probadores internos y externos. Instruments analiza rendimiento (memoria, CPU); Xcode Cloud es el servicio de integración y entrega continua; Swift Playgrounds es un entorno para aprender y prototipar en Swift.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-012",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-012",
+   "texto": "reformulado",
+   "q": "Ordena de **más antigua a más reciente** estas versiones de macOS:",
+   "ctx": null,
+   "op": {
+    "a": "Big Sur, Catalina, Sonoma, Monterey",
+    "b": "Monterey, Catalina, Big Sur, Sonoma",
+    "c": "Catalina, Monterey, Big Sur, Sonoma",
+    "d": "Catalina, Big Sur, Monterey, Sonoma"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Catalina es 10.15 (2019), Big Sur 11 (2020), Monterey 12 (2021) y Sonoma 14 (2023). Truco: Big Sur fue la primera en saltar de 10.x a 11 (y la de la transición a Apple Silicon).",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-013",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-013",
+   "texto": "reformulado",
+   "q": "En Windows de 64 bits, ¿en qué carpeta se guardan las **DLL de 32 bits** del sistema?",
+   "ctx": null,
+   "op": {
+    "a": "C:\\Windows\\SysWOW64",
+    "b": "C:\\Windows\\System32",
+    "c": "C:\\Windows\\System",
+    "d": "C:\\Program Files (x86)\\Common"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Contraintuitivo: **System32** guarda las DLL de **64** bits y **SysWOW64** las de **32** bits, que usa la capa WOW64 para ejecutar aplicaciones de 32 bits. Program Files (x86) es para programas de 32 bits instalados, no para DLL del sistema.",
+   "epigrafe": "Windows",
+   "dificultad": 3
+  },
+  {
+   "id": "t13-v-014",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-014",
+   "texto": "reformulado",
+   "q": "¿Qué tipo de núcleo **ejecuta en espacio de usuario** la mayoría de los servicios del SO (drivers, sistema de ficheros, red), dejando en modo núcleo solo lo mínimo?",
+   "ctx": null,
+   "op": {
+    "a": "Núcleo monolítico",
+    "b": "Micronúcleo",
+    "c": "Núcleo híbrido",
+    "d": "Núcleo modular"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **micronúcleo** (Mach, MINIX 3, QNX, seL4) deja en el núcleo solo IPC, planificación y memoria básica. El **monolítico** (Linux) lo mete todo en el núcleo; Linux es además **modular** (carga drivers en caliente). El **híbrido** (Windows NT, XNU) parte de micronúcleo pero mete muchos servicios en modo núcleo.",
+   "epigrafe": "Conceptos generales de sistemas operativos",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-015",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-015",
+   "texto": "reformulado",
+   "q": "En un sistema Unix, ¿qué **UID** tiene el superusuario root?",
+   "ctx": null,
+   "op": {
+    "a": "1",
+    "b": "1000",
+    "c": "0",
+    "d": "65534"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "root tiene **UID 0**; el núcleo concede los privilegios por el UID, no por el nombre. Los UID bajos (menores de 1000 en muchas distribuciones) son de usuarios de sistema; 1000 suele ser el primer usuario normal; 65534 es habitualmente *nobody*.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-v-016",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-016",
+   "texto": "reformulado",
+   "q": "¿Qué fabricante usa la capa de personalización **One UI** sobre Android?",
+   "ctx": null,
+   "op": {
+    "a": "Xiaomi",
+    "b": "OPPO",
+    "c": "Huawei",
+    "d": "Samsung"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "One UI es de **Samsung** (antes TouchWiz y Samsung Experience). Xiaomi usa MIUI/HyperOS; OPPO, ColorOS; Huawei, EMUI.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-v-017",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-017",
+   "texto": "reformulado",
+   "q": "¿Qué directorio de Linux es un **sistema de ficheros virtual** con información de los procesos en ejecución y del núcleo?",
+   "ctx": null,
+   "op": {
+    "a": "/proc",
+    "b": "/var",
+    "c": "/opt",
+    "d": "/srv"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**/proc** no está en disco: el núcleo lo genera al vuelo (/proc/<PID>, /proc/cpuinfo, /proc/meminfo). /sys es otro virtual, de dispositivos. /var son datos variables; /opt, software de terceros; /srv, datos de servicios.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-018",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-018",
+   "texto": "reformulado",
+   "q": "Un fichero muestra en `ls -l` los permisos **rwxr-x---**. ¿Qué valor octal tienen?",
+   "ctx": null,
+   "op": {
+    "a": "755",
+    "b": "750",
+    "c": "740",
+    "d": "570"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "rwx = 4+2+1 = **7**; r-x = 4+1 = **5**; --- = **0**. Resultado: **750**. 755 daría r-x también a otros; 740 quitaría la x al grupo; 570 invierte propietario y grupo.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-019",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-019",
+   "texto": "reformulado",
+   "q": "A octubre de 2026, ¿cuál es la versión **estable** de Debian?",
+   "ctx": null,
+   "op": {
+    "a": "Debian 12 \"bookworm\"",
+    "b": "Debian 14 \"forky\"",
+    "c": "Debian 13 \"trixie\"",
+    "d": "Debian 11 \"bullseye\""
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Debian 13 **trixie** salió en agosto de 2025 y es la estable; 12 **bookworm** pasa a antigua estable; 14 **forky** está en pruebas (*testing*); 11 bullseye es de 2021. Sid es la inestable permanente.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-020",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-020",
+   "texto": "reformulado",
+   "q": "¿Qué tecnología de Windows cifra **ficheros y carpetas individuales** en un volumen NTFS, a diferencia de BitLocker, que cifra el volumen completo?",
+   "ctx": null,
+   "op": {
+    "a": "BitLocker To Go",
+    "b": "UAC (Control de cuentas de usuario)",
+    "c": "Windows Defender",
+    "d": "EFS (Encrypting File System)"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**EFS** cifra ficheros sueltos de NTFS ligados a la cuenta del usuario. BitLocker To Go cifra unidades extraíbles completas. UAC controla la elevación de privilegios y Defender es el antimalware.",
+   "epigrafe": "Windows",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-021",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-021",
+   "texto": "reformulado",
+   "q": "En Linux, ¿qué identificador indica el **proceso padre** de un proceso?",
+   "ctx": null,
+   "op": {
+    "a": "PPID",
+    "b": "PGID",
+    "c": "TGID",
+    "d": "EUID"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**PPID** es el PID del padre (se obtiene con getppid()). PGID es el grupo de procesos; TGID, el grupo de hilos (coincide con el PID visible); EUID, el usuario efectivo con el que se comprueban permisos.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-v-022",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-022",
+   "texto": "reformulado",
+   "q": "¿Qué planificador controla el **grado de multiprogramación**, decidiendo qué trabajos se admiten en el sistema?",
+   "ctx": null,
+   "op": {
+    "a": "El planificador a corto plazo",
+    "b": "El planificador a largo plazo",
+    "c": "El planificador a medio plazo",
+    "d": "El dispatcher"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El de **largo plazo** (planificador de trabajos) admite trabajos y así fija cuántos procesos hay en memoria. El de corto plazo elige quién usa la CPU; el de medio plazo hace swapping; el dispatcher ejecuta el cambio de contexto.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-023",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-023",
+   "texto": "reformulado",
+   "q": "¿Qué nombre tiene **Android 6.0**, la versión que introdujo los permisos en tiempo de ejecución?",
+   "ctx": null,
+   "op": {
+    "a": "Lollipop",
+    "b": "Nougat",
+    "c": "Marshmallow",
+    "d": "Oreo"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "6.0 es **Marshmallow** (2015), que pidió los permisos al usarlos y no al instalar. Lollipop es 5.x (ART por defecto), Nougat 7.x (multiventana) y Oreo 8.x (Project Treble). Truco: los postres van en orden alfabético (K, L, M, N, O, P).",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-v-024",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-024",
+   "texto": "reformulado",
+   "q": "¿Qué versión de macOS fue la **primera con Apple Silicon** y la primera en abandonar la numeración 10.x?",
+   "ctx": null,
+   "op": {
+    "a": "macOS 10.15 Catalina",
+    "b": "macOS 12 Monterey",
+    "c": "macOS 10.14 Mojave",
+    "d": "macOS 11 Big Sur"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Big Sur** (2020) pasó a la versión 11 y acompañó la transición a los chips M1. Catalina (10.15) fue la última 10.x; Monterey es la 12; Mojave la 10.14.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-025",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-025",
+   "texto": "reformulado",
+   "q": "¿Cuál es la característica principal de **ReFS** frente a NTFS?",
+   "ctx": null,
+   "op": {
+    "a": "Prioriza la integridad de los datos con sumas de comprobación y se integra con Storage Spaces",
+    "b": "Es el sistema de archivos por defecto de las memorias SDXC",
+    "c": "Fue el primer sistema de archivos de Windows con journaling",
+    "d": "Es un sistema de archivos de copia en escritura creado por Sun"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "ReFS (*Resilient File System*) está pensado para la **resiliencia**: checksums, reparación con Storage Spaces. exFAT es el de las SDXC; NTFS ya tenía journaling desde NT 3.1; ZFS es el de Sun.",
+   "epigrafe": "Gestión de E/S y sistemas de ficheros",
+   "dificultad": 3
+  },
+  {
+   "id": "t13-v-026",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-026",
+   "texto": "reformulado",
+   "q": "En Unix, ¿qué hace la llamada **exec()** (execl, execvp...) cuando tiene éxito?",
+   "ctx": null,
+   "op": {
+    "a": "Crea un proceso hijo copia del padre",
+    "b": "Sustituye el programa del proceso actual por otro, sin crear un proceso nuevo",
+    "c": "Espera a que termine un proceso hijo",
+    "d": "Termina el proceso y devuelve su estado al padre"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**exec** reemplaza la imagen del proceso (el PID no cambia) y no vuelve si tiene éxito. Crear un hijo es **fork**; esperar a un hijo, **wait**; terminar, **exit**. El patrón clásico de la shell es fork + exec + wait.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-027",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-027",
+   "texto": "reformulado",
+   "q": "¿Qué directorio de Linux contiene los ejecutables de **administración del sistema** (fsck, reboot, ip)?",
+   "ctx": null,
+   "op": {
+    "a": "/bin",
+    "b": "/boot",
+    "c": "/sbin",
+    "d": "/srv"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**/sbin** es para binarios de administración (system binaries); /bin, para los esenciales de cualquier usuario. /boot tiene el núcleo, el initramfs y el gestor de arranque; /srv, los datos de servicios (web, FTP).",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-v-028",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-028",
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes **NO** es un sistema operativo para móviles?",
+   "ctx": null,
+   "op": {
+    "a": "Symbian",
+    "b": "KaiOS",
+    "c": "Tizen",
+    "d": "Slackware"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Slackware** es una de las distribuciones Linux de escritorio más antiguas. Symbian (Nokia), KaiOS (teléfonos básicos, deriva de Firefox OS) y Tizen (Samsung) son sistemas para móviles o dispositivos.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-029",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-029",
+   "texto": "reformulado",
+   "q": "¿Qué versión de Android es **KitKat**, en la que ART apareció como opción experimental?",
+   "ctx": null,
+   "op": {
+    "a": "4.4",
+    "b": "4.0",
+    "c": "4.3",
+    "d": "5.0"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "KitKat es la **4.4** (API 19, 2013). 4.0 es Ice Cream Sandwich; 4.3 sigue siendo Jelly Bean; 5.0 es Lollipop, la primera con ART por defecto.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-v-030",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-030",
+   "texto": "reformulado",
+   "q": "¿Cómo se llama el fichero que **declara los componentes y permisos** de una aplicación Android?",
+   "ctx": null,
+   "op": {
+    "a": "build.gradle",
+    "b": "AndroidManifest.xml",
+    "c": "classes.dex",
+    "d": "Info.plist"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**AndroidManifest.xml** declara actividades, servicios, receptores, proveedores y permisos. build.gradle configura la compilación; classes.dex es el bytecode; Info.plist es el equivalente en apps de Apple.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-031",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-031",
+   "texto": "reformulado",
+   "q": "¿Qué gestor de paquetes usa **Arch Linux**?",
+   "ctx": null,
+   "op": {
+    "a": "apt",
+    "b": "zypper",
+    "c": "pacman",
+    "d": "dnf"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Arch (y Manjaro, EndeavourOS) usa **pacman**. apt/dpkg es de la familia Debian; zypper, de SUSE; dnf (antes yum), de la familia Red Hat.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-v-032",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-032",
+   "texto": "reformulado",
+   "q": "¿Cuál de estas distribuciones pertenece a la **familia Red Hat** (paquetes .rpm)?",
+   "ctx": null,
+   "op": {
+    "a": "Linux Mint",
+    "b": "Kali Linux",
+    "c": "Manjaro",
+    "d": "Rocky Linux"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Rocky Linux** (como AlmaLinux) es un clon de RHEL tras el fin de CentOS Linux. Mint y Kali son de la familia Debian (.deb); Manjaro, de Arch.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-033",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-033",
+   "texto": "reformulado",
+   "q": "¿Qué versión de Android **unificó de nuevo** móviles y tablets tras Honeycomb?",
+   "ctx": null,
+   "op": {
+    "a": "Android 4.0 Ice Cream Sandwich",
+    "b": "Android 2.3 Gingerbread",
+    "c": "Android 4.4 KitKat",
+    "d": "Android 5.0 Lollipop"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Ice Cream Sandwich** (4.0, 2011) juntó la rama de móviles (2.x) y la de tablets (3.x Honeycomb). Gingerbread es anterior a Honeycomb; KitKat y Lollipop son posteriores.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-034",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-034",
+   "texto": "reformulado",
+   "q": "Hoy, ¿para qué se sigue usando el protocolo **Exchange ActiveSync**?",
+   "ctx": null,
+   "op": {
+    "a": "Para cifrar discos duros en Windows",
+    "b": "Para sincronizar correo, calendario y contactos de Exchange en dispositivos móviles",
+    "c": "Para replicar controladores de dominio de Active Directory",
+    "d": "Para distribuir actualizaciones de Windows en la red local"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Exchange ActiveSync** sincroniza correo, agenda y contactos con móviles. El cifrado de disco es BitLocker; la replicación de AD es propia de los controladores de dominio; las actualizaciones en red local son WSUS.",
+   "epigrafe": "Windows",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-035",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-035",
+   "texto": "reformulado",
+   "q": "¿Qué sistema de ficheros de Linux añadió el **journaling** a ext2?",
+   "ctx": null,
+   "op": {
+    "a": "ext4",
+    "b": "XFS",
+    "c": "ext3",
+    "d": "Btrfs"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**ext3** es ext2 más journaling. ext4 añadió *extents* y mayores tamaños; XFS (SGI) y Btrfs (copia en escritura) son sistemas diferentes, no evoluciones de ext2.",
+   "epigrafe": "Gestión de E/S y sistemas de ficheros",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-v-036",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-036",
+   "texto": "reformulado",
+   "q": "¿Qué algoritmo de planificación elige el proceso con **menor tiempo restante** y puede expropiar al que se está ejecutando?",
+   "ctx": null,
+   "op": {
+    "a": "SJF no expropiativo",
+    "b": "FCFS",
+    "c": "Round Robin",
+    "d": "SRTF (Shortest Remaining Time First)"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**SRTF** es la versión expropiativa de SJF: si llega un proceso con menos tiempo restante, expulsa al actual. SJF no expropia; FCFS atiende por llegada; RR reparte quantums sin mirar duraciones. SJF y SRTF pueden dejar en inanición a los largos.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-037",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-037",
+   "texto": "reformulado",
+   "q": "En el arranque de Linux, ¿qué se ejecuta **justo después del gestor de arranque** (GRUB 2)?",
+   "ctx": null,
+   "op": {
+    "a": "Se cargan el núcleo y el initramfs",
+    "b": "Se ejecuta el firmware BIOS o UEFI",
+    "c": "Se inician los servicios con systemd",
+    "d": "Se abre la sesión del usuario"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Orden: firmware (BIOS/UEFI) → gestor de arranque (GRUB 2) → **núcleo + initramfs** → PID 1 (init/systemd) → servicios → sesión.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-038",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-038",
+   "texto": "reformulado",
+   "q": "¿Qué afirmación sobre los **enlaces duros** en Unix es correcta?",
+   "ctx": null,
+   "op": {
+    "a": "Pueden apuntar a ficheros de otro sistema de ficheros",
+    "b": "Son otra entrada de directorio que apunta al mismo inodo",
+    "c": "Contienen la ruta del fichero original y pueden quedar rotos",
+    "d": "Tienen un inodo propio distinto del fichero original"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Un **enlace duro** es otro nombre para el **mismo inodo**: no tiene inodo propio y no cruza sistemas de ficheros. Contener una ruta y poder quedar roto es propio del **enlace simbólico**.",
+   "epigrafe": "Gestión de E/S y sistemas de ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-039",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-039",
+   "texto": "reformulado",
+   "q": "¿Qué diferencia principal tiene **ART** frente a **Dalvik**?",
+   "ctx": null,
+   "op": {
+    "a": "ART es una máquina virtual de pila y Dalvik de registros",
+    "b": "ART ejecuta bytecode Java estándar (.class) y Dalvik bytecode .dex",
+    "c": "ART compila las apps a código nativo de antemano (AOT); Dalvik interpretaba y compilaba en ejecución (JIT)",
+    "d": "ART solo funciona en tablets y Dalvik en móviles"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Dalvik usaba **JIT**; ART introdujo **AOT** al instalar (desde Android 7 combina AOT, JIT y perfiles). Ambos ejecutan bytecode **.dex**. Dalvik es una VM de registros; nada de eso depende del tipo de dispositivo.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 3
+  },
+  {
+   "id": "t13-v-040",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-040",
+   "texto": "reformulado",
+   "q": "¿Qué técnica de gestión de memoria produce **fragmentación externa**, que se corrige con compactación?",
+   "ctx": null,
+   "op": {
+    "a": "La paginación",
+    "b": "Las particiones fijas",
+    "c": "La segmentación paginada",
+    "d": "La segmentación (o las particiones variables)"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los bloques de **tamaño variable** dejan huecos libres dispersos entre ellos: fragmentación **externa**. Paginación, particiones fijas y segmentación paginada usan bloques fijos y producen fragmentación **interna**.",
+   "epigrafe": "Gestión de memoria",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-041",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-041",
+   "texto": "reformulado",
+   "q": "¿Qué técnica evita la **inanición** en la planificación por prioridades?",
+   "ctx": null,
+   "op": {
+    "a": "El envejecimiento (aging): aumentar la prioridad de los procesos que llevan mucho esperando",
+    "b": "Reducir el quantum de los procesos de baja prioridad",
+    "c": "Atender siempre primero al trabajo más corto",
+    "d": "Suspender en disco los procesos de baja prioridad"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **envejecimiento** sube poco a poco la prioridad de quien espera, de modo que antes o después se ejecuta. Atender al más corto (SJF) produce inanición, no la evita; reducir el quantum o suspender en disco no garantizan el turno.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-042",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-042",
+   "texto": "reformulado",
+   "q": "¿Qué lenguaje recomienda Google como **preferente** para desarrollar apps Android desde 2019?",
+   "ctx": null,
+   "op": {
+    "a": "Java",
+    "b": "Kotlin",
+    "c": "Dart",
+    "d": "C#"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Desde mayo de 2019 Android es **Kotlin first**; su UI declarativa es Jetpack Compose. Java sigue soportado. Dart es el lenguaje de Flutter (multiplataforma) y C# el de .NET MAUI.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-v-043",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-043",
+   "texto": "reformulado",
+   "q": "¿Qué componente realiza efectivamente el **cambio de contexto** después de que el planificador a corto plazo elige el siguiente proceso?",
+   "ctx": null,
+   "op": {
+    "a": "El swapper",
+    "b": "El planificador de trabajos",
+    "c": "El dispatcher (despachador)",
+    "d": "La MMU"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **dispatcher** guarda el contexto del proceso saliente, carga el del entrante y salta a su código. El swapper es el planificador de medio plazo; el de trabajos, el de largo plazo; la MMU traduce direcciones.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-044",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-044",
+   "texto": "reformulado",
+   "q": "En Linux, ¿qué hay en **/dev/null**?",
+   "ctx": null,
+   "op": {
+    "a": "El primer disco duro del sistema",
+    "b": "La consola del administrador",
+    "c": "Un fichero de registro de errores del núcleo",
+    "d": "Un dispositivo que descarta todo lo que se escribe en él"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**/dev/null** es el \"agujero negro\": lo que se escribe desaparece y al leer devuelve fin de fichero. El primer disco suele ser /dev/sda (o /dev/nvme0n1); los mensajes del núcleo se leen con dmesg o journalctl -k.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-v-045",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-045",
+   "texto": "reformulado",
+   "q": "¿Bajo qué licencia se distribuye el **núcleo Linux**?",
+   "ctx": null,
+   "op": {
+    "a": "GNU GPL versión 2",
+    "b": "Licencia BSD",
+    "c": "Licencia Apache 2.0",
+    "d": "GNU GPL versión 3"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El núcleo Linux usa **GPL v2** (solo la versión 2). Muchas herramientas GNU están en GPL v3; FreeBSD usa licencia BSD; Android (AOSP) usa mayoritariamente Apache 2.0 fuera del núcleo.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-046",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-046",
+   "texto": "reformulado",
+   "q": "Un proceso está **En ejecución** y solicita una operación de E/S. ¿A qué estado pasa?",
+   "ctx": null,
+   "op": {
+    "a": "Listo",
+    "b": "Bloqueado (en espera)",
+    "c": "Terminado",
+    "d": "Nuevo"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Al pedir E/S el proceso no puede seguir hasta que termine: pasa a **Bloqueado**. Cuando la E/S acaba, pasa a **Listo** (no directamente a ejecución). Pasa de Ejecución a Listo si se le agota el quantum o lo expropian.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-v-047",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-047",
+   "texto": "reformulado",
+   "q": "Tres procesos llegan en t=0 en el orden A (5 ms), B (3 ms) y C (1 ms). Con **Round Robin y quantum 2 ms**, ¿en qué instante termina **C**?",
+   "ctx": null,
+   "op": {
+    "a": "t = 1 ms",
+    "b": "t = 3 ms",
+    "c": "t = 5 ms",
+    "d": "t = 9 ms"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Traza: A(0-2), B(2-4), **C(4-5)**, A(5-7), B(7-8), A(8-9). C termina en **t = 5**; B en 8 y A en 9. t = 1 sería con SJF; t = 9 es el final de A.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 3
+  },
+  {
+   "id": "t13-v-048",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-048",
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes es un **Unix comercial** y no una distribución de Linux?",
+   "ctx": null,
+   "op": {
+    "a": "CentOS",
+    "b": "Slackware",
+    "c": "Gentoo",
+    "d": "AIX"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**AIX** es el Unix de IBM (como Solaris de Sun/Oracle y HP-UX de HP). CentOS, Slackware y Gentoo son distribuciones de Linux.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-v-049",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-049",
+   "texto": "reformulado",
+   "q": "¿Cuándo terminó el **soporte general de Windows 10**?",
+   "ctx": null,
+   "op": {
+    "a": "El 14 de octubre de 2025",
+    "b": "El 14 de enero de 2020",
+    "c": "El 10 de octubre de 2023",
+    "d": "El 14 de octubre de 2026"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Windows 10 dejó de recibir soporte general el **14-10-2025**; desde entonces solo hay actualizaciones de seguridad ampliadas (ESU). El 14-01-2020 fue el fin de Windows 7. Hoy la versión vigente es Windows 11.",
+   "epigrafe": "Windows",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-050",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-050",
+   "texto": "reformulado",
+   "q": "¿Qué sistema de ficheros de Microsoft, pensado para memorias flash y tarjetas SDXC, **elimina el límite de 4 GB por fichero** de FAT32?",
+   "ctx": null,
+   "op": {
+    "a": "FAT16",
+    "b": "exFAT",
+    "c": "NTFS",
+    "d": "ReFS"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**exFAT** (2006) está pensado para memorias extraíbles y no tiene el límite de 4 GB de FAT32. NTFS tampoco lo tiene, pero es un sistema de ficheros con journaling y ACL orientado a discos internos; ReFS es para servidores; FAT16 es aún más limitado.",
+   "epigrafe": "Gestión de E/S y sistemas de ficheros",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-v-051",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-051",
+   "texto": "reformulado",
+   "q": "¿En qué edición de **Windows 11** NO está disponible la gestión completa de BitLocker (solo el \"cifrado de dispositivo\")?",
+   "ctx": null,
+   "op": {
+    "a": "Pro",
+    "b": "Enterprise",
+    "c": "Home",
+    "d": "Education"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "BitLocker completo está en **Pro, Enterprise y Education**. **Home** solo ofrece el \"cifrado de dispositivo\", una versión simplificada.",
+   "epigrafe": "Windows",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-052",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-052",
+   "texto": "reformulado",
+   "q": "¿Cuál de estas funciones es una **llamada al sistema** POSIX y no una función de biblioteca?",
+   "ctx": null,
+   "op": {
+    "a": "printf()",
+    "b": "strlen()",
+    "c": "malloc()",
+    "d": "write()"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**write()** entra en el núcleo para escribir en un descriptor. printf y malloc son funciones de libc en espacio de usuario (printf acaba llamando a write; malloc usa brk o mmap); strlen nunca necesita al núcleo.",
+   "epigrafe": "Conceptos generales de sistemas operativos",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-053",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-053",
+   "texto": "reformulado",
+   "q": "¿Cuál de estas características **NO** es propia de NTFS?",
+   "ctx": null,
+   "op": {
+    "a": "Copia en escritura con instantáneas nativas del sistema de ficheros",
+    "b": "Journaling (registro de transacciones)",
+    "c": "Listas de control de acceso (ACL)",
+    "d": "Cuotas de disco por usuario"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "NTFS tiene journaling, ACL, EFS, compresión, cuotas y flujos alternativos (ADS). La **copia en escritura** con instantáneas nativas es propia de Btrfs, ZFS, APFS o ReFS. (Las instantáneas de Windows las da el servicio VSS, no el diseño de NTFS.)",
+   "epigrafe": "Gestión de E/S y sistemas de ficheros",
+   "dificultad": 3
+  },
+  {
+   "id": "t13-v-054",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-054",
+   "texto": "reformulado",
+   "q": "¿Qué estrategia frente al **interbloqueo** usa el **algoritmo del banquero** de Dijkstra?",
+   "ctx": null,
+   "op": {
+    "a": "Prevención: rompe la condición de espera circular",
+    "b": "Evitación: solo concede un recurso si el sistema sigue en estado seguro",
+    "c": "Detección y recuperación: aborta procesos cuando aparece el bloqueo",
+    "d": "Ignorarlo (algoritmo del avestruz)"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El banquero hace **evitación**: antes de conceder un recurso comprueba que existe una secuencia segura. La prevención rompe alguna condición de Coffman; la detección deja que ocurra y luego actúa; el avestruz lo ignora.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-055",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-055",
+   "texto": "reformulado",
+   "q": "Sobre un **directorio** de Unix, ¿qué permite el permiso **x**?",
+   "ctx": null,
+   "op": {
+    "a": "Listar su contenido",
+    "b": "Crear y borrar ficheros en él",
+    "c": "Atravesar el directorio (entrar en él y acceder a sus entradas)",
+    "d": "Ejecutar todos los programas que contiene"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En directorios: **r** permite listar, **w** crear o borrar entradas y **x** atravesarlo (cd, acceder a un fichero por su ruta). Ejecutar un programa depende de la x del propio fichero.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-056",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-056",
+   "texto": "reformulado",
+   "q": "¿Qué cuenta especial de Windows tiene el **máximo privilegio local**, por encima incluso del Administrador?",
+   "ctx": null,
+   "op": {
+    "a": "LocalService",
+    "b": "NetworkService",
+    "c": "Invitado",
+    "d": "SYSTEM (LocalSystem)"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**SYSTEM** (LocalSystem) es la cuenta con más privilegios en el equipo; la usan muchos servicios del sistema. LocalService y NetworkService son cuentas de servicio con privilegios reducidos; Invitado es una cuenta limitada (deshabilitada por defecto).",
+   "epigrafe": "Windows",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-v-057",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-057",
+   "texto": "reformulado",
+   "q": "En Linux, un proceso ha terminado pero su padre todavía no ha recogido su estado con wait(). ¿Cómo se llama ese proceso?",
+   "ctx": null,
+   "op": {
+    "a": "Zombi",
+    "b": "Huérfano",
+    "c": "Demonio",
+    "d": "Suspendido"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Un **zombi** (estado Z en ps) ya terminó, pero su entrada sigue en la tabla de procesos hasta que el padre hace wait(). Un **huérfano** es el que pierde al padre (lo adopta init); un **demonio** es un proceso de servicio en segundo plano.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-v-058",
+   "tipo": "variante",
+   "ref": null,
+   "de": "t13-h-058",
+   "texto": "reformulado",
+   "q": "¿Cuál es el directorio **personal del superusuario** root en Linux?",
+   "ctx": null,
+   "op": {
+    "a": "/",
+    "b": "/root",
+    "c": "/home/root",
+    "d": "/etc/root"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La carpeta personal de root es **/root** (fuera de /home, para que esté disponible aunque /home esté en otro disco sin montar). **/** es la raíz del sistema de ficheros; /home/root y /etc/root no son su carpeta.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-n-001",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Una de las siguientes **NO** es una de las cuatro condiciones de Coffman para el interbloqueo:",
+   "ctx": null,
+   "op": {
+    "a": "Exclusión mutua",
+    "b": "Retención y espera",
+    "c": "Expropiación de los recursos",
+    "d": "Espera circular"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las cuatro condiciones son **exclusión mutua, retención y espera, NO expropiación y espera circular**. La condición es que los recursos **no** se puedan expropiar, así que la \"expropiación\" es el intruso.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-n-002",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué algoritmo de reemplazo de páginas puede sufrir la **anomalía de Belady** (más marcos, más fallos de página)?",
+   "ctx": null,
+   "op": {
+    "a": "LRU",
+    "b": "Óptimo (OPT)",
+    "c": "LFU",
+    "d": "FIFO"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La anomalía de Belady se da en **FIFO**. LRU y el óptimo son algoritmos de pila y no la sufren. El óptimo sirve de referencia teórica.",
+   "epigrafe": "Gestión de memoria",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-n-003",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué permisos octales tiene habitualmente el directorio **/tmp** en Linux?",
+   "ctx": null,
+   "op": {
+    "a": "1777",
+    "b": "0777",
+    "c": "0755",
+    "d": "4755"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**1777** = rwxrwxrwt: todos pueden escribir, y el **sticky bit** (1000) impide que un usuario borre ficheros de otro. 4755 sería un ejecutable con setuid.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-n-004",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En la mayoría de las distribuciones Linux actuales, ¿qué programa se ejecuta como **PID 1**?",
+   "ctx": null,
+   "op": {
+    "a": "SysV init",
+    "b": "systemd",
+    "c": "Upstart",
+    "d": "GRUB 2"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**systemd** es el init estándar de Debian, Ubuntu, RHEL, Fedora, SUSE y Arch. SysV init y Upstart (Ubuntu 6.10-14.10) son sistemas anteriores; GRUB 2 es el gestor de arranque, que actúa antes del núcleo.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-n-005",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué planificador de procesos sustituyó a **CFS** en el núcleo Linux a partir de la versión 6.6?",
+   "ctx": null,
+   "op": {
+    "a": "O(1) scheduler",
+    "b": "BFS (Brain Fuck Scheduler)",
+    "c": "EEVDF (Earliest Eligible Virtual Deadline First)",
+    "d": "MLFQ (Multilevel Feedback Queue)"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Linux 6.6 (2023) adoptó **EEVDF**. CFS se usaba desde 2.6.23 y sustituyó a su vez al planificador O(1). BFS fue un parche externo nunca integrado; MLFQ es un modelo teórico.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 3
+  },
+  {
+   "id": "t13-n-006",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué es el **GKI** de Android?",
+   "ctx": null,
+   "op": {
+    "a": "El kit de desarrollo de interfaces gráficas de Google",
+    "b": "El formato de paquete que sustituye al APK",
+    "c": "La máquina virtual que sustituyó a ART",
+    "d": "Una imagen de núcleo Linux común (Generic Kernel Image) con los módulos del fabricante separados"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **Generic Kernel Image** (desde Android 11-12) unifica el núcleo Linux y deja los drivers del fabricante en módulos aparte, lo que facilita las actualizaciones. El formato de publicación es el .aab y el runtime sigue siendo ART.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-n-007",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué componente de hardware exige **Windows 11** para instalarse oficialmente, además de UEFI con Secure Boot?",
+   "ctx": null,
+   "op": {
+    "a": "TPM 2.0",
+    "b": "Una GPU con DirectX 9",
+    "c": "8 GB de RAM como mínimo",
+    "d": "Un disco SSD NVMe"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Windows 11 exige **TPM 2.0**, UEFI con Secure Boot, CPU de 64 bits compatible, **4 GB** de RAM y 64 GB de almacenamiento. No exige SSD; la GPU debe ser compatible con DirectX 12.",
+   "epigrafe": "Windows",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-n-008",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué tipo de núcleo tiene **Windows 11**?",
+   "ctx": null,
+   "op": {
+    "a": "Monolítico, como Linux",
+    "b": "Híbrido (núcleo de Windows NT)",
+    "c": "Micronúcleo puro, como MINIX 3",
+    "d": "Exokernel"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Windows NT (y por tanto Windows 10/11) usa un núcleo **híbrido**, como XNU en macOS/iOS. Linux es monolítico modular; MINIX 3, QNX y seL4 son micronúcleos.",
+   "epigrafe": "Conceptos generales de sistemas operativos",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-n-009",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué sistema de ficheros usa **por defecto Red Hat Enterprise Linux** desde la versión 7?",
+   "ctx": null,
+   "op": {
+    "a": "ext4",
+    "b": "Btrfs",
+    "c": "XFS",
+    "d": "ZFS"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "RHEL usa **XFS** por defecto. ext4 es el habitual en Debian y Ubuntu; Btrfs es el predeterminado de Fedora y openSUSE; ZFS viene de Sun y no se incluye en RHEL por su licencia.",
+   "epigrafe": "Gestión de E/S y sistemas de ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-n-010",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cómo se llama la situación en la que el sistema pasa **más tiempo paginando que ejecutando** procesos?",
+   "ctx": null,
+   "op": {
+    "a": "Fragmentación interna",
+    "b": "Anomalía de Belady",
+    "c": "Interbloqueo",
+    "d": "Hiperpaginación (thrashing)"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **hiperpaginación** (*thrashing*) aparece cuando los procesos no tienen en memoria su conjunto de trabajo y no paran de producir fallos de página. Se corrige reduciendo el grado de multiprogramación o dando más marcos.",
+   "epigrafe": "Gestión de memoria",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-n-011",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué componente hardware **traduce las direcciones lógicas en físicas**?",
+   "ctx": null,
+   "op": {
+    "a": "La MMU (Memory Management Unit)",
+    "b": "El DMA",
+    "c": "El TLB por sí solo, sin intervención de la MMU",
+    "d": "El planificador a corto plazo"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **MMU** hace la traducción; el **TLB** es la caché de traducciones de la propia MMU. El DMA mueve datos entre dispositivos y memoria sin la CPU; el planificador es software.",
+   "epigrafe": "Gestión de memoria",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-n-012",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Con **umask 022**, ¿con qué permisos se crean por defecto los **ficheros** nuevos?",
+   "ctx": null,
+   "op": {
+    "a": "755 (rwxr-xr-x)",
+    "b": "644 (rw-r--r--)",
+    "c": "666 (rw-rw-rw-)",
+    "d": "600 (rw-------)"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los ficheros parten de 666 y los directorios de 777; la umask quita bits: 666 - 022 = **644**, y 777 - 022 = 755 para directorios. Los ficheros no reciben x por defecto.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-n-013",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué efecto tiene el bit **setuid** (4000) en un ejecutable como /usr/bin/passwd?",
+   "ctx": null,
+   "op": {
+    "a": "Solo el propietario puede borrar el fichero",
+    "b": "Los ficheros creados heredan el grupo del directorio",
+    "c": "El programa se ejecuta con el UID del propietario del fichero (root), no con el del usuario que lo lanza",
+    "d": "El programa no puede ser ejecutado por root"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**setuid** hace que el proceso use el UID del **propietario** del fichero: así passwd puede modificar /etc/shadow. Que solo el dueño borre es el **sticky bit**; heredar el grupo es **setgid** en directorios.",
+   "epigrafe": "Unix y Linux",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-n-014",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué tecnología permite ejecutar aplicaciones de **32 bits** en Windows de 64 bits?",
+   "ctx": null,
+   "op": {
+    "a": "WSL 2",
+    "b": "Hyper-V",
+    "c": "UAC",
+    "d": "WOW64"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**WOW64** (Windows 32-bit on Windows 64-bit) traduce las llamadas de los programas de 32 bits. WSL 2 ejecuta Linux; Hyper-V es el hipervisor; UAC controla la elevación de privilegios.",
+   "epigrafe": "Windows",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-n-015",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué es **WSL 2**?",
+   "ctx": null,
+   "op": {
+    "a": "El subsistema de Windows para Linux, que ejecuta un núcleo Linux real en una máquina virtual ligera",
+    "b": "Una distribución Linux de Microsoft para servidores",
+    "c": "Un emulador de Windows para Linux",
+    "d": "El sistema de archivos de Windows Server 2025"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**WSL 2** ejecuta un núcleo Linux real dentro de una VM ligera gestionada por Windows; la primera versión traducía llamadas al sistema. El emulador de Windows en Linux sería Wine.",
+   "epigrafe": "Windows",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-n-016",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuáles son los **cuatro componentes** fundamentales de una aplicación Android?",
+   "ctx": null,
+   "op": {
+    "a": "Activity, Fragment, Intent y View",
+    "b": "Activity, Service, Broadcast Receiver y Content Provider",
+    "c": "Service, Daemon, Socket y Provider",
+    "d": "Activity, Servlet, Bean y Manifest"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los cuatro componentes son **Activity, Service, Broadcast Receiver y Content Provider**; se comunican mediante **Intents** y se declaran en AndroidManifest.xml. Fragment y View son elementos de interfaz, no componentes del sistema.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-n-017",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En 2025 Apple cambió la numeración de sus sistemas. ¿Qué versión de iOS siguió a **iOS 18**?",
+   "ctx": null,
+   "op": {
+    "a": "iOS 19",
+    "b": "iOS 20",
+    "c": "iOS 26",
+    "d": "iOS 25"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Apple pasó a numerar por **año**: tras iOS 18 llegó **iOS 26** (septiembre de 2025), igual que macOS 26 Tahoe, watchOS 26, etc. La numeración es la del año siguiente al lanzamiento.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-n-018",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué sistema de ficheros usa Apple en iOS y macOS desde 2017?",
+   "ctx": null,
+   "op": {
+    "a": "HFS+",
+    "b": "ReFS",
+    "c": "exFAT",
+    "d": "APFS (Apple File System)"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**APFS** llegó con iOS 10.3 y macOS High Sierra (2017): copia en escritura, instantáneas y cifrado nativo. HFS+ era el anterior; ReFS es de Microsoft; exFAT, para memorias extraíbles.",
+   "epigrafe": "Gestión de E/S y sistemas de ficheros",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-n-019",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Desde qué versión de Android es **ART el runtime por defecto**?",
+   "ctx": null,
+   "op": {
+    "a": "Android 5.0 Lollipop",
+    "b": "Android 4.4 KitKat",
+    "c": "Android 4.1 Jelly Bean",
+    "d": "Android 7.0 Nougat"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "ART fue **opcional** en 4.4 KitKat y pasó a ser el runtime **por defecto en 5.0 Lollipop**. En Android 7 Nougat se combinó AOT con JIT guiado por perfiles.",
+   "epigrafe": "Sistemas operativos móviles",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-n-020",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Tres procesos llegan en t=0: A (5 ms), B (3 ms) y C (1 ms). Con **SJF no expropiativo**, ¿cuál es el **tiempo medio de espera**?",
+   "ctx": null,
+   "op": {
+    "a": "4,33 ms",
+    "b": "1,67 ms",
+    "c": "3 ms",
+    "d": "2,33 ms"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "SJF ordena C(1), B(3), A(5). Esperas: C = 0, B = 1, A = 1 + 3 = 4. Media = (0 + 1 + 4) / 3 = **1,67 ms**. Con FCFS (A, B, C) serían 0, 5 y 8: media 4,33 ms.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 3
+  },
+  {
+   "id": "t13-n-021",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué técnica de E/S permite que un dispositivo transfiera datos a memoria **sin que la CPU copie cada byte**?",
+   "ctx": null,
+   "op": {
+    "a": "E/S programada (sondeo)",
+    "b": "Spooling",
+    "c": "DMA (acceso directo a memoria)",
+    "d": "Buffering en espacio de usuario"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Con **DMA** el controlador mueve los bloques a memoria y avisa a la CPU con una interrupción al terminar. En la E/S programada la CPU sondea y copia; el spooling encola trabajos (impresión); el buffering amortigua diferencias de velocidad.",
+   "epigrafe": "Gestión de E/S y sistemas de ficheros",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-n-022",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué algoritmo de planificación de disco funciona como un **ascensor**, recorriendo el disco en un sentido y luego en el otro?",
+   "ctx": null,
+   "op": {
+    "a": "SSTF",
+    "b": "FCFS",
+    "c": "C-LOOK",
+    "d": "SCAN"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**SCAN** (ascensor) atiende peticiones en un sentido hasta el extremo y luego vuelve. SSTF elige la más cercana (puede causar inanición); C-LOOK solo atiende en un sentido y vuelve al principio sin servir. En SSD estos algoritmos casi no importan.",
+   "epigrafe": "Gestión de E/S y sistemas de ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-n-023",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué tipo de sistema operativo debe **garantizar que las tareas terminan dentro de un plazo estricto**, como el control de un airbag?",
+   "ctx": null,
+   "op": {
+    "a": "Sistema operativo de tiempo real duro",
+    "b": "Sistema de tiempo compartido",
+    "c": "Sistema por lotes",
+    "d": "Sistema de tiempo real blando"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En **tiempo real duro** incumplir un plazo es un fallo del sistema (airbag, control industrial). En el **blando** un retraso degrada la calidad pero se tolera (vídeo). Tiempo compartido y lotes no garantizan plazos.",
+   "epigrafe": "Conceptos generales de sistemas operativos",
+   "dificultad": 2
+  },
+  {
+   "id": "t13-n-024",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué base de datos jerárquica guarda la configuración del sistema y de las aplicaciones en Windows?",
+   "ctx": null,
+   "op": {
+    "a": "Active Directory",
+    "b": "El Registro (claves HKLM, HKCU, HKCR...)",
+    "c": "El fichero boot.ini",
+    "d": "El Visor de eventos"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **Registro** organiza la configuración en claves raíz: HKLM (equipo), HKCU (usuario actual), HKCR, HKU y HKCC. Active Directory es el servicio de directorio de dominio; boot.ini era la configuración de arranque de XP; el Visor de eventos muestra logs.",
+   "epigrafe": "Windows",
+   "dificultad": 1
+  },
+  {
+   "id": "t13-n-025",
+   "tipo": "nueva",
+   "ref": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué mecanismo de sincronización, ideado por Dijkstra, usa las operaciones **P (wait) y V (signal)**?",
+   "ctx": null,
+   "op": {
+    "a": "El monitor",
+    "b": "La tubería (pipe)",
+    "c": "El semáforo",
+    "d": "El cerrojo de lectura-escritura"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **semáforo** de Dijkstra es un contador con dos operaciones atómicas: **P** (wait, decrementa y bloquea si no hay recurso) y **V** (signal, incrementa y despierta). El monitor encapsula datos y procedimientos con exclusión mutua automática; la tubería es un mecanismo de IPC.",
+   "epigrafe": "Gestión de procesos",
+   "dificultad": 2
+  }
+ ],
+ "tarjetas": [
+  {
+   "id": "t13-c-001",
+   "anverso": "Kernel (núcleo)",
+   "reverso": "Parte del SO en modo privilegiado: gestiona procesos, memoria, dispositivos e interrupciones y atiende las llamadas al sistema. No es el núcleo (core) del procesador.",
+   "epigrafe": "Conceptos generales de sistemas operativos"
+  },
+  {
+   "id": "t13-c-002",
+   "anverso": "Tipos de núcleo y ejemplos",
+   "reverso": "Monolítico: Linux. Micronúcleo: Mach, MINIX 3, QNX, seL4. Híbrido: Windows NT, XNU (macOS/iOS).",
+   "epigrafe": "Conceptos generales de sistemas operativos"
+  },
+  {
+   "id": "t13-c-003",
+   "anverso": "Llamada al sistema frente a llamada a biblioteca",
+   "reverso": "La llamada al sistema se ejecuta en el núcleo (cambio a modo núcleo); la de biblioteca, en espacio de usuario.",
+   "epigrafe": "Conceptos generales de sistemas operativos"
+  },
+  {
+   "id": "t13-c-004",
+   "anverso": "PCB",
+   "reverso": "Process Control Block: estructura del SO con PID, estado, contador de programa, registros, memoria, ficheros abiertos y prioridad.",
+   "epigrafe": "Gestión de procesos"
+  },
+  {
+   "id": "t13-c-005",
+   "anverso": "Identificadores de proceso en Linux",
+   "reverso": "PID, PPID (padre), UID/EUID, GID/EGID, TID (hilo), TGID, PGID, SID. «TPID» no existe.",
+   "epigrafe": "Gestión de procesos"
+  },
+  {
+   "id": "t13-c-006",
+   "anverso": "Cinco estados de un proceso",
+   "reverso": "Nuevo, Listo, En ejecución, Bloqueado y Terminado. «Ocioso» no es un estado.",
+   "epigrafe": "Gestión de procesos"
+  },
+  {
+   "id": "t13-c-007",
+   "anverso": "Estados con swapping",
+   "reverso": "Listo y suspendido (ejecutable no residente) y Bloqueado y suspendido (en espera no residente). Al llegar el evento: de en espera no residente a ejecutable no residente.",
+   "epigrafe": "Gestión de procesos"
+  },
+  {
+   "id": "t13-c-008",
+   "anverso": "fork(): valor de retorno",
+   "reverso": "Al padre, el PID del hijo; al hijo, 0; si falla, -1. El hijo obtiene el PID del padre con getppid().",
+   "epigrafe": "Gestión de procesos"
+  },
+  {
+   "id": "t13-c-009",
+   "anverso": "exec()",
+   "reverso": "Sustituye el programa del proceso actual; no crea proceso ni cambia el PID.",
+   "epigrafe": "Gestión de procesos"
+  },
+  {
+   "id": "t13-c-010",
+   "anverso": "Hilos: qué comparten y qué no",
+   "reverso": "Comparten código, datos, montículo y ficheros. Cada hilo tiene pila, registros y contador de programa propios.",
+   "epigrafe": "Gestión de procesos"
+  },
+  {
+   "id": "t13-c-011",
+   "anverso": "Planificadores",
+   "reverso": "Largo plazo: admite trabajos (grado de multiprogramación). Medio plazo: swapping. Corto plazo: elige quién usa la CPU.",
+   "epigrafe": "Gestión de procesos"
+  },
+  {
+   "id": "t13-c-012",
+   "anverso": "Round Robin",
+   "reverso": "Cola circular con quantum fijo; expropiativo y sin inanición. Quantum muy grande degenera en FCFS; muy pequeño, demasiados cambios de contexto.",
+   "epigrafe": "Gestión de procesos"
+  },
+  {
+   "id": "t13-c-013",
+   "anverso": "Selfish Round Robin",
+   "reverso": "Dos colas: procesos nuevos y aceptados. La prioridad de los nuevos crece más rápido; al igualar a los aceptados, entran en la cola RR.",
+   "epigrafe": "Gestión de procesos"
+  },
+  {
+   "id": "t13-c-014",
+   "anverso": "SJF frente a SRTF",
+   "reverso": "SJF: primero el más corto, no expropiativo. SRTF: menor tiempo restante, expropiativo. Ambos pueden causar inanición.",
+   "epigrafe": "Gestión de procesos"
+  },
+  {
+   "id": "t13-c-015",
+   "anverso": "Condiciones de Coffman",
+   "reverso": "Exclusión mutua, retención y espera, NO expropiación y espera circular. Tienen que darse las cuatro.",
+   "epigrafe": "Gestión de procesos"
+  },
+  {
+   "id": "t13-c-016",
+   "anverso": "Inanición",
+   "reverso": "Un proceso espera indefinidamente un recurso que siempre va a otros. Se corrige con envejecimiento (aging).",
+   "epigrafe": "Gestión de procesos"
+  },
+  {
+   "id": "t13-c-017",
+   "anverso": "Algoritmo del banquero",
+   "reverso": "Estrategia de evitación del interbloqueo: solo concede recursos si el sistema queda en estado seguro.",
+   "epigrafe": "Gestión de procesos"
+  },
+  {
+   "id": "t13-c-018",
+   "anverso": "Paginación frente a segmentación",
+   "reverso": "Paginación: bloques fijos, fragmentación interna. Segmentación: bloques variables, fragmentación externa.",
+   "epigrafe": "Gestión de memoria"
+  },
+  {
+   "id": "t13-c-019",
+   "anverso": "Anomalía de Belady",
+   "reverso": "Con reemplazo FIFO, dar más marcos puede aumentar los fallos de página.",
+   "epigrafe": "Gestión de memoria"
+  },
+  {
+   "id": "t13-c-020",
+   "anverso": "Hiperpaginación (thrashing)",
+   "reverso": "El sistema pasa más tiempo paginando que ejecutando, porque los procesos no tienen su conjunto de trabajo en memoria.",
+   "epigrafe": "Gestión de memoria"
+  },
+  {
+   "id": "t13-c-021",
+   "anverso": "Inodo: qué NO guarda",
+   "reverso": "El nombre del fichero, que está en la entrada de directorio. Sí guarda tipo, permisos, UID/GID, tamaño, enlaces, fechas y punteros a bloques.",
+   "epigrafe": "Gestión de E/S y sistemas de ficheros"
+  },
+  {
+   "id": "t13-c-022",
+   "anverso": "Enlace duro frente a simbólico",
+   "reverso": "Duro: otro nombre para el mismo inodo; no cruza sistemas de ficheros. Simbólico: fichero con una ruta; puede quedar roto.",
+   "epigrafe": "Gestión de E/S y sistemas de ficheros"
+  },
+  {
+   "id": "t13-c-023",
+   "anverso": "Límites de FAT",
+   "reverso": "FAT16: fichero de 2 GB (4 GB con clúster de 64 KB en NT). FAT32: 4 GB menos 1 byte. exFAT: sin ese límite.",
+   "epigrafe": "Gestión de E/S y sistemas de ficheros"
+  },
+  {
+   "id": "t13-c-024",
+   "anverso": "ReFS",
+   "reverso": "Resilient File System (Windows Server 2012): integridad con checksums; fichero máximo teórico de 18 EB (2^64 bytes).",
+   "epigrafe": "Gestión de E/S y sistemas de ficheros"
+  },
+  {
+   "id": "t13-c-025",
+   "anverso": "Sistemas de ficheros por defecto en Linux",
+   "reverso": "ext4: Debian/Ubuntu. XFS: RHEL. Btrfs: Fedora y openSUSE.",
+   "epigrafe": "Gestión de E/S y sistemas de ficheros"
+  },
+  {
+   "id": "t13-c-026",
+   "anverso": "BitLocker",
+   "reverso": "Cifrado de volumen completo (AES, apoyado en TPM). En Windows 11 Pro, Enterprise y Education; Home solo tiene cifrado de dispositivo.",
+   "epigrafe": "Windows"
+  },
+  {
+   "id": "t13-c-027",
+   "anverso": "DLL de 32 y 64 bits",
+   "reverso": "Un proceso no puede cargar una DLL de distinta arquitectura. RPC entre 32 y 64 bits funciona en el mismo equipo y entre equipos.",
+   "epigrafe": "Windows"
+  },
+  {
+   "id": "t13-c-028",
+   "anverso": "System32 frente a SysWOW64",
+   "reverso": "En Windows de 64 bits, System32 guarda las DLL de 64 bits y SysWOW64 las de 32 bits (WOW64).",
+   "epigrafe": "Windows"
+  },
+  {
+   "id": "t13-c-029",
+   "anverso": "Windows 10: fin de soporte",
+   "reverso": "14 de octubre de 2025. Windows 11 exige TPM 2.0, UEFI con Secure Boot, 4 GB de RAM y 64 GB de disco.",
+   "epigrafe": "Windows"
+  },
+  {
+   "id": "t13-c-030",
+   "anverso": "ActiveSync",
+   "reverso": "Tecnología de Microsoft para sincronizar PC y móviles; su protocolo Exchange ActiveSync sigue vivo para el correo.",
+   "epigrafe": "Windows"
+  },
+  {
+   "id": "t13-c-031",
+   "anverso": "Directorios Linux clave",
+   "reverso": "/ raíz; /bin binarios esenciales; /sbin administración; /etc configuración; /dev dispositivos; /home usuarios; /root carpeta de root; /var datos variables y logs; /proc procesos.",
+   "epigrafe": "Unix y Linux"
+  },
+  {
+   "id": "t13-c-032",
+   "anverso": "chmod 640",
+   "reverso": "rw-r-----: lectura y escritura para el propietario, lectura para el grupo, nada para otros.",
+   "epigrafe": "Unix y Linux"
+  },
+  {
+   "id": "t13-c-033",
+   "anverso": "Bits especiales",
+   "reverso": "setuid 4000 (corre con el UID del dueño, ej. passwd); setgid 2000; sticky 1000 (en /tmp, 1777).",
+   "epigrafe": "Unix y Linux"
+  },
+  {
+   "id": "t13-c-034",
+   "anverso": "init",
+   "reverso": "Primer proceso del sistema (PID 1), padre de todos. Hoy lo implementa systemd. No es «el arranque de un usuario».",
+   "epigrafe": "Unix y Linux"
+  },
+  {
+   "id": "t13-c-035",
+   "anverso": "GRUB 2 y LILO",
+   "reverso": "LILO es anterior a GRUB. GRUB 2 sustituyó al GRUB original, que pasó a llamarse GRUB Legacy. Ambos se pueden instalar en el MBR.",
+   "epigrafe": "Unix y Linux"
+  },
+  {
+   "id": "t13-c-036",
+   "anverso": "Debian: estable a octubre de 2026",
+   "reverso": "Estable: 13 trixie (agosto de 2025). Antigua estable: 12 bookworm. Testing: 14 forky. En 2019: 10 buster y 9 stretch.",
+   "epigrafe": "Unix y Linux"
+  },
+  {
+   "id": "t13-c-037",
+   "anverso": "Distribuciones: familias",
+   "reverso": "Debian: Ubuntu, Mint, Kali, Trisquel. Red Hat: RHEL, Fedora, Rocky, AlmaLinux. SUSE: openSUSE. Arch: Manjaro. Kilimanjaro no existe.",
+   "epigrafe": "Unix y Linux"
+  },
+  {
+   "id": "t13-c-038",
+   "anverso": "Android: Dalvik frente a ART",
+   "reverso": "Dalvik: JIT, hasta 4.4. ART: AOT; opcional en 4.4 KitKat y por defecto desde 5.0 Lollipop. Ambos ejecutan bytecode .dex.",
+   "epigrafe": "Sistemas operativos móviles"
+  },
+  {
+   "id": "t13-c-039",
+   "anverso": "Android: paquetes",
+   "reverso": ".apk es el paquete instalable; .aab (Android App Bundle) es obligatorio en Google Play desde agosto de 2021; .dex es el bytecode.",
+   "epigrafe": "Sistemas operativos móviles"
+  },
+  {
+   "id": "t13-c-040",
+   "anverso": "Android NDK",
+   "reverso": "Herramientas para escribir partes de la app en C/C++. Genera bibliotecas por arquitectura llamadas con JNI. Sí permite reutilizar bibliotecas de terceros.",
+   "epigrafe": "Sistemas operativos móviles"
+  },
+  {
+   "id": "t13-c-041",
+   "anverso": "Versiones de Android con nombre",
+   "reverso": "3.x Honeycomb (solo tablets), 4.1 Jelly Bean, 4.4 KitKat, 5 Lollipop, 6 Marshmallow, 7 Nougat, 8 Oreo, 9 Pie (último nombre público).",
+   "epigrafe": "Sistemas operativos móviles"
+  },
+  {
+   "id": "t13-c-042",
+   "anverso": "Capas de personalización Android",
+   "reverso": "One UI (Samsung), MIUI/HyperOS (Xiaomi), ColorOS (OPPO), OxygenOS (OnePlus), OriginOS (vivo), EMUI (Huawei). PenPoint OS no lo es.",
+   "epigrafe": "Sistemas operativos móviles"
+  },
+  {
+   "id": "t13-c-043",
+   "anverso": "Herramientas Apple",
+   "reverso": "Xcode: IDE para todas las plataformas Apple. Xcode Cloud: CI/CD. SwiftUI: UI declarativa para cualquier dispositivo Apple. TestFlight: betas.",
+   "epigrafe": "Sistemas operativos móviles"
+  },
+  {
+   "id": "t13-c-044",
+   "anverso": "Sandboxing en iOS",
+   "reverso": "Cada app vive en su contenedor aislado y solo accede a sus datos; los recursos sensibles requieren permisos y entitlements.",
+   "epigrafe": "Sistemas operativos móviles"
+  },
+  {
+   "id": "t13-c-045",
+   "anverso": "Versiones de macOS",
+   "reverso": "10.13 High Sierra (2017), 10.14 Mojave, 10.15 Catalina, 11 Big Sur, 12 Monterey, 13 Ventura, 14 Sonoma, 15 Sequoia, 26 Tahoe (2025).",
+   "epigrafe": "Sistemas operativos móviles"
+  }
+ ],
+ "discrepancias": [
+  {
+   "ref": "LI2025ext-ej1-31",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 31,
+    "conv": "ext"
+   },
+   "clave_oficial": "c",
+   "temario_dice": "La lección no trata las HAL de Wi-Fi; solo explica la HAL en general (separada del framework desde Android 8, Project Treble).",
+   "veredicto": "La oficial c (Hostapd) es correcta según AOSP (Vendor, Supplicant y Hostapd HAL). La opción d «HAL de Wi-Fi» es ambigua porque el Vendor HAL es el paquete android.hardware.wifi; impugnable, pero la c es la única inequívoca."
+  },
+  {
+   "ref": "LI2015-ej1-I-II-40",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 33
+   },
+   "clave_oficial": "c",
+   "temario_dice": "El temario marca la respuesta ART como «sin verificar»; la lección precisa que en 4.4 KitKat ART era opcional y Dalvik seguía por defecto.",
+   "veredicto": "La oficial c (ART) es la única defendible entre las opciones. El enunciado es impreciso («a partir de KitKat»), porque ART es el runtime por defecto desde 5.0 Lollipop."
+  }
+ ]
+}

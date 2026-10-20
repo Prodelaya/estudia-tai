@@ -1,0 +1,2858 @@
+{
+ "tema": 14,
+ "generado": "2026-10-20",
+ "preguntas": [
+  {
+   "tipo": "historica",
+   "ref": "LI2025-ej1-33",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 33
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las siguientes bases de datos utiliza Cypher como lenguaje de consulta de información?",
+   "ctx": null,
+   "op": {
+    "a": "MongoDB.",
+    "b": "CouchDB.",
+    "c": "Cassandra.",
+    "d": "Neo4j."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d) Neo4j** (clave oficial provisional). Cypher es el lenguaje de consulta declarativo de Neo4j, basado en patrones de «arte ASCII» como `(a)-[:CONOCE]->(b)`. MongoDB y CouchDB son documentales (consultas con métodos/JSON y Mango o vistas MapReduce), y Cassandra es columnar con lenguaje CQL.",
+   "epigrafe": "6. Bases de datos NoSQL",
+   "dificultad": 1,
+   "id": "t14-h-001"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2025-ej1-34",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 34
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En el contexto de las bases de datos orientadas a objetos, ¿cuál de los siguientes NO es considerado un constructor de tipo de colección?",
+   "ctx": null,
+   "op": {
+    "a": "Columna.",
+    "b": "Array.",
+    "c": "Bolsa.",
+    "d": "Lista."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a) Columna** (clave oficial provisional). Los constructores de colección del modelo de objetos (ODMG) son **set, bag (bolsa), list, array y dictionary**. «Columna» es un concepto relacional o de las BD columnares, no un constructor de tipos de una BDOO.",
+   "epigrafe": "5. SGBD orientados a objetos",
+   "dificultad": 2,
+   "id": "t14-h-002"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2025-ej1-35",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 35
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En el contexto de las bases de datos orientadas a objetos, y en relación con el identificador de objeto único (OID), ¿cuál de las siguientes opciones es correcta?",
+   "ctx": null,
+   "op": {
+    "a": "Es visible para el usuario externo.",
+    "b": "Puede depender de atributos del objeto.",
+    "c": "Está generado por el sistema.",
+    "d": "Está almacenado en el programa de aplicación que declara el objeto."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** (clave oficial provisional). El OID lo **genera el sistema**, es único e inmutable, **no es visible** para el usuario, **no depende de los valores de los atributos** (dos objetos con los mismos valores son distintos) y lo gestiona el SGBDOO, no el programa de aplicación.",
+   "epigrafe": "5. SGBD orientados a objetos",
+   "dificultad": 2,
+   "id": "t14-h-003"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2025-ej1-36",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 36
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Indique cuál de las siguientes opciones se corresponde con tipos de bases de datos NoSQL:",
+   "ctx": null,
+   "op": {
+    "a": "Sistemáticos y documentales.",
+    "b": "Clave-valor y sistemáticos.",
+    "c": "Documentales y clave-valor.",
+    "d": "Grafos y metodológicas."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** (clave oficial provisional). Los cuatro tipos clásicos de NoSQL son **clave-valor, documentales, de columnas y de grafos**. «Sistemáticos» y «metodológicas» no son categorías de bases de datos; los distractores mezclan un tipo real con uno inventado.",
+   "epigrafe": "6. Bases de datos NoSQL",
+   "dificultad": 1,
+   "id": "t14-h-004"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2024-b3-14",
+   "origen": {
+    "anio": 2024,
+    "parte": "b3",
+    "n": 14
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se espera un alto volumen de concurrencia en el sistema. ¿Qué nivel de aislamiento de base de datos debería configurar para que no se produzcan lecturas sucias ni lecturas no repetibles, pero sí lecturas fantasmas?",
+   "ctx": null,
+   "op": {
+    "a": "Serializable.",
+    "b": "Read committed.",
+    "c": "Read uncommited.",
+    "d": "Repeatable read."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d) Repeatable read** (clave oficial provisional). Según la tabla de SQL-92: READ UNCOMMITTED lo permite todo; READ COMMITTED evita las lecturas sucias; **REPEATABLE READ** evita además las no repetibles pero **permite fantasmas**; SERIALIZABLE lo evita todo. Truco: cada nivel elimina una anomalía más, en el orden sucia → no repetible → fantasma.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia",
+   "dificultad": 2,
+   "id": "t14-h-005"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2024-ej1-28",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 27
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál es la característica diferenciadora de las claves foráneas en una base de datos relacional?",
+   "ctx": null,
+   "op": {
+    "a": "Un atributo que no tiene relación con otras tablas.",
+    "b": "Un atributo que referencia la clave primaria de otra tabla.",
+    "c": "Un atributo que puede tener valores duplicados.",
+    "d": "Un atributo que se utiliza solo para consultas."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** (clave oficial provisional). Una clave ajena o foránea es un atributo (o conjunto) que **referencia la clave primaria (o una candidata) de otra tabla** y sirve para la integridad referencial. Que admita duplicados es cierto, pero no es lo que la distingue (cualquier atributo no clave los admite); y no se usa «solo para consultas». *Se ha quitado de la opción c un resto de maquetación del PDF («de datos.»).*",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 1,
+   "id": "t14-h-006"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2024-ej1-29",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 28
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de los siguientes es un Sistema de Gestión de Bases de Datos Orientadas a Objetos (SGDBOO)?",
+   "ctx": null,
+   "op": {
+    "a": "Cézanne.",
+    "b": "Picasso.",
+    "c": "Matisse.",
+    "d": "Rembrandt."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c) Matisse** (clave oficial provisional). Matisse es un SGBD orientado a objetos comercial (Matisse Software). Cézanne, Picasso y Rembrandt son solo pintores: la pregunta juega con el nombre.",
+   "epigrafe": "5. SGBD orientados a objetos",
+   "dificultad": 1,
+   "id": "t14-h-007"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2024-ej1-30",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 29
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Qué es el lenguaje OQL en el contexto de las bases de datos orientadas a objetos?",
+   "ctx": null,
+   "op": {
+    "a": "OQL no es un lenguaje en el contexto de las bases de datos orientadas a objetos.",
+    "b": "Un lenguaje de definición de datos.",
+    "c": "Un lenguaje de consulta de datos.",
+    "d": "Un lenguaje de manipulación de datos."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** (clave oficial provisional). **OQL** (*Object Query Language*, estándar ODMG) es un **lenguaje de consulta** declarativo con sintaxis parecida a SQL (`SELECT ... FROM ... WHERE`). La definición de esquemas corresponde a **ODL**, y las actualizaciones se hacen con métodos del lenguaje anfitrión, no con OQL.",
+   "epigrafe": "5. SGBD orientados a objetos",
+   "dificultad": 1,
+   "id": "t14-h-008"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2022-ej1-33",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 33
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Las bases de datos relacionales ofrecen propiedades ACID. Dicho acrónimo se refiere a:",
+   "ctx": null,
+   "op": {
+    "a": "Atomicidad, Consistencia, Aislamiento y Durabilidad.",
+    "b": "Atomicidad, Coherencia, Integridad y Distribución.",
+    "c": "Disponibilidad, Coherencia, Intensidad y Durabilidad.",
+    "d": "Atomicidad, Consistencia, Aislamiento y Disponibilidad."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** ACID = **Atomicidad, Consistencia, Aislamiento (Isolation) y Durabilidad**. La trampa de la d) es «Disponibilidad», que es la A del teorema **CAP**, no de ACID. «Coherencia», «Integridad», «Distribución» o «Intensidad» son inventos.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia",
+   "dificultad": 1,
+   "id": "t14-h-009"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2022-ej1-34",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 34
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Entre las características obligatorias de un sistema gestor de bases de datos orientadas a objetos, NO se encuentra:",
+   "ctx": null,
+   "op": {
+    "a": "Debe permitir construir objetos complejos.",
+    "b": "El conjunto de tipos de datos debe ser fijo, consiguiendo así mayor eficiencia en las búsquedas.",
+    "c": "Todos los objetos deben tener un identificador que sea independiente de los valores de sus atributos.",
+    "d": "El esquema de una BDOO incluye únicamente un conjunto de clases (o de tipos)."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** El manifiesto de Atkinson (1989) exige **extensibilidad**: el usuario puede definir tipos nuevos que se tratan igual que los predefinidos. Un conjunto de tipos **fijo** contradice ese requisito. Objetos complejos (a) e identidad independiente de los atributos (c) sí son obligatorios, y la d) es una afirmación correcta del modelo (el esquema es un conjunto de clases).",
+   "epigrafe": "5. SGBD orientados a objetos",
+   "dificultad": 2,
+   "id": "t14-h-010"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2022-ej1-35",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 35
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale qué es el Machine Learning Services para SQL Server:",
+   "ctx": null,
+   "op": {
+    "a": "Es un conjunto de tecnologías destinadas a la copia y distribución de datos y objetos de base de datos desde una base de datos a otra, para luego sincronizar ambas bases de datos y mantener su coherencia.",
+    "b": "Es una característica de SQL Server que proporciona la capacidad de ejecutar scripts de Python y R con datos relacionales.",
+    "c": "Es un producto de calidad de datos basado en conocimiento.",
+    "d": "Es el servicio principal para almacenar, procesar y proteger los datos."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** Machine Learning Services es la característica de SQL Server que permite **ejecutar scripts de Python y R con datos relacionales** dentro de la base de datos (`sp_execute_external_script`). Los distractores son definiciones literales de otros componentes de Microsoft: **a)** Replicación, **c)** Data Quality Services y **d)** Database Engine.",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 2,
+   "id": "t14-h-011"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2022-ej1-42",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 41
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale la respuesta INCORRECTA. Los tipos más corrientes de anomalías de base de datos son:",
+   "ctx": null,
+   "op": {
+    "a": "Lecturas no repetibles.",
+    "b": "Lecturas hundidas.",
+    "c": "Lecturas sucias.",
+    "d": "Lecturas fantasma."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b) Lecturas hundidas** es la incorrecta: no existen. Las anomalías estándar son la **lectura sucia**, la **lectura no repetible** y la **lectura fantasma** (y, aparte, la actualización perdida).",
+   "epigrafe": "3. Transacciones, ACID y concurrencia",
+   "dificultad": 1,
+   "id": "t14-h-012"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2022-ej1-R03",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 79
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale qué paquete R en SQL Server Machine Learning Services permite realizar transformaciones y manipulaciones de datos, resúmenes estadísticos, visualizaciones y muchas formas de modelado:",
+   "ctx": null,
+   "op": {
+    "a": "Revoscalepy",
+    "b": "Microsoftml",
+    "c": "Revoscaler",
+    "d": "SqlRutils"
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c) RevoScaleR.** Es el paquete **de R** de Microsoft para transformación y manipulación de datos, resúmenes estadísticos, visualización y modelado. **revoscalepy** es su equivalente en **Python** (trampa: la pregunta pide un paquete R), **MicrosoftML** aporta algoritmos de aprendizaje automático y **sqlrutils** empaqueta scripts R como procedimientos almacenados. *(Pregunta de reserva n.º 3 del examen.)*",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 3,
+   "id": "t14-h-013"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-36",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 36
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Cypher es:",
+   "ctx": null,
+   "op": {
+    "a": "Un lenguaje de consulta sobre bases de datos Neo4j.",
+    "b": "Una base de datos de tipo clave-valor.",
+    "c": "Una base de datos orientada a documentos.",
+    "d": "Una base de datos orientada a grafos."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** Cypher es el **lenguaje de consulta** de Neo4j. La trampa es la **d)**: «base de datos orientada a grafos» describe a Neo4j, no a Cypher. No es clave-valor ni documental.",
+   "epigrafe": "6. Bases de datos NoSQL",
+   "dificultad": 1,
+   "id": "t14-h-014"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-37",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 37
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de los siguientes proyectos de Apache relacionados con Hadoop provee de servicios de serialización de datos?",
+   "ctx": null,
+   "op": {
+    "a": "Flume",
+    "b": "Chukwa",
+    "c": "Avro",
+    "d": "Jaql"
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c) Avro.** Apache Avro es el sistema de **serialización de datos** del ecosistema Hadoop (esquema en JSON, datos en binario compacto). **Flume** ingiere logs y eventos, **Chukwa** recoge y monitoriza logs, y **Jaql** es un lenguaje de consulta para JSON creado por IBM.",
+   "epigrafe": "6. Bases de datos NoSQL",
+   "dificultad": 2,
+   "id": "t14-h-015"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-38",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 38
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Indique cuál de los siguientes NO es un gestor de bases de datos relacional:",
+   "ctx": null,
+   "op": {
+    "a": "MaxDB",
+    "b": "MySQL",
+    "c": "JSON",
+    "d": "PostgreSQL"
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c) JSON** no es un gestor de bases de datos: es un **formato** de intercambio de datos. MaxDB (de SAP), MySQL y PostgreSQL son SGBD relacionales.",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 1,
+   "id": "t14-h-016"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2016-ej1-III-12",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 63
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "La ejecución de una transacción en un SGDB debe cumplir, entre otras, las características de:",
+   "ctx": null,
+   "op": {
+    "a": "Consistencia y herencia.",
+    "b": "Atomicidad y herencia.",
+    "c": "Atomicidad y consistencia.",
+    "d": "Abstracción y polimorfismo."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c) Atomicidad y consistencia**, dos de las cuatro propiedades ACID (con aislamiento y durabilidad). «Herencia», «abstracción» y «polimorfismo» son conceptos de la orientación a objetos, no propiedades de las transacciones.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia",
+   "dificultad": 1,
+   "id": "t14-h-017"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2015-ej1-I-II-49",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 41
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de los siguientes sistemas de bases de datos es orientado a objetos?",
+   "ctx": null,
+   "op": {
+    "a": "MySql.",
+    "b": "SQLLite.",
+    "c": "Zope.",
+    "d": "MariaDB."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c) Zope** (clave oficial provisional). Zope es un servidor de aplicaciones en Python cuya base de datos, **ZODB** (*Zope Object Database*), almacena objetos Python de forma nativa. MySQL, SQLite y MariaDB son relacionales.",
+   "epigrafe": "5. SGBD orientados a objetos",
+   "dificultad": 2,
+   "id": "t14-h-018"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2015-ej1-I-II-50",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 42
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale, de entre los siguientes, cual es un gestor de base de datos relacional:",
+   "ctx": null,
+   "op": {
+    "a": "PostgreSQL.",
+    "b": "Datawarehouse.",
+    "c": "Snowflake.",
+    "d": "CouchDB."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a) PostgreSQL** (clave oficial provisional). Es un SGBD relacional (objeto-relacional) libre. **Datawarehouse** es un concepto (almacén de datos), no un producto concreto, y **CouchDB** es NoSQL documental. **Snowflake** se refería probablemente al esquema en copo de nieve; el producto Snowflake es un almacén de datos en la nube que habla SQL, pero se presenta como plataforma analítica, no como «el» gestor relacional que pide la pregunta.",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 1,
+   "id": "t14-h-019"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2015-ej1-III-07",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 49
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale las propiedades que han de tener las transacciones de los sistemas gestores de bases de datos (SGBD):",
+   "ctx": null,
+   "op": {
+    "a": "Atomicidad, consistencia, cohesión y persistencia.",
+    "b": "Atomicidad, consistencia, polimorfismo y persistencia.",
+    "c": "Atomicidad, consistencia, aislamiento y persistencia.",
+    "d": "Atomicidad, encapsulación, herencia y persistencia."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Atomicidad, consistencia, **aislamiento** y **persistencia** (persistencia es otra forma de traducir la D de *Durability*). Los distractores meten «cohesión» (diseño de software), «polimorfismo», «encapsulación» y «herencia» (orientación a objetos).",
+   "epigrafe": "3. Transacciones, ACID y concurrencia",
+   "dificultad": 1,
+   "id": "t14-h-020"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2015-ej1-III-08",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 50
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las siguientes opciones NO representa uno de los niveles de abstracción de Bases de Datos?",
+   "ctx": null,
+   "op": {
+    "a": "Interno.",
+    "b": "Externo.",
+    "c": "Sintáctico.",
+    "d": "Conceptual."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c) Sintáctico** (clave oficial provisional). La arquitectura ANSI/X3/SPARC define tres niveles de abstracción: **interno**, **conceptual** y **externo**. «Sintáctico» no existe.",
+   "epigrafe": "1. Sistemas de gestión de bases de datos: conceptos y componentes",
+   "dificultad": 1,
+   "id": "t14-h-021"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2008-ej1-I-II-45",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 34
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las siguientes no es una característica obligatoria de un sistema de gestión de base datos orientado a objetos según el manifiesto Malcolm Atkinson?",
+   "ctx": null,
+   "op": {
+    "a": "Deben soportarse objetos complejos.",
+    "b": "Debe soportarse la herencia múltiple.",
+    "c": "Debe soportarse la encapsulación.",
+    "d": "Los tipos o clases deben ser capaces de heredar de sus ancestros."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** En el manifiesto de Atkinson (1989) la **herencia múltiple es opcional**. Sí son obligatorios los objetos complejos, la encapsulación y las jerarquías de clases (herencia simple). Otras características opcionales: verificación e inferencia de tipos, distribución, transacciones de diseño y versiones. *Se ha quitado de la opción d un resto de paginación del PDF.*",
+   "epigrafe": "5. SGBD orientados a objetos",
+   "dificultad": 2,
+   "id": "t14-h-022"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-47",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 40
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "La creación de vistas pertenece al siguiente nivel ANSI/X3/SPARC:",
+   "ctx": null,
+   "op": {
+    "a": "Conceptual.",
+    "b": "Canónico.",
+    "c": "Externo.",
+    "d": "Físico."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c) Externo.** Las vistas (`CREATE VIEW`) son los esquemas externos: cada usuario o aplicación ve su parte de la base de datos. El **conceptual** es el esquema lógico global y el **interno** describe el almacenamiento físico. «Canónico» es un término del diseño (modelo canónico), no un nivel ANSI.",
+   "epigrafe": "1. Sistemas de gestión de bases de datos: conceptos y componentes",
+   "dificultad": 1,
+   "id": "t14-h-023"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "ej1",
+    "n": 34
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes descripciones NO corresponde a una de las 12 reglas de Codd?",
+   "ctx": null,
+   "op": {
+    "a": "Regla de no subversión: si el sistema ofrece una interfaz de acceso a bajo nivel, ese acceso no puede usarse para saltarse las reglas de integridad.",
+    "b": "Tratamiento sistemático de valores nulos: el sistema debe admitir campos nulos y tratarlos de forma sistemática, distinta de los valores normales.",
+    "c": "Dependencia de la distribución: el hecho de que la base de datos se almacene o gestione de forma distribuida en varios servidores afecta a los usuarios y a las aplicaciones.",
+    "d": "Catálogo dinámico en línea basado en el modelo relacional: el sistema debe tener un catálogo en línea consultable con el mismo lenguaje relacional."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** La regla 11 de Codd es la **independencia** de la distribución: que la BD esté repartida en varios servidores **no debe afectar** a usuarios ni aplicaciones. La opción la deforma en «dependencia». La no subversión (regla 12), el tratamiento sistemático de nulos (regla 3) y el catálogo dinámico en línea (regla 4) son reglas reales.",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 2,
+   "id": "t14-h-024"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 38
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes bases de datos NO es NoSQL?",
+   "ctx": null,
+   "op": {
+    "a": "Riak.",
+    "b": "DynamoDB.",
+    "c": "Aurora.",
+    "d": "Redis."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c) Amazon Aurora** es un SGBD **relacional** en la nube de AWS, compatible con MySQL y PostgreSQL. Riak y Redis son clave-valor, y DynamoDB es el NoSQL clave-valor/documental gestionado de AWS (no confundir los dos productos de Amazon).",
+   "epigrafe": "6. Bases de datos NoSQL",
+   "dificultad": 1,
+   "id": "t14-h-025"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 39
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En relación con la estructura de almacenamiento de Oracle, señale la afirmación correcta:",
+   "ctx": null,
+   "op": {
+    "a": "Un tablespace es una unidad lógica de almacenamiento.",
+    "b": "Un datafile puede pertenecer a varios tablespaces.",
+    "c": "Un segmento es la unidad mínima de almacenamiento físico.",
+    "d": "Una extensión es una agrupación de índices multinivel."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** El **tablespace** es la unidad lógica de almacenamiento y agrupa uno o varios datafiles. Falsas: cada **datafile pertenece a un único tablespace**; la unidad mínima es el **bloque de datos**, no el segmento (el segmento es el espacio de un objeto); y una **extensión** es un conjunto de **bloques contiguos**, no de índices.",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 2,
+   "id": "t14-h-026"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 105
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes NO es una de las reglas de Codd para el modelo relacional?",
+   "ctx": null,
+   "op": {
+    "a": "Regla del acceso garantizado.",
+    "b": "Regla del tratamiento sistemático de valores nulos.",
+    "c": "Regla de la cardinalidad de las entidades.",
+    "d": "Regla de la independencia de la distribución."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** No existe una «regla de la cardinalidad de las entidades»: la cardinalidad es un concepto del modelo entidad/relación (tema 15). El acceso garantizado (regla 2), el tratamiento sistemático de nulos (regla 3) y la independencia de la distribución (regla 11) sí son reglas de Codd. *(Pregunta de reserva.)*",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 2,
+   "id": "t14-h-027"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 28
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cómo se denomina el lenguaje que interactúa con el SGBD y permite recuperar, insertar, eliminar y modificar la información existente?",
+   "ctx": null,
+   "op": {
+    "a": "Lenguaje de manipulación de datos.",
+    "b": "Lenguaje de definición de datos.",
+    "c": "Lenguaje de control de datos.",
+    "d": "Lenguaje de carga de datos."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** El **DML** (*Data Manipulation Language*) consulta y modifica datos: `SELECT`, `INSERT`, `UPDATE`, `DELETE`. El **DDL** define estructuras (`CREATE`, `ALTER`, `DROP`) y el **DCL** gestiona permisos (`GRANT`, `REVOKE`). «Lenguaje de carga» no es una categoría.",
+   "epigrafe": "1. Sistemas de gestión de bases de datos: conceptos y componentes",
+   "dificultad": 1,
+   "id": "t14-h-028"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 29
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes formas de trabajar con una base de datos relacional mediante un lenguaje de consulta tipo SQL NO es correcta?",
+   "ctx": null,
+   "op": {
+    "a": "Interactivamente, lanzando directamente las sentencias SQL.",
+    "b": "Mediante SQL embebido en un lenguaje anfitrión.",
+    "c": "Por módulos, agrupando sentencias SQL en módulos.",
+    "d": "Mapeadamente, transformando las sentencias SQL en comandos del sistema operativo."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** Las formas válidas de usar SQL son la **interactiva**, la **embebida** (con precompilador, `EXEC SQL`), **por módulos** (o procedimientos almacenados) y la **dinámica o por API** (ODBC, JDBC). «Mapeadamente» es una forma inventada: el SGBD no traduce SQL a comandos del sistema operativo.",
+   "epigrafe": "1. Sistemas de gestión de bases de datos: conceptos y componentes",
+   "dificultad": 2,
+   "id": "t14-h-029"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 35
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuáles son los tres niveles que establece la arquitectura ANSI-SPARC para garantizar la independencia de los datos?",
+   "ctx": null,
+   "op": {
+    "a": "Interno, conceptual y de aplicación.",
+    "b": "Interno, conceptual y externo.",
+    "c": "Interno, intermedio y externo.",
+    "d": "De almacenamiento, conceptual y de negocio."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b) Interno, conceptual y externo.** Entre ellos hay correspondencias que dan la independencia **física** (cambiar el nivel interno sin tocar el conceptual) y la **lógica** (cambiar el conceptual sin tocar los esquemas externos). «De aplicación», «intermedio» y «de negocio» no son niveles ANSI.",
+   "epigrafe": "1. Sistemas de gestión de bases de datos: conceptos y componentes",
+   "dificultad": 1,
+   "id": "t14-h-030"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 36
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En el contexto de las bases de datos, ¿qué es un snapshot?",
+   "ctx": null,
+   "op": {
+    "a": "Un mecanismo para replicar información en bases de datos distribuidas.",
+    "b": "Otra forma de llamar a las vistas de la base de datos.",
+    "c": "Un procedimiento que muestra el estado de las conexiones a la base de datos en un momento dado.",
+    "d": "Un término sin relación con las bases de datos."
+   },
+   "ok": "a",
+   "clave": "claude-dudosa",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** (clave de Claude, dudosa). En el contexto clásico de Oracle, un *snapshot* es una **copia de solo lectura de datos remotos** que se refresca periódicamente, es decir, un **mecanismo de replicación** en BD distribuidas; hoy se llama **vista materializada**. La b) es tentadora por ese nombre, pero una vista normal no guarda datos. Sin plantilla oficial a mano; el temario también la da por buena sin verificar.",
+   "epigrafe": "4. Bases de datos distribuidas, CAP y BASE",
+   "dificultad": 2,
+   "id": "t14-h-031"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 59
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En un entorno transaccional, ¿cuándo se liberan los registros que intervienen en una transacción?",
+   "ctx": null,
+   "op": {
+    "a": "Cuando otra transacción intenta bloquearlos para actualizarlos.",
+    "b": "Cuando termina la rutina que los actualiza.",
+    "c": "Solo cuando la actualización afecta a varias bases de datos.",
+    "d": "Cuando la aplicación indica que la transacción ha terminado."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** Los bloqueos se mantienen hasta que la transacción termina con **COMMIT** o **ROLLBACK** (bloqueo en dos fases estricto). Liberarlos antes (al acabar la rutina o porque otro los pida) rompería el aislamiento y permitiría lecturas sucias o rollbacks en cascada.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia",
+   "dificultad": 1,
+   "id": "t14-h-032"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 24
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Un DBMS, conjunto de programas que gestiona la creación de las bases de datos y todos los accesos a ellas, debe disponer como mínimo de:",
+   "ctx": null,
+   "op": {
+    "a": "ADL, SQL y DDM.",
+    "b": "DDL, ADM y PCI.",
+    "c": "DDL y DML.",
+    "d": "Ninguna de las anteriores es correcta."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** Un SGBD necesita como mínimo un lenguaje de **definición** (DDL) y otro de **manipulación** (DML). Los acrónimos ADL, DDM, ADM y PCI son relleno; y SQL es un lenguaje concreto que incluye DDL y DML, no un componente mínimo.",
+   "epigrafe": "1. Sistemas de gestión de bases de datos: conceptos y componentes",
+   "dificultad": 1,
+   "id": "t14-h-033"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 25
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes productos NO es un sistema gestor de bases de datos relacional?",
+   "ctx": null,
+   "op": {
+    "a": "Oracle.",
+    "b": "Informix.",
+    "c": "DB2.",
+    "d": "Knosys."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d) Knosys** (de Micronet) es un gestor **documental** o textual, no relacional. Oracle, Informix y DB2 (hoy Db2, de IBM, igual que Informix) son SGBD relacionales.",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 1,
+   "id": "t14-h-034"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 31
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En un SGBD, la gestión de la concurrencia:",
+   "ctx": null,
+   "op": {
+    "a": "Es la capacidad de asignar almacenamiento secundario.",
+    "b": "Es el control de la interacción entre las transacciones activas para evitar que la base de datos quede inconsistente.",
+    "c": "Es la capacidad del sistema para volver a un estado coherente de los datos.",
+    "d": "Son los mecanismos que mantienen la independencia entre los niveles lógico y físico del sistema."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**b)** El control de concurrencia (bloqueos, marcas de tiempo, multiversión) evita que transacciones simultáneas se interfieran. Volver a un estado coherente tras un fallo es la **recuperación** (c); la independencia lógica/física es cosa de la arquitectura ANSI/SPARC (d).",
+   "epigrafe": "3. Transacciones, ACID y concurrencia",
+   "dificultad": 1,
+   "id": "t14-h-035"
+  },
+  {
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 64
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En relación con la prevención de interbloqueos, señale la afirmación INCORRECTA:",
+   "ctx": null,
+   "op": {
+    "a": "Protocolo wound-wait: si una transacción T1 intenta bloquear un elemento bloqueado por T2 y T1 es más antigua que T2, T2 es forzada a abortar y se reinicia con la misma marca de tiempo.",
+    "b": "Espera cautelosa: si T1 intenta bloquear un elemento bloqueado por T2, se le permite esperar siempre que T2 no esté esperando a su vez por otra transacción.",
+    "c": "Prevención sin espera («no esperar»): si T1 intenta bloquear un elemento bloqueado por T2 y T1 es más reciente, entonces T1 muere.",
+    "d": "Protocolo wait-die: si T1 intenta bloquear un elemento bloqueado por T2 y T1 es más antigua que T2, entonces T1 espera."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c)** En el esquema **sin espera** (*no waiting*) la transacción que no consigue el bloqueo **aborta siempre, sin mirar edades**; meter la condición «si T1 es más reciente» lo confunde con wait-die. Las demás son correctas (Elmasri-Navathe): en **wound-wait** la antigua hiere a la joven; en **wait-die** la antigua espera; en la **espera cautelosa** se espera solo si la otra no está esperando. En ambos protocolos con marcas de tiempo aborta siempre la más joven y se reinicia con su marca original.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia",
+   "dificultad": 3,
+   "id": "t14-h-036"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-33",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 33,
+    "conv": "extraordinaria"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "De las siguientes afirmaciones sobre bases de datos relacionales, indique cuál de ellas es INCORRECTA:",
+   "ctx": null,
+   "op": {
+    "a": "Se llama clave primaria o clave principal a un campo o a una combinación de campos que identifica de forma única a cada fila de una tabla.",
+    "b": "Un dominio es el conjunto válido de valores que puede tomar un atributo.",
+    "c": "Una superclave es cualquier conjunto de atributos que identifica unívocamente a cada tupla de una relación.",
+    "d": "Las bases de datos relacionales utilizan un método simple de clave-valor para almacenar datos."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**d)** (clave oficial provisional). Es la incorrecta: los SGBD relacionales guardan los datos en **tablas** (relaciones) de filas y columnas, con claves y restricciones. El «método simple de clave-valor» describe a las bases de datos NoSQL **clave-valor** (Redis, DynamoDB). Las definiciones de clave primaria, dominio y superclave son correctas (la superclave no tiene por qué ser mínima; la candidata sí).",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 1,
+   "id": "t14-h-037"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-34",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 34,
+    "conv": "extraordinaria"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale cuál de las siguientes es una base datos orientada a grafos:",
+   "ctx": null,
+   "op": {
+    "a": "DynamoDB.",
+    "b": "CouchDB.",
+    "c": "JanusGraph.",
+    "d": "HBase."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c) JanusGraph** (clave oficial provisional). Es una base de datos de **grafos** distribuida, de la Linux Foundation, que usa Gremlin (Apache TinkerPop). DynamoDB es clave-valor/documental, CouchDB documental y HBase columnar sobre HDFS.",
+   "epigrafe": "6. Bases de datos NoSQL",
+   "dificultad": 1,
+   "id": "t14-h-038"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-37",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 37,
+    "conv": "extraordinaria"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En el contexto de las bases de datos relacionales, ¿cómo se denomina a una columna o grupo de columnas de una tabla que contiene valores que coinciden con la clave primaria de otra tabla?",
+   "ctx": null,
+   "op": {
+    "a": "Clave primaria externa.",
+    "b": "Clave referencia.",
+    "c": "Clave foránea.",
+    "d": "Clave compuesta."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**c) Clave foránea** (clave ajena) (clave oficial provisional). Es la columna o grupo de columnas cuyos valores coinciden con la clave primaria de otra tabla. «Clave primaria externa» y «clave referencia» no son términos estándar, y una **clave compuesta** es la formada por varias columnas, sea primaria o no.",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 1,
+   "id": "t14-h-039"
+  },
+  {
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-39",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 39,
+    "conv": "extraordinaria"
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En relación a los niveles de aislamiento de transacción que se definen mediante ANSI SQL, indique cuál de las siguientes sentencias es correcta:",
+   "ctx": null,
+   "op": {
+    "a": "La lectura repetible protege contra la lectura sucia y la lectura no repetible, pero no contra la lectura fantasma.",
+    "b": "La lectura no confirmada protege contra la lectura sucia, pero no contra la lectura no repetible, ni contra la lectura fantasma.",
+    "c": "La lectura confirmada no protege contra la lectura sucia, ni contra la lectura no repetible, ni contra la lectura fantasma.",
+    "d": "Serializable protege contra la lectura sucia y la lectura fantasma, pero no contra la lectura no repetible."
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**a)** (clave oficial provisional). REPEATABLE READ evita lecturas sucias y no repetibles, pero **no** fantasmas. Las demás fallan: READ UNCOMMITTED **no** protege ni contra las sucias (b); READ COMMITTED **sí** protege contra las sucias (c); y SERIALIZABLE protege contra **todas**, también la no repetible (d).",
+   "epigrafe": "3. Transacciones, ACID y concurrencia",
+   "dificultad": 2,
+   "id": "t14-h-040"
+  },
+  {
+   "id": "t14-v-001",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-001",
+   "texto": "reformulado",
+   "q": "¿Qué lenguaje de consulta usa de forma nativa la base de datos de grafos Neo4j?",
+   "ctx": null,
+   "op": {
+    "a": "Cypher.",
+    "b": "CQL.",
+    "c": "N1QL.",
+    "d": "HiveQL."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Neo4j usa **Cypher**, declarativo y basado en patrones de nodos y relaciones. **CQL** es el lenguaje de Cassandra, **N1QL** (SQL++) el de Couchbase y **HiveQL** el de Apache Hive.",
+   "epigrafe": "6. Bases de datos NoSQL",
+   "dificultad": 1
+  },
+  {
+   "id": "t14-v-002",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-002",
+   "texto": "reformulado",
+   "q": "En el modelo de objetos ODMG, ¿qué constructor de colección admite elementos duplicados pero no mantiene orden entre ellos?",
+   "ctx": null,
+   "op": {
+    "a": "Set (conjunto).",
+    "b": "Bag (bolsa o multiconjunto).",
+    "c": "List (lista).",
+    "d": "Dictionary (diccionario)."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **bag** admite duplicados y no tiene orden. El **set** no admite duplicados; la **list** admite duplicados y sí está ordenada; el **dictionary** guarda pares clave-valor con claves únicas.",
+   "epigrafe": "5. SGBD orientados a objetos",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-v-003",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-003",
+   "texto": "reformulado",
+   "q": "En una base de datos orientada a objetos, dos objetos tienen exactamente los mismos valores en todos sus atributos. ¿Qué se puede afirmar?",
+   "ctx": null,
+   "op": {
+    "a": "Son el mismo objeto, porque el OID se calcula a partir de los valores de los atributos.",
+    "b": "El sistema rechaza el segundo objeto por duplicar la clave primaria.",
+    "c": "Son objetos distintos, porque cada uno tiene su propio OID, independiente de los valores de sus atributos.",
+    "d": "Comparten OID, pero se distinguen por la dirección física en disco."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La identidad de objeto es **independiente del valor**: dos objetos pueden ser **iguales** (mismos valores) sin ser **idénticos** (mismo OID). El OID lo genera el sistema, no depende de atributos y no es una clave primaria.",
+   "epigrafe": "5. SGBD orientados a objetos",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-v-004",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-004",
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes NO es uno de los cuatro tipos clásicos de bases de datos NoSQL?",
+   "ctx": null,
+   "op": {
+    "a": "Clave-valor.",
+    "b": "Documentales.",
+    "c": "Orientadas a grafos.",
+    "d": "Jerárquicas."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los cuatro tipos clásicos son **clave-valor, documentales, de columnas (familia de columnas) y de grafos**. El modelo **jerárquico** (IBM IMS, años 60) es anterior al relacional, no NoSQL.",
+   "epigrafe": "6. Bases de datos NoSQL",
+   "dificultad": 1
+  },
+  {
+   "id": "t14-v-005",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-005",
+   "texto": "reformulado",
+   "q": "¿Qué nivel de aislamiento de SQL-92 evita las lecturas sucias pero sigue permitiendo las lecturas no repetibles y las lecturas fantasma?",
+   "ctx": null,
+   "op": {
+    "a": "READ COMMITTED.",
+    "b": "READ UNCOMMITTED.",
+    "c": "REPEATABLE READ.",
+    "d": "SERIALIZABLE."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**READ COMMITTED** solo deja leer datos confirmados, así que evita la lectura sucia, pero una fila leída dos veces puede cambiar y pueden aparecer filas nuevas. Es el nivel por defecto de Oracle, SQL Server y PostgreSQL.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-v-006",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-006",
+   "texto": "reformulado",
+   "q": "¿Qué garantiza la integridad referencial en una base de datos relacional?",
+   "ctx": null,
+   "op": {
+    "a": "Que la clave primaria no tome nunca valores nulos.",
+    "b": "Que todo valor de una clave foránea exista como clave en la tabla referenciada o sea nulo.",
+    "c": "Que cada atributo tome solo valores de su dominio.",
+    "d": "Que no haya dos filas con la misma clave foránea."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **integridad referencial** liga la clave foránea con la tabla referenciada: su valor existe allí o es nulo. Que la clave primaria no sea nula es la **integridad de entidad**, y la clave foránea **sí** puede repetirse (varios empleados del mismo departamento).",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 1
+  },
+  {
+   "id": "t14-v-007",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-007",
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes productos es un sistema de gestión de bases de datos orientado a objetos?",
+   "ctx": null,
+   "op": {
+    "a": "SQLite.",
+    "b": "Firebird.",
+    "c": "ObjectStore.",
+    "d": "Informix."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**ObjectStore** (Object Design, luego Progress) es un SGBDOO clásico, igual que Matisse, Versant, Objectivity/DB, GemStone/S u O2. SQLite y Firebird son relacionales, e Informix es relacional (objeto-relacional en versiones posteriores).",
+   "epigrafe": "5. SGBD orientados a objetos",
+   "dificultad": 1
+  },
+  {
+   "id": "t14-v-008",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-008",
+   "texto": "reformulado",
+   "q": "Dentro del estándar ODMG, ¿qué lenguaje se usa para definir el esquema (clases, atributos y relaciones) de una base de datos orientada a objetos?",
+   "ctx": null,
+   "op": {
+    "a": "OQL (Object Query Language).",
+    "b": "OML (Object Modeling Language).",
+    "c": "DDL de SQL:1999.",
+    "d": "ODL (Object Definition Language)."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "ODMG define el modelo de objetos, **ODL** para el esquema, **OQL** para consultas y las vinculaciones (bindings) con C++, Smalltalk y Java. Los tipos estructurados de SQL:1999 son del mundo objeto-relacional, no de ODMG.",
+   "epigrafe": "5. SGBD orientados a objetos",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-v-009",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-009",
+   "texto": "reformulado",
+   "q": "En las propiedades ACID de una transacción, ¿qué garantiza la durabilidad?",
+   "ctx": null,
+   "op": {
+    "a": "Que los cambios de una transacción confirmada sobreviven a fallos posteriores del sistema.",
+    "b": "Que la transacción se ejecuta entera o no se ejecuta.",
+    "c": "Que las transacciones concurrentes no se interfieren entre sí.",
+    "d": "Que el sistema responde siempre aunque falle un nodo."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **durabilidad** (o persistencia) la aseguran el log de redo y las copias. «Todo o nada» es la **atomicidad**; no interferirse es el **aislamiento**; y responder siempre es la **disponibilidad** de CAP, que no forma parte de ACID.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia",
+   "dificultad": 1
+  },
+  {
+   "id": "t14-v-010",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-010",
+   "texto": "reformulado",
+   "q": "Según el manifiesto de Atkinson (1989), ¿cuál de las siguientes es una característica OBLIGATORIA de un SGBD orientado a objetos?",
+   "ctx": null,
+   "op": {
+    "a": "Herencia múltiple.",
+    "b": "Extensibilidad: el usuario puede definir tipos nuevos que se tratan igual que los predefinidos.",
+    "c": "Gestión de versiones de los objetos.",
+    "d": "Distribución de los datos en varios nodos."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **extensibilidad** está entre las 13 características obligatorias (con objetos complejos, identidad, encapsulación, clases, herencia, polimorfismo, completitud computacional, persistencia, almacenamiento secundario, concurrencia, recuperación y consultas ad hoc). Herencia múltiple, versiones y distribución son **opcionales**.",
+   "epigrafe": "5. SGBD orientados a objetos",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-v-011",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-011",
+   "texto": "reformulado",
+   "q": "¿Qué procedimiento almacenado del sistema permite ejecutar scripts de R o Python en SQL Server Machine Learning Services?",
+   "ctx": null,
+   "op": {
+    "a": "sp_executesql.",
+    "b": "xp_cmdshell.",
+    "c": "sp_execute_external_script.",
+    "d": "sp_configure."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**sp_execute_external_script** recibe el lenguaje (`@language = N'R'` o `N'Python'`), el script y la consulta de entrada. `sp_executesql` ejecuta SQL dinámico, `xp_cmdshell` lanza comandos del sistema operativo y `sp_configure` cambia opciones del servidor (por ejemplo, habilitar los scripts externos).",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-v-012",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-012",
+   "texto": "reformulado",
+   "q": "Una transacción T1 cuenta las filas de un departamento, otra transacción T2 inserta un empleado nuevo en ese departamento y confirma, y T1 repite el recuento y obtiene un resultado distinto. ¿Qué anomalía se ha producido?",
+   "ctx": null,
+   "op": {
+    "a": "Lectura sucia.",
+    "b": "Lectura no repetible.",
+    "c": "Actualización perdida.",
+    "d": "Lectura fantasma."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Han aparecido filas nuevas que cumplen la condición: es una **lectura fantasma**. La **no repetible** se da cuando cambia el valor de una fila ya leída; la **sucia**, cuando se lee un dato no confirmado; y la **actualización perdida**, cuando una escritura pisa a otra.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-v-013",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-013",
+   "texto": "reformulado",
+   "q": "En SQL Server Machine Learning Services, ¿qué paquete de Python es el equivalente de RevoScaleR para transformación de datos, estadística y modelado?",
+   "ctx": null,
+   "op": {
+    "a": "revoscalepy.",
+    "b": "RevoScaleR.",
+    "c": "olapR.",
+    "d": "sqlrutils."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**revoscalepy** es la versión Python de RevoScaleR (que es de R). **olapR** lanza consultas MDX contra cubos SSAS y **sqlrutils** empaqueta scripts R como procedimientos almacenados.",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 3
+  },
+  {
+   "id": "t14-v-014",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-014",
+   "texto": "reformulado",
+   "q": "¿Qué es GQL, publicado como norma ISO/IEC 39075 en 2024?",
+   "ctx": null,
+   "op": {
+    "a": "Una base de datos de grafos de Google.",
+    "b": "El primer estándar ISO de lenguaje de consulta para bases de datos de grafos.",
+    "c": "El lenguaje de consulta de MongoDB.",
+    "d": "Una extensión de SQL para tablas columnares."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**GQL** (*Graph Query Language*) es el estándar ISO de 2024 para grafos de propiedades, muy inspirado en Cypher. No es un producto. SQL:2023 añadió aparte **SQL/PGQ**, para consultar grafos definidos sobre tablas.",
+   "epigrafe": "6. Bases de datos NoSQL",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-v-015",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-015",
+   "texto": "reformulado",
+   "q": "¿Qué proyecto del ecosistema Hadoop es una base de datos columnar inspirada en Google Bigtable que funciona sobre HDFS?",
+   "ctx": null,
+   "op": {
+    "a": "Hive.",
+    "b": "Pig.",
+    "c": "HBase.",
+    "d": "ZooKeeper."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**HBase** es la BD de familias de columnas de Hadoop (HMaster y RegionServers). **Hive** es un almacén de datos con HiveQL, **Pig** es un lenguaje de flujo de datos (Pig Latin) y **ZooKeeper** coordina servicios distribuidos.",
+   "epigrafe": "6. Bases de datos NoSQL",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-v-016",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-016",
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes es un sistema gestor de bases de datos relacional?",
+   "ctx": null,
+   "op": {
+    "a": "MongoDB.",
+    "b": "Cassandra.",
+    "c": "XML.",
+    "d": "MariaDB."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**MariaDB** es un fork relacional de MySQL. MongoDB es documental, Cassandra es de familia de columnas y XML es un lenguaje de marcado, no un gestor.",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 1
+  },
+  {
+   "id": "t14-v-017",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-017",
+   "texto": "reformulado",
+   "q": "¿Qué componente del SGBD es el principal responsable de garantizar el aislamiento de las transacciones?",
+   "ctx": null,
+   "op": {
+    "a": "El control de concurrencia.",
+    "b": "El gestor de recuperación.",
+    "c": "El optimizador de consultas.",
+    "d": "El diccionario de datos."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **aislamiento** lo garantiza el control de concurrencia (bloqueos, marcas de tiempo, MVCC). La atomicidad y la durabilidad dependen del **gestor de recuperación** (undo, redo, log). El optimizador elige planes de ejecución y el diccionario guarda metadatos.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-v-018",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-018",
+   "texto": "reformulado",
+   "q": "¿Qué base de datos orientada a objetos está asociada al servidor de aplicaciones Zope y almacena objetos Python de forma nativa?",
+   "ctx": null,
+   "op": {
+    "a": "db4o.",
+    "b": "ZODB.",
+    "c": "ObjectDB.",
+    "d": "GemStone/S."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**ZODB** (*Zope Object Database*) es la BD de objetos de Zope. **db4o** era para Java y .NET (hoy discontinuada), **ObjectDB** es para Java (JPA y JDO) y **GemStone/S** es para Smalltalk.",
+   "epigrafe": "5. SGBD orientados a objetos",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-v-019",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-019",
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes es un SGBD relacional embebido, sin servidor, que guarda toda la base de datos en un único fichero?",
+   "ctx": null,
+   "op": {
+    "a": "PostgreSQL.",
+    "b": "Redis.",
+    "c": "SQLite.",
+    "d": "CouchDB."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**SQLite** es de dominio público y se enlaza como librería dentro de la aplicación. **PostgreSQL** es relacional, pero cliente-servidor; **Redis** es clave-valor en memoria y **CouchDB** es documental.",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-v-020",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-020",
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes términos NO forma parte del acrónimo ACID?",
+   "ctx": null,
+   "op": {
+    "a": "Atomicidad.",
+    "b": "Aislamiento.",
+    "c": "Durabilidad.",
+    "d": "Disponibilidad."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "ACID = **A**tomicidad, **C**onsistencia, a**I**slamiento y **D**urabilidad. La **disponibilidad** es la A del teorema **CAP** (y aparece en BASE: *Basically Available*).",
+   "epigrafe": "3. Transacciones, ACID y concurrencia",
+   "dificultad": 1
+  },
+  {
+   "id": "t14-v-021",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-021",
+   "texto": "reformulado",
+   "q": "En la arquitectura ANSI/SPARC, ¿qué tipo de independencia permite cambiar el esquema interno (índices, ficheros) sin modificar el esquema conceptual?",
+   "ctx": null,
+   "op": {
+    "a": "Independencia física.",
+    "b": "Independencia lógica.",
+    "c": "Independencia de distribución.",
+    "d": "Independencia externa."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **independencia física** separa el nivel interno del conceptual, y es la más fácil de lograr. La **lógica** permite cambiar el esquema conceptual sin tocar los externos. La de distribución es la regla 11 de Codd, y «externa» no es un tipo de independencia.",
+   "epigrafe": "1. Sistemas de gestión de bases de datos: conceptos y componentes",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-v-022",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-022",
+   "texto": "reformulado",
+   "q": "Según el manifiesto de Atkinson, ¿cuál de las siguientes características de un SGBD orientado a objetos es OPCIONAL?",
+   "ctx": null,
+   "op": {
+    "a": "La encapsulación.",
+    "b": "Las transacciones de diseño (largas o anidadas).",
+    "c": "La persistencia.",
+    "d": "Las consultas ad hoc."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Son **opcionales**: herencia múltiple, verificación e inferencia de tipos, distribución, transacciones de diseño y versiones. Encapsulación, persistencia y consultas ad hoc están entre las 13 **obligatorias**.",
+   "epigrafe": "5. SGBD orientados a objetos",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-v-023",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-023",
+   "texto": "reformulado",
+   "q": "En la arquitectura ANSI/X3/SPARC, ¿en qué nivel se describen los ficheros, los índices y la organización física de los datos?",
+   "ctx": null,
+   "op": {
+    "a": "Nivel externo.",
+    "b": "Nivel conceptual.",
+    "c": "Nivel interno.",
+    "d": "Nivel canónico."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **nivel interno** describe el almacenamiento físico (tablespaces, índices B+, bloques). El **externo** contiene las vistas de cada usuario y el **conceptual** el esquema lógico global. «Canónico» no es un nivel ANSI.",
+   "epigrafe": "1. Sistemas de gestión de bases de datos: conceptos y componentes",
+   "dificultad": 1
+  },
+  {
+   "id": "t14-v-024",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-024",
+   "texto": "reformulado",
+   "q": "¿Qué regla de Codd exige que la descripción de la base de datos (metadatos) se guarde en tablas consultables con el mismo lenguaje relacional que los datos?",
+   "ctx": null,
+   "op": {
+    "a": "Regla 2: acceso garantizado.",
+    "b": "Regla 8: independencia física de los datos.",
+    "c": "Regla 12: no subversión.",
+    "d": "Regla 4: catálogo dinámico en línea basado en el modelo relacional."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **regla 4** pide un catálogo relacional y en línea (en Oracle, el diccionario de datos y vistas como `USER_TABLES`). La 2 exige acceder a cada dato con tabla, clave primaria y columna; la 8 aísla las aplicaciones del almacenamiento; la 12 impide saltarse la integridad con accesos de bajo nivel.",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-v-025",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-025",
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes productos es una base de datos NoSQL de tipo clave-valor en memoria?",
+   "ctx": null,
+   "op": {
+    "a": "Redis.",
+    "b": "Amazon Aurora.",
+    "c": "PostgreSQL.",
+    "d": "Neo4j."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Redis** guarda estructuras de datos en memoria (strings, hashes, listas, conjuntos, streams), con persistencia opcional RDB/AOF. Aurora y PostgreSQL son relacionales, y Neo4j es de grafos.",
+   "epigrafe": "6. Bases de datos NoSQL",
+   "dificultad": 1
+  },
+  {
+   "id": "t14-v-026",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-026",
+   "texto": "reformulado",
+   "q": "En Oracle Database, ¿cuál es la unidad mínima de entrada/salida y de almacenamiento?",
+   "ctx": null,
+   "op": {
+    "a": "La extensión.",
+    "b": "El bloque de datos.",
+    "c": "El segmento.",
+    "d": "El tablespace."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Jerarquía lógica de Oracle, de mayor a menor: **tablespace → segmento → extensión → bloque**. El **bloque** (8 KB por defecto) es la unidad mínima; una extensión es un conjunto de bloques contiguos y un segmento es el espacio de un objeto.",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-v-027",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-027",
+   "texto": "reformulado",
+   "q": "¿Qué regla de Codd establece que, si el sistema ofrece una interfaz de bajo nivel (registro a registro), esta no puede usarse para saltarse las reglas de integridad?",
+   "ctx": null,
+   "op": {
+    "a": "La regla de independencia de integridad.",
+    "b": "La regla del sublenguaje de datos completo.",
+    "c": "La regla de no subversión.",
+    "d": "La regla de información."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **no subversión** es la regla 12. La **independencia de integridad** (regla 10) pide que las restricciones se definan en el catálogo y no en los programas; el **sublenguaje completo** (regla 5) exige un lenguaje para definición, manipulación, integridad, autorización y transacciones; la de **información** (regla 1), que todo se represente como valores en tablas.",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-v-028",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-028",
+   "texto": "reformulado",
+   "q": "¿A qué sublenguaje de SQL pertenecen las sentencias GRANT y REVOKE?",
+   "ctx": null,
+   "op": {
+    "a": "Al lenguaje de definición de datos (DDL).",
+    "b": "Al lenguaje de manipulación de datos (DML).",
+    "c": "Al lenguaje de control de transacciones (TCL).",
+    "d": "Al lenguaje de control de datos (DCL)."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**GRANT** y **REVOKE** gestionan permisos y forman el **DCL**. El DDL incluye CREATE, ALTER, DROP y TRUNCATE; el DML, SELECT, INSERT, UPDATE, DELETE y MERGE; y el TCL, COMMIT, ROLLBACK y SAVEPOINT.",
+   "epigrafe": "1. Sistemas de gestión de bases de datos: conceptos y componentes",
+   "dificultad": 1
+  },
+  {
+   "id": "t14-v-029",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-029",
+   "texto": "reformulado",
+   "q": "Un programa en C contiene sentencias del tipo EXEC SQL SELECT ... que un precompilador traduce antes de compilar. ¿Qué forma de trabajar con SQL es?",
+   "ctx": null,
+   "op": {
+    "a": "SQL embebido.",
+    "b": "SQL interactivo.",
+    "c": "SQL por módulos.",
+    "d": "SQL mapeado."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Es **SQL embebido** en un lenguaje anfitrión (Pro*C, SQLJ). El **interactivo** se lanza directamente desde una consola (SQL*Plus, psql) y el uso **por módulos** agrupa las sentencias en módulos o procedimientos. «SQL mapeado» no existe.",
+   "epigrafe": "1. Sistemas de gestión de bases de datos: conceptos y componentes",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-v-030",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-030",
+   "texto": "reformulado",
+   "q": "En la arquitectura ANSI/SPARC, ¿qué permite la independencia lógica de los datos?",
+   "ctx": null,
+   "op": {
+    "a": "Cambiar los índices y ficheros físicos sin modificar el esquema conceptual.",
+    "b": "Modificar el esquema conceptual sin tener que cambiar los esquemas externos ni las aplicaciones.",
+    "c": "Distribuir la base de datos en varios servidores de forma transparente.",
+    "d": "Que cada usuario defina sus propias tablas sin intervención del administrador."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **independencia lógica** separa el nivel conceptual del externo. Cambiar índices o ficheros sin tocar el conceptual es la **independencia física**, que es más fácil de conseguir. La transparencia de distribución es la regla 11 de Codd.",
+   "epigrafe": "1. Sistemas de gestión de bases de datos: conceptos y componentes",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-v-031",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-031",
+   "texto": "reformulado",
+   "q": "En una base de datos distribuida, ¿cómo se llama la copia local de solo lectura de datos remotos que se refresca periódicamente y que Oracle denominaba antes «snapshot»?",
+   "ctx": null,
+   "op": {
+    "a": "Vista dinámica.",
+    "b": "Sinónimo público.",
+    "c": "Vista materializada.",
+    "d": "Tabla temporal."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **snapshot** clásico de Oracle se llama hoy **vista materializada**: guarda físicamente el resultado de una consulta (a menudo sobre un enlace remoto) y se refresca de forma completa o incremental. Una vista normal no almacena datos, un sinónimo es solo un alias y una tabla temporal guarda datos de sesión.",
+   "epigrafe": "4. Bases de datos distribuidas, CAP y BASE",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-v-032",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-032",
+   "texto": "reformulado",
+   "q": "En el bloqueo en dos fases estricto (2PL estricto), ¿cuándo se liberan los bloqueos exclusivos de una transacción?",
+   "ctx": null,
+   "op": {
+    "a": "Tras escribir cada dato.",
+    "b": "Al empezar la fase de crecimiento.",
+    "c": "Cuando otra transacción los solicita.",
+    "d": "Al confirmarse o abortar la transacción."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En el **2PL estricto** los bloqueos exclusivos se mantienen hasta el **COMMIT o ROLLBACK**, lo que evita rollbacks en cascada. En el 2PL básico hay una fase de crecimiento (solo adquiere) y otra de decrecimiento (solo libera); el **riguroso** retiene todos los bloqueos hasta el final.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-v-033",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-033",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes sentencias SQL pertenece al lenguaje de definición de datos (DDL)?",
+   "ctx": null,
+   "op": {
+    "a": "ALTER TABLE.",
+    "b": "UPDATE.",
+    "c": "GRANT.",
+    "d": "COMMIT."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**ALTER** (con CREATE, DROP y TRUNCATE) es DDL. **UPDATE** es DML, **GRANT** es DCL y **COMMIT** es control de transacciones (TCL).",
+   "epigrafe": "1. Sistemas de gestión de bases de datos: conceptos y componentes",
+   "dificultad": 1
+  },
+  {
+   "id": "t14-v-034",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-034",
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes productos NO es un SGBD relacional?",
+   "ctx": null,
+   "op": {
+    "a": "Db2.",
+    "b": "Neo4j.",
+    "c": "SQL Server.",
+    "d": "MySQL."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Neo4j** es una base de datos NoSQL de grafos. Db2 (IBM), SQL Server (Microsoft) y MySQL (Oracle) son relacionales.",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 1
+  },
+  {
+   "id": "t14-v-035",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-035",
+   "texto": "reformulado",
+   "q": "¿Qué técnica de control de concurrencia permite que los lectores vean una instantánea consistente de los datos sin bloquear a los escritores, y la usan Oracle y PostgreSQL?",
+   "ctx": null,
+   "op": {
+    "a": "El bloqueo en dos fases riguroso.",
+    "b": "El bloqueo exclusivo a nivel de tabla.",
+    "c": "El control multiversión (MVCC).",
+    "d": "La espera cautelosa."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Con **MVCC** cada lector ve la versión confirmada al empezar su sentencia o transacción, de modo que lectores y escritores no se bloquean. El 2PL y los bloqueos de tabla sí bloquean, y la espera cautelosa es una técnica de prevención de interbloqueos.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-v-036",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-036",
+   "texto": "reformulado",
+   "q": "Con el protocolo wait-die, una transacción joven T2 pide un elemento bloqueado por una transacción más antigua T1. ¿Qué ocurre?",
+   "ctx": null,
+   "op": {
+    "a": "T2 espera hasta que T1 libere el elemento.",
+    "b": "T1 aborta (es herida) y T2 obtiene el elemento.",
+    "c": "Se detecta un ciclo en el grafo de espera y se elige una víctima al azar.",
+    "d": "T2 aborta (muere) y se reinicia más tarde con su marca de tiempo original."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En **wait-die** la antigua espera y la **joven muere**. Al reiniciarse con su marca original acaba siendo la más antigua, lo que evita la inanición. Que la antigua hiera a la joven es **wound-wait** (cuando la antigua es la que pide), y el grafo de espera corresponde a la **detección**, no a la prevención.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia",
+   "dificultad": 3
+  },
+  {
+   "id": "t14-v-037",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-037",
+   "texto": "reformulado",
+   "q": "En el modelo relacional, ¿cómo se llama un conjunto mínimo de atributos que identifica de forma única cada tupla de una relación?",
+   "ctx": null,
+   "op": {
+    "a": "Clave candidata.",
+    "b": "Superclave.",
+    "c": "Clave foránea.",
+    "d": "Dominio."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **clave candidata** es una superclave **mínima** (no sobra ningún atributo), y la primaria es la candidata elegida. Una **superclave** puede tener atributos de más; la **foránea** referencia otra tabla; y el **dominio** es el conjunto de valores válidos de un atributo.",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-v-038",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-038",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes es una base de datos NoSQL documental?",
+   "ctx": null,
+   "op": {
+    "a": "Neo4j.",
+    "b": "MongoDB.",
+    "c": "Cassandra.",
+    "d": "Redis."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**MongoDB** guarda documentos BSON en colecciones. **Neo4j** es de grafos, **Cassandra** de familia de columnas y **Redis** clave-valor en memoria.",
+   "epigrafe": "6. Bases de datos NoSQL",
+   "dificultad": 1
+  },
+  {
+   "id": "t14-v-039",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-039",
+   "texto": "reformulado",
+   "q": "En el modelo relacional, ¿cómo se denomina el número de atributos (columnas) de una relación?",
+   "ctx": null,
+   "op": {
+    "a": "Cardinalidad.",
+    "b": "Dominio.",
+    "c": "Grado.",
+    "d": "Aridad de la clave."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **grado** es el número de columnas y la **cardinalidad**, el número de filas (tuplas). El **dominio** es el conjunto de valores válidos de un atributo. «Aridad de la clave» no es un término del modelo.",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 1
+  },
+  {
+   "id": "t14-v-040",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t14-h-040",
+   "texto": "reformulado",
+   "q": "Según la norma SQL-92, ¿cuál de los siguientes niveles de aislamiento permite lecturas sucias?",
+   "ctx": null,
+   "op": {
+    "a": "READ COMMITTED.",
+    "b": "REPEATABLE READ.",
+    "c": "SERIALIZABLE.",
+    "d": "READ UNCOMMITTED."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Solo **READ UNCOMMITTED** deja leer datos no confirmados. Los demás evitan la lectura sucia; REPEATABLE READ evita también la no repetible, y SERIALIZABLE las tres anomalías.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-n-001",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según el teorema CAP, cuando se produce una partición de red en un sistema distribuido, ¿entre qué dos propiedades hay que elegir?",
+   "ctx": null,
+   "op": {
+    "a": "Entre consistencia y disponibilidad.",
+    "b": "Entre atomicidad y durabilidad.",
+    "c": "Entre latencia y tolerancia a particiones.",
+    "d": "Entre aislamiento y consistencia eventual."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "CAP (Brewer, 2000; demostrado por Gilbert y Lynch en 2002) dice que solo se pueden garantizar dos de tres: **C**onsistencia, disponibilidad (**A**vailability) y tolerancia a **P**articiones. Como las particiones ocurren, la elección real es **C o A** durante la partición. Latencia frente a consistencia es la segunda parte de PACELC, cuando no hay partición.",
+   "epigrafe": "4. Bases de datos distribuidas, CAP y BASE",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-n-002",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué significa el acrónimo BASE, usado para describir muchas bases de datos NoSQL?",
+   "ctx": null,
+   "op": {
+    "a": "Basic Atomicity, Strong consistency, Eventual durability.",
+    "b": "Basically Available, Soft state, Eventual consistency.",
+    "c": "Balanced Availability, Synchronous replication, Exact consistency.",
+    "d": "Batch Access, Sharding, Elastic scalability."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**BASE**: básicamente disponible, estado blando y **consistencia eventual**. Es la alternativa optimista a ACID: tolera divergencias temporales entre réplicas a cambio de disponibilidad y escalado horizontal.",
+   "epigrafe": "4. Bases de datos distribuidas, CAP y BASE",
+   "dificultad": 1
+  },
+  {
+   "id": "t14-n-003",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué tipo de base de datos NoSQL es Apache Cassandra?",
+   "ctx": null,
+   "op": {
+    "a": "Documental, con documentos BSON agrupados en colecciones.",
+    "b": "De grafos, con lenguaje de consulta Cypher.",
+    "c": "De familia de columnas, con arquitectura en anillo sin maestro y consistencia ajustable por operación.",
+    "d": "Clave-valor en memoria, con persistencia RDB y AOF."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Cassandra** (nacida en Facebook) es **columnar**, *peer-to-peer* con protocolo *gossip*, se consulta con **CQL** y permite elegir la consistencia en cada operación (ONE, QUORUM, ALL). En CAP se clasifica como AP.",
+   "epigrafe": "6. Bases de datos NoSQL",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-n-004",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Con el protocolo wound-wait, una transacción antigua T1 pide un elemento bloqueado por una transacción más joven T2. ¿Qué ocurre?",
+   "ctx": null,
+   "op": {
+    "a": "T1 espera a que T2 libere el elemento.",
+    "b": "T1 aborta y se reinicia con una marca de tiempo nueva.",
+    "c": "Ambas abortan y se reinician.",
+    "d": "T1 «hiere» a T2: T2 aborta y se reinicia más tarde con su marca de tiempo original."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Wound-wait** es expropiativo: si quien pide es la **antigua**, hiere a la joven; si es la joven, espera. En wait-die y en wound-wait **aborta siempre la más joven**, que conserva su marca original para no sufrir inanición.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia",
+   "dificultad": 3
+  },
+  {
+   "id": "t14-n-005",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál es el nivel de aislamiento por defecto de MySQL con el motor InnoDB?",
+   "ctx": null,
+   "op": {
+    "a": "REPEATABLE READ.",
+    "b": "READ COMMITTED.",
+    "c": "SERIALIZABLE.",
+    "d": "READ UNCOMMITTED."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "InnoDB usa **REPEATABLE READ** por defecto y, con bloqueos *next-key*, evita fantasmas en las lecturas con bloqueo. Oracle, SQL Server y PostgreSQL usan READ COMMITTED por defecto.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-n-006",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes niveles de aislamiento NO admite Oracle Database?",
+   "ctx": null,
+   "op": {
+    "a": "READ COMMITTED.",
+    "b": "REPEATABLE READ.",
+    "c": "SERIALIZABLE.",
+    "d": "READ ONLY."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Oracle solo ofrece **READ COMMITTED** (por defecto), **SERIALIZABLE** y **READ ONLY**, apoyándose en la multiversión del undo. No tiene REPEATABLE READ ni READ UNCOMMITTED.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-n-007",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué proceso de fondo de Oracle escribe en los ficheros de redo log en línea el contenido del buffer de redo log?",
+   "ctx": null,
+   "op": {
+    "a": "DBWn (Database Writer).",
+    "b": "CKPT (Checkpoint).",
+    "c": "LGWR (Log Writer).",
+    "d": "PMON (Process Monitor)."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**LGWR** vuelca el *redo log buffer* a disco, por ejemplo en cada COMMIT. **DBWn** escribe los bloques modificados en los datafiles, **CKPT** gestiona los puntos de control y **PMON** limpia los procesos caídos. SMON recupera la instancia y ARCn archiva los redo logs.",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-n-008",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En la arquitectura de Oracle, ¿qué es la SGA?",
+   "ctx": null,
+   "op": {
+    "a": "Un área de memoria privada de cada proceso servidor.",
+    "b": "El fichero que guarda la estructura física de la base de datos.",
+    "c": "El tablespace que contiene el diccionario de datos.",
+    "d": "Un área de memoria compartida de la instancia, que incluye la buffer cache, la shared pool y el redo log buffer."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **SGA** (*System Global Area*) es compartida. La memoria privada de cada proceso es la **PGA**; la estructura física y el SCN están en los **control files**; y el diccionario reside en el tablespace **SYSTEM**.",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-n-009",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué fichero de una base de datos Oracle guarda su estructura física, los nombres de los datafiles y el SCN?",
+   "ctx": null,
+   "op": {
+    "a": "El fichero de control (control file).",
+    "b": "El fichero de parámetros (spfile).",
+    "c": "El redo log en línea.",
+    "d": "El fichero de contraseñas."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **control file** describe la estructura física: nombres y rutas de datafiles y redo logs, y el número de cambio del sistema (SCN). El spfile guarda parámetros de la instancia, el redo log registra los cambios y el fichero de contraseñas autentica a los usuarios con privilegios administrativos.",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-n-010",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Desde qué versión ofrece MongoDB transacciones ACID multidocumento en replica sets?",
+   "ctx": null,
+   "op": {
+    "a": "Desde la versión 2.6.",
+    "b": "Desde la versión 4.0.",
+    "c": "Desde la versión 6.0.",
+    "d": "MongoDB no admite transacciones multidocumento."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "MongoDB añadió transacciones ACID multidocumento en la **4.0** (2018) para replica sets, y en la **4.2** para clústeres fragmentados. Por eso «NoSQL nunca es ACID» es falso.",
+   "epigrafe": "6. Bases de datos NoSQL",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-n-011",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿En qué consiste el protocolo de confirmación en dos fases (2PC) en una base de datos distribuida?",
+   "ctx": null,
+   "op": {
+    "a": "Cada nodo confirma por su cuenta y después se sincroniza con los demás.",
+    "b": "La transacción se ejecuta dos veces para verificar el resultado.",
+    "c": "Un coordinador pide a los participantes que se preparen y voten, y después ordena a todos confirmar o abortar de forma global.",
+    "d": "Primero se bloquean todos los datos y después se liberan."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En la **fase 1** (preparación y votación) cada participante dice si puede confirmar; en la **fase 2**, si todos votan sí, se confirma en todos; si alguno vota no, se aborta en todos. Garantiza la atomicidad en varios nodos. No confundir con el bloqueo en dos fases (2PL), que es de concurrencia.",
+   "epigrafe": "4. Bases de datos distribuidas, CAP y BASE",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-n-012",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En una base de datos distribuida, ¿cómo se llama la fragmentación horizontal de los datos entre varios nodos, típica de los sistemas NoSQL?",
+   "ctx": null,
+   "op": {
+    "a": "Replicación multimaestro.",
+    "b": "Normalización.",
+    "c": "Particionado vertical.",
+    "d": "Sharding."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **sharding** reparte las filas (o documentos) entre nodos según una clave. La replicación copia el mismo dato en varios nodos, la normalización es una técnica de diseño y la fragmentación vertical reparte columnas.",
+   "epigrafe": "4. Bases de datos distribuidas, CAP y BASE",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-n-013",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes sistemas es un ejemplo de NewSQL, es decir, distribuido, con SQL y transacciones ACID y escalable en horizontal?",
+   "ctx": null,
+   "op": {
+    "a": "CockroachDB.",
+    "b": "Redis.",
+    "c": "Amazon DynamoDB.",
+    "d": "HBase."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**NewSQL** combina SQL y ACID con escalado horizontal: Google Spanner, **CockroachDB**, TiDB, YugabyteDB, VoltDB. Redis y DynamoDB son clave-valor, y HBase es columnar; ninguno ofrece SQL estándar.",
+   "epigrafe": "4. Bases de datos distribuidas, CAP y BASE",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-n-014",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿En qué año publicó Codd sus 12 reglas para decidir si un SGBD es plenamente relacional?",
+   "ctx": null,
+   "op": {
+    "a": "En 1970.",
+    "b": "En 1985.",
+    "c": "En 1975.",
+    "d": "En 1992."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Codd propuso el **modelo relacional en 1970** y publicó las **12 reglas (13 con la regla 0) en 1985** en *Computerworld*. 1975 es el año de la propuesta ANSI/SPARC y 1992 el de SQL-92.",
+   "epigrafe": "2. SGBD relacionales",
+   "dificultad": 1
+  },
+  {
+   "id": "t14-n-015",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿En qué versión del estándar SQL se introdujeron los tipos estructurados definidos por el usuario y la herencia de tipos, base de los SGBD objeto-relacionales?",
+   "ctx": null,
+   "op": {
+    "a": "SQL-92.",
+    "b": "SQL:2003.",
+    "c": "SQL:1999 (SQL3).",
+    "d": "SQL:2016."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**SQL:1999** incorporó `CREATE TYPE` con métodos, la herencia (`UNDER`), las referencias (`REF`) y el tipo ARRAY. SQL:2003 añadió MULTISET y XML; SQL:2016 añadió JSON.",
+   "epigrafe": "5. SGBD orientados a objetos",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-n-016",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En las bases de datos orientadas a objetos, ¿qué es la persistencia por alcanzabilidad?",
+   "ctx": null,
+   "op": {
+    "a": "Un objeto se hace persistente solo si hereda de una clase persistente.",
+    "b": "Todos los objetos creados son persistentes por defecto.",
+    "c": "Un objeto es persistente mientras alguna aplicación lo tenga en memoria.",
+    "d": "Un objeto se hace persistente si se puede alcanzar desde otro objeto persistente."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Hay tres formas de hacer persistente un objeto: por **herencia** de una clase persistente, por **nombre** y por **alcanzabilidad** (siguiendo referencias desde una raíz persistente). La alcanzabilidad es la más cómoda para estructuras complejas.",
+   "epigrafe": "5. SGBD orientados a objetos",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-n-017",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué problema resuelven las bases de datos orientadas a objetos al almacenar directamente los objetos del lenguaje de programación?",
+   "ctx": null,
+   "op": {
+    "a": "El desajuste de impedancia entre el modelo de objetos de la aplicación y el modelo de tablas.",
+    "b": "La falta de transacciones ACID en los sistemas relacionales.",
+    "c": "La imposibilidad de usar índices en el modelo relacional.",
+    "d": "La falta de lenguajes de consulta declarativos."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **desajuste de impedancia** (*impedance mismatch*) obliga a traducir objetos a filas y viceversa (de ahí los ORM como Hibernate o JPA). Los SGBD relacionales sí tienen ACID, índices y un lenguaje declarativo (SQL).",
+   "epigrafe": "5. SGBD orientados a objetos",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-n-018",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Respecto al manifiesto de Atkinson (1989), ¿qué propuso el llamado «Tercer manifiesto» de Stonebraker y otros (1990)?",
+   "ctx": null,
+   "op": {
+    "a": "Abandonar el modelo relacional y adoptar solo BDOO puras.",
+    "b": "Ampliar el modelo relacional con conceptos de objetos, lo que dio lugar a los SGBD objeto-relacionales.",
+    "c": "Sustituir SQL por OQL como lenguaje estándar.",
+    "d": "Eliminar la identidad de objeto de las BDOO."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El manifiesto de **Stonebraker** (1990) defendía **extender** el modelo relacional en lugar de sustituirlo; de ahí salen los objeto-relacionales y SQL:1999. Date y Darwen publicaron aparte *The Third Manifesto* (1995), con un modelo relacional puro y tipos definidos por el usuario.",
+   "epigrafe": "5. SGBD orientados a objetos",
+   "dificultad": 3
+  },
+  {
+   "id": "t14-n-019",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué tipo de base de datos NoSQL es más adecuado para detectar fraude analizando las relaciones entre clientes, cuentas y transacciones?",
+   "ctx": null,
+   "op": {
+    "a": "Una base de datos clave-valor.",
+    "b": "Una base de datos de familia de columnas.",
+    "c": "Una base de datos de grafos.",
+    "d": "Una base de datos de series temporales."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las **bases de datos de grafos** (Neo4j, Amazon Neptune, JanusGraph) recorren relaciones de varios saltos de forma eficiente: redes sociales, recomendaciones o fraude. El clave-valor sirve para cachés y sesiones, el columnar para escritura masiva y las series temporales para métricas.",
+   "epigrafe": "6. Bases de datos NoSQL",
+   "dificultad": 1
+  },
+  {
+   "id": "t14-n-020",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cómo se llama el fork libre de Redis creado en 2024 bajo el amparo de la Linux Foundation tras el cambio de licencia de Redis?",
+   "ctx": null,
+   "op": {
+    "a": "KeyDB.",
+    "b": "Memcached.",
+    "c": "Dragonfly.",
+    "d": "Valkey."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Cuando Redis abandonó la licencia BSD en 2024, la Linux Foundation creó **Valkey**. En 2025 Redis 8 volvió a ofrecer una licencia libre (AGPLv3). **Memcached** es una caché clave-valor independiente y anterior; KeyDB y Dragonfly son alternativas compatibles, pero no ese fork.",
+   "epigrafe": "6. Bases de datos NoSQL",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-n-021",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué identificador asigna MongoDB por defecto al campo _id de un documento si la aplicación no lo indica?",
+   "ctx": null,
+   "op": {
+    "a": "Un ObjectId de 12 bytes.",
+    "b": "Un número entero autoincremental.",
+    "c": "Un UUID de 16 bytes.",
+    "d": "El hash SHA-1 del contenido del documento."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "MongoDB genera un **ObjectId** de 12 bytes (marca de tiempo, valor aleatorio y contador). No hay autoincremento nativo como en los relacionales.",
+   "epigrafe": "6. Bases de datos NoSQL",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-n-022",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué ofrece Redis para dar persistencia a los datos que mantiene en memoria?",
+   "ctx": null,
+   "op": {
+    "a": "Un log de redo en datafiles como Oracle.",
+    "b": "Instantáneas RDB y el registro de operaciones AOF.",
+    "c": "Replicación síncrona obligatoria a HDFS.",
+    "d": "Redis no admite ningún tipo de persistencia."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Redis puede guardar **instantáneas RDB** periódicas y/o un fichero **AOF** (*append-only file*) con cada escritura. La persistencia es opcional, pero existe.",
+   "epigrafe": "6. Bases de datos NoSQL",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-n-023",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En un SGBD, ¿qué componente del procesador de consultas elige el plan de ejecución más eficiente para una sentencia SQL?",
+   "ctx": null,
+   "op": {
+    "a": "El gestor de memoria intermedia (buffer).",
+    "b": "El diccionario de datos.",
+    "c": "El optimizador de consultas.",
+    "d": "El gestor de recuperación."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El procesador de consultas tiene analizador sintáctico, comprobación semántica, **optimizador** (que elige el plan) y motor de ejecución. El buffer pertenece al gestor de almacenamiento y la recuperación al gestor de transacciones.",
+   "epigrafe": "1. Sistemas de gestión de bases de datos: conceptos y componentes",
+   "dificultad": 2
+  },
+  {
+   "id": "t14-n-024",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué modelo de datos usaba IBM IMS, uno de los primeros SGBD de los años 60?",
+   "ctx": null,
+   "op": {
+    "a": "El modelo en red (CODASYL).",
+    "b": "El modelo relacional.",
+    "c": "El modelo orientado a objetos.",
+    "d": "El modelo jerárquico."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**IMS** es jerárquico (árboles padre-hijo). El modelo **en red** CODASYL es el de IDMS; el **relacional** llega con Codd en 1970; y el **orientado a objetos**, en los años 80-90.",
+   "epigrafe": "1. Sistemas de gestión de bases de datos: conceptos y componentes",
+   "dificultad": 1
+  },
+  {
+   "id": "t14-n-025",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Durante la recuperación tras una caída, ¿qué hace el SGBD con las transacciones según su estado en el log?",
+   "ctx": null,
+   "op": {
+    "a": "Rehace (redo) las confirmadas y deshace (undo) las no confirmadas.",
+    "b": "Deshace las confirmadas y rehace las no confirmadas.",
+    "c": "Deshace todas las transacciones posteriores al último punto de control.",
+    "d": "Rehace todas las transacciones del log, confirmadas o no."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Con **WAL** (el log se escribe antes que los datos), la recuperación **rehace** lo confirmado (durabilidad) y **deshace** lo no confirmado (atomicidad). El punto de control acota hasta dónde hay que leer el log.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia",
+   "dificultad": 2
+  }
+ ],
+ "tarjetas": [
+  {
+   "id": "t14-c-001",
+   "anverso": "¿Cuáles son los tres niveles de la arquitectura ANSI/X3/SPARC?",
+   "reverso": "**Interno** (almacenamiento físico), **conceptual** (esquema lógico global) y **externo** (vistas de cada usuario). La creación de vistas pertenece al externo.",
+   "epigrafe": "1. Sistemas de gestión de bases de datos: conceptos y componentes"
+  },
+  {
+   "id": "t14-c-002",
+   "anverso": "Independencia física frente a independencia lógica",
+   "reverso": "**Física**: cambiar el nivel interno sin tocar el conceptual (la más fácil). **Lógica**: cambiar el conceptual sin tocar los esquemas externos ni las aplicaciones.",
+   "epigrafe": "1. Sistemas de gestión de bases de datos: conceptos y componentes"
+  },
+  {
+   "id": "t14-c-003",
+   "anverso": "¿Qué lenguajes debe tener como mínimo un SGBD?",
+   "reverso": "**DDL** (definición) y **DML** (manipulación). Además existen DCL (GRANT, REVOKE) y TCL (COMMIT, ROLLBACK, SAVEPOINT).",
+   "epigrafe": "1. Sistemas de gestión de bases de datos: conceptos y componentes"
+  },
+  {
+   "id": "t14-c-004",
+   "anverso": "Formas válidas de trabajar con SQL",
+   "reverso": "**Interactiva**, **embebida** (precompilador, EXEC SQL), **por módulos** y **dinámica o por API** (ODBC, JDBC). «Mapeadamente» no existe.",
+   "epigrafe": "1. Sistemas de gestión de bases de datos: conceptos y componentes"
+  },
+  {
+   "id": "t14-c-005",
+   "anverso": "Componentes de un SGBD",
+   "reverso": "Procesador de consultas (parser, **optimizador**, motor), gestor de almacenamiento (ficheros, **buffer**), gestor de transacciones (concurrencia y recuperación), **diccionario de datos** y utilidades.",
+   "epigrafe": "1. Sistemas de gestión de bases de datos: conceptos y componentes"
+  },
+  {
+   "id": "t14-c-006",
+   "anverso": "Evolución de los modelos de datos",
+   "reverso": "**Jerárquico** (IMS, años 60) → **en red** (CODASYL, IDMS) → **relacional** (Codd, 1970) → **OO** (años 80-90) → **objeto-relacional** (SQL:1999) → **NoSQL/NewSQL** (2009 en adelante).",
+   "epigrafe": "1. Sistemas de gestión de bases de datos: conceptos y componentes"
+  },
+  {
+   "id": "t14-c-007",
+   "anverso": "Grado y cardinalidad de una relación",
+   "reverso": "**Grado**: número de columnas (atributos). **Cardinalidad**: número de filas (tuplas).",
+   "epigrafe": "2. SGBD relacionales"
+  },
+  {
+   "id": "t14-c-008",
+   "anverso": "Clave candidata, primaria, superclave y foránea",
+   "reverso": "**Superclave**: identifica cada tupla (puede sobrar algún atributo). **Candidata**: superclave mínima. **Primaria**: la candidata elegida. **Foránea**: referencia la primaria (o una candidata) de otra tabla; puede repetirse y ser nula.",
+   "epigrafe": "2. SGBD relacionales"
+  },
+  {
+   "id": "t14-c-009",
+   "anverso": "Integridad de entidad frente a integridad referencial",
+   "reverso": "**Entidad**: la clave primaria no puede ser nula. **Referencial**: cada valor de una clave foránea existe en la tabla referenciada o es nulo.",
+   "epigrafe": "2. SGBD relacionales"
+  },
+  {
+   "id": "t14-c-010",
+   "anverso": "Reglas 1 a 4 de Codd",
+   "reverso": "**1** Información (todo en tablas). **2** Acceso garantizado (tabla + clave primaria + columna). **3** Tratamiento sistemático de nulos. **4** Catálogo dinámico en línea relacional.",
+   "epigrafe": "2. SGBD relacionales"
+  },
+  {
+   "id": "t14-c-011",
+   "anverso": "Reglas 5 a 8 de Codd",
+   "reverso": "**5** Sublenguaje de datos completo. **6** Actualización de vistas. **7** Inserción, actualización y borrado de alto nivel (por conjuntos). **8** Independencia física.",
+   "epigrafe": "2. SGBD relacionales"
+  },
+  {
+   "id": "t14-c-012",
+   "anverso": "Reglas 9 a 12 de Codd",
+   "reverso": "**9** Independencia lógica. **10** Independencia de integridad. **11** Independencia de distribución. **12** No subversión. Trampas: «dependencia de la distribución» y «cardinalidad de las entidades» no son reglas.",
+   "epigrafe": "2. SGBD relacionales"
+  },
+  {
+   "id": "t14-c-013",
+   "anverso": "¿Cuándo y dónde publicó Codd sus 12 reglas?",
+   "reverso": "En **1985**, en *Computerworld*. Son 13 si se cuenta la regla 0 (fundamento). El modelo relacional es de 1970.",
+   "epigrafe": "2. SGBD relacionales"
+  },
+  {
+   "id": "t14-c-014",
+   "anverso": "Productos que NO son SGBD relacionales (preguntados)",
+   "reverso": "**Knosys** (documental, 2005), **JSON** (formato, 2017), **CouchDB** (documental), **Data warehouse** (concepto, 2015). **Aurora sí es relacional** (2018).",
+   "epigrafe": "2. SGBD relacionales"
+  },
+  {
+   "id": "t14-c-015",
+   "anverso": "Estructura lógica de Oracle, de mayor a menor",
+   "reverso": "**Tablespace** (unidad lógica) → **segmento** (espacio de un objeto) → **extensión** (bloques contiguos) → **bloque** (unidad mínima, 8 KB por defecto). Un datafile pertenece a un solo tablespace.",
+   "epigrafe": "2. SGBD relacionales"
+  },
+  {
+   "id": "t14-c-016",
+   "anverso": "Procesos de fondo de Oracle",
+   "reverso": "**DBWn** escribe bloques en los datafiles; **LGWR** escribe el redo log; **CKPT** puntos de control; **SMON** recuperación de la instancia; **PMON** limpia procesos caídos; **ARCn** archiva redo logs.",
+   "epigrafe": "2. SGBD relacionales"
+  },
+  {
+   "id": "t14-c-017",
+   "anverso": "SGA frente a PGA en Oracle",
+   "reverso": "**SGA**: memoria compartida de la instancia (buffer cache, shared pool, redo log buffer, large pool, Java pool). **PGA**: memoria privada de cada proceso servidor.",
+   "epigrafe": "2. SGBD relacionales"
+  },
+  {
+   "id": "t14-c-018",
+   "anverso": "SQL Server Machine Learning Services",
+   "reverso": "Ejecuta scripts de **Python y R con datos relacionales** dentro de SQL Server (`sp_execute_external_script`). Paquetes: **RevoScaleR** (R), **revoscalepy** (Python), MicrosoftML, olapR, sqlrutils.",
+   "epigrafe": "2. SGBD relacionales"
+  },
+  {
+   "id": "t14-c-019",
+   "anverso": "Propiedades ACID",
+   "reverso": "**Atomicidad** (todo o nada), **Consistencia** (de un estado válido a otro), **Aislamiento** (sin interferencias) y **Durabilidad** o persistencia (sobrevive a fallos). «Disponibilidad» no está: es de CAP.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia"
+  },
+  {
+   "id": "t14-c-020",
+   "anverso": "¿Qué componente garantiza cada propiedad ACID?",
+   "reverso": "A y D: **gestor de recuperación** (undo, redo, log). I: **control de concurrencia**. C: restricciones de integridad y el programador.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia"
+  },
+  {
+   "id": "t14-c-021",
+   "anverso": "Estados de una transacción",
+   "reverso": "Activa → parcialmente confirmada → **confirmada**; o activa → fallida → **abortada** (rollback).",
+   "epigrafe": "3. Transacciones, ACID y concurrencia"
+  },
+  {
+   "id": "t14-c-022",
+   "anverso": "Anomalías de concurrencia",
+   "reverso": "**Lectura sucia** (dato no confirmado), **no repetible** (cambia el valor de una fila ya leída), **fantasma** (aparecen o desaparecen filas) y **actualización perdida**. Las «lecturas hundidas» no existen.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia"
+  },
+  {
+   "id": "t14-c-023",
+   "anverso": "Niveles de aislamiento SQL-92",
+   "reverso": "**READ UNCOMMITTED**: todo posible. **READ COMMITTED**: evita sucias. **REPEATABLE READ**: evita sucias y no repetibles (permite fantasmas). **SERIALIZABLE**: evita todo.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia"
+  },
+  {
+   "id": "t14-c-024",
+   "anverso": "Nivel de aislamiento por defecto",
+   "reverso": "**READ COMMITTED**: Oracle, SQL Server y PostgreSQL. **REPEATABLE READ**: MySQL InnoDB. Oracle no tiene REPEATABLE READ ni READ UNCOMMITTED.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia"
+  },
+  {
+   "id": "t14-c-025",
+   "anverso": "¿Cuándo se liberan los bloqueos de una transacción?",
+   "reverso": "Cuando la transacción **termina** (COMMIT o ROLLBACK), es decir, cuando la aplicación indica el fin (2PL estricto).",
+   "epigrafe": "3. Transacciones, ACID y concurrencia"
+  },
+  {
+   "id": "t14-c-026",
+   "anverso": "Bloqueo en dos fases (2PL)",
+   "reverso": "Fase de **crecimiento** (solo adquiere) y de **decrecimiento** (solo libera). Garantiza serializabilidad pero no evita interbloqueos. **Estricto**: X hasta el final. **Riguroso**: todos hasta el final.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia"
+  },
+  {
+   "id": "t14-c-027",
+   "anverso": "Wait-die frente a wound-wait",
+   "reverso": "**Wait-die**: si la antigua pide, espera; si la joven pide, muere. **Wound-wait**: si la antigua pide, hiere a la joven; si la joven pide, espera. En ambos aborta la más joven y se reinicia con su marca original.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia"
+  },
+  {
+   "id": "t14-c-028",
+   "anverso": "Sin espera y espera cautelosa",
+   "reverso": "**Sin espera**: si no obtiene el bloqueo, aborta sin mirar edades. **Espera cautelosa**: Ti espera solo si Tj no está esperando a su vez; si no, Ti aborta.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia"
+  },
+  {
+   "id": "t14-c-029",
+   "anverso": "Recuperación: WAL, undo y redo",
+   "reverso": "**WAL**: el log se escribe en disco antes que el dato. Tras un fallo se **rehacen** las confirmadas y se **deshacen** las no confirmadas. El checkpoint acorta la recuperación.",
+   "epigrafe": "3. Transacciones, ACID y concurrencia"
+  },
+  {
+   "id": "t14-c-030",
+   "anverso": "Teorema CAP",
+   "reverso": "Un sistema distribuido solo garantiza **dos de tres**: Consistencia, disponibilidad (Availability) y tolerancia a Particiones. Con partición se elige **C o A**. Brewer (2000), demostrado en 2002.",
+   "epigrafe": "4. Bases de datos distribuidas, CAP y BASE"
+  },
+  {
+   "id": "t14-c-031",
+   "anverso": "Ejemplos CP y AP",
+   "reverso": "**CP**: HBase, MongoDB (por defecto), ZooKeeper, Redis Cluster. **AP**: Cassandra, CouchDB, DynamoDB, Riak. **CA**: relacional en un solo servidor.",
+   "epigrafe": "4. Bases de datos distribuidas, CAP y BASE"
+  },
+  {
+   "id": "t14-c-032",
+   "anverso": "BASE",
+   "reverso": "**Basically Available, Soft state, Eventual consistency**. Optimista y escalable en horizontal, frente a ACID (pesimista, consistencia fuerte).",
+   "epigrafe": "4. Bases de datos distribuidas, CAP y BASE"
+  },
+  {
+   "id": "t14-c-033",
+   "anverso": "Commit en dos fases (2PC)",
+   "reverso": "Coordinador y participantes. **Fase 1**: preparación y votación. **Fase 2**: confirmación o aborto global. Garantiza la atomicidad distribuida.",
+   "epigrafe": "4. Bases de datos distribuidas, CAP y BASE"
+  },
+  {
+   "id": "t14-c-034",
+   "anverso": "Snapshot (pregunta de 2006)",
+   "reverso": "Copia de solo lectura de datos remotos que se refresca periódicamente: **mecanismo de replicación** en BD distribuidas. Hoy, **vista materializada**.",
+   "epigrafe": "4. Bases de datos distribuidas, CAP y BASE"
+  },
+  {
+   "id": "t14-c-035",
+   "anverso": "Identificador de objeto (OID)",
+   "reverso": "Lo **genera el sistema**; es único e inmutable; **no visible** para el usuario; **independiente de los valores** de los atributos; no se reutiliza. Idénticos (mismo OID) frente a iguales (mismos valores).",
+   "epigrafe": "5. SGBD orientados a objetos"
+  },
+  {
+   "id": "t14-c-036",
+   "anverso": "Constructores de colección ODMG",
+   "reverso": "**Set** (sin duplicados ni orden), **Bag** (con duplicados, sin orden), **List** (con duplicados y orden), **Array** (indexado), **Dictionary** (clave-valor). «Columna» no lo es.",
+   "epigrafe": "5. SGBD orientados a objetos"
+  },
+  {
+   "id": "t14-c-037",
+   "anverso": "Manifiesto de Atkinson (1989): obligatorias",
+   "reverso": "Objetos complejos, identidad, encapsulación, tipos o clases, herencia, polimorfismo, completitud computacional, **extensibilidad**, persistencia, almacenamiento secundario, concurrencia, recuperación y consultas ad hoc (13).",
+   "epigrafe": "5. SGBD orientados a objetos"
+  },
+  {
+   "id": "t14-c-038",
+   "anverso": "Manifiesto de Atkinson: opcionales",
+   "reverso": "**Herencia múltiple**, verificación e inferencia de tipos, distribución, transacciones de diseño y versiones. Trampa: «tipos de datos fijos» es falso (se exige extensibilidad).",
+   "epigrafe": "5. SGBD orientados a objetos"
+  },
+  {
+   "id": "t14-c-039",
+   "anverso": "Estándar ODMG",
+   "reverso": "Modelo de objetos + **ODL** (definición de esquemas) + **OQL** (lenguaje de **consulta** tipo SQL) + bindings con C++, Smalltalk y Java. Última versión 3.0 (2000); abandonado tras 2001.",
+   "epigrafe": "5. SGBD orientados a objetos"
+  },
+  {
+   "id": "t14-c-040",
+   "anverso": "Productos orientados a objetos",
+   "reverso": "**Matisse** (2024), **ZODB/Zope** (2015), ObjectStore, Versant, Objectivity/DB, GemStone/S, O2, db4o (discontinuada), ObjectDB, InterSystems IRIS.",
+   "epigrafe": "5. SGBD orientados a objetos"
+  },
+  {
+   "id": "t14-c-041",
+   "anverso": "Objeto-relacional y SQL:1999",
+   "reverso": "SQL:1999 (SQL3) añade tipos definidos por el usuario con métodos, herencia (`UNDER`), `REF` y `ARRAY`; MULTISET llega en SQL:2003. Ejemplos: Oracle 8+, PostgreSQL, Db2.",
+   "epigrafe": "5. SGBD orientados a objetos"
+  },
+  {
+   "id": "t14-c-042",
+   "anverso": "Tipos de NoSQL y productos",
+   "reverso": "**Clave-valor**: Redis, Riak, DynamoDB, Valkey. **Documental**: MongoDB, CouchDB. **Columnar**: Cassandra, HBase, Bigtable. **Grafos**: Neo4j, Neptune, JanusGraph.",
+   "epigrafe": "6. Bases de datos NoSQL"
+  },
+  {
+   "id": "t14-c-043",
+   "anverso": "Cypher y GQL",
+   "reverso": "**Cypher** es el lenguaje de consulta de **Neo4j** (no una base de datos). **GQL** (ISO/IEC 39075:2024) es el primer estándar ISO de consulta de grafos. Otros: Gremlin y SPARQL.",
+   "epigrafe": "6. Bases de datos NoSQL"
+  },
+  {
+   "id": "t14-c-044",
+   "anverso": "Proyectos del ecosistema Hadoop",
+   "reverso": "**Avro** (serialización), HDFS (ficheros), YARN (recursos), HBase (columnar), Hive (HiveQL), Pig, **Flume** (ingesta de logs), **Chukwa** (monitorización de logs), ZooKeeper, Spark, Kafka.",
+   "epigrafe": "6. Bases de datos NoSQL"
+  },
+  {
+   "id": "t14-c-045",
+   "anverso": "MongoDB en datos",
+   "reverso": "Documentos **BSON** en colecciones; `_id` con ObjectId de 12 bytes; replica sets y sharding; transacciones ACID multidocumento desde la **4.0** (4.2 en clústeres fragmentados).",
+   "epigrafe": "6. Bases de datos NoSQL"
+  }
+ ],
+ "discrepancias": []
+}

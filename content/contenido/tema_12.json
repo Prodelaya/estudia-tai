@@ -1,0 +1,3712 @@
+{
+ "tema": 12,
+ "generado": "2026-10-20",
+ "preguntas": [
+  {
+   "id": "t12-h-001",
+   "tipo": "historica",
+   "ref": "LI2025-b3-R04",
+   "origen": {
+    "anio": 2025,
+    "parte": "b3",
+    "n": 4,
+    "reserva": true
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Tras un debate sobre cómo resolver un problema en la aplicación, se ha optado por utilizar un algoritmo greedy (voraz). Este algoritmo:",
+   "ctx": null,
+   "op": {
+    "a": "Siempre alcanza la solución más óptima.",
+    "b": "Siempre toma la decisión que parece más buena en el momento.",
+    "c": "Solo se puede aplicar para resolver problemas de selección de actividades.",
+    "d": "Resuelve el problema dividiéndolo en subproblemas pequeños y combinando sus soluciones."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Un algoritmo **voraz** (*greedy*) elige en cada paso la opción que parece mejor en ese momento (óptimo local) y no vuelve atrás.\n\n- a) Falsa: no siempre da el óptimo global. Por ejemplo, con monedas de 1, 3 y 4 para pagar 6, el voraz da 4+1+1 y el óptimo es 3+3.\n- c) Falsa: se aplica a muchos problemas (Dijkstra, Prim, Kruskal, Huffman, mochila fraccionaria).\n- d) Describe **divide y vencerás**, no la técnica voraz.",
+   "epigrafe": "Algoritmos y complejidad",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-002",
+   "tipo": "historica",
+   "ref": "LI2025-ej1-29",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 29
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En el formato de ficheros CSV, descrito en RFC 4180, ¿qué regla es correcta?",
+   "ctx": null,
+   "op": {
+    "a": "Las comillas dobles están prohibidas, solo se permiten comillas simples.",
+    "b": "Cada registro va en una línea separada por CRLF; y los campos que contengan caracteres coma, comillas o saltos de línea deben ir con comillas dobles.",
+    "c": "Los campos nunca pueden contener comas, aunque estén delimitados por comillas dobles.",
+    "d": "El tipo MIME registrado para CSV es “application/csv”."
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "RFC 4180 define el CSV así: cada registro en su línea, terminada en **CRLF**. Los campos que contienen **coma, comillas dobles o saltos de línea** van entre **comillas dobles**, y una comilla dentro de un campo se escribe duplicada (`\"\"`).\n\n- a) Falsa: se usan comillas dobles, no simples.\n- c) Falsa: un campo entrecomillado sí puede contener comas.\n- d) Falsa: el tipo MIME registrado es **text/csv**.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-003",
+   "tipo": "historica",
+   "ref": "LI2025-ej1-30",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 30
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Según la definición estándar de JSON, RFC 8259, un valor JSON debe pertenecer a uno de estos tipos o literales. ¿Cuál es el conjunto correcto?",
+   "ctx": null,
+   "op": {
+    "a": "object, array, number, string, date y undefined.",
+    "b": "object, array, number, string, boolean y function.",
+    "c": "object, array, number, string, true, false y null.",
+    "d": "object, array, number, string, boolean y NaN."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Según RFC 8259, un valor JSON es un **objeto, un array, un número o una cadena**, o uno de los tres literales **true, false y null**.\n\nJSON no tiene `date`, `undefined`, `function` ni `NaN`: son conceptos de JavaScript que JSON no admite. Las fechas viajan como cadenas (normalmente ISO 8601).",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-004",
+   "tipo": "historica",
+   "ref": "LI2025-ej1-41",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 41
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale la opción correcta en relación a los árboles rojo-negro:",
+   "ctx": null,
+   "op": {
+    "a": "Un nodo negro puede tener más de 2 subárboles.",
+    "b": "Si un nodo es rojo, sus hijos son nodos rojos.",
+    "c": "Para cada nodo, el camino de ese nodo a las hojas descendientes contiene la misma cantidad de nodos rojos.",
+    "d": "La raíz es un nodo negro."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Propiedades del árbol **rojo-negro**: todo nodo es rojo o negro; **la raíz es negra**; las hojas nulas son negras; un nodo rojo solo tiene hijos negros; todo camino de un nodo a sus hojas tiene el **mismo número de nodos negros** (altura negra).\n\n- a) Falsa: es un árbol binario, cada nodo tiene como mucho dos subárboles.\n- b) Falsa: es justo al revés, los hijos de un rojo son negros.\n- c) Falsa: lo que se mantiene igual es el número de nodos **negros**, no de rojos.",
+   "epigrafe": "Árboles",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-005",
+   "tipo": "historica",
+   "ref": "LI2025-ej1-R04",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 4,
+    "reserva": true
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de los siguientes algoritmos de ordenación se ejecuta en tiempo lineal?",
+   "ctx": null,
+   "op": {
+    "a": "Heapsort.",
+    "b": "Mergesort.",
+    "c": "Radix.",
+    "d": "Quicksort."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Radix sort** ordena dígito a dígito y no compara elementos entre sí. Su coste es O(d·(n+k)), con d dígitos y base k: lineal en n cuando d es fijo.\n\nHeapsort y mergesort son O(n log n) siempre. Quicksort es O(n log n) de media y O(n²) en el peor caso. Ningún algoritmo basado en comparaciones baja de O(n log n) en el peor caso.",
+   "epigrafe": "Algoritmos de ordenación",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-006",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-22",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 22
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Para recorrer un árbol binario no vacío en preorden se deben realizar las siguientes operaciones recursivamente en cada nodo:",
+   "ctx": null,
+   "op": {
+    "a": "Visitar el nodo raíz, recorrer el subárbol derecho y recorrer el subárbol izquierdo.",
+    "b": "Recorrer el subárbol izquierdo, visitar el nodo raíz y recorrer el subárbol derecho.",
+    "c": "Recorrer el subárbol izquierdo, recorrer el subárbol derecho y visitar el nodo raíz.",
+    "d": "Visitar el nodo raíz, recorrer el subárbol izquierdo y recorrer el subárbol derecho."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Preorden**: raíz, subárbol izquierdo, subárbol derecho (la raíz va *pre*, delante).\n\n- b) es **inorden** (izquierdo, raíz, derecho).\n- c) es **postorden** (izquierdo, derecho, raíz).\n- a) visita el derecho antes que el izquierdo: no es ninguno de los recorridos estándar.",
+   "epigrafe": "Árboles",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-007",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-26",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 26
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Considerando el nodo raíz como nivel 1, ¿cuál es el número máximo de nodos en un árbol binario que tiene 4 niveles?",
+   "ctx": null,
+   "op": {
+    "a": "15",
+    "b": "9",
+    "c": "16",
+    "d": "10"
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Un árbol binario con **h niveles** (raíz en el nivel 1) tiene como máximo **2^h − 1** nodos. Con 4 niveles: 2⁴ − 1 = **15** (1 + 2 + 4 + 8).\n\nEl nivel i tiene como máximo 2^(i−1) nodos: el nivel 4 tiene 8, y 16 sería el total de un árbol de 5 niveles menos 15.",
+   "epigrafe": "Árboles",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-008",
+   "tipo": "historica",
+   "ref": "LI2025ext-ej1-28",
+   "origen": {
+    "anio": 2025,
+    "parte": "ej1",
+    "n": 28
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Según el estándar JSON (RFC 8259), ¿cuál de las siguientes afirmaciones es correcta?",
+   "ctx": null,
+   "op": {
+    "a": "Un objeto JSON mantiene el orden de inserción de sus elementos por definición.",
+    "b": "JSON permite definir tipos de datos personalizados.",
+    "c": "Un objeto JSON es una colección no ordenada de pares nombre/valor.",
+    "d": "JSON admite comentarios dentro de su sintaxis estándar."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "RFC 8259 define el objeto JSON como una **colección no ordenada** de pares nombre/valor. El array, en cambio, es una secuencia ordenada.\n\n- a) Falsa: muchas librerías conservan el orden de inserción, pero el estándar no lo garantiza.\n- b) Falsa: JSON solo tiene objeto, array, número, cadena, true, false y null.\n- d) Falsa: JSON estándar **no admite comentarios** (JSON5 o JSONC sí).",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-009",
+   "tipo": "historica",
+   "ref": "LI2024-ej1-23",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 23
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Con respecto a los árboles 2-3-4, señale la respuesta correcta:",
+   "ctx": null,
+   "op": {
+    "a": "Cumple las propiedades del árbol binario de búsqueda.",
+    "b": "Las hojas pueden estar a distinto nivel.",
+    "c": "Los nodos pueden tener 2, 3 o 4 hijos (2-nodo, 3-nodo o 4-nodo).",
+    "d": "Las reestructuraciones se realizan desde las hojas hacia la raíz."
+   },
+   "ok": "c",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En un árbol **2-3-4** cada nodo interno tiene **2, 3 o 4 hijos** (2-nodo con 1 clave, 3-nodo con 2 claves, 4-nodo con 3 claves). Es un árbol B de orden 4.\n\n- a) Falsa: no es binario, así que no cumple las propiedades del ABB tal cual (las generaliza).\n- b) Falsa: **todas las hojas están al mismo nivel**; es un árbol perfectamente equilibrado.\n- d) Falsa según la clave: en la inserción descendente del 2-3-4 los 4-nodos se dividen al bajar, **de la raíz hacia las hojas**.",
+   "epigrafe": "Árboles",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-010",
+   "tipo": "historica",
+   "ref": "LI2024-ej1-24",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 24
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale la respuesta correcta referente al tipo abstracto de datos (TAD) Cola:",
+   "ctx": null,
+   "op": {
+    "a": "Basada en el principio LIFO (last-in, first-out).",
+    "b": "Es un tipo especial de lista en la que se pueden insertar y eliminar por cualquier extremo.",
+    "c": "Cada nodo tiene dos enlaces, uno al nodo siguiente, y otro al anterior.",
+    "d": "Se pude implementar usando una estructura dinámica."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **cola** es FIFO: se inserta por el final y se extrae por el frente. Se puede implementar con un array circular (estática) o con una **lista enlazada (dinámica)**.\n\n- a) LIFO es la pila.\n- b) Insertar y eliminar por ambos extremos es la **bicola** (deque).\n- c) Dos enlaces por nodo describe una **lista doblemente enlazada**.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-011",
+   "tipo": "historica",
+   "ref": "LI2024-ej1-25",
+   "origen": {
+    "anio": 2024,
+    "parte": "ej1",
+    "n": 25
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale la respuesta INCORRECTA acerca de los tipos abstractos de datos (TAD):",
+   "ctx": null,
+   "op": {
+    "a": "Es una colección de propiedades y operaciones que se definen mediante una especificación que es independiente de cualquier representación.",
+    "b": "Nos permiten diseñar nuestros propios tipos para encapsular lógica algorítmica y proveer abstracción a las capas de software de más alto nivel.",
+    "c": "Se pueden escribir usando lenguaje natural, usando pseudo-código o incluso algún lenguaje de programación.",
+    "d": "En JAVA, una estructura de datos (interface) debe implementar todas las operaciones definidas en su TAD (class)."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La d) es la incorrecta porque invierte los papeles: en Java el **TAD se especifica con una interface** y la **estructura de datos es la class** que la implementa (por ejemplo, `List` es la interfaz y `ArrayList` la clase).\n\nLas otras tres son ciertas: el TAD se define por una especificación independiente de la representación, encapsula lógica y puede escribirse en lenguaje natural, pseudocódigo o un lenguaje de programación.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-012",
+   "tipo": "historica",
+   "ref": "LI2022-ej1-29",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 29
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En teoría de grafos, el algoritmo para la determinación del camino más corto, dado un vértice origen, hacia el resto de los vértices en un grafo que tiene pesos en cada arista se denomina:",
+   "ctx": null,
+   "op": {
+    "a": "Algoritmo de Kruskal.",
+    "b": "Algoritmo de Prim.",
+    "c": "Algoritmo de Dijkstra.",
+    "d": "Algoritmo de Floyd-Warshall."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Dijkstra** calcula los caminos más cortos desde **un vértice origen** al resto en un grafo con pesos **no negativos**. Es voraz.\n\n- Kruskal y Prim calculan el **árbol recubridor mínimo**, no caminos.\n- Floyd-Warshall calcula los caminos mínimos entre **todos los pares** de vértices.",
+   "epigrafe": "Grafos",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-013",
+   "tipo": "historica",
+   "ref": "LI2022-ej1-30",
+   "origen": {
+    "anio": 2022,
+    "parte": "ej1",
+    "n": 30
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Con respecto a los estándares PDF, señale que afirmación NO es correcta:",
+   "ctx": null,
+   "op": {
+    "a": "PDF/UA Es el estándar global para la accesibilidad de PDF.",
+    "b": "PDF/A proporciona las especificaciones para crear, ver e imprimir documentos digitales para conservarlos a largo plazo.",
+    "c": "PDF/E proporciona especificaciones para crear, ver e imprimir documentos utilizados en flujos de trabajo de ingeniería.",
+    "d": "PDF/I proporciona especificaciones para crear, ver e imprimir páginas finales listas para imprimir o listas para la prensa."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**PDF/I no existe.** El subconjunto ISO para imprenta y preimpresión es **PDF/X** (ISO 15930).\n\nLos demás son reales: PDF/A (archivo a largo plazo, ISO 19005), PDF/E (ingeniería, ISO 24517) y PDF/UA (accesibilidad, ISO 14289).",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-014",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "ej1",
+    "n": 29
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué es AV1?",
+   "ctx": null,
+   "op": {
+    "a": "Un estándar de realidad aumentada.",
+    "b": "Un sistema operativo para dispositivos IoT.",
+    "c": "Un nuevo códec de vídeo.",
+    "d": "Un protocolo de seguridad de WiFi 6."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**AV1** (AOMedia Video 1) es un **códec de vídeo** abierto y libre de regalías publicado en 2018 por la Alliance for Open Media (Google, Mozilla, Netflix, Microsoft, Amazon...). Compite con HEVC/H.265.\n\nEl formato de imagen **AVIF** se basa en AV1. La seguridad de WiFi 6 es WPA3.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-015",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2019,
+    "parte": "ej1",
+    "n": 30
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cómo se llama el recorrido de un árbol binario que visita primero la raíz, después el subárbol izquierdo y por último el subárbol derecho?",
+   "ctx": null,
+   "op": {
+    "a": "Preorden.",
+    "b": "Inorden.",
+    "c": "Postorden.",
+    "d": "Reorden."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Raíz, izquierdo, derecho es **preorden**. Inorden es izquierdo, raíz, derecho, y postorden es izquierdo, derecho, raíz. \"Reorden\" no es un recorrido.",
+   "epigrafe": "Árboles",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-016",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 22
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Respecto al formato de imagen JPEG, señale la afirmación correcta:",
+   "ctx": null,
+   "op": {
+    "a": "Comprime sin pérdidas.",
+    "b": "Ofrece flexibilidad para ajustar el grado de compresión.",
+    "c": "No admite millones de colores.",
+    "d": "Admite fondos transparentes."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "JPEG comprime **con pérdida** (transformada discreta del coseno) y permite elegir el **nivel de calidad**, es decir, el grado de compresión.\n\n- a) Falsa: es con pérdida (JPEG-LS y JPEG 2000 tienen modo sin pérdida, el JPEG clásico no).\n- c) Falsa: usa 24 bits por píxel, unos 16,7 millones de colores.\n- d) Falsa: JPEG no tiene canal alfa; la transparencia la dan PNG, GIF o WebP.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-017",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 29
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "El recorrido de un árbol binario que visita el subárbol izquierdo, después la raíz y por último el subárbol derecho se denomina:",
+   "ctx": null,
+   "op": {
+    "a": "INORDEN.",
+    "b": "PREORDEN.",
+    "c": "EXORDEN.",
+    "d": "POSORDEN."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Izquierdo, raíz, derecho es **inorden** (la raíz va *en medio*). En un árbol binario de búsqueda, el inorden devuelve las claves ordenadas de menor a mayor. \"Exorden\" no existe.",
+   "epigrafe": "Árboles",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-018",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 30
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál es el grado de un árbol binario lleno de 15 nodos?",
+   "ctx": null,
+   "op": {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "4"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **grado de un árbol** es el máximo grado (número de hijos) de sus nodos. En un árbol **binario lleno** todo nodo interno tiene exactamente dos hijos, así que el grado es **2**.\n\nEl dato de 15 nodos es un distractor: con 15 nodos el árbol tiene 4 niveles (2⁴ − 1), y la opción 4 tienta a confundir niveles con grado.",
+   "epigrafe": "Árboles",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-019",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 31
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Señale la afirmación INCORRECTA:",
+   "ctx": null,
+   "op": {
+    "a": "Las cadenas de caracteres son estructuras de datos contiguas.",
+    "b": "Los vectores no son estructuras de datos contiguas.",
+    "c": "Un array bidimensional es una matriz.",
+    "d": "Una cola es una estructura FIFO."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las cadenas, los **vectores** y los arrays se almacenan en posiciones **contiguas** de memoria; por eso se accede a cualquier elemento por índice en tiempo constante. La b) es la falsa.\n\nUn array de dos dimensiones es una matriz, y la cola sigue el principio FIFO (primero en entrar, primero en salir).",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-020",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2018,
+    "parte": "ej1",
+    "n": 32
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "JSON es:",
+   "ctx": null,
+   "op": {
+    "a": "Una gramática de XML.",
+    "b": "Una API de Java.",
+    "c": "Un conjunto de librerías JavaScript.",
+    "d": "Un formato de intercambio de datos."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**JSON** (JavaScript Object Notation) es un **formato de texto ligero para el intercambio de datos**, definido en RFC 8259 y ECMA-404. Nació de la sintaxis de objetos de JavaScript, pero es independiente del lenguaje. No es XML ni una API.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-021",
+   "tipo": "historica",
+   "ref": "LI2017-b3-b3-11",
+   "origen": {
+    "anio": 2017,
+    "parte": "b3",
+    "n": 11
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Se ha obtenido la complejidad de unos algoritmos de ordenación utilizados en el antiguo sistema, el único factor del que dependen es del tamaño de la muestra de entrada, ordenar las complejidades de mayor a menor eficiencia:",
+   "ctx": "Supuesto 2017: se analizan los algoritmos y el código del antiguo sistema para facilitar el desarrollo del nuevo.",
+   "op": {
+    "a": "Orden exponencial, lineal, cuadrático, logarítmico y factorial.",
+    "b": "Orden logarítmico, cuadrático, lineal, exponencial y constante.",
+    "c": "Orden logarítmico, cuadrático, lineal, cúbico y factorial.",
+    "d": "Orden logarítmico, lineal, cuadrático, exponencial y factorial."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "De **más a menos eficiente**: O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(n³) < O(2ⁿ) < O(n!).\n\nLa d) respeta ese orden: logarítmico, lineal, cuadrático, exponencial y factorial. Las demás mezclan el orden (por ejemplo, ponen el cuadrático antes que el lineal o el constante al final).\n\nEsta pregunta no tiene clave oficial publicada para 2017 b3: la clave es de Claude.",
+   "epigrafe": "Algoritmos y complejidad",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-022",
+   "tipo": "historica",
+   "ref": "LI2017-b3-b3-R02",
+   "origen": {
+    "anio": 2017,
+    "parte": "b3",
+    "n": 2,
+    "reserva": true
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Una de las funcionalidades del antiguo sistema utiliza el algoritmo Quicksort para organizar un array de elementos, el orden de complejidad dicho algoritmo es:",
+   "ctx": "Supuesto 2017: se analizan los algoritmos y el código del antiguo sistema para facilitar el desarrollo del nuevo.",
+   "op": {
+    "a": "O(n * log n) en el caso promedio.",
+    "b": "O(n²) en el mejor caso.",
+    "c": "O(n²) en el caso promedio.",
+    "d": "O(n * log n) en el peor caso."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Quicksort**: O(n log n) en el caso **promedio** y en el mejor caso; **O(n²) en el peor caso** (pivote siempre extremo, por ejemplo con el vector ya ordenado y pivote en un extremo).\n\n- b) Falsa: el mejor caso es O(n log n).\n- c) Falsa: el promedio es O(n log n).\n- d) Falsa: el peor caso es O(n²).",
+   "epigrafe": "Algoritmos de ordenación",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-023",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-25",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 25
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Es un algoritmo de la teoría de grafos para encontrar un árbol recubridor mínimo en un grafo conexo y ponderado:",
+   "ctx": null,
+   "op": {
+    "a": "Quicksort",
+    "b": "Kruskal",
+    "c": "QR",
+    "d": "Rijndael"
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Kruskal** encuentra el **árbol recubridor mínimo** de un grafo conexo y ponderado: ordena las aristas por peso y las añade si no forman ciclo (usa unión-búsqueda). Prim resuelve el mismo problema creciendo desde un vértice.\n\nQuicksort es ordenación, QR es una factorización de matrices (y también un código bidimensional) y Rijndael es el cifrado AES.",
+   "epigrafe": "Grafos",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-024",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-26",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 26
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "La estructura de datos que permite inserciones por un extremo y borrados por los dos es una:",
+   "ctx": null,
+   "op": {
+    "a": "Cola de salida restringida.",
+    "b": "Bicola de entrada restringida.",
+    "c": "Lista de entrada restringida.",
+    "d": "Ese tipo de estructura no existe."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Una **bicola** (deque) permite insertar y borrar por los dos extremos. Sus variantes restringidas:\n\n- **Entrada restringida**: inserta por **un** extremo y borra por **los dos**.\n- **Salida restringida**: inserta por los dos y borra por uno.\n\nTruco: la restricción está en lo que el nombre dice (entrada restringida = entrada por un solo lado).",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-025",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-27",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 27
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Entre los métodos para la compresión de imágenes con pérdidas se encuentra:",
+   "ctx": null,
+   "op": {
+    "a": "Codificación en planos de bits (como RLE).",
+    "b": "Codificación de longitud variable (como Huffman).",
+    "c": "Algoritmos de diccionario adaptables (como LZW).",
+    "d": "Codificación por transformación (como TDC)."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **codificación por transformación** (transformada discreta del coseno, TDC o DCT) es la base de la compresión **con pérdidas** de JPEG y MPEG: tras transformar, se cuantifican y descartan coeficientes de alta frecuencia.\n\nRLE, Huffman y LZW son métodos **sin pérdidas**.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 3
+  },
+  {
+   "id": "t12-h-026",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-28",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 28
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Qué formato de fichero es de gráficos vectoriales?",
+   "ctx": null,
+   "op": {
+    "a": "SVG",
+    "b": "EXIF",
+    "c": "HEIF",
+    "d": "JPEG"
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**SVG** (Scalable Vector Graphics) es el formato vectorial del W3C, basado en XML: escala sin perder calidad.\n\n**EXIF** son metadatos de las fotos, **HEIF** es un contenedor de imágenes de mapa de bits (base de HEIC) y **JPEG** es mapa de bits.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-027",
+   "tipo": "historica",
+   "ref": "LI2017-ej1-ej1-29",
+   "origen": {
+    "anio": 2017,
+    "parte": "ej1",
+    "n": 29
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El método del intercambio directo o algoritmo de la burbuja, es un algoritmo clásico de:",
+   "ctx": null,
+   "op": {
+    "a": "ordenación que recorre un vector de elementos e intercambia en cada recorrido un elemento con su sucesor si no están en orden.",
+    "b": "ordenación que recorre un vector de elementos hasta encontrar el menor de todos e intercambiarlo con el que está en la primera posición. Luego el segundo más pequeño, y así sucesivamente hasta ordenar todo.",
+    "c": "búsqueda que compara secuencialmente el elemento deseado con los valores contenidos en las posiciones 1..n del vector de elementos hasta que lo encuentre.",
+    "d": "búsqueda que compara secuencialmente el elemento deseado con los valores contenidos en las posiciones 1..n del vector de elementos hasta que lo encuentre, requisito indispensable es que el vector esté previamente ordenado."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **burbuja** (intercambio directo) recorre el vector comparando cada elemento con su **sucesor** y los **intercambia si no están en orden**. Tras cada pasada, el mayor queda al final.\n\n- b) describe la **selección**.\n- c) describe la **búsqueda secuencial**.\n- d) mezcla la búsqueda secuencial con el requisito de la binaria: la secuencial no exige vector ordenado.",
+   "epigrafe": "Algoritmos de ordenación",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-028",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-I-II-30",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 30
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Indique cuál de las siguientes afirmaciones acerca de los algoritmos es correcta:",
+   "ctx": null,
+   "op": {
+    "a": "Todo algoritmo tiene asociada una única implementación del mismo.",
+    "b": "La complejidad algorítmica representa la cantidad de recursos que necesita un algoritmo para resolver un problema.",
+    "c": "La complejidad de un algoritmo solamente se puede medir en el caso medio.",
+    "d": "La complejidad de un algoritmo solamente se puede medir en el mejor caso."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **complejidad algorítmica** mide los **recursos** (tiempo y memoria) que necesita un algoritmo en función del tamaño de la entrada.\n\n- a) Falsa: un algoritmo admite muchas implementaciones (lenguajes, estructuras).\n- c) y d) Falsas: se estudia el mejor caso, el caso medio y el peor caso; el más usado es el peor caso (O grande).",
+   "epigrafe": "Algoritmos y complejidad",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-029",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-I-II-35",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 35
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "En el contexto de las estructuras de datos, seleccione la respuesta correcta, un árbol es una estructura:",
+   "ctx": null,
+   "op": {
+    "a": "dinámica cuyo recorrido sólo se puede realizar en profundidad.",
+    "b": "estática cuyo recorrido se puede realizar en amplitud y en profundidad.",
+    "c": "estática cuyo recorrido sólo se puede realizar en amplitud.",
+    "d": "dinámica cuyo recorrido se puede realizar en amplitud y en profundidad."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El árbol es una estructura **dinámica** (crece y decrece en ejecución) y **no lineal**. Se recorre **en profundidad** (preorden, inorden, postorden) y **en amplitud** (por niveles, con una cola).",
+   "epigrafe": "Árboles",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-030",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-I-II-36",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 36
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuántas pasadas como máximo hay que realizar a un array para ordenarlo mediante el método de la burbuja (siendo N el número de elementos del array)?",
+   "ctx": null,
+   "op": {
+    "a": "N-1",
+    "b": "N",
+    "c": "N/2",
+    "d": "N+1"
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Con N elementos, la burbuja necesita como máximo **N−1 pasadas**: cada pasada coloca un elemento en su posición final y el último queda colocado solo.\n\nLa versión mejorada termina antes si en una pasada no hay intercambios (mejor caso O(n) con el vector ya ordenado).",
+   "epigrafe": "Algoritmos de ordenación",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-031",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-I-II-37",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 37
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Si el resultado al recorrer un árbol binario en preorden es el siguiente: {7, 8, 2, 1, 5, 6, 9, 0}, indique cuál es la raíz del árbol:",
+   "ctx": null,
+   "op": {
+    "a": "7",
+    "b": "1",
+    "c": "0",
+    "d": "5"
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En **preorden** se visita primero la raíz, así que la raíz es el **primer elemento**: **7**. En postorden sería el último.",
+   "epigrafe": "Árboles",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-032",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-I-II-38",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 38
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Con respecto a la resolución de colisiones que se pueden producir cuando se utilizan tablas de dispersión (tablas hash):",
+   "ctx": null,
+   "op": {
+    "a": "Hay dos métodos principales para la resolución de colisiones: hashing lineal y hashing cuadrático.",
+    "b": "Un criterio para decidir qué método de resolución utilizar es el factor de carga, que se define como el cociente del número de índices y el tamaño de la tabla.",
+    "c": "Los métodos principales para la resolución de colisiones: hashing abierto y hashing cerrado.",
+    "d": "El método de hashing lineal permite resolver la colisión mediante la búsqueda en ubicaciones alternativas en la misma tabla."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las colisiones se resuelven con dos familias: **hashing abierto** (encadenamiento: cada celda guarda una lista) y **hashing cerrado** (direccionamiento abierto: se busca otra celda en la misma tabla).\n\n- a) Falsa: el sondeo lineal y el cuadrático son variantes del hashing cerrado, no las dos familias.\n- b) Falsa: el factor de carga es **número de elementos** entre tamaño de la tabla, no \"número de índices\".\n- d) Describe bien el sondeo lineal, pero la pregunta busca la clasificación principal; la clave oficial es la c.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-033",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-I-II-40",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 40
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de las siguientes extensiones de ficheros pertenece a un fichero de tipo hoja de cálculo?",
+   "ctx": null,
+   "op": {
+    "a": "odt",
+    "b": "doc",
+    "c": "ods",
+    "d": "rtf"
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**.ods** es la hoja de cálculo de OpenDocument (ISO/IEC 26300). **.odt** es el texto de OpenDocument, **.doc** el texto de Word 97-2003 y **.rtf** el texto enriquecido.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-034",
+   "tipo": "historica",
+   "ref": "LI2016-ej1-III-08",
+   "origen": {
+    "anio": 2016,
+    "parte": "ej1",
+    "n": 58
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de entre los siguientes responde a las características de un tipo de datos estructurado, dinámico y no lineal?",
+   "ctx": null,
+   "op": {
+    "a": "Cola",
+    "b": "Pila",
+    "c": "Árbol",
+    "d": "Lista"
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **árbol** es estructurado, **dinámico** y **no lineal** (cada nodo puede tener varios sucesores). Cola, pila y lista son **lineales**: cada elemento tiene un único sucesor.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-035",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-I-II-32",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 32
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Cuál de los siguientes tipos abstractos de datos NO tienen un orden definido?",
+   "ctx": null,
+   "op": {
+    "a": "Pila.",
+    "b": "Lista.",
+    "c": "Diccionario.",
+    "d": "Mapa."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Pila y lista son TAD **lineales con orden** (posición o llegada). El **mapa** guarda pares clave-valor y se accede por clave, sin orden definido entre elementos: es la clave oficial.\n\nOjo: **diccionario y mapa son prácticamente sinónimos** (Java `Map`, Python `dict`), así que la c) también podría defenderse. La pregunta es ambigua; en el examen marca la oficial (d). Ver discrepancias.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-036",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-I-II-33",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 33
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "De entre los siguientes formatos de archivo, señale cuál NO se utiliza para realizar exportaciones o importaciones de datos:",
+   "ctx": null,
+   "op": {
+    "a": ".csv",
+    "b": ".swf",
+    "c": ".pfx",
+    "d": ".xml"
+   },
+   "ok": "b",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**.swf** era el formato de animaciones de **Adobe Flash** (sin soporte desde diciembre de 2020): no sirve para exportar ni importar datos.\n\nCSV y XML son formatos de intercambio de datos. **.pfx** (PKCS#12) es un almacén de certificado con clave privada que también se exporta e importa, por eso el tribunal no lo eligió.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-037",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-I-II-34",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 34
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Indique cuál de los siguientes algoritmos utilizan urnas para depositar en ellas los registros en el proceso de ordenación:",
+   "ctx": null,
+   "op": {
+    "a": "Radix sort",
+    "b": "Fusión",
+    "c": "Burbuja",
+    "d": "Quicksort"
+   },
+   "ok": "a",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Radix sort** (por residuos) reparte los registros en **urnas** o cubetas, una por valor de dígito (10 en base 10), y los recoge en orden en cada pasada, dígito a dígito.\n\nFusión (mergesort), burbuja y quicksort ordenan por comparaciones.",
+   "epigrafe": "Algoritmos de ordenación",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-038",
+   "tipo": "historica",
+   "ref": "LI2015-ej1-I-II-36",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 36
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El grado de un árbol es:",
+   "ctx": null,
+   "op": {
+    "a": "El número total de nodos del mismo.",
+    "b": "El número de hijos de un nodo.",
+    "c": "El número más alto de nodos finales de un arco.",
+    "d": "Máximo grado de los nodos del árbol."
+   },
+   "ok": "d",
+   "clave": "oficial-provisional",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **grado de un nodo** es su número de hijos; el **grado de un árbol** es el **máximo** grado de sus nodos.\n\n- a) es el tamaño del árbol.\n- b) es el grado de **un nodo**, no del árbol.\n- c) no es una definición real.",
+   "epigrafe": "Árboles",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-039",
+   "tipo": "historica",
+   "ref": "LI2008-b3-b3-18",
+   "origen": {
+    "anio": 2008,
+    "parte": "b3",
+    "n": 18
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Suponiendo que al Programa2 se le pasan los parámetros: 10 5 7 2 3; el resultado de su ejecución será la primera lista que aparece por pantalla y, además:",
+   "ctx": "Programa2 (supuesto 2008, en C):\n#include <stdio.h>\n#include <stdlib.h>\nvoid swap1 (char *a1, char *a2){\n  char *aux;\n  aux=a1;\n  a1=a2;\n  a2=aux;\n}\nvoid swap2 (char **a1, char **a2){\n  char **aux;\n  *aux=*a1;\n  *a1=*a2;\n  *a2=*aux;\n}\nint main(int nargs, char *args[]){\n  printf(\"Orden 1\\n\");\n  for (int i=1;i<nargs-1;i++)\n    for (int j=i+1;j<nargs;j++)\n      if (atoi(args[i])<atoi(args[j])) swap1(args[i],args[j]);\n  for (int i=1;i<nargs;i++) printf(\"%3s\",args[i]);\n  printf(\"\\nOrden 2\\n\");\n  for (int i=1;i<nargs-1;i++)\n    for (int j=i+1;j<nargs;j++)\n      if (atoi(args[i])>atoi(args[j])) swap2(&args[i],&args[j]);\n  for (int i=1;i<nargs;i++) printf(\"%3s\",args[i]);\n  printf(\"\\n\");\n}",
+   "op": {
+    "a": "Ordenada de menor a mayor.",
+    "b": "Ordenada de mayor a menor.",
+    "c": "Sin ordenar y, por tanto, manteniendo el mismo orden: 10 5 7 2 3.",
+    "d": "Ordenada de mayor a menor pero el programa no ordena el primer elemento sino que comienza por el segundo elemento de dicha lista, es decir, 10 7 5 3 2."
+   },
+   "ok": "a",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Clave oficial: a).** Pero la traza del código no la respalda:\n\n- `swap1` recibe los punteros **por valor**: intercambia sus copias locales `a1` y `a2` y no cambia `args`. El primer doble bucle no reordena nada, así que la **primera lista** sale **10 5 7 2 3**, que es la opción c).\n- `swap2` sí recibe direcciones (`char **`) y ordenaría de **menor a mayor** la segunda lista. Pero usa `aux` sin inicializar (`*aux=*a1` escribe en una dirección indefinida): es comportamiento indefinido y lo normal es que falle.\n\nEl tribunal parece haber dado como resultado el orden ascendente de la segunda ordenación. Es una clave discutible: ver discrepancias. En el examen, recuerda la oficial, pero entiende por qué `swap1` no hace nada: es la trampa clásica del paso por valor en C.",
+   "epigrafe": "Algoritmos de ordenación",
+   "dificultad": 3
+  },
+  {
+   "id": "t12-h-040",
+   "tipo": "historica",
+   "ref": "LI2008-b3-b3-32",
+   "origen": {
+    "anio": 2008,
+    "parte": "b3",
+    "n": 32
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "¿Qué estructura de datos se emplea en el programa SERIE?",
+   "ctx": "Programa SERIE (supuesto 2008, Java):\npublic void Serie (int [] entrada) {\n  int [] salida = new int[entrada.length];\n  int suma;\n  for (int i=0; i<entrada.length; i++) {\n    suma = 0;\n    for (int j=i; j<entrada.length; j++) {\n      suma += entrada[j];\n    }\n    salida[i] = suma;\n  }\n  for (int i=0; i<salida.length; i++)\n    System.out.print(\" \"+salida[i]+\", \");\n}",
+   "op": {
+    "a": "Una cola.",
+    "b": "Un array.",
+    "c": "Una pila.",
+    "d": "Una lista."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "SERIE trabaja con `int [] entrada` y `int [] salida`: **arrays**. Accede por índice, sin operaciones de apilar, encolar ni enlazar nodos.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-041",
+   "tipo": "historica",
+   "ref": "LI2008-b3-b3-33",
+   "origen": {
+    "anio": 2008,
+    "parte": "b3",
+    "n": 33
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El algoritmo que se emplea en el programa SERIE es un algoritmo de:",
+   "ctx": "Programa SERIE (supuesto 2008, Java):\npublic void Serie (int [] entrada) {\n  int [] salida = new int[entrada.length];\n  int suma;\n  for (int i=0; i<entrada.length; i++) {\n    suma = 0;\n    for (int j=i; j<entrada.length; j++) {\n      suma += entrada[j];\n    }\n    salida[i] = suma;\n  }\n  for (int i=0; i<salida.length; i++)\n    System.out.print(\" \"+salida[i]+\", \");\n}",
+   "op": {
+    "a": "Ordenación.",
+    "b": "Recursividad.",
+    "c": "Búsqueda.",
+    "d": "Iteración."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "SERIE usa dos bucles `for` anidados: para cada posición i suma los elementos desde i hasta el final (sumas acumuladas por la derecha). Es un algoritmo **iterativo**: no se llama a sí mismo (no es recursivo), no ordena y no busca.\n\nEjemplo: con {1, 2, 3} imprime \" 6,  5,  3, \".",
+   "epigrafe": "Algoritmos y complejidad",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-042",
+   "tipo": "historica",
+   "ref": "LI2008-b3-b3-34",
+   "origen": {
+    "anio": 2008,
+    "parte": "b3",
+    "n": 34
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "El programa MATRIZ recibe como parámetro una matriz, ¿Qué operación realiza con dicha matriz?:",
+   "ctx": "Programa MATRIZ (supuesto 2008, Java):\npublic static int getFilas (int [][] matriz) { if (matriz == null) return -1; return matriz.length; }\npublic static int getColumnas (int [][] matriz) { if (matriz == null) return -1; return matriz[0].length; }\npublic static int[][] Matriz (int[][] A) {\n  if (A==null) return null;\n  int[][] algo = new int [getColumnas(A)][getFilas(A)];\n  for (int i=0; i<getColumnas(A); i++)\n    for (int j=0; j<getFilas(A); j++)\n      algo[i][j] = A[j][i];\n  return algo;\n}",
+   "op": {
+    "a": "Realiza una suma de sus columnas.",
+    "b": "Realiza una suma de sus filas.",
+    "c": "Realiza una resta de sus filas.",
+    "d": "Realiza un intercambio de filas por columnas."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Crea una matriz de tamaño columnas × filas y asigna `algo[i][j] = A[j][i]`: es la **traspuesta**, intercambia filas por columnas. No suma ni resta nada.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-043",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-I-II-30",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 30
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Si un árbol binario recorrido en \"preorden\" es 1-2-3-4-5 y recorrido en \"inorden\" es 3-2-4-1-5, señale cómo será el orden de visitas recorrido en \"postorden\":",
+   "ctx": null,
+   "op": {
+    "a": "1-2-5-3-4.",
+    "b": "1-2-4-3-5.",
+    "c": "3-2-4-5-1.",
+    "d": "3-4-2-5-1."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Se reconstruye el árbol:\n\n1. El primero del preorden es la raíz: **1**. En el inorden, a su izquierda queda {3, 2, 4} y a su derecha {5}.\n2. Subárbol izquierdo: en preorden 2-3-4, la raíz es **2**; en el inorden 3 queda a su izquierda y 4 a su derecha.\n3. Subárbol derecho: el nodo 5.\n\nPostorden (izquierdo, derecho, raíz): **3-4-2-5-1**.",
+   "epigrafe": "Árboles",
+   "dificultad": 3
+  },
+  {
+   "id": "t12-h-044",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-I-II-31",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 31
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale qué afirmación es correcta en relación con las listas encadenadas:",
+   "ctx": null,
+   "op": {
+    "a": "Enlazan el último elemento de la lista con el primero.",
+    "b": "Tienen dos punteros, uno señala al elemento siguiente y otro apunta al precedente.",
+    "c": "Utilizan eficazmente la memoria, ya que no necesitan ocupar posiciones secuenciales de la misma.",
+    "d": "Los elementos de este tipo de lista se procesan en el mismo orden en que se reciben, el primero en entrar es el primero en salir."
+   },
+   "ok": "c",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Las **listas encadenadas** (enlazadas) no necesitan posiciones contiguas: cada nodo apunta al siguiente, así que aprovechan huecos de memoria y crecen según se necesita.\n\n- a) describe la **lista circular**.\n- b) describe la **lista doblemente enlazada**.\n- d) describe la **cola** (FIFO).",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-045",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-I-II-35",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 35
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale cuál es una técnica de compresión con pérdida:",
+   "ctx": null,
+   "op": {
+    "a": "Lempel-Ziv-Welch (LZW).",
+    "b": "Codificación de Huffman.",
+    "c": "Codificación por Longitud de Series (RLE).",
+    "d": "Joint Photographic Experts Group (JPEG)."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**JPEG** comprime con pérdida (DCT y cuantificación). **LZW, Huffman y RLE** son técnicas sin pérdida.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-046",
+   "tipo": "historica",
+   "ref": "LI2008-ej1-I-II-36",
+   "origen": {
+    "anio": 2008,
+    "parte": "ej1",
+    "n": 36
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Señale cuál NO es una característica de un fichero secuencial-indexado:",
+   "ctx": null,
+   "op": {
+    "a": "El acceso a la información puede ser secuencial o directo.",
+    "b": "La información con esta estructura puede estar grabada en cualquier tipo de soporte.",
+    "c": "Al tiempo que se graban los datos, el sistema genera un área de índices.",
+    "d": "Ocupa más espacio que los ficheros secuenciales."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El fichero **secuencial indexado** necesita **soporte direccionable** (disco) para usar el índice: no puede estar en cinta. Por eso la b) NO es característica suya.\n\nLas demás sí lo son: acceso secuencial y directo, área de índices generada al grabar, y más espacio que un secuencial (índices y desbordamiento).",
+   "epigrafe": "Organización de ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-047",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-37",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 37
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "La codificación de Huffman se utiliza como:",
+   "ctx": null,
+   "op": {
+    "a": "Algoritmo de detección de errores.",
+    "b": "Algoritmo de compresión de datos.",
+    "c": "Algoritmo de detección y corrección de errores.",
+    "d": "Algoritmo de muestreo de señales."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Huffman** es un algoritmo de **compresión sin pérdida**: asigna códigos de longitud variable, más cortos a los símbolos más frecuentes. Forma parte de DEFLATE (ZIP, PNG), JPEG y MP3.\n\nNo detecta ni corrige errores (eso es CRC o Hamming) ni muestrea señales.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-048",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-40",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 40
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "Si un árbol binario recorrido en “preorden” es a-b-d-c-e-f y recorrido en “inorden” es b-d-a-e-c-f, ¿cómo será el orden de visitas recorrido en “postorden”?:",
+   "ctx": null,
+   "op": {
+    "a": "d-b-a-e-f-c.",
+    "b": "f-d-b-e-c-a.",
+    "c": "a-d-c-d-e-f.",
+    "d": "d-b-e-f-c-a."
+   },
+   "ok": "d",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Se reconstruye el árbol:\n\n1. Raíz **a** (primera del preorden). En el inorden, a la izquierda {b, d} y a la derecha {e, c, f}.\n2. Izquierdo: preorden b-d, raíz **b**; en el inorden d va después de b, así que d es su hijo **derecho**.\n3. Derecho: preorden c-e-f, raíz **c**, con e a la izquierda y f a la derecha.\n\nPostorden: **d-b-e-f-c-a**.",
+   "epigrafe": "Árboles",
+   "dificultad": 3
+  },
+  {
+   "id": "t12-h-049",
+   "tipo": "historica",
+   "ref": "LI2007-ej1-ej1-41",
+   "origen": {
+    "anio": 2007,
+    "parte": "ej1",
+    "n": 41
+   },
+   "de": null,
+   "texto": "literal",
+   "q": "La estructura de datos conocida como Pila:",
+   "ctx": null,
+   "op": {
+    "a": "Es una estructura de datos en la que los nodos se organizan de modo que cada uno apunta al siguiente, y el último no apunta a nada.",
+    "b": "Es una estructura de datos de tipo LIFO que permite almacenar y recuperar datos.",
+    "c": "Es una estructura de datos de tipo FIFO que permite almacenar y recuperar datos.",
+    "d": "Es una estructura de datos que consiste en un conjunto o agrupación de variables del mismo tipo cuyo acceso se realiza por índices."
+   },
+   "ok": "b",
+   "clave": "oficial",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **pila** es una estructura **LIFO** (último en entrar, primero en salir): se apila y desapila por la cima.\n\n- a) es la lista enlazada.\n- c) FIFO es la cola.\n- d) es el array.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-050",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 21
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué organización de ficheros graba los registros en posiciones contiguas, en el orden en que se introducen y sin dejar huecos?",
+   "ctx": null,
+   "op": {
+    "a": "Indexada.",
+    "b": "Aleatoria.",
+    "c": "Secuencial.",
+    "d": "Directa."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La organización **secuencial** graba los registros físicamente **contiguos**, en el orden de llegada y sin huecos. Para leer el registro n hay que pasar por los n−1 anteriores.\n\nLa directa o aleatoria coloca cada registro donde indica una función hash de la clave, y la indexada usa un índice.",
+   "epigrafe": "Organización de ficheros",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-051",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 22
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En las listas simplemente enlazadas:",
+   "ctx": null,
+   "op": {
+    "a": "Cada elemento sabe qué elemento le precede, pero no cuál le sucede.",
+    "b": "Cada elemento sabe qué elemento le sucede, pero no cuál le precede.",
+    "c": "Cada elemento conoce a su antecesor y a su predecesor.",
+    "d": "Cada elemento tiene un enlace a todos los demás."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En una lista **simplemente enlazada** cada nodo guarda un único puntero, al **siguiente**. Conoce a su sucesor pero no a su predecesor. Para conocer los dos hace falta una lista **doblemente enlazada**.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-052",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2006,
+    "parte": "ej1",
+    "n": 23
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "El tiempo que tarda un algoritmo en ejecutarse se denomina:",
+   "ctx": null,
+   "op": {
+    "a": "Definición.",
+    "b": "Coste.",
+    "c": "Finitud.",
+    "d": "Precisión."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **coste** (o complejidad temporal) es el tiempo que necesita el algoritmo. **Finitud**, **definición** (precisión) y entrada/salida son **propiedades** que debe cumplir todo algoritmo, no medidas de tiempo.",
+   "epigrafe": "Algoritmos y complejidad",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-053",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 22
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "En la organización de ficheros secuencial indexada:",
+   "ctx": null,
+   "op": {
+    "a": "Existe un área de desbordamiento (overflow) para los registros que no caben en el área de datos.",
+    "b": "Solo se puede acceder secuencialmente a los registros.",
+    "c": "Solo se puede procesar por lotes.",
+    "d": "El fichero no se puede actualizar."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El secuencial indexado tiene tres áreas: **primaria** (datos ordenados por clave), **de índices** y **de desbordamiento (overflow)**, donde van los registros que no caben en su sitio tras las altas.\n\nAdmite acceso secuencial y directo, proceso interactivo y actualización en el propio fichero.",
+   "epigrafe": "Organización de ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-054",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 26
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Señale la afirmación FALSA sobre los ficheros secuenciales:",
+   "ctx": null,
+   "op": {
+    "a": "Aprovechan al máximo el soporte.",
+    "b": "Son aconsejables para ficheros con bajo índice de utilización e inestables.",
+    "c": "No se pueden insertar registros entre los ya grabados.",
+    "d": "Se pueden grabar en cualquier tipo de soporte."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El fichero secuencial conviene cuando la **tasa de utilización es alta** (se procesan casi todos los registros) y el fichero es **estable** (pocas altas y bajas), típicamente en procesos por lotes. Con baja utilización y mucha volatilidad conviene una organización directa o indexada.\n\nLas otras tres afirmaciones son ciertas.",
+   "epigrafe": "Organización de ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-055",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 27
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cómo se llaman las estructuras de datos en las que la posición de cada elemento depende de su contenido?",
+   "ctx": null,
+   "op": {
+    "a": "Listas densas.",
+    "b": "Listas ordenadas.",
+    "c": "Listas enlazadas.",
+    "d": "Listas apiladas."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En una **lista ordenada** cada elemento ocupa la posición que le corresponde por su **clave** (su contenido), no por el orden de llegada. En una lista enlazada la posición la fijan los punteros, y \"listas apiladas\" no es un término estándar.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-h-056",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 40
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "Una lista encadenada es:",
+   "ctx": null,
+   "op": {
+    "a": "Una tabla ordenada.",
+    "b": "Un conjunto de registros de la misma entidad.",
+    "c": "Un conjunto variable de elementos cuyo orden se establece mediante punteros.",
+    "d": "Una tabla de índices."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **lista encadenada** (enlazada) es una estructura **dinámica**: el número de elementos varía y el orden lógico lo marcan los **punteros**, no la posición física en memoria.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-h-057",
+   "tipo": "historica",
+   "ref": null,
+   "origen": {
+    "anio": 2005,
+    "parte": "ej1",
+    "n": 41
+   },
+   "de": null,
+   "texto": "reformulado",
+   "q": "El grado de un árbol es:",
+   "ctx": null,
+   "op": {
+    "a": "El número total de nodos del árbol.",
+    "b": "El número de hijos de un nodo.",
+    "c": "El número más alto de nodos finales de un arco.",
+    "d": "El máximo grado de todos los nodos del árbol."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **grado de un árbol** es el **máximo** de los grados de sus nodos (número de hijos). La misma pregunta volvió en 2015 con las mismas opciones.",
+   "epigrafe": "Árboles",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-v-001",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-001",
+   "texto": "reformulado",
+   "q": "¿Qué característica define a un algoritmo voraz (greedy)?",
+   "ctx": null,
+   "op": {
+    "a": "Explora todas las soluciones posibles y vuelve atrás cuando una rama no sirve.",
+    "b": "En cada paso elige la opción localmente mejor y no revisa las decisiones ya tomadas.",
+    "c": "Divide el problema en subproblemas independientes y combina sus soluciones.",
+    "d": "Guarda en una tabla las soluciones de subproblemas solapados para no recalcularlas."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Voraz = óptimo local en cada paso, sin marcha atrás. Explorar y retroceder es **vuelta atrás** (backtracking); dividir y combinar es **divide y vencerás**; tabular subproblemas solapados es **programación dinámica**.",
+   "epigrafe": "Algoritmos y complejidad",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-v-002",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-002",
+   "texto": "reformulado",
+   "q": "Según RFC 4180, ¿cómo se escribe una comilla doble dentro de un campo CSV entrecomillado?",
+   "ctx": null,
+   "op": {
+    "a": "Precediéndola de una barra invertida: \\\".",
+    "b": "Sustituyéndola por una comilla simple.",
+    "c": "Duplicándola: \"\".",
+    "d": "No se permite: hay que eliminarla."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "RFC 4180: si un campo va entre comillas dobles, cada comilla doble interior se **duplica**. Por ejemplo, `\"Dijo \"\"hola\"\"\"`. La barra invertida es el escape de JSON, no de CSV.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-003",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-003",
+   "texto": "reformulado",
+   "q": "¿Cuál de los siguientes es un valor JSON válido según RFC 8259?",
+   "ctx": null,
+   "op": {
+    "a": "undefined",
+    "b": "NaN",
+    "c": "new Date()",
+    "d": "null"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los literales de JSON son **true, false y null**. `undefined`, `NaN` y los objetos Date son de JavaScript y no existen en JSON.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-004",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-004",
+   "texto": "reformulado",
+   "q": "En un árbol rojo-negro, ¿qué se cumple para cada nodo?",
+   "ctx": null,
+   "op": {
+    "a": "Todos los caminos desde el nodo hasta sus hojas descendientes tienen el mismo número de nodos negros.",
+    "b": "Todos los caminos desde el nodo hasta sus hojas tienen el mismo número de nodos rojos.",
+    "c": "Si el nodo es rojo, sus dos hijos también son rojos.",
+    "d": "El nodo puede tener hasta cuatro hijos."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **altura negra** es igual en todos los caminos. Un nodo rojo tiene hijos negros, la raíz es negra y es un árbol binario (como mucho dos hijos).",
+   "epigrafe": "Árboles",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-005",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-005",
+   "texto": "reformulado",
+   "q": "¿Cuál de estos algoritmos de ordenación NO se basa en comparar elementos y puede ejecutarse en tiempo lineal?",
+   "ctx": null,
+   "op": {
+    "a": "Heapsort.",
+    "b": "Counting sort (ordenación por conteo).",
+    "c": "Mergesort.",
+    "d": "Inserción."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Counting sort, radix sort y bucket sort no comparan elementos y pueden ser lineales. Heapsort y mergesort son O(n log n); inserción es O(n²) en el peor caso.",
+   "epigrafe": "Algoritmos de ordenación",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-006",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-006",
+   "texto": "reformulado",
+   "q": "En un recorrido en postorden de un árbol binario, ¿en qué orden se procesa cada nodo?",
+   "ctx": null,
+   "op": {
+    "a": "Raíz, subárbol izquierdo y subárbol derecho.",
+    "b": "Subárbol izquierdo, raíz y subárbol derecho.",
+    "c": "Subárbol izquierdo, subárbol derecho y raíz.",
+    "d": "Raíz, subárbol derecho y subárbol izquierdo."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Postorden: la raíz va **al final** (izquierdo, derecho, raíz). Preorden la pone al principio e inorden en medio.",
+   "epigrafe": "Árboles",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-v-007",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-007",
+   "texto": "reformulado",
+   "q": "Considerando la raíz como nivel 1, ¿cuántos nodos puede tener como máximo el nivel 5 de un árbol binario?",
+   "ctx": null,
+   "op": {
+    "a": "31",
+    "b": "32",
+    "c": "10",
+    "d": "16"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El nivel i tiene como máximo 2^(i−1) nodos: 2⁴ = **16**. El total de un árbol de 5 niveles sería 2⁵ − 1 = 31.",
+   "epigrafe": "Árboles",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-008",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-008",
+   "texto": "reformulado",
+   "q": "Según RFC 8259, ¿cuál de estas estructuras JSON es una secuencia ordenada de valores?",
+   "ctx": null,
+   "op": {
+    "a": "El array.",
+    "b": "El objeto.",
+    "c": "El literal null.",
+    "d": "El par nombre/valor."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **array** (`[ ]`) es una secuencia **ordenada** de valores. El **objeto** (`{ }`) es una colección **no ordenada** de pares nombre/valor.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-009",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-009",
+   "texto": "reformulado",
+   "q": "Respecto a los árboles 2-3-4, señale la afirmación correcta:",
+   "ctx": null,
+   "op": {
+    "a": "Cada nodo tiene exactamente dos claves.",
+    "b": "Todas las hojas están en el mismo nivel.",
+    "c": "Es un árbol binario de búsqueda sin equilibrar.",
+    "d": "Un 4-nodo tiene cuatro claves."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El 2-3-4 está perfectamente equilibrado: **todas las hojas al mismo nivel**. Un 2-nodo tiene 1 clave, un 3-nodo 2 y un 4-nodo 3 (y 4 hijos).",
+   "epigrafe": "Árboles",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-010",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-010",
+   "texto": "reformulado",
+   "q": "Respecto al TAD Cola, señale la afirmación correcta:",
+   "ctx": null,
+   "op": {
+    "a": "Sigue el principio LIFO: el último elemento que entra es el primero que sale.",
+    "b": "Solo puede implementarse con un array de tamaño fijo.",
+    "c": "Sigue el principio FIFO: el primer elemento que entra es el primero que sale.",
+    "d": "Permite insertar y extraer elementos por cualquier posición."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La cola es **FIFO**: se inserta por el final y se extrae por el frente. Puede implementarse con array circular o con lista enlazada.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-v-011",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-011",
+   "texto": "reformulado",
+   "q": "En Java, ¿cómo se relacionan habitualmente un TAD y la estructura de datos que lo implementa?",
+   "ctx": null,
+   "op": {
+    "a": "El TAD es una class y la estructura de datos es la interface que la implementa.",
+    "b": "El TAD y la estructura de datos deben definirse siempre en la misma class.",
+    "c": "Un TAD solo puede tener una implementación en Java.",
+    "d": "El TAD se especifica con una interface y la estructura de datos es una class que la implementa."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **interface** (por ejemplo, `Queue`) especifica el TAD y las **clases** (`ArrayDeque`, `LinkedList`) lo implementan. Un mismo TAD admite varias implementaciones.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-012",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-012",
+   "texto": "reformulado",
+   "q": "¿Qué algoritmo calcula los caminos mínimos entre TODOS los pares de vértices de un grafo ponderado?",
+   "ctx": null,
+   "op": {
+    "a": "Floyd-Warshall.",
+    "b": "Dijkstra.",
+    "c": "Kruskal.",
+    "d": "Prim."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Floyd-Warshall** (programación dinámica, O(V³)) da los caminos mínimos entre todos los pares. Dijkstra parte de un único origen; Kruskal y Prim calculan el árbol recubridor mínimo.",
+   "epigrafe": "Grafos",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-013",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-013",
+   "texto": "reformulado",
+   "q": "¿Qué subconjunto ISO de PDF está pensado para la conservación de documentos a largo plazo?",
+   "ctx": null,
+   "op": {
+    "a": "PDF/X.",
+    "b": "PDF/A.",
+    "c": "PDF/E.",
+    "d": "PDF/UA."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**PDF/A** = archivo (ISO 19005). PDF/X = imprenta, PDF/E = ingeniería, PDF/UA = accesibilidad.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-v-014",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-014",
+   "texto": "reformulado",
+   "q": "¿Qué formato de imagen se basa en el códec de vídeo AV1?",
+   "ctx": null,
+   "op": {
+    "a": "HEIC.",
+    "b": "WebP.",
+    "c": "AVIF.",
+    "d": "JPEG XL."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**AVIF** usa la compresión intra-frame de AV1. HEIC se basa en HEVC (H.265), WebP en VP8 y JPEG XL es un códec propio.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-015",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-015",
+   "texto": "reformulado",
+   "q": "Un recorrido en preorden de un árbol binario procesa cada nodo en este orden:",
+   "ctx": null,
+   "op": {
+    "a": "Izquierdo, raíz, derecho.",
+    "b": "Izquierdo, derecho, raíz.",
+    "c": "Derecho, raíz, izquierdo.",
+    "d": "Raíz, izquierdo, derecho."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Preorden = raíz primero. Inorden la pone en medio y postorden al final.",
+   "epigrafe": "Árboles",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-v-016",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-016",
+   "texto": "reformulado",
+   "q": "¿Qué técnica utiliza el formato JPEG clásico para comprimir imágenes?",
+   "ctx": null,
+   "op": {
+    "a": "Transformada discreta del coseno (DCT) y cuantificación, con pérdida.",
+    "b": "LZW, sin pérdida.",
+    "c": "Codificación por longitud de series (RLE) exclusivamente.",
+    "d": "Transformada wavelet, sin pérdida."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "JPEG = DCT + cuantificación (con pérdida) + Huffman. LZW es de GIF y TIFF; la wavelet es de JPEG 2000.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-017",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-017",
+   "texto": "reformulado",
+   "q": "En un árbol binario de búsqueda, ¿qué recorrido devuelve las claves ordenadas de menor a mayor?",
+   "ctx": null,
+   "op": {
+    "a": "Preorden.",
+    "b": "Inorden.",
+    "c": "Postorden.",
+    "d": "En amplitud (por niveles)."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En un ABB, el **inorden** (izquierdo, raíz, derecho) visita las claves en orden ascendente.",
+   "epigrafe": "Árboles",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-018",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-018",
+   "texto": "reformulado",
+   "q": "En un árbol binario lleno (todos los nodos internos con dos hijos y hojas al mismo nivel) de 4 niveles, ¿cuántas hojas hay?",
+   "ctx": null,
+   "op": {
+    "a": "15",
+    "b": "4",
+    "c": "8",
+    "d": "7"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El último nivel (nivel 4) tiene 2³ = **8** hojas. El total de nodos es 15 y los internos son 7.",
+   "epigrafe": "Árboles",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-019",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-019",
+   "texto": "reformulado",
+   "q": "Señale la afirmación INCORRECTA sobre estructuras de datos:",
+   "ctx": null,
+   "op": {
+    "a": "Un array almacena sus elementos en posiciones contiguas.",
+    "b": "Un árbol es una estructura no lineal.",
+    "c": "Una lista enlazada no necesita posiciones de memoria contiguas.",
+    "d": "Una pila es una estructura FIFO."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La pila es **LIFO**; FIFO es la cola. Las demás afirmaciones son correctas.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-v-020",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-020",
+   "texto": "reformulado",
+   "q": "Según RFC 8259, ¿qué codificación de caracteres debe usarse para intercambiar JSON entre sistemas abiertos?",
+   "ctx": null,
+   "op": {
+    "a": "UTF-8.",
+    "b": "ISO-8859-1.",
+    "c": "UTF-16.",
+    "d": "ASCII de 7 bits."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "RFC 8259 exige **UTF-8** para el JSON que se intercambia entre sistemas que no forman parte de un ecosistema cerrado. El tipo MIME es application/json.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-021",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-021",
+   "texto": "reformulado",
+   "q": "Ordene de MENOR a MAYOR eficiencia (de más lento a más rápido) estas complejidades: O(n log n), O(1), O(2ⁿ), O(n²).",
+   "ctx": null,
+   "op": {
+    "a": "O(n²), O(2ⁿ), O(n log n), O(1).",
+    "b": "O(2ⁿ), O(n²), O(n log n), O(1).",
+    "c": "O(1), O(n log n), O(n²), O(2ⁿ).",
+    "d": "O(2ⁿ), O(n log n), O(n²), O(1)."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "De más rápido a más lento: O(1) < O(n log n) < O(n²) < O(2ⁿ). Al revés, de menor a mayor eficiencia: O(2ⁿ), O(n²), O(n log n), O(1).",
+   "epigrafe": "Algoritmos y complejidad",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-022",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-022",
+   "texto": "reformulado",
+   "q": "¿En qué situación alcanza Quicksort su peor caso, O(n²)?",
+   "ctx": null,
+   "op": {
+    "a": "Cuando todos los elementos son distintos y están desordenados al azar.",
+    "b": "Cuando el pivote divide siempre el vector en dos mitades iguales.",
+    "c": "Cuando el pivote elegido es siempre el menor o el mayor elemento, por ejemplo con el vector ya ordenado y pivote en un extremo.",
+    "d": "Nunca: Quicksort es O(n log n) en todos los casos."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Con particiones desequilibradas (pivote extremo) cada llamada solo quita un elemento: n niveles de recursión con trabajo lineal, O(n²). Con particiones equilibradas es O(n log n).",
+   "epigrafe": "Algoritmos de ordenación",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-023",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-023",
+   "texto": "reformulado",
+   "q": "¿Qué algoritmo construye el árbol recubridor mínimo partiendo de un vértice y añadiendo en cada paso la arista más barata que conecta un vértice nuevo?",
+   "ctx": null,
+   "op": {
+    "a": "Kruskal.",
+    "b": "Dijkstra.",
+    "c": "Bellman-Ford.",
+    "d": "Prim."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Prim** crece desde un vértice. **Kruskal** ordena todas las aristas y las va añadiendo si no forman ciclo. Dijkstra y Bellman-Ford calculan caminos mínimos.",
+   "epigrafe": "Grafos",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-024",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-024",
+   "texto": "reformulado",
+   "q": "¿Cómo se llama la bicola que permite insertar por los dos extremos pero borrar solo por uno?",
+   "ctx": null,
+   "op": {
+    "a": "Bicola de salida restringida.",
+    "b": "Bicola de entrada restringida.",
+    "c": "Cola circular.",
+    "d": "Pila doble."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La restricción está en lo que nombra: **salida restringida** = se extrae por un solo extremo. Entrada restringida = se inserta por un solo extremo.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-025",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-025",
+   "texto": "reformulado",
+   "q": "¿Cuál de estos métodos de compresión es SIN pérdidas?",
+   "ctx": null,
+   "op": {
+    "a": "Transformada discreta del coseno (TDC).",
+    "b": "LZW (diccionario adaptable).",
+    "c": "Cuantificación vectorial.",
+    "d": "Modelos psicoacústicos de MP3."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "LZW, Huffman y RLE son **sin pérdidas**. La TDC con cuantificación, la cuantificación vectorial y los modelos psicoacústicos descartan información.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-026",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-026",
+   "texto": "reformulado",
+   "q": "¿Cuál de estos formatos es de imagen vectorial?",
+   "ctx": null,
+   "op": {
+    "a": "PNG.",
+    "b": "GIF.",
+    "c": "EPS.",
+    "d": "BMP."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**EPS** (como SVG, AI o WMF/EMF) es vectorial. PNG, GIF y BMP son mapas de bits.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-v-027",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-027",
+   "texto": "reformulado",
+   "q": "El método de ordenación por selección consiste en:",
+   "ctx": null,
+   "op": {
+    "a": "Comparar cada elemento con su sucesor e intercambiarlos si no están en orden.",
+    "b": "Insertar cada elemento en su lugar dentro de la parte ya ordenada.",
+    "c": "Dividir el vector en dos mitades, ordenarlas y fusionarlas.",
+    "d": "Buscar el menor elemento y colocarlo en la primera posición, luego el siguiente menor en la segunda, y así sucesivamente."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Selección = buscar el mínimo e intercambiarlo con la primera posición pendiente. Comparar con el sucesor es la burbuja, insertar en la parte ordenada es inserción y dividir y fusionar es mergesort.",
+   "epigrafe": "Algoritmos de ordenación",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-v-028",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-028",
+   "texto": "reformulado",
+   "q": "¿En qué caso se suele expresar la complejidad de un algoritmo con la notación O grande?",
+   "ctx": null,
+   "op": {
+    "a": "En el peor caso, como cota superior.",
+    "b": "Solo en el mejor caso.",
+    "c": "Solo en el caso medio.",
+    "d": "Nunca: O grande mide la memoria, no el tiempo."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **O grande** da una **cota superior** y se usa normalmente para el peor caso. Ω (omega) da la cota inferior y Θ (theta) la cota ajustada. Se aplica tanto a tiempo como a espacio.",
+   "epigrafe": "Algoritmos y complejidad",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-029",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-029",
+   "texto": "reformulado",
+   "q": "¿Qué estructura auxiliar se usa para recorrer un árbol en amplitud (por niveles)?",
+   "ctx": null,
+   "op": {
+    "a": "Una pila.",
+    "b": "Una cola.",
+    "c": "Una tabla hash.",
+    "d": "Un montículo."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El recorrido en **amplitud** usa una **cola** (FIFO). El recorrido en profundidad usa una **pila** o la recursividad.",
+   "epigrafe": "Árboles",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-030",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-030",
+   "texto": "reformulado",
+   "q": "¿Cuál es la complejidad de la burbuja en el peor caso para N elementos?",
+   "ctx": null,
+   "op": {
+    "a": "O(N).",
+    "b": "O(N log N).",
+    "c": "O(N²).",
+    "d": "O(log N)."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La burbuja hace del orden de N²/2 comparaciones en el peor caso: **O(N²)**. Con la mejora de parar si no hay intercambios, el mejor caso es O(N).",
+   "epigrafe": "Algoritmos de ordenación",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-v-031",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-031",
+   "texto": "reformulado",
+   "q": "Si el recorrido en postorden de un árbol binario es {4, 9, 2, 6, 5, 3}, ¿cuál es la raíz?",
+   "ctx": null,
+   "op": {
+    "a": "4",
+    "b": "6",
+    "c": "2",
+    "d": "3"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En **postorden** la raíz es el **último** elemento: 3.",
+   "epigrafe": "Árboles",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-v-032",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-032",
+   "texto": "reformulado",
+   "q": "En una tabla hash, el método de resolución de colisiones que guarda en cada celda una lista con todas las claves que caen en ella se llama:",
+   "ctx": null,
+   "op": {
+    "a": "Hashing abierto (encadenamiento).",
+    "b": "Hashing cerrado (direccionamiento abierto).",
+    "c": "Sondeo lineal.",
+    "d": "Doble hash."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Hashing abierto** = encadenamiento separado (listas). Hashing cerrado = buscar otra celda en la misma tabla (sondeo lineal, cuadrático o doble hash). Ojo: \"direccionamiento abierto\" es hashing cerrado.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-033",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-033",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes extensiones corresponde a una presentación en formato OpenDocument?",
+   "ctx": null,
+   "op": {
+    "a": "ods",
+    "b": "odp",
+    "c": "odt",
+    "d": "pptx"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "OpenDocument: **.odt** (texto), **.ods** (hoja de cálculo), **.odp** (presentación), .odg (gráficos). .pptx es la presentación de Office Open XML.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-v-034",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-034",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes estructuras de datos es dinámica y lineal?",
+   "ctx": null,
+   "op": {
+    "a": "Árbol.",
+    "b": "Grafo.",
+    "c": "Lista enlazada.",
+    "d": "Array estático."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **lista enlazada** es dinámica (crece en ejecución) y lineal (un sucesor). Árbol y grafo son no lineales; el array estático tiene tamaño fijo.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-v-035",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-035",
+   "texto": "reformulado",
+   "q": "¿Qué TAD almacena elementos sin repetidos y sin orden definido, y ofrece la operación de pertenencia?",
+   "ctx": null,
+   "op": {
+    "a": "Pila.",
+    "b": "Cola.",
+    "c": "Lista.",
+    "d": "Conjunto."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **conjunto** (Set) no admite duplicados ni tiene orden definido. Pila, cola y lista son lineales y ordenadas por posición o llegada.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-036",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-036",
+   "texto": "reformulado",
+   "q": "¿Cuál de estos formatos es un almacén de certificado con su clave privada (PKCS#12)?",
+   "ctx": null,
+   "op": {
+    "a": ".pfx",
+    "b": ".csv",
+    "c": ".swf",
+    "d": ".xml"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**.pfx** (o .p12) es PKCS#12: certificado más clave privada, protegido con contraseña. CSV y XML son formatos de datos; SWF eran animaciones Flash.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-037",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-037",
+   "texto": "reformulado",
+   "q": "¿Qué algoritmo de ordenación divide el vector en dos mitades, las ordena recursivamente y las mezcla?",
+   "ctx": null,
+   "op": {
+    "a": "Radix sort.",
+    "b": "Mergesort (fusión).",
+    "c": "Burbuja.",
+    "d": "Selección."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Mergesort** (fusión o mezcla) es divide y vencerás: O(n log n) en todos los casos y estable, pero necesita memoria auxiliar O(n).",
+   "epigrafe": "Algoritmos de ordenación",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-v-038",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-038",
+   "texto": "reformulado",
+   "q": "En un árbol, ¿qué es la altura?",
+   "ctx": null,
+   "op": {
+    "a": "El número de hijos de la raíz.",
+    "b": "El número total de hojas.",
+    "c": "El número de niveles, es decir, la longitud del camino más largo de la raíz a una hoja.",
+    "d": "El máximo número de hijos de un nodo."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **altura** es la longitud del camino más largo de la raíz a una hoja (según el convenio, en aristas o en niveles). El máximo número de hijos es el **grado**.",
+   "epigrafe": "Árboles",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-039",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-039",
+   "texto": "reformulado",
+   "q": "En C, una función void swap(char *a, char *b) que solo intercambia los parámetros a y b entre sí (aux=a; a=b; b=aux;), ¿qué efecto tiene en las variables puntero de quien la llama?",
+   "ctx": null,
+   "op": {
+    "a": "Intercambia los punteros de quien la llama.",
+    "b": "Intercambia el contenido de las cadenas apuntadas.",
+    "c": "Provoca siempre un error de compilación.",
+    "d": "Ninguno: los punteros se pasan por valor y solo se intercambian sus copias locales."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En C todo se pasa **por valor**. Al pasar `char *` se copia el puntero; intercambiar las copias no cambia los punteros originales. Para intercambiarlos hay que pasar su dirección (`char **`) y escribir `*a` y `*b`. Es la trampa del Programa2 de 2008.",
+   "epigrafe": "Algoritmos de ordenación",
+   "dificultad": 3
+  },
+  {
+   "id": "t12-v-040",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-040",
+   "texto": "reformulado",
+   "q": "En el programa SERIE, ¿cuál es la longitud del array salida respecto al array entrada?",
+   "ctx": "Programa SERIE (supuesto 2008, Java):\npublic void Serie (int [] entrada) {\n  int [] salida = new int[entrada.length];\n  int suma;\n  for (int i=0; i<entrada.length; i++) {\n    suma = 0;\n    for (int j=i; j<entrada.length; j++) {\n      suma += entrada[j];\n    }\n    salida[i] = suma;\n  }\n  for (int i=0; i<salida.length; i++)\n    System.out.print(\" \"+salida[i]+\", \");\n}",
+   "op": {
+    "a": "La misma longitud.",
+    "b": "La mitad.",
+    "c": "Uno menos.",
+    "d": "El doble."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "`int [] salida = new int[entrada.length];`: el array de salida tiene **la misma longitud** que el de entrada.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-v-041",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-041",
+   "texto": "reformulado",
+   "q": "Si se llama a Serie con el array {2, 4, 1}, ¿qué imprime?",
+   "ctx": "Programa SERIE (supuesto 2008, Java):\npublic void Serie (int [] entrada) {\n  int [] salida = new int[entrada.length];\n  int suma;\n  for (int i=0; i<entrada.length; i++) {\n    suma = 0;\n    for (int j=i; j<entrada.length; j++) {\n      suma += entrada[j];\n    }\n    salida[i] = suma;\n  }\n  for (int i=0; i<salida.length; i++)\n    System.out.print(\" \"+salida[i]+\", \");\n}",
+   "op": {
+    "a": "2, 6, 7",
+    "b": "7, 5, 1",
+    "c": "1, 5, 7",
+    "d": "7, 7, 7"
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Para cada i suma desde i hasta el final: salida[0] = 2+4+1 = 7, salida[1] = 4+1 = 5, salida[2] = 1. Imprime \" 7,  5,  1, \".",
+   "epigrafe": "Algoritmos y complejidad",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-042",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-042",
+   "texto": "reformulado",
+   "q": "Si el programa MATRIZ recibe una matriz de 2 filas y 3 columnas, ¿qué dimensiones tiene la matriz devuelta?",
+   "ctx": "Programa MATRIZ (supuesto 2008, Java):\npublic static int getFilas (int [][] matriz) { if (matriz == null) return -1; return matriz.length; }\npublic static int getColumnas (int [][] matriz) { if (matriz == null) return -1; return matriz[0].length; }\npublic static int[][] Matriz (int[][] A) {\n  if (A==null) return null;\n  int[][] algo = new int [getColumnas(A)][getFilas(A)];\n  for (int i=0; i<getColumnas(A); i++)\n    for (int j=0; j<getFilas(A); j++)\n      algo[i][j] = A[j][i];\n  return algo;\n}",
+   "op": {
+    "a": "2 filas y 3 columnas.",
+    "b": "3 filas y 3 columnas.",
+    "c": "3 filas y 2 columnas.",
+    "d": "2 filas y 2 columnas."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Crea `new int [getColumnas(A)][getFilas(A)]`: la traspuesta de una matriz 2×3 es **3×2**.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-v-043",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-043",
+   "texto": "reformulado",
+   "q": "Si el preorden de un árbol binario es A-B-D-E-C y el inorden es D-B-E-A-C, ¿cuál es el postorden?",
+   "ctx": null,
+   "op": {
+    "a": "D-B-E-C-A",
+    "b": "A-B-C-D-E",
+    "c": "E-D-B-C-A",
+    "d": "D-E-B-C-A"
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Raíz A. Izquierdo {D, B, E}, con raíz B (D a la izquierda y E a la derecha). Derecho: C. Postorden: D-E-B, C, A.",
+   "epigrafe": "Árboles",
+   "dificultad": 3
+  },
+  {
+   "id": "t12-v-044",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-044",
+   "texto": "reformulado",
+   "q": "Señale la característica de una lista doblemente enlazada:",
+   "ctx": null,
+   "op": {
+    "a": "Cada nodo tiene un puntero al siguiente y otro al anterior.",
+    "b": "El último nodo apunta siempre al primero.",
+    "c": "Cada nodo solo conoce a su sucesor.",
+    "d": "Sus elementos se almacenan en posiciones contiguas."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La lista **doble** tiene dos enlaces por nodo (siguiente y anterior) y se recorre en ambos sentidos. Que el último apunte al primero define la lista **circular**.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-v-045",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-045",
+   "texto": "reformulado",
+   "q": "¿Cuál de las siguientes técnicas de compresión es SIN pérdida?",
+   "ctx": null,
+   "op": {
+    "a": "JPEG.",
+    "b": "Codificación por longitud de series (RLE).",
+    "c": "MP3.",
+    "d": "MPEG-4 AVC con cuantificación."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "RLE, Huffman y LZW son sin pérdida. JPEG, MP3 y los códecs de vídeo con cuantificación descartan información.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-v-046",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-046",
+   "texto": "reformulado",
+   "q": "¿En qué soporte puede grabarse un fichero de organización secuencial indexada?",
+   "ctx": null,
+   "op": {
+    "a": "En cualquier soporte, incluida la cinta.",
+    "b": "Solo en cinta magnética.",
+    "c": "Solo en un soporte direccionable, como el disco.",
+    "d": "Solo en memoria principal."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El índice necesita **acceso directo**, así que el secuencial indexado exige **soporte direccionable**. El secuencial puro sí admite cualquier soporte.",
+   "epigrafe": "Organización de ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-047",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-047",
+   "texto": "reformulado",
+   "q": "¿Qué técnica asigna códigos más cortos a los símbolos más frecuentes para comprimir datos sin pérdida?",
+   "ctx": null,
+   "op": {
+    "a": "Transformada discreta del coseno.",
+    "b": "Código de Hamming.",
+    "c": "CRC.",
+    "d": "Codificación de Huffman."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Huffman**: códigos de longitud variable según frecuencia. Hamming corrige errores, CRC los detecta y la DCT se usa en compresión con pérdida.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-v-048",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-048",
+   "texto": "reformulado",
+   "q": "Si el postorden de un árbol binario es D-E-B-F-C-A y el inorden es D-B-E-A-C-F, ¿cuál es el preorden?",
+   "ctx": null,
+   "op": {
+    "a": "A-B-D-E-C-F",
+    "b": "A-B-C-D-E-F",
+    "c": "D-B-E-A-C-F",
+    "d": "A-C-F-B-E-D"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Raíz A (último del postorden). Izquierdo {D, B, E}: raíz B con D y E. Derecho {C, F}: en postorden F-C, raíz C, y F está a su derecha en el inorden. Preorden: A-B-D-E-C-F.",
+   "epigrafe": "Árboles",
+   "dificultad": 3
+  },
+  {
+   "id": "t12-v-049",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-049",
+   "texto": "reformulado",
+   "q": "¿Qué operación de una pila devuelve el elemento de la cima sin extraerlo?",
+   "ctx": null,
+   "op": {
+    "a": "Apilar (push).",
+    "b": "Cima (top o peek).",
+    "c": "Desapilar (pop).",
+    "d": "Encolar (enqueue)."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "push apila, pop desapila y **top/peek** consulta la cima sin sacarla. Encolar es una operación de la cola.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-v-050",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-050",
+   "texto": "reformulado",
+   "q": "¿Qué organización de ficheros calcula la posición de cada registro aplicando una función de transformación a su clave?",
+   "ctx": null,
+   "op": {
+    "a": "Secuencial.",
+    "b": "Secuencial indexada.",
+    "c": "Directa (aleatoria).",
+    "d": "Encadenada."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La organización **directa o aleatoria** aplica una función hash a la clave para obtener la dirección. Las claves que caen en la misma dirección son **sinónimos**.",
+   "epigrafe": "Organización de ficheros",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-v-051",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-051",
+   "texto": "reformulado",
+   "q": "¿Qué estructura de datos permite recorrer la lista en ambos sentidos?",
+   "ctx": null,
+   "op": {
+    "a": "La lista simplemente enlazada.",
+    "b": "La pila.",
+    "c": "La cola.",
+    "d": "La lista doblemente enlazada."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Con enlace al siguiente y al anterior, la lista **doble** se recorre hacia delante y hacia atrás.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-v-052",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-052",
+   "texto": "reformulado",
+   "q": "¿Qué propiedad de un algoritmo exige que termine tras un número finito de pasos?",
+   "ctx": null,
+   "op": {
+    "a": "Finitud.",
+    "b": "Coste.",
+    "c": "Generalidad.",
+    "d": "Eficiencia."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Finitud**: el algoritmo termina. Las propiedades clásicas son finitud, definición (precisión), entrada, salida y efectividad. El coste es una medida, no una propiedad.",
+   "epigrafe": "Algoritmos y complejidad",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-v-053",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-053",
+   "texto": "reformulado",
+   "q": "En la organización secuencial indexada, ¿qué guarda normalmente el área de índices?",
+   "ctx": null,
+   "op": {
+    "a": "Todos los campos de cada registro.",
+    "b": "La clave más alta de cada bloque y su dirección.",
+    "c": "Solo los registros dados de baja.",
+    "d": "Los registros que no caben en el área primaria."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El índice guarda, por bloque, la **clave más alta** y la dirección del bloque. Los registros que no caben van al **área de desbordamiento**.",
+   "epigrafe": "Organización de ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-054",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-054",
+   "texto": "reformulado",
+   "q": "¿Cuándo es aconsejable la organización secuencial?",
+   "ctx": null,
+   "op": {
+    "a": "Con consultas puntuales frecuentes a registros concretos.",
+    "b": "Con ficheros muy volátiles, con muchas altas y bajas.",
+    "c": "Con ficheros de alta tasa de utilización y estables, procesados por lotes.",
+    "d": "Cuando se necesita insertar registros entre los ya grabados."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El secuencial rinde cuando se procesan casi todos los registros en cada pasada (**alta actividad**) y hay pocas altas y bajas (**estable**).",
+   "epigrafe": "Organización de ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-055",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-055",
+   "texto": "reformulado",
+   "q": "En una lista ordenada, ¿qué determina la posición de cada elemento?",
+   "ctx": null,
+   "op": {
+    "a": "El orden de llegada.",
+    "b": "Su dirección física en memoria.",
+    "c": "Un número aleatorio.",
+    "d": "Su contenido (su clave)."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En las estructuras **ordenadas** la posición depende del **contenido**. Por orden de llegada se organizan la pila y la cola.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-056",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-056",
+   "texto": "reformulado",
+   "q": "¿Qué ventaja tiene una lista enlazada frente a un array?",
+   "ctx": null,
+   "op": {
+    "a": "Inserta y borra elementos sin desplazar el resto, solo cambiando punteros.",
+    "b": "Accede a cualquier elemento por índice en tiempo constante.",
+    "c": "Ocupa menos memoria por elemento.",
+    "d": "Sus elementos están siempre en posiciones contiguas."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En una lista enlazada, insertar o borrar (conocido el nodo) es O(1) cambiando punteros. A cambio, el acceso por posición es O(n) y cada nodo gasta memoria extra en el puntero.",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-v-057",
+   "tipo": "variante",
+   "ref": null,
+   "origen": null,
+   "de": "t12-h-057",
+   "texto": "reformulado",
+   "q": "¿Qué es una hoja en un árbol?",
+   "ctx": null,
+   "op": {
+    "a": "El nodo raíz.",
+    "b": "Un nodo sin hijos.",
+    "c": "Un nodo con exactamente un hijo.",
+    "d": "Un nodo con el grado máximo."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Una **hoja** (nodo terminal) no tiene hijos, es decir, tiene grado 0. Los nodos con hijos son **internos**.",
+   "epigrafe": "Árboles",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-n-001",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué propiedad NO cumple un árbol rojo-negro?",
+   "ctx": null,
+   "op": {
+    "a": "La raíz es negra.",
+    "b": "Las hojas nulas se consideran negras.",
+    "c": "Un nodo rojo puede tener un hijo rojo.",
+    "d": "Todos los caminos de un nodo a sus hojas tienen la misma altura negra."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En un rojo-negro **no puede haber dos rojos seguidos**: los hijos de un nodo rojo son negros.",
+   "epigrafe": "Árboles",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-n-002",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué diferencia principal hay entre un árbol AVL y uno rojo-negro?",
+   "ctx": null,
+   "op": {
+    "a": "El AVL no está equilibrado y el rojo-negro sí.",
+    "b": "El rojo-negro admite más de dos hijos por nodo.",
+    "c": "El AVL solo admite claves numéricas.",
+    "d": "El AVL está más estrictamente equilibrado y busca algo más rápido; el rojo-negro hace menos rotaciones al insertar y borrar."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "AVL: factor de equilibrio entre −1 y 1, altura mínima, más rotaciones. Rojo-negro: equilibrio más relajado (altura ≤ 2·log₂(n+1)), menos reestructuraciones; lo usan TreeMap de Java y std::map de C++.",
+   "epigrafe": "Árboles",
+   "dificultad": 3
+  },
+  {
+   "id": "t12-n-003",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "En un árbol B de orden 5, ¿cuántas claves puede tener como máximo un nodo?",
+   "ctx": null,
+   "op": {
+    "a": "4",
+    "b": "5",
+    "c": "2",
+    "d": "3"
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Un árbol B de orden m tiene como máximo m hijos y **m−1 claves** por nodo: 4. Un nodo no raíz tiene como mínimo ⌈m/2⌉ = 3 hijos.",
+   "epigrafe": "Árboles",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-n-004",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué estructura usan la mayoría de los SGBD relacionales para sus índices?",
+   "ctx": null,
+   "op": {
+    "a": "Lista simplemente enlazada.",
+    "b": "Árbol B+.",
+    "c": "Pila.",
+    "d": "Árbol binario sin equilibrar."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **árbol B+** guarda los datos (o punteros) solo en las hojas, que están enlazadas: permite búsquedas en O(log n) y recorridos por rango eficientes.",
+   "epigrafe": "Árboles",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-n-005",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué algoritmo calcula los caminos mínimos desde un origen cuando el grafo tiene aristas de peso negativo (sin ciclos negativos)?",
+   "ctx": null,
+   "op": {
+    "a": "Dijkstra.",
+    "b": "Kruskal.",
+    "c": "Bellman-Ford.",
+    "d": "Prim."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**Bellman-Ford** admite pesos negativos y detecta ciclos negativos (O(V·A)). Dijkstra exige pesos no negativos.",
+   "epigrafe": "Grafos",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-n-006",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué algoritmo de ordenación usa Java en Collections.sort y Arrays.sort para objetos?",
+   "ctx": null,
+   "op": {
+    "a": "Quicksort clásico, no estable.",
+    "b": "Burbuja optimizada.",
+    "c": "Radix sort.",
+    "d": "TimSort, estable y O(n log n) en el peor caso."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Para objetos, Java usa **TimSort** (híbrido de mergesort e inserción), estable. Para tipos primitivos, Arrays.sort usa un quicksort de doble pivote.",
+   "epigrafe": "Algoritmos de ordenación",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-n-007",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál de estos algoritmos de ordenación es estable?",
+   "ctx": null,
+   "op": {
+    "a": "Mergesort.",
+    "b": "Quicksort.",
+    "c": "Heapsort.",
+    "d": "Selección."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Un algoritmo es **estable** si mantiene el orden relativo de los elementos con la misma clave. Mergesort, inserción, burbuja y radix lo son; quicksort, heapsort y selección (en su versión habitual) no.",
+   "epigrafe": "Algoritmos de ordenación",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-n-008",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué complejidad tiene la búsqueda binaria y qué exige?",
+   "ctx": null,
+   "op": {
+    "a": "O(n); no exige nada.",
+    "b": "O(log n); exige el vector ordenado y con acceso directo.",
+    "c": "O(1); exige una tabla hash.",
+    "d": "O(n log n); exige el vector ordenado."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La búsqueda **binaria** (dicotómica) parte el intervalo por la mitad en cada paso: O(log n). Necesita el vector **ordenado** y acceso por posición.",
+   "epigrafe": "Algoritmos de búsqueda",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-n-009",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según RFC 8259, ¿cuál es el tipo MIME de JSON?",
+   "ctx": null,
+   "op": {
+    "a": "text/json",
+    "b": "application/x-javascript",
+    "c": "application/json",
+    "d": "text/plain"
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El tipo registrado es **application/json**. Para CSV es text/csv.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-n-010",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué versión de PDF/A se basa en PDF 2.0?",
+   "ctx": null,
+   "op": {
+    "a": "PDF/A-1.",
+    "b": "PDF/A-2.",
+    "c": "PDF/A-3.",
+    "d": "PDF/A-4."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**PDF/A-4** (ISO 19005-4, 2020) se basa en PDF 2.0. PDF/A-1 se basa en PDF 1.4, y PDF/A-2 y PDF/A-3 en PDF 1.7. PDF/A-3 permite incrustar ficheros de cualquier tipo.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 3
+  },
+  {
+   "id": "t12-n-011",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué códec de vídeo publicó la ITU-T en 2020 como sucesor de HEVC (H.265)?",
+   "ctx": null,
+   "op": {
+    "a": "H.266 / VVC.",
+    "b": "H.264 / AVC.",
+    "c": "VP8.",
+    "d": "MPEG-2."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**VVC** (Versatile Video Coding, H.266) sucede a HEVC con un ahorro de alrededor del 50 % de bitrate. H.264 es anterior a HEVC.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-n-012",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Un algoritmo voraz obtiene siempre la solución óptima en:",
+   "ctx": null,
+   "op": {
+    "a": "La mochila 0/1.",
+    "b": "La mochila fraccionaria.",
+    "c": "El problema del viajante.",
+    "d": "El cambio de monedas con valores arbitrarios."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "En la **mochila fraccionaria** basta con coger primero lo de mayor valor por unidad de peso: el voraz es óptimo. En la mochila 0/1, el viajante y el cambio con monedas arbitrarias puede fallar.",
+   "epigrafe": "Algoritmos y complejidad",
+   "dificultad": 3
+  },
+  {
+   "id": "t12-n-013",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué estructura auxiliar usa el recorrido en profundidad (DFS) de un grafo?",
+   "ctx": null,
+   "op": {
+    "a": "Una cola.",
+    "b": "Un montículo de mínimos.",
+    "c": "Una pila o la recursividad.",
+    "d": "Una tabla hash obligatoriamente."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**DFS** usa una pila (explícita o la de llamadas recursivas). **BFS** (anchura) usa una cola.",
+   "epigrafe": "Grafos",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-n-014",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué técnica de diseño de algoritmos resuelve subproblemas solapados guardando sus resultados en una tabla?",
+   "ctx": null,
+   "op": {
+    "a": "Divide y vencerás.",
+    "b": "Algoritmo voraz.",
+    "c": "Vuelta atrás (backtracking).",
+    "d": "Programación dinámica."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **programación dinámica** memoriza o tabula subproblemas que se repiten (Floyd-Warshall, mochila 0/1, Fibonacci). Divide y vencerás trabaja con subproblemas independientes.",
+   "epigrafe": "Algoritmos y complejidad",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-n-015",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué complejidad tiene el acceso a un elemento por clave en una tabla hash en el caso medio?",
+   "ctx": null,
+   "op": {
+    "a": "O(1).",
+    "b": "O(log n).",
+    "c": "O(n).",
+    "d": "O(n log n)."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Con una buena función hash y factor de carga controlado, buscar, insertar y borrar cuestan **O(1)** de media. En el peor caso (todas las claves colisionan) es O(n).",
+   "epigrafe": "Tipos abstractos de datos",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-n-016",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué es un montículo binario de máximos (max-heap)?",
+   "ctx": null,
+   "op": {
+    "a": "Un árbol binario de búsqueda equilibrado.",
+    "b": "Un árbol binario completo en el que cada nodo es mayor o igual que sus hijos.",
+    "c": "Una lista ordenada de mayor a menor.",
+    "d": "Un grafo dirigido acíclico."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "El **montículo** es un árbol binario **completo** (se guarda en un array) con la propiedad de orden padre ≥ hijos. Implementa colas de prioridad y es la base de heapsort.",
+   "epigrafe": "Árboles",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-n-017",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué representación de un grafo ocupa O(V²) de memoria independientemente del número de aristas?",
+   "ctx": null,
+   "op": {
+    "a": "La lista de adyacencia.",
+    "b": "La lista de aristas.",
+    "c": "La matriz de adyacencia.",
+    "d": "El árbol recubridor."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **matriz de adyacencia** tiene V×V celdas: conviene en grafos densos. La **lista de adyacencia** ocupa O(V+A) y conviene en grafos dispersos.",
+   "epigrafe": "Grafos",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-n-018",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "Según la notación asintótica, ¿qué expresa Θ(f(n))?",
+   "ctx": null,
+   "op": {
+    "a": "Solo una cota superior.",
+    "b": "Solo una cota inferior.",
+    "c": "El tiempo exacto en segundos.",
+    "d": "Una cota ajustada: el crecimiento está acotado por arriba y por abajo por f(n)."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**O** = cota superior, **Ω** = cota inferior, **Θ** = cota ajustada (las dos a la vez).",
+   "epigrafe": "Algoritmos y complejidad",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-n-019",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué búsqueda estima la posición del elemento según su valor, suponiendo valores distribuidos uniformemente en un vector ordenado?",
+   "ctx": null,
+   "op": {
+    "a": "Búsqueda por interpolación.",
+    "b": "Búsqueda secuencial.",
+    "c": "Búsqueda binaria.",
+    "d": "Búsqueda en anchura."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "La **búsqueda por interpolación** calcula la posición probable por proporción: O(log log n) de media con datos uniformes, O(n) en el peor caso.",
+   "epigrafe": "Algoritmos de búsqueda",
+   "dificultad": 3
+  },
+  {
+   "id": "t12-n-020",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué organización de ficheros mantiene índices por campos secundarios en los que cada valor apunta a todos los registros que lo contienen?",
+   "ctx": null,
+   "op": {
+    "a": "Fichero secuencial.",
+    "b": "Fichero invertido.",
+    "c": "Fichero relativo.",
+    "d": "Fichero directo."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Los **ficheros invertidos** indexan por campos secundarios. Son la base de los índices de los motores de búsqueda de texto.",
+   "epigrafe": "Organización de ficheros",
+   "dificultad": 3
+  },
+  {
+   "id": "t12-n-021",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué es el factor de bloqueo de un fichero?",
+   "ctx": null,
+   "op": {
+    "a": "El porcentaje de registros que se procesan en cada ejecución.",
+    "b": "La frecuencia de altas y bajas.",
+    "c": "El número de registros lógicos que caben en un registro físico (bloque).",
+    "d": "El número de colisiones de la función hash."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Factor de bloqueo = registros lógicos por bloque. El porcentaje procesado es la **tasa de actividad** y la frecuencia de altas y bajas es la **volatilidad**.",
+   "epigrafe": "Organización de ficheros",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-n-022",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué formato de imagen admite compresión sin pérdida, canal alfa y es el sustituto libre de GIF?",
+   "ctx": null,
+   "op": {
+    "a": "JPEG.",
+    "b": "BMP.",
+    "c": "TIFF con JPEG.",
+    "d": "PNG."
+   },
+   "ok": "d",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**PNG** comprime sin pérdida (DEFLATE) y tiene canal alfa. Nació como alternativa libre a GIF, cuyo LZW estaba patentado.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-n-023",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué codificación de caracteres usa de 1 a 4 bytes por carácter y es compatible con ASCII?",
+   "ctx": null,
+   "op": {
+    "a": "UTF-8.",
+    "b": "UTF-32.",
+    "c": "ISO-8859-1.",
+    "d": "UCS-2."
+   },
+   "ok": "a",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**UTF-8** es de longitud variable (1 a 4 bytes) y los caracteres ASCII ocupan un byte idéntico. UTF-32 usa siempre 4 bytes e ISO-8859-1 solo cubre 256 caracteres.",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 1
+  },
+  {
+   "id": "t12-n-024",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Cuál es la complejidad de inserción en un árbol binario de búsqueda en el peor caso, si no está equilibrado?",
+   "ctx": null,
+   "op": {
+    "a": "O(log n).",
+    "b": "O(n).",
+    "c": "O(1).",
+    "d": "O(n log n)."
+   },
+   "ok": "b",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "Si las claves llegan ordenadas, el ABB degenera en una lista y la inserción cuesta **O(n)**. Los árboles equilibrados (AVL, rojo-negro) garantizan O(log n).",
+   "epigrafe": "Árboles",
+   "dificultad": 2
+  },
+  {
+   "id": "t12-n-025",
+   "tipo": "nueva",
+   "ref": null,
+   "origen": null,
+   "de": null,
+   "texto": "reformulado",
+   "q": "¿Qué formato de serialización usa la indentación para definir la estructura y es un superconjunto de JSON?",
+   "ctx": null,
+   "op": {
+    "a": "XML.",
+    "b": "CSV.",
+    "c": "YAML.",
+    "d": "INI."
+   },
+   "ok": "c",
+   "clave": "claude",
+   "anulada": false,
+   "obsoleta": false,
+   "explicacion": "**YAML** usa la indentación (espacios, no tabuladores) y desde la versión 1.2 es un superconjunto de JSON. Se usa en configuración (Kubernetes, Docker Compose).",
+   "epigrafe": "Formatos de información y ficheros",
+   "dificultad": 2
+  }
+ ],
+ "tarjetas": [
+  {
+   "id": "t12-c-001",
+   "anverso": "TAD",
+   "reverso": "Tipo abstracto de datos: valores + operaciones, definidos por una especificación independiente de la representación. En Java: interface (TAD) + class (implementación).",
+   "epigrafe": "Tipos abstractos de datos"
+  },
+  {
+   "id": "t12-c-002",
+   "anverso": "Pila",
+   "reverso": "LIFO. Operaciones: push, pop, top/peek, vacía.",
+   "epigrafe": "Tipos abstractos de datos"
+  },
+  {
+   "id": "t12-c-003",
+   "anverso": "Cola",
+   "reverso": "FIFO. Se inserta por el final y se extrae por el frente. Implementable con array circular o lista enlazada.",
+   "epigrafe": "Tipos abstractos de datos"
+  },
+  {
+   "id": "t12-c-004",
+   "anverso": "Bicola de entrada restringida",
+   "reverso": "Inserta por un extremo y borra por los dos (2017).",
+   "epigrafe": "Tipos abstractos de datos"
+  },
+  {
+   "id": "t12-c-005",
+   "anverso": "Bicola de salida restringida",
+   "reverso": "Inserta por los dos extremos y borra por uno.",
+   "epigrafe": "Tipos abstractos de datos"
+  },
+  {
+   "id": "t12-c-006",
+   "anverso": "Lista doblemente enlazada",
+   "reverso": "Cada nodo apunta al siguiente y al anterior: se recorre en ambos sentidos.",
+   "epigrafe": "Tipos abstractos de datos"
+  },
+  {
+   "id": "t12-c-007",
+   "anverso": "Lista circular",
+   "reverso": "El último nodo apunta al primero.",
+   "epigrafe": "Tipos abstractos de datos"
+  },
+  {
+   "id": "t12-c-008",
+   "anverso": "Estructura dinámica y no lineal",
+   "reverso": "Árbol (y grafo). Pila, cola y lista son lineales.",
+   "epigrafe": "Tipos abstractos de datos"
+  },
+  {
+   "id": "t12-c-009",
+   "anverso": "Hashing abierto frente a hashing cerrado",
+   "reverso": "Abierto = encadenamiento (lista por celda). Cerrado = direccionamiento abierto (sondeo lineal, cuadrático o doble hash en la misma tabla).",
+   "epigrafe": "Tipos abstractos de datos"
+  },
+  {
+   "id": "t12-c-010",
+   "anverso": "Factor de carga (hash)",
+   "reverso": "Número de elementos / tamaño de la tabla. HashMap de Java: 0,75 por defecto.",
+   "epigrafe": "Tipos abstractos de datos"
+  },
+  {
+   "id": "t12-c-011",
+   "anverso": "Grado de un árbol",
+   "reverso": "Máximo grado (número de hijos) de sus nodos. Árbol binario: grado 2.",
+   "epigrafe": "Árboles"
+  },
+  {
+   "id": "t12-c-012",
+   "anverso": "Recorridos en profundidad",
+   "reverso": "Preorden: R-I-D. Inorden: I-R-D. Postorden: I-D-R.",
+   "epigrafe": "Árboles"
+  },
+  {
+   "id": "t12-c-013",
+   "anverso": "Raíz a partir de un recorrido",
+   "reverso": "Preorden: el primero. Postorden: el último.",
+   "epigrafe": "Árboles"
+  },
+  {
+   "id": "t12-c-014",
+   "anverso": "Máximo de nodos en un árbol binario de h niveles",
+   "reverso": "2^h − 1 (4 niveles: 15). Nivel i: 2^(i−1) nodos.",
+   "epigrafe": "Árboles"
+  },
+  {
+   "id": "t12-c-015",
+   "anverso": "Inorden en un ABB",
+   "reverso": "Devuelve las claves ordenadas de menor a mayor.",
+   "epigrafe": "Árboles"
+  },
+  {
+   "id": "t12-c-016",
+   "anverso": "Árbol rojo-negro: reglas",
+   "reverso": "Raíz negra; hojas nulas negras; un rojo tiene hijos negros; misma altura negra en todos los caminos.",
+   "epigrafe": "Árboles"
+  },
+  {
+   "id": "t12-c-017",
+   "anverso": "Árbol 2-3-4",
+   "reverso": "Nodos con 2, 3 o 4 hijos (1, 2 o 3 claves). Hojas al mismo nivel. Árbol B de orden 4.",
+   "epigrafe": "Árboles"
+  },
+  {
+   "id": "t12-c-018",
+   "anverso": "Árbol B de orden m",
+   "reverso": "Máximo m hijos y m−1 claves por nodo; mínimo ⌈m/2⌉ hijos en nodos no raíz. B+: datos en hojas enlazadas (índices de SGBD).",
+   "epigrafe": "Árboles"
+  },
+  {
+   "id": "t12-c-019",
+   "anverso": "Montículo (heap)",
+   "reverso": "Árbol binario completo con padre ≥ hijos (max-heap). Colas de prioridad y heapsort.",
+   "epigrafe": "Árboles"
+  },
+  {
+   "id": "t12-c-020",
+   "anverso": "Dijkstra",
+   "reverso": "Caminos mínimos desde un origen, pesos no negativos. Voraz.",
+   "epigrafe": "Grafos"
+  },
+  {
+   "id": "t12-c-021",
+   "anverso": "Bellman-Ford",
+   "reverso": "Caminos mínimos desde un origen con pesos negativos; detecta ciclos negativos.",
+   "epigrafe": "Grafos"
+  },
+  {
+   "id": "t12-c-022",
+   "anverso": "Floyd-Warshall",
+   "reverso": "Caminos mínimos entre todos los pares. Programación dinámica, O(V³).",
+   "epigrafe": "Grafos"
+  },
+  {
+   "id": "t12-c-023",
+   "anverso": "Kruskal y Prim",
+   "reverso": "Árbol recubridor mínimo. Kruskal ordena aristas; Prim crece desde un vértice. Ambos voraces.",
+   "epigrafe": "Grafos"
+  },
+  {
+   "id": "t12-c-024",
+   "anverso": "BFS y DFS",
+   "reverso": "Anchura: cola. Profundidad: pila o recursividad.",
+   "epigrafe": "Grafos"
+  },
+  {
+   "id": "t12-c-025",
+   "anverso": "Orden de complejidades",
+   "reverso": "O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(n³) < O(2ⁿ) < O(n!).",
+   "epigrafe": "Algoritmos y complejidad"
+  },
+  {
+   "id": "t12-c-026",
+   "anverso": "O, Ω y Θ",
+   "reverso": "O: cota superior. Ω: cota inferior. Θ: cota ajustada.",
+   "epigrafe": "Algoritmos y complejidad"
+  },
+  {
+   "id": "t12-c-027",
+   "anverso": "Algoritmo voraz",
+   "reverso": "Elige el óptimo local en cada paso y no vuelve atrás. No siempre da el óptimo global.",
+   "epigrafe": "Algoritmos y complejidad"
+  },
+  {
+   "id": "t12-c-028",
+   "anverso": "Divide y vencerás frente a programación dinámica",
+   "reverso": "DyV: subproblemas independientes (mergesort, quicksort). PD: subproblemas solapados que se tabulan.",
+   "epigrafe": "Algoritmos y complejidad"
+  },
+  {
+   "id": "t12-c-029",
+   "anverso": "Burbuja",
+   "reverso": "Compara cada elemento con su sucesor e intercambia. Máximo N−1 pasadas. O(n²); estable.",
+   "epigrafe": "Algoritmos de ordenación"
+  },
+  {
+   "id": "t12-c-030",
+   "anverso": "Selección e inserción",
+   "reverso": "Selección: busca el mínimo y lo pone delante (no estable). Inserción: coloca cada elemento en la parte ordenada (estable, O(n) si ya ordenado).",
+   "epigrafe": "Algoritmos de ordenación"
+  },
+  {
+   "id": "t12-c-031",
+   "anverso": "Quicksort",
+   "reverso": "O(n log n) medio y mejor caso; O(n²) peor caso (pivote extremo). No estable.",
+   "epigrafe": "Algoritmos de ordenación"
+  },
+  {
+   "id": "t12-c-032",
+   "anverso": "Mergesort",
+   "reverso": "Divide y mezcla. O(n log n) siempre, estable, memoria extra O(n).",
+   "epigrafe": "Algoritmos de ordenación"
+  },
+  {
+   "id": "t12-c-033",
+   "anverso": "Ordenación en tiempo lineal",
+   "reverso": "Radix (urnas, dígito a dígito), counting sort y bucket sort: no comparan.",
+   "epigrafe": "Algoritmos de ordenación"
+  },
+  {
+   "id": "t12-c-034",
+   "anverso": "Búsqueda binaria",
+   "reverso": "O(log n). Exige vector ordenado y acceso directo.",
+   "epigrafe": "Algoritmos de búsqueda"
+  },
+  {
+   "id": "t12-c-035",
+   "anverso": "Secuencial indexado",
+   "reverso": "Áreas primaria, de índices y de desbordamiento. Acceso secuencial y directo. Solo soporte direccionable.",
+   "epigrafe": "Organización de ficheros"
+  },
+  {
+   "id": "t12-c-036",
+   "anverso": "Fichero secuencial: cuándo",
+   "reverso": "Alta tasa de utilización y fichero estable, procesos por lotes. Cualquier soporte.",
+   "epigrafe": "Organización de ficheros"
+  },
+  {
+   "id": "t12-c-037",
+   "anverso": "Compresión con y sin pérdida",
+   "reverso": "Sin pérdida: RLE, Huffman, LZW, DEFLATE. Con pérdida: DCT (JPEG, MPEG), wavelet (JPEG 2000), modelos psicoacústicos (MP3).",
+   "epigrafe": "Formatos de información y ficheros"
+  },
+  {
+   "id": "t12-c-038",
+   "anverso": "Subconjuntos PDF",
+   "reverso": "PDF/A archivo, PDF/X imprenta, PDF/E ingeniería, PDF/UA accesibilidad. PDF/I no existe.",
+   "epigrafe": "Formatos de información y ficheros"
+  },
+  {
+   "id": "t12-c-039",
+   "anverso": "JSON (RFC 8259)",
+   "reverso": "Valores: object, array, number, string, true, false, null. Objeto no ordenado. Sin comentarios. UTF-8. application/json.",
+   "epigrafe": "Formatos de información y ficheros"
+  },
+  {
+   "id": "t12-c-040",
+   "anverso": "CSV (RFC 4180)",
+   "reverso": "Registros separados por CRLF; campos con coma, comillas o salto de línea entre comillas dobles; comilla interior duplicada. text/csv.",
+   "epigrafe": "Formatos de información y ficheros"
+  },
+  {
+   "id": "t12-c-041",
+   "anverso": "Vectorial frente a mapa de bits",
+   "reverso": "Vectorial: SVG, EPS, AI. Mapa de bits: JPEG, PNG, GIF, BMP, TIFF, WebP, HEIF/AVIF.",
+   "epigrafe": "Formatos de información y ficheros"
+  },
+  {
+   "id": "t12-c-042",
+   "anverso": "AV1 y AVIF",
+   "reverso": "AV1: códec de vídeo libre de AOMedia (2018). AVIF: imagen basada en AV1.",
+   "epigrafe": "Formatos de información y ficheros"
+  }
+ ],
+ "discrepancias": [
+  {
+   "ref": "LI2015-ej1-I-II-32",
+   "origen": {
+    "anio": 2015,
+    "parte": "ej1",
+    "n": 32
+   },
+   "clave_oficial": "d",
+   "temario_dice": "«diccionario» (sin verificar; mapa es casi sinónimo)",
+   "veredicto": "Manda la clave oficial d (Mapa). Diccionario y mapa son prácticamente sinónimos, así que la pregunta es ambigua y podría impugnarse. Hay que corregir el temario para que recoja la oficial."
+  },
+  {
+   "ref": "LI2008-b3-b3-18",
+   "origen": {
+    "anio": 2008,
+    "parte": "b3",
+    "n": 18
+   },
+   "clave_oficial": "a",
+   "temario_dice": "«depende del código, que solo está como imagen (sin verificar)»",
+   "veredicto": "Clave oficial discutible: swap1 recibe los punteros por valor y no intercambia nada, así que la primera lista sale 10 5 7 2 3 (opción c). La a) solo encaja con la segunda ordenación (swap2), que además usa aux sin inicializar. Se mantiene la oficial a, explicada; el temario ya puede citar el código y esta traza."
+  }
+ ]
+}
