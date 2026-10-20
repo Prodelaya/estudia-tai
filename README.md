@@ -56,7 +56,9 @@ En el túnel, añade una regla de entrada antes de la regla final `http_status:4
 
 Después ejecuta `cloudflared tunnel route dns <tu-túnel> tai.prodelaya.dev` y reinicia el túnel.
 
-Para actualizar: `git pull && npm ci && npm run build && pm2 restart estudia-tai`. Si solo ha cambiado `content/`, basta con `git pull`.
+Si el servidor usa systemd en vez de PM2, usa `deploy/estudia-tai.service` (instrucciones dentro del fichero) en lugar del paso de `pm2`.
+
+Para actualizar: `git pull && npm ci && npm run build && pm2 restart estudia-tai` (o `sudo systemctl restart estudia-tai`). Si solo ha cambiado `content/`, basta con `git pull`.
 
 ## Despliegue con Docker Compose y Caddy (servidor con los puertos 80 y 443 libres)
 

@@ -4,4 +4,6 @@ dist/
 *.db-*
 .env
 apps/api/data/
+data/*
+!data/.gitkeep
 *.tsbuildinfo

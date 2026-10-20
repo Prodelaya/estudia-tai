@@ -1,0 +1,28 @@
+# Unidad systemd: un proceso Node que sirve API, web y contenido en 127.0.0.1:3002.
+# Instalar (ajusta User, WorkingDirectory y la ruta de node 22, `which node`):
+#   sudo cp deploy/estudia-tai.service /etc/systemd/system/
+#   sudo systemctl daemon-reload && sudo systemctl enable --now estudia-tai
+#   journalctl -u estudia-tai -f
+[Unit]
+Description=Estudia TAI (web de repaso)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=laya
+WorkingDirectory=/home/laya/estudia-tai
+EnvironmentFile=/home/laya/estudia-tai/.env
+Environment=NODE_ENV=production HOST=127.0.0.1 PORT=3002 WEB_DIR=apps/web/dist CONTENT_DIR=content DB_PATH=data/estudia-tai.db
+ExecStart=/usr/bin/node apps/api/dist/server.js
+Restart=on-failure
+RestartSec=5
+# Endurecimiento: solo puede escribir en data/
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/laya/estudia-tai/data
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
