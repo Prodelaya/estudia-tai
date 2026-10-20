@@ -58,13 +58,14 @@ La suspensión de derechos está en el **Capítulo V del Título I (art. 55)** *
 
 ### Reformas de la Constitución
 
-Solo ha habido tres reformas, todas por el procedimiento ordinario del art. 167:
+Ha habido **cuatro** reformas, todas por el procedimiento ordinario del art. 167 **[Salió 2026 extraordinario: «Cuatro veces»]**:
 
 | Año | Artículo | Qué cambió |
 |---|---|---|
 | 1992 | 13.2 | Añade "y pasivo": los extranjeros pueden ser elegidos en elecciones municipales (Tratado de Maastricht) |
 | 2011 | 135 | Estabilidad presupuestaria; prioridad absoluta del pago de la deuda pública |
 | 2024 | 49 | Sustituye "disminuidos físicos, sensoriales y psíquicos" por "personas con discapacidad" (BOE 17-02-2024) |
+| 2026 | 69.3 | La isla de Formentera elige un senador propio; antes compartía senador con Ibiza (Reforma de 19-05-2026, BOE 20-05-2026, BOE-A-2026-10881) |
 
 ### Reforma constitucional (Título X)
 

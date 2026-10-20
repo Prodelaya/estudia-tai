@@ -1002,7 +1002,7 @@ using var conn2 = new SqlConnection(connString);
 
 ### 11.4 Programación asíncrona: async, await y Task
 
-**[Salió 2025 b3]** Un método `async Task` es asíncrono y no devuelve valor; si debe devolver un dato, la firma es `async Task<int> DevolverDatoAsync()`. Ojo: la plantilla provisional de 2025 dio como correcta "a) Thread int DevolverDato()" (ver Trampas). Dentro usa `await` para esperar operaciones sin bloquear el hilo.
+**[Salió 2025 b3]** Un método `async Task` es asíncrono y no devuelve valor; si debe devolver un dato, la firma es `async Task<int> DevolverDatoAsync()`. La plantilla definitiva de 2025 da como correcta **b) `async Task DevolverDato()`** (la provisional había dado la a, `Thread int`, que no es una firma válida). Dentro usa `await` para esperar operaciones sin bloquear el hilo.
 
 ```csharp
 public async Task<Solicitud?> ObtenerAsync(int id)
@@ -1448,7 +1448,7 @@ xUnit, NUnit y MSTest son los frameworks de pruebas unitarias. Moq y NSubstitute
 - **Tomcat no es un servidor de aplicaciones Jakarta EE completo**: es un contenedor web.
 - **Blazor Hybrid frente a MAUI (2022).** Blazor Hybrid usa componentes web dentro de una app nativa; el framework nativo es MAUI.
 - **Nombres inventados**: Mockete, Ruby Hibernation, track4j, logTrack, G#, Cloos, AppServer, Page_PrePage, Operation (ADO.NET), String2Date, Trash busher.
-- **async Task en C# (2025 b3 9), posible impugnación.** La plantilla provisional da "a) Thread int DevolverDato()", que no es una firma válida de C# ni usa `Task`/`async`. Lo esperable sería algo como `async Task<int> DevolverDato()`. Probablemente es una errata de transcripción del cuestionario ("Thread" por "Task<"); se mantiene la respuesta oficial, pero es candidata a reclamación.
+- **async Task en C# (2025 b3 9).** La plantilla provisional dio "a) Thread int DevolverDato()", que no es C# válido; la definitiva lo corrigió a **b) `async Task DevolverDato()`**. Trampas de las otras opciones: `Thread` no es un modificador ni un tipo de retorno asíncrono, `async Thread<int>` no existe (lo asíncrono devuelve `Task`, `Task<T>` o `ValueTask`) y `await` se usa dentro del cuerpo, nunca en la firma.
 - **Ensamblados (2025).** La opción correcta fue "solo se cargan en memoria si son necesarios": el CLR carga los ensamblados bajo demanda, no todos al arrancar.
 - **LifecycleListener (2025 reserva).** Se registra en `server.xml` dentro de `<Server>` (elemento `<Listener>`), no en `web.xml`: no es un listener de Servlet.
 - **Distractores cruzados entre lenguajes**: `import` (Java) frente a `using` (C#), `executeQuery` (JDBC) frente a `ExecuteReader` (ADO.NET), `mysqli_query` (PHP), `To_date` (Oracle SQL), `Console.Read` frente a `ReadLine`.

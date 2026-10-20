@@ -510,7 +510,7 @@ Combina factores de categorías distintas **[Salió 2025]**:
 - Algo que se **tiene**: token, tarjeta criptográfica, móvil con app OTP.
 - Algo que se **es**: huella, rostro (biometría).
 
-Dos contraseñas no son MFA: son del mismo factor. Ojo: en 2025 la plantilla provisional dio por buena como MFA "Escáner de Iris + Huella dactilar" (ver Trampas). Los SMS son el segundo factor más débil (SIM swapping). Lo más robusto frente a phishing son FIDO2/WebAuthn y las *passkeys*. El ENS exige doble factor para accesos remotos y en categorías media y alta.
+Dos contraseñas no son MFA: son del mismo factor. Por eso **iris + huella NO es MFA**: las dos son «algo que se es» **[Salió 2025: era la respuesta a «cuál NO es MFA»]**. Los SMS son el segundo factor más débil (SIM swapping). Lo más robusto frente a phishing son FIDO2/WebAuthn y las *passkeys*. El ENS exige doble factor para accesos remotos y en categorías media y alta.
 
 ### Medidas técnicas en el puesto
 
@@ -705,5 +705,5 @@ El **Reglamento (UE) 2024/2847 de Ciberresiliencia** exige seguridad desde el di
 - **ISO 25010**: en la versión 2023 la "usabilidad" pasa a llamarse "capacidad de interacción".
 - **OWASP**: hoy significa *Open Worldwide Application Security Project* (antes *Open Web*).
 - **SMS como MFA**: válido como segundo factor, pero desaconsejado frente a FIDO2 o apps.
-- **MFA con dos biometrías (2025)**: la plantilla provisional da como MFA "Escáner de Iris + Huella dactilar", aunque ambos son del factor "algo que se es". Choca con la regla de factores de categorías distintas: posible impugnación. Para el examen, la respuesta oficial es esa.
+- **MFA con dos biometrías (2025)**: la pregunta pedía cuál **NO** es MFA y la respuesta es "Escáner de Iris + Huella dactilar", porque ambos son del mismo factor (algo que se es). Lee bien el «NO»: contraseña + OTP, contraseña + iris y tarjeta + reconocimiento facial sí combinan factores distintos.
 - **XSS (2025)**: la plantilla da "validar y escapar los datos antes de mostrarlos". Coincide con OWASP: escapar la salida es la defensa principal y validar la entrada, la complementaria.
