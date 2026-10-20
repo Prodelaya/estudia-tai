@@ -2,7 +2,7 @@ import Database from 'better-sqlite3';
 import { mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
 
-// Un único usuario: no hay tabla de usuarios. Las migraciones se aplican en orden y se anotan en user_version.
+// Las migraciones se aplican en orden y se anotan en user_version.
 const MIGRACIONES = [
   `CREATE TABLE respuestas (
      id INTEGER PRIMARY KEY,
@@ -42,6 +42,47 @@ const MIGRACIONES = [
    );
    CREATE TABLE sesiones (
      token TEXT PRIMARY KEY,
+     expira INTEGER NOT NULL
+   );`,
+  `CREATE TABLE usuarios (
+     id INTEGER PRIMARY KEY,
+     nombre TEXT NOT NULL UNIQUE,
+     password_hash TEXT
+   );
+   INSERT INTO usuarios (id, nombre) VALUES (1, 'laya92'), (2, 'nosa'), (3, 'jota');
+   ALTER TABLE respuestas ADD COLUMN usuario_id INTEGER NOT NULL DEFAULT 1;
+   ALTER TABLE intentos ADD COLUMN usuario_id INTEGER NOT NULL DEFAULT 1;
+   ALTER TABLE sesiones ADD COLUMN usuario_id INTEGER NOT NULL DEFAULT 1;
+   CREATE INDEX respuestas_usuario ON respuestas(usuario_id, pregunta_id, ts);
+   ALTER TABLE srs RENAME TO srs_anterior;
+   CREATE TABLE srs (
+     usuario_id INTEGER NOT NULL DEFAULT 1 REFERENCES usuarios(id),
+     tarjeta_id TEXT NOT NULL,
+     tema INTEGER,
+     facilidad REAL NOT NULL,
+     intervalo INTEGER NOT NULL,
+     repeticiones INTEGER NOT NULL,
+     vence INTEGER NOT NULL,
+     ts INTEGER NOT NULL,
+     PRIMARY KEY (usuario_id, tarjeta_id)
+   );
+   INSERT INTO srs SELECT 1, tarjeta_id, tema, facilidad, intervalo, repeticiones, vence, ts FROM srs_anterior;
+   DROP TABLE srs_anterior;
+   ALTER TABLE marcas RENAME TO marcas_anterior;
+   CREATE TABLE marcas (
+     usuario_id INTEGER NOT NULL DEFAULT 1 REFERENCES usuarios(id),
+     pregunta_id TEXT NOT NULL,
+     tema INTEGER,
+     nota TEXT NOT NULL DEFAULT '',
+     resuelta INTEGER NOT NULL DEFAULT 0,
+     ts INTEGER NOT NULL,
+     PRIMARY KEY (usuario_id, pregunta_id)
+   );
+   INSERT INTO marcas SELECT 1, pregunta_id, tema, nota, resuelta, ts FROM marcas_anterior;
+   DROP TABLE marcas_anterior;
+   CREATE TABLE invitaciones (
+     usuario_id INTEGER PRIMARY KEY REFERENCES usuarios(id),
+     token_hash TEXT NOT NULL UNIQUE,
      expira INTEGER NOT NULL
    );`,
 ];
