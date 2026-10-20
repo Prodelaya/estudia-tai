@@ -1,6 +1,8 @@
 import Fastify, { type FastifyReply, type FastifyRequest } from 'fastify';
 import cookie from '@fastify/cookie';
 import rateLimit from '@fastify/rate-limit';
+import estatico from '@fastify/static';
+import { resolve } from 'node:path';
 import type { DB } from './db.js';
 import { COOKIE, DURACION_MS, cerrarSesion, crearSesion, sesionValida, verificar } from './auth.js';
 
@@ -10,6 +12,9 @@ export interface Opciones {
   secreto: string;
   cookieSegura?: boolean;
   logger?: boolean;
+  /** Si se indican, la propia API sirve la web compilada y el contenido (sin Caddy delante). */
+  dirWeb?: string;
+  dirContenido?: string;
 }
 
 const LETRA = { type: 'string', enum: ['a', 'b', 'c', 'd'] } as const;
@@ -146,6 +151,25 @@ export async function crearApp(o: Opciones) {
       };
     });
   });
+
+  if (o.dirContenido) {
+    const raiz = resolve(o.dirContenido);
+    app.register(async datos => {
+      datos.addHook('onRequest', exigeSesion);
+      datos.addHook('onSend', async (_req, rep) => { rep.header('cache-control', 'private, no-cache'); });
+      await datos.register(estatico, { root: raiz, prefix: '/data/', decorateReply: false, index: false });
+    });
+  }
+
+  if (o.dirWeb) {
+    const raiz = resolve(o.dirWeb);
+    await app.register(estatico, { root: raiz, prefix: '/', wildcard: false, index: false });
+    // SPA: cualquier ruta GET que no sea de la API, de datos ni un fichero existente devuelve index.html.
+    app.setNotFoundHandler((req, rep) => {
+      if (req.method !== 'GET' || req.url.startsWith('/api/') || req.url.startsWith('/data/')) return rep.code(404).send({ error: 'no existe' });
+      return rep.sendFile('index.html', raiz);
+    });
+  }
 
   return app;
 }

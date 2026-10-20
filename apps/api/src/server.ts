@@ -18,7 +18,11 @@ if (!produccion) {
 }
 
 const db = abrir(env.DB_PATH ?? 'data/estudia-tai.db');
-const app = await crearApp({ db, passwordHash, secreto, cookieSegura: produccion, logger: true });
+const app = await crearApp({
+  db, passwordHash, secreto, cookieSegura: produccion, logger: true,
+  dirWeb: env.WEB_DIR || undefined,
+  dirContenido: env.CONTENT_DIR || undefined,
+});
 await app.listen({ host: env.HOST ?? '127.0.0.1', port: Number(env.PORT ?? 3000) });
 
 for (const s of ['SIGINT', 'SIGTERM'] as const) process.on(s, async () => { await app.close(); db.close(); process.exit(0); });

@@ -57,3 +57,25 @@ test('guarda SRS, intentos y marcas', async () => {
   const det = (await app.inject({ url: `/api/intentos/${it.id}`, headers: { cookie } })).json();
   assert.deepEqual(det.respuestas, { q1: 'a' });
 });
+
+test('sirve web y contenido protegido cuando se configuran los directorios', async () => {
+  const { mkdtempSync, writeFileSync, mkdirSync } = await import('node:fs');
+  const { join } = await import('node:path');
+  const { tmpdir } = await import('node:os');
+  const dir = mkdtempSync(join(tmpdir(), 'tai-'));
+  mkdirSync(join(dir, 'web')); mkdirSync(join(dir, 'content'));
+  writeFileSync(join(dir, 'web', 'index.html'), '<!doctype html><title>SPA</title>');
+  writeFileSync(join(dir, 'content', 'temas.json'), '[]');
+  const app = await crearApp({ db: abrir(':memory:'), passwordHash: await hashear('s'), secreto: 'x'.repeat(40), cookieSegura: false, dirWeb: join(dir, 'web'), dirContenido: join(dir, 'content') });
+  assert.equal((await app.inject({ url: '/tema/15/test' })).body.includes('SPA'), true);
+  assert.equal((await app.inject({ url: '/data/temas.json' })).statusCode, 401);
+  const login = await app.inject({ method: 'POST', url: '/api/login', payload: { password: 's' } });
+  const cookie = String(login.headers['set-cookie']).split(';')[0];
+  const r = await app.inject({ url: '/data/temas.json', headers: { cookie } });
+  assert.equal(r.statusCode, 200);
+  assert.equal(r.body, '[]');
+  writeFileSync(join(dir, 'secreto.txt'), 'NO-DEBE-SALIR');
+  for (const url of ['/data/../secreto.txt', '/data/..%2fsecreto.txt', '/data/%2e%2e/secreto.txt'])
+    assert.equal((await app.inject({ url, headers: { cookie } })).body.includes('NO-DEBE-SALIR'), false, url);
+  assert.equal((await app.inject({ url: '/api/nada', headers: { cookie } })).statusCode, 404);
+});

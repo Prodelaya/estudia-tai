@@ -36,7 +36,29 @@ npm run check          # tipos + validación del contenido
 npm test
 ```
 
-## Despliegue en tu servidor Ubuntu
+## Despliegue con PM2 y Cloudflare Tunnel (sin Docker ni puertos abiertos)
+
+Es el montaje recomendado si el servidor ya usa PM2 y un túnel de Cloudflare. Un solo proceso Node sirve la API, la web y el contenido (este solo con sesión) en `127.0.0.1:3002`, y el túnel lo publica con HTTPS.
+
+```bash
+git clone https://github.com/Prodelaya/estudia-tai && cd estudia-tai
+npm ci && npm run build
+cp .env.example .env    # rellena APP_PASSWORD_HASH (npm run hash-password -- 'tu-contraseña') y SESSION_SECRET (openssl rand -hex 32); DOMAIN no se usa aquí
+pm2 start deploy/ecosystem.config.cjs && pm2 save
+```
+
+En el túnel, añade una regla de entrada antes de la regla final `http_status:404` de `~/.cloudflared/config.yml`:
+
+```yaml
+  - hostname: tai.prodelaya.dev
+    service: http://localhost:3002
+```
+
+Después ejecuta `cloudflared tunnel route dns <tu-túnel> tai.prodelaya.dev` y reinicia el túnel.
+
+Para actualizar: `git pull && npm ci && npm run build && pm2 restart estudia-tai`. Si solo ha cambiado `content/`, basta con `git pull`.
+
+## Despliegue con Docker Compose y Caddy (servidor con los puertos 80 y 443 libres)
 
 Requisitos: Docker con el plugin compose, y un registro DNS A/AAAA de tu dominio apuntando al servidor con los puertos 80 y 443 abiertos (Caddy saca el certificado de Let's Encrypt solo).
 
