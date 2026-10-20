@@ -36,6 +36,19 @@ npm run check          # tipos + validación del contenido
 npm test
 ```
 
+## Cuentas personales e invitaciones
+
+Las cuentas de esta instalación son `laya92`, `nosa` y `jota`. Cada una tiene su propio progreso, tarjetas, intentos, dudas y exportaciones; comparten únicamente el contenido de estudio.
+
+- Al actualizar por primera vez, el progreso y las sesiones anteriores se asignan a `laya92`. Su contraseña sigue siendo la ya provisionada. El hash de `APP_PASSWORD_HASH` se importa internamente una sola vez: reiniciar o cambiar esa variable después no restablece contraseñas existentes.
+- `nosa` y `jota` no pueden entrar hasta elegir una contraseña mediante invitación. No existe registro público ni contraseña inicial compartida.
+- Entra como `laya92`, abre **Usuarios** y genera una invitación para cada persona. Copia el enlace y envíalo únicamente a su destinatario por un canal privado. No publiques enlaces en logs o incidencias.
+- Cada enlace caduca en 48 horas y se consume una sola vez. Renovar una invitación invalida la anterior. No permite restablecer una cuenta ya activa.
+- El destinatario abre el enlace HTTPS y elige y confirma su contraseña (12–200 caracteres). Después entra con su nombre de usuario y esa contraseña.
+- El secreto del enlace viaja en el fragmento `#`, no en la ruta ni en la consulta HTTP; el navegador lo retira de la dirección y lo envía únicamente en el cuerpo de la activación. La base guarda solo su hash.
+
+Antes de desplegar una actualización con migración, detén el servicio y conserva una copia privada recuperable de la base SQLite y del código anterior. No copies únicamente el fichero principal de una SQLite activa con WAL. No es necesario cambiar `.env`, Node ni el túnel para activar esta funcionalidad. No ejecutes la migración sobre producción como prueba.
+
 ## Despliegue con PM2 y Cloudflare Tunnel (sin Docker ni puertos abiertos)
 
 Es el montaje recomendado si el servidor ya usa PM2 y un túnel de Cloudflare. Un solo proceso Node sirve la API, la web y el contenido (este solo con sesión) en `127.0.0.1:3002`, y el túnel lo publica con HTTPS.
