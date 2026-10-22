@@ -10,7 +10,9 @@ import { NOMBRE_PARTE } from './Examenes';
 
 /** propia: de tus temas (true), de otro tema (false) o sin tema asignado (null, siempre se incluye). */
 type Pendiente = PreguntaVista & { motivo: MotivoRepaso; propia: boolean | null };
-const MOTIVO: Record<MotivoRepaso, string> = { fallada: 'fallada', blanco: 'en blanco', confirmar: 'comprobar que la recuerdas' };
+const MOTIVO: Record<MotivoRepaso, [string, string]> = {
+  fallada: ['fallada', 'falladas'], blanco: ['en blanco', 'en blanco'], confirmar: ['para comprobar que la recuerdas', 'para comprobar que las recuerdas'],
+};
 
 /**
  * Lo que toca hoy: tarjetas vencidas y preguntas pendientes de todo lo que has respondido, tanto de tus temas
@@ -109,7 +111,7 @@ export function Repaso() {
                 <button className="btn ghost" disabled={!vencidas.length} onClick={() => empezar('tarjetas')}>{vencidas.length} tarjetas</button>
               </div>
               {elegidas.length > 0 && (
-                <p className="meta">{(['fallada', 'blanco', 'confirmar'] as MotivoRepaso[]).filter(cuenta).map(m => `${cuenta(m)} ${MOTIVO[m]}`).join(' · ')}</p>
+                <p className="meta">{(['fallada', 'blanco', 'confirmar'] as MotivoRepaso[]).filter(cuenta).map(m => `${cuenta(m)} ${MOTIVO[m][cuenta(m) === 1 ? 0 : 1]}`).join(' · ')}</p>
               )}
             </>
           ) : <p className="empty">No tienes nada pendiente hoy. Haz un test, un simulacro o estudia tarjetas y lo que falles aparecerá aquí.</p>}
