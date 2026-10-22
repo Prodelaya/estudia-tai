@@ -20,7 +20,7 @@ export function SesionPractica({ preguntas, onFin, origen = 'test' }: { pregunta
       <div className="stack">
         <div className="panel">
           <h2>Resultado: {aciertos} de {respondidas.length}</h2>
-          <p className="lead">Las falladas vuelven a salir en «Repaso» hasta que las aciertes.</p>
+          <p className="lead">Las falladas vuelven a salir en «Repaso» hasta que las aciertes dos veces con al menos un día de diferencia.</p>
         </div>
         <div className="row"><button className="btn" onClick={onFin}>Volver</button></div>
       </div>

@@ -1,6 +1,16 @@
-import type { EstadoSrs, Letra, NotaParte, Progreso } from './tipos';
+import type { EstadoSrs, Letra, Modo, NotaParte, Progreso } from './tipos';
+
+export interface ItemRespuesta { pregunta_id: string; tema: number | null; elegida: Letra | null; acierto: boolean; origen: string; modo: Modo; ts: number }
+export interface CuerpoIntento {
+  examen_id: string; partes: string[]; notas: Record<string, NotaParte>; respuestas: Record<string, Letra>; segundos: number | null;
+  modo: Modo; limite: number | null; cliente_id: string;
+}
 
 export class NoAutenticado extends Error {}
+/** Respuesta HTTP de error distinta de 401: un 4xx no se arregla reintentando. */
+export class ErrorHttp extends Error {
+  constructor(readonly status: number, mensaje: string) { super(mensaje); }
+}
 export interface UsuarioActual { nombre: string; admin: boolean }
 export interface EstadoCuenta { nombre: string; activo: boolean }
 
@@ -26,7 +36,7 @@ async function pedir<T>(url: string, init?: RequestInit, cambiaSesion = false): 
     }
     throw new NoAutenticado();
   }
-  if (!r.ok) throw new Error(`${r.status} ${await r.text()}`);
+  if (!r.ok) throw new ErrorHttp(r.status, `${r.status} ${await r.text()}`);
   const resultado = r.status === 204 ? (undefined as T) : await r.json();
   if (cambiaSesion) ++revisionSesion;
   return resultado;
@@ -44,11 +54,9 @@ export const api = {
   logout: () => pedir('/api/logout', { method: 'POST' }, true),
   check: () => pedir<void>('/api/auth/check'),
   progreso: () => pedir<Progreso>('/api/progreso'),
-  respuestas: (items: { pregunta_id: string; tema: number | null; elegida: Letra; acierto: boolean; origen: string }[]) =>
-    pedir('/api/respuestas', json('POST', { items })),
+  respuestas: (items: ItemRespuesta[]) => pedir('/api/respuestas', json('POST', { items })),
   srs: (e: EstadoSrs) => pedir(`/api/srs/${encodeURIComponent(e.tarjeta_id)}`, json('PUT', e)),
-  intento: (b: { examen_id: string; partes: string[]; notas: Record<string, NotaParte>; respuestas: Record<string, Letra>; segundos: number | null }) =>
-    pedir<{ id: number }>('/api/intentos', json('POST', b)),
+  intento: (b: CuerpoIntento) => pedir<{ id: number }>('/api/intentos', json('POST', b)),
   marca: (id: string, b: { tema: number | null; nota: string; resuelta?: boolean }) =>
     pedir(`/api/marcas/${encodeURIComponent(id)}`, json('PUT', b)),
   borrarMarca: (id: string) => pedir(`/api/marcas/${encodeURIComponent(id)}`, { method: 'DELETE' }),

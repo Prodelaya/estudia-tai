@@ -1,13 +1,14 @@
 // Comprueba que el contenido de content/ es coherente antes de desplegar: JSON válido, 4 opciones,
-// clave en a-d (o null si anulada), ids únicos, refs que existen en los exámenes e imágenes presentes.
-import { existsSync, readFileSync, readdirSync } from 'node:fs';
+// clave en a-d (o null si anulada), ids únicos, refs que existen en los exámenes, imágenes presentes,
+// históricas idénticas a su pregunta de examen, sin restos del PDF, y criterios de corte bien formados.
+import { existsSync } from 'node:fs';
 import { join } from 'node:path';
+import { RAIZ, RESTOS, diferencias, leer, preguntasDeExamen } from './historicas.mjs';
 
-const RAIZ = new URL('../content/', import.meta.url).pathname;
 const errores = [];
 const avisos = [];
-const leer = f => JSON.parse(readFileSync(join(RAIZ, f), 'utf8'));
 const LETRAS = ['a', 'b', 'c', 'd'];
+const examen = preguntasDeExamen();
 
 function revisarPregunta(q, donde) {
   if (!q.q?.trim()) errores.push(`${donde}: enunciado vacío`);
@@ -16,6 +17,15 @@ function revisarPregunta(q, donde) {
   else if (!LETRAS.includes(q.ok)) errores.push(`${donde}: clave «${q.ok}» fuera de a-d`);
   for (const m of `${q.q} ${q.ctx ?? ''} ${q.ctx2 ?? ''}`.matchAll(/\[\[img:([\w.-]+)\]\]/g))
     if (!existsSync(join(RAIZ, 'img', m[1]))) errores.push(`${donde}: falta la imagen ${m[1]}`);
+  for (const [campo, texto] of [['enunciado', q.q], ...LETRAS.map(l => [`opción ${l}`, q.op?.[l] ?? ''])])
+    for (const r of RESTOS) if (r.test(texto)) errores.push(`${donde}: resto del PDF en ${campo} (${texto.match(r)[0]})`);
+}
+
+function revisarCriterio(c, donde) {
+  if (typeof c.corte_directa !== 'number' || c.corte_directa <= 0) errores.push(`${donde}: corte_directa debe ser un número positivo`);
+  if (!c.fuente?.trim()) errores.push(`${donde}: criterio sin fuente`);
+  if (typeof c.oficial !== 'boolean') errores.push(`${donde}: criterio sin «oficial»`);
+  if (c.transformacion_lineal && !c.oficial) errores.push(`${donde}: transformación sin fuente oficial`);
 }
 
 const temas = leer('temas.json');
@@ -26,6 +36,7 @@ for (const e of indice) {
   for (const [p, parte] of Object.entries(ex.partes)) {
     for (const m of (parte.contexto ?? '').matchAll(/\[\[img:([\w.-]+)\]\]/g))
       if (!existsSync(join(RAIZ, 'img', m[1]))) errores.push(`${e.id}/${p}: falta la imagen ${m[1]}`);
+    if (parte.criterio) revisarCriterio(parte.criterio, `${e.id}/${p}`);
     for (const q of parte.preguntas) {
       if (idsExamen.has(q.id)) errores.push(`id de examen repetido: ${q.id}`);
       idsExamen.add(q.id);
@@ -47,6 +58,10 @@ for (const t of temas) {
     revisarPregunta(q, `${f} ${q.id}`);
     if (!['historica', 'variante', 'nueva'].includes(q.tipo)) errores.push(`${f} ${q.id}: tipo «${q.tipo}»`);
     if (q.ref && !idsExamen.has(q.ref)) errores.push(`${f} ${q.id}: ref ${q.ref} no existe en los exámenes`);
+    if (q.ref && examen.has(q.ref)) {
+      const d = diferencias(q, examen.get(q.ref));
+      if (d.length) errores.push(`${f} ${q.id}: distinta de ${q.ref} en ${d.join(', ')} (node scripts/sincronizar-historicas.mjs)`);
+    }
     if (!q.explicacion?.trim()) avisos.push(`${f} ${q.id}: sin explicación`);
   }
   for (const k of c.tarjetas) {

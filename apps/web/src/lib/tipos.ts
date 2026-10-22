@@ -32,12 +32,35 @@ export interface PreguntaExamen {
   nota_clave?: string;
 }
 
+/**
+ * Criterio de calificación publicado para una parte de una convocatoria. Solo se rellena con fuente:
+ * sin él, la web da una nota orientativa y no dice si se aprueba.
+ */
+export interface CriterioParte {
+  /** Puntuación directa mínima (aciertos − errores/3) que la Comisión fijó para obtener 25 sobre 50. */
+  corte_directa: number;
+  /** Si la fuente documenta la transformación lineal corte → 25 y máximo → 50. */
+  transformacion_lineal?: boolean;
+  fuente: string;
+  url?: string;
+  oficial: boolean;
+}
+
 export interface ParteExamen {
   titulo?: string;
   valor?: number;
   fuente_clave?: Clave;
+  criterio?: CriterioParte;
   contexto: string;
   preguntas: PreguntaExamen[];
+}
+
+/** Procedencia del cuestionario y de la plantilla, para poder contrastar cada pregunta con el original. */
+export interface FuenteExamen {
+  cuestionario?: string;
+  plantilla?: string;
+  modelo?: string;
+  version_plantilla?: string;
 }
 
 export interface Examen {
@@ -47,6 +70,7 @@ export interface Examen {
   fuente_clave: Clave;
   formato?: 'antiguo';
   nota_formato?: string;
+  fuente?: FuenteExamen;
   partes: Record<string, ParteExamen>;
 }
 
@@ -125,7 +149,15 @@ export interface ResumenPregunta {
   tema: number | null;
   vistas: number;
   aciertos: number;
+  /** Resultado de la última respuesta (un blanco cuenta como 0). */
   ultima: 0 | 1;
+  /** 1 si la última respuesta fue un blanco de simulacro. */
+  blanco?: 0 | 1 | null;
+  /** Aciertos seguidos desde el último fallo o blanco, y hora del primero de ellos. */
+  racha?: number;
+  ts_racha?: number | null;
+  /** Resultado la primera vez que se vio; null si esa respuesta es anterior a que se registrara. */
+  primera?: 0 | 1 | null;
   ts: number;
 }
 
@@ -137,12 +169,19 @@ export interface Marca {
   ts: number;
 }
 
+export type Modo = 'practica' | 'simulacro';
+
 export interface NotaParte {
   a: number;
   e: number;
   b: number;
   n: number;
+  /** Nota orientativa sobre 50: conversión lineal de la neta, sin el corte de la Comisión. */
   nota: number;
+  /** Puntuación directa: aciertos − errores/3 (falta en intentos anteriores a este cambio). */
+  neta?: number;
+  /** Preguntas que puntúan en la parte (sin reservas). */
+  total?: number;
 }
 
 export interface Intento {
@@ -151,6 +190,9 @@ export interface Intento {
   partes: string[];
   notas: Record<string, NotaParte>;
   segundos: number | null;
+  /** null en intentos anteriores a separar práctica y simulacro. */
+  modo?: Modo | null;
+  limite?: number | null;
   ts: number;
 }
 
