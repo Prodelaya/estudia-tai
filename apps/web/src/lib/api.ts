@@ -39,6 +39,7 @@ export const api = {
   activar: (token: string, password: string) => pedir<{ ok: true }>('/api/activar', json('POST', { token, password }), true),
   yo: () => pedir<UsuarioActual>('/api/yo'),
   usuarios: () => pedir<EstadoCuenta[]>('/api/usuarios'),
+  crearUsuario: (nombre: string) => pedir<EstadoCuenta & { token: string; expira: number }>('/api/usuarios', json('POST', { nombre })),
   invitacion: (nombre: string) => pedir<{ token: string; expira: number }>(`/api/usuarios/${encodeURIComponent(nombre)}/invitacion`, { method: 'POST' }),
   logout: () => pedir('/api/logout', { method: 'POST' }, true),
   check: () => pedir<void>('/api/auth/check'),

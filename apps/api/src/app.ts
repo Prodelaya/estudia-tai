@@ -90,6 +90,22 @@ export async function crearApp(o: Opciones) {
   app.register(async priv => {
     priv.addHook('onRequest', exigeSesion);
 
+    priv.post('/api/usuarios', {
+      schema: { body: { type: 'object', required: ['nombre'], properties: {
+        nombre: { type: 'string', minLength: 3, maxLength: 32, pattern: '^[a-z0-9][a-z0-9_-]*$' },
+      } } },
+    }, async (req, rep) => {
+      if (req.usuario!.id !== 1) return rep.code(403).send({ error: 'no autorizado' });
+      const { nombre } = req.body as { nombre: string };
+      const cuenta = db.transaction(() => {
+        const inserted = db.prepare('INSERT INTO usuarios (nombre) VALUES (?) ON CONFLICT(nombre) DO NOTHING').run(nombre);
+        if (!inserted.changes) return undefined;
+        return { nombre, activo: false, ...crearInvitacion(db, Number(inserted.lastInsertRowid)) };
+      })();
+      if (!cuenta) return rep.code(409).send({ error: 'el usuario ya existe' });
+      return rep.code(201).send(cuenta);
+    });
+
     priv.get('/api/yo', async req => ({ nombre: req.usuario!.nombre, admin: req.usuario!.id === 1 }));
     priv.get('/api/usuarios', async (req, rep) => {
       if (req.usuario!.id !== 1) return rep.code(403).send({ error: 'no autorizado' });
