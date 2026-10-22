@@ -18,7 +18,7 @@ Navegador ──HTTPS──> Caddy ──┬─ /            → SPA React (est�
 ```
 
 ```
-apps/api      Fastify 5 + better-sqlite3: login de un usuario, progreso, intentos, tarjetas, dudas
+apps/api      Fastify 5 + better-sqlite3: cuentas personales, progreso, intentos, tarjetas, dudas
 apps/web      Vite + React 19 + TypeScript
 content       datos de estudio (JSON + Markdown): temas, lecciones, exámenes, contenido por tema, imágenes
 deploy        Dockerfiles y Caddyfile
@@ -38,11 +38,13 @@ npm test
 
 ## Cuentas personales e invitaciones
 
-Las cuentas de esta instalación son `laya92`, `nosa` y `jota`. Cada una tiene su propio progreso, tarjetas, intentos, dudas y exportaciones; comparten únicamente el contenido de estudio.
+Las cuentas iniciales son `laya92`, `nosa` y `jota`; el propietario puede añadir más desde **Usuarios**. Cada una tiene su propio progreso, tarjetas, intentos, dudas y exportaciones; comparten únicamente el contenido de estudio.
 
 - Al actualizar por primera vez, el progreso y las sesiones anteriores se asignan a `laya92`. Su contraseña sigue siendo la ya provisionada. El hash de `APP_PASSWORD_HASH` se importa internamente una sola vez: reiniciar o cambiar esa variable después no restablece contraseñas existentes.
 - `nosa` y `jota` no pueden entrar hasta elegir una contraseña mediante invitación. No existe registro público ni contraseña inicial compartida.
 - Entra como `laya92`, abre **Usuarios** y genera una invitación para cada persona. Copia el enlace y envíalo únicamente a su destinatario por un canal privado. No publiques enlaces en logs o incidencias.
+- Para añadir otra persona, escribe un nombre nuevo y pulsa **Crear usuario y generar invitación**. Admite 3–32 caracteres (minúsculas, números, guion o guion bajo), empezando por letra o número. Solo `laya92` puede crear cuentas; todas las nuevas son usuarios normales, sin contraseña hasta su activación. Un nombre repetido no cambia la cuenta ni su invitación.
+- Si se pierde la respuesta del alta, se actualiza la lista: si aparece la cuenta pendiente, genera una nueva invitación; si no, reintenta el alta. Si tampoco se puede cargar la lista, recarga la página antes de volver a intentarlo.
 - Cada enlace caduca en 48 horas y se consume una sola vez. Renovar una invitación invalida la anterior. No permite restablecer una cuenta ya activa.
 - El destinatario abre el enlace HTTPS y elige y confirma su contraseña (12–200 caracteres). Después entra con su nombre de usuario y esa contraseña.
 - El secreto del enlace viaja en el fragmento `#`, no en la ruta ni en la consulta HTTP; el navegador lo retira de la dirección y lo envía únicamente en el cuerpo de la activación. La base guarda solo su hash.

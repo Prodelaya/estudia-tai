@@ -17,6 +17,7 @@ test.each([
   ['marca', () => api.marca('fixture', { tema: 15, nota: 'fixture' })],
   ['borrarMarca', () => api.borrarMarca('fixture')],
   ['usuarios', () => api.usuarios()],
+  ['crearUsuario', () => api.crearUsuario('nuevo')],
   ['invitacion', () => api.invitacion('nosa')],
 ] as const)('a 401 from %s notifies the active progress provider', async (_name, operation) => {
   vi.stubGlobal('fetch', vi.fn(async () => new Response('{}', { status: 401 })));
@@ -57,6 +58,16 @@ test('simultaneous 401 responses notify once, and unsubscribe removes the observ
 });
 
 afterEach(() => vi.unstubAllGlobals());
+
+test('account creation sends only its name to the owner endpoint', async () => {
+  const fetch = vi.fn(async () => new Response('{"nombre":"nuevo","activo":false,"token":"fixture","expira":1}', { status: 201 }));
+  vi.stubGlobal('fetch', fetch);
+  await api.crearUsuario('nuevo');
+  const [url, init] = fetch.mock.calls[0] as unknown as [string, RequestInit];
+  expect(url).toBe('/api/usuarios');
+  expect(init.method).toBe('POST');
+  expect(JSON.parse(String(init.body))).toEqual({ nombre: 'nuevo' });
+});
 
 test('login includes explicit account identity and keeps the owner default', () => {
   const html = render(createElement(Login));

@@ -185,3 +185,74 @@ test('legacy migration preserves owner password, progress and live sessions; boo
   assert.equal((await second.inject({ method: 'POST', url: '/api/login', payload: { usuario: 'laya92', password: OWNER_PASSWORD } })).statusCode, 200);
   assert.equal((await second.inject({ method: 'POST', url: '/api/login', payload: { usuario: 'nosa', password: NEW_PASSWORD } })).statusCode, 200);
 });
+
+test('owner creates a normal pending account and invitation without changing existing accounts', async t => {
+  const { app, db, owner } = await montar(t);
+  const existing = db.prepare('SELECT * FROM usuarios ORDER BY id').all();
+  await app.inject({ method: 'PUT', url: '/api/marcas/keep', headers: { cookie: owner }, payload: { tema: 15, nota: 'owner fixture' } });
+  const before = Date.now();
+  const created = await app.inject({ method: 'POST', url: '/api/usuarios', headers: { cookie: owner }, payload: { nombre: 'ana_4', id: 1, admin: true } });
+  assert.equal(created.statusCode, 201);
+  const { nombre, activo, token, expira } = created.json();
+  assert.equal(nombre, 'ana_4');
+  assert.equal(activo, false);
+  assert.match(token, /^[A-Za-z0-9_-]{43}$/);
+  assert.ok(expira >= before + 48 * 60 * 60 * 1000 && expira <= Date.now() + 48 * 60 * 60 * 1000);
+  assert.match(String(created.headers['cache-control']), /no-store/);
+  assert.deepEqual(db.prepare('SELECT * FROM usuarios WHERE id <= 3 ORDER BY id').all(), existing);
+  const stored = db.prepare('SELECT u.id, u.password_hash, i.token_hash FROM usuarios u JOIN invitaciones i ON i.usuario_id=u.id WHERE u.nombre=?').get(nombre) as any;
+  assert.ok(stored.id > 3);
+  assert.equal(stored.password_hash, null);
+  assert.equal(stored.token_hash, createHash('sha256').update(token).digest('hex'));
+  assert.equal((await app.inject({ method: 'POST', url: '/api/login', payload: { usuario: nombre, password: OWNER_PASSWORD } })).statusCode, 401);
+  const activated = await app.inject({ method: 'POST', url: '/api/activar', payload: { token, password: NEW_PASSWORD } });
+  assert.equal(activated.statusCode, 200);
+  const headers = { cookie: cookie(activated) };
+  assert.deepEqual((await app.inject({ url: '/api/yo', headers })).json(), { nombre, admin: false });
+  assert.deepEqual((await app.inject({ url: '/api/progreso', headers })).json(), { preguntas: [], srs: [], marcas: [], intentos: [] });
+  assert.equal((await app.inject({ method: 'POST', url: '/api/usuarios', headers, payload: { nombre: 'otra' } })).statusCode, 403);
+  assert.equal((await app.inject({ method: 'PUT', url: '/api/marcas/keep', headers, payload: { tema: 15, nota: 'new user fixture' } })).statusCode, 200);
+  assert.equal((await app.inject({ url: '/api/export', headers })).json().marcas[0].nota, 'new user fixture');
+  assert.equal((await app.inject({ url: '/api/progreso', headers: { cookie: owner } })).json().marcas[0].nota, 'owner fixture');
+  assert.equal((await app.inject({ method: 'POST', url: '/api/activar', payload: { token, password: NEW_PASSWORD } })).statusCode, 400);
+});
+
+test('account creation rejects non-owners and invalid names without side effects', async t => {
+  const { app, db, owner } = await montar(t);
+  const nosa = await activar(app, owner, 'nosa');
+  for (const [session, expected] of [[undefined, 401], [nosa, 403]] as const) {
+    const r = await app.inject({ method: 'POST', url: '/api/usuarios', headers: session ? { cookie: session } : {}, payload: { nombre: 'nuevo' } });
+    assert.equal(r.statusCode, expected);
+  }
+  for (const nombre of ['', 'ab', 'ABC', 'a b', 'ábc', '../x', 'abc\n', 'abc\r', 'a'.repeat(33)]) {
+    assert.equal((await app.inject({ method: 'POST', url: '/api/usuarios', headers: { cookie: owner }, payload: { nombre } })).statusCode, 400, nombre);
+  }
+  assert.equal((db.prepare('SELECT COUNT(*) AS n FROM usuarios').get() as any).n, 3);
+  for (const nombre of ['abc', 'a'.repeat(32), 'constructor']) {
+    assert.equal((await app.inject({ method: 'POST', url: '/api/usuarios', headers: { cookie: owner }, payload: { nombre } })).statusCode, 201, nombre);
+  }
+});
+
+test('duplicates preserve existing accounts/invites and concurrent creation succeeds once', async t => {
+  const { app, db, owner } = await montar(t);
+  await invitar(app, owner, 'nosa');
+  const accounts = db.prepare('SELECT * FROM usuarios ORDER BY id').all();
+  const invitations = db.prepare('SELECT * FROM invitaciones').all();
+  for (const nombre of ['laya92', 'nosa']) {
+    assert.equal((await app.inject({ method: 'POST', url: '/api/usuarios', headers: { cookie: owner }, payload: { nombre } })).statusCode, 409);
+  }
+  assert.deepEqual(db.prepare('SELECT * FROM usuarios ORDER BY id').all(), accounts);
+  assert.deepEqual(db.prepare('SELECT * FROM invitaciones').all(), invitations);
+  const results = await Promise.all([1, 2].map(() => app.inject({ method: 'POST', url: '/api/usuarios', headers: { cookie: owner }, payload: { nombre: 'nuevo' } })));
+  assert.deepEqual(results.map(r => r.statusCode).sort(), [201, 409]);
+  assert.equal((db.prepare('SELECT COUNT(*) AS n FROM usuarios').get() as any).n, 4);
+  assert.equal((db.prepare('SELECT COUNT(*) AS n FROM invitaciones').get() as any).n, 2);
+});
+
+test('invitation failure rolls back the new account', async t => {
+  const { app, db, owner } = await montar(t);
+  db.exec("CREATE TRIGGER fixture_failure BEFORE INSERT ON invitaciones BEGIN SELECT RAISE(ABORT, 'fixture failure'); END;");
+  assert.equal((await app.inject({ method: 'POST', url: '/api/usuarios', headers: { cookie: owner }, payload: { nombre: 'nuevo' } })).statusCode, 500);
+  assert.equal((db.prepare('SELECT COUNT(*) AS n FROM usuarios').get() as any).n, 3);
+  assert.equal((db.prepare('SELECT COUNT(*) AS n FROM invitaciones').get() as any).n, 0);
+});
