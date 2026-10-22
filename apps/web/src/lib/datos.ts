@@ -4,9 +4,12 @@ const cache = new Map<string, Promise<unknown>>();
 
 function cargar<T>(ruta: string, como: 'json' | 'text' = 'json'): Promise<T | null> {
   if (!cache.has(ruta)) {
-    cache.set(ruta, fetch(`/data/${ruta}`, { credentials: 'same-origin' })
+    const p = fetch(`/data/${ruta}`, { credentials: 'same-origin' })
       .then(r => (r.ok ? (como === 'json' ? r.json() : r.text()) : null))
-      .catch(() => null));
+      .catch(() => null);
+    // Un fallo (red, 404, sesión) no se queda en caché: la próxima vez se vuelve a pedir.
+    p.then(v => { if (v === null && cache.get(ruta) === p) cache.delete(ruta); });
+    cache.set(ruta, p);
   }
   return cache.get(ruta) as Promise<T | null>;
 }
@@ -23,12 +26,26 @@ export const datos = {
 
 const FUENTE: Record<string, string> = { ej1: 'test', ej1_iv: 'test bloque IV', b3: 'supuesto III', b4: 'supuesto IV' };
 
+/** Nombre del examen tal como lo conoce el opositor: la OEP 2025 se examinó en 2026. */
+export const nombreExamen = (anio: number, id: string) =>
+  id === 'LI_2025' ? 'Mayo 2026' : id === 'LI_2025ext' ? 'Extraordinario 2026' : `OEP ${anio}`;
+
 /** Id con el que se guarda el progreso de una pregunta de tema. */
 export const idProgreso = (p: PreguntaTema) => p.ref ?? p.id;
 
-export function desdeTema(p: PreguntaTema, tema: number): PreguntaVista {
+/**
+ * Etiqueta de una histórica, igual que en el simulacro. En las enlazadas (ref), `origen` lo copia el script de
+ * sincronización de la pregunta de examen, así que coincide con ella: año, parte, número y si es reserva.
+ */
+export function etiquetaHistorica(p: Pick<PreguntaTema, 'origen'>): string | undefined {
   const o = p.origen;
-  const etiqueta = p.tipo === 'historica' && o ? `${o.anio === 2025 ? 'Mayo 2026' : 'OEP ' + o.anio} · ${FUENTE[o.parte] ?? o.parte} · ${o.n}` : undefined;
+  if (!o) return undefined;
+  const id = `LI_${o.anio}${o.conv === 'extraordinaria' || o.conv === 'ext' ? 'ext' : ''}`;
+  return `${nombreExamen(o.anio, id)} · ${FUENTE[o.parte] ?? o.parte} · ${o.reserva ? 'reserva ' : ''}${o.n}`;
+}
+
+export function desdeTema(p: PreguntaTema, tema: number): PreguntaVista {
+  const etiqueta = p.tipo === 'historica' ? etiquetaHistorica(p) : undefined;
   // Una histórica comparte progreso con su pregunta de examen: se identifica por ref cuando existe.
   return { ...p, id: idProgreso(p), tema, etiqueta };
 }

@@ -5,8 +5,10 @@ Web personal de repaso para la oposición TAI (Técnico Auxiliar de Informática
 - **Lecciones** de cada tema con índice lateral.
 - **Tests por tema**: preguntas que han salido en exámenes reales, una variante de cada una y 25 posibles preguntas nuevas, todas con explicación.
 - **Tarjetas** con repetición espaciada (SM-2).
-- **Repaso diario**: tarjetas que vencen hoy y preguntas falladas.
-- **Simulacros** con exámenes reales (test + supuesto del bloque III), hoja de respuestas, temporizador y corrección según las bases (−1/3 por error, reservas que sustituyen anuladas, 25/50 por parte).
+- **Repaso diario**: tarjetas que vencen hoy y preguntas falladas o dejadas en blanco, también las de los simulacros aunque sean de temas que no estudias. Una pregunta sale del repaso cuando se acierta dos veces con al menos un día de diferencia (20 h).
+- **Simulacros** con exámenes reales (test + supuesto del bloque III), hoja de respuestas, temporizador, **modo oficial** (120 minutos, el tiempo de la última convocatoria) y **autoguardado** en el navegador del examen en curso. La corrección aplica las bases (−1/3 por error, reservas que sustituyen anuladas) y da aciertos, errores, blancos y puntuación neta directa. La nota sobre 50 es **orientativa**: el 25/50 oficial depende de la puntuación directa mínima que fija la Comisión en cada convocatoria, y solo se muestra un corte o una nota transformada si el examen tiene `criterio` con fuente en su JSON.
+- **Práctica frente a simulacro**: cada respuesta guarda su modo (`practica` o `simulacro`) y si era la primera vez que se veía la pregunta. Un examen hecho con la solución a la vista cuenta como práctica.
+- **Estado de guardado** en la cabecera: las escrituras se encolan, se conservan en el navegador si falla la red y se reintentan.
 - **Dudas**: lista de claves que marcas como sospechosas para revisarlas.
 
 ## Arquitectura
@@ -34,7 +36,10 @@ npm install
 npm run dev            # API en :3000 y web en :5173 (contraseña de desarrollo: tai)
 npm run check          # tipos + validación del contenido
 npm test
+node scripts/sincronizar-historicas.mjs   # copia enunciado, opciones y clave de cada examen a sus históricas enlazadas
 ```
+
+Cada pregunta histórica con `ref` tiene una sola fuente: la pregunta del examen. Si corriges un enunciado, una opción o una clave, hazlo en `content/examenes/*.json` y ejecuta el script de sincronización; `npm run check` falla si una copia diverge o si quedan restos del PDF (pies de página o instrucciones del cuadernillo).
 
 ## Cuentas personales e invitaciones
 

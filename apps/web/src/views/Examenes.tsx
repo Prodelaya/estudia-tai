@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { datos } from '../lib/datos';
-import { fmt } from '../lib/correccion';
+import { datos, nombreExamen } from '../lib/datos';
+import { fmt, valorar } from '../lib/correccion';
 import { useProgreso } from '../lib/progreso';
 import { useCarga } from '../lib/useCarga';
 
@@ -8,8 +8,7 @@ export const NOMBRE_PARTE: Record<string, string> = { ej1: 'Test', b3: 'Supuesto
 /** Pablo se examina de test + supuesto del bloque III: el resto no se ofrece como simulacro. */
 export const PARTES_SIMULACRO = ['ej1', 'b3'];
 
-export const nombreExamen = (anio: number, id: string) =>
-  id === 'LI_2025' ? 'Mayo 2026' : id === 'LI_2025ext' ? 'Extraordinario 2026' : `OEP ${anio}`;
+export { nombreExamen };
 
 export function Examenes() {
   const { progreso } = useProgreso();
@@ -19,11 +18,13 @@ export function Examenes() {
     <div className="stack">
       <div>
         <h1>Exámenes reales</h1>
-        <p className="lead">Completos y tal como salieron. Se corrigen con las reglas de las bases: cada error resta un tercio, las reservas sustituyen a las anuladas y hace falta 25 sobre 50 en cada parte; el supuesto solo cuenta si apruebas el test.</p>
+        <p className="lead">Completos y tal como salieron. Se corrigen con las reglas de las bases: cada error resta un tercio y las reservas sustituyen a las anuladas. Verás tu puntuación neta; la nota sobre 50 es orientativa, porque el corte lo fija la Comisión en cada convocatoria.</p>
       </div>
       <div className="list">
         {[...examenes].sort((a, b) => b.anio - a.anio || a.id.localeCompare(b.id)).map(e => {
-          const ultimo = progreso.intentos.find(i => i.examen_id === e.id);
+          // Los intentos en modo práctica no cuentan como simulacro. Los anteriores a separar los modos no se
+          // pueden clasificar: se muestran como «intento».
+          const ultimo = progreso.intentos.find(i => i.examen_id === e.id && i.modo !== 'practica');
           return (
             <div key={e.id} className="exam-item">
               <div>
@@ -34,7 +35,7 @@ export function Examenes() {
                 </div>
                 {ultimo && (
                   <div className="note" style={{ marginTop: 6 }}>
-                    Último intento: {Object.entries(ultimo.notas).map(([p, n]) => `${NOMBRE_PARTE[p] ?? p} ${fmt(n.nota)}`).join(' · ')} sobre 50
+                    {ultimo.modo ? 'Último simulacro' : 'Último intento'}: {Object.entries(ultimo.notas).map(([p, n]) => `${NOMBRE_PARTE[p] ?? p} neta ${fmt(valorar(n).neta)}`).join(' · ')}
                   </div>
                 )}
               </div>

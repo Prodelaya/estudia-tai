@@ -3,6 +3,12 @@
  "anio": 2025,
  "convocatoria": "OEP 2025 · examen del 23/05/2026 · modelo A (plantilla actualizada)",
  "fuente_clave": "oficial-provisional",
+ "fuente": {
+  "cuestionario": "INAP: cuestionario modelo A (OEP 2025, 23/05/2026)",
+  "plantilla": "INAP: Plantilla_respuestas_TAI-L-A_act.pdf",
+  "modelo": "A",
+  "version_plantilla": "actualizada tras la revisión"
+ },
  "partes": {
   "ej1": {
    "titulo": "Primera parte (test)",
@@ -2044,7 +2050,7 @@
       "a": "10.30.28.0/22",
       "b": "10.30.26.0/23",
       "c": "10.30.28.0/23",
-      "d": "10.30.28.0/24 En un momento determinado, la web del Ministerio deja de estar accesible. A continuación, deberá comprobar posibles problemas de servicio, rutas, puertos y/o filtrado entre máquinas."
+      "d": "10.30.28.0/24"
      },
      "ok": "c",
      "anulada": false,
@@ -2065,7 +2071,8 @@
      "ok": "a",
      "anulada": false,
      "tema": null,
-     "obsoleta": false
+     "obsoleta": false,
+     "ctx2": "PREGUNTAS 4-13: En un momento determinado, la web del Ministerio deja de estar accesible. A continuación, deberá comprobar posibles problemas de servicio, rutas, puertos y/o filtrado entre máquinas."
     },
     {
      "id": "LI2025-b4-05",
@@ -2081,7 +2088,8 @@
      "ok": "c",
      "anulada": false,
      "tema": null,
-     "obsoleta": false
+     "obsoleta": false,
+     "ctx2": "PREGUNTAS 4-13: En un momento determinado, la web del Ministerio deja de estar accesible. A continuación, deberá comprobar posibles problemas de servicio, rutas, puertos y/o filtrado entre máquinas."
     },
     {
      "id": "LI2025-b4-06",
@@ -2097,7 +2105,8 @@
      "ok": "a",
      "anulada": false,
      "tema": null,
-     "obsoleta": false
+     "obsoleta": false,
+     "ctx2": "PREGUNTAS 4-13: En un momento determinado, la web del Ministerio deja de estar accesible. A continuación, deberá comprobar posibles problemas de servicio, rutas, puertos y/o filtrado entre máquinas."
     },
     {
      "id": "LI2025-b4-07",
@@ -2113,7 +2122,8 @@
      "ok": "a",
      "anulada": false,
      "tema": null,
-     "obsoleta": false
+     "obsoleta": false,
+     "ctx2": "PREGUNTAS 4-13: En un momento determinado, la web del Ministerio deja de estar accesible. A continuación, deberá comprobar posibles problemas de servicio, rutas, puertos y/o filtrado entre máquinas."
     },
     {
      "id": "LI2025-b4-08",
@@ -2129,7 +2139,8 @@
      "ok": "b",
      "anulada": false,
      "tema": null,
-     "obsoleta": false
+     "obsoleta": false,
+     "ctx2": "PREGUNTAS 4-13: En un momento determinado, la web del Ministerio deja de estar accesible. A continuación, deberá comprobar posibles problemas de servicio, rutas, puertos y/o filtrado entre máquinas."
     },
     {
      "id": "LI2025-b4-09",
@@ -2145,7 +2156,8 @@
      "ok": "d",
      "anulada": false,
      "tema": null,
-     "obsoleta": false
+     "obsoleta": false,
+     "ctx2": "PREGUNTAS 4-13: En un momento determinado, la web del Ministerio deja de estar accesible. A continuación, deberá comprobar posibles problemas de servicio, rutas, puertos y/o filtrado entre máquinas."
     },
     {
      "id": "LI2025-b4-10",
@@ -2161,7 +2173,8 @@
      "ok": "a",
      "anulada": false,
      "tema": null,
-     "obsoleta": false
+     "obsoleta": false,
+     "ctx2": "PREGUNTAS 4-13: En un momento determinado, la web del Ministerio deja de estar accesible. A continuación, deberá comprobar posibles problemas de servicio, rutas, puertos y/o filtrado entre máquinas."
     },
     {
      "id": "LI2025-b4-11",
@@ -2177,7 +2190,8 @@
      "ok": "b",
      "anulada": false,
      "tema": null,
-     "obsoleta": false
+     "obsoleta": false,
+     "ctx2": "PREGUNTAS 4-13: En un momento determinado, la web del Ministerio deja de estar accesible. A continuación, deberá comprobar posibles problemas de servicio, rutas, puertos y/o filtrado entre máquinas."
     },
     {
      "id": "LI2025-b4-12",
@@ -2193,7 +2207,8 @@
      "ok": "b",
      "anulada": false,
      "tema": null,
-     "obsoleta": false
+     "obsoleta": false,
+     "ctx2": "PREGUNTAS 4-13: En un momento determinado, la web del Ministerio deja de estar accesible. A continuación, deberá comprobar posibles problemas de servicio, rutas, puertos y/o filtrado entre máquinas."
     },
     {
      "id": "LI2025-b4-13",
@@ -2204,12 +2219,13 @@
       "a": "route -n",
       "b": "arp -an",
       "c": "hostnamectl",
-      "d": "ss -ltn En los servidores RHEL 8.8 se usa RAID por hardware y LVM para la gestión de volúmenes de datos. Para la gestión de copias de seguridad se usa el producto Veeam Backup y se sigue la política de copias 3-2-1, usando estrategias basadas en snapshots y backups. Los servidores RHEL deberán seguir las recomendaciones de seguridad del CCN-CERT."
+      "d": "ss -ltn"
      },
      "ok": "d",
      "anulada": false,
      "tema": null,
-     "obsoleta": false
+     "obsoleta": false,
+     "ctx2": "PREGUNTAS 4-13: En un momento determinado, la web del Ministerio deja de estar accesible. A continuación, deberá comprobar posibles problemas de servicio, rutas, puertos y/o filtrado entre máquinas."
     },
     {
      "id": "LI2025-b4-14",
@@ -2225,7 +2241,8 @@
      "ok": "c",
      "anulada": false,
      "tema": null,
-     "obsoleta": false
+     "obsoleta": false,
+     "ctx2": "PREGUNTAS 14-20: En los servidores RHEL 8.8 se usa RAID por hardware y LVM para la gestión de volúmenes de datos. Para la gestión de copias de seguridad se usa el producto Veeam Backup y se sigue la política de copias 3-2-1, usando estrategias basadas en snapshots y backups. Los servidores RHEL deberán seguir las recomendaciones de seguridad del CCN-CERT."
     },
     {
      "id": "LI2025-b4-15",
@@ -2241,7 +2258,8 @@
      "ok": "b",
      "anulada": false,
      "tema": null,
-     "obsoleta": false
+     "obsoleta": false,
+     "ctx2": "PREGUNTAS 14-20: En los servidores RHEL 8.8 se usa RAID por hardware y LVM para la gestión de volúmenes de datos. Para la gestión de copias de seguridad se usa el producto Veeam Backup y se sigue la política de copias 3-2-1, usando estrategias basadas en snapshots y backups. Los servidores RHEL deberán seguir las recomendaciones de seguridad del CCN-CERT."
     },
     {
      "id": "LI2025-b4-16",
@@ -2257,7 +2275,8 @@
      "ok": "d",
      "anulada": false,
      "tema": null,
-     "obsoleta": false
+     "obsoleta": false,
+     "ctx2": "PREGUNTAS 14-20: En los servidores RHEL 8.8 se usa RAID por hardware y LVM para la gestión de volúmenes de datos. Para la gestión de copias de seguridad se usa el producto Veeam Backup y se sigue la política de copias 3-2-1, usando estrategias basadas en snapshots y backups. Los servidores RHEL deberán seguir las recomendaciones de seguridad del CCN-CERT."
     },
     {
      "id": "LI2025-b4-17",
@@ -2273,7 +2292,8 @@
      "ok": "d",
      "anulada": false,
      "tema": null,
-     "obsoleta": false
+     "obsoleta": false,
+     "ctx2": "PREGUNTAS 14-20: En los servidores RHEL 8.8 se usa RAID por hardware y LVM para la gestión de volúmenes de datos. Para la gestión de copias de seguridad se usa el producto Veeam Backup y se sigue la política de copias 3-2-1, usando estrategias basadas en snapshots y backups. Los servidores RHEL deberán seguir las recomendaciones de seguridad del CCN-CERT."
     },
     {
      "id": "LI2025-b4-18",
@@ -2289,7 +2309,8 @@
      "ok": "a",
      "anulada": false,
      "tema": null,
-     "obsoleta": false
+     "obsoleta": false,
+     "ctx2": "PREGUNTAS 14-20: En los servidores RHEL 8.8 se usa RAID por hardware y LVM para la gestión de volúmenes de datos. Para la gestión de copias de seguridad se usa el producto Veeam Backup y se sigue la política de copias 3-2-1, usando estrategias basadas en snapshots y backups. Los servidores RHEL deberán seguir las recomendaciones de seguridad del CCN-CERT."
     },
     {
      "id": "LI2025-b4-19",
@@ -2305,7 +2326,8 @@
      "ok": "c",
      "anulada": false,
      "tema": null,
-     "obsoleta": false
+     "obsoleta": false,
+     "ctx2": "PREGUNTAS 14-20: En los servidores RHEL 8.8 se usa RAID por hardware y LVM para la gestión de volúmenes de datos. Para la gestión de copias de seguridad se usa el producto Veeam Backup y se sigue la política de copias 3-2-1, usando estrategias basadas en snapshots y backups. Los servidores RHEL deberán seguir las recomendaciones de seguridad del CCN-CERT."
     },
     {
      "id": "LI2025-b4-20",
@@ -2321,7 +2343,8 @@
      "ok": "c",
      "anulada": false,
      "tema": null,
-     "obsoleta": false
+     "obsoleta": false,
+     "ctx2": "PREGUNTAS 14-20: En los servidores RHEL 8.8 se usa RAID por hardware y LVM para la gestión de volúmenes de datos. Para la gestión de copias de seguridad se usa el producto Veeam Backup y se sigue la política de copias 3-2-1, usando estrategias basadas en snapshots y backups. Los servidores RHEL deberán seguir las recomendaciones de seguridad del CCN-CERT."
     },
     {
      "id": "LI2025-b4-R01",

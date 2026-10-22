@@ -1,32 +1,83 @@
 import { useState } from 'react';
 import { SesionPractica, SesionTarjetas } from '../components/Sesiones';
-import { datos, desdeTema, idProgreso } from '../lib/datos';
+import { datos, desdeExamen, desdeTema, idProgreso, nombreExamen } from '../lib/datos';
 import { useProgreso } from '../lib/progreso';
+import { motivoRepaso, type MotivoRepaso } from '../lib/repaso';
 import { hoy } from '../lib/srs';
 import { barajar, useCarga } from '../lib/useCarga';
 import type { PreguntaVista, Tarjeta } from '../lib/tipos';
+import { NOMBRE_PARTE } from './Examenes';
 
-/** Lo que toca hoy: tarjetas vencidas de todos los temas y preguntas cuya última respuesta fue un fallo. */
+/** propia: de tus temas (true), de otro tema (false) o sin tema asignado (null, siempre se incluye). */
+type Pendiente = PreguntaVista & { motivo: MotivoRepaso; propia: boolean | null };
+const MOTIVO: Record<MotivoRepaso, [string, string]> = {
+  fallada: ['fallada', 'falladas'], blanco: ['en blanco', 'en blanco'], confirmar: ['para comprobar que la recuerdas', 'para comprobar que las recuerdas'],
+};
+
+/**
+ * Lo que toca hoy: tarjetas vencidas y preguntas pendientes de todo lo que has respondido, tanto de tus temas
+ * como de los simulacros (también las de temas que no estudias, que son las que más pesan en el test).
+ */
 export function Repaso() {
   const { porPregunta, porTarjeta } = useProgreso();
   const [sesion, setSesion] = useState<'preguntas' | 'tarjetas' | null>(null);
-  const contenidos = useCarga(async () => {
-    const temas = await datos.temas();
-    return (await Promise.all(temas.map(t => datos.contenido(t.n)))).filter(c => c !== null);
-  }, []);
+  const [incluirOtros, setIncluirOtros] = useState(true);
+  const [intento, setIntento] = useState(0);
+  const carga = useCarga(async () => {
+    const [temas, indice] = await Promise.all([datos.temas(), datos.examenes()]);
+    const [contenidos, examenes] = await Promise.all([
+      Promise.all(temas.map(t => datos.contenido(t.n))),
+      Promise.all(indice.map(e => datos.examen(e.id))),
+    ]);
+    // Si algo no carga, el repaso saldría incompleto sin decirlo: se cuenta para avisar.
+    const fallos = (temas.length ? 0 : 1) + (indice.length ? 0 : 1) + contenidos.filter(c => c === null).length + examenes.filter(e => e === null).length;
+    return { contenidos: contenidos.filter(c => c !== null), examenes: examenes.filter(e => e !== null), temas: new Set(temas.map(t => t.n)), fallos };
+  }, [intento]);
   // La cola se congela al empezar la sesión para que no cambie mientras respondes.
   const [cola, setCola] = useState<{ preguntas: PreguntaVista[]; tarjetas: (Tarjeta & { tema: number })[] } | null>(null);
-  if (!contenidos) return <p className="note">Preparando el repaso…</p>;
+  if (!carga) return <p className="note">Preparando el repaso…</p>;
 
-  const falladas: PreguntaVista[] = [];
+  const ahora = Date.now();
+  const pendientes: Pendiente[] = [];
+  const vistas = new Set<string>();
   const vencidas: (Tarjeta & { tema: number })[] = [];
-  for (const c of contenidos) {
-    for (const p of c.preguntas) if (porPregunta.get(idProgreso(p))?.ultima === 0) falladas.push(desdeTema(p, c.tema));
+  for (const c of carga.contenidos) {
+    for (const p of c.preguntas) {
+      const id = idProgreso(p);
+      // Una histórica enlazada desde dos temas comparte progreso: sale una sola vez.
+      if (vistas.has(id)) continue;
+      vistas.add(id);
+      const motivo = motivoRepaso(porPregunta.get(id), ahora);
+      if (motivo) pendientes.push({ ...desdeTema(p, c.tema), motivo, propia: true });
+    }
     for (const t of c.tarjetas) { const s = porTarjeta.get(t.id); if (s && s.vence <= hoy()) vencidas.push({ ...t, tema: c.tema }); }
   }
+  // Preguntas de examen sin copia en tus temas: se repasan tal como salieron, con su nota de clave si la tienen.
+  for (const ex of carga.examenes) {
+    for (const [parte, datosParte] of Object.entries(ex.partes)) {
+      for (const q of datosParte.preguntas) {
+        if (vistas.has(q.id) || !q.ok || q.anulada) continue;
+        vistas.add(q.id);
+        const motivo = motivoRepaso(porPregunta.get(q.id), ahora);
+        if (!motivo) continue;
+        const propia = q.tema === null ? null : carga.temas.has(q.tema);
+        pendientes.push({
+          ...desdeExamen(q, ex, parte), motivo, propia,
+          etiqueta: `${nombreExamen(ex.anio, ex.id)} · ${NOMBRE_PARTE[parte] ?? parte} · ${q.reserva ? 'reserva ' : ''}${q.n}${q.tema === null ? ' · sin tema asignado' : ` · tema ${q.tema}${propia ? '' : ' · fuera de tus temas'}`}`,
+        });
+      }
+    }
+  }
+
+  const elegidas = pendientes.filter(p => incluirOtros || p.propia !== false);
+  const cuenta = (m: MotivoRepaso) => elegidas.filter(p => p.motivo === m).length;
+  const otros = pendientes.filter(p => p.propia === false).length;
 
   const empezar = (tipo: 'preguntas' | 'tarjetas') => {
-    setCola({ preguntas: barajar(falladas), tarjetas: barajar(vencidas) });
+    // Primero lo fallado o en blanco; después lo que toca confirmar.
+    const urgentes = barajar(elegidas.filter(p => p.motivo !== 'confirmar'));
+    const confirmar = barajar(elegidas.filter(p => p.motivo === 'confirmar'));
+    setCola({ preguntas: [...urgentes, ...confirmar], tarjetas: barajar(vencidas) });
     setSesion(tipo);
   };
   const fin = () => { setSesion(null); setCola(null); };
@@ -35,16 +86,37 @@ export function Repaso() {
     <div className="stack">
       <div>
         <h1>Repaso de hoy</h1>
-        <p className="lead">Las tarjetas que te tocan según la repetición espaciada y las preguntas que fallaste la última vez que las viste.</p>
+        <p className="lead">Las tarjetas que te tocan, las preguntas que fallaste o dejaste en blanco (también en los simulacros) y las que acertaste tras fallarlas, para comprobar al día siguiente que las recuerdas. Una pregunta sale del repaso cuando la aciertas dos veces con al menos un día de diferencia.</p>
       </div>
       {sesion === 'preguntas' && cola && <SesionPractica preguntas={cola.preguntas} origen="repaso" onFin={fin} />}
       {sesion === 'tarjetas' && cola && <SesionTarjetas tarjetas={cola.tarjetas} temaDe={t => (t as Tarjeta & { tema: number }).tema} onFin={fin} />}
-      {!sesion && (falladas.length || vencidas.length ? (
-        <div className="row">
-          <button className="btn" disabled={!falladas.length} onClick={() => empezar('preguntas')}>{falladas.length} preguntas falladas</button>
-          <button className="btn ghost" disabled={!vencidas.length} onClick={() => empezar('tarjetas')}>{vencidas.length} tarjetas</button>
-        </div>
-      ) : <p className="empty">No tienes nada pendiente hoy. Haz un test o estudia tarjetas de un tema y lo que falles aparecerá aquí.</p>)}
+      {!sesion && (
+        <>
+          {carga.fallos > 0 && (
+            <p className="note" role="alert">
+              No se ha podido cargar todo el contenido, así que este repaso puede estar incompleto.{' '}
+              <button className="btn ghost" onClick={() => setIntento(n => n + 1)}>Volver a cargar</button>
+            </p>
+          )}
+          {otros > 0 && (
+            <label className="chk">
+              <input type="checkbox" checked={incluirOtros} onChange={e => setIncluirOtros(e.target.checked)} />
+              Incluir {otros} {otros === 1 ? 'pregunta' : 'preguntas'} de tus simulacros que no son de tus {carga.temas.size} temas
+            </label>
+          )}
+          {elegidas.length || vencidas.length ? (
+            <>
+              <div className="row">
+                <button className="btn" disabled={!elegidas.length} onClick={() => empezar('preguntas')}>{elegidas.length} preguntas</button>
+                <button className="btn ghost" disabled={!vencidas.length} onClick={() => empezar('tarjetas')}>{vencidas.length} tarjetas</button>
+              </div>
+              {elegidas.length > 0 && (
+                <p className="meta">{(['fallada', 'blanco', 'confirmar'] as MotivoRepaso[]).filter(cuenta).map(m => `${cuenta(m)} ${MOTIVO[m][cuenta(m) === 1 ? 0 : 1]}`).join(' · ')}</p>
+              )}
+            </>
+          ) : <p className="empty">No tienes nada pendiente hoy. Haz un test, un simulacro o estudia tarjetas y lo que falles aparecerá aquí.</p>}
+        </>
+      )}
     </div>
   );
 }

@@ -3,6 +3,12 @@
  "anio": 2024,
  "convocatoria": "OEP 2024 · modelo A",
  "fuente_clave": "oficial-provisional",
+ "fuente": {
+  "cuestionario": "Cuestionario oficial modelo A (OEP 2023-2024, 14/12/2024), en PDF",
+  "plantilla": "Copia de baquedano.es: TAI_sol_1_A_libre_AGE_2024.pdf",
+  "modelo": "A",
+  "version_plantilla": "provisional"
+ },
  "partes": {
   "ej1": {
    "titulo": "Primera parte (test)",

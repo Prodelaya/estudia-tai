@@ -473,8 +473,8 @@ LPWAN = *Low Power Wide Area Network*: bajo consumo, largo alcance (kilómetros)
 | 802.11n | **Wi-Fi 4** | 2009 | 2,4 y 5 GHz | **600 Mbps** **[Salió 2015]** | MIMO 4x4, canales de 40 MHz |
 | 802.11ac | **Wi-Fi 5** | 2013 (wave 2: 2016) | **Solo 5 GHz** | **6,9 Gbps** (unos 7) **[Salió 2015]** | 8 flujos, 160 MHz, 256-QAM, MU-MIMO de bajada |
 | 802.11ax | **Wi-Fi 6** **[Salió 2019]** | 2021 (certificación 2019) | 2,4 y 5 GHz | 9,6 Gbps | **OFDMA**, MU-MIMO en ambos sentidos, 1024-QAM, TWT, BSS Coloring |
-| 802.11ax | **Wi-Fi 6E** | 2020 | 2,4, 5 y **6 GHz** **[Salió 2022]** | 9,6 Gbps | Igual que Wi-Fi 6 más la banda de 6 GHz |
-| 802.11be | **Wi-Fi 7** | Certificación enero 2024; IEEE 2024-2025 | 2,4, 5 y 6 GHz | Unos 46 Gbps | Canales de **320 MHz**, **4096-QAM**, **MLO** (operación multienlace), 16 flujos |
+| 802.11ax | **Wi-Fi 6E** | 2020 | 2,4, 5 y **6 GHz** | 9,6 Gbps | Igual que Wi-Fi 6 más la banda de 6 GHz |
+| 802.11be | **Wi-Fi 7** | Certificación enero 2024; IEEE 2024-2025 | 2,4, 5 y 6 GHz **[Salió 2022]** | Unos 46 Gbps | Canales de **320 MHz**, **4096-QAM**, **MLO** (operación multienlace), 16 flujos |
 | 802.11bn | **Wi-Fi 8** (UHR) | En desarrollo (hacia 2028) | 2,4, 5 y 6 GHz | Similar a Wi-Fi 7 | Prioriza fiabilidad y baja latencia |
 
 Otros estándares 802.11 de uso específico:
@@ -655,7 +655,7 @@ Criterios que se repiten en los supuestos:
 - **HSDPA, UMTS (2008)**: el 3G se apagó en España entre 2023 y 2025. El 2G está en proceso de cierre.
 - **802.11n "600 Mbps" (2015)**: la opción "1300 Mbps" era de 802.11ac de tres flujos. No las confundas.
 - **802.11ac "solo 5 GHz"**: los routers "dual band ac" llevan 802.11n en 2,4 GHz. El estándar ac no usa 2,4 GHz.
-- **Estándar en 2,4, 5 y 6 GHz (2022)**: la respuesta esperada es 802.11ax (Wi-Fi 6E). Hoy 802.11be (Wi-Fi 7) también cumple, así que la pregunta sería ambigua. Si salen ambas, revisa el enunciado.
+- **Estándar en 2,4, 5 y 6 GHz (2022)**: la **clave oficial fue d) 802.11be (Wi-Fi 7)**. Técnicamente 802.11ax en su versión Wi-Fi 6E también usa las tres bandas, así que la pregunta era discutible; el tribunal se quedó con la norma que nace con las tres bandas de forma nativa. Si vuelven a salir ax y be juntas para 2,4/5/6 GHz, marca **802.11be**, salvo que el enunciado diga «Wi-Fi 6E».
 - **"No existe la banda de 6 GHz"**: falso desde 2020 (EE. UU.) y 2021 (UE).
 - **Cat 7 y Cat 7A**: no son categorías TIA. Si la pregunta cita "ANSI/TIA-568", tras Cat 6A viene Cat 8 **[2019]**.
 - **TIA-568-B y C**: hoy la vigente es TIA-568-E (2020).

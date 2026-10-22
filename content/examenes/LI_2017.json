@@ -5,6 +5,11 @@
  "fuente_clave": "oficial",
  "formato": "antiguo",
  "nota_formato": "Formato antiguo: primer ejercicio de 100 preguntas (+3 de reserva) en un test único que mezcla los bloques I a IV; segundo ejercicio práctico con supuestos de los bloques III o IV a elegir (aquí el III, 30+3 preguntas). La clave del segundo ejercicio NO es oficial: la ha resuelto Claude.",
+ "fuente": {
+  "cuestionario": "Cuestionarios oficiales del primer y segundo ejercicio (OEP 2017), en PDF",
+  "plantilla": "Primer ejercicio: copia de baquedano.es TAI_sol_1_libre_AGE_2018.pdf. Supuesto III: sin plantilla oficial en el proyecto (clave de Claude)",
+  "version_plantilla": "definitiva (solo primer ejercicio)"
+ },
  "partes": {
   "ej1": {
    "titulo": "Primer ejercicio (test)",

@@ -27,6 +27,10 @@ header.top .wrap{display:flex;align-items:center;gap:16px;padding-block:10px;fle
 nav.main{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
 nav.main a,nav.main button{text-decoration:none;font:inherit;font-size:14px;border:0;background:none;color:var(--muted);padding:6px 10px;border-radius:6px;cursor:pointer}
 nav.main a[aria-current="page"]{color:var(--accent);background:var(--accent-soft);font-weight:600}
+.guardado{font-size:12.5px;color:var(--muted);display:inline-flex;align-items:center;gap:8px}
+.guardado.ok{opacity:.7}
+.guardado.ko{color:var(--ko);background:var(--ko-soft);padding:4px 10px;border-radius:6px;font-weight:600}
+.guardado button{font:inherit;font-size:12.5px;border:1px solid currentColor;background:none;color:inherit;border-radius:6px;padding:2px 8px;cursor:pointer}
 main{padding-block:24px 64px}
 h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.15;margin:0}
 h1{font-size:30px;font-weight:700;letter-spacing:-.015em}

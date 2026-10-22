@@ -63,7 +63,8 @@
    "origen": {
     "anio": 2025,
     "parte": "b3",
-    "n": 21
+    "n": 1,
+    "reserva": true
    },
    "de": null,
    "texto": "literal",
@@ -90,7 +91,8 @@
    "origen": {
     "anio": 2025,
     "parte": "b3",
-    "n": 23
+    "n": 3,
+    "reserva": true
    },
    "de": null,
    "texto": "literal",
@@ -199,7 +201,7 @@
     "anio": 2025,
     "parte": "b3",
     "n": 16,
-    "conv": "ext"
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -227,7 +229,7 @@
     "anio": 2025,
     "parte": "b3",
     "n": 17,
-    "conv": "ext"
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -255,7 +257,7 @@
     "anio": 2025,
     "parte": "b3",
     "n": 18,
-    "conv": "ext"
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -282,8 +284,9 @@
    "origen": {
     "anio": 2025,
     "parte": "b3",
-    "n": 21,
-    "conv": "ext"
+    "n": 1,
+    "reserva": true,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -310,8 +313,9 @@
    "origen": {
     "anio": 2025,
     "parte": "b3",
-    "n": 23,
-    "conv": "ext"
+    "n": 3,
+    "reserva": true,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -338,8 +342,9 @@
    "origen": {
     "anio": 2025,
     "parte": "b3",
-    "n": 24,
-    "conv": "ext"
+    "n": 4,
+    "reserva": true,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -366,8 +371,9 @@
    "origen": {
     "anio": 2025,
     "parte": "b3",
-    "n": 25,
-    "conv": "ext"
+    "n": 5,
+    "reserva": true,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -395,7 +401,7 @@
     "anio": 2025,
     "parte": "ej1",
     "n": 55,
-    "conv": "ext"
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -423,7 +429,7 @@
     "anio": 2025,
     "parte": "ej1",
     "n": 56,
-    "conv": "ext"
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -451,7 +457,7 @@
     "anio": 2025,
     "parte": "ej1",
     "n": 57,
-    "conv": "ext"
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -532,7 +538,8 @@
    "origen": {
     "anio": 2024,
     "parte": "b3",
-    "n": 25
+    "n": 5,
+    "reserva": true
    },
    "de": null,
    "texto": "literal",
@@ -559,7 +566,7 @@
    "origen": {
     "anio": 2024,
     "parte": "ej1",
-    "n": 51
+    "n": 53
    },
    "de": null,
    "texto": "literal",
@@ -586,7 +593,7 @@
    "origen": {
     "anio": 2024,
     "parte": "ej1",
-    "n": 52
+    "n": 54
    },
    "de": null,
    "texto": "literal",
@@ -667,7 +674,7 @@
    "origen": {
     "anio": 2022,
     "parte": "b3",
-    "n": 19
+    "n": 20
    },
    "de": null,
    "texto": "literal",
@@ -694,7 +701,7 @@
    "origen": {
     "anio": 2022,
     "parte": "ej1",
-    "n": 55
+    "n": 58
    },
    "de": null,
    "texto": "literal",
@@ -721,7 +728,7 @@
    "origen": {
     "anio": 2022,
     "parte": "ej1",
-    "n": 56
+    "n": 59
    },
    "de": null,
    "texto": "literal",
@@ -748,7 +755,7 @@
    "origen": {
     "anio": 2022,
     "parte": "ej1",
-    "n": 57
+    "n": 60
    },
    "de": null,
    "texto": "literal",
@@ -1369,7 +1376,8 @@
    "origen": {
     "anio": 2017,
     "parte": "ej1",
-    "n": 102
+    "n": 2,
+    "reserva": true
    },
    "de": null,
    "texto": "literal",
@@ -1396,7 +1404,8 @@
    "origen": {
     "anio": 2016,
     "parte": "b3",
-    "n": 41
+    "n": 2,
+    "reserva": true
    },
    "de": null,
    "texto": "literal",
@@ -1423,7 +1432,7 @@
    "origen": {
     "anio": 2016,
     "parte": "ej1",
-    "n": 52
+    "n": 51
    },
    "de": null,
    "texto": "literal",
@@ -1450,7 +1459,7 @@
    "origen": {
     "anio": 2016,
     "parte": "ej1",
-    "n": 53
+    "n": 52
    },
    "de": null,
    "texto": "literal",
@@ -1477,7 +1486,7 @@
    "origen": {
     "anio": 2016,
     "parte": "ej1",
-    "n": 100
+    "n": 99
    },
    "de": null,
    "texto": "literal",
@@ -1504,7 +1513,7 @@
    "origen": {
     "anio": 2016,
     "parte": "ej1",
-    "n": 101
+    "n": 100
    },
    "de": null,
    "texto": "literal",
@@ -1530,8 +1539,8 @@
    "ref": "LI2016-ej1_iv-IV-01",
    "origen": {
     "anio": 2016,
-    "parte": "ej1",
-    "n": 105
+    "parte": "ej1_iv",
+    "n": 1
    },
    "de": null,
    "texto": "literal",
@@ -1558,7 +1567,7 @@
    "origen": {
     "anio": 2015,
     "parte": "b3",
-    "n": 21
+    "n": 22
    },
    "de": null,
    "texto": "literal",
@@ -1585,7 +1594,7 @@
    "origen": {
     "anio": 2015,
     "parte": "b3",
-    "n": 22
+    "n": 23
    },
    "de": null,
    "texto": "literal",
@@ -1612,7 +1621,7 @@
    "origen": {
     "anio": 2015,
     "parte": "b3",
-    "n": 23
+    "n": 24
    },
    "de": null,
    "texto": "literal",
@@ -1639,7 +1648,7 @@
    "origen": {
     "anio": 2015,
     "parte": "b3",
-    "n": 24
+    "n": 25
    },
    "de": null,
    "texto": "literal",
@@ -1666,7 +1675,7 @@
    "origen": {
     "anio": 2015,
     "parte": "ej1",
-    "n": 44
+    "n": 52
    },
    "de": null,
    "texto": "literal",
@@ -1693,7 +1702,7 @@
    "origen": {
     "anio": 2015,
     "parte": "ej1",
-    "n": 45
+    "n": 53
    },
    "de": null,
    "texto": "literal",
@@ -1720,7 +1729,7 @@
    "origen": {
     "anio": 2015,
     "parte": "ej1",
-    "n": 46
+    "n": 54
    },
    "de": null,
    "texto": "literal",
@@ -1747,7 +1756,7 @@
    "origen": {
     "anio": 2015,
     "parte": "ej1",
-    "n": 91
+    "n": 100
    },
    "de": null,
    "texto": "literal",
@@ -1774,7 +1783,8 @@
    "origen": {
     "anio": 2015,
     "parte": "ej1",
-    "n": 94
+    "n": 3,
+    "reserva": true
    },
    "de": null,
    "texto": "literal",
@@ -1801,7 +1811,7 @@
    "origen": {
     "anio": 2008,
     "parte": "ej1",
-    "n": 61
+    "n": 74
    },
    "de": null,
    "texto": "literal",
@@ -1828,7 +1838,8 @@
    "origen": {
     "anio": 2008,
     "parte": "ej1",
-    "n": 88
+    "n": 1,
+    "reserva": true
    },
    "de": null,
    "texto": "literal",
@@ -1855,7 +1866,8 @@
    "origen": {
     "anio": 2008,
     "parte": "ej1",
-    "n": 89
+    "n": 2,
+    "reserva": true
    },
    "de": null,
    "texto": "literal",
@@ -1882,7 +1894,8 @@
    "origen": {
     "anio": 2008,
     "parte": "ej1",
-    "n": 90
+    "n": 3,
+    "reserva": true
    },
    "de": null,
    "texto": "literal",
@@ -1909,7 +1922,7 @@
    "origen": {
     "anio": 2007,
     "parte": "b3",
-    "n": 3
+    "n": 18
    },
    "de": null,
    "texto": "literal",
@@ -1936,7 +1949,7 @@
    "origen": {
     "anio": 2007,
     "parte": "ej1",
-    "n": 44
+    "n": 51
    },
    "de": null,
    "texto": "literal",
@@ -1963,7 +1976,7 @@
    "origen": {
     "anio": 2007,
     "parte": "ej1",
-    "n": 45
+    "n": 52
    },
    "de": null,
    "texto": "literal",
@@ -1973,7 +1986,7 @@
     "a": "Acelerar la fase de codificación del sistema.",
     "b": "Adquirir experiencia en el análisis de un sistema.",
     "c": "No sirven para nada puesto que se desprecian.",
-    "d": "Experimentar con distintas codificaciones alternativas. 07/TAIL-1 7-7"
+    "d": "Experimentar con distintas codificaciones alternativas."
    },
    "ok": "b",
    "clave": "oficial",
@@ -1990,7 +2003,7 @@
    "origen": {
     "anio": 2007,
     "parte": "ej1",
-    "n": 66
+    "n": 74
    },
    "de": null,
    "texto": "literal",

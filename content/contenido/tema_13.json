@@ -64,7 +64,7 @@
     "anio": 2025,
     "parte": "ej1",
     "n": 25,
-    "conv": "ext"
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -92,7 +92,7 @@
     "anio": 2025,
     "parte": "ej1",
     "n": 29,
-    "conv": "ext"
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -120,7 +120,7 @@
     "anio": 2025,
     "parte": "ej1",
     "n": 31,
-    "conv": "ext"
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -148,7 +148,7 @@
     "anio": 2025,
     "parte": "ej1",
     "n": 32,
-    "conv": "ext"
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -175,8 +175,9 @@
    "origen": {
     "anio": 2025,
     "parte": "ej1",
-    "n": 81,
-    "conv": "ext"
+    "n": 1,
+    "reserva": true,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -203,7 +204,7 @@
    "origen": {
     "anio": 2024,
     "parte": "ej1",
-    "n": 25
+    "n": 26
    },
    "de": null,
    "texto": "literal",
@@ -230,7 +231,7 @@
    "origen": {
     "anio": 2024,
     "parte": "ej1",
-    "n": 26
+    "n": 27
    },
    "de": null,
    "texto": "literal",
@@ -257,7 +258,7 @@
    "origen": {
     "anio": 2024,
     "parte": "ej1",
-    "n": 53
+    "n": 55
    },
    "de": null,
    "texto": "literal",
@@ -284,7 +285,8 @@
    "origen": {
     "anio": 2024,
     "parte": "ej1",
-    "n": 82
+    "n": 5,
+    "reserva": true
    },
    "de": null,
    "texto": "literal",
@@ -365,7 +367,7 @@
    "origen": {
     "anio": 2022,
     "parte": "ej1",
-    "n": 58
+    "n": 61
    },
    "de": null,
    "texto": "literal",
@@ -392,7 +394,7 @@
    "origen": {
     "anio": 2022,
     "parte": "ej1",
-    "n": 59
+    "n": 62
    },
    "de": null,
    "texto": "literal",
@@ -419,7 +421,8 @@
    "origen": {
     "anio": 2022,
     "parte": "ej1",
-    "n": 78
+    "n": 2,
+    "reserva": true
    },
    "de": null,
    "texto": "literal",
@@ -797,7 +800,7 @@
    "origen": {
     "anio": 2016,
     "parte": "ej1",
-    "n": 39
+    "n": 41
    },
    "de": null,
    "texto": "literal",
@@ -824,7 +827,7 @@
    "origen": {
     "anio": 2016,
     "parte": "ej1",
-    "n": 40
+    "n": 42
    },
    "de": null,
    "texto": "literal",
@@ -851,7 +854,7 @@
    "origen": {
     "anio": 2016,
     "parte": "ej1",
-    "n": 41
+    "n": 43
    },
    "de": null,
    "texto": "literal",
@@ -878,7 +881,7 @@
    "origen": {
     "anio": 2016,
     "parte": "ej1",
-    "n": 45
+    "n": 47
    },
    "de": null,
    "texto": "literal",
@@ -904,8 +907,9 @@
    "ref": "LI2016-ej1_iv-IV-R02",
    "origen": {
     "anio": 2016,
-    "parte": "ej1",
-    "n": 156
+    "parte": "ej1_iv",
+    "n": 2,
+    "reserva": true
    },
    "de": null,
    "texto": "literal",
@@ -932,7 +936,7 @@
    "origen": {
     "anio": 2015,
     "parte": "ej1",
-    "n": 28
+    "n": 35
    },
    "de": null,
    "texto": "literal",
@@ -959,7 +963,7 @@
    "origen": {
     "anio": 2015,
     "parte": "ej1",
-    "n": 30
+    "n": 37
    },
    "de": null,
    "texto": "literal",
@@ -986,7 +990,7 @@
    "origen": {
     "anio": 2015,
     "parte": "ej1",
-    "n": 31
+    "n": 38
    },
    "de": null,
    "texto": "literal",
@@ -1013,7 +1017,7 @@
    "origen": {
     "anio": 2015,
     "parte": "ej1",
-    "n": 32
+    "n": 39
    },
    "de": null,
    "texto": "literal",
@@ -1040,7 +1044,7 @@
    "origen": {
     "anio": 2015,
     "parte": "ej1",
-    "n": 33
+    "n": 40
    },
    "de": null,
    "texto": "literal",
@@ -1067,7 +1071,7 @@
    "origen": {
     "anio": 2015,
     "parte": "ej1",
-    "n": 34
+    "n": 41
    },
    "de": null,
    "texto": "literal",
@@ -1094,7 +1098,7 @@
    "origen": {
     "anio": 2015,
     "parte": "ej1",
-    "n": 36
+    "n": 43
    },
    "de": null,
    "texto": "literal",
@@ -1121,7 +1125,7 @@
    "origen": {
     "anio": 2015,
     "parte": "ej1",
-    "n": 38
+    "n": 45
    },
    "de": null,
    "texto": "literal",
@@ -1148,7 +1152,7 @@
    "origen": {
     "anio": 2008,
     "parte": "ej1",
-    "n": 27
+    "n": 38
    },
    "de": null,
    "texto": "literal",
@@ -1175,7 +1179,7 @@
    "origen": {
     "anio": 2008,
     "parte": "ej1",
-    "n": 28
+    "n": 39
    },
    "de": null,
    "texto": "literal",
@@ -1202,7 +1206,7 @@
    "origen": {
     "anio": 2008,
     "parte": "ej1",
-    "n": 29
+    "n": 40
    },
    "de": null,
    "texto": "literal",
@@ -1212,7 +1216,7 @@
     "a": "El sistema operativo Windows utiliza licencias GPL.",
     "b": "Unix y Linux se diferencian en que el primero sólo se puede ejecutar en equipos con procesadores SPARC y el segundo sólo en sistemas con procesadores Intel.",
     "c": "Ubuntu, Fedora, Suse y Debian son distintas versiones de Linux.",
-    "d": "La principal dificultad para el uso de Linux en ordenadores personales es que carece de interfaz gráfico de usuario. ."
+    "d": "La principal dificultad para el uso de Linux en ordenadores personales es que carece de interfaz gráfico de usuario."
    },
    "ok": "c",
    "clave": "oficial",
@@ -1229,7 +1233,7 @@
    "origen": {
     "anio": 2008,
     "parte": "ej1",
-    "n": 30
+    "n": 41
    },
    "de": null,
    "texto": "literal",
@@ -1256,7 +1260,7 @@
    "origen": {
     "anio": 2008,
     "parte": "ej1",
-    "n": 33
+    "n": 44
    },
    "de": null,
    "texto": "literal",
@@ -1282,8 +1286,8 @@
    "ref": "LI2007-b3-S2-17",
    "origen": {
     "anio": 2007,
-    "parte": "b4",
-    "n": 27
+    "parte": "b3",
+    "n": 35
    },
    "de": null,
    "texto": "literal",
@@ -1309,8 +1313,8 @@
    "ref": "LI2007-b3-S2-18",
    "origen": {
     "anio": 2007,
-    "parte": "b4",
-    "n": 28
+    "parte": "b3",
+    "n": 36
    },
    "de": null,
    "texto": "literal",
@@ -1337,7 +1341,7 @@
    "origen": {
     "anio": 2007,
     "parte": "ej1",
-    "n": 31
+    "n": 38
    },
    "de": null,
    "texto": "literal",
@@ -1364,7 +1368,7 @@
    "origen": {
     "anio": 2007,
     "parte": "ej1",
-    "n": 37
+    "n": 44
    },
    "de": null,
    "texto": "literal",
@@ -1391,7 +1395,7 @@
    "origen": {
     "anio": 2007,
     "parte": "ej1",
-    "n": 39
+    "n": 46
    },
    "de": null,
    "texto": "literal",

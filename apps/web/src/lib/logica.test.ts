@@ -1,19 +1,27 @@
 import { describe, expect, it } from 'vitest';
-import { corregirParte, veredicto } from './correccion';
+import { corregirParte, queCuentan, resumen, valorar } from './correccion';
+import { ColaEscrituras, type Almacen, type Escritura } from './cola';
+import { ErrorHttp, NoAutenticado } from './api';
+import { borrarExamen, esMio, guardarExamen, leerExamen, marcarEntregado, restante } from './examenGuardado';
+import { sumarRespuesta } from './progreso';
+import { etiquetaHistorica } from './datos';
+import { MARGEN_RETENCION_MS, motivoRepaso } from './repaso';
 import { programar } from './srs';
-import type { Letra, ParteExamen, PreguntaExamen } from './tipos';
+import type { Letra, ParteExamen, PreguntaExamen, ResumenPregunta } from './tipos';
 
 const op = { a: 'a', b: 'b', c: 'c', d: 'd' };
 const pregunta = (n: number, extra: Partial<PreguntaExamen> = {}): PreguntaExamen =>
   ({ id: `q${extra.reserva ? 'r' : ''}${n}`, n, reserva: false, q: '', op, ok: 'a', anulada: false, tema: null, ...extra });
+const nombre = (p: string) => (p === 'ej1' ? 'Test' : 'Supuesto');
 
 describe('corrección según las bases', () => {
-  it('resta un tercio por error y escala a 50', () => {
+  it('resta un tercio por error y da la neta y una nota orientativa sobre 50', () => {
     const parte: ParteExamen = { contexto: '', preguntas: Array.from({ length: 80 }, (_, i) => pregunta(i + 1)) };
     const resp: Record<string, Letra> = {};
     parte.preguntas.forEach((q, i) => { if (i < 60) resp[q.id] = 'a'; else if (i < 70) resp[q.id] = 'b'; });
     const n = corregirParte(parte, resp);
-    expect([n.a, n.e, n.b]).toEqual([60, 10, 10]);
+    expect([n.a, n.e, n.b, n.total]).toEqual([60, 10, 10, 80]);
+    expect(n.neta).toBe(56.67);
     expect(n.nota).toBe(35.42); // (60 − 10/3) × 0,625
   });
 
@@ -28,8 +36,309 @@ describe('corrección según las bases', () => {
     expect(n.nota).toBe(50);
   });
 
-  it('el supuesto no cuenta si no se aprueba el test', () => {
-    expect(veredicto({ ej1: { a: 0, e: 0, b: 0, n: 80, nota: 20 }, b3: { a: 0, e: 0, b: 0, n: 20, nota: 40 } })).toMatch(/no se corregiría/);
+  it('si hay más anuladas que reservas, la neta cuenta solo las que puntúan y el máximo baja', () => {
+    const parte: ParteExamen = { contexto: '', preguntas: [pregunta(1), pregunta(2), pregunta(3, { anulada: true, ok: null }), pregunta(4)] };
+    const n = corregirParte(parte, { q1: 'a', q2: 'a', q4: 'a' });
+    // Cada pregunta sigue valiendo 50/4: todo bien da 37,5, no 50.
+    expect([n.n, n.total, n.nota]).toEqual([3, 3, 37.5]);
+    expect(valorar(n).pct).toBe(100);
+    expect(queCuentan(parte).map(q => q.id)).toEqual(['q1', 'q2', 'q4']);
+  });
+
+  it('sin corte publicado no afirma aprobar ni suspender', () => {
+    const lineas = resumen({ ej1: { a: 50, e: 9, b: 21, n: 80, total: 80, neta: 47, nota: 29.38 }, b3: { a: 0, e: 0, b: 20, n: 20, nota: 0 } }, {}, nombre);
+    const texto = lineas.join(' ');
+    expect(texto).not.toMatch(/aprueb|suspend/i);
+    expect(lineas[0]).toMatch(/neta 47,00 de 80 \(59 %\).*Sin corte oficial.*7,00 por encima/);
+    expect(lineas[1]).toMatch(/neta 0,00 de 20/);
+    expect(lineas.at(-1)).toMatch(/solo se corrige si superas el corte del test/);
+  });
+
+  it('con un corte oficial documentado da el margen y, si la fuente lo respalda, la nota transformada', () => {
+    const n = { a: 50, e: 9, b: 21, n: 80, total: 80, neta: 47, nota: 29.38 };
+    const v = valorar(n, { corte_directa: 40, transformacion_lineal: true, fuente: 'acta', oficial: true });
+    expect(v.corte?.margen).toBe(7);
+    expect(v.corte?.transformada).toBe(29.38); // 25 + 7 × 25/40
+    expect(valorar(n, { corte_directa: 50, transformacion_lineal: true, fuente: 'acta', oficial: true }).corte?.transformada).toBeUndefined();
+    expect(valorar(n, { corte_directa: 40, fuente: 'academia', oficial: false }).corte?.transformada).toBeUndefined();
+    expect(resumen({ ej1: n }, { ej1: { corte_directa: 40, fuente: 'acta', oficial: true } }, nombre)[0]).toMatch(/corte oficial .* 40,00: estarías 7,00 por encima/);
+  });
+
+  it('reconstruye la neta de intentos guardados antes del cambio', () => {
+    expect(valorar({ a: 30, e: 6, b: 4, n: 40, nota: 35 })).toMatchObject({ neta: 28, total: 40, pct: 70 });
+  });
+});
+
+describe('repaso y retención', () => {
+  const base: ResumenPregunta = { pregunta_id: 'p', tema: 1, vistas: 1, aciertos: 0, ultima: 0, ts: 0 };
+  const DIA = MARGEN_RETENCION_MS;
+  it('fallos y blancos vuelven siempre', () => {
+    expect(motivoRepaso(base, 1)).toBe('fallada');
+    expect(motivoRepaso({ ...base, blanco: 1 }, 1)).toBe('blanco');
+  });
+  it('una pregunta acertada siempre no vuelve', () => {
+    expect(motivoRepaso({ ...base, aciertos: 2, vistas: 2, ultima: 1, racha: 2, ts_racha: 0, ts: 10 }, 10 * DIA)).toBeNull();
+  });
+  it('tras un fallo, el acierto se comprueba al día siguiente y sale con dos aciertos separados', () => {
+    let p = sumarRespuesta(undefined, { pregunta_id: 'p', tema: 1, elegida: 'b', acierto: false, origen: 'test', modo: 'practica', ts: 0, cliente_id: 'c' });
+    expect(p.primera).toBe(0);
+    p = sumarRespuesta(p, { pregunta_id: 'p', tema: 1, elegida: 'a', acierto: true, origen: 'repaso', modo: 'practica', ts: 1000, cliente_id: 'c' });
+    expect(motivoRepaso(p, 2000)).toBeNull(); // recién acertada: hoy no
+    expect(motivoRepaso(p, 1000 + DIA)).toBe('confirmar');
+    p = sumarRespuesta(p, { pregunta_id: 'p', tema: 1, elegida: 'a', acierto: true, origen: 'repaso', modo: 'practica', ts: 1000 + DIA, cliente_id: 'c' });
+    expect([p.racha, p.ts_racha]).toEqual([2, 1000]);
+    expect(motivoRepaso(p, 1000 + 5 * DIA)).toBeNull();
+    // Dos aciertos el mismo día no bastan.
+    let q = sumarRespuesta({ ...base }, { pregunta_id: 'p', tema: 1, elegida: 'a', acierto: true, origen: 'test', modo: 'practica', ts: 100, cliente_id: 'c' });
+    q = sumarRespuesta(q, { pregunta_id: 'p', tema: 1, elegida: 'a', acierto: true, origen: 'test', modo: 'practica', ts: 200, cliente_id: 'c' });
+    expect(motivoRepaso(q, 200 + DIA)).toBe('confirmar');
+  });
+  it('un blanco corta la racha', () => {
+    const p = sumarRespuesta({ ...base, vistas: 3, aciertos: 2, ultima: 1, racha: 2, ts_racha: 0, ts: DIA }, { pregunta_id: 'p', tema: 1, elegida: null, acierto: false, origen: 'examen', modo: 'simulacro', ts: 3 * DIA, cliente_id: 'c' });
+    expect([p.racha, p.ts_racha, p.blanco, p.ultima]).toEqual([0, null, 1, 0]);
+    expect(motivoRepaso(p, 3 * DIA)).toBe('blanco');
+  });
+  it('un blanco no cuenta como contestada ni como primera vez', () => {
+    const blanco = { pregunta_id: 'p', tema: 1, elegida: null, acierto: false, origen: 'examen', modo: 'simulacro' as const, ts: 1, cliente_id: 'c' };
+    let p = sumarRespuesta(undefined, blanco);
+    expect([p.vistas, p.contestadas, p.primera]).toEqual([1, 0, null]);
+    p = sumarRespuesta(p, { ...blanco, elegida: 'a', acierto: true, ts: 2 });
+    expect([p.vistas, p.contestadas, p.primera]).toEqual([2, 1, 1]);
+    p = sumarRespuesta(p, { ...blanco, elegida: 'b', acierto: false, ts: 3 });
+    expect([p.contestadas, p.primera]).toEqual([2, 1]);
+  });
+});
+
+class Memoria implements Almacen {
+  m = new Map<string, string>();
+  getItem(k: string) { return this.m.get(k) ?? null; }
+  setItem(k: string, v: string) { this.m.set(k, v); }
+  removeItem(k: string) { this.m.delete(k); }
+}
+const srs = (id: string): Escritura => ({ tipo: 'srs', e: { tarjeta_id: id, tema: 1, facilidad: 2.5, intervalo: 1, repeticiones: 1, vence: 1 } });
+const nombreDe = (e: Escritura) => (e.tipo === 'srs' ? e.e.tarjeta_id : e.tipo);
+
+describe('cola de escrituras', () => {
+  it('envía en orden, con el usuario dueño, y avisa del estado', async () => {
+    const enviadas: string[] = [];
+    const estados: string[] = [];
+    const c = new ColaEscrituras(async (e, u) => { enviadas.push(`${u}:${nombreDe(e)}`); }, new Memoria(), e => estados.push(e.estado));
+    c.usar('nosa');
+    expect(await Promise.all([c.encolar(srs('1')), c.encolar(srs('2'))])).toEqual(['ok', 'ok']);
+    expect(enviadas).toEqual(['nosa:1', 'nosa:2']);
+    expect(estados.at(-1)).toBe('guardado');
+  });
+
+  it('si falla la red conserva lo pendiente en el navegador, por usuario, y lo envía al volver', async () => {
+    const almacen = new Memoria();
+    let red = false;
+    const enviadas: string[] = [];
+    const estados: { estado: string; pendientes: number }[] = [];
+    const ejecutar = async (e: Escritura) => { if (!red) throw new TypeError('Failed to fetch'); enviadas.push(nombreDe(e)); };
+    const c = new ColaEscrituras(ejecutar, almacen, e => estados.push(e));
+    c.usar('nosa');
+    expect(await c.encolar(srs('1'))).toBe('pendiente');
+    expect(await c.encolar(srs('2'))).toBe('pendiente');
+    expect(estados.at(-1)).toMatchObject({ estado: 'error', pendientes: 2 });
+    expect(JSON.parse(almacen.getItem('estudia-tai:pendientes:nosa')!)).toHaveLength(2);
+    // Otro usuario en el mismo navegador no ve ni envía lo de nosa.
+    c.usar('jota');
+    expect(c.pendientes).toBe(0);
+    // Al volver nosa (p. ej. tras recargar), se recupera y se envía.
+    red = true;
+    const otra = new ColaEscrituras(ejecutar, almacen, () => {});
+    otra.usar('nosa');
+    expect(otra.pendientes).toBe(2);
+    expect(await otra.vaciar()).toBe(true);
+    expect(enviadas).toEqual(['1', '2']);
+    expect(almacen.getItem('estudia-tai:pendientes:nosa')).toBeNull();
+  });
+
+  it('dos pestañas comparten la lista: no se pisan los pendientes y lo enviado por una cuenta para la otra', async () => {
+    const almacen = new Memoria();
+    let red = false;
+    const enviadas: string[] = [];
+    const ejecutar = async (e: Escritura) => { if (!red) throw new TypeError('offline'); enviadas.push(nombreDe(e)); };
+    const a = new ColaEscrituras(ejecutar, almacen, () => {});
+    const b = new ColaEscrituras(ejecutar, almacen, () => {});
+    a.usar('nosa'); b.usar('nosa');
+    const ra = a.encolar(srs('a1'));
+    await b.encolar(srs('b1'));
+    expect(a.pendientes).toBe(2);
+    red = true;
+    expect(await b.vaciar()).toBe(true);
+    expect(enviadas).toEqual(['a1', 'b1']);
+    // La pestaña A esperaba a1: lo envió B, así que al vaciar A queda resuelto como enviado.
+    expect(await a.vaciar()).toBe(true);
+    expect(await ra).toBe('pendiente'); // se resolvió al fallar la red; lo importante es que no se reenvía
+    expect(enviadas).toEqual(['a1', 'b1']);
+  });
+
+  it('una escritura rechazada (4xx) se descarta sin bloquear las siguientes; un 401 se conserva', async () => {
+    const enviadas: string[] = [];
+    let estado = '';
+    const c = new ColaEscrituras(async e => {
+      const id = nombreDe(e);
+      if (id === 'mala') throw new ErrorHttp(400, 'bad');
+      if (id === 'sin-sesion') throw new NoAutenticado();
+      enviadas.push(id);
+    }, new Memoria(), e => { estado = `${e.estado}:${e.pendientes}`; });
+    c.usar('nosa');
+    expect(await c.encolar(srs('mala'))).toBe('rechazado');
+    expect(await c.encolar(srs('buena'))).toBe('ok');
+    expect(enviadas).toEqual(['buena']);
+    expect(await c.encolar(srs('sin-sesion'))).toBe('pendiente');
+    expect(estado).toBe('error:1');
+  });
+
+  it('al cambiar de usuario con un envío colgado, la cola del nuevo sale sin esperar y la del anterior no se reenvía', async () => {
+    const almacen = new Memoria();
+    almacen.setItem('estudia-tai:pendientes:jota', JSON.stringify([{ id: 'x', op: srs('j1') }]));
+    let soltar!: () => void;
+    const enviadas: string[] = [];
+    const c = new ColaEscrituras(async (e, u) => {
+      if (nombreDe(e) === 'n1') await new Promise<void>(r => { soltar = r; });
+      enviadas.push(`${u}:${nombreDe(e)}`);
+    }, almacen, () => {});
+    c.usar('nosa');
+    const rn = c.encolar(srs('n1'));
+    await Promise.resolve();
+    c.usar('jota');
+    expect(await rn).toBe('pendiente');
+    // La petición de nosa sigue colgada y lo de jota se envía igualmente.
+    expect(await c.vaciar()).toBe(true);
+    expect(enviadas).toEqual(['jota:j1']);
+    // Cuando por fin llega n1, se quita de la clave de nosa: no se reenviará al volver a entrar.
+    soltar();
+    await new Promise(r => setTimeout(r, 0));
+    expect(enviadas).toEqual(['jota:j1', 'nosa:n1']);
+    expect(almacen.getItem('estudia-tai:pendientes:nosa')).toBeNull();
+  });
+
+  it('lo que otra pestaña descartó (4xx) no se da por guardado', async () => {
+    const almacen = new Memoria();
+    const a = new ColaEscrituras(async () => { throw new TypeError('offline'); }, almacen, () => {});
+    const b = new ColaEscrituras(async e => { if (nombreDe(e) === 'mala') throw new ErrorHttp(422, 'no'); }, almacen, () => {});
+    a.usar('nosa'); b.usar('nosa');
+    const finales: string[] = [];
+    expect(await a.encolar(srs('mala'), r => finales.push(r))).toBe('pendiente');
+    expect(await b.vaciar()).toBe(true);
+    // A se entera al vaciar (la lista ya está vacía): lo rechazó el servidor, no se guardó.
+    await a.vaciar();
+    expect(finales).toEqual(['rechazado']);
+  });
+
+  it('lo que desaparece de la lista sin constar como enviado se vuelve a encolar', async () => {
+    const almacen = new Memoria();
+    let red = false;
+    const enviadas: string[] = [];
+    const c = new ColaEscrituras(async e => { if (!red) throw new TypeError('offline'); enviadas.push(nombreDe(e)); }, almacen, () => {});
+    c.usar('nosa');
+    const finales: string[] = [];
+    await c.encolar(srs('x'), r => finales.push(r));
+    // Otra pestaña escribió la lista con una copia vieja y se llevó la entrada por delante.
+    almacen.removeItem('estudia-tai:pendientes:nosa');
+    red = true;
+    expect(await c.vaciar()).toBe(true);
+    expect(enviadas).toEqual(['x']);
+    expect(finales).toEqual(['ok']);
+  });
+
+  it('si el navegador no deja escribir (cuota llena), la cola sigue en memoria y envía', async () => {
+    const almacen = new Memoria();
+    almacen.setItem = () => { throw new DOMException('lleno', 'QuotaExceededError'); };
+    const enviadas: string[] = [];
+    const estados: string[] = [];
+    const c = new ColaEscrituras(async e => { enviadas.push(nombreDe(e)); }, almacen, e => estados.push(e.estado));
+    c.usar('nosa');
+    expect(await c.encolar(srs('x'))).toBe('ok');
+    expect(enviadas).toEqual(['x']);
+    expect(estados.at(-1)).toBe('guardado');
+  });
+
+  it('si el almacenamiento se llena a mitad de envío, lo que ya había pendiente se envía igual', async () => {
+    const almacen = new Memoria();
+    almacen.setItem('estudia-tai:pendientes:nosa', JSON.stringify(['e1', 'e2', 'e3'].map(id => ({ id, op: srs(id) }))));
+    const setItem = almacen.setItem.bind(almacen);
+    // Solo caben escrituras que no crecen: la lista de resultados nueva no entra.
+    almacen.setItem = (k, v) => { if ((almacen.m.get(k)?.length ?? 0) < v.length) throw new DOMException('lleno', 'QuotaExceededError'); setItem(k, v); };
+    const enviadas: string[] = [];
+    const c = new ColaEscrituras(async e => { enviadas.push(nombreDe(e)); }, almacen, () => {});
+    c.usar('nosa');
+    expect(await c.vaciar()).toBe(true);
+    expect(enviadas).toEqual(['e1', 'e2', 'e3']);
+  });
+
+  it('alFinal avisa cuando un envío que falló se guarda en un reintento', async () => {
+    let red = false;
+    const c = new ColaEscrituras(async () => { if (!red) throw new TypeError('offline'); }, new Memoria(), () => {});
+    c.usar('nosa');
+    const finales: string[] = [];
+    expect(await c.encolar(srs('x'), r => finales.push(r))).toBe('pendiente');
+    expect(finales).toEqual([]);
+    red = true;
+    await c.vaciar();
+    expect(finales).toEqual(['ok']);
+  });
+});
+
+describe('autoguardado del examen', () => {
+  const g = { v: 1 as const, config: { partes: ['ej1'], modo: 'examen' as const, minutos: 120 }, resp: { q1: 'a' as Letra }, i: 3, inicio: 0, cliente_id: 'x'.repeat(10), pestana: 'A' };
+  it('guarda por usuario y examen, y calcula el tiempo que queda aunque la pestaña estuviera cerrada', () => {
+    const a = new Memoria();
+    expect(guardarExamen('nosa', 'LI_2025', g, 'nuevo', a)).toBe('ok');
+    expect(leerExamen('jota', 'LI_2025', a)).toBeNull();
+    expect(leerExamen('nosa', 'LI_2025', a)).toEqual(g);
+    expect(restante(g, 60 * 60_000)).toBe(60 * 60_000);
+    expect(restante(g, 121 * 60_000)).toBeLessThan(0);
+    expect(restante({ ...g, config: { ...g.config, minutos: 0 } }, 1e12)).toBe(Infinity);
+    // Descartar con una lectura vieja no borra otro examen.
+    borrarExamen('nosa', 'LI_2025', 'otro-examen', a);
+    expect(leerExamen('nosa', 'LI_2025', a)).not.toBeNull();
+    borrarExamen('nosa', 'LI_2025', g.cliente_id, a);
+    expect(leerExamen('nosa', 'LI_2025', a)).toBeNull();
+    a.setItem('estudia-tai:examen:nosa:LI_2024', '{roto');
+    expect(leerExamen('nosa', 'LI_2024', a)).toBeNull();
+  });
+  it('solo escribe la pestaña que lo hace: continuar en otra la deja fuera', () => {
+    const a = new Memoria();
+    guardarExamen('nosa', 'LI_2025', g, 'nuevo', a);
+    expect(guardarExamen('nosa', 'LI_2025', { ...g, i: 4 }, 'seguir', a)).toBe('ok');
+    // La pestaña B pulsa «Continuar»: toma el examen.
+    expect(guardarExamen('nosa', 'LI_2025', { ...g, pestana: 'B' }, 'tomar', a)).toBe('ok');
+    expect(esMio('nosa', 'LI_2025', g.cliente_id, 'A', a)).toBe(false);
+    expect(guardarExamen('nosa', 'LI_2025', { ...g, resp: {} }, 'seguir', a)).toBe('otra-pestana');
+    expect(leerExamen('nosa', 'LI_2025', a)?.pestana).toBe('B');
+  });
+  it('un examen entregado en otra pestaña no resucita ni se pisa con otro', () => {
+    const a = new Memoria();
+    guardarExamen('nosa', 'LI_2025', g, 'nuevo', a);
+    marcarEntregado('nosa', 'LI_2025', g.cliente_id, a);
+    expect(leerExamen('nosa', 'LI_2025', a)).toBeNull();
+    expect(guardarExamen('nosa', 'LI_2025', { ...g, i: 4 }, 'seguir', a)).toBe('otra-pestana');
+    expect(guardarExamen('nosa', 'LI_2025', g, 'tomar', a)).toBe('otra-pestana');
+    expect(leerExamen('nosa', 'LI_2025', a)).toBeNull();
+    // Un examen nuevo sí ocupa la marca de uno entregado.
+    const nuevo = { ...g, cliente_id: 'y'.repeat(10) };
+    expect(guardarExamen('nosa', 'LI_2025', nuevo, 'nuevo', a)).toBe('ok');
+    // Y otro examen nuevo no pisa uno a medias.
+    expect(guardarExamen('nosa', 'LI_2025', { ...g, cliente_id: 'z'.repeat(10) }, 'nuevo', a)).toBe('otra-pestana');
+    expect(leerExamen('nosa', 'LI_2025', a)?.cliente_id).toBe(nuevo.cliente_id);
+  });
+  it('sin almacenamiento lo dice, en lugar de culpar a otra pestaña', () => {
+    expect(guardarExamen('nosa', 'LI_2025', g, 'nuevo', null)).toBe('sin-almacen');
+    const lleno = new Memoria();
+    lleno.setItem = () => { throw new DOMException('lleno', 'QuotaExceededError'); };
+    expect(guardarExamen('nosa', 'LI_2025', g, 'nuevo', lleno)).toBe('sin-almacen');
+  });
+});
+
+describe('etiquetas de las históricas', () => {
+  it('nombran el examen como en el simulacro, con reservas y extraordinario', () => {
+    expect(etiquetaHistorica({ origen: { anio: 2025, parte: 'ej1', n: 1, reserva: true, conv: 'extraordinaria' } })).toBe('Extraordinario 2026 · test · reserva 1');
+    expect(etiquetaHistorica({ origen: { anio: 2025, parte: 'b3', n: 7 } })).toBe('Mayo 2026 · supuesto III · 7');
+    expect(etiquetaHistorica({ origen: { anio: 2016, parte: 'ej1_iv', n: 1 } })).toBe('OEP 2016 · test bloque IV · 1');
+    expect(etiquetaHistorica({ origen: null })).toBeUndefined();
   });
 });
 

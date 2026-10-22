@@ -527,7 +527,7 @@ Validación de certificados:
 ### SSL/TLS
 
 - SSL 2.0 y 3.0 están prohibidos. TLS 1.0 y 1.1 se declararon obsoletos (RFC 8996, 2021).
-- **TLS 1.3** (RFC 8446, 2018): *handshake* de 1 RTT (0-RTT opcional), solo cifrados AEAD (AES-GCM, ChaCha20-Poly1305), intercambio siempre efímero (**secreto perfecto hacia delante**), sin RSA estático.
+- **TLS 1.3** (RFC 8446, 2018): *handshake* de 1 RTT (0-RTT opcional), solo cifrados AEAD (AES-GCM, ChaCha20-Poly1305) y sin RSA estático. Con certificado, el intercambio es (EC)DHE efímero (**secreto perfecto hacia delante**). Ojo: no es «siempre»; en el modo de solo clave precompartida (**psk_ke**) no hay (EC)DHE y no se garantiza ese secreto (**psk_dhe_ke** sí lo añade), y los datos 0-RTT tampoco lo tienen.
 - El *handshake* autentica al servidor con su certificado, acuerda una clave simétrica de sesión y luego cifra los datos con ella.
 - Pregunta de 2006 **[Salió 2006 b4]**: "si el servidor cifra con algoritmo asimétrico, ¿cómo descifra el cliente?". Lo cifrado con la clave privada del servidor se descifra con su **clave pública** (sin verificar la opción oficial). En la práctica, TLS cifra los datos con clave simétrica.
 

@@ -5,6 +5,11 @@
  "fuente_clave": "oficial",
  "formato": "antiguo",
  "nota_formato": "Formato antiguo: primer ejercicio con bloques I-II comunes más III o IV a elegir (aquí el III; el Bloque IV del test va aparte en ej1_iv); segundo ejercicio práctico de 40 preguntas.",
+ "fuente": {
+  "cuestionario": "Cuestionarios oficiales del primer y segundo ejercicio (OEP 2016), en PDF",
+  "plantilla": "Copia de baquedano.es: TAI_sol_1_libre_AGE_2017.pdf y TAI_sol_2_libre_AGE_2017.pdf",
+  "version_plantilla": "definitiva"
+ },
  "partes": {
   "ej1": {
    "titulo": "Primer ejercicio (test)",

@@ -896,7 +896,7 @@
     "a": "15.",
     "b": "20.",
     "c": "10.",
-    "d": "19 ."
+    "d": "19."
    },
    "ok": "a",
    "clave": "oficial",
@@ -1336,7 +1336,8 @@
    "origen": {
     "anio": 2008,
     "parte": "b3",
-    "n": 1
+    "n": 1,
+    "reserva": true
    },
    "de": null,
    "texto": "literal",
@@ -2536,7 +2537,8 @@
    "origen": {
     "anio": 2025,
     "parte": "b3",
-    "n": 7
+    "n": 7,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -2586,7 +2588,8 @@
    "origen": {
     "anio": 2025,
     "parte": "ej1",
-    "n": 41
+    "n": 41,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -3336,7 +3339,8 @@
    "origen": {
     "anio": 2016,
     "parte": "b3",
-    "n": 1
+    "n": 1,
+    "reserva": true
    },
    "de": null,
    "texto": "literal",

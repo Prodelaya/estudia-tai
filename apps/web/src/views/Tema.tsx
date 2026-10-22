@@ -4,6 +4,7 @@ import { Markdown } from '../components/Markdown';
 import { SesionPractica, SesionTarjetas } from '../components/Sesiones';
 import { datos, desdeTema, idProgreso } from '../lib/datos';
 import { useProgreso } from '../lib/progreso';
+import { contestada } from '../lib/repaso';
 import { hoy } from '../lib/srs';
 import { barajar, useCarga } from '../lib/useCarga';
 import type { ContenidoTema, PreguntaTema } from '../lib/tipos';
@@ -97,7 +98,7 @@ function TestTema({ c }: { c: ContenidoTema }) {
   const candidatas = c.preguntas.filter(p =>
     (filtro === 'todas' || p.tipo === filtro)
     && (!epigrafe || p.epigrafe === epigrafe)
-    && (seleccion === 'todas' || (seleccion === 'sin-ver' ? !porPregunta.has(idProgreso(p)) : porPregunta.get(idProgreso(p))?.ultima === 0)));
+    && (seleccion === 'todas' || (seleccion === 'sin-ver' ? !contestada(porPregunta.get(idProgreso(p))) : porPregunta.get(idProgreso(p))?.ultima === 0)));
 
   if (sesion) return <SesionPractica preguntas={sesion.map(p => desdeTema(p, c.tema))} onFin={() => setSesion(null)} />;
   return (

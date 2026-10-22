@@ -258,7 +258,7 @@
    "ref": null,
    "origen": {
     "anio": 2008,
-    "parte": "ej1",
+    "parte": "ej1_iv",
     "n": 103
    },
    "de": null,
@@ -308,8 +308,8 @@
    "ref": "LI2007-b3-S2-09",
    "origen": {
     "anio": 2007,
-    "parte": "b4",
-    "n": 19
+    "parte": "b3",
+    "n": 27
    },
    "de": null,
    "texto": "literal",
@@ -359,7 +359,7 @@
    "origen": {
     "anio": 2007,
     "parte": "ej1",
-    "n": 72
+    "n": 80
    },
    "de": null,
    "texto": "literal",
@@ -736,7 +736,7 @@
    "origen": {
     "anio": 2024,
     "parte": "ej1",
-    "n": 67
+    "n": 69
    },
    "de": null,
    "texto": "literal",
@@ -786,7 +786,7 @@
    "origen": {
     "anio": 2024,
     "parte": "ej1",
-    "n": 75
+    "n": 78
    },
    "de": null,
    "texto": "literal",
@@ -985,8 +985,8 @@
    "ref": "LI2016-ej1_iv-IV-19",
    "origen": {
     "anio": 2016,
-    "parte": "ej1",
-    "n": 123
+    "parte": "ej1_iv",
+    "n": 19
    },
    "de": null,
    "texto": "literal",
@@ -1035,8 +1035,8 @@
    "ref": "LI2016-ej1_iv-IV-21",
    "origen": {
     "anio": 2016,
-    "parte": "ej1",
-    "n": 125
+    "parte": "ej1_iv",
+    "n": 21
    },
    "de": null,
    "texto": "literal",
@@ -1085,8 +1085,8 @@
    "ref": "LI2016-ej1_iv-IV-45",
    "origen": {
     "anio": 2016,
-    "parte": "ej1",
-    "n": 149
+    "parte": "ej1_iv",
+    "n": 45
    },
    "de": null,
    "texto": "literal",
@@ -1135,7 +1135,7 @@
    "ref": null,
    "origen": {
     "anio": 2015,
-    "parte": "ej1",
+    "parte": "ej1_iv",
     "n": 110
    },
    "de": null,
@@ -1185,7 +1185,7 @@
    "ref": null,
    "origen": {
     "anio": 2008,
-    "parte": "ej1",
+    "parte": "ej1_iv",
     "n": 104
    },
    "de": null,
@@ -1235,7 +1235,7 @@
    "ref": null,
    "origen": {
     "anio": 2008,
-    "parte": "ej1",
+    "parte": "ej1_iv",
     "n": 105
    },
    "de": null,
@@ -1285,7 +1285,7 @@
    "ref": null,
    "origen": {
     "anio": 2008,
-    "parte": "ej1",
+    "parte": "ej1_iv",
     "n": 106
    },
    "de": null,
@@ -1335,8 +1335,8 @@
    "ref": "LI2007-b3-S2-07",
    "origen": {
     "anio": 2007,
-    "parte": "b4",
-    "n": 17
+    "parte": "b3",
+    "n": 25
    },
    "de": null,
    "texto": "literal",
@@ -1435,8 +1435,8 @@
    "ref": "LI2016-ej1_iv-IV-46",
    "origen": {
     "anio": 2016,
-    "parte": "ej1",
-    "n": 150
+    "parte": "ej1_iv",
+    "n": 46
    },
    "de": null,
    "texto": "literal",
@@ -1599,7 +1599,7 @@
     "d": "Passphrase + tarjeta criptográfica"
    },
    "ok": "c",
-   "clave": "oficial",
+   "clave": "claude",
    "anulada": false,
    "obsoleta": false,
    "explicacion": "**c) Password + huella dactilar** no cumple la política: la huella es \"algo que **eres**\" (biometría), no \"algo que **tienes**\".\n\nLas demás combinan algo que sabes (password, PIN, *passphrase*) con algo que tienes (USB, generador de claves, tarjeta criptográfica).",
@@ -1785,8 +1785,8 @@
    "ref": "LI2016-ej1_iv-IV-16",
    "origen": {
     "anio": 2016,
-    "parte": "ej1",
-    "n": 120
+    "parte": "ej1_iv",
+    "n": 16
    },
    "de": null,
    "texto": "literal",
@@ -1835,7 +1835,7 @@
    "ref": null,
    "origen": {
     "anio": 2015,
-    "parte": "ej1",
+    "parte": "ej1_iv",
     "n": 114
    },
    "de": null,
@@ -2036,7 +2036,8 @@
    "origen": {
     "anio": 2025,
     "parte": "ej1",
-    "n": 82
+    "n": 2,
+    "reserva": true
    },
    "de": null,
    "texto": "literal",
@@ -2086,7 +2087,7 @@
    "origen": {
     "anio": 2024,
     "parte": "b4",
-    "n": 15
+    "n": 16
    },
    "de": null,
    "texto": "literal",
@@ -2136,7 +2137,7 @@
    "origen": {
     "anio": 2022,
     "parte": "ej1",
-    "n": 66
+    "n": 69
    },
    "de": null,
    "texto": "literal",
@@ -2285,8 +2286,8 @@
    "ref": "LI2016-ej1_iv-IV-17",
    "origen": {
     "anio": 2016,
-    "parte": "ej1",
-    "n": 121
+    "parte": "ej1_iv",
+    "n": 17
    },
    "de": null,
    "texto": "literal",
@@ -2335,8 +2336,8 @@
    "ref": "LI2016-ej1_iv-IV-20",
    "origen": {
     "anio": 2016,
-    "parte": "ej1",
-    "n": 124
+    "parte": "ej1_iv",
+    "n": 20
    },
    "de": null,
    "texto": "literal",
@@ -2535,7 +2536,7 @@
    "ref": null,
    "origen": {
     "anio": 2015,
-    "parte": "ej1",
+    "parte": "ej1_iv",
     "n": 111
    },
    "de": null,
@@ -2585,7 +2586,7 @@
    "ref": null,
    "origen": {
     "anio": 2015,
-    "parte": "ej1",
+    "parte": "ej1_iv",
     "n": 112
    },
    "de": null,
@@ -2635,7 +2636,7 @@
    "ref": null,
    "origen": {
     "anio": 2015,
-    "parte": "ej1",
+    "parte": "ej1_iv",
     "n": 135
    },
    "de": null,
@@ -2685,8 +2686,8 @@
    "ref": "LI2007-b3-S2-11",
    "origen": {
     "anio": 2007,
-    "parte": "b4",
-    "n": 21
+    "parte": "b3",
+    "n": 29
    },
    "de": null,
    "texto": "literal",
@@ -2736,7 +2737,7 @@
    "origen": {
     "anio": 2007,
     "parte": "ej1",
-    "n": 75
+    "n": 84
    },
    "de": null,
    "texto": "literal",
@@ -2886,7 +2887,8 @@
    "origen": {
     "anio": 2025,
     "parte": "ej1",
-    "n": 79
+    "n": 79,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -2936,7 +2938,7 @@
    "origen": {
     "anio": 2024,
     "parte": "ej1",
-    "n": 66
+    "n": 68
    },
    "de": null,
    "texto": "literal",
@@ -3085,7 +3087,7 @@
    "ref": null,
    "origen": {
     "anio": 2008,
-    "parte": "ej1",
+    "parte": "ej1_iv",
     "n": 100
    },
    "de": null,
@@ -3135,7 +3137,7 @@
    "ref": null,
    "origen": {
     "anio": 2008,
-    "parte": "ej1",
+    "parte": "ej1_iv",
     "n": 134
    },
    "de": null,
@@ -3185,7 +3187,7 @@
    "ref": null,
    "origen": {
     "anio": 2008,
-    "parte": "ej1",
+    "parte": "ej1_iv",
     "n": 137
    },
    "de": null,
@@ -3362,8 +3364,8 @@
    "ref": "LI2016-ej1_iv-IV-44",
    "origen": {
     "anio": 2016,
-    "parte": "ej1",
-    "n": 148
+    "parte": "ej1_iv",
+    "n": 44
    },
    "de": null,
    "texto": "literal",
@@ -3493,7 +3495,7 @@
    "q": "¿Qué característica es propia de TLS 1.3 frente a TLS 1.2?",
    "ctx": null,
    "op": {
-    "a": "Solo admite intercambio de claves efímero, lo que garantiza el secreto perfecto hacia delante.",
+    "a": "Elimina el RSA estático: el intercambio de claves es (EC)DHE efímero, salvo en el modo de solo clave precompartida (psk_ke).",
     "b": "Permite el intercambio de claves con RSA estático.",
     "c": "Admite cifrados RC4 y 3DES.",
     "d": "Necesita dos idas y vueltas (2-RTT) para el saludo inicial."
@@ -3502,7 +3504,7 @@
    "clave": "claude",
    "anulada": false,
    "obsoleta": false,
-   "explicacion": "**TLS 1.3** (RFC 8446): saludo de **1-RTT** (0-RTT opcional), solo cifrados **AEAD** (AES-GCM, ChaCha20-Poly1305) e intercambio **siempre efímero** ((EC)DHE), sin RSA estático. RC4 y 3DES están prohibidos.",
+   "explicacion": "**a)** **TLS 1.3** (RFC 8446) suprime el intercambio con **RSA estático**: los modos con certificado usan siempre **(EC)DHE efímero**, que da **secreto perfecto hacia delante**. La excepción es la reanudación o el acceso con **clave precompartida**: en el modo **psk_ke** (solo PSK, sin (EC)DHE) no hay secreto hacia delante respecto a esa clave; el modo **psk_dhe_ke** sí lo añade. Los datos 0-RTT tampoco lo tienen.\n\n- b) El RSA estático es justo lo que TLS 1.3 eliminó.\n- c) RC4 y 3DES están prohibidos: TLS 1.3 solo admite cifrados **AEAD** (AES-GCM, ChaCha20-Poly1305).\n- d) El saludo completo es de **1-RTT** (0-RTT opcional al reanudar); 2-RTT era TLS 1.2.",
    "epigrafe": "Protocolos seguros",
    "dificultad": 2
   },
@@ -3540,7 +3542,8 @@
    "origen": {
     "anio": 2025,
     "parte": "b4",
-    "n": 9
+    "n": 9,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -3590,7 +3593,9 @@
    "origen": {
     "anio": 2025,
     "parte": "ej1",
-    "n": 85
+    "n": 3,
+    "reserva": true,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -3640,7 +3645,8 @@
    "origen": {
     "anio": 2025,
     "parte": "ej1",
-    "n": 77
+    "n": 77,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -3740,7 +3746,8 @@
    "origen": {
     "anio": 2025,
     "parte": "ej1",
-    "n": 68
+    "n": 68,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -3889,8 +3896,8 @@
    "ref": "LI2016-ej1_iv-IV-18",
    "origen": {
     "anio": 2016,
-    "parte": "ej1",
-    "n": 122
+    "parte": "ej1_iv",
+    "n": 18
    },
    "de": null,
    "texto": "literal",
@@ -3939,7 +3946,7 @@
    "ref": null,
    "origen": {
     "anio": 2015,
-    "parte": "ej1",
+    "parte": "ej1_iv",
     "n": 108
    },
    "de": null,
@@ -3989,7 +3996,7 @@
    "ref": null,
    "origen": {
     "anio": 2015,
-    "parte": "ej1",
+    "parte": "ej1_iv",
     "n": 113
    },
    "de": null,
@@ -4039,7 +4046,7 @@
    "ref": null,
    "origen": {
     "anio": 2008,
-    "parte": "ej1",
+    "parte": "ej1_iv",
     "n": 101
    },
    "de": null,
@@ -4089,7 +4096,7 @@
    "ref": null,
    "origen": {
     "anio": 2008,
-    "parte": "ej1",
+    "parte": "ej1_iv",
     "n": 102
    },
    "de": null,
@@ -4139,8 +4146,8 @@
    "ref": "LI2007-b3-S2-12",
    "origen": {
     "anio": 2007,
-    "parte": "b4",
-    "n": 22
+    "parte": "b3",
+    "n": 30
    },
    "de": null,
    "texto": "literal",
@@ -4189,8 +4196,8 @@
    "ref": "LI2007-b3-S3-10",
    "origen": {
     "anio": 2007,
-    "parte": "b4",
-    "n": 38
+    "parte": "b3",
+    "n": 46
    },
    "de": null,
    "texto": "literal",
@@ -4240,7 +4247,8 @@
    "origen": {
     "anio": 2025,
     "parte": "b4",
-    "n": 8
+    "n": 8,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -4440,7 +4448,8 @@
    "origen": {
     "anio": 2025,
     "parte": "ej1",
-    "n": 66
+    "n": 66,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -4490,7 +4499,7 @@
    "origen": {
     "anio": 2007,
     "parte": "ej1",
-    "n": 69
+    "n": 77
    },
    "de": null,
    "texto": "literal",
@@ -4539,8 +4548,8 @@
    "ref": "LI2007-b3-S3-18",
    "origen": {
     "anio": 2007,
-    "parte": "b4",
-    "n": 46
+    "parte": "b3",
+    "n": 54
    },
    "de": null,
    "texto": "literal",
@@ -4550,7 +4559,7 @@
     "a": "Renovar el parque de switches y hubs.",
     "b": "Modificar la política de routing.",
     "c": "Ampliar el ancho de banda de las líneas de comunicaciones, cambiando de tecnología en caso necesario.",
-    "d": "Utilizar DHCP en la red. PLANTILLA DEFINITIVA DE RESPUESTAS DE LA PRIMERA Y SEGUNDA PARTE DEL PRIMER EJERCICIO DE LAS PRUEBAS DE ACCESO POR INGRESO LIBRE AL CUERPO DE TECNICOS AUXILIARES DE INFORMATICA DE LA ADMINISTRACIÓN DEL ESTADO."
+    "d": "Utilizar DHCP en la red."
    },
    "ok": "b",
    "clave": "oficial",
@@ -4590,7 +4599,7 @@
    "origen": {
     "anio": 2024,
     "parte": "ej1",
-    "n": 65
+    "n": 67
    },
    "de": null,
    "texto": "literal",
@@ -5040,7 +5049,8 @@
    "origen": {
     "anio": 2025,
     "parte": "b4",
-    "n": 16
+    "n": 16,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -5090,7 +5100,8 @@
    "origen": {
     "anio": 2025,
     "parte": "ej1",
-    "n": 67
+    "n": 67,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -5140,7 +5151,8 @@
    "origen": {
     "anio": 2025,
     "parte": "ej1",
-    "n": 53
+    "n": 53,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -5997,7 +6009,7 @@
   {
    "id": "t28-c-040",
    "anverso": "TLS 1.3",
-   "reverso": "Saludo de 1-RTT, solo AEAD, intercambio siempre efímero (secreto perfecto hacia delante).",
+   "reverso": "Saludo de 1-RTT (0-RTT opcional), solo AEAD, sin RSA estático. Con certificado, (EC)DHE efímero y secreto hacia delante; el modo solo PSK (psk_ke) no lo garantiza.",
    "epigrafe": "Protocolos seguros"
   },
   {

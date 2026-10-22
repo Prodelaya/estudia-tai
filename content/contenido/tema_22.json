@@ -145,7 +145,7 @@
     "anio": 2025,
     "parte": "b3",
     "n": 12,
-    "conv": "ext"
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -173,7 +173,7 @@
     "anio": 2025,
     "parte": "b3",
     "n": 14,
-    "conv": "ext"
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -201,7 +201,7 @@
     "anio": 2025,
     "parte": "ej1",
     "n": 53,
-    "conv": "ext"
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -229,7 +229,7 @@
     "anio": 2025,
     "parte": "ej1",
     "n": 54,
-    "conv": "ext"
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -257,7 +257,7 @@
     "anio": 2025,
     "parte": "ej1",
     "n": 76,
-    "conv": "ext"
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -311,7 +311,8 @@
    "origen": {
     "anio": 2024,
     "parte": "b3",
-    "n": 22
+    "n": 2,
+    "reserva": true
    },
    "de": null,
    "texto": "literal",
@@ -338,7 +339,8 @@
    "origen": {
     "anio": 2024,
     "parte": "b3",
-    "n": 24
+    "n": 4,
+    "reserva": true
    },
    "de": null,
    "texto": "literal",
@@ -365,7 +367,7 @@
    "origen": {
     "anio": 2024,
     "parte": "ej1",
-    "n": 49
+    "n": 50
    },
    "de": null,
    "texto": "literal",
@@ -392,7 +394,7 @@
    "origen": {
     "anio": 2024,
     "parte": "ej1",
-    "n": 50
+    "n": 52
    },
    "de": null,
    "texto": "literal",
@@ -446,7 +448,7 @@
    "origen": {
     "anio": 2022,
     "parte": "b3",
-    "n": 18
+    "n": 19
    },
    "de": null,
    "texto": "literal",
@@ -473,7 +475,8 @@
    "origen": {
     "anio": 2022,
     "parte": "b3",
-    "n": 20
+    "n": 2,
+    "reserva": true
    },
    "de": null,
    "texto": "literal",
@@ -527,7 +530,7 @@
    "origen": {
     "anio": 2022,
     "parte": "ej1",
-    "n": 53
+    "n": 56
    },
    "de": null,
    "texto": "literal",
@@ -554,7 +557,7 @@
    "origen": {
     "anio": 2022,
     "parte": "ej1",
-    "n": 54
+    "n": 57
    },
    "de": null,
    "texto": "literal",
@@ -797,7 +800,8 @@
    "origen": {
     "anio": 2017,
     "parte": "b3",
-    "n": 31
+    "n": 1,
+    "reserva": true
    },
    "de": null,
    "texto": "literal",
@@ -905,7 +909,7 @@
    "origen": {
     "anio": 2016,
     "parte": "ej1",
-    "n": 96
+    "n": 95
    },
    "de": null,
    "texto": "literal",
@@ -932,7 +936,7 @@
    "origen": {
     "anio": 2016,
     "parte": "ej1",
-    "n": 97
+    "n": 96
    },
    "de": null,
    "texto": "literal",
@@ -959,7 +963,7 @@
    "origen": {
     "anio": 2016,
     "parte": "ej1",
-    "n": 98
+    "n": 97
    },
    "de": null,
    "texto": "literal",
@@ -986,7 +990,7 @@
    "origen": {
     "anio": 2016,
     "parte": "ej1",
-    "n": 99
+    "n": 98
    },
    "de": null,
    "texto": "literal",
@@ -1013,7 +1017,7 @@
    "origen": {
     "anio": 2015,
     "parte": "b3",
-    "n": 20
+    "n": 21
    },
    "de": null,
    "texto": "literal",
@@ -1040,7 +1044,7 @@
    "origen": {
     "anio": 2015,
     "parte": "b3",
-    "n": 36
+    "n": 37
    },
    "de": null,
    "texto": "literal",
@@ -1067,7 +1071,7 @@
    "origen": {
     "anio": 2015,
     "parte": "ej1",
-    "n": 88
+    "n": 97
    },
    "de": null,
    "texto": "literal",
@@ -1094,7 +1098,7 @@
    "origen": {
     "anio": 2015,
     "parte": "ej1",
-    "n": 89
+    "n": 98
    },
    "de": null,
    "texto": "literal",
@@ -1121,7 +1125,7 @@
    "origen": {
     "anio": 2015,
     "parte": "ej1",
-    "n": 90
+    "n": 99
    },
    "de": null,
    "texto": "literal",
@@ -1148,7 +1152,8 @@
    "origen": {
     "anio": 2015,
     "parte": "ej1",
-    "n": 93
+    "n": 2,
+    "reserva": true
    },
    "de": null,
    "texto": "literal",
@@ -1202,7 +1207,7 @@
    "origen": {
     "anio": 2008,
     "parte": "ej1",
-    "n": 82
+    "n": 95
    },
    "de": null,
    "texto": "literal",
@@ -1229,7 +1234,7 @@
    "origen": {
     "anio": 2008,
     "parte": "ej1",
-    "n": 83
+    "n": 96
    },
    "de": null,
    "texto": "literal",
@@ -1256,7 +1261,7 @@
    "origen": {
     "anio": 2008,
     "parte": "ej1",
-    "n": 84
+    "n": 97
    },
    "de": null,
    "texto": "literal",
@@ -1283,7 +1288,7 @@
    "origen": {
     "anio": 2008,
     "parte": "ej1",
-    "n": 85
+    "n": 98
    },
    "de": null,
    "texto": "literal",
@@ -1293,7 +1298,7 @@
     "a": "Se satisfacen todos los controles de Prioridad 1.",
     "b": "Se satisfacen todos los controles de Prioridad 2.",
     "c": "Se satisfacen todos los controles de Prioridad 1 y 2.",
-    "d": "Se satisfacen todos los controles de Prioridad 1, 2 y 3. TAI-L1 2008 1/14"
+    "d": "Se satisfacen todos los controles de Prioridad 1, 2 y 3."
    },
    "ok": "c",
    "clave": "oficial",
@@ -1310,7 +1315,7 @@
    "origen": {
     "anio": 2008,
     "parte": "ej1",
-    "n": 86
+    "n": 99
    },
    "de": null,
    "texto": "literal",
@@ -1337,7 +1342,7 @@
    "origen": {
     "anio": 2008,
     "parte": "ej1",
-    "n": 87
+    "n": 100
    },
    "de": null,
    "texto": "literal",
@@ -1364,7 +1369,7 @@
    "origen": {
     "anio": 2007,
     "parte": "ej1",
-    "n": 48
+    "n": 55
    },
    "de": null,
    "texto": "literal",
@@ -1391,7 +1396,7 @@
    "origen": {
     "anio": 2007,
     "parte": "ej1",
-    "n": 50
+    "n": 57
    },
    "de": null,
    "texto": "literal",
@@ -1418,7 +1423,7 @@
    "origen": {
     "anio": 2007,
     "parte": "ej1",
-    "n": 60
+    "n": 68
    },
    "de": null,
    "texto": "literal",
@@ -1445,7 +1450,7 @@
    "origen": {
     "anio": 2007,
     "parte": "ej1",
-    "n": 61
+    "n": 69
    },
    "de": null,
    "texto": "literal",
@@ -1472,7 +1477,7 @@
    "origen": {
     "anio": 2007,
     "parte": "ej1",
-    "n": 62
+    "n": 70
    },
    "de": null,
    "texto": "literal",
@@ -1482,7 +1487,7 @@
     "a": "La capacidad de lograr un efecto deseado o esperado.",
     "b": "La facilidad con la que algo puede ser usado, visitado o accedido en general por todas las personas, especialmente por aquellas que poseen algún tipo de discapacidad.",
     "c": "La eficiencia y satisfacción con la que un producto permite alcanzar objetivos específicos a usuarios específicos en un contexto de uso específico.",
-    "d": "La capacidad administrativa de producir el máximo de resultados con el mínimo de recursos, el mínimo de energía y en el mínimo de tiempo posible. 07/TAIL-1 9-9"
+    "d": "La capacidad administrativa de producir el máximo de resultados con el mínimo de recursos, el mínimo de energía y en el mínimo de tiempo posible."
    },
    "ok": "c",
    "clave": "oficial",

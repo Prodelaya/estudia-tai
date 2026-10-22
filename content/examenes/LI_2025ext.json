@@ -3,6 +3,11 @@
  "anio": 2025,
  "convocatoria": "OEP 2025 · ejercicio extraordinario",
  "fuente_clave": "oficial-provisional",
+ "fuente": {
+  "cuestionario": "INAP: cuestionario del ejercicio extraordinario (OEP 2025)",
+  "plantilla": "INAP: plantilla provisional del ejercicio extraordinario",
+  "version_plantilla": "provisional"
+ },
  "partes": {
   "ej1": {
    "titulo": "Primera parte (test)",

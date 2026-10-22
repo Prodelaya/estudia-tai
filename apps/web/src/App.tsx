@@ -11,10 +11,16 @@ import { Activar } from './views/Activar';
 import { Usuarios } from './views/Usuarios';
 
 export function App() {
-  const { estado, usuario, salir } = useProgreso();
+  const { estado, usuario, salir, guardado, reintentar, recargar } = useProgreso();
   const location = useLocation();
   if (location.pathname === '/activar') return <Activar />;
   if (estado === 'cargando') return <main className="wrap"><p className="note">Cargando…</p></main>;
+  if (estado === 'sin-conexion') return (
+    <main className="wrap stack">
+      <p className="note" role="alert">No se puede conectar con el servidor. Se reintenta solo cada pocos segundos; lo que respondiste y no se envió sigue guardado en este navegador.</p>
+      <div className="row"><button className="btn" onClick={() => { recargar().catch(console.error); }}>Reintentar ahora</button></div>
+    </main>
+  );
   if (estado === 'login') return <Login />;
   return (
     <>
@@ -30,6 +36,7 @@ export function App() {
             {usuario?.admin && <NavLink to="/usuarios">Usuarios</NavLink>}
             <button onClick={salir}>Salir ({usuario?.nombre})</button>
           </nav>
+          <EstadoGuardado estado={guardado.estado} pendientes={guardado.pendientes} error={guardado.error} onReintentar={reintentar} />
         </div>
       </header>
       <main className="wrap">
@@ -45,5 +52,17 @@ export function App() {
         </Routes>
       </main>
     </>
+  );
+}
+
+/** Indicador discreto: «Guardado» casi invisible; «Guardando…» y el error, visibles y con reintento. */
+function EstadoGuardado({ estado, pendientes, error, onReintentar }: { estado: 'guardado' | 'guardando' | 'error'; pendientes: number; error?: string; onReintentar: () => void }) {
+  if (estado === 'guardado') return <span className="guardado ok" role="status">Guardado</span>;
+  if (estado === 'guardando') return <span className="guardado" role="status">Guardando…{pendientes > 1 ? ` (${pendientes})` : ''}</span>;
+  return (
+    <span className="guardado ko" role="alert">
+      {error ?? 'Error al guardar'}{pendientes ? ` · ${pendientes} pendiente${pendientes > 1 ? 's' : ''}` : ''}
+      {pendientes > 0 && <button onClick={onReintentar}>Reintentar</button>}
+    </span>
   );
 }

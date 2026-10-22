@@ -3,6 +3,11 @@
  "anio": 2022,
  "convocatoria": "OEP 2020-2021-2022 · ejercicio único",
  "fuente_clave": "oficial",
+ "fuente": {
+  "cuestionario": "Cuestionario oficial del ejercicio único (OEP 2020-2021-2022, 17/09/2023), en PDF",
+  "plantilla": "Plantilla oficial de respuestas, en PDF",
+  "version_plantilla": "definitiva"
+ },
  "partes": {
   "ej1": {
    "titulo": "Primera parte (test)",
