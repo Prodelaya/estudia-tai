@@ -4550,7 +4550,7 @@
     "a": "Renovar el parque de switches y hubs.",
     "b": "Modificar la política de routing.",
     "c": "Ampliar el ancho de banda de las líneas de comunicaciones, cambiando de tecnología en caso necesario.",
-    "d": "Utilizar DHCP en la red. PLANTILLA DEFINITIVA DE RESPUESTAS DE LA PRIMERA Y SEGUNDA PARTE DEL PRIMER EJERCICIO DE LAS PRUEBAS DE ACCESO POR INGRESO LIBRE AL CUERPO DE TECNICOS AUXILIARES DE INFORMATICA DE LA ADMINISTRACIÓN DEL ESTADO."
+    "d": "Utilizar DHCP en la red."
    },
    "ok": "b",
    "clave": "oficial",

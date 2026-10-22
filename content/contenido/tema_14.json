@@ -152,7 +152,7 @@
    "op": {
     "a": "Un atributo que no tiene relación con otras tablas.",
     "b": "Un atributo que referencia la clave primaria de otra tabla.",
-    "c": "Un atributo que puede tener valores duplicados.",
+    "c": "Un atributo que puede tener valores duplicados. de datos.",
     "d": "Un atributo que se utiliza solo para consultas."
    },
    "ok": "b",

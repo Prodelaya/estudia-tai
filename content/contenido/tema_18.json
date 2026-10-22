@@ -1667,7 +1667,7 @@
     "a": "Por medio de la herencia unos objetos obtienen las características de otros ya existentes.",
     "b": "Con la herencia se consigue una mayor reutilización del código.",
     "c": "Tanto C++ como Java permiten la herencia múltiple.",
-    "d": "La herencia permite que existan clases que nunca sean instanciadas directamente. TAI-L1 2008 1/14"
+    "d": "La herencia permite que existan clases que nunca sean instanciadas directamente."
    },
    "ok": "c",
    "clave": "oficial",
