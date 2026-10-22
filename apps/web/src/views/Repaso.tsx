@@ -38,6 +38,8 @@ export function Repaso() {
   for (const c of carga.contenidos) {
     for (const p of c.preguntas) {
       const id = idProgreso(p);
+      // Una histórica enlazada desde dos temas comparte progreso: sale una sola vez.
+      if (vistas.has(id)) continue;
       vistas.add(id);
       const motivo = motivoRepaso(porPregunta.get(id), ahora);
       if (motivo) pendientes.push({ ...desdeTema(p, c.tema), motivo, propia: true });
@@ -55,7 +57,7 @@ export function Repaso() {
         const propia = q.tema !== null && carga.temas.has(q.tema);
         pendientes.push({
           ...desdeExamen(q, ex, parte), motivo, propia,
-          etiqueta: `${nombreExamen(ex.anio, ex.id)} · ${NOMBRE_PARTE[parte] ?? parte} · ${q.n}${q.tema ? ` · tema ${q.tema}` : ''}${propia ? '' : ' · fuera de tus temas'}`,
+          etiqueta: `${nombreExamen(ex.anio, ex.id)} · ${NOMBRE_PARTE[parte] ?? parte} · ${q.reserva ? 'reserva ' : ''}${q.n}${q.tema === null ? ' · sin tema asignado' : ` · tema ${q.tema}${propia ? '' : ' · fuera de tus temas'}`}`,
         });
       }
     }
@@ -87,7 +89,7 @@ export function Repaso() {
           {otros > 0 && (
             <label className="chk">
               <input type="checkbox" checked={incluirOtros} onChange={e => setIncluirOtros(e.target.checked)} />
-              Incluir {otros} {otros === 1 ? 'pregunta' : 'preguntas'} de temas que no estudias (salieron en tus simulacros)
+              Incluir {otros} {otros === 1 ? 'pregunta' : 'preguntas'} de tus simulacros que no son de tus 18 temas
             </label>
           )}
           {elegidas.length || vencidas.length ? (

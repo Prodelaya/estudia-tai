@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Contexto, Pregunta } from '../components/Pregunta';
-import { corregirParte, fmt, resumen, valorar } from '../lib/correccion';
+import { corregirParte, fmt, queCuentan, resumen, valorar } from '../lib/correccion';
 import { datos, desdeExamen, explicacionesPorRef } from '../lib/datos';
-import { borrarExamen, guardarExamen, leerExamen, nuevoId, restante, type ConfigExamen, type ExamenGuardado } from '../lib/examenGuardado';
+import { borrarExamen, guardarExamen, leerExamen, marcarEntregado, nuevoId, restante, type ConfigExamen, type ExamenGuardado } from '../lib/examenGuardado';
+import type { Resultado as ResultadoEscritura } from '../lib/cola';
 import { useProgreso } from '../lib/progreso';
 import { useCarga } from '../lib/useCarga';
 import type { Examen, Letra, NotaParte, PreguntaVista } from '../lib/tipos';
@@ -98,7 +99,7 @@ function Preparar({ ex, usuario, onEmpezar }: { ex: Examen; usuario: string; onE
           </label>
           {modo === 'practica' && <p className="note" style={{ margin: 0 }}>En práctica ves la solución al responder, así que se guarda como práctica y no da nota orientativa ni cuenta como simulacro.</p>}
           <label className="chk">Tiempo en minutos
-            <input type="number" min={0} max={300} value={minutos} onChange={e => setMinutos(Math.max(0, Math.min(300, Number(e.target.value) || 0)))} style={{ width: 90 }} />
+            <input type="number" min={0} max={300} step={1} value={minutos} onChange={e => setMinutos(Math.max(0, Math.min(300, Math.round(Number(e.target.value) || 0))))} style={{ width: 90 }} />
             <span className="meta">0 = sin límite (se muestra el tiempo que llevas)</span>
           </label>
           <div className="row"><button className={oficial ? 'btn ghost' : 'btn'} disabled={!partes.length} onClick={() => onEmpezar({ partes: disponibles.filter(p => partes.includes(p)), modo, minutos })}>Empezar</button></div>
@@ -109,7 +110,7 @@ function Preparar({ ex, usuario, onEmpezar }: { ex: Examen; usuario: string; onE
 }
 
 function Hoja({ ex, expl, usuario, config, inicial }: { ex: Examen; expl: Map<string, string>; usuario: string; config: ConfigExamen; inicial?: ExamenGuardado }) {
-  const { responder, registrar, guardarIntento } = useProgreso();
+  const { responder, registrar, guardarIntento, guardado } = useProgreso();
   const items: Item[] = useMemo(() => config.partes.flatMap(p => ex.partes[p].preguntas.map(q => ({
     ...desdeExamen(q, ex, p), parte: p, n: q.n, reserva: q.reserva,
     explicacion: [expl.get(q.id), q.nota_clave].filter(Boolean).join('\n\n') || undefined,
@@ -117,35 +118,49 @@ function Hoja({ ex, expl, usuario, config, inicial }: { ex: Examen; expl: Map<st
   const [i, setI] = useState(() => Math.min(inicial?.i ?? 0, items.length - 1));
   const [resp, setResp] = useState<Record<string, Letra>>(inicial?.resp ?? {});
   const [notas, setNotas] = useState<Record<string, NotaParte> | null>(null);
-  const [guardadoIntento, setGuardadoIntento] = useState<'guardando' | 'ok' | 'pendiente'>('guardando');
+  const [guardadoIntento, setGuardadoIntento] = useState<ResultadoEscritura | 'guardando'>('guardando');
+  const [otraPestana, setOtraPestana] = useState(false);
   const inicio = useRef(inicial?.inicio ?? Date.now());
   const clienteId = useRef(inicial?.cliente_id ?? nuevoId());
+  const yaGuardado = useRef(!!inicial);
   const entregado = useRef(false);
   const fin = config.minutos ? inicio.current + config.minutos * 6e4 : 0;
   const [ahora, setAhora] = useState(Date.now());
   const practica = config.modo === 'practica';
+  // Preguntas que puntúan: las reservas solo cuentan si sustituyen a una anulada.
+  const cuentan = useMemo(() => new Set(config.partes.flatMap(p => queCuentan(ex.partes[p]).map(q => q.id))), [ex, config.partes]);
 
-  // Autoguardado en el navegador en cada cambio, hasta entregar.
+  // Autoguardado en el navegador en cada cambio, hasta entregar. Si otra pestaña entregó este examen o empezó
+  // otro, se deja de guardar y se avisa.
   useEffect(() => {
-    if (entregado.current) return;
-    guardarExamen(usuario, ex.id, { v: 1, config, resp, i, inicio: inicio.current, cliente_id: clienteId.current });
-  }, [usuario, ex.id, config, resp, i]);
+    if (entregado.current || otraPestana) return;
+    const r = guardarExamen(usuario, ex.id, { v: 1, config, resp, i, inicio: inicio.current, cliente_id: clienteId.current }, !yaGuardado.current);
+    if (r === 'ok') yaGuardado.current = true;
+    else setOtraPestana(true);
+  }, [usuario, ex.id, config, resp, i, otraPestana]);
 
   async function entregar() {
     if (entregado.current) return;
     entregado.current = true;
     const n = Object.fromEntries(config.partes.map(p => [p, corregirParte(ex.partes[p], resp)]));
     setNotas(n);
-    borrarExamen(usuario, ex.id);
-    // En simulacro se registran también los blancos, para que vuelvan en el repaso. En práctica cada
-    // respuesta ya se guardó al darla y no se registran las que no llegaste a ver.
-    if (!practica) registrar(items.filter(q => resp[q.id] || !q.reserva).map(q => ({ q, elegida: resp[q.id] ?? null })), 'examen', 'simulacro');
-    const ok = await guardarIntento({
-      examen_id: ex.id, partes: config.partes, notas: n, respuestas: resp, segundos: Math.round((Date.now() - inicio.current) / 1000),
-      modo: practica ? 'practica' : 'simulacro', limite: config.minutos || null, cliente_id: clienteId.current,
+    marcarEntregado(usuario, ex.id, clienteId.current);
+    // En simulacro se registran también los blancos de las preguntas que puntúan, para que vuelvan en el repaso.
+    // En práctica cada respuesta ya se guardó al darla. Los ids del lote derivan del examen: reenviarlo
+    // (otra pestaña, un reintento) no duplica nada.
+    if (!practica) registrar(items.filter(q => resp[q.id] || cuentan.has(q.id)).map(q => ({ q, elegida: resp[q.id] ?? null })), 'examen', 'simulacro', clienteId.current);
+    const segundos = Math.round((Date.now() - inicio.current) / 1000);
+    const r = await guardarIntento({
+      examen_id: ex.id, partes: config.partes, notas: n, respuestas: resp,
+      segundos: config.minutos ? Math.min(segundos, config.minutos * 60) : segundos,
+      modo: practica ? 'practica' : 'simulacro', limite: config.minutos || null, cliente_id: clienteId.current, ts: Date.now(),
     });
-    setGuardadoIntento(ok ? 'ok' : 'pendiente');
+    setGuardadoIntento(r);
   }
+
+  // Al reanudar con el tiempo ya agotado, se entrega en el acto, sin dejar responder.
+  const agotadoAlEmpezar = fin > 0 && Date.now() >= fin;
+  useEffect(() => { if (agotadoAlEmpezar) entregar(); }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (notas) return;
@@ -153,7 +168,10 @@ function Hoja({ ex, expl, usuario, config, inicial }: { ex: Examen; expl: Map<st
     return () => clearInterval(t);
   });
 
-  if (notas) return <Resultado ex={ex} items={items} resp={resp} notas={notas} practica={practica} guardado={guardadoIntento} />;
+  // Si el intento quedó en cola y la cola se vacía después (reintento), el intento ya está guardado.
+  const estadoIntento = guardadoIntento === 'pendiente' && guardado.estado === 'guardado' && !guardado.pendientes ? 'ok' : guardadoIntento;
+  if (notas) return <Resultado ex={ex} items={items} resp={resp} notas={notas} practica={practica} cuentan={cuentan} guardado={estadoIntento} />;
+  if (agotadoAlEmpezar) return <p className="note">Se acabó el tiempo: entregando…</p>;
 
   const q = items[i];
   const corregida = practica && !!resp[q.id];
@@ -165,6 +183,9 @@ function Hoja({ ex, expl, usuario, config, inicial }: { ex: Examen; expl: Map<st
   return (
     <div className="exam-grid">
       <div className="stack" style={{ minWidth: 0 }}>
+        {otraPestana && (
+          <p className="note" role="alert">Este examen se ha entregado o se ha empezado de nuevo en otra pestaña, así que aquí ya no se autoguarda. Si entregas también desde aquí, no se duplicará nada.</p>
+        )}
         <div className="row" style={{ justifyContent: 'space-between' }}>
           <span className="eyebrow">{ex.partes[q.parte].titulo ?? NOMBRE_PARTE[q.parte]}{q.reserva ? ' · reserva' : ''}</span>
           <span className="meta">{i + 1} de {items.length}{practica ? ' · práctica' : config.oficial ? ' · modo oficial' : ''}</span>
@@ -203,11 +224,11 @@ function Hoja({ ex, expl, usuario, config, inicial }: { ex: Examen; expl: Map<st
   );
 }
 
-function Resultado({ ex, items, resp, notas, practica, guardado }: {
-  ex: Examen; items: Item[]; resp: Record<string, Letra>; notas: Record<string, NotaParte>; practica: boolean; guardado: 'guardando' | 'ok' | 'pendiente';
+function Resultado({ ex, items, resp, notas, practica, cuentan, guardado }: {
+  ex: Examen; items: Item[]; resp: Record<string, Letra>; notas: Record<string, NotaParte>; practica: boolean; cuentan: Set<string>; guardado: ResultadoEscritura | 'guardando';
 }) {
   const [revision, setRevision] = useState<'falladas' | 'todas' | null>(null);
-  const lista = items.filter(q => revision === 'todas' || (q.ok && !q.anulada && resp[q.id] !== q.ok && (resp[q.id] || !q.reserva)));
+  const lista = items.filter(q => revision === 'todas' || (q.ok && !q.anulada && resp[q.id] !== q.ok && (resp[q.id] || cuentan.has(q.id))));
   const nombre = (p: string) => ex.partes[p].titulo ?? NOMBRE_PARTE[p] ?? p;
   const criterios = Object.fromEntries(Object.keys(notas).map(p => [p, ex.partes[p].criterio]));
   const hayCorte = Object.values(criterios).some(c => c?.oficial);
@@ -220,7 +241,10 @@ function Resultado({ ex, items, resp, notas, practica, guardado }: {
           ? <p className="lead">Era práctica (con la solución a la vista), así que no cuenta como simulacro. Estos números sirven para ver dónde fallas, no para estimar la nota.</p>
           : resumen(notas, criterios, nombre, ex.formato === 'antiguo').map((l, k) => <p key={k} className={k ? 'note' : 'lead'}>{l}</p>)}
         <p className="meta">
-          {guardado === 'guardando' ? 'Guardando el intento…' : guardado === 'ok' ? 'Intento guardado.' : 'El intento no se ha podido guardar todavía: está en cola y se reintentará (mira el aviso de la cabecera).'}
+          {guardado === 'guardando' ? 'Guardando el intento…'
+            : guardado === 'ok' ? 'Intento guardado.'
+            : guardado === 'rechazado' ? 'El servidor rechazó el intento y no se ha guardado. Las respuestas sí se han registrado para el repaso.'
+            : 'El intento no se ha podido guardar todavía: está en cola y se reintentará (mira el aviso de la cabecera).'}
         </p>
       </div>
       <div className="panel" style={{ overflowX: 'auto' }}>
@@ -233,7 +257,11 @@ function Resultado({ ex, items, resp, notas, practica, guardado }: {
                 <tr key={p}>
                   <td>{nombre(p)}</td><td>{n.a}</td><td>{n.e}</td><td>{n.b}</td>
                   <td><b>{fmt(v.neta)}</b> <span className="meta">de {v.total}</span></td>
-                  {!practica && <td>{v.corte?.transformada !== undefined ? <><b>{fmt(v.corte.transformada)}</b> <span className="chip ok">oficial</span></> : <>{fmt(n.nota)} <span className="chip">orientativa</span></>}</td>}
+                  {!practica && <td>{v.corte?.transformada !== undefined
+                    ? <><b>{fmt(v.corte.transformada)}</b> <span className="chip ok">oficial</span></>
+                    : v.corte?.oficial && v.corte.margen < 0
+                      ? <><span className="chip ko">bajo el corte</span> <span className="meta">{fmt(n.nota)} lineal</span></>
+                      : <>{fmt(n.nota)} <span className="chip">orientativa</span></>}</td>}
                 </tr>
               );
             })}

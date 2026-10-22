@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
-import { corregirParte, resumen, valorar } from './correccion';
+import { corregirParte, queCuentan, resumen, valorar } from './correccion';
 import { ColaEscrituras, type Almacen, type Escritura } from './cola';
 import { ErrorHttp, NoAutenticado } from './api';
-import { borrarExamen, guardarExamen, leerExamen, restante } from './examenGuardado';
+import { borrarExamen, guardarExamen, leerExamen, marcarEntregado, restante } from './examenGuardado';
 import { sumarRespuesta } from './progreso';
 import { MARGEN_RETENCION_MS, motivoRepaso } from './repaso';
 import { programar } from './srs';
@@ -33,6 +33,14 @@ describe('corrección según las bases', () => {
     expect(n.n).toBe(2);
     expect(n.a).toBe(2);
     expect(n.nota).toBe(50);
+  });
+
+  it('si hay más anuladas que reservas, la neta y la nota se calculan sobre las que puntúan', () => {
+    const parte: ParteExamen = { contexto: '', preguntas: [pregunta(1), pregunta(2), pregunta(3, { anulada: true, ok: null }), pregunta(4)] };
+    const n = corregirParte(parte, { q1: 'a', q2: 'a', q4: 'a' });
+    expect([n.n, n.total, n.nota]).toEqual([3, 3, 50]);
+    expect(valorar(n).pct).toBe(100);
+    expect(queCuentan(parte).map(q => q.id)).toEqual(['q1', 'q2', 'q4']);
   });
 
   it('sin corte publicado no afirma aprobar ni suspender', () => {
@@ -70,21 +78,21 @@ describe('repaso y retención', () => {
     expect(motivoRepaso({ ...base, aciertos: 2, vistas: 2, ultima: 1, racha: 2, ts_racha: 0, ts: 10 }, 10 * DIA)).toBeNull();
   });
   it('tras un fallo, el acierto se comprueba al día siguiente y sale con dos aciertos separados', () => {
-    let p = sumarRespuesta(undefined, { pregunta_id: 'p', tema: 1, elegida: 'b', acierto: false, origen: 'test', modo: 'practica', ts: 0 });
+    let p = sumarRespuesta(undefined, { pregunta_id: 'p', tema: 1, elegida: 'b', acierto: false, origen: 'test', modo: 'practica', ts: 0, cliente_id: 'c' });
     expect(p.primera).toBe(0);
-    p = sumarRespuesta(p, { pregunta_id: 'p', tema: 1, elegida: 'a', acierto: true, origen: 'repaso', modo: 'practica', ts: 1000 });
+    p = sumarRespuesta(p, { pregunta_id: 'p', tema: 1, elegida: 'a', acierto: true, origen: 'repaso', modo: 'practica', ts: 1000, cliente_id: 'c' });
     expect(motivoRepaso(p, 2000)).toBeNull(); // recién acertada: hoy no
     expect(motivoRepaso(p, 1000 + DIA)).toBe('confirmar');
-    p = sumarRespuesta(p, { pregunta_id: 'p', tema: 1, elegida: 'a', acierto: true, origen: 'repaso', modo: 'practica', ts: 1000 + DIA });
+    p = sumarRespuesta(p, { pregunta_id: 'p', tema: 1, elegida: 'a', acierto: true, origen: 'repaso', modo: 'practica', ts: 1000 + DIA, cliente_id: 'c' });
     expect([p.racha, p.ts_racha]).toEqual([2, 1000]);
     expect(motivoRepaso(p, 1000 + 5 * DIA)).toBeNull();
     // Dos aciertos el mismo día no bastan.
-    let q = sumarRespuesta({ ...base }, { pregunta_id: 'p', tema: 1, elegida: 'a', acierto: true, origen: 'test', modo: 'practica', ts: 100 });
-    q = sumarRespuesta(q, { pregunta_id: 'p', tema: 1, elegida: 'a', acierto: true, origen: 'test', modo: 'practica', ts: 200 });
+    let q = sumarRespuesta({ ...base }, { pregunta_id: 'p', tema: 1, elegida: 'a', acierto: true, origen: 'test', modo: 'practica', ts: 100, cliente_id: 'c' });
+    q = sumarRespuesta(q, { pregunta_id: 'p', tema: 1, elegida: 'a', acierto: true, origen: 'test', modo: 'practica', ts: 200, cliente_id: 'c' });
     expect(motivoRepaso(q, 200 + DIA)).toBe('confirmar');
   });
   it('un blanco corta la racha', () => {
-    const p = sumarRespuesta({ ...base, vistas: 3, aciertos: 2, ultima: 1, racha: 2, ts_racha: 0, ts: DIA }, { pregunta_id: 'p', tema: 1, elegida: null, acierto: false, origen: 'examen', modo: 'simulacro', ts: 3 * DIA });
+    const p = sumarRespuesta({ ...base, vistas: 3, aciertos: 2, ultima: 1, racha: 2, ts_racha: 0, ts: DIA }, { pregunta_id: 'p', tema: 1, elegida: null, acierto: false, origen: 'examen', modo: 'simulacro', ts: 3 * DIA, cliente_id: 'c' });
     expect([p.racha, p.ts_racha, p.blanco, p.ultima]).toEqual([0, null, 1, 0]);
     expect(motivoRepaso(p, 3 * DIA)).toBe('blanco');
   });
@@ -97,15 +105,16 @@ class Memoria implements Almacen {
   removeItem(k: string) { this.m.delete(k); }
 }
 const srs = (id: string): Escritura => ({ tipo: 'srs', e: { tarjeta_id: id, tema: 1, facilidad: 2.5, intervalo: 1, repeticiones: 1, vence: 1 } });
+const nombreDe = (e: Escritura) => (e.tipo === 'srs' ? e.e.tarjeta_id : e.tipo);
 
 describe('cola de escrituras', () => {
-  it('envía en orden y avisa del estado', async () => {
+  it('envía en orden, con el usuario dueño, y avisa del estado', async () => {
     const enviadas: string[] = [];
     const estados: string[] = [];
-    const c = new ColaEscrituras(async e => { enviadas.push(e.tipo === 'srs' ? e.e.tarjeta_id : e.tipo); }, new Memoria(), e => estados.push(e.estado));
+    const c = new ColaEscrituras(async (e, u) => { enviadas.push(`${u}:${nombreDe(e)}`); }, new Memoria(), e => estados.push(e.estado));
     c.usar('nosa');
-    await Promise.all([c.encolar(srs('1')), c.encolar(srs('2'))]);
-    expect(enviadas).toEqual(['1', '2']);
+    expect(await Promise.all([c.encolar(srs('1')), c.encolar(srs('2'))])).toEqual(['ok', 'ok']);
+    expect(enviadas).toEqual(['nosa:1', 'nosa:2']);
     expect(estados.at(-1)).toBe('guardado');
   });
 
@@ -114,11 +123,11 @@ describe('cola de escrituras', () => {
     let red = false;
     const enviadas: string[] = [];
     const estados: { estado: string; pendientes: number }[] = [];
-    const ejecutar = async (e: Escritura) => { if (!red) throw new TypeError('Failed to fetch'); enviadas.push(e.tipo === 'srs' ? e.e.tarjeta_id : e.tipo); };
+    const ejecutar = async (e: Escritura) => { if (!red) throw new TypeError('Failed to fetch'); enviadas.push(nombreDe(e)); };
     const c = new ColaEscrituras(ejecutar, almacen, e => estados.push(e));
     c.usar('nosa');
-    expect(await c.encolar(srs('1'))).toBe(false);
-    expect(await c.encolar(srs('2'))).toBe(false);
+    expect(await c.encolar(srs('1'))).toBe('pendiente');
+    expect(await c.encolar(srs('2'))).toBe('pendiente');
     expect(estados.at(-1)).toMatchObject({ estado: 'error', pendientes: 2 });
     expect(JSON.parse(almacen.getItem('estudia-tai:pendientes:nosa')!)).toHaveLength(2);
     // Otro usuario en el mismo navegador no ve ni envía lo de nosa.
@@ -134,29 +143,70 @@ describe('cola de escrituras', () => {
     expect(almacen.getItem('estudia-tai:pendientes:nosa')).toBeNull();
   });
 
+  it('dos pestañas comparten la lista: no se pisan los pendientes y lo enviado por una cuenta para la otra', async () => {
+    const almacen = new Memoria();
+    let red = false;
+    const enviadas: string[] = [];
+    const ejecutar = async (e: Escritura) => { if (!red) throw new TypeError('offline'); enviadas.push(nombreDe(e)); };
+    const a = new ColaEscrituras(ejecutar, almacen, () => {});
+    const b = new ColaEscrituras(ejecutar, almacen, () => {});
+    a.usar('nosa'); b.usar('nosa');
+    const ra = a.encolar(srs('a1'));
+    await b.encolar(srs('b1'));
+    expect(a.pendientes).toBe(2);
+    red = true;
+    expect(await b.vaciar()).toBe(true);
+    expect(enviadas).toEqual(['a1', 'b1']);
+    // La pestaña A esperaba a1: lo envió B, así que al vaciar A queda resuelto como enviado.
+    expect(await a.vaciar()).toBe(true);
+    expect(await ra).toBe('pendiente'); // se resolvió al fallar la red; lo importante es que no se reenvía
+    expect(enviadas).toEqual(['a1', 'b1']);
+  });
+
   it('una escritura rechazada (4xx) se descarta sin bloquear las siguientes; un 401 se conserva', async () => {
     const enviadas: string[] = [];
     let estado = '';
     const c = new ColaEscrituras(async e => {
-      const id = e.tipo === 'srs' ? e.e.tarjeta_id : '';
+      const id = nombreDe(e);
       if (id === 'mala') throw new ErrorHttp(400, 'bad');
       if (id === 'sin-sesion') throw new NoAutenticado();
       enviadas.push(id);
     }, new Memoria(), e => { estado = `${e.estado}:${e.pendientes}`; });
     c.usar('nosa');
-    await c.encolar(srs('mala'));
-    await c.encolar(srs('buena'));
+    expect(await c.encolar(srs('mala'))).toBe('rechazado');
+    expect(await c.encolar(srs('buena'))).toBe('ok');
     expect(enviadas).toEqual(['buena']);
-    expect(await c.encolar(srs('sin-sesion'))).toBe(false);
+    expect(await c.encolar(srs('sin-sesion'))).toBe('pendiente');
     expect(estado).toBe('error:1');
+  });
+
+  it('al cambiar de usuario con un envío en vuelo, la cola del nuevo se envía después y no se mezcla', async () => {
+    const almacen = new Memoria();
+    almacen.setItem('estudia-tai:pendientes:jota', JSON.stringify([{ id: 'x', op: srs('j1') }]));
+    let soltar!: () => void;
+    const enviadas: string[] = [];
+    const c = new ColaEscrituras(async (e, u) => {
+      if (nombreDe(e) === 'n1') await new Promise<void>(r => { soltar = r; });
+      enviadas.push(`${u}:${nombreDe(e)}`);
+    }, almacen, () => {});
+    c.usar('nosa');
+    void c.encolar(srs('n1'));
+    await Promise.resolve();
+    c.usar('jota');
+    const p = c.vaciar();
+    soltar();
+    expect(await p).toBe(true);
+    expect(enviadas).toEqual(['nosa:n1', 'jota:j1']);
+    // n1 sigue pendiente para nosa: el bucle antiguo se cortó al cambiar de usuario.
+    expect(JSON.parse(almacen.getItem('estudia-tai:pendientes:nosa')!)).toHaveLength(1);
   });
 });
 
 describe('autoguardado del examen', () => {
+  const g = { v: 1 as const, config: { partes: ['ej1'], modo: 'examen' as const, minutos: 120 }, resp: { q1: 'a' as Letra }, i: 3, inicio: 0, cliente_id: 'x'.repeat(10) };
   it('guarda por usuario y examen, y calcula el tiempo que queda aunque la pestaña estuviera cerrada', () => {
     const a = new Memoria();
-    const g = { v: 1 as const, config: { partes: ['ej1'], modo: 'examen' as const, minutos: 120 }, resp: { q1: 'a' as Letra }, i: 3, inicio: 0, cliente_id: 'x'.repeat(10) };
-    guardarExamen('nosa', 'LI_2025', g, a);
+    expect(guardarExamen('nosa', 'LI_2025', g, true, a)).toBe('ok');
     expect(leerExamen('jota', 'LI_2025', a)).toBeNull();
     expect(leerExamen('nosa', 'LI_2025', a)).toEqual(g);
     expect(restante(g, 60 * 60_000)).toBe(60 * 60_000);
@@ -166,6 +216,21 @@ describe('autoguardado del examen', () => {
     expect(leerExamen('nosa', 'LI_2025', a)).toBeNull();
     a.setItem('estudia-tai:examen:nosa:LI_2024', '{roto');
     expect(leerExamen('nosa', 'LI_2024', a)).toBeNull();
+  });
+  it('un examen entregado en otra pestaña no resucita ni se pisa con otro', () => {
+    const a = new Memoria();
+    guardarExamen('nosa', 'LI_2025', g, true, a);
+    marcarEntregado('nosa', 'LI_2025', g.cliente_id, a);
+    expect(leerExamen('nosa', 'LI_2025', a)).toBeNull();
+    // La otra pestaña, que seguía con el mismo examen, ya no puede volver a escribirlo.
+    expect(guardarExamen('nosa', 'LI_2025', { ...g, i: 4 }, false, a)).toBe('otra-pestana');
+    expect(leerExamen('nosa', 'LI_2025', a)).toBeNull();
+    // Un examen nuevo sí ocupa la marca de uno entregado.
+    const nuevo = { ...g, cliente_id: 'y'.repeat(10) };
+    expect(guardarExamen('nosa', 'LI_2025', nuevo, true, a)).toBe('ok');
+    // Y otro examen nuevo no pisa uno a medias.
+    expect(guardarExamen('nosa', 'LI_2025', { ...g, cliente_id: 'z'.repeat(10) }, true, a)).toBe('otra-pestana');
+    expect(leerExamen('nosa', 'LI_2025', a)?.cliente_id).toBe(nuevo.cliente_id);
   });
 });
 

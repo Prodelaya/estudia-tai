@@ -72,6 +72,7 @@ test('la migración 3 clasifica las respuestas antiguas sin perder nada', async 
   // Base en versión 2 con datos: se crea con las dos primeras migraciones y se rebaja user_version.
   const previa = abrir(ruta);
   previa.exec(`
+    DROP INDEX respuestas_cliente; ALTER TABLE respuestas DROP COLUMN cliente_id;
     ALTER TABLE respuestas DROP COLUMN primera; ALTER TABLE respuestas DROP COLUMN modo; ALTER TABLE respuestas DROP COLUMN blanco;
     DROP INDEX intentos_cliente; ALTER TABLE intentos DROP COLUMN cliente_id; ALTER TABLE intentos DROP COLUMN limite; ALTER TABLE intentos DROP COLUMN modo;
     PRAGMA user_version = 2;
@@ -97,4 +98,48 @@ test('la migración 3 clasifica las respuestas antiguas sin perder nada', async 
   const p = (await app.inject({ url: '/api/progreso', headers: { cookie } })).json();
   assert.equal(p.preguntas.length, 2);
   assert.equal(p.intentos[0].modo, null);
+});
+
+test('reintentar un lote con los mismos cliente_id no duplica respuestas', async () => {
+  const { app, cookie, db } = await montar();
+  const items = [
+    { pregunta_id: 'p1', elegida: 'a', acierto: true, ts: 10, cliente_id: 'lote-1:p1' },
+    { pregunta_id: 'p2', elegida: null, acierto: false, ts: 10, cliente_id: 'lote-1:p2' },
+  ];
+  const a = (await app.inject({ method: 'POST', url: '/api/respuestas', headers: { cookie }, payload: { items } })).json();
+  const b = (await app.inject({ method: 'POST', url: '/api/respuestas', headers: { cookie }, payload: { items } })).json();
+  assert.deepEqual([a.n, b.n], [2, 0]);
+  assert.equal((db.prepare('SELECT COUNT(*) AS n FROM respuestas').get() as { n: number }).n, 2);
+});
+
+test('la primera exposición se decide por la hora aunque las respuestas lleguen desordenadas', async () => {
+  const { app, cookie } = await montar();
+  const enviar = (items: object[]) => app.inject({ method: 'POST', url: '/api/respuestas', headers: { cookie }, payload: { items } });
+  await enviar([{ pregunta_id: 'm', elegida: 'a', acierto: true, ts: 5000 }]);
+  await enviar([{ pregunta_id: 'm', elegida: 'b', acierto: false, ts: 1000 }]);
+  const p = (await app.inject({ url: '/api/progreso', headers: { cookie } })).json().preguntas[0];
+  assert.deepEqual([p.primera, p.ultima], [0, 1]);
+});
+
+test('una escritura de otra cuenta (cabecera distinta de la sesión) se rechaza como sesión perdida', async () => {
+  const { app, cookie, db } = await montar();
+  const r = await app.inject({
+    method: 'POST', url: '/api/respuestas', headers: { cookie, 'x-estudia-usuario': 'nosa' },
+    payload: { items: [{ pregunta_id: 'x', elegida: 'a', acierto: true }] },
+  });
+  assert.equal(r.statusCode, 401);
+  assert.equal((db.prepare('SELECT COUNT(*) AS n FROM respuestas').get() as { n: number }).n, 0);
+  const ok = await app.inject({
+    method: 'POST', url: '/api/respuestas', headers: { cookie, 'x-estudia-usuario': 'laya92' },
+    payload: { items: [{ pregunta_id: 'x', elegida: 'a', acierto: true }] },
+  });
+  assert.equal(ok.statusCode, 200);
+});
+
+test('un límite con decimales se redondea y la hora del intento es la del examen', async () => {
+  const { app, cookie } = await montar();
+  const r = await app.inject({ method: 'POST', url: '/api/intentos', headers: { cookie }, payload: { examen_id: 'LI_2025', partes: ['ej1'], notas: {}, respuestas: {}, limite: 1.5, ts: 1234 } });
+  assert.equal(r.statusCode, 200);
+  const p = (await app.inject({ url: '/api/progreso', headers: { cookie } })).json();
+  assert.deepEqual([p.intentos[0].limite, p.intentos[0].ts], [2, 1234]);
 });

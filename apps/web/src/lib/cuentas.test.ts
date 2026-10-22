@@ -13,7 +13,7 @@ const render = (child: ReturnType<typeof createElement>, path = '/') => renderTo
 test.each([
   ['respuestas', () => api.respuestas([])],
   ['srs', () => api.srs({ tarjeta_id: 'fixture', tema: 15, facilidad: 2.5, intervalo: 1, repeticiones: 1, vence: 1 })],
-  ['intento', () => api.intento({ examen_id: 'fixture', partes: [], notas: {}, respuestas: {}, segundos: 0, modo: 'simulacro', limite: null, cliente_id: 'fixture-0001' })],
+  ['intento', () => api.intento({ examen_id: 'fixture', partes: [], notas: {}, respuestas: {}, segundos: 0, modo: 'simulacro', limite: null, cliente_id: 'fixture-0001', ts: 0 })],
   ['marca', () => api.marca('fixture', { tema: 15, nota: 'fixture' })],
   ['borrarMarca', () => api.borrarMarca('fixture')],
   ['usuarios', () => api.usuarios()],

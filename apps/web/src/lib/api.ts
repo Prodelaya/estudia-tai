@@ -1,9 +1,10 @@
 import type { EstadoSrs, Letra, Modo, NotaParte, Progreso } from './tipos';
 
-export interface ItemRespuesta { pregunta_id: string; tema: number | null; elegida: Letra | null; acierto: boolean; origen: string; modo: Modo; ts: number }
+/** cliente_id hace idempotente el envío: un reintento de algo que ya llegó no se duplica. */
+export interface ItemRespuesta { pregunta_id: string; tema: number | null; elegida: Letra | null; acierto: boolean; origen: string; modo: Modo; ts: number; cliente_id: string }
 export interface CuerpoIntento {
   examen_id: string; partes: string[]; notas: Record<string, NotaParte>; respuestas: Record<string, Letra>; segundos: number | null;
-  modo: Modo; limite: number | null; cliente_id: string;
+  modo: Modo; limite: number | null; cliente_id: string; ts: number;
 }
 
 export class NoAutenticado extends Error {}
@@ -42,7 +43,8 @@ async function pedir<T>(url: string, init?: RequestInit, cambiaSesion = false): 
   return resultado;
 }
 
-const json = (method: string, body: unknown): RequestInit => ({ method, body: JSON.stringify(body) });
+const json = (method: string, body: unknown, usuario?: string): RequestInit =>
+  ({ method, body: JSON.stringify(body), headers: usuario ? { 'x-estudia-usuario': usuario } : undefined });
 
 export const api = {
   login: (usuario: string, password: string) => pedir<{ ok: true }>('/api/login', json('POST', { usuario, password }), true),
@@ -54,9 +56,10 @@ export const api = {
   logout: () => pedir('/api/logout', { method: 'POST' }, true),
   check: () => pedir<void>('/api/auth/check'),
   progreso: () => pedir<Progreso>('/api/progreso'),
-  respuestas: (items: ItemRespuesta[]) => pedir('/api/respuestas', json('POST', { items })),
-  srs: (e: EstadoSrs) => pedir(`/api/srs/${encodeURIComponent(e.tarjeta_id)}`, json('PUT', e)),
-  intento: (b: CuerpoIntento) => pedir<{ id: number }>('/api/intentos', json('POST', b)),
+  // Las escrituras de la cola llevan el usuario dueño: si la cookie ya es de otra cuenta, el servidor responde 401.
+  respuestas: (items: ItemRespuesta[], usuario?: string) => pedir('/api/respuestas', json('POST', { items }, usuario)),
+  srs: (e: EstadoSrs, usuario?: string) => pedir(`/api/srs/${encodeURIComponent(e.tarjeta_id)}`, json('PUT', e, usuario)),
+  intento: (b: CuerpoIntento, usuario?: string) => pedir<{ id: number }>('/api/intentos', json('POST', b, usuario)),
   marca: (id: string, b: { tema: number | null; nota: string; resuelta?: boolean }) =>
     pedir(`/api/marcas/${encodeURIComponent(id)}`, json('PUT', b)),
   borrarMarca: (id: string) => pedir(`/api/marcas/${encodeURIComponent(id)}`, { method: 'DELETE' }),

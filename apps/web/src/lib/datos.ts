@@ -4,9 +4,12 @@ const cache = new Map<string, Promise<unknown>>();
 
 function cargar<T>(ruta: string, como: 'json' | 'text' = 'json'): Promise<T | null> {
   if (!cache.has(ruta)) {
-    cache.set(ruta, fetch(`/data/${ruta}`, { credentials: 'same-origin' })
+    const p = fetch(`/data/${ruta}`, { credentials: 'same-origin' })
       .then(r => (r.ok ? (como === 'json' ? r.json() : r.text()) : null))
-      .catch(() => null));
+      .catch(() => null);
+    // Un fallo (red, 404, sesión) no se queda en caché: la próxima vez se vuelve a pedir.
+    p.then(v => { if (v === null && cache.get(ruta) === p) cache.delete(ruta); });
+    cache.set(ruta, p);
   }
   return cache.get(ruta) as Promise<T | null>;
 }

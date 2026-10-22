@@ -7,11 +7,16 @@ const r2 = (n: number) => Math.round(n * 100) / 100;
  * en orden, a las anuladas. La nota sobre 50 es una conversión lineal orientativa: la oficial depende del
  * corte que fija la Comisión en cada convocatoria.
  */
-export function corregirParte(parte: ParteExamen, resp: Record<string, Letra | undefined>): NotaParte {
+/** Preguntas que puntúan: las normales no anuladas y, en orden, tantas reservas como anuladas haya. */
+export function queCuentan(parte: ParteExamen) {
   const normales = parte.preguntas.filter(q => !q.reserva);
   const reservas = parte.preguntas.filter(q => q.reserva && !q.anulada);
   const anuladas = normales.filter(q => q.anulada).length;
-  const cuentan = [...normales.filter(q => !q.anulada), ...reservas.slice(0, anuladas)];
+  return [...normales.filter(q => !q.anulada), ...reservas.slice(0, anuladas)];
+}
+
+export function corregirParte(parte: ParteExamen, resp: Record<string, Letra | undefined>): NotaParte {
+  const cuentan = queCuentan(parte);
   let a = 0, e = 0, b = 0;
   for (const q of cuentan) {
     const r = resp[q.id];
@@ -19,8 +24,9 @@ export function corregirParte(parte: ParteExamen, resp: Record<string, Letra | u
     else if (r === q.ok) a++;
     else e++;
   }
-  const valor = 50 / normales.length;
-  return { a, e, b, n: cuentan.length, total: normales.length, neta: r2(a - e / 3), nota: Math.max(0, r2((a - e / 3) * valor)) };
+  // Si hay más anuladas que reservas, el máximo baja: los 50 puntos se reparten entre las que puntúan.
+  const valor = cuentan.length ? 50 / cuentan.length : 0;
+  return { a, e, b, n: cuentan.length, total: cuentan.length, neta: r2(a - e / 3), nota: Math.max(0, r2((a - e / 3) * valor)) };
 }
 
 /** Lo que se puede decir de una parte sin inventar el corte. */
@@ -72,7 +78,7 @@ export function resumen(notas: Record<string, NotaParte>, criterios: Record<stri
   const partes = Object.keys(notas);
   if (partes.includes('ej1') && partes.length > 1)
     lineas.push(antiguo
-      ? 'En este formato eran dos ejercicios eliminatorios: había que superar el corte del primero para pasar al segundo.'
+      ? 'Es un examen de formato antiguo: las reglas de corte entre el test y el supuesto eran distintas de las actuales.'
       : 'Según las bases, el supuesto solo se corrige si superas el corte del test.');
   return lineas;
 }

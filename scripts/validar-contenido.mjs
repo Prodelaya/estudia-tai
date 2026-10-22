@@ -1,6 +1,7 @@
 // Comprueba que el contenido de content/ es coherente antes de desplegar: JSON válido, 4 opciones,
 // clave en a-d (o null si anulada), ids únicos, refs que existen en los exámenes, imágenes presentes,
-// históricas idénticas a su pregunta de examen, sin restos del PDF, y criterios de corte bien formados.
+// históricas idénticas a su pregunta de examen, sin restos del PDF, y criterios de corte bien formados. Avisa (sin
+// fallar) de opciones sospechosamente largas.
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { RAIZ, RESTOS, diferencias, leer, preguntasDeExamen } from './historicas.mjs';
@@ -19,6 +20,10 @@ function revisarPregunta(q, donde) {
     if (!existsSync(join(RAIZ, 'img', m[1]))) errores.push(`${donde}: falta la imagen ${m[1]}`);
   for (const [campo, texto] of [['enunciado', q.q], ...LETRAS.map(l => [`opción ${l}`, q.op?.[l] ?? ''])])
     for (const r of RESTOS) if (r.test(texto)) errores.push(`${donde}: resto del PDF en ${campo} (${texto.match(r)[0]})`);
+  // Una opción mucho más larga que las demás suele ser texto del PDF pegado (pie, contexto de la siguiente pregunta).
+  const largos = LETRAS.map(l => q.op?.[l]?.length ?? 0);
+  const [mayor, segunda] = [...largos].sort((a, b) => b - a);
+  if (mayor > 150 && mayor > 3 * segunda) avisos.push(`${donde}: la opción ${LETRAS[largos.indexOf(mayor)]} es mucho más larga que las demás; comprueba que no arrastra texto del PDF`);
 }
 
 function revisarCriterio(c, donde) {

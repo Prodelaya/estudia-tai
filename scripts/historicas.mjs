@@ -31,11 +31,13 @@ export function diferencias(t, e) {
 /** Copia del examen al tema los campos canónicos. Devuelve true si cambió algo. */
 export function sincronizar(t, e) {
   if (!diferencias(t, e).length) return false;
+  // Solo se conserva la opción defendible que el tema ya proponía para una anulada. Si el examen la anula ahora,
+  // la clave antigua del tema no es una propuesta revisada: se copia la del examen.
+  const conservar = Boolean(e.anulada && t.anulada) && t.ok != null;
   t.q = e.q;
   t.op = { ...e.op };
   t.anulada = Boolean(e.anulada);
-  // Con la pregunta anulada se conserva la opción defendible que propone el tema, si la hay.
-  if (!e.anulada || t.ok === null || t.ok === undefined) t.ok = e.ok;
+  if (!conservar) t.ok = e.ok;
   return true;
 }
 

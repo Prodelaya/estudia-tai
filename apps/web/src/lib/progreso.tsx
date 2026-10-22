@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { api, alPerderSesion, NoAutenticado, type CuerpoIntento, type ItemRespuesta, type UsuarioActual } from './api';
-import { almacenNavegador, ColaEscrituras, type EstadoGuardado, type Escritura } from './cola';
+import { almacenNavegador, ColaEscrituras, nuevoId, type EstadoGuardado, type Escritura, type Resultado } from './cola';
 import { programar, type Nota } from './srs';
 import type { EstadoSrs, Letra, Modo, Progreso, PreguntaVista, ResumenPregunta } from './tipos';
 
@@ -17,10 +17,11 @@ interface Ctx {
   reintentar: () => void;
   recargar: () => Promise<void>;
   responder: (q: PreguntaVista, elegida: Letra, origen?: string, modo?: Modo) => void;
-  registrar: (lista: Respuesta[], origen: string, modo: Modo) => void;
+  /** idLote hace deterministas los cliente_id (lote:pregunta): reenviar el mismo lote no duplica nada. */
+  registrar: (lista: Respuesta[], origen: string, modo: Modo, idLote?: string) => void;
   calificar: (id: string, tema: number | null, nota: Nota) => void;
-  /** true si quedó guardado en el servidor; si no, sigue en la cola y se reintenta. */
-  guardarIntento: (b: CuerpoIntento) => Promise<boolean>;
+  /** 'ok' si quedó guardado; 'pendiente' si sigue en la cola y se reintentará; 'rechazado' si el servidor no lo admitió. */
+  guardarIntento: (b: CuerpoIntento) => Promise<Resultado>;
   marcar: (q: { id: string; tema: number | null }, nota: string) => Promise<void>;
   resolverMarca: (id: string, resuelta: boolean) => Promise<void>;
   borrarMarca: (id: string) => Promise<void>;
@@ -30,11 +31,25 @@ interface Ctx {
 const VACIO: Progreso = { preguntas: [], srs: [], marcas: [], intentos: [] };
 const Contexto = createContext<Ctx | null>(null);
 
-function ejecutar(e: Escritura) {
-  if (e.tipo === 'respuestas') return api.respuestas(e.items);
-  if (e.tipo === 'srs') return api.srs(e.e);
-  return api.intento(e.cuerpo);
+function ejecutar(e: Escritura, usuario: string) {
+  if (e.tipo === 'respuestas') return api.respuestas(e.items, usuario);
+  if (e.tipo === 'srs') return api.srs(e.e, usuario);
+  return api.intento(e.cuerpo, usuario);
 }
+
+/** Lo que sigue en la cola aún no está en el servidor: se aplica encima de lo que devuelve. */
+function superponer(p: Progreso, c: ColaEscrituras): Progreso {
+  const respuestas = c.pendientesDe('respuestas').flatMap(e => e.items);
+  const tarjetas = c.pendientesDe('srs').map(e => e.e);
+  if (!respuestas.length && !tarjetas.length) return p;
+  const mapa = new Map(p.preguntas.map(x => [x.pregunta_id, x]));
+  for (const i of respuestas) mapa.set(i.pregunta_id, sumarRespuesta(mapa.get(i.pregunta_id), i));
+  const srs = new Map(p.srs.map(x => [x.tarjeta_id, x]));
+  for (const t of tarjetas) srs.set(t.tarjeta_id, t);
+  return { ...p, preguntas: [...mapa.values()], srs: [...srs.values()] };
+}
+
+const conLimite = <T,>(p: Promise<T>, ms: number) => Promise.race([p, new Promise<void>(r => setTimeout(r, ms))]);
 
 /** Aplica una respuesta al resumen local, igual que lo calcularía el servidor. */
 export function sumarRespuesta(prev: ResumenPregunta | undefined, i: ItemRespuesta): ResumenPregunta {
@@ -62,15 +77,19 @@ export function ProveedorProgreso({ children }: { children: ReactNode }) {
 
   const recargar = useCallback(async () => {
     const actual = ++revision.current;
+    const c = cola.current!;
     try {
-      const [nuevo, cuenta] = await Promise.all([api.progreso(), api.yo()]);
-      if (actual !== revision.current) return;
-      // Lo que sigue en la cola aún no está en el servidor: se vuelve a aplicar encima.
-      const mapa = new Map(nuevo.preguntas.map(x => [x.pregunta_id, x]));
-      for (const i of cola.current!.respuestasPendientes()) mapa.set(i.pregunta_id, sumarRespuesta(mapa.get(i.pregunta_id), i));
-      setProgreso({ ...nuevo, preguntas: [...mapa.values()] });
-      setUsuario(cuenta);
-      setEstado('listo');
+      for (let vuelta = 0; ; vuelta++) {
+        const envios = c.envios, ocupada = c.ocupada;
+        const [nuevo, cuenta] = await Promise.all([api.progreso(), api.yo()]);
+        if (actual !== revision.current) return;
+        // Si se envió algo mientras se leía, la foto puede incluirlo o no: se espera a la cola y se vuelve a leer.
+        if (vuelta < 2 && (ocupada || c.ocupada || c.envios !== envios)) { await conLimite(c.vaciar(), 5000); continue; }
+        setProgreso(superponer(nuevo, c));
+        setUsuario(cuenta);
+        setEstado('listo');
+        return;
+      }
     } catch (e) {
       if (actual !== revision.current) return;
       if (e instanceof NoAutenticado) {
@@ -89,31 +108,38 @@ export function ProveedorProgreso({ children }: { children: ReactNode }) {
   }), []);
   useEffect(() => { recargar(); }, [recargar]);
 
-  // Al entrar, se recupera lo que quedó sin enviar en este navegador; al terminar se refresca el resumen.
+  const reintentar = useCallback(() => {
+    cola.current!.vaciar().then(ok => { if (ok) recargar().catch(console.error); });
+  }, [recargar]);
+
+  // Al entrar, se recupera lo que quedó sin enviar en este navegador: se pinta encima y se envía.
   const nombre = usuario?.nombre ?? null;
   useEffect(() => {
     const c = cola.current!;
     c.usar(nombre);
-    if (nombre && c.pendientes) c.vaciar().then(ok => { if (ok) recargar(); });
-  }, [nombre, recargar]);
+    if (nombre && c.pendientes) {
+      setProgreso(p => superponer(p, c));
+      reintentar();
+    }
+  }, [nombre, reintentar]);
 
   // Reintento automático mientras haya algo pendiente: al recuperar la conexión y cada 30 s.
   useEffect(() => {
     if (guardado.estado !== 'error' || !guardado.pendientes) return;
-    const reintento = () => { void cola.current!.vaciar(); };
-    window.addEventListener('online', reintento);
-    const t = setInterval(reintento, 30_000);
-    return () => { window.removeEventListener('online', reintento); clearInterval(t); };
-  }, [guardado.estado, guardado.pendientes]);
+    window.addEventListener('online', reintentar);
+    const t = setInterval(reintentar, 30_000);
+    return () => { window.removeEventListener('online', reintentar); clearInterval(t); };
+  }, [guardado.estado, guardado.pendientes, reintentar]);
 
   const porPregunta = useMemo(() => new Map(progreso.preguntas.map(p => [p.pregunta_id, p])), [progreso.preguntas]);
   const porTarjeta = useMemo(() => new Map(progreso.srs.map(s => [s.tarjeta_id, s])), [progreso.srs]);
 
   // Las escrituras son optimistas: se pinta al momento y se manda al servidor en segundo plano.
-  const registrar = useCallback((lista: Respuesta[], origen: string, modo: Modo) => {
+  const registrar = useCallback((lista: Respuesta[], origen: string, modo: Modo, idLote?: string) => {
     const ahora = Date.now();
     const items: ItemRespuesta[] = lista.filter(r => r.q.ok).map(({ q, elegida }) => ({
       pregunta_id: q.id, tema: q.tema, elegida, acierto: elegida === q.ok, origen, modo, ts: ahora,
+      cliente_id: idLote ? `${idLote}:${q.id}` : nuevoId(),
     }));
     if (!items.length) return;
     setProgreso(p => {
@@ -135,13 +161,10 @@ export function ProveedorProgreso({ children }: { children: ReactNode }) {
   }, [porTarjeta]);
 
   const guardarIntento: Ctx['guardarIntento'] = useCallback(async cuerpo => {
-    const ok = await cola.current!.encolar({ tipo: 'intento', cuerpo });
-    if (ok) await recargar();
-    return ok;
-  }, [recargar]);
-
-  const reintentar = useCallback(() => {
-    cola.current!.vaciar().then(ok => { if (ok) recargar(); });
+    const r = await cola.current!.encolar({ tipo: 'intento', cuerpo });
+    // Un fallo al refrescar no cambia que el intento esté guardado.
+    if (r === 'ok') await recargar().catch(console.error);
+    return r;
   }, [recargar]);
 
   const marcar: Ctx['marcar'] = useCallback(async (q, nota) => {
