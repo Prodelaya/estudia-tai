@@ -65,7 +65,7 @@ export function Usuarios() {
         <label className="stack">
           <span>Nombre del nuevo usuario</span>
           <input type="text" value={nombre} onChange={e => setNombre(e.target.value.toLowerCase())}
-            minLength={3} maxLength={32} pattern="[a-z0-9][a-z0-9_-]{2,31}" autoCapitalize="none" spellCheck={false}
+            minLength={3} maxLength={32} pattern={'[a-z0-9][a-z0-9_\\-]{2,31}'} autoCapitalize="none" spellCheck={false}
             aria-describedby="reglas-usuario" required disabled={enviando} />
         </label>
         <small id="reglas-usuario">De 3 a 32 caracteres: minúsculas, números, guion o guion bajo. Empieza por letra o número.</small>

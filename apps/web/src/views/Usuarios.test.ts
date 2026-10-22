@@ -73,6 +73,15 @@ test('only the owner sees the creation form with username rules and no password 
   expect(fixture.create).not.toHaveBeenCalled();
 });
 
+test('username pattern compiles in HTML UnicodeSets mode and validates whole names', () => {
+  const html = renderToStaticMarkup(draw());
+  const pattern = /pattern="([^"]+)"/.exec(html)?.[1];
+  expect(pattern).toBeDefined();
+  const matches = new RegExp(`^(?:${pattern})$`, 'v');
+  for (const value of ['nuevo_1', 'persona-2', 'constructor']) expect(matches.test(value)).toBe(true);
+  for (const value of ['a b', 'abc\n', '_nuevo', 'ábc', 'ab', 'a'.repeat(33)]) expect(matches.test(value)).toBe(false);
+});
+
 test('successful creation adds the pending account and private fragment link', async () => {
   vi.stubGlobal('window', { location: { origin: 'https://fixture.invalid' } });
   const token = 'x'.repeat(43);
