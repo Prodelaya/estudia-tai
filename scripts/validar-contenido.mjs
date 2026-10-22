@@ -51,6 +51,13 @@ for (const e of indice) {
   }
 }
 
+// Cada origen (año, parte, número, reserva, convocatoria) nombra una sola pregunta: la etiqueta que ve el opositor
+// no puede señalar dos preguntas distintas. Una histórica sin ref cuyo origen es una pregunta de examen debe
+// enlazarse (ref) o corregir su origen.
+const claveOrigen = o => JSON.stringify([o.anio, o.parte, o.n, Boolean(o.reserva), o.conv === 'extraordinaria' || o.conv === 'ext']);
+const duenoOrigen = new Map();
+for (const [id, q] of examen) duenoOrigen.set(claveOrigen(q.origen_vista), id);
+
 let totales = { preguntas: 0, tarjetas: 0 };
 for (const t of temas) {
   const f = `contenido/tema_${String(t.n).padStart(2, '0')}.json`;
@@ -67,6 +74,11 @@ for (const t of temas) {
     if (q.ref && examen.has(q.ref)) {
       const d = diferencias(q, examen.get(q.ref));
       if (d.length) errores.push(`${f} ${q.id}: distinta de ${q.ref} en ${d.join(', ')} (node scripts/sincronizar-historicas.mjs)`);
+    }
+    if (q.tipo === 'historica' && q.origen) {
+      const k = claveOrigen(q.origen), quien = q.ref ?? q.id, dueno = duenoOrigen.get(k);
+      if (dueno && dueno !== quien) errores.push(`${f} ${q.id}: su origen (${k}) es el de ${dueno}${q.ref ? '' : '; enlázala con ref o corrige el origen'}`);
+      else duenoOrigen.set(k, quien);
     }
     if (!q.explicacion?.trim()) avisos.push(`${f} ${q.id}: sin explicación`);
   }

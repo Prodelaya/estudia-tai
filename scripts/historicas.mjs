@@ -43,6 +43,7 @@ export function diferencias(t, e) {
   if (e.anulada && t.ok !== null && t.ok !== e.ok && !t.anulada) d.push('clave');
   if (e.clave_vista !== undefined && t.clave !== claveEsperada(t, e)) d.push('procedencia de la clave');
   if (e.origen_vista && JSON.stringify(t.origen) !== JSON.stringify(e.origen_vista)) d.push('origen');
+  if (t.texto !== undefined && t.texto !== 'literal') d.push('texto (es el literal del examen)');
   return d;
 }
 
@@ -58,6 +59,7 @@ export function sincronizar(t, e) {
   if (!conservar) t.ok = e.ok;
   if (e.clave_vista !== undefined) t.clave = claveEsperada(t, e);
   if (e.origen_vista) t.origen = { ...e.origen_vista };
+  if (t.texto !== undefined) t.texto = 'literal';
   return true;
 }
 

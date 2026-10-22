@@ -1063,15 +1063,15 @@
   {
    "id": "t15-h-040",
    "tipo": "historica",
-   "ref": null,
+   "ref": "LI2008-ej1-III-01",
    "origen": {
     "anio": 2008,
     "parte": "ej1",
-    "n": 39
+    "n": 51
    },
    "de": null,
-   "texto": "reformulado",
-   "q": "Una tabla se dice que está en 3ª Forma Normal si se encuentra en 2ª Forma Normal y:",
+   "texto": "literal",
+   "q": "Una tabla se dice que esta en 3ª Forma Normal si se encuentra en 2ª Forma Normal y:",
    "ctx": null,
    "op": {
     "a": "Las únicas dependencias funcionales elementales son aquellas en las que la clave principal (y claves secundarias) determinan un atributo.",
@@ -1080,7 +1080,7 @@
     "d": "No existen atributos no primarios que son transitivamente dependientes de cada posible clave de la tabla."
    },
    "ok": "d",
-   "clave": "claude",
+   "clave": "oficial",
    "anulada": false,
    "obsoleta": false,
    "explicacion": "**d)** 3FN = 2FN + **no hay atributos no primarios que dependan transitivamente** de las claves.\n\n- a) Que solo las claves determinen atributos se parece a la **FNBC**.\n- b) Dependencia total de la clave completa es la **2FN**.\n- c) Valores elementales (atómicos) es la **1FN**.",
@@ -1228,7 +1228,7 @@
    "ref": null,
    "origen": {
     "anio": 2008,
-    "parte": "ej1",
+    "parte": "ej1_iv",
     "n": 91
    },
    "de": null,
