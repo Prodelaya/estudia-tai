@@ -85,16 +85,16 @@ const MIGRACIONES = [
      token_hash TEXT NOT NULL UNIQUE,
      expira INTEGER NOT NULL
    );`,
-  // Blancos del simulacro, modo (práctica o simulacro), primera exposición (por hora) e ids del cliente para que
-  // los reintentos no dupliquen. Las respuestas antiguas de tests y repaso eran práctica; las de examen no se
-  // pueden clasificar y se quedan sin modo.
+  // Blancos del simulacro, modo (práctica o simulacro), primera respuesta con letra (por hora) e ids del cliente
+  // para que los reintentos no dupliquen. Las respuestas antiguas de tests y repaso eran práctica; las de examen y
+  // los intentos antiguos no se pueden clasificar y se quedan sin modo.
   `ALTER TABLE respuestas ADD COLUMN blanco INTEGER NOT NULL DEFAULT 0;
    ALTER TABLE respuestas ADD COLUMN modo TEXT;
    ALTER TABLE respuestas ADD COLUMN primera INTEGER NOT NULL DEFAULT 0;
    UPDATE respuestas SET modo = 'practica' WHERE origen IN ('test', 'repaso');
    UPDATE respuestas SET primera = 1 WHERE id = (
      SELECT r2.id FROM respuestas r2
-     WHERE r2.usuario_id = respuestas.usuario_id AND r2.pregunta_id = respuestas.pregunta_id
+     WHERE r2.usuario_id = respuestas.usuario_id AND r2.pregunta_id = respuestas.pregunta_id AND r2.blanco = 0
      ORDER BY r2.ts, r2.id LIMIT 1);
    ALTER TABLE intentos ADD COLUMN modo TEXT;
    ALTER TABLE intentos ADD COLUMN limite INTEGER;

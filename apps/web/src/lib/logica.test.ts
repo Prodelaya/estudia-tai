@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { corregirParte, queCuentan, resumen, valorar } from './correccion';
 import { ColaEscrituras, type Almacen, type Escritura } from './cola';
 import { ErrorHttp, NoAutenticado } from './api';
-import { borrarExamen, guardarExamen, leerExamen, marcarEntregado, restante } from './examenGuardado';
+import { borrarExamen, esMio, guardarExamen, leerExamen, marcarEntregado, restante } from './examenGuardado';
 import { sumarRespuesta } from './progreso';
 import { MARGEN_RETENCION_MS, motivoRepaso } from './repaso';
 import { programar } from './srs';
@@ -96,6 +96,15 @@ describe('repaso y retención', () => {
     expect([p.racha, p.ts_racha, p.blanco, p.ultima]).toEqual([0, null, 1, 0]);
     expect(motivoRepaso(p, 3 * DIA)).toBe('blanco');
   });
+  it('un blanco no cuenta como contestada ni como primera vez', () => {
+    const blanco = { pregunta_id: 'p', tema: 1, elegida: null, acierto: false, origen: 'examen', modo: 'simulacro' as const, ts: 1, cliente_id: 'c' };
+    let p = sumarRespuesta(undefined, blanco);
+    expect([p.vistas, p.contestadas, p.primera]).toEqual([1, 0, null]);
+    p = sumarRespuesta(p, { ...blanco, elegida: 'a', acierto: true, ts: 2 });
+    expect([p.vistas, p.contestadas, p.primera]).toEqual([2, 1, 1]);
+    p = sumarRespuesta(p, { ...blanco, elegida: 'b', acierto: false, ts: 3 });
+    expect([p.contestadas, p.primera]).toEqual([2, 1]);
+  });
 });
 
 class Memoria implements Almacen {
@@ -180,7 +189,7 @@ describe('cola de escrituras', () => {
     expect(estado).toBe('error:1');
   });
 
-  it('al cambiar de usuario con un envío en vuelo, la cola del nuevo se envía después y no se mezcla', async () => {
+  it('al cambiar de usuario con un envío colgado, la cola del nuevo sale sin esperar y la del anterior no se reenvía', async () => {
     const almacen = new Memoria();
     almacen.setItem('estudia-tai:pendientes:jota', JSON.stringify([{ id: 'x', op: srs('j1') }]));
     let soltar!: () => void;
@@ -190,47 +199,122 @@ describe('cola de escrituras', () => {
       enviadas.push(`${u}:${nombreDe(e)}`);
     }, almacen, () => {});
     c.usar('nosa');
-    void c.encolar(srs('n1'));
+    const rn = c.encolar(srs('n1'));
     await Promise.resolve();
     c.usar('jota');
-    const p = c.vaciar();
+    expect(await rn).toBe('pendiente');
+    // La petición de nosa sigue colgada y lo de jota se envía igualmente.
+    expect(await c.vaciar()).toBe(true);
+    expect(enviadas).toEqual(['jota:j1']);
+    // Cuando por fin llega n1, se quita de la clave de nosa: no se reenviará al volver a entrar.
     soltar();
-    expect(await p).toBe(true);
-    expect(enviadas).toEqual(['nosa:n1', 'jota:j1']);
-    // n1 sigue pendiente para nosa: el bucle antiguo se cortó al cambiar de usuario.
-    expect(JSON.parse(almacen.getItem('estudia-tai:pendientes:nosa')!)).toHaveLength(1);
+    await new Promise(r => setTimeout(r, 0));
+    expect(enviadas).toEqual(['jota:j1', 'nosa:n1']);
+    expect(almacen.getItem('estudia-tai:pendientes:nosa')).toBeNull();
+  });
+
+  it('lo que otra pestaña descartó (4xx) no se da por guardado', async () => {
+    const almacen = new Memoria();
+    const a = new ColaEscrituras(async () => { throw new TypeError('offline'); }, almacen, () => {});
+    const b = new ColaEscrituras(async e => { if (nombreDe(e) === 'mala') throw new ErrorHttp(422, 'no'); }, almacen, () => {});
+    a.usar('nosa'); b.usar('nosa');
+    const finales: string[] = [];
+    expect(await a.encolar(srs('mala'), r => finales.push(r))).toBe('pendiente');
+    expect(await b.vaciar()).toBe(true);
+    // A se entera al vaciar (la lista ya está vacía): lo rechazó el servidor, no se guardó.
+    await a.vaciar();
+    expect(finales).toEqual(['rechazado']);
+  });
+
+  it('lo que desaparece de la lista sin constar como enviado se vuelve a encolar', async () => {
+    const almacen = new Memoria();
+    let red = false;
+    const enviadas: string[] = [];
+    const c = new ColaEscrituras(async e => { if (!red) throw new TypeError('offline'); enviadas.push(nombreDe(e)); }, almacen, () => {});
+    c.usar('nosa');
+    const finales: string[] = [];
+    await c.encolar(srs('x'), r => finales.push(r));
+    // Otra pestaña escribió la lista con una copia vieja y se llevó la entrada por delante.
+    almacen.removeItem('estudia-tai:pendientes:nosa');
+    red = true;
+    expect(await c.vaciar()).toBe(true);
+    expect(enviadas).toEqual(['x']);
+    expect(finales).toEqual(['ok']);
+  });
+
+  it('si el navegador no deja escribir (cuota llena), la cola sigue en memoria y envía', async () => {
+    const almacen = new Memoria();
+    almacen.setItem = () => { throw new DOMException('lleno', 'QuotaExceededError'); };
+    const enviadas: string[] = [];
+    const estados: string[] = [];
+    const c = new ColaEscrituras(async e => { enviadas.push(nombreDe(e)); }, almacen, e => estados.push(e.estado));
+    c.usar('nosa');
+    expect(await c.encolar(srs('x'))).toBe('ok');
+    expect(enviadas).toEqual(['x']);
+    expect(estados.at(-1)).toBe('guardado');
+  });
+
+  it('alFinal avisa cuando un envío que falló se guarda en un reintento', async () => {
+    let red = false;
+    const c = new ColaEscrituras(async () => { if (!red) throw new TypeError('offline'); }, new Memoria(), () => {});
+    c.usar('nosa');
+    const finales: string[] = [];
+    expect(await c.encolar(srs('x'), r => finales.push(r))).toBe('pendiente');
+    expect(finales).toEqual([]);
+    red = true;
+    await c.vaciar();
+    expect(finales).toEqual(['ok']);
   });
 });
 
 describe('autoguardado del examen', () => {
-  const g = { v: 1 as const, config: { partes: ['ej1'], modo: 'examen' as const, minutos: 120 }, resp: { q1: 'a' as Letra }, i: 3, inicio: 0, cliente_id: 'x'.repeat(10) };
+  const g = { v: 1 as const, config: { partes: ['ej1'], modo: 'examen' as const, minutos: 120 }, resp: { q1: 'a' as Letra }, i: 3, inicio: 0, cliente_id: 'x'.repeat(10), pestana: 'A' };
   it('guarda por usuario y examen, y calcula el tiempo que queda aunque la pestaña estuviera cerrada', () => {
     const a = new Memoria();
-    expect(guardarExamen('nosa', 'LI_2025', g, true, a)).toBe('ok');
+    expect(guardarExamen('nosa', 'LI_2025', g, 'nuevo', a)).toBe('ok');
     expect(leerExamen('jota', 'LI_2025', a)).toBeNull();
     expect(leerExamen('nosa', 'LI_2025', a)).toEqual(g);
     expect(restante(g, 60 * 60_000)).toBe(60 * 60_000);
     expect(restante(g, 121 * 60_000)).toBeLessThan(0);
     expect(restante({ ...g, config: { ...g.config, minutos: 0 } }, 1e12)).toBe(Infinity);
-    borrarExamen('nosa', 'LI_2025', a);
+    // Descartar con una lectura vieja no borra otro examen.
+    borrarExamen('nosa', 'LI_2025', 'otro-examen', a);
+    expect(leerExamen('nosa', 'LI_2025', a)).not.toBeNull();
+    borrarExamen('nosa', 'LI_2025', g.cliente_id, a);
     expect(leerExamen('nosa', 'LI_2025', a)).toBeNull();
     a.setItem('estudia-tai:examen:nosa:LI_2024', '{roto');
     expect(leerExamen('nosa', 'LI_2024', a)).toBeNull();
   });
+  it('solo escribe la pestaña que lo hace: continuar en otra la deja fuera', () => {
+    const a = new Memoria();
+    guardarExamen('nosa', 'LI_2025', g, 'nuevo', a);
+    expect(guardarExamen('nosa', 'LI_2025', { ...g, i: 4 }, 'seguir', a)).toBe('ok');
+    // La pestaña B pulsa «Continuar»: toma el examen.
+    expect(guardarExamen('nosa', 'LI_2025', { ...g, pestana: 'B' }, 'tomar', a)).toBe('ok');
+    expect(esMio('nosa', 'LI_2025', g.cliente_id, 'A', a)).toBe(false);
+    expect(guardarExamen('nosa', 'LI_2025', { ...g, resp: {} }, 'seguir', a)).toBe('otra-pestana');
+    expect(leerExamen('nosa', 'LI_2025', a)?.pestana).toBe('B');
+  });
   it('un examen entregado en otra pestaña no resucita ni se pisa con otro', () => {
     const a = new Memoria();
-    guardarExamen('nosa', 'LI_2025', g, true, a);
+    guardarExamen('nosa', 'LI_2025', g, 'nuevo', a);
     marcarEntregado('nosa', 'LI_2025', g.cliente_id, a);
     expect(leerExamen('nosa', 'LI_2025', a)).toBeNull();
-    // La otra pestaña, que seguía con el mismo examen, ya no puede volver a escribirlo.
-    expect(guardarExamen('nosa', 'LI_2025', { ...g, i: 4 }, false, a)).toBe('otra-pestana');
+    expect(guardarExamen('nosa', 'LI_2025', { ...g, i: 4 }, 'seguir', a)).toBe('otra-pestana');
+    expect(guardarExamen('nosa', 'LI_2025', g, 'tomar', a)).toBe('otra-pestana');
     expect(leerExamen('nosa', 'LI_2025', a)).toBeNull();
     // Un examen nuevo sí ocupa la marca de uno entregado.
     const nuevo = { ...g, cliente_id: 'y'.repeat(10) };
-    expect(guardarExamen('nosa', 'LI_2025', nuevo, true, a)).toBe('ok');
+    expect(guardarExamen('nosa', 'LI_2025', nuevo, 'nuevo', a)).toBe('ok');
     // Y otro examen nuevo no pisa uno a medias.
-    expect(guardarExamen('nosa', 'LI_2025', { ...g, cliente_id: 'z'.repeat(10) }, true, a)).toBe('otra-pestana');
+    expect(guardarExamen('nosa', 'LI_2025', { ...g, cliente_id: 'z'.repeat(10) }, 'nuevo', a)).toBe('otra-pestana');
     expect(leerExamen('nosa', 'LI_2025', a)?.cliente_id).toBe(nuevo.cliente_id);
+  });
+  it('sin almacenamiento lo dice, en lugar de culpar a otra pestaña', () => {
+    expect(guardarExamen('nosa', 'LI_2025', g, 'nuevo', null)).toBe('sin-almacen');
+    const lleno = new Memoria();
+    lleno.setItem = () => { throw new DOMException('lleno', 'QuotaExceededError'); };
+    expect(guardarExamen('nosa', 'LI_2025', g, 'nuevo', lleno)).toBe('sin-almacen');
   });
 });
 

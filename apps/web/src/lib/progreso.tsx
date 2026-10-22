@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { api, alPerderSesion, NoAutenticado, type CuerpoIntento, type ItemRespuesta, type UsuarioActual } from './api';
-import { almacenNavegador, ColaEscrituras, nuevoId, type EstadoGuardado, type Escritura, type Resultado } from './cola';
+import { almacenNavegador, ColaEscrituras, nuevoId, type EstadoGuardado, type Escritura, type Resultado, type ResultadoFinal } from './cola';
 import { programar, type Nota } from './srs';
 import type { EstadoSrs, Letra, Modo, Progreso, PreguntaVista, ResumenPregunta } from './tipos';
 
@@ -8,7 +8,8 @@ import type { EstadoSrs, Letra, Modo, Progreso, PreguntaVista, ResumenPregunta }
 export interface Respuesta { q: PreguntaVista; elegida: Letra | null }
 
 interface Ctx {
-  estado: 'cargando' | 'login' | 'listo';
+  /** sin-conexion: la primera carga falló por red o por el servidor; se reintenta sola. */
+  estado: 'cargando' | 'login' | 'listo' | 'sin-conexion';
   usuario: UsuarioActual | null;
   progreso: Progreso;
   porPregunta: Map<string, Progreso['preguntas'][number]>;
@@ -18,10 +19,13 @@ interface Ctx {
   recargar: () => Promise<void>;
   responder: (q: PreguntaVista, elegida: Letra, origen?: string, modo?: Modo) => void;
   /** idLote hace deterministas los cliente_id (lote:pregunta): reenviar el mismo lote no duplica nada. */
-  registrar: (lista: Respuesta[], origen: string, modo: Modo, idLote?: string) => void;
+  registrar: (lista: Respuesta[], origen: string, modo: Modo, idLote?: string, ts?: number) => void;
   calificar: (id: string, tema: number | null, nota: Nota) => void;
-  /** 'ok' si quedó guardado; 'pendiente' si sigue en la cola y se reintentará; 'rechazado' si el servidor no lo admitió. */
-  guardarIntento: (b: CuerpoIntento) => Promise<Resultado>;
+  /**
+   * 'ok' si quedó guardado; 'pendiente' si sigue en la cola y se reintentará; 'rechazado' si el servidor no lo
+   * admitió. alFinal avisa de cómo acaba un intento que quedó pendiente.
+   */
+  guardarIntento: (b: CuerpoIntento, alFinal?: (r: ResultadoFinal) => void) => Promise<Resultado>;
   marcar: (q: { id: string; tema: number | null }, nota: string) => Promise<void>;
   resolverMarca: (id: string, resuelta: boolean) => Promise<void>;
   borrarMarca: (id: string) => Promise<void>;
@@ -33,7 +37,7 @@ const Contexto = createContext<Ctx | null>(null);
 
 function ejecutar(e: Escritura, usuario: string) {
   if (e.tipo === 'respuestas') return api.respuestas(e.items, usuario);
-  if (e.tipo === 'srs') return api.srs(e.e, usuario);
+  if (e.tipo === 'srs') return api.srs(e.e, usuario, e.ts);
   return api.intento(e.cuerpo, usuario);
 }
 
@@ -51,17 +55,23 @@ function superponer(p: Progreso, c: ColaEscrituras): Progreso {
 
 const conLimite = <T,>(p: Promise<T>, ms: number) => Promise.race([p, new Promise<void>(r => setTimeout(r, ms))]);
 
-/** Aplica una respuesta al resumen local, igual que lo calcularía el servidor. */
+/**
+ * Aplica una respuesta al resumen local, igual que lo calcularía el servidor. Un blanco cuenta como fallo para el
+ * repaso y la racha, pero no como pregunta contestada ni como «primera vez» (puede que ni se llegara a leer).
+ */
 export function sumarRespuesta(prev: ResumenPregunta | undefined, i: ItemRespuesta): ResumenPregunta {
   const acierto = i.acierto ? 1 : 0;
+  const contestada = i.elegida ? 1 : 0;
   const sigueRacha = acierto && prev?.ultima === 1;
+  const yaContestada = (prev?.contestadas ?? prev?.vistas ?? 0) > 0;
   return {
     pregunta_id: i.pregunta_id, tema: i.tema,
-    vistas: (prev?.vistas ?? 0) + 1, aciertos: (prev?.aciertos ?? 0) + acierto,
-    ultima: acierto, blanco: i.elegida ? 0 : 1,
+    vistas: (prev?.vistas ?? 0) + 1, contestadas: (prev?.contestadas ?? prev?.vistas ?? 0) + contestada,
+    aciertos: (prev?.aciertos ?? 0) + acierto,
+    ultima: acierto, blanco: contestada ? 0 : 1,
     racha: acierto ? (sigueRacha ? (prev?.racha ?? 1) + 1 : 1) : 0,
     ts_racha: acierto ? (sigueRacha ? (prev?.ts_racha ?? prev?.ts ?? i.ts) : i.ts) : null,
-    primera: prev ? (prev.primera ?? null) : acierto,
+    primera: contestada && !yaContestada ? acierto : (prev?.primera ?? null),
     ts: i.ts,
   };
 }
@@ -72,8 +82,22 @@ export function ProveedorProgreso({ children }: { children: ReactNode }) {
   const [usuario, setUsuario] = useState<UsuarioActual | null>(null);
   const [guardado, setGuardado] = useState<EstadoGuardado>({ estado: 'guardado', pendientes: 0 });
   const revision = useRef(0);
+  const nombreActual = useRef<string | null>(null);
+  const recargarRef = useRef<() => Promise<void>>(async () => {});
+  const huboError = useRef(false);
   const cola = useRef<ColaEscrituras | null>(null);
-  if (!cola.current) cola.current = new ColaEscrituras(ejecutar, almacenNavegador(), setGuardado);
+  if (!cola.current) {
+    cola.current = new ColaEscrituras(ejecutar, almacenNavegador(), e => {
+      setGuardado(e);
+      // Tras un error, cuando la cola consigue vaciarse (reintento automático o repetición), se refresca el
+      // progreso para que aparezca lo que acaba de llegar, intentos incluidos.
+      if (e.estado === 'error') huboError.current = true;
+      else if (e.estado === 'guardado' && huboError.current) {
+        huboError.current = false;
+        recargarRef.current().catch(console.error);
+      }
+    });
+  }
 
   const recargar = useCallback(async () => {
     const actual = ++revision.current;
@@ -85,6 +109,10 @@ export function ProveedorProgreso({ children }: { children: ReactNode }) {
         if (actual !== revision.current) return;
         // Si se envió algo mientras se leía, la foto puede incluirlo o no: se espera a la cola y se vuelve a leer.
         if (vuelta < 2 && (ocupada || c.ocupada || c.envios !== envios)) { await conLimite(c.vaciar(), 5000); continue; }
+        // La cookie manda: si ahora es de otra cuenta (se entró con otra en otra pestaña), la cola pasa a esa
+        // cuenta antes de pintar, para no mezclar lo pendiente de una con el progreso de la otra.
+        c.usar(cuenta.nombre);
+        nombreActual.current = cuenta.nombre;
         setProgreso(superponer(nuevo, c));
         setUsuario(cuenta);
         setEstado('listo');
@@ -93,34 +121,46 @@ export function ProveedorProgreso({ children }: { children: ReactNode }) {
     } catch (e) {
       if (actual !== revision.current) return;
       if (e instanceof NoAutenticado) {
+        nombreActual.current = null;
         setProgreso(VACIO);
         setUsuario(null);
         setEstado('login');
       }
-      else throw e;
+      else {
+        setEstado(s => (s === 'cargando' ? 'sin-conexion' : s));
+        throw e;
+      }
     }
   }, []);
+  recargarRef.current = recargar;
   useEffect(() => alPerderSesion(() => {
     ++revision.current;
+    nombreActual.current = null;
     setProgreso(VACIO);
     setUsuario(null);
     setEstado('login');
   }), []);
-  useEffect(() => { recargar(); }, [recargar]);
+  useEffect(() => { recargar().catch(console.error); }, [recargar]);
+
+  // Si la primera carga falló (servidor reiniciándose, sin red), se reintenta al volver la conexión y cada 15 s.
+  useEffect(() => {
+    if (estado !== 'sin-conexion') return;
+    const otra = () => { recargar().catch(console.error); };
+    window.addEventListener('online', otra);
+    const t = setInterval(otra, 15_000);
+    return () => { window.removeEventListener('online', otra); clearInterval(t); };
+  }, [estado, recargar]);
 
   const reintentar = useCallback(() => {
     cola.current!.vaciar().then(ok => { if (ok) recargar().catch(console.error); });
   }, [recargar]);
 
-  // Al entrar, se recupera lo que quedó sin enviar en este navegador: se pinta encima y se envía.
+  // Al entrar, se envía lo que quedó sin enviar en este navegador (recargar ya lo pintó encima del progreso).
   const nombre = usuario?.nombre ?? null;
   useEffect(() => {
     const c = cola.current!;
     c.usar(nombre);
-    if (nombre && c.pendientes) {
-      setProgreso(p => superponer(p, c));
-      reintentar();
-    }
+    if (nombre && c.pendientes) reintentar();
   }, [nombre, reintentar]);
 
   // Reintento automático mientras haya algo pendiente: al recuperar la conexión y cada 30 s.
@@ -135,8 +175,8 @@ export function ProveedorProgreso({ children }: { children: ReactNode }) {
   const porTarjeta = useMemo(() => new Map(progreso.srs.map(s => [s.tarjeta_id, s])), [progreso.srs]);
 
   // Las escrituras son optimistas: se pinta al momento y se manda al servidor en segundo plano.
-  const registrar = useCallback((lista: Respuesta[], origen: string, modo: Modo, idLote?: string) => {
-    const ahora = Date.now();
+  const registrar = useCallback((lista: Respuesta[], origen: string, modo: Modo, idLote?: string, ts?: number) => {
+    const ahora = ts ?? Date.now();
     const items: ItemRespuesta[] = lista.filter(r => r.q.ok).map(({ q, elegida }) => ({
       pregunta_id: q.id, tema: q.tema, elegida, acierto: elegida === q.ok, origen, modo, ts: ahora,
       cliente_id: idLote ? `${idLote}:${q.id}` : nuevoId(),
@@ -157,29 +197,31 @@ export function ProveedorProgreso({ children }: { children: ReactNode }) {
   const calificar = useCallback((id: string, tema: number | null, nota: Nota) => {
     const e = programar(porTarjeta.get(id), nota, id, tema);
     setProgreso(p => ({ ...p, srs: [...p.srs.filter(s => s.tarjeta_id !== id), e] }));
-    void cola.current!.encolar({ tipo: 'srs', e });
+    void cola.current!.encolar({ tipo: 'srs', e, ts: Date.now() });
   }, [porTarjeta]);
 
-  const guardarIntento: Ctx['guardarIntento'] = useCallback(async cuerpo => {
-    const r = await cola.current!.encolar({ tipo: 'intento', cuerpo });
-    // Un fallo al refrescar no cambia que el intento esté guardado.
-    if (r === 'ok') await recargar().catch(console.error);
+  const guardarIntento: Ctx['guardarIntento'] = useCallback(async (cuerpo, alFinal) => {
+    const r = await cola.current!.encolar({ tipo: 'intento', cuerpo }, alFinal);
+    // El intento ya está guardado: el refresco va aparte y su fallo no cambia nada.
+    if (r === 'ok') recargar().catch(console.error);
     return r;
   }, [recargar]);
 
+  // Las dudas se escriben al momento, con la cuenta de esta pestaña: si la cookie ya es de otra, el servidor
+  // responde 401 en lugar de guardarlas en la cuenta equivocada.
   const marcar: Ctx['marcar'] = useCallback(async (q, nota) => {
-    await api.marca(q.id, { tema: q.tema, nota });
+    await api.marca(q.id, { tema: q.tema, nota }, nombreActual.current ?? undefined);
     await recargar();
   }, [recargar]);
 
   const resolverMarca: Ctx['resolverMarca'] = useCallback(async (id, resuelta) => {
     const m = progreso.marcas.find(x => x.pregunta_id === id);
-    await api.marca(id, { tema: m?.tema ?? null, nota: m?.nota ?? '', resuelta });
+    await api.marca(id, { tema: m?.tema ?? null, nota: m?.nota ?? '', resuelta }, nombreActual.current ?? undefined);
     await recargar();
   }, [progreso.marcas, recargar]);
 
   const borrarMarca: Ctx['borrarMarca'] = useCallback(async id => {
-    await api.borrarMarca(id);
+    await api.borrarMarca(id, nombreActual.current ?? undefined);
     await recargar();
   }, [recargar]);
 
@@ -187,6 +229,7 @@ export function ProveedorProgreso({ children }: { children: ReactNode }) {
     ++revision.current;
     await api.logout();
     ++revision.current;
+    nombreActual.current = null;
     setProgreso(VACIO);
     setUsuario(null);
     setEstado('login');

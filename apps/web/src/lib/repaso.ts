@@ -12,6 +12,9 @@ export const MARGEN_RETENCION_MS = 20 * 3600 * 1000;
  */
 export type MotivoRepaso = 'fallada' | 'blanco' | 'confirmar';
 
+/** Contestada con letra al menos una vez: los blancos de simulacro no cuentan (puede que ni se leyera). */
+export const contestada = (p: ResumenPregunta | undefined) => !!p && (p.contestadas ?? p.vistas) > 0;
+
 export function motivoRepaso(p: ResumenPregunta | undefined, ahora = Date.now()): MotivoRepaso | null {
   if (!p) return null;
   if (!p.ultima) return p.blanco ? 'blanco' : 'fallada';

@@ -11,10 +11,16 @@ import { Activar } from './views/Activar';
 import { Usuarios } from './views/Usuarios';
 
 export function App() {
-  const { estado, usuario, salir, guardado, reintentar } = useProgreso();
+  const { estado, usuario, salir, guardado, reintentar, recargar } = useProgreso();
   const location = useLocation();
   if (location.pathname === '/activar') return <Activar />;
   if (estado === 'cargando') return <main className="wrap"><p className="note">Cargando…</p></main>;
+  if (estado === 'sin-conexion') return (
+    <main className="wrap stack">
+      <p className="note" role="alert">No se puede conectar con el servidor. Se reintenta solo cada pocos segundos; lo que respondiste y no se envió sigue guardado en este navegador.</p>
+      <div className="row"><button className="btn" onClick={() => { recargar().catch(console.error); }}>Reintentar ahora</button></div>
+    </main>
+  );
   if (estado === 'login') return <Login />;
   return (
     <>

@@ -26,12 +26,33 @@ export const datos = {
 
 const FUENTE: Record<string, string> = { ej1: 'test', ej1_iv: 'test bloque IV', b3: 'supuesto III', b4: 'supuesto IV' };
 
+/** Nombre del examen tal como lo conoce el opositor: la OEP 2025 se examinó en 2026. */
+export const nombreExamen = (anio: number, id: string) =>
+  id === 'LI_2025' ? 'Mayo 2026' : id === 'LI_2025ext' ? 'Extraordinario 2026' : `OEP ${anio}`;
+
 /** Id con el que se guarda el progreso de una pregunta de tema. */
 export const idProgreso = (p: PreguntaTema) => p.ref ?? p.id;
 
-export function desdeTema(p: PreguntaTema, tema: number): PreguntaVista {
+/**
+ * Etiqueta de una histórica. Con ref, el examen, la parte y el número (o la reserva) salen de la pregunta de
+ * examen enlazada, que es la fuente; sin ref, de origen.
+ */
+export function etiquetaHistorica(p: Pick<PreguntaTema, 'ref' | 'origen'>): string | undefined {
   const o = p.origen;
-  const etiqueta = p.tipo === 'historica' && o ? `${o.anio === 2025 ? 'Mayo 2026' : 'OEP ' + o.anio} · ${FUENTE[o.parte] ?? o.parte} · ${o.n}` : undefined;
+  const m = p.ref?.match(/^LI(\d{4})(ext)?-/);
+  if (m) {
+    const anio = Number(m[1]);
+    const reserva = p.ref!.match(/-R(\d+)$/);
+    const n = reserva ? `reserva ${Number(reserva[1])}` : String(o?.n ?? Number(p.ref!.match(/-(\d+)$/)?.[1]));
+    return `${nombreExamen(anio, `LI_${anio}${m[2] ?? ''}`)} · ${FUENTE[o?.parte ?? ''] ?? o?.parte ?? 'test'} · ${n}`;
+  }
+  if (!o) return undefined;
+  const id = `LI_${o.anio}${o.conv === 'extraordinaria' ? 'ext' : ''}`;
+  return `${nombreExamen(o.anio, id)} · ${FUENTE[o.parte] ?? o.parte} · ${o.n}`;
+}
+
+export function desdeTema(p: PreguntaTema, tema: number): PreguntaVista {
+  const etiqueta = p.tipo === 'historica' ? etiquetaHistorica(p) : undefined;
   // Una histórica comparte progreso con su pregunta de examen: se identifica por ref cuando existe.
   return { ...p, id: idProgreso(p), tema, etiqueta };
 }

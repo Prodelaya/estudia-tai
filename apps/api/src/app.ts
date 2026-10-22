@@ -128,8 +128,9 @@ export async function crearApp(o: Opciones) {
       return crearInvitacion(db, cuenta.id);
     });
 
-    // Resumen por pregunta: la última respuesta (y si fue en blanco), la racha de aciertos desde el último
-    // fallo con la hora de su primer acierto (para medir retención) y el resultado de la primera vez.
+    // Resumen por pregunta: la última respuesta (y si fue en blanco), cuántas tuvieron letra, la racha de aciertos
+    // desde el último fallo o blanco con la hora de su primer acierto (para medir retención) y el resultado de la
+    // primera vez que se contestó.
     priv.get('/api/progreso', async req => ({
       preguntas: db.prepare(`
         WITH r AS (
@@ -139,7 +140,8 @@ export async function crearApp(o: Opciones) {
         ), f AS (
           SELECT pregunta_id, COALESCE(MIN(CASE WHEN acierto = 0 THEN k END), COUNT(*) + 1) - 1 AS racha FROM r GROUP BY pregunta_id
         )
-        SELECT r.pregunta_id, MAX(CASE WHEN k = 1 THEN tema END) AS tema, COUNT(*) AS vistas, SUM(acierto) AS aciertos,
+        SELECT r.pregunta_id, MAX(CASE WHEN k = 1 THEN tema END) AS tema, COUNT(*) AS vistas, SUM(1 - blanco) AS contestadas,
+               SUM(acierto) AS aciertos,
                MAX(CASE WHEN k = 1 THEN acierto END) AS ultima, MAX(CASE WHEN k = 1 THEN blanco END) AS blanco,
                f.racha, MAX(CASE WHEN k = f.racha THEN ts END) AS ts_racha,
                MAX(CASE WHEN primera = 1 THEN acierto END) AS primera, MAX(ts) AS ts
@@ -164,10 +166,12 @@ export async function crearApp(o: Opciones) {
       // Un blanco no tiene letra: se guarda como fallo con elegida vacía y blanco = 1.
       if (items.some(i => !i.elegida && i.acierto)) return rep.code(400).send({ error: 'un blanco no puede ser acierto' });
       const u = req.usuario!.id;
-      // primera = no hay ninguna respuesta anterior o igual en el tiempo; si llega una más antigua que la que
-      // estaba marcada (cola de otro dispositivo), la marca pasa a la nueva. Un cliente_id repetido no se inserta.
+      // primera = es la primera respuesta con letra (un blanco no cuenta: puede que ni se leyera); si llega una más
+      // antigua que la que estaba marcada (cola de otro dispositivo), la marca pasa a la nueva. Un cliente_id
+      // repetido no se inserta.
       const ins = db.prepare(`INSERT INTO respuestas (pregunta_id, tema, elegida, acierto, origen, ts, usuario_id, blanco, modo, cliente_id, primera)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOT EXISTS (SELECT 1 FROM respuestas WHERE usuario_id = ? AND pregunta_id = ? AND ts <= ?))
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? = 0 AND NOT EXISTS (
+          SELECT 1 FROM respuestas WHERE usuario_id = ? AND pregunta_id = ? AND blanco = 0 AND ts <= ?))
         ON CONFLICT DO NOTHING`);
       const desmarcar = db.prepare('UPDATE respuestas SET primera = 0 WHERE usuario_id = ? AND pregunta_id = ? AND ts > ? AND primera = 1');
       const ahora = Date.now();
@@ -175,9 +179,10 @@ export async function crearApp(o: Opciones) {
       db.transaction(() => items.forEach(i => {
         // La hora del cliente se acepta si no es futura: una respuesta guardada sin conexión conserva su momento.
         const ts = Math.min(i.ts ?? ahora, ahora);
+        const blanco = i.elegida ? 0 : 1;
         const r = ins.run(i.pregunta_id, i.tema ?? null, i.elegida ?? '', i.acierto ? 1 : 0, i.origen ?? 'test', ts, u,
-          i.elegida ? 0 : 1, i.modo ?? 'practica', i.cliente_id ?? null, u, i.pregunta_id, ts);
-        if (r.changes) { nuevas++; desmarcar.run(u, i.pregunta_id, ts); }
+          blanco, i.modo ?? 'practica', i.cliente_id ?? null, blanco, u, i.pregunta_id, ts);
+        if (r.changes) { nuevas++; if (!blanco) desmarcar.run(u, i.pregunta_id, ts); }
       }))();
       return { ok: true, n: nuevas };
     });
@@ -187,16 +192,19 @@ export async function crearApp(o: Opciones) {
         params: { type: 'object', properties: { id: ID } },
         body: { type: 'object', required: ['facilidad', 'intervalo', 'repeticiones', 'vence'], properties: {
           tema: TEMA, facilidad: { type: 'number', minimum: 1.3, maximum: 5 }, intervalo: { type: 'integer', minimum: 0, maximum: 3650 },
-          repeticiones: { type: 'integer', minimum: 0 }, vence: { type: 'integer', minimum: 0 },
+          repeticiones: { type: 'integer', minimum: 0 }, vence: { type: 'integer', minimum: 0 }, ts: { type: 'integer', minimum: 0 },
         } },
       },
     }, async req => {
       const { id } = req.params as { id: string };
-      const b = req.body as { tema?: number | null; facilidad: number; intervalo: number; repeticiones: number; vence: number };
+      const b = req.body as { tema?: number | null; facilidad: number; intervalo: number; repeticiones: number; vence: number; ts?: number };
+      // ts es la hora de la calificación en el cliente (sin pasar de ahora): un reenvío antiguo desde una cola que
+      // estuvo sin conexión no pisa un repaso posterior hecho en otro dispositivo.
       db.prepare(`INSERT INTO srs (usuario_id, tarjeta_id, tema, facilidad, intervalo, repeticiones, vence, ts) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         ON CONFLICT(usuario_id, tarjeta_id) DO UPDATE SET tema = excluded.tema, facilidad = excluded.facilidad, intervalo = excluded.intervalo,
-        repeticiones = excluded.repeticiones, vence = excluded.vence, ts = excluded.ts`)
-        .run(req.usuario!.id, id, b.tema ?? null, b.facilidad, b.intervalo, b.repeticiones, b.vence, Date.now());
+        repeticiones = excluded.repeticiones, vence = excluded.vence, ts = excluded.ts
+        WHERE excluded.ts >= srs.ts`)
+        .run(req.usuario!.id, id, b.tema ?? null, b.facilidad, b.intervalo, b.repeticiones, b.vence, Math.min(b.ts ?? Date.now(), Date.now()));
       return { ok: true };
     });
 

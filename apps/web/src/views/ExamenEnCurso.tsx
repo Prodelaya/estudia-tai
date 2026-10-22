@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { Contexto, Pregunta } from '../components/Pregunta';
 import { corregirParte, fmt, queCuentan, resumen, valorar } from '../lib/correccion';
 import { datos, desdeExamen, explicacionesPorRef } from '../lib/datos';
-import { borrarExamen, guardarExamen, leerExamen, marcarEntregado, nuevoId, restante, type ConfigExamen, type ExamenGuardado } from '../lib/examenGuardado';
+import { PESTANA, borrarExamen, claveExamen, esMio, guardarExamen, leerExamen, marcarEntregado, nuevoId, restante, type ConfigExamen, type ExamenGuardado } from '../lib/examenGuardado';
 import type { Resultado as ResultadoEscritura } from '../lib/cola';
 import { useProgreso } from '../lib/progreso';
 import { useCarga } from '../lib/useCarga';
@@ -67,7 +67,7 @@ function Preparar({ ex, usuario, onEmpezar }: { ex: Examen; usuario: string; onE
           </p>
           <div className="row">
             <button className="btn" onClick={() => onEmpezar(guardado.config, guardado)}>{agotado ? 'Entregar lo que había' : 'Continuar'}</button>
-            <button className="btn ghost" onClick={() => { if (confirm('¿Descartar el examen a medias? Se pierden sus respuestas.')) { borrarExamen(usuario, ex.id); setGuardado(null); } }}>Descartar</button>
+            <button className="btn ghost" onClick={() => { if (confirm('¿Descartar el examen a medias? Se pierden sus respuestas.')) { borrarExamen(usuario, ex.id, guardado.cliente_id); setGuardado(null); } }}>Descartar</button>
           </div>
         </div>
       )}
@@ -81,7 +81,7 @@ function Preparar({ ex, usuario, onEmpezar }: { ex: Examen; usuario: string; onE
       {!guardado && (
         <div className="panel stack">
           <b>{oficial ? 'O a tu manera' : 'Configuración'}</b>
-          {!oficial && ex.formato === 'antiguo' && <p className="note" style={{ margin: 0 }}>Formato antiguo: eran dos ejercicios con tiempos propios, así que no hay modo oficial. Pon el tiempo que quieras.</p>}
+          {!oficial && ex.formato === 'antiguo' && <p className="note" style={{ margin: 0 }}>Formato antiguo: su estructura y su tiempo no son los de la convocatoria actual, así que no hay modo oficial. Pon el tiempo que quieras.</p>}
           {disponibles.map(p => {
             const qs = ex.partes[p].preguntas;
             return (
@@ -110,7 +110,7 @@ function Preparar({ ex, usuario, onEmpezar }: { ex: Examen; usuario: string; onE
 }
 
 function Hoja({ ex, expl, usuario, config, inicial }: { ex: Examen; expl: Map<string, string>; usuario: string; config: ConfigExamen; inicial?: ExamenGuardado }) {
-  const { responder, registrar, guardarIntento, guardado } = useProgreso();
+  const { responder, registrar, guardarIntento } = useProgreso();
   const items: Item[] = useMemo(() => config.partes.flatMap(p => ex.partes[p].preguntas.map(q => ({
     ...desdeExamen(q, ex, p), parte: p, n: q.n, reserva: q.reserva,
     explicacion: [expl.get(q.id), q.nota_clave].filter(Boolean).join('\n\n') || undefined,
@@ -119,10 +119,15 @@ function Hoja({ ex, expl, usuario, config, inicial }: { ex: Examen; expl: Map<st
   const [resp, setResp] = useState<Record<string, Letra>>(inicial?.resp ?? {});
   const [notas, setNotas] = useState<Record<string, NotaParte> | null>(null);
   const [guardadoIntento, setGuardadoIntento] = useState<ResultadoEscritura | 'guardando'>('guardando');
+  // otraPestana: este examen se continuó, entregó o descartó en otra pestaña; aquí ya no se responde ni se entrega.
+  // sinAlmacen: el navegador no deja autoguardar; se sigue, pero cerrar la pestaña pierde el examen.
   const [otraPestana, setOtraPestana] = useState(false);
+  const [sinAlmacen, setSinAlmacen] = useState(false);
+  const bloqueada = useRef(false);
+  const sinGuardar = useRef(false);
   const inicio = useRef(inicial?.inicio ?? Date.now());
   const clienteId = useRef(inicial?.cliente_id ?? nuevoId());
-  const yaGuardado = useRef(!!inicial);
+  const modoGuardado = useRef<'nuevo' | 'tomar' | 'seguir'>(inicial ? 'tomar' : 'nuevo');
   const entregado = useRef(false);
   const fin = config.minutos ? inicio.current + config.minutos * 6e4 : 0;
   const [ahora, setAhora] = useState(Date.now());
@@ -130,33 +135,49 @@ function Hoja({ ex, expl, usuario, config, inicial }: { ex: Examen; expl: Map<st
   // Preguntas que puntúan: las reservas solo cuentan si sustituyen a una anulada.
   const cuentan = useMemo(() => new Set(config.partes.flatMap(p => queCuentan(ex.partes[p]).map(q => q.id))), [ex, config.partes]);
 
-  // Autoguardado en el navegador en cada cambio, hasta entregar. Si otra pestaña entregó este examen o empezó
-  // otro, se deja de guardar y se avisa.
+  const bloquear = () => { bloqueada.current = true; setOtraPestana(true); };
+
+  // Autoguardado en el navegador en cada cambio, hasta entregar. Solo escribe la pestaña que hace el examen.
   useEffect(() => {
-    if (entregado.current || otraPestana) return;
-    const r = guardarExamen(usuario, ex.id, { v: 1, config, resp, i, inicio: inicio.current, cliente_id: clienteId.current }, !yaGuardado.current);
-    if (r === 'ok') yaGuardado.current = true;
-    else setOtraPestana(true);
-  }, [usuario, ex.id, config, resp, i, otraPestana]);
+    if (entregado.current || bloqueada.current || sinGuardar.current) return;
+    const r = guardarExamen(usuario, ex.id, { v: 1, config, resp, i, inicio: inicio.current, cliente_id: clienteId.current, pestana: PESTANA }, modoGuardado.current);
+    if (r === 'ok') modoGuardado.current = 'seguir';
+    else if (r === 'otra-pestana') bloquear();
+    else { sinGuardar.current = true; setSinAlmacen(true); }
+  }, [usuario, ex.id, config, resp, i]);
+
+  // Si otra pestaña continúa, entrega o descarta este examen, esta se entera al momento y deja de responder.
+  useEffect(() => {
+    const k = claveExamen(usuario, ex.id);
+    const oir = (e: StorageEvent) => {
+      if (e.key !== k || entregado.current || sinGuardar.current || modoGuardado.current !== 'seguir') return;
+      if (!esMio(usuario, ex.id, clienteId.current, PESTANA)) bloquear();
+    };
+    window.addEventListener('storage', oir);
+    return () => window.removeEventListener('storage', oir);
+  }, [usuario, ex.id]);
 
   async function entregar() {
-    if (entregado.current) return;
+    if (entregado.current || bloqueada.current) return;
+    if (!sinGuardar.current && !esMio(usuario, ex.id, clienteId.current, PESTANA)) { bloquear(); return; }
     entregado.current = true;
+    // Si se acabó el tiempo con la pestaña cerrada, la entrega cuenta en la hora de fin, no al volver.
+    const hora = fin ? Math.min(Date.now(), fin) : Date.now();
     const n = Object.fromEntries(config.partes.map(p => [p, corregirParte(ex.partes[p], resp)]));
     setNotas(n);
     marcarEntregado(usuario, ex.id, clienteId.current);
     // En simulacro se registran también los blancos de las preguntas que puntúan, para que vuelvan en el repaso.
     // En práctica cada respuesta ya se guardó al darla. Los ids del lote derivan del examen: reenviarlo
     // (otra pestaña, un reintento) no duplica nada.
-    if (!practica) registrar(items.filter(q => resp[q.id] || cuentan.has(q.id)).map(q => ({ q, elegida: resp[q.id] ?? null })), 'examen', 'simulacro', clienteId.current);
-    const segundos = Math.round((Date.now() - inicio.current) / 1000);
+    if (!practica) registrar(items.filter(q => resp[q.id] || cuentan.has(q.id)).map(q => ({ q, elegida: resp[q.id] ?? null })), 'examen', 'simulacro', clienteId.current, hora);
     const r = await guardarIntento({
-      examen_id: ex.id, partes: config.partes, notas: n, respuestas: resp,
-      segundos: config.minutos ? Math.min(segundos, config.minutos * 60) : segundos,
-      modo: practica ? 'practica' : 'simulacro', limite: config.minutos || null, cliente_id: clienteId.current, ts: Date.now(),
-    });
-    setGuardadoIntento(r);
+      examen_id: ex.id, partes: config.partes, notas: n, respuestas: resp, segundos: Math.max(0, Math.round((hora - inicio.current) / 1000)),
+      modo: practica ? 'practica' : 'simulacro', limite: config.minutos || null, cliente_id: clienteId.current, ts: hora,
+    }, setGuardadoIntento);
+    // Si quedó en cola, alFinal (setGuardadoIntento) cambiará el aviso cuando se guarde o se rechace.
+    setGuardadoIntento(actual => (actual === 'guardando' ? r : actual));
   }
+  const fuera = () => fin > 0 && Date.now() >= fin;
 
   // Al reanudar con el tiempo ya agotado, se entrega en el acto, sin dejar responder.
   const agotadoAlEmpezar = fin > 0 && Date.now() >= fin;
@@ -168,23 +189,29 @@ function Hoja({ ex, expl, usuario, config, inicial }: { ex: Examen; expl: Map<st
     return () => clearInterval(t);
   });
 
-  // Si el intento quedó en cola y la cola se vacía después (reintento), el intento ya está guardado.
-  const estadoIntento = guardadoIntento === 'pendiente' && guardado.estado === 'guardado' && !guardado.pendientes ? 'ok' : guardadoIntento;
-  if (notas) return <Resultado ex={ex} items={items} resp={resp} notas={notas} practica={practica} cuentan={cuentan} guardado={estadoIntento} />;
+  if (notas) return <Resultado ex={ex} items={items} resp={resp} notas={notas} practica={practica} cuentan={cuentan} guardado={guardadoIntento} />;
+  if (otraPestana) return (
+    <div className="stack" style={{ maxWidth: 640 }}>
+      <p className="note" role="alert">Este examen se ha continuado, entregado o descartado en otra pestaña, así que aquí ya no se puede responder ni entregar (para no pisar sus respuestas). Si quieres seguirlo aquí, cierra la otra pestaña, recarga esta y pulsa «Continuar».</p>
+      <div className="row"><Link className="btn ghost" to="/examenes">Volver a exámenes</Link></div>
+    </div>
+  );
   if (agotadoAlEmpezar) return <p className="note">Se acabó el tiempo: entregando…</p>;
 
   const q = items[i];
   const corregida = practica && !!resp[q.id];
   const etiqueta = (x: Item) => `${x.parte === 'ej1' ? 'T' : 'S'}${x.reserva ? 'R' : ''}${x.n}`;
+  // Lo que se pulsa después de la hora no cuenta: entrega en ese momento.
   const elegir = (l: Letra) => {
+    if (fuera()) { void entregar(); return; }
     setResp(r => ({ ...r, [q.id]: l }));
     if (practica) responder(q, l, 'examen', 'practica');
   };
   return (
     <div className="exam-grid">
       <div className="stack" style={{ minWidth: 0 }}>
-        {otraPestana && (
-          <p className="note" role="alert">Este examen se ha entregado o se ha empezado de nuevo en otra pestaña, así que aquí ya no se autoguarda. Si entregas también desde aquí, no se duplicará nada.</p>
+        {sinAlmacen && (
+          <p className="note" role="alert">Este navegador no deja guardar el examen en curso: si cierras o recargas la pestaña, se perderá lo que lleves.</p>
         )}
         <div className="row" style={{ justifyContent: 'space-between' }}>
           <span className="eyebrow">{ex.partes[q.parte].titulo ?? NOMBRE_PARTE[q.parte]}{q.reserva ? ' · reserva' : ''}</span>
@@ -194,8 +221,8 @@ function Hoja({ ex, expl, usuario, config, inicial }: { ex: Examen; expl: Map<st
         <Pregunta key={q.id} q={q} elegida={resp[q.id]} corregida={corregida} mostrarContexto={false} onElegir={elegir} cabecera={`Pregunta ${q.n}`} />
         <div className="row">
           <button className="btn ghost" disabled={!i} onClick={() => setI(i - 1)}>Anterior</button>
-          <button className="btn ghost" disabled={!resp[q.id] || corregida} onClick={() => setResp(({ [q.id]: _, ...r }) => r)}>Dejar en blanco</button>
-          <button className="btn" onClick={() => (i < items.length - 1 ? setI(i + 1) : entregar())}>{i < items.length - 1 ? 'Siguiente' : 'Entregar'}</button>
+          <button className="btn ghost" disabled={!resp[q.id] || corregida} onClick={() => (fuera() ? void entregar() : setResp(({ [q.id]: _, ...r }) => r))}>Dejar en blanco</button>
+          <button className="btn" onClick={() => (i < items.length - 1 && !fuera() ? setI(i + 1) : void entregar())}>{i < items.length - 1 ? 'Siguiente' : 'Entregar'}</button>
         </div>
       </div>
       <aside className="sheet" aria-label="Hoja de respuestas">
@@ -205,7 +232,7 @@ function Hoja({ ex, expl, usuario, config, inicial }: { ex: Examen; expl: Map<st
             ? <span className="timer" title="Tiempo restante">{reloj(fin - ahora)}</span>
             : <span className="meta" title="Tiempo transcurrido">{reloj(ahora - inicio.current)}</span>}
         </div>
-        <p className="meta" style={{ margin: '4px 0 0' }}>Se guarda solo en este navegador mientras haces el examen.</p>
+        <p className="meta" style={{ margin: '4px 0 0' }}>{sinAlmacen ? 'Sin autoguardado en este navegador.' : 'Se guarda solo en este navegador mientras haces el examen.'}</p>
         {config.partes.map(p => (
           <div key={p}>
             <h4>{ex.partes[p].titulo ?? NOMBRE_PARTE[p]}</h4>

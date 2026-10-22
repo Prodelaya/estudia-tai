@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import { SesionPractica, SesionTarjetas } from '../components/Sesiones';
-import { datos, desdeExamen, desdeTema, idProgreso } from '../lib/datos';
+import { datos, desdeExamen, desdeTema, idProgreso, nombreExamen } from '../lib/datos';
 import { useProgreso } from '../lib/progreso';
 import { motivoRepaso, type MotivoRepaso } from '../lib/repaso';
 import { hoy } from '../lib/srs';
 import { barajar, useCarga } from '../lib/useCarga';
 import type { PreguntaVista, Tarjeta } from '../lib/tipos';
-import { NOMBRE_PARTE, nombreExamen } from './Examenes';
+import { NOMBRE_PARTE } from './Examenes';
 
-type Pendiente = PreguntaVista & { motivo: MotivoRepaso; propia: boolean };
+/** propia: de tus temas (true), de otro tema (false) o sin tema asignado (null, siempre se incluye). */
+type Pendiente = PreguntaVista & { motivo: MotivoRepaso; propia: boolean | null };
 const MOTIVO: Record<MotivoRepaso, string> = { fallada: 'fallada', blanco: 'en blanco', confirmar: 'comprobar que la recuerdas' };
 
 /**
@@ -19,14 +20,17 @@ export function Repaso() {
   const { porPregunta, porTarjeta } = useProgreso();
   const [sesion, setSesion] = useState<'preguntas' | 'tarjetas' | null>(null);
   const [incluirOtros, setIncluirOtros] = useState(true);
+  const [intento, setIntento] = useState(0);
   const carga = useCarga(async () => {
     const [temas, indice] = await Promise.all([datos.temas(), datos.examenes()]);
     const [contenidos, examenes] = await Promise.all([
       Promise.all(temas.map(t => datos.contenido(t.n))),
       Promise.all(indice.map(e => datos.examen(e.id))),
     ]);
-    return { contenidos: contenidos.filter(c => c !== null), examenes: examenes.filter(e => e !== null), temas: new Set(temas.map(t => t.n)) };
-  }, []);
+    // Si algo no carga, el repaso saldría incompleto sin decirlo: se cuenta para avisar.
+    const fallos = (temas.length ? 0 : 1) + (indice.length ? 0 : 1) + contenidos.filter(c => c === null).length + examenes.filter(e => e === null).length;
+    return { contenidos: contenidos.filter(c => c !== null), examenes: examenes.filter(e => e !== null), temas: new Set(temas.map(t => t.n)), fallos };
+  }, [intento]);
   // La cola se congela al empezar la sesión para que no cambie mientras respondes.
   const [cola, setCola] = useState<{ preguntas: PreguntaVista[]; tarjetas: (Tarjeta & { tema: number })[] } | null>(null);
   if (!carga) return <p className="note">Preparando el repaso…</p>;
@@ -54,7 +58,7 @@ export function Repaso() {
         vistas.add(q.id);
         const motivo = motivoRepaso(porPregunta.get(q.id), ahora);
         if (!motivo) continue;
-        const propia = q.tema !== null && carga.temas.has(q.tema);
+        const propia = q.tema === null ? null : carga.temas.has(q.tema);
         pendientes.push({
           ...desdeExamen(q, ex, parte), motivo, propia,
           etiqueta: `${nombreExamen(ex.anio, ex.id)} · ${NOMBRE_PARTE[parte] ?? parte} · ${q.reserva ? 'reserva ' : ''}${q.n}${q.tema === null ? ' · sin tema asignado' : ` · tema ${q.tema}${propia ? '' : ' · fuera de tus temas'}`}`,
@@ -63,9 +67,9 @@ export function Repaso() {
     }
   }
 
-  const elegidas = pendientes.filter(p => incluirOtros || p.propia);
+  const elegidas = pendientes.filter(p => incluirOtros || p.propia !== false);
   const cuenta = (m: MotivoRepaso) => elegidas.filter(p => p.motivo === m).length;
-  const otros = pendientes.filter(p => !p.propia).length;
+  const otros = pendientes.filter(p => p.propia === false).length;
 
   const empezar = (tipo: 'preguntas' | 'tarjetas') => {
     // Primero lo fallado o en blanco; después lo que toca confirmar.
@@ -86,10 +90,16 @@ export function Repaso() {
       {sesion === 'tarjetas' && cola && <SesionTarjetas tarjetas={cola.tarjetas} temaDe={t => (t as Tarjeta & { tema: number }).tema} onFin={fin} />}
       {!sesion && (
         <>
+          {carga.fallos > 0 && (
+            <p className="note" role="alert">
+              No se ha podido cargar todo el contenido, así que este repaso puede estar incompleto.{' '}
+              <button className="btn ghost" onClick={() => setIntento(n => n + 1)}>Volver a cargar</button>
+            </p>
+          )}
           {otros > 0 && (
             <label className="chk">
               <input type="checkbox" checked={incluirOtros} onChange={e => setIncluirOtros(e.target.checked)} />
-              Incluir {otros} {otros === 1 ? 'pregunta' : 'preguntas'} de tus simulacros que no son de tus 18 temas
+              Incluir {otros} {otros === 1 ? 'pregunta' : 'preguntas'} de tus simulacros que no son de tus {carga.temas.size} temas
             </label>
           )}
           {elegidas.length || vencidas.length ? (

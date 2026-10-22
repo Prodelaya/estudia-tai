@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import { datos, idProgreso } from '../lib/datos';
+import { datos, idProgreso, nombreExamen } from '../lib/datos';
 import { useProgreso } from '../lib/progreso';
+import { contestada } from '../lib/repaso';
 import { hoy } from '../lib/srs';
 import { useCarga } from '../lib/useCarga';
 
@@ -12,9 +13,11 @@ export function Inicio() {
   }, []);
   if (!temas) return <p className="note">Cargando temas…</p>;
 
-  const respondidas = progreso.preguntas.length;
-  const aciertoMedio = respondidas ? Math.round((progreso.preguntas.filter(p => p.ultima).length / respondidas) * 100) : 0;
-  // Acierto la primera vez que viste cada pregunta: mide lo que sabes, no lo que has memorizado al repetir.
+  // Las que solo tienen blancos de simulacro no se han contestado nunca.
+  const contestadas = progreso.preguntas.filter(contestada);
+  const respondidas = contestadas.length;
+  const aciertoMedio = respondidas ? Math.round((contestadas.filter(p => p.ultima).length / respondidas) * 100) : 0;
+  // Acierto la primera vez que contestaste cada pregunta: mide lo que sabes, no lo que has memorizado al repetir.
   const conPrimera = progreso.preguntas.filter(p => p.primera === 0 || p.primera === 1);
   const aciertoPrimera = conPrimera.length ? Math.round((conPrimera.filter(p => p.primera === 1).length / conPrimera.length) * 100) : null;
   const venceHoy = progreso.srs.filter(s => s.vence <= hoy()).length;
@@ -29,9 +32,9 @@ export function Inicio() {
       <div className="stats">
         <div className="stat"><b>{respondidas}</b><span>preguntas practicadas</span></div>
         <div className="stat"><b>{aciertoMedio}%</b><span>acierto en el último intento de cada una</span></div>
-        <div className="stat"><b>{aciertoPrimera === null ? '—' : `${aciertoPrimera}%`}</b><span>acierto la primera vez que las viste</span></div>
+        <div className="stat"><b>{aciertoPrimera === null ? '—' : `${aciertoPrimera}%`}</b><span>acierto la primera vez que las contestaste</span></div>
         <div className="stat"><b>{venceHoy}</b><span>tarjetas para repasar hoy</span></div>
-        <div className="stat"><b>{ultimo ? ultimo.examen_id.replace('LI_', '') : '—'}</b><span>último simulacro</span></div>
+        <div className="stat"><b>{ultimo ? nombreExamen(Number(ultimo.examen_id.slice(3, 7)), ultimo.examen_id) : '—'}</b><span>{ultimo && !ultimo.modo ? 'último intento' : 'último simulacro'}</span></div>
       </div>
       <div className="temas">
         {[...temas].sort((a, b) => b.pts - a.pts).map(t => {

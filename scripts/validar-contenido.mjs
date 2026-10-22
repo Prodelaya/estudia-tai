@@ -8,6 +8,7 @@ import { RAIZ, RESTOS, diferencias, leer, preguntasDeExamen } from './historicas
 
 const errores = [];
 const avisos = [];
+const sospechosas = [];
 const LETRAS = ['a', 'b', 'c', 'd'];
 const examen = preguntasDeExamen();
 
@@ -23,7 +24,7 @@ function revisarPregunta(q, donde) {
   // Una opción mucho más larga que las demás suele ser texto del PDF pegado (pie, contexto de la siguiente pregunta).
   const largos = LETRAS.map(l => q.op?.[l]?.length ?? 0);
   const [mayor, segunda] = [...largos].sort((a, b) => b - a);
-  if (mayor > 150 && mayor > 3 * segunda) avisos.push(`${donde}: la opción ${LETRAS[largos.indexOf(mayor)]} es mucho más larga que las demás; comprueba que no arrastra texto del PDF`);
+  if (mayor > 150 && mayor > 3 * segunda) sospechosas.push(`${donde}: la opción ${LETRAS[largos.indexOf(mayor)]} es mucho más larga que las demás; comprueba que no arrastra texto del PDF`);
 }
 
 function revisarCriterio(c, donde) {
@@ -78,6 +79,8 @@ for (const t of temas) {
   totales.tarjetas += c.tarjetas.length;
 }
 
+// Las opciones sospechosas se listan todas: son pocas y cada una hay que mirarla.
+for (const a of sospechosas) console.warn('aviso:', a);
 for (const a of avisos.slice(0, 30)) console.warn('aviso:', a);
 if (avisos.length > 30) console.warn(`… y ${avisos.length - 30} avisos más`);
 for (const e of errores) console.error('ERROR:', e);

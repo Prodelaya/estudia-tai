@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { datos } from '../lib/datos';
+import { datos, nombreExamen } from '../lib/datos';
 import { fmt, valorar } from '../lib/correccion';
 import { useProgreso } from '../lib/progreso';
 import { useCarga } from '../lib/useCarga';
@@ -8,8 +8,7 @@ export const NOMBRE_PARTE: Record<string, string> = { ej1: 'Test', b3: 'Supuesto
 /** Pablo se examina de test + supuesto del bloque III: el resto no se ofrece como simulacro. */
 export const PARTES_SIMULACRO = ['ej1', 'b3'];
 
-export const nombreExamen = (anio: number, id: string) =>
-  id === 'LI_2025' ? 'Mayo 2026' : id === 'LI_2025ext' ? 'Extraordinario 2026' : `OEP ${anio}`;
+export { nombreExamen };
 
 export function Examenes() {
   const { progreso } = useProgreso();
@@ -23,7 +22,8 @@ export function Examenes() {
       </div>
       <div className="list">
         {[...examenes].sort((a, b) => b.anio - a.anio || a.id.localeCompare(b.id)).map(e => {
-          // Los intentos en modo práctica no cuentan como simulacro.
+          // Los intentos en modo práctica no cuentan como simulacro. Los anteriores a separar los modos no se
+          // pueden clasificar: se muestran como «intento».
           const ultimo = progreso.intentos.find(i => i.examen_id === e.id && i.modo !== 'practica');
           return (
             <div key={e.id} className="exam-item">
@@ -35,7 +35,7 @@ export function Examenes() {
                 </div>
                 {ultimo && (
                   <div className="note" style={{ marginTop: 6 }}>
-                    Último simulacro: {Object.entries(ultimo.notas).map(([p, n]) => `${NOMBRE_PARTE[p] ?? p} neta ${fmt(valorar(n).neta)}`).join(' · ')}
+                    {ultimo.modo ? 'Último simulacro' : 'Último intento'}: {Object.entries(ultimo.notas).map(([p, n]) => `${NOMBRE_PARTE[p] ?? p} neta ${fmt(valorar(n).neta)}`).join(' · ')}
                   </div>
                 )}
               </div>

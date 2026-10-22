@@ -22,10 +22,14 @@ export function alPerderSesion(observador: () => void) {
   return () => { observadores.delete(observador); };
 }
 
+const LIMITE_MS = 30_000;
+
 async function pedir<T>(url: string, init?: RequestInit, cambiaSesion = false): Promise<T> {
   const revision = revisionSesion;
   const r = await fetch(url, {
     credentials: 'same-origin',
+    // Una petición colgada no debe dejar la cola o la pantalla esperando para siempre.
+    signal: typeof AbortSignal.timeout === 'function' ? AbortSignal.timeout(LIMITE_MS) : undefined,
     ...init,
     headers: init?.body ? { 'content-type': 'application/json', ...init.headers } : init?.headers,
   });
@@ -56,11 +60,12 @@ export const api = {
   logout: () => pedir('/api/logout', { method: 'POST' }, true),
   check: () => pedir<void>('/api/auth/check'),
   progreso: () => pedir<Progreso>('/api/progreso'),
-  // Las escrituras de la cola llevan el usuario dueño: si la cookie ya es de otra cuenta, el servidor responde 401.
+  // Las escrituras llevan el usuario dueño: si la cookie ya es de otra cuenta, el servidor responde 401.
   respuestas: (items: ItemRespuesta[], usuario?: string) => pedir('/api/respuestas', json('POST', { items }, usuario)),
-  srs: (e: EstadoSrs, usuario?: string) => pedir(`/api/srs/${encodeURIComponent(e.tarjeta_id)}`, json('PUT', e, usuario)),
+  srs: (e: EstadoSrs, usuario?: string, ts?: number) => pedir(`/api/srs/${encodeURIComponent(e.tarjeta_id)}`, json('PUT', { ...e, ts }, usuario)),
   intento: (b: CuerpoIntento, usuario?: string) => pedir<{ id: number }>('/api/intentos', json('POST', b, usuario)),
-  marca: (id: string, b: { tema: number | null; nota: string; resuelta?: boolean }) =>
-    pedir(`/api/marcas/${encodeURIComponent(id)}`, json('PUT', b)),
-  borrarMarca: (id: string) => pedir(`/api/marcas/${encodeURIComponent(id)}`, { method: 'DELETE' }),
+  marca: (id: string, b: { tema: number | null; nota: string; resuelta?: boolean }, usuario?: string) =>
+    pedir(`/api/marcas/${encodeURIComponent(id)}`, json('PUT', b, usuario)),
+  borrarMarca: (id: string, usuario?: string) =>
+    pedir(`/api/marcas/${encodeURIComponent(id)}`, { method: 'DELETE', headers: usuario ? { 'x-estudia-usuario': usuario } : undefined }),
 };

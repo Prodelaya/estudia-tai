@@ -1599,7 +1599,7 @@
     "d": "Passphrase + tarjeta criptográfica"
    },
    "ok": "c",
-   "clave": "oficial",
+   "clave": "claude",
    "anulada": false,
    "obsoleta": false,
    "explicacion": "**c) Password + huella dactilar** no cumple la política: la huella es \"algo que **eres**\" (biometría), no \"algo que **tienes**\".\n\nLas demás combinan algo que sabes (password, PIN, *passphrase*) con algo que tienes (USB, generador de claves, tarjeta criptográfica).",

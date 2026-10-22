@@ -78,7 +78,7 @@ export function resumen(notas: Record<string, NotaParte>, criterios: Record<stri
   const partes = Object.keys(notas);
   if (partes.includes('ej1') && partes.length > 1)
     lineas.push(antiguo
-      ? 'Es un examen de formato antiguo: las reglas de corte entre el test y el supuesto eran distintas de las actuales.'
+      ? 'Es un examen de formato antiguo: esta corrección aplica las reglas actuales y puede no coincidir con la de su convocatoria.'
       : 'Según las bases, el supuesto solo se corrige si superas el corte del test.');
   return lineas;
 }

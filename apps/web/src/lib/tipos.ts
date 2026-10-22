@@ -87,7 +87,7 @@ export interface PreguntaTema {
   id: string;
   tipo: 'historica' | 'variante' | 'nueva';
   ref: string | null;
-  origen?: { anio: number; parte: string; n: number } | null;
+  origen?: { anio: number; parte: string; n: number; conv?: string } | null;
   de?: string | null;
   texto?: 'literal' | 'reformulado';
   q: string;
@@ -147,7 +147,10 @@ export interface EstadoSrs {
 export interface ResumenPregunta {
   pregunta_id: string;
   tema: number | null;
+  /** Respuestas registradas, blancos incluidos. */
   vistas: number;
+  /** Respuestas con letra: una pregunta con solo blancos de simulacro no se ha contestado nunca. */
+  contestadas?: number;
   aciertos: number;
   /** Resultado de la última respuesta (un blanco cuenta como 0). */
   ultima: 0 | 1;
@@ -156,7 +159,7 @@ export interface ResumenPregunta {
   /** Aciertos seguidos desde el último fallo o blanco, y hora del primero de ellos. */
   racha?: number;
   ts_racha?: number | null;
-  /** Resultado la primera vez que se vio; null si esa respuesta es anterior a que se registrara. */
+  /** Resultado la primera vez que se contestó (sin contar blancos); null si es anterior a que se registrara. */
   primera?: 0 | 1 | null;
   ts: number;
 }

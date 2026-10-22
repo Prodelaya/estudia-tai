@@ -15,7 +15,7 @@ async function montar(db = abrir(':memory:')) {
   return { app, cookie, db };
 }
 
-test('guarda blancos, modo y primera exposición, y resume la retención', async () => {
+test('guarda blancos, modo y primera respuesta con letra, y resume la retención', async () => {
   const { app, cookie, db } = await montar();
   const enviar = (items: object[]) => app.inject({ method: 'POST', url: '/api/respuestas', headers: { cookie }, payload: { items } });
   assert.equal((await enviar([
@@ -24,14 +24,15 @@ test('guarda blancos, modo y primera exposición, y resume la retención', async
     { pregunta_id: 'LI2025-ej1-03', tema: 4, elegida: 'b', acierto: true, origen: 'repaso', modo: 'practica', ts: 3000 },
   ])).statusCode, 200);
   const filas = db.prepare('SELECT elegida, blanco, modo, primera FROM respuestas ORDER BY id').all();
+  // El blanco (quizá ni se leyó) no es la primera vez: lo es la primera respuesta con letra.
   assert.deepEqual(filas, [
-    { elegida: '', blanco: 1, modo: 'simulacro', primera: 1 },
-    { elegida: 'b', blanco: 0, modo: 'practica', primera: 0 },
+    { elegida: '', blanco: 1, modo: 'simulacro', primera: 0 },
+    { elegida: 'b', blanco: 0, modo: 'practica', primera: 1 },
     { elegida: 'b', blanco: 0, modo: 'practica', primera: 0 },
   ]);
   const p = (await app.inject({ url: '/api/progreso', headers: { cookie } })).json();
   const r = p.preguntas[0];
-  assert.deepEqual([r.vistas, r.aciertos, r.ultima, r.blanco, r.racha, r.ts_racha, r.primera, r.ts], [3, 2, 1, 0, 2, 2000, 0, 3000]);
+  assert.deepEqual([r.vistas, r.contestadas, r.aciertos, r.ultima, r.blanco, r.racha, r.ts_racha, r.primera, r.ts], [3, 2, 2, 1, 0, 2, 2000, 1, 3000]);
   // Un fallo nuevo corta la racha; una pregunta nunca fallada tiene racha = vistas.
   await enviar([
     { pregunta_id: 'LI2025-ej1-03', tema: 4, elegida: 'c', acierto: false, modo: 'practica', ts: 4000 },
@@ -142,4 +143,26 @@ test('un límite con decimales se redondea y la hora del intento es la del exame
   assert.equal(r.statusCode, 200);
   const p = (await app.inject({ url: '/api/progreso', headers: { cookie } })).json();
   assert.deepEqual([p.intentos[0].limite, p.intentos[0].ts], [2, 1234]);
+});
+
+test('una pregunta con solo blancos no está contestada, y un blanco antiguo que llega tarde no quita la primera', async () => {
+  const { app, cookie } = await montar();
+  const enviar = (items: object[]) => app.inject({ method: 'POST', url: '/api/respuestas', headers: { cookie }, payload: { items } });
+  await enviar([{ pregunta_id: 'b1', elegida: null, acierto: false, ts: 500 }]);
+  await enviar([{ pregunta_id: 'b2', elegida: 'a', acierto: true, ts: 2000 }]);
+  await enviar([{ pregunta_id: 'b2', elegida: null, acierto: false, ts: 1000 }]);
+  const q = Object.fromEntries((await app.inject({ url: '/api/progreso', headers: { cookie } })).json().preguntas.map((x: any) => [x.pregunta_id, x]));
+  assert.deepEqual([q.b1.vistas, q.b1.contestadas, q.b1.primera, q.b1.blanco], [1, 0, null, 1]);
+  assert.deepEqual([q.b2.vistas, q.b2.contestadas, q.b2.primera], [2, 1, 1]);
+});
+
+test('una tarjeta no se pisa con una calificación más antigua que llega tarde', async () => {
+  const { app, cookie, db } = await montar();
+  const poner = (vence: number, ts?: number) => app.inject({ method: 'PUT', url: '/api/srs/t1', headers: { cookie },
+    payload: { tema: 1, facilidad: 2.5, intervalo: 1, repeticiones: 1, vence, ts } });
+  assert.equal((await poner(5000, Date.now() - 1000)).statusCode, 200);
+  await poner(1000, Date.now() - 1e6);
+  assert.equal((db.prepare('SELECT vence FROM srs').get() as { vence: number }).vence, 5000);
+  await poner(7000);
+  assert.equal((db.prepare('SELECT vence FROM srs').get() as { vence: number }).vence, 7000);
 });

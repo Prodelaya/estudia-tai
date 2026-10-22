@@ -1,6 +1,7 @@
 // Una pregunta histórica enlazada (campo ref) tiene una sola fuente: la pregunta del examen. Enunciado, opciones,
-// clave y anulación se copian del examen al tema; el tema solo aporta lo suyo (explicación, epígrafe, dificultad).
-// Excepción deliberada: si el examen la anuló, el tema puede proponer la opción más defendible.
+// clave, procedencia de la clave y anulación se copian del examen al tema; el tema solo aporta lo suyo
+// (explicación, epígrafe, dificultad). Excepción deliberada: si el examen la anuló, el tema puede proponer la
+// opción más defendible, y entonces la clave es de Claude.
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -8,14 +9,23 @@ export const RAIZ = new URL('../content/', import.meta.url).pathname;
 export const leer = f => JSON.parse(readFileSync(join(RAIZ, f), 'utf8'));
 const LETRAS = ['a', 'b', 'c', 'd'];
 
-/** Mapa id → pregunta de todos los exámenes del índice. */
+/**
+ * Mapa id → pregunta de todos los exámenes del índice, con `clave_vista`: la procedencia de la clave tal como la
+ * muestra la web (la misma regla que desdeExamen en apps/web/src/lib/datos.ts).
+ */
 export function preguntasDeExamen() {
   const mapa = new Map();
-  for (const e of leer('examenes/index.json'))
-    for (const parte of Object.values(leer(`examenes/${e.id}.json`).partes))
-      for (const q of parte.preguntas) mapa.set(q.id, q);
+  for (const e of leer('examenes/index.json')) {
+    const ex = leer(`examenes/${e.id}.json`);
+    for (const parte of Object.values(ex.partes))
+      for (const q of parte.preguntas)
+        mapa.set(q.id, { ...q, clave_vista: q.dudosa ? 'claude-dudosa' : q.clave ?? q.fiab ?? parte.fuente_clave ?? ex.fuente_clave });
+  }
   return mapa;
 }
+
+/** Procedencia que debe mostrar la copia del tema: la del examen, o Claude si propone otra opción para una anulada. */
+const claveEsperada = (t, e) => (e.anulada && t.ok != null && t.ok !== e.ok ? 'claude' : e.clave_vista);
 
 /** Diferencias entre la copia del tema y la del examen. Vacío si están sincronizadas. */
 export function diferencias(t, e) {
@@ -25,6 +35,7 @@ export function diferencias(t, e) {
   if (Boolean(t.anulada) !== Boolean(e.anulada)) d.push('anulada');
   if (!e.anulada && t.ok !== e.ok) d.push('clave');
   if (e.anulada && t.ok !== null && t.ok !== e.ok && !t.anulada) d.push('clave');
+  if (e.clave_vista !== undefined && t.clave !== claveEsperada(t, e)) d.push('procedencia de la clave');
   return d;
 }
 
@@ -38,6 +49,7 @@ export function sincronizar(t, e) {
   t.op = { ...e.op };
   t.anulada = Boolean(e.anulada);
   if (!conservar) t.ok = e.ok;
+  if (e.clave_vista !== undefined) t.clave = claveEsperada(t, e);
   return true;
 }
 
