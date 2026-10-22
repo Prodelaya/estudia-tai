@@ -36,10 +36,11 @@ describe('corrección según las bases', () => {
     expect(n.nota).toBe(50);
   });
 
-  it('si hay más anuladas que reservas, la neta y la nota se calculan sobre las que puntúan', () => {
+  it('si hay más anuladas que reservas, la neta cuenta solo las que puntúan y el máximo baja', () => {
     const parte: ParteExamen = { contexto: '', preguntas: [pregunta(1), pregunta(2), pregunta(3, { anulada: true, ok: null }), pregunta(4)] };
     const n = corregirParte(parte, { q1: 'a', q2: 'a', q4: 'a' });
-    expect([n.n, n.total, n.nota]).toEqual([3, 3, 50]);
+    // Cada pregunta sigue valiendo 50/4: todo bien da 37,5, no 50.
+    expect([n.n, n.total, n.nota]).toEqual([3, 3, 37.5]);
     expect(valorar(n).pct).toBe(100);
     expect(queCuentan(parte).map(q => q.id)).toEqual(['q1', 'q2', 'q4']);
   });

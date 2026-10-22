@@ -24,8 +24,10 @@ export function corregirParte(parte: ParteExamen, resp: Record<string, Letra | u
     else if (r === q.ok) a++;
     else e++;
   }
-  // Si hay más anuladas que reservas, el máximo baja: los 50 puntos se reparten entre las que puntúan.
-  const valor = cuentan.length ? 50 / cuentan.length : 0;
+  // Cada pregunta vale lo que fijan las bases (50 entre las ordinarias). Si hay más anuladas que reservas, el
+  // máximo baja (en LI_2007, 96 × 50/99 ≈ 48,48): no se reparten los 50 entre las que quedan.
+  const normales = parte.preguntas.filter(q => !q.reserva).length;
+  const valor = normales ? 50 / normales : 0;
   return { a, e, b, n: cuentan.length, total: cuentan.length, neta: r2(a - e / 3), nota: Math.max(0, r2((a - e / 3) * valor)) };
 }
 
