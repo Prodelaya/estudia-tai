@@ -43,6 +43,19 @@ function Preparar({ ex, usuario, onEmpezar }: { ex: Examen; usuario: string; onE
   const [modo, setModo] = useState<ConfigExamen['modo']>('examen');
   const [minutos, setMinutos] = useState(0);
   const [guardado, setGuardado] = useState(() => leerExamen(usuario, ex.id));
+  // Lo que otra pestaña responda, entregue o descarte mientras esta espera aquí se refleja al momento.
+  useEffect(() => {
+    const k = claveExamen(usuario, ex.id);
+    const oir = (e: StorageEvent) => { if (e.key === k) setGuardado(leerExamen(usuario, ex.id)); };
+    window.addEventListener('storage', oir);
+    return () => window.removeEventListener('storage', oir);
+  }, [usuario, ex.id]);
+  // Al continuar se relee: la copia de la pantalla puede ser vieja y no debe pisar lo que otra pestaña respondió.
+  const continuar = () => {
+    const g = leerExamen(usuario, ex.id);
+    if (g) onEmpezar(g.config, g);
+    else setGuardado(null);
+  };
   const oficial = admiteModoOficial(ex);
   const respondidas = guardado ? Object.keys(guardado.resp).length : 0;
   const agotado = guardado ? restante(guardado) <= 0 : false;
@@ -66,7 +79,7 @@ function Preparar({ ex, usuario, onEmpezar }: { ex: Examen; usuario: string; onE
             {guardado.config.minutos ? ` · ${agotado ? 'tiempo agotado' : `quedan ${reloj(restante(guardado))}`}` : ''}
           </p>
           <div className="row">
-            <button className="btn" onClick={() => onEmpezar(guardado.config, guardado)}>{agotado ? 'Entregar lo que había' : 'Continuar'}</button>
+            <button className="btn" onClick={continuar}>{agotado ? 'Entregar lo que había' : 'Continuar'}</button>
             <button className="btn ghost" onClick={() => { if (confirm('¿Descartar el examen a medias? Se pierden sus respuestas.')) { borrarExamen(usuario, ex.id, guardado.cliente_id); setGuardado(null); } }}>Descartar</button>
           </div>
         </div>

@@ -87,7 +87,7 @@ export interface PreguntaTema {
   id: string;
   tipo: 'historica' | 'variante' | 'nueva';
   ref: string | null;
-  origen?: { anio: number; parte: string; n: number; conv?: string } | null;
+  origen?: { anio: number; parte: string; n: number; reserva?: boolean; conv?: string } | null;
   de?: string | null;
   texto?: 'literal' | 'reformulado';
   q: string;

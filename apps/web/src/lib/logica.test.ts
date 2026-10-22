@@ -4,6 +4,7 @@ import { ColaEscrituras, type Almacen, type Escritura } from './cola';
 import { ErrorHttp, NoAutenticado } from './api';
 import { borrarExamen, esMio, guardarExamen, leerExamen, marcarEntregado, restante } from './examenGuardado';
 import { sumarRespuesta } from './progreso';
+import { etiquetaHistorica } from './datos';
 import { MARGEN_RETENCION_MS, motivoRepaso } from './repaso';
 import { programar } from './srs';
 import type { Letra, ParteExamen, PreguntaExamen, ResumenPregunta } from './tipos';
@@ -254,6 +255,19 @@ describe('cola de escrituras', () => {
     expect(estados.at(-1)).toBe('guardado');
   });
 
+  it('si el almacenamiento se llena a mitad de envío, lo que ya había pendiente se envía igual', async () => {
+    const almacen = new Memoria();
+    almacen.setItem('estudia-tai:pendientes:nosa', JSON.stringify(['e1', 'e2', 'e3'].map(id => ({ id, op: srs(id) }))));
+    const setItem = almacen.setItem.bind(almacen);
+    // Solo caben escrituras que no crecen: la lista de resultados nueva no entra.
+    almacen.setItem = (k, v) => { if ((almacen.m.get(k)?.length ?? 0) < v.length) throw new DOMException('lleno', 'QuotaExceededError'); setItem(k, v); };
+    const enviadas: string[] = [];
+    const c = new ColaEscrituras(async e => { enviadas.push(nombreDe(e)); }, almacen, () => {});
+    c.usar('nosa');
+    expect(await c.vaciar()).toBe(true);
+    expect(enviadas).toEqual(['e1', 'e2', 'e3']);
+  });
+
   it('alFinal avisa cuando un envío que falló se guarda en un reintento', async () => {
     let red = false;
     const c = new ColaEscrituras(async () => { if (!red) throw new TypeError('offline'); }, new Memoria(), () => {});
@@ -315,6 +329,15 @@ describe('autoguardado del examen', () => {
     const lleno = new Memoria();
     lleno.setItem = () => { throw new DOMException('lleno', 'QuotaExceededError'); };
     expect(guardarExamen('nosa', 'LI_2025', g, 'nuevo', lleno)).toBe('sin-almacen');
+  });
+});
+
+describe('etiquetas de las históricas', () => {
+  it('nombran el examen como en el simulacro, con reservas y extraordinario', () => {
+    expect(etiquetaHistorica({ origen: { anio: 2025, parte: 'ej1', n: 1, reserva: true, conv: 'extraordinaria' } })).toBe('Extraordinario 2026 · test · reserva 1');
+    expect(etiquetaHistorica({ origen: { anio: 2025, parte: 'b3', n: 7 } })).toBe('Mayo 2026 · supuesto III · 7');
+    expect(etiquetaHistorica({ origen: { anio: 2016, parte: 'ej1_iv', n: 1 } })).toBe('OEP 2016 · test bloque IV · 1');
+    expect(etiquetaHistorica({ origen: null })).toBeUndefined();
   });
 });
 

@@ -82,6 +82,7 @@ export function ProveedorProgreso({ children }: { children: ReactNode }) {
   const [usuario, setUsuario] = useState<UsuarioActual | null>(null);
   const [guardado, setGuardado] = useState<EstadoGuardado>({ estado: 'guardado', pendientes: 0 });
   const revision = useRef(0);
+  const cargando = useRef(0);
   const nombreActual = useRef<string | null>(null);
   const recargarRef = useRef<() => Promise<void>>(async () => {});
   const huboError = useRef(false);
@@ -102,6 +103,7 @@ export function ProveedorProgreso({ children }: { children: ReactNode }) {
   const recargar = useCallback(async () => {
     const actual = ++revision.current;
     const c = cola.current!;
+    cargando.current++;
     try {
       for (let vuelta = 0; ; vuelta++) {
         const envios = c.envios, ocupada = c.ocupada;
@@ -130,6 +132,8 @@ export function ProveedorProgreso({ children }: { children: ReactNode }) {
         setEstado(s => (s === 'cargando' ? 'sin-conexion' : s));
         throw e;
       }
+    } finally {
+      cargando.current--;
     }
   }, []);
   recargarRef.current = recargar;
@@ -142,10 +146,11 @@ export function ProveedorProgreso({ children }: { children: ReactNode }) {
   }), []);
   useEffect(() => { recargar().catch(console.error); }, [recargar]);
 
-  // Si la primera carga falló (servidor reiniciándose, sin red), se reintenta al volver la conexión y cada 15 s.
+  // Si la primera carga falló (servidor reiniciándose, sin red), se reintenta al volver la conexión y cada 15 s,
+  // sin cortar una carga que siga en marcha (con una red lenta, cada reintento invalidaría al anterior).
   useEffect(() => {
     if (estado !== 'sin-conexion') return;
-    const otra = () => { recargar().catch(console.error); };
+    const otra = () => { if (!cargando.current) recargar().catch(console.error); };
     window.addEventListener('online', otra);
     const t = setInterval(otra, 15_000);
     return () => { window.removeEventListener('online', otra); clearInterval(t); };

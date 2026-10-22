@@ -63,7 +63,8 @@
    "origen": {
     "anio": 2025,
     "parte": "ej1",
-    "n": 42
+    "n": 42,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -90,7 +91,8 @@
    "origen": {
     "anio": 2025,
     "parte": "ej1",
-    "n": 43
+    "n": 43,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -117,7 +119,8 @@
    "origen": {
     "anio": 2025,
     "parte": "ej1",
-    "n": 44
+    "n": 44,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -145,7 +148,8 @@
     "anio": 2025,
     "parte": "ej1",
     "n": 5,
-    "reserva": true
+    "reserva": true,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -172,7 +176,8 @@
    "origen": {
     "anio": 2025,
     "parte": "b3",
-    "n": 15
+    "n": 15,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",

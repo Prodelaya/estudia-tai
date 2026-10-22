@@ -34,21 +34,14 @@ export const nombreExamen = (anio: number, id: string) =>
 export const idProgreso = (p: PreguntaTema) => p.ref ?? p.id;
 
 /**
- * Etiqueta de una histórica. Con ref, el examen, la parte y el número (o la reserva) salen de la pregunta de
- * examen enlazada, que es la fuente; sin ref, de origen.
+ * Etiqueta de una histórica, igual que en el simulacro. En las enlazadas (ref), `origen` lo copia el script de
+ * sincronización de la pregunta de examen, así que coincide con ella: año, parte, número y si es reserva.
  */
-export function etiquetaHistorica(p: Pick<PreguntaTema, 'ref' | 'origen'>): string | undefined {
+export function etiquetaHistorica(p: Pick<PreguntaTema, 'origen'>): string | undefined {
   const o = p.origen;
-  const m = p.ref?.match(/^LI(\d{4})(ext)?-/);
-  if (m) {
-    const anio = Number(m[1]);
-    const reserva = p.ref!.match(/-R(\d+)$/);
-    const n = reserva ? `reserva ${Number(reserva[1])}` : String(o?.n ?? Number(p.ref!.match(/-(\d+)$/)?.[1]));
-    return `${nombreExamen(anio, `LI_${anio}${m[2] ?? ''}`)} · ${FUENTE[o?.parte ?? ''] ?? o?.parte ?? 'test'} · ${n}`;
-  }
   if (!o) return undefined;
-  const id = `LI_${o.anio}${o.conv === 'extraordinaria' ? 'ext' : ''}`;
-  return `${nombreExamen(o.anio, id)} · ${FUENTE[o.parte] ?? o.parte} · ${o.n}`;
+  const id = `LI_${o.anio}${o.conv === 'extraordinaria' || o.conv === 'ext' ? 'ext' : ''}`;
+  return `${nombreExamen(o.anio, id)} · ${FUENTE[o.parte] ?? o.parte} · ${o.reserva ? 'reserva ' : ''}${o.n}`;
 }
 
 export function desdeTema(p: PreguntaTema, tema: number): PreguntaVista {

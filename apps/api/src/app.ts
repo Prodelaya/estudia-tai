@@ -26,6 +26,18 @@ const MODO = { type: 'string', enum: ['practica', 'simulacro'] } as const;
 const ID = { type: 'string', minLength: 1, maxLength: 120 } as const;
 const TEMA = { type: ['integer', 'null'], minimum: 0, maximum: 99 } as const;
 
+/**
+ * Convierte horas del dispositivo a hora del servidor. x-estudia-hora es la hora del dispositivo al enviar: la
+ * diferencia con la del servidor corrige un reloj adelantado o atrasado, para que se puedan comparar horas de
+ * dispositivos distintos. Sin hora, la del servidor; nunca en el futuro.
+ */
+function reloj(req: FastifyRequest) {
+  const ahora = Date.now();
+  const enviado = Number(req.headers['x-estudia-hora']);
+  const desfase = Number.isFinite(enviado) && enviado > 0 ? ahora - enviado : 0;
+  return (ts?: number) => (ts == null ? ahora : Math.max(0, Math.min(Math.round(ts + desfase), ahora)));
+}
+
 export async function crearApp(o: Opciones) {
   const app = Fastify({ logger: o.logger ?? false, bodyLimit: 1024 * 1024 });
   await app.register(cookie, { secret: o.secreto });
@@ -166,6 +178,7 @@ export async function crearApp(o: Opciones) {
       // Un blanco no tiene letra: se guarda como fallo con elegida vacía y blanco = 1.
       if (items.some(i => !i.elegida && i.acierto)) return rep.code(400).send({ error: 'un blanco no puede ser acierto' });
       const u = req.usuario!.id;
+      const hora = reloj(req);
       // primera = es la primera respuesta con letra (un blanco no cuenta: puede que ni se leyera); si llega una más
       // antigua que la que estaba marcada (cola de otro dispositivo), la marca pasa a la nueva. Un cliente_id
       // repetido no se inserta.
@@ -174,11 +187,10 @@ export async function crearApp(o: Opciones) {
           SELECT 1 FROM respuestas WHERE usuario_id = ? AND pregunta_id = ? AND blanco = 0 AND ts <= ?))
         ON CONFLICT DO NOTHING`);
       const desmarcar = db.prepare('UPDATE respuestas SET primera = 0 WHERE usuario_id = ? AND pregunta_id = ? AND ts > ? AND primera = 1');
-      const ahora = Date.now();
       let nuevas = 0;
       db.transaction(() => items.forEach(i => {
-        // La hora del cliente se acepta si no es futura: una respuesta guardada sin conexión conserva su momento.
-        const ts = Math.min(i.ts ?? ahora, ahora);
+        // Una respuesta guardada sin conexión conserva su momento (corregido el desfase del reloj del dispositivo).
+        const ts = hora(i.ts);
         const blanco = i.elegida ? 0 : 1;
         const r = ins.run(i.pregunta_id, i.tema ?? null, i.elegida ?? '', i.acierto ? 1 : 0, i.origen ?? 'test', ts, u,
           blanco, i.modo ?? 'practica', i.cliente_id ?? null, blanco, u, i.pregunta_id, ts);
@@ -204,7 +216,7 @@ export async function crearApp(o: Opciones) {
         ON CONFLICT(usuario_id, tarjeta_id) DO UPDATE SET tema = excluded.tema, facilidad = excluded.facilidad, intervalo = excluded.intervalo,
         repeticiones = excluded.repeticiones, vence = excluded.vence, ts = excluded.ts
         WHERE excluded.ts >= srs.ts`)
-        .run(req.usuario!.id, id, b.tema ?? null, b.facilidad, b.intervalo, b.repeticiones, b.vence, Math.min(b.ts ?? Date.now(), Date.now()));
+        .run(req.usuario!.id, id, b.tema ?? null, b.facilidad, b.intervalo, b.repeticiones, b.vence, reloj(req)(b.ts));
       return { ok: true };
     });
 
@@ -224,7 +236,7 @@ export async function crearApp(o: Opciones) {
       }
       const r = db.prepare('INSERT INTO intentos (examen_id, partes, notas, respuestas, segundos, ts, usuario_id, modo, limite, cliente_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
         .run(b.examen_id, JSON.stringify(b.partes), JSON.stringify(b.notas), JSON.stringify(b.respuestas), b.segundos ?? null,
-          Math.min(b.ts ?? Date.now(), Date.now()), req.usuario!.id, b.modo ?? 'simulacro', b.limite == null ? null : Math.round(b.limite), b.cliente_id ?? null);
+          reloj(req)(b.ts), req.usuario!.id, b.modo ?? 'simulacro', b.limite == null ? null : Math.round(b.limite), b.cliente_id ?? null);
       return { id: Number(r.lastInsertRowid) };
     });
 

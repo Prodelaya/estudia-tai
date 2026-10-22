@@ -166,3 +166,22 @@ test('una tarjeta no se pisa con una calificación más antigua que llega tarde'
   await poner(7000);
   assert.equal((db.prepare('SELECT vence FROM srs').get() as { vence: number }).vence, 7000);
 });
+
+test('las horas del dispositivo se corrigen con su desfase: un reloj atrasado no pierde un repaso posterior', async () => {
+  const { app, cookie, db } = await montar();
+  const poner = (vence: number, ts: number, hora: number) => app.inject({ method: 'PUT', url: '/api/srs/t1',
+    headers: { cookie, 'x-estudia-hora': String(hora) }, payload: { tema: 1, facilidad: 2.5, intervalo: 1, repeticiones: 1, vence, ts } });
+  const ahora = Date.now();
+  // Portátil en hora: califica hace 2 minutos.
+  await poner(5000, ahora - 120_000, ahora);
+  // Móvil 5 minutos atrasado: califica ahora mismo (para él son las «ahora - 5 min»).
+  await poner(9000, ahora - 300_000, ahora - 300_000);
+  const f = db.prepare('SELECT vence, ts FROM srs').get() as { vence: number; ts: number };
+  assert.equal(f.vence, 9000);
+  assert.ok(Math.abs(f.ts - ahora) < 5000);
+  // Y una respuesta guardada sin conexión en ese móvil conserva su momento real.
+  await app.inject({ method: 'POST', url: '/api/respuestas', headers: { cookie, 'x-estudia-hora': String(ahora - 300_000) },
+    payload: { items: [{ pregunta_id: 'p', elegida: 'a', acierto: true, ts: ahora - 300_000 - 60_000 }] } });
+  const r = db.prepare('SELECT ts FROM respuestas').get() as { ts: number };
+  assert.ok(Math.abs(r.ts - (ahora - 60_000)) < 5000);
+});

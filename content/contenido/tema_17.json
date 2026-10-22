@@ -1913,7 +1913,8 @@
    "origen": {
     "anio": 2016,
     "parte": "ej1",
-    "n": 4
+    "n": 4,
+    "reserva": true
    },
    "de": null,
    "texto": "literal",
@@ -3063,7 +3064,8 @@
    "origen": {
     "anio": 2024,
     "parte": "b3",
-    "n": 3
+    "n": 3,
+    "reserva": true
    },
    "de": null,
    "texto": "literal",
@@ -3113,7 +3115,8 @@
    "origen": {
     "anio": 2024,
     "parte": "b4",
-    "n": 3
+    "n": 3,
+    "reserva": true
    },
    "de": null,
    "texto": "literal",
@@ -3463,7 +3466,8 @@
    "origen": {
     "anio": 2025,
     "parte": "b3",
-    "n": 5
+    "n": 5,
+    "reserva": true
    },
    "de": null,
    "texto": "literal",
@@ -4663,7 +4667,8 @@
    "origen": {
     "anio": 2025,
     "parte": "ej1",
-    "n": 38
+    "n": 38,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -4713,7 +4718,8 @@
    "origen": {
     "anio": 2025,
     "parte": "ej1",
-    "n": 39
+    "n": 39,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -4763,7 +4769,8 @@
    "origen": {
     "anio": 2025,
     "parte": "ej1",
-    "n": 40
+    "n": 40,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -4813,7 +4820,9 @@
    "origen": {
     "anio": 2025,
     "parte": "ej1",
-    "n": 4
+    "n": 4,
+    "reserva": true,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -4863,7 +4872,8 @@
    "origen": {
     "anio": 2025,
     "parte": "b3",
-    "n": 9
+    "n": 9,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -4913,7 +4923,8 @@
    "origen": {
     "anio": 2025,
     "parte": "b3",
-    "n": 10
+    "n": 10,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",
@@ -4963,7 +4974,8 @@
    "origen": {
     "anio": 2025,
     "parte": "b3",
-    "n": 11
+    "n": 11,
+    "conv": "extraordinaria"
    },
    "de": null,
    "texto": "literal",

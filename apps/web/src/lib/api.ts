@@ -47,8 +47,12 @@ async function pedir<T>(url: string, init?: RequestInit, cambiaSesion = false): 
   return resultado;
 }
 
+/**
+ * x-estudia-hora es la hora del dispositivo al enviar: el servidor la usa para corregir el desfase de su reloj en
+ * las horas que viajan en el cuerpo (una respuesta o una tarjeta guardada sin conexión conserva su momento real).
+ */
 const json = (method: string, body: unknown, usuario?: string): RequestInit =>
-  ({ method, body: JSON.stringify(body), headers: usuario ? { 'x-estudia-usuario': usuario } : undefined });
+  ({ method, body: JSON.stringify(body), headers: { 'x-estudia-hora': String(Date.now()), ...(usuario ? { 'x-estudia-usuario': usuario } : {}) } });
 
 export const api = {
   login: (usuario: string, password: string) => pedir<{ ok: true }>('/api/login', json('POST', { usuario, password }), true),

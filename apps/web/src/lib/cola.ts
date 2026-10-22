@@ -100,10 +100,13 @@ export class ColaEscrituras {
     }
   }
 
+  // Cada lectura buena se copia a memoria: si después falla el almacenamiento, la memoria parte de lo último
+  // que había (también lo que dejaron otras pestañas o una sesión anterior) y no se da nada por enviado.
   private leer(usuario = this.usuario): Entrada[] {
     if (!usuario) return [];
-    return this.leerClave<Entrada>(`estudia-tai:pendientes:${usuario}`, x => !!x && typeof (x as Entrada).id === 'string' && !!(x as Entrada).op)
-      ?? this.mem(usuario).pendientes;
+    const l = this.leerClave<Entrada>(`estudia-tai:pendientes:${usuario}`, x => !!x && typeof (x as Entrada).id === 'string' && !!(x as Entrada).op);
+    if (l) this.mem(usuario).pendientes = l;
+    return l ?? this.mem(usuario).pendientes;
   }
 
   private escribir(usuario: string, lista: Entrada[]) {
@@ -112,8 +115,9 @@ export class ColaEscrituras {
   }
 
   private leerHechas(usuario: string): Map<string, ResultadoFinal> {
-    return new Map(this.leerClave<[string, ResultadoFinal]>(`estudia-tai:hechas:${usuario}`, x => Array.isArray(x) && x.length === 2)
-      ?? this.mem(usuario).hechas);
+    const l = this.leerClave<[string, ResultadoFinal]>(`estudia-tai:hechas:${usuario}`, x => Array.isArray(x) && x.length === 2);
+    if (l) this.mem(usuario).hechas = l;
+    return new Map(l ?? this.mem(usuario).hechas);
   }
 
   private anotar(usuario: string, id: string, r: ResultadoFinal) {
